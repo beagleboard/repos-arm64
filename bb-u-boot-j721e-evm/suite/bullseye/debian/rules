@@ -21,14 +21,14 @@ override_dh_strip:
 override_dh_auto_configure:
 	env
 	git clone -b $(KIG_TAG) https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1
-	cd ./k3-image-gen/ ; cp -v ./include/common.h ./soc/j721e/evm/ ; make SOC=j721e CONFIG=evm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- ; cd ../
+	cd ./k3-image-gen/ ; make SOC=j721e CONFIG=evm CFLAGS=-fno-builtin -Wall -Iinclude/soc/j721e -Isoc/j721e/evm -Iinclude CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- ; cd ../
 	git clone -b $(ATF_TAG) https://github.com/ARM-software/arm-trusted-firmware.git --depth=1
 	cd ./arm-trusted-firmware/ ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed ; cd ../
 	git clone -b $(TEE_TAG) https://github.com/OP-TEE/optee_os.git --depth=1
 	cd ./optee_os ; make PLATFORM=k3-j721e CFG_ARM64_core=y ; cd ../
 	git clone -b $(UB_TAG) https://github.com/u-boot/u-boot.git --depth=1
 	cd ./u-boot/ ; make CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig O=../r5 ; make CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- O=../r5 ; cd ../
-	cd ./u-boot/ ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../a72 ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ATF=../debian/arm-trusted-firmware/build/k3/generic/release/bl31.bin TEE=../debian/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin O=../a72 ; cd ../
+#	cd ./u-boot/ ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../a72 ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ATF=../debian/arm-trusted-firmware/build/k3/generic/release/bl31.bin TEE=../debian/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin O=../a72 ; cd ../
 
 
 %:
