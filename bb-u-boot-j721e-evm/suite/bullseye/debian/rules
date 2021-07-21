@@ -19,10 +19,9 @@ override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
-	ls
 	env
 	git clone -b $(KIG_TAG) https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1
-	cd ./k3-image-gen/ ; make SOC=j721e CONFIG=evm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- ; cd ../
+	cd ./k3-image-gen/ ; cp -v ./include/common.h ./soc/j721e/evm/ ; make SOC=j721e CONFIG=evm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- ; cd ../
 	git clone -b $(ATF_TAG) https://github.com/ARM-software/arm-trusted-firmware.git --depth=1
 	cd ./arm-trusted-firmware/ ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed ; cd ../
 	git clone -b $(TEE_TAG) https://github.com/OP-TEE/optee_os.git --depth=1
