@@ -5,7 +5,7 @@
 sudo mount -a
 
 run () {
-	wdir="/mnt/farm/incoming/${suite}/${debian_pkg_name}_${debian_version}/"
+	wdir="/mnt/farm/incoming/${suite}/${debian_pkg_name}-${debian_version}/"
 	if [ -d ${wdir} ] ; then
 		rm -rf ${wdir}
 	fi
