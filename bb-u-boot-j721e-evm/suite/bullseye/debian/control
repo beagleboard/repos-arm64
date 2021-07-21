@@ -16,7 +16,7 @@ Standards-Version: 4.5.1
 Homepage: https://github.com/beagleboard/u-boot
 
 Package: bb-u-boot-j721e-evm
-Architecture: armhf
+Architecture: arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: beagleboard.org u-boot for j721e_evm
  beagleboard.org u-boot for j721e sysfw.itb, tiboot3.bin, tispl.bin, u-boot.img
