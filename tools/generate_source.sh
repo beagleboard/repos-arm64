@@ -12,7 +12,7 @@ if [ ! "x${git_repo}" = "x" ] ; then
 	fi
 	if [ -f ./ignore/.git/config ] ; then
 		cd ./ignore/
-		git archive --format=tar --prefix=${package_name}-${package_version}/ ${git_sha} | xz > ../${package_name}_${package_version}.orig.tar.xz
+		git archive --format=tar --prefix=${package_name}-${package_version}/ ${git_sha} | xz > ../${package_name}-${package_version}.orig.tar.xz
 		cd ../
 		rm -rf ./ignore/
 	fi
