@@ -1,0 +1,4 @@
+./k3-image-gen/sysfw.itb /opt/u-boot/bb-u-boot-j721e-evm
+/tmp/r5/tiboot3.bin /opt/u-boot/bb-u-boot-j721e-evm
+/tmp/a72/tispl.bin /opt/u-boot/bb-u-boot-j721e-evm
+/tmp/a72/u-boot.img /opt/u-boot/bb-u-boot-j721e-evm
