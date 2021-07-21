@@ -1,4 +1,4 @@
-debian/k3-image-gen/sysfw.itb /opt/u-boot/bb-u-boot-j721e-evm
-debian/r5/tiboot3.bin /opt/u-boot/bb-u-boot-j721e-evm
-#debian/a72/tispl.bin /opt/u-boot/bb-u-boot-j721e-evm
-#debian/a72/u-boot.img /opt/u-boot/bb-u-boot-j721e-evm
+k3-image-gen/sysfw.itb /opt/u-boot/bb-u-boot-j721e-evm
+r5/tiboot3.bin /opt/u-boot/bb-u-boot-j721e-evm
+a72/tispl.bin /opt/u-boot/bb-u-boot-j721e-evm
+a72/u-boot.img /opt/u-boot/bb-u-boot-j721e-evm
