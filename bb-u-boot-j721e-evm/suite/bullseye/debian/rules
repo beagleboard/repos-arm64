@@ -19,17 +19,16 @@ override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
-	env
 	git clone -b $(KIG_TAG) https://github.com/rcn-ee/k3-image-gen --depth=1
-	cd ./k3-image-gen/ ; make CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- ; cd ../
+	cd ./k3-image-gen/ ; make CROSS_COMPILE=arm-linux-gnueabihf- ; cd ../
 	git clone -b $(ATF_TAG) https://github.com/ARM-software/arm-trusted-firmware.git --depth=1
-	cd ./arm-trusted-firmware/ ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed ; cp -v arm-trusted-firmware/build/k3/generic/release/bl31.bin ../debian/ ; cd ../
+	cd ./arm-trusted-firmware/ ; make CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS=  ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed ; cp -v arm-trusted-firmware/build/k3/generic/release/bl31.bin ../debian/ ; cd ../
 	git clone -b $(TEE_TAG) https://github.com/OP-TEE/optee_os.git --depth=1
 	cd ./optee_os ; make PLATFORM=k3-j721e CFG_ARM64_core=y ; cp -v out/arm-plat-k3/core/tee-pager_v2.bin ../debian/ ; cd ../
 	git clone -b $(UB_TAG) https://github.com/u-boot/u-boot.git --depth=1
-	cd ./u-boot/ ; make CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig O=../r5 ; make CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- O=../r5 ; cd ../
+	cd ./u-boot/ ; make CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig O=../r5 ; make CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- O=../r5 ; cd ../
 	ls -lha
-	cd ./u-boot/ ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../a72 ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ATF=../debian/bl31.bin TEE=../debian/tee-pager_v2.bin O=../a72 ; cd ../
+	cd ./u-boot/ ; make CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../a72 ; make CROSS_COMPILE=/usr/bin/aarch64-linux-gnu- ATF=../debian/bl31.bin TEE=../debian/tee-pager_v2.bin O=../a72 ; cd ../
 
 
 %:
