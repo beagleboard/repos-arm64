@@ -1,5 +1,5 @@
-bb-u-boot-j721e-evm (2021.07.20210722.0-0~bullseye+20210722) bullseye; urgency=low
+bb-u-boot-j721e-evm (2021.10.20210726.0-0~bullseye+20210807) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 Jul 2021 16:17:30 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 07 Aug 2021 10:55:33 -0500
