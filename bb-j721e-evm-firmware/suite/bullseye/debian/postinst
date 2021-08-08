@@ -4,41 +4,23 @@ set -e
 
 groupadd gpio --system || true
 
-if [ ! -f /lib/firmware/j7-c66_0-fw ] ; then
-	ln -sf /lib/firmware/j7-c66_0-fw.tisdk /lib/firmware/j7-c66_0-fw
-	/bin/chgrp gpio /lib/firmware/j7-c66_0-fw
-	/bin/chmod g=u /lib/firmware/j7-c66_0-fw
-fi
-if [ ! -f /lib/firmware/j7-c66_1-fw ] ; then
-	ln -sf /lib/firmware/j7-c66_1-fw.tisdk /lib/firmware/j7-c66_1-fw
-	/bin/chgrp gpio /lib/firmware/j7-c66_1-fw
-	/bin/chmod g=u /lib/firmware/j7-c66_1-fw
-fi
-if [ ! -f /lib/firmware/j7-c71_0-fw ] ; then
-	ln -sf /lib/firmware/j7-c71_0-fw.tisdk /lib/firmware/j7-c71_0-fw
-	/bin/chgrp gpio /lib/firmware/j7-c71_0-fw
-	/bin/chmod g=u /lib/firmware/j7-c71_0-fw
-fi
-if [ ! -f /lib/firmware/j7-main-r5f0_0-fw ] ; then
-	ln -sf /lib/firmware/j7-main-r5f0_0-fw.tisdk /lib/firmware/j7-main-r5f0_0-fw
-	/bin/chgrp gpio /lib/firmware/j7-main-r5f0_0-fw
-	/bin/chmod g=u /lib/firmware/j7-main-r5f0_0-fw
-fi
-if [ ! -f /lib/firmware/j7-main-r5f0_1-fw ] ; then
-	ln -sf /lib/firmware/j7-main-r5f0_1-fw.tisdk /lib/firmware/j7-main-r5f0_1-fw
-	/bin/chgrp gpio /lib/firmware/j7-main-r5f0_1-fw
-	/bin/chmod g=u /lib/firmware/j7-main-r5f0_1-fw
-fi
-if [ ! -f /lib/firmware/j7-main-r5f1_0-fw ] ; then
-	ln -sf /lib/firmware/j7-main-r5f1_0-fw.tisdk /lib/firmware/j7-main-r5f1_0-fw
-	/bin/chgrp gpio /lib/firmware/j7-main-r5f1_0-fw
-	/bin/chmod g=u /lib/firmware/j7-main-r5f1_0-fw
-fi
-if [ -f /lib/firmware/j7-main-r5f1_1-fw ] ; then
-	ln -sf /lib/firmware/j7-main-r5f1_1-fw.tisdk /lib/firmware/j7-main-r5f1_1-fw
-	/bin/chgrp gpio /lib/firmware/j7-main-r5f1_1-fw
-	/bin/chmod g=u /lib/firmware/j7-main-r5f1_1-fw
-fi
+check_n_ln () {
+	if [ ! -f /lib/firmware/${wfirm} ] ; then
+		ln -sf /lib/firmware/${wfirm}.tisdk /lib/firmware/${wfirm}
+		/bin/chgrp gpio /lib/firmware/${wfirm}
+		/bin/chmod g=u /lib/firmware/${wfirm}
+	fi
+}
+
+wfirm="j7-c66_0-fw" ; check_n_ln
+wfirm="j7-c66_1-fw" ; check_n_ln
+wfirm="j7-c71_0-fw" ; check_n_ln
+wfirm="j7-main-r5f0_0-fw" ; check_n_ln
+wfirm="j7-main-r5f0_1-fw" ; check_n_ln
+wfirm="j7-main-r5f1_0-fw" ; check_n_ln
+wfirm="j7-main-r5f1_1-fw" ; check_n_ln
+wfirm="j7-mcu-r5f0_0-fw" ; check_n_ln
+wfirm="j7-mcu-r5f0_1-fw" ; check_n_ln
 
 case "$1" in
 	configure)
