@@ -1,3 +1,9 @@
+bb-j721e-evm-firmware (1.20210807.1-0~bullseye+20210807) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 07 Aug 2021 21:31:13 -0500
+
 bb-j721e-evm-firmware (1.20210807.0-0~bullseye+20210807) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com

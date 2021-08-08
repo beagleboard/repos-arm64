@@ -1,2 +1,3 @@
 src/
 suite/bullseye/debian/*.tisdk
+suite/bullseye/debian/mhdp8546.bin

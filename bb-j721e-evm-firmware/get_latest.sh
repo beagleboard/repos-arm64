@@ -23,4 +23,4 @@ wfile="j7-main-r5f1_0-fw.tisdk" ; wdir="/fw/CoreSDK-08.00.00.004/" ; copy_all
 wfile="j7-main-r5f1_1-fw.tisdk" ; wdir="/fw/CoreSDK-08.00.00.004/" ; copy_all
 wfile="j7-mcu-r5f0_0-fw.tisdk" ; wdir="/fw/CoreSDK-08.00.00.004/" ; copy_all
 wfile="j7-mcu-r5f0_1-fw.tisdk" ; wdir="/fw/CoreSDK-08.00.00.004/" ; copy_all
-
+wfile="mhdp8546.bin" ; wdir="/fw/CoreSDK-08.00.00.004/" ; copy_all
