@@ -1,0 +1,2 @@
+tmp/usr/* /usr/
+debian/ti-c6x-cgt.sh /etc/profile.d/
