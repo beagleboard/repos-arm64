@@ -10,8 +10,6 @@ Vcs-Browser: https://github.com/RPi-Distro/raspberrypi-sys-mods
 
 Package: generic-sys-mods
 Architecture: arm64
-Depends: ${shlibs:Depends}, ${misc:Depends}, libcap2-bin, systemd (>= 230),
- gettext-base, procps
-Recommends: rfkill, rpi-eeprom
+Depends: ${shlibs:Depends}, ${misc:Depends}, systemd (>= 230)
 Description: System tweaks for the Generic Systems
  Various modifications to improve the performance or user experience.
