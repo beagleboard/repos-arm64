@@ -3,8 +3,8 @@
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
 package_version="3.11.1.20210810.0"
-package_source="${package_name}_${package_version}.orig.tar.xz"
-src_dir="${package_name}_${package_version}"
+package_source="${package_name}-${package_version}.orig.tar.xz"
+src_dir="${package_name}-${package_version}"
 
 git_repo="https://github.com/rcn-ee/code-server"
 git_sha="65ebc265bf98848c3a14740f4a84b7d05ae19200"
