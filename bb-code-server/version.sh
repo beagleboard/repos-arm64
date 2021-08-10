@@ -2,7 +2,7 @@
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
-package_version="3.11.1.20210810.0"
+package_version="3.11.1.20210810.1"
 package_source="${package_name}-${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
