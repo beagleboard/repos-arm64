@@ -1,0 +1,5 @@
+gt (0.0.0-git20210712.5-0~bullseye+20210812) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 12 Aug 2021 22:36:33 -0500
