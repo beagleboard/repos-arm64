@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+if [ ! -f /etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service ] ; then
+	systemctl enable serial-getty@ttyGS0.service
+fi
+
+#DEBHELPER#
