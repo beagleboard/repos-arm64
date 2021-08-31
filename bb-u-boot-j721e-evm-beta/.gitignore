@@ -1,0 +1,4 @@
+src/
+suite/bullseye/debian/sysfw.itb
+suite/bullseye/debian/*.bin
+suite/bullseye/debian/u-boot.img
