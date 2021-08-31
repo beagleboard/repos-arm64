@@ -20,7 +20,3 @@ wfile="bl31.bin"                                  ; wdir="/rootfs/boot/firmware/
 wfile="ipc_echo_testb_mcu1_0_release_strip.xer5f" ; wdir="/rootfs/boot/firmware/${version}/" ; copy_all
 wfile="sysfw.itb"                                 ; wdir="/rootfs/boot/firmware/${version}/" ; copy_all
 wfile="tee-pager_v2.bin"                          ; wdir="/rootfs/boot/firmware/${version}/" ; copy_all
-wfile="tiboot3.bin"                               ; wdir="/rootfs/boot/firmware/${version}/" ; copy_all
-wfile="tispl.bin"                                 ; wdir="/rootfs/boot/firmware/${version}/" ; copy_all
-wfile="u-boot.img"                                ; wdir="/rootfs/boot/firmware/${version}/" ; copy_all
-
