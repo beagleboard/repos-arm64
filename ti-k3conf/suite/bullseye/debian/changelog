@@ -1,0 +1,5 @@
+ti-k3conf (0.2.0-git20201222.0-0~bullseye+20210831) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 31 Aug 2021 20:12:45 -0500
