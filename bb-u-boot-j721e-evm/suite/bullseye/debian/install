@@ -1,3 +1,4 @@
+debian/install.sh /opt/u-boot/bb-u-boot-j721e-evm
 debian/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-j721e-evm
 debian/sysfw.itb /opt/u-boot/bb-u-boot-j721e-evm
 r5/tiboot3.bin /opt/u-boot/bb-u-boot-j721e-evm
