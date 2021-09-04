@@ -4,7 +4,7 @@
 
 package_name="ti-k3conf"
 debian_pkg_name="${package_name}"
-package_version="0.2.0-git20201222.1"
+package_version="0.2.0-git20201222.2"
 package_source="${package_name}-${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
@@ -17,4 +17,4 @@ debian_version="${package_version}-0"
 debian_patch=""
 debian_diff=""
 
-bullseye_version="~bullseye+20210831"
+bullseye_version="~bullseye+20210904"
