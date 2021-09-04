@@ -1,3 +1,9 @@
+ti-devmem2 (0.0.0-git20210904.1-0~bullseye+20210904) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 04 Sep 2021 10:24:34 -0500
+
 ti-devmem2 (0.0.0-git20210904.0-0~bullseye+20210904) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
