@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-j721e-evm"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20210923.1"
+package_version="2021.10.20210923.2"
 package_source=""
 src_dir=""
 
