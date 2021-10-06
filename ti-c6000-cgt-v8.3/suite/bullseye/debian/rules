@@ -6,7 +6,7 @@ export DH_VERBOSE=1
 
 DEB_BUILD_OPTIONS=noautodbgsym
 
-wfile="ti_cgt_c6000_8.3.2_armlinuxa8hf_busybox_installer.sh"
+wfile="ti_cgt_c6000_8.3.11_armlinuxa8hf_busybox_installer.sh"
 
 %:
 	dh $@
