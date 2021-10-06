@@ -2,7 +2,7 @@
 
 #https://www.ti.com/tool/download/PRU-CGT-2-3
 
-package_name="ti-pru-cgt-v8.3"
+package_name="ti-pru-cgt-v2.3"
 debian_pkg_name="${package_name}"
 package_version="2.3.3"
 package_source=""
@@ -13,7 +13,7 @@ git_sha=""
 reprepro_dir="t/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-0rcnee1"
+debian_version="${package_version}-0rcnee2"
 debian_untar=""
 debian_patch=""
 
