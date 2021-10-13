@@ -11,8 +11,8 @@ fi
 if [ -f /boot/firmware/uEnv.txt ] ; then
 	if [ -f /boot/Image ] ; then
 		rm -f /boot/Image || true
-		cp /boot/Image-${version} /boot/Image
-		rm -rf /boot/*.dtb
+		cp -v /boot/Image-${version} /boot/Image
+		rm -rf /boot/*.dtb || true
 		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/
 		echo "zz-uenv_txt: Updated /boot/ for: [${version}]"
 	fi

@@ -1,3 +1,9 @@
+generic-sys-mods (1.20211013.2-0~bullseye+20211013) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 13 Oct 2021 15:00:22 -0500
+
 generic-sys-mods (1.20211013.1-0~bullseye+20211013) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
