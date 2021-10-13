@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+version="$1"
+
+# passing the kernel version is required
+if [ -z "${version}" ] ; then
+	echo >&2 "W: zz-uenv_txt: ${DPKG_MAINTSCRIPT_PACKAGE:-kernel package} did not pass a version number"
+	exit 2
+fi
+
+if [ -f /boot/firmware/uEnv.txt ] ; then
+	if [ -f /boot/Image ] ; then
+		rm -f /boot/Image || true
+		cp /boot/Image-${version} /boot/Image
+		rm -rf /boot/*.dtb
+		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/
+		echo "zz-uenv_txt: Updated /boot/ for: [${version}]"
+	fi
+fi
