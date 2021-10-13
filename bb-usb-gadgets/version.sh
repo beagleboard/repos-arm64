@@ -2,7 +2,7 @@
 
 package_name="bb-usb-gadgets"
 debian_pkg_name="${package_name}"
-package_version="1.20211007.2"
+package_version="1.20211012.0"
 package_source=""
 src_dir=""
 
@@ -15,4 +15,4 @@ debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
 
-bullseye_version="~bullseye+20211007"
+bullseye_version="~bullseye+20211013"
