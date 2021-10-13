@@ -1,3 +1,9 @@
+bb-usb-gadgets (1.20211013.0-0~bullseye+20211013) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 13 Oct 2021 11:00:21 -0500
+
 bb-usb-gadgets (1.20211012.0-0~bullseye+20211013) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
