@@ -33,25 +33,25 @@ run () {
 					tar xfv ${DIR}/${debian_untar} -C ${DIR}/${suite}/${src_dir}
 				fi
 			else
-				mkdir -p ${DIR}/${suite}/${package_name}-${package_version}
-				tar xf ${DIR}/${package_source} -C ${DIR}/${suite}/${package_name}-${package_version}
+				mkdir -p ${DIR}/${suite}/${package_name}_${package_version}
+				tar xf ${DIR}/${package_source} -C ${DIR}/${suite}/${package_name}_${package_version}
 
-				cd ${DIR}/${suite}/${package_name}-${package_version}
+				cd ${DIR}/${suite}/${package_name}_${package_version}
 				ls
 				if [ ! "x${debian_patch}" = "x" ] ; then
 					zcat ${DIR}/${debian_patch} | patch -p1
 				fi
 				if [ ! "x${debian_untar}" = "x" ] ; then
-					tar xfv ${DIR}/${debian_untar} -C ${DIR}/${suite}/${package_name}-${package_version}
+					tar xfv ${DIR}/${debian_untar} -C ${DIR}/${suite}/${package_name}_${package_version}
 				fi
 			fi
 		else
-			mkdir -p ${DIR}/${suite}/${package_name}-${package_version}
-			cd ${DIR}/${suite}/${package_name}-${package_version}
+			mkdir -p ${DIR}/${suite}/${package_name}_${package_version}
+			cd ${DIR}/${suite}/${package_name}_${package_version}
 		fi
 	else
-		mkdir -p ${DIR}/${suite}/${package_name}-${package_version}
-		cd ${DIR}/${suite}/${package_name}-${package_version}
+		mkdir -p ${DIR}/${suite}/${package_name}_${package_version}
+		cd ${DIR}/${suite}/${package_name}_${package_version}
 	fi
 
 	if [ ! -d ./debian ] ; then

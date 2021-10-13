@@ -6,12 +6,12 @@ localdir="/mnt/farm"
 builder=`cat /etc/hostname`
 
 build () {
-	if [ -f ${localdir}/incoming/${suite}/${debian_pkg_name}-${debian_version}/${dsc_file} ] ; then
+	if [ -f ${localdir}/incoming/${suite}/${debian_pkg_name}_${debian_version}/${dsc_file} ] ; then
 		echo "-----------------"
-		echo "sbuild ${options} http://192.168.1.3/farm/incoming/${suite}/${debian_pkg_name}-${debian_version}/${dsc_file}"
+		echo "sbuild ${options} http://192.168.1.3/farm/incoming/${suite}/${debian_pkg_name}_${debian_version}/${dsc_file}"
 		echo "-----------------"
-		sudo sbuild ${options} http://192.168.1.3/farm/incoming/${suite}/${debian_pkg_name}-${debian_version}/${dsc_file}
-#		sbuild ${options} http://192.168.1.3/farm/incoming/${suite}/${debian_pkg_name}-${debian_version}/${dsc_file}
+		sudo sbuild ${options} http://192.168.1.3/farm/incoming/${suite}/${debian_pkg_name}_${debian_version}/${dsc_file}
+#		sbuild ${options} http://192.168.1.3/farm/incoming/${suite}/${debian_pkg_name}_${debian_version}/${dsc_file}
 
 		if [ -f *.changes ] ; then
 			sudo chown -R 1000:1000 ./*
@@ -42,7 +42,7 @@ cleanup_suite () {
 
 run () {
 	touch /tmp/sbuild-BUILDING.lock
-	out_dir="${localdir}/outgoing/${suite}/${deb_arch}/${debian_pkg_name}-${debian_version}/"
+	out_dir="${localdir}/outgoing/${suite}/${deb_arch}/${debian_pkg_name}_${debian_version}/"
 	if [ -f /var/lib/sbuild/${suite}-${deb_arch}.tar.gz ] ; then
 
 		if [ ! -f ./${suite}/PKG_BUILT ] ; then
@@ -51,7 +51,7 @@ run () {
 			mkdir ./${suite}
 			cd ./${suite}
 
-			dsc_file=$(ls ${localdir}/incoming/${suite}/${debian_pkg_name}-${debian_version}/ | grep dsc)
+			dsc_file=$(ls ${localdir}/incoming/${suite}/${debian_pkg_name}_${debian_version}/ | grep dsc)
 			if [ "x${sbuild_chroot}" = "x" ] ; then
 				options="--arch=${deb_arch} -A -s --force-orig-source --dist=${suite} --no-run-lintian"
 			else
