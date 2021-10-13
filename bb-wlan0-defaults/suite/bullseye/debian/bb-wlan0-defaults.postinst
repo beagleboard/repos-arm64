@@ -5,7 +5,7 @@
 set -e
 
 if [ ! -f /etc/systemd/network/mlan0-DHCP.network ] ; then
-	cp -v /etc/bbb.io/templates/wlan0-DHCP.network /etc/systemd/network/mlan0.network
+	cp -v /etc/bbb.io/templates/mlan0-DHCP.network /etc/systemd/network/mlan0.network
 fi
 
 if [ ! -f /etc/systemd/network/SoftAp0.network ] ; then
