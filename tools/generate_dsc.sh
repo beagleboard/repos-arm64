@@ -176,6 +176,7 @@ runner () {
 
 start_run () {
 	dist="debian"
+	deb_arch="arm64"
 	suite="bullseye" ; runner
 }
 
