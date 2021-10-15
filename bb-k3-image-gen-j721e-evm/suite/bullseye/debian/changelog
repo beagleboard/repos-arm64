@@ -1,3 +1,9 @@
+bb-k3-image-gen-j721e-evm (1.20210626.6-0~bullseye+20211015) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 15 Oct 2021 16:35:58 -0500
+
 bb-k3-image-gen-j721e-evm (1.20210626.5-0~bullseye+20211015) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com

@@ -4,7 +4,7 @@
 
 package_name="bb-k3-image-gen-j721e-evm"
 debian_pkg_name="${package_name}"
-package_version="1.20210626.5"
+package_version="1.20210626.6"
 package_source=""
 src_dir=""
 
