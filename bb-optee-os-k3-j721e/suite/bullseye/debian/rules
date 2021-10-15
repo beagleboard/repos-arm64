@@ -9,7 +9,7 @@ override_dh_strip:
 
 override_dh_auto_configure:
 	git clone -b 3.12.0 https://github.com/beagleboard/optee_os --depth=1
-	cd ./optee_os/ ; make -j4 PLATFORM=k3-j721e CFG_ARM64_core=y
+	cd ./optee_os/ ; make -j4 CFLAGS= LDFLAGS= PLATFORM=k3-j721e CFG_ARM64_core=y
 
 %:
 	dh $@
