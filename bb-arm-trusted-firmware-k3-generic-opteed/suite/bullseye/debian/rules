@@ -9,7 +9,7 @@ override_dh_strip:
 
 override_dh_auto_configure:
 	git clone -b 08.00.00.004 https://github.com/beagleboard/arm-trusted-firmware --depth=1
-	cd ./arm-trusted-firmware/ ; make -j4 CROSS_COMPILE=aarch64-linux-gnu- ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed all
+	cd ./arm-trusted-firmware/ ; make -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed all
 
 %:
 	dh $@
