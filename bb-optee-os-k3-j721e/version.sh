@@ -4,7 +4,7 @@
 
 package_name="bb-optee-os-k3-j721e"
 debian_pkg_name="${package_name}"
-package_version="3.12.0.20210120.2"
+package_version="3.12.0.20210120.3"
 package_source=""
 src_dir=""
 
