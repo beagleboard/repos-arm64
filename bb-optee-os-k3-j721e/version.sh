@@ -2,7 +2,7 @@
 
 #https://github.com/beagleboard/optee_os
 
-package_name="bb-optee_os-k3-j721e"
+package_name="bb-optee-os-k3-j721e"
 debian_pkg_name="${package_name}"
 package_version="3.12.0.20210120.0"
 package_source=""
