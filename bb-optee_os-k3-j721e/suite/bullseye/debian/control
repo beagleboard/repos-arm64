@@ -1,0 +1,16 @@
+Source: bb-optee_os-k3-j721e
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:  debhelper (>= 9),
+		ca-certificates,
+		git,
+Standards-Version: 4.5.1
+Homepage: https://github.com/beagleboard/optee_os
+
+Package: bb-optee_os-k3-j721e
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: BeagleBoard.org OP-TEE Trusted OS k3-j721e
+ BeagleBoard.org OP-TEE Trusted OS k3-j721e
+

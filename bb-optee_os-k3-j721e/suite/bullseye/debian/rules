@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_strip:
+	# Just disable for now...
+
+override_dh_auto_configure:
+	git clone -b 3.12.0 https://github.com/beagleboard/optee_os --depth=1
+	cd ./optee_os/ ; make -j4 PLATFORM=k3-j721e CFG_ARM64_core=y
+
+%:
+	dh $@
+
