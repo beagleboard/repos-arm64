@@ -1,11 +1,5 @@
-bbb.io-kernel (1.20211014.3-0~bullseye+20211014) bullseye; urgency=low
+bbb.io-kernel (1.20211015.0-0~bullseye+20211015) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * linux-image-5.10.65-ti-arm64-r15
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Oct 2021 13:49:58 -0500
-
-bbb.io-kernel (1.20211014.2-0~bullseye+20211014) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Oct 2021 13:40:21 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 15 Oct 2021 08:59:39 -0500
