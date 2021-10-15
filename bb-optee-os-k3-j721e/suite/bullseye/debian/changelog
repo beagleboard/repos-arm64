@@ -1,3 +1,9 @@
+bb-optee-os-k3-j721e (3.12.0.20210120.4-0~bullseye+20211015) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 15 Oct 2021 17:05:41 -0500
+
 bb-optee-os-k3-j721e (3.12.0.20210120.3-0~bullseye+20211015) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
