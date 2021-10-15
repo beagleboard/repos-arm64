@@ -1,0 +1,5 @@
+bb-arm-trusted-firmware-k3-generic-opteed (2.5.20211014.0-0~bullseye+20211015) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 15 Oct 2021 16:43:20 -0500
