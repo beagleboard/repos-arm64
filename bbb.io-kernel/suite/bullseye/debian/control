@@ -18,7 +18,7 @@ Section: metapackages
 Architecture: all
 Depends: ${misc:Depends},
          bbb.io-kernel-tasks (= ${source:Version})
-Recommends: linux-image-5.10.65-ti-arm64-r15,
+Recommends: linux-image-5.10.65-ti-arm64-r16,
             bb-u-boot-j721e-evm
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti in Debian.
