@@ -1,3 +1,9 @@
+bbb.io-kernel (1.20211026.0-0~bullseye+20211026) bullseye; urgency=low
+
+  * linux-image-5.10.65-ti-arm64-r17
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Oct 2021 20:24:43 -0500
+
 bbb.io-kernel (1.20211019.0-0~bullseye+20211019) bullseye; urgency=low
 
   * linux-image-5.10.65-ti-arm64-r16
