@@ -6,8 +6,8 @@ export DH_VERBOSE=1
 
 export DISCIMAGE=/
 export TARGET_PRODUCT=j721e_linux
-export WINDOW_SYSTEM=nulldrmws
-#export WINDOW_SYSTEM=wayland
+#export WINDOW_SYSTEM=nulldrmws
+export WINDOW_SYSTEM=wayland
 
 override_dh_strip:
 	# Just disable for now...
