@@ -4,7 +4,7 @@
 
 package_name="ti-sgx-j721e-ddx-um"
 debian_pkg_name="${package_name}"
-package_version="1.13.5776728-k5.10-git20210323.2"
+package_version="1.13.5776728-k5.10-git20210323.3"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 

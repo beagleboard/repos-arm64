@@ -1,10 +1,14 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
 
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
 export DISCIMAGE=/
 export TARGET_PRODUCT=j721e_linux
+
+override_dh_strip:
+	# Just disable for now...
 
 %:
 	dh $@
