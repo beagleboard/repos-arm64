@@ -1,0 +1,16 @@
+Source: ti-sgx-j721e-ddx-um
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends: debhelper (>= 9),
+         libdrm-dev,
+         libwayland-dev,
+Standards-Version: 4.5.0
+Homepage: https://git.ti.com/gitweb?p=graphics/ti-img-rogue-umlibs.git;a=summary
+
+Package: ti-sgx-j721e-ddx-um
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Architecture: arm64
+Description: Userspace libraries for SGX
+ Userspace libraries for SGX

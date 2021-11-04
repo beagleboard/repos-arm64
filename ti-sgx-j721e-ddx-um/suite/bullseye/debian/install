@@ -1,0 +1,3 @@
+tmp/usr/lib/* usr/lib
+tmp/usr/bin/* usr/bin
+debian/powervr.ini etc
