@@ -1,3 +1,9 @@
+ti-sgx-j721e-ddx-um (1.13.5776728-k5.10-git20210323.1-0~bullseye+20211104) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Nov 2021 14:46:43 -0500
+
 ti-sgx-j721e-ddx-um (1.13.5776728-k5.10-git20210323.0-0~bullseye+20211104) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com

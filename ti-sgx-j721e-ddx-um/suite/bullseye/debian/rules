@@ -4,7 +4,7 @@
 export DH_VERBOSE=1
 
 export DISCIMAGE=/
-export TARGET_PRODUCT=ti335x
+export TARGET_PRODUCT=j721e_linux
 
 %:
 	dh $@
