@@ -1,2 +1,3 @@
 tmp/usr/lib/* usr/lib
 tmp/usr/bin/* usr/bin
+tmp/lib/firmware/* lib/firmware
