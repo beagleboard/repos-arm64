@@ -16,9 +16,9 @@ git_sha=""
 reprepro_dir="w/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-22"
+debian_version="${package_version}-23"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
-local_patch="rcnee3"
+local_patch="rcnee1"
 
-bullseye_version="~bullseye+20211007"
+bullseye_version="~bullseye+20211119"
