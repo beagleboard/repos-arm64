@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_strip:
+	# Just disable for now...
+
+override_dh_auto_configure:
+	git clone https://github.com/jadonk/greybus.git
+	cd greybus ; git checkout f7fe50f8c0ab4545a0850e0552b99ad7522287b8 -b tmp ; cd ../
+	git clone https://github.com/jadonk/gbridge.git
+	cd gbridge ; git checkout 8ba7f56f04191d74b28346dcd5a22f01608f65df -b tmp ; autoreconf -vfi ; GBNETLINKDIR=../greybus ./configure --enable-uart --enable-tcpip --disable-gbsim --enable-netlink --disable-bluetooth ; make -j2
+
+%:
+	dh $@ --with systemd
+
+override_dh_installinit:
+	dh_installinit --name=lowpan --no-stop-on-upgrade --no-start
+	dh_installinit --name=lowpan_monitor --no-stop-on-upgrade --no-start
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=lowpan --no-enable
+	dh_systemd_enable --name=lowpan_monitor --no-enable
+
+override_dh_systemd_start:
+	dh_systemd_start --name=lowpan --no-start
+	dh_systemd_start --name=lowpan_monitor --no-start
