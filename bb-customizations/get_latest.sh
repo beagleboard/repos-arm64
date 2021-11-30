@@ -14,4 +14,5 @@ copy_all () {
 
 dl_src
 
+wfile="10-of-symlink.rules" ; wdir="/rootfs/etc/udev/rules.d/" ; copy_all
 wfile="86-remoteproc-noroot.rules" ; wdir="/rootfs/etc/udev/rules.d/" ; copy_all

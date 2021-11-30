@@ -1,1 +1,2 @@
+debian/10-of-symlink.rules /etc/udev/rules.d/
 debian/86-remoteproc-noroot.rules /etc/udev/rules.d/
