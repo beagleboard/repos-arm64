@@ -1,3 +1,9 @@
+bbb.io-kernel (1.20211129.0-0~bullseye+20211129) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 29 Nov 2021 18:06:34 -0600
+
 bbb.io-kernel (1.20211116.0-0~bullseye+20211116) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
