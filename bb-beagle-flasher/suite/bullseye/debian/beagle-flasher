@@ -353,16 +353,15 @@ partition_drive () {
 		single_root_label=${single_root_label:-"rootfs"}
 
 		sfdisk_options="--force"
-		sfdisk_boot_startmb="${rfs_rootfs_startmb}M"
 
 		message="INFO: Partitioning: ${destination}"                                               ; broadcast
 		message="INFO: /sbin/sfdisk: [$(LC_ALL=C /sbin/sfdisk --version)]"                         ; broadcast
 		message="INFO: /sbin/sfdisk: [/sbin/sfdisk ${sfdisk_options} ${destination}]"              ; broadcast
-		message="INFO: /sbin/sfdisk: [${sfdisk_boot_startmb},,${sfdisk_fstype},*]"                 ; broadcast
+		message="INFO: /sbin/sfdisk: [${sfdisk_boot_startmb}M,,${sfdisk_fstype},*]"                 ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
 
 		LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
-			${sfdisk_boot_startmb},,${sfdisk_fstype},*
+			${sfdisk_boot_startmb}M,,${sfdisk_fstype},*
 		__EOF__
 
 		flush_cache
@@ -384,18 +383,17 @@ partition_drive () {
 		root_label=${root_label:-"rootfs"}
 
 		sfdisk_options="--force"
-		sfdisk_boot_startmb="${rfs_rootfs_startmb}M"
 
 		message="INFO: Partitioning: ${destination}"                                               ; broadcast
 		message="INFO: /sbin/sfdisk: [$(LC_ALL=C /sbin/sfdisk --version)]"                         ; broadcast
 		message="INFO: /sbin/sfdisk: [/sbin/sfdisk ${sfdisk_options} ${destination}]"              ; broadcast
-		message="INFO: /sbin/sfdisk: [${sfdisk_boot_startmb},${sfdisk_boot_size_mb},${rfs_sfdisk_fstype},*]" ; broadcast
-		message="INFO: /sbin/sfdisk: [${sfdisk_rootfs_startmb},,,-]" ; broadcast
+		message="INFO: /sbin/sfdisk: [${rfs_boot_startmb}M,${rfs_boot_size_mb}M,${rfs_sfdisk_fstype},*]" ; broadcast
+		message="INFO: /sbin/sfdisk: [${sfdisk_rootfs_startmb}M,,,-]" ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
 
 		LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
-			${sfdisk_boot_startmb},${sfdisk_boot_size_mb},${rfs_sfdisk_fstype},*
-			${sfdisk_rootfs_startmb},,,-
+			${rfs_boot_startmb}M,${rfs_boot_size_mb}M,${rfs_sfdisk_fstype},*
+			${sfdisk_rootfs_startmb}M,,,-
 		__EOF__
 
 		flush_cache
