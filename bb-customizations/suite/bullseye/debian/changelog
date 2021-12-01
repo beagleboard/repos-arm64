@@ -1,17 +1,6 @@
-bb-customizations (1.20211130.0-0~bullseye+20211130) bullseye; urgency=low
+bb-customizations (1.20211201.1-0~bullseye+20211201) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Nov 2021 16:40:52 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Dec 2021 15:22:00 -0600
 
-bb-customizations (1.20211007.0-0~bullseye+20211007) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Oct 2021 21:24:08 -0500
-
-bb-customizations (1.20210808.0-0~bullseye+20210808) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 08 Aug 2021 13:31:52 -0500
