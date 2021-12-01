@@ -149,15 +149,6 @@ check_running_system () {
 	#		;;
 	#esac
 
-	if [ -f /proc/sys/vm/min_free_kbytes ] ; then
-		message="INFO: Preparing sysctl"                                                           ; broadcast
-		value_min_free_kbytes=$(sysctl -n vm.min_free_kbytes)
-		message="INFO: [sysctl: vm.min_free_kbytes=[${value_min_free_kbytes}]"                     ; broadcast
-		message="INFO: [sysctl: setting: [sysctl -w vm.min_free_kbytes=16384]"                     ; broadcast
-		sysctl -w vm.min_free_kbytes=16384
-		message="--------------------------------------------------------------------------------" ; broadcast
-	fi
-
 	if [ "x${has_usr_leds}" = "xenable" ] ; then
 		cylon_leds & CYLON_PID=$!
 	fi
@@ -380,7 +371,7 @@ partition_drive () {
 		sfdisk_rootfs_startmb=$(($rfs_boot_startmb + $rfs_boot_size_mb))
 
 		boot_label=${boot_label:-"FIRMWARE"}
-		root_label=${root_label:-"rootfs"}
+		rootfs_label=${rootfs_label:-"rootfs"}
 
 		sfdisk_options="--force"
 
