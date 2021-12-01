@@ -379,7 +379,7 @@ partition_drive () {
 
 		sfdisk_rootfs_startmb=$(($rfs_boot_startmb + $rfs_boot_size_mb))
 
-		boot_label=${boot_label:-"firmware"}
+		boot_label=${boot_label:-"FIRMWARE"}
 		root_label=${root_label:-"rootfs"}
 
 		sfdisk_options="--force"
@@ -399,7 +399,7 @@ partition_drive () {
 		flush_cache
 		message="INFO: Formatting: ${destination}"                                                 ; broadcast
 		format_boot
-		format_rootfs
+		format_root
 		message="INFO: Formatting: ${destination} complete"                                        ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
 
