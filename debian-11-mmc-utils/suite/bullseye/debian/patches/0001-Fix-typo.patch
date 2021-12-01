@@ -1,0 +1,55 @@
+From 34317337ff6d7e41798c5f4943a488bf24c8ac6b Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Date: Mon, 20 Sep 2021 17:08:32 +0900
+Subject: [PATCH] Fix typo
+
+ - boundries -> boundaries
+ - missmatch -> mismatch
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+---
+ mmc.c      | 4 ++--
+ mmc_cmds.c | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/mmc.c b/mmc.c
+index 50c9c9e..181c004 100644
+--- a/mmc.c
++++ b/mmc.c
+@@ -71,9 +71,9 @@ static struct Command commands[] = {
+ 	{ do_writeprotect_user_set, -4,
+ 	  "writeprotect user set", "<type>" "<start block>" "<blocks>" "<device>\n"
+ #ifdef DANGEROUS_COMMANDS_ENABLED
+-	  "Set the write protect configuration for the specified region\nof the user area for <device>.\n<type> must be \"none|temp|pwron|perm\".\n    \"none\"  - Clear temporary write protection.\n    \"temp\"  - Set temporary write protection.\n    \"pwron\" - Set write protection until the next poweron.\n    \"perm\"  - Set permanent write protection.\n<start block> specifies the first block of the protected area.\n<blocks> specifies the size of the protected area in blocks.\nNOTE! The area must start and end on Write Protect Group\nboundries, Use the \"writeprotect user get\" command to get the\nWrite Protect Group size.\nNOTE! \"perm\" is a one-time programmable (unreversible) change.",
++	  "Set the write protect configuration for the specified region\nof the user area for <device>.\n<type> must be \"none|temp|pwron|perm\".\n    \"none\"  - Clear temporary write protection.\n    \"temp\"  - Set temporary write protection.\n    \"pwron\" - Set write protection until the next poweron.\n    \"perm\"  - Set permanent write protection.\n<start block> specifies the first block of the protected area.\n<blocks> specifies the size of the protected area in blocks.\nNOTE! The area must start and end on Write Protect Group\nboundaries, Use the \"writeprotect user get\" command to get the\nWrite Protect Group size.\nNOTE! \"perm\" is a one-time programmable (unreversible) change.",
+ #else
+-	  "Set the write protect configuration for the specified region\nof the user area for <device>.\n<type> must be \"none|temp|pwron\".\n    \"none\"  - Clear temporary write protection.\n    \"temp\"  - Set temporary write protection.\n    \"pwron\" - Set write protection until the next poweron.\n<start block> specifies the first block of the protected area.\n<blocks> specifies the size of the protected area in blocks.\nNOTE! The area must start and end on Write Protect Group\nboundries, Use the \"writeprotect user get\" command to get the\nWrite Protect Group size.",
++	  "Set the write protect configuration for the specified region\nof the user area for <device>.\n<type> must be \"none|temp|pwron\".\n    \"none\"  - Clear temporary write protection.\n    \"temp\"  - Set temporary write protection.\n    \"pwron\" - Set write protection until the next poweron.\n<start block> specifies the first block of the protected area.\n<blocks> specifies the size of the protected area in blocks.\nNOTE! The area must start and end on Write Protect Group\nboundaries, Use the \"writeprotect user get\" command to get the\nWrite Protect Group size.",
+ #endif /* DANGEROUS_COMMANDS_ENABLED */
+ 	  NULL
+ 	},
+diff --git a/mmc_cmds.c b/mmc_cmds.c
+index fb37189..df66089 100644
+--- a/mmc_cmds.c
++++ b/mmc_cmds.c
+@@ -2230,7 +2230,7 @@ int do_rpmb_read_block(int nargs, char **argv)
+ 
+ 		/* Compare calculated MAC and MAC from last frame */
+ 		if (memcmp(mac, frame_out->key_mac, sizeof(mac))) {
+-			printf("RPMB MAC missmatch\n");
++			printf("RPMB MAC mismatch\n");
+ 			exit(1);
+ 		}
+ 	}
+@@ -2399,7 +2399,7 @@ int do_cache_ctrl(int value, int nargs, char **argv)
+ 
+ 	if (ext_csd[EXT_CSD_REV] < EXT_CSD_REV_V4_5) {
+ 		fprintf(stderr,
+-			"The CACHE option is only availabe on devices >= "
++			"The CACHE option is only available on devices >= "
+ 			"MMC 4.5 %s\n", device);
+ 		exit(1);
+ 	}
+-- 
+2.33.0
+

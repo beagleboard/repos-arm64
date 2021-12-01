@@ -1,0 +1,72 @@
+mmc-utils (0+git20191004.73d6c59-1rcnee0~bullseye+20211201) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Dec 2021 15:59:48 -0600
+
+mmc-utils (0+git20191004.73d6c59-1) unstable; urgency=medium
+
+  * Snapshot, taken from the master (20191004).
+  * d/gbp.conf
+    - Set debian-branch to debian/sid for DEP-14 conformance.
+  * d/control
+    - Bump debhelper compatibility level to 13.
+    - Bump Standards-Version to 4.5.1 (no change).
+    - Rules does not require root.
+    - Fix typo in pakcage description.
+    - Fix upstream URL.
+  * d/patches:
+    - Remove unnecessary patch.
+    - Add 0001-Fix-typo.patch.
+    - Add 0002-man-mmc.1-Fix-warning-macro-not-defined.patch.
+  * d/copyright
+    - Update License and Copyright.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Mon, 20 Sep 2021 17:26:42 +0900
+
+mmc-utils (0+git20180327.b4fe0c8c-1) unstable; urgency=medium
+
+  * Snapshot, taken from the master (20180327).
+  * Remove debian/patches/fix_build_ppc64el.patch.
+    By changing Upstream, patch is no longer needed.
+  * Fix build with gcc-8. (Closes: #897811)
+    Add patches/lsmmc-replace-strncpy-with-memmove-on-overlapping.patch.
+  * Get rid of lintian 'space-in-std-shortname-in-dep5-copyright'.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Fri, 20 Jul 2018 11:32:40 +0900
+
+mmc-utils (0+git20180122.7bcad171-1) unstable; urgency=medium
+
+  * Snapshot, taken from the master (20180313).
+  * Update supporting version of debhelper to 11.
+  * Update Standards-Version to 4.1.3.
+  * Update Vcs-Browser and Vcs-Git to use salsa.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Tue, 13 Mar 2018 14:16:08 +0900
+
+mmc-utils (0+git20170901.37c86e60-1) unstable; urgency=medium
+
+  * Snapshot, taken from the master (20170901).
+  * Update supporting version of debhelper to 10.
+  * Update Standards-Version to 4.1.0.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Fri, 01 Sep 2017 15:27:48 +0900
+
+mmc-utils (0~gita3d3331-3) unstable; urgency=medium
+
+  * Update patches/fix_build_ppc64el.patch.
+    Updated to the correct patch.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Sat, 17 Sep 2016 17:46:33 +0900
+
+mmc-utils (0~gita3d3331-2) unstable; urgency=medium
+
+  * Fix build on ppc64*, alpha and mipsel64. (Closes: #834787)
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Tue, 23 Aug 2016 03:23:23 +0900
+
+mmc-utils (0~gita3d3331-1) unstable; urgency=low
+
+  * Initial release. (Closes: #833633)
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Fri, 05 Aug 2016 00:23:56 +0900

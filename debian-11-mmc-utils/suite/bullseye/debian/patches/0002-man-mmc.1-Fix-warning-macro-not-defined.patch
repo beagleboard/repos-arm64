@@ -1,0 +1,26 @@
+From 443266afdb2fdc53e14826343a839dee2f2cf60c Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Date: Mon, 20 Sep 2021 17:17:29 +0900
+Subject: [PATCH] man/mmc.1: Fix warning: macro '-' not defined
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+---
+ man/mmc.1 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/man/mmc.1 b/man/mmc.1
+index bdb6f09..877c5b5 100644
+--- a/man/mmc.1
++++ b/man/mmc.1
+@@ -91,7 +91,7 @@ Counter value for the <rpmb device> will be read to stdout.
+ Blocks of 256 bytes will be read from <rpmb device> to output
+ file or stdout if '-' is specified. If key is specified - read
+ data will be verified. Instead of regular path you can specify
+-'-' to read key from stdin.
++ '-' to read key from stdin.
+ .TP
+ .BR "rpmb write-block <rpmb device> <address> <256 byte data file> <key file>"
+ Block of 256 bytes will be written from data file to
+-- 
+2.33.0
+
