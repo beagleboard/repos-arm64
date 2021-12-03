@@ -1,7 +1,0 @@
-diff --git a/roms/skiboot/Makefile.main b/roms/skiboot/Makefile.main
-index fac6e448..3b8e1b5c 100644
---- a/roms/skiboot/Makefile.main
-+++ b/roms/skiboot/Makefile.main
-@@ -34 +33,1 @@ CWARNS := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
--	  -Werror
-+	  $(call try-cflag,$(CC),--Wno-error=misleading-indentation) \
