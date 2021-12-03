@@ -1,0 +1,31 @@
+Subject: a few spelling fixes for the visible strings in binaries
+From: Michael Tokarev <mjt@tls.msk.ru>
+
+diff --git a/accel/kvm/kvm-all.c b/accel/kvm/kvm-all.c
+index 0125c17edb..cace5ffe64 100644
+--- a/accel/kvm/kvm-all.c
++++ b/accel/kvm/kvm-all.c
+@@ -2472 +2472 @@ static int kvm_init(MachineState *ms)
+-                             "Suggested mininum value is 1024.", strerror(-ret));
++                             "Suggested minimum value is 1024.", strerror(-ret));
+diff --git a/block/file-posix.c b/block/file-posix.c
+index cb9bffe047..1854bfa397 100644
+--- a/block/file-posix.c
++++ b/block/file-posix.c
+@@ -1708 +1708 @@ static int handle_aiocb_write_zeroes(void *opaque)
+-                             "Please report this bug to your file sytem "
++                             "Please report this bug to your file system "
+diff --git a/hw/ssi/sifive_spi.c b/hw/ssi/sifive_spi.c
+index 03540cf5ca..1b4a401ca1 100644
+--- a/hw/ssi/sifive_spi.c
++++ b/hw/ssi/sifive_spi.c
+@@ -270 +270 @@ static void sifive_spi_write(void *opaque, hwaddr addr,
+-                      "%s: invalid write to read-only reigster 0x%"
++                      "%s: invalid write to read-only register 0x%"
+diff --git a/target/i386/cpu-sysemu.c b/target/i386/cpu-sysemu.c
+index 1078e3d157..37b7c562f5 100644
+--- a/target/i386/cpu-sysemu.c
++++ b/target/i386/cpu-sysemu.c
+@@ -338 +338 @@ void x86_cpu_get_crash_info_qom(Object *obj, Visitor *v,
+-        error_setg(errp, "No crash occured");
++        error_setg(errp, "No crash occurred");
