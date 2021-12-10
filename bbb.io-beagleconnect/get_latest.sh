@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="beta0.0.13"
+version="beta0.0.15"
 
 dl_src () {
 	if [ -d ./build/ ] ; then
@@ -13,7 +13,7 @@ dl_src () {
 
 copy_all () {
 #	cp -v ./${wfile} ./suite/buster/debian/
-	cp -v ./${wfile} ./suite/bullseye/debian/
+	cp -fv ./${wfile} ./suite/bullseye/debian/
 }
 
 dl_src
