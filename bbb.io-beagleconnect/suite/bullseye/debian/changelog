@@ -1,6 +1,6 @@
-beagleconnect (1.20211209.0-0~bullseye+20211209) bullseye; urgency=low
+beagleconnect (1.20211217.1-0~bullseye+20211217) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 09 Dec 2021 18:13:11 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 17 Dec 2021 17:06:32 -0600
 

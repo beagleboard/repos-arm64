@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="beta0.0.15"
+version="beta0.0.16"
 
 dl_src () {
 	if [ -d ./build/ ] ; then
@@ -30,3 +30,5 @@ wfile="build/cc1352/wpanusb_beagleconnect.bin" ; copy_all
 
 wfile="build/msp430/usb_uart_bridge_lp.hex" ; copy_all
 wfile="build/msp430/usb_uart_bridge.hex" ; copy_all
+
+echo "bcf-${version}" > ./suite/bullseye/debian/version
