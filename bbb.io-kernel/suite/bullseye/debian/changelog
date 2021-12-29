@@ -1,48 +1,6 @@
-bbb.io-kernel (1.20211129.0-0~bullseye+20211129) bullseye; urgency=low
+bbb.io-kernel (1.20211229.0-0~bullseye+20211229) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 29 Nov 2021 18:06:34 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 Dec 2021 08:44:28 -0600
 
-bbb.io-kernel (1.20211116.0-0~bullseye+20211116) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 16 Nov 2021 19:55:49 -0600
-
-bbb.io-kernel (1.20211110.0-0~bullseye+20211110) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 10 Nov 2021 11:41:03 -0600
-
-bbb.io-kernel (1.20211109.0-0~bullseye+20211109) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 09 Nov 2021 14:08:06 -0600
-
-bbb.io-kernel (1.20211103.0-0~bullseye+20211103) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Nov 2021 21:00:51 -0500
-
-bbb.io-kernel (1.20211026.0-0~bullseye+20211026) bullseye; urgency=low
-
-  * linux-image-5.10.65-ti-arm64-r17
-
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Oct 2021 20:24:43 -0500
-
-bbb.io-kernel (1.20211019.0-0~bullseye+20211019) bullseye; urgency=low
-
-  * linux-image-5.10.65-ti-arm64-r16
-  * thermal: k3_j72xx_bandgap: Add the bandgap driver support
-
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Oct 2021 21:34:24 -0500
-
-bbb.io-kernel (1.20211015.0-0~bullseye+20211015) bullseye; urgency=low
-
-  * linux-image-5.10.65-ti-arm64-r15
-
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 15 Oct 2021 08:59:39 -0500
