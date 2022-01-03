@@ -1,1 +1,2 @@
+SUBSYSTEM=="net", KERNEL=="SoftAp0", DRIVERS=="iwlwifi", TAG+="systemd", ENV{SYSTEMD_WANTS}="hostapd.service
 SUBSYSTEM=="net", KERNEL=="SoftAp0", DRIVERS=="mwifiex_pcie", TAG+="systemd", ENV{SYSTEMD_WANTS}="hostapd.service"

@@ -1,2 +1,4 @@
+SUBSYSTEM=="net", ACTION=="add", KERNEL=="wlan[0-9]", DRIVERS=="iwlwifi" \
+	RUN+="/sbin/iw dev %k interface add SoftAp0 type managed"
 SUBSYSTEM=="net", ACTION=="add", KERNEL=="mlan[0-9]", DRIVERS=="mwifiex_pcie" \
 	RUN+="/sbin/iw dev %k interface add SoftAp0 type __ap"
