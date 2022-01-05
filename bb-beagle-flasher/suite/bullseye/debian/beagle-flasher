@@ -125,7 +125,7 @@ example_failure () {
 	message="destination=/dev/mmcblk1"                                                         ; broadcast
 	message="rfs_partition=dual"                                                               ; broadcast
 	message="rfs_boot_startmb=1"                                                               ; broadcast
-	message="rfs_boot_size_mb=64"                                                              ; broadcast
+	message="rfs_boot_size_mb=128"                                                             ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
 	exit 2
 }
@@ -376,7 +376,7 @@ partition_drive () {
 		copy_rootfs
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
 		rfs_boot_startmb=${rfs_boot_startmb:-"1"}
-		rfs_boot_size_mb=${rfs_boot_size_mb:-"64"}
+		rfs_boot_size_mb=${rfs_boot_size_mb:-"128"}
 		rfs_sfdisk_fstype=${rfs_sfdisk_fstype:-"0xc"}
 
 		sfdisk_rootfs_startmb=$(($rfs_boot_startmb + $rfs_boot_size_mb))
