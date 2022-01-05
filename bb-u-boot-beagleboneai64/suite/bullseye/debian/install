@@ -1,7 +1,7 @@
 debian/install.sh /opt/u-boot/bb-u-boot-beagleboneai64
-debian/install-msd.sh /opt/u-boot/bb-u-boot-beagleboneai64
-debian/msd-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
-debian/convert-to-extlinux-msd.sh /opt/u-boot/bb-u-boot-beagleboneai64
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
+debian/convert-to-extlinux-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
 debian/convert-to-extlinux-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64

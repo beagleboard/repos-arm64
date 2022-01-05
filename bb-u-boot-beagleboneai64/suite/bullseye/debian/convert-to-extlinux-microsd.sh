@@ -9,7 +9,7 @@ wdir="/opt/u-boot/bb-u-boot-beagleboneai64"
 
 if [ -d /boot/firmware/ ] ; then
 	mkdir -p /boot/firmware/extlinux/
-	cp -v ${wdir}/msd-extlinux.conf /boot/firmware/extlinux/extlinux.conf
+	cp -v ${wdir}/microsd-extlinux.conf /boot/firmware/extlinux/extlinux.conf
 	cp -v /boot/Image-`uname -r` /boot/firmware/Image
 	cp -v /boot/*.dtb /boot/firmware/
 fi
