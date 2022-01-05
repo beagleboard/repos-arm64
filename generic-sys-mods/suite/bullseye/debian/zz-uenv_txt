@@ -14,6 +14,16 @@ if [ -f /boot/firmware/uEnv.txt ] ; then
 		cp -v /boot/Image-${version} /boot/Image
 		rm -rf /boot/*.dtb || true
 		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/
-		echo "zz-uenv_txt: Updated /boot/ for: [${version}]"
+		echo "zz-uenv_txt: Updated uEnv.txt /boot/ for: [${version}]"
+	fi
+fi
+
+if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
+	if [ -f /boot/Image-${version} ] ; then
+		rm -f /boot/firmware/Image || true
+		cp -v /boot/Image-${version} /boot/firmware/Image
+		rm -rf /boot/firmware/*.dtb || true
+		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/firmware/
+		echo "zz-uenv_txt: Updated extlinux.conf /boot/firmware/ for: [${version}]"
 	fi
 fi
