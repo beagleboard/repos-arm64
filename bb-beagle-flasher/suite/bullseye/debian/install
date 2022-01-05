@@ -1,2 +1,3 @@
 debian/beagle-flasher /usr/sbin/
 debian/bbai64-microsd-to-emmc /etc/beagle-flasher/
+debian/bbai64-emmc-to-microsd /etc/beagle-flasher/
