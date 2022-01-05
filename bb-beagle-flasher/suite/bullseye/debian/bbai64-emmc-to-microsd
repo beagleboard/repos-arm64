@@ -3,5 +3,6 @@ destination=/dev/mmcblk1
 rfs_partition=dual
 rfs_boot_startmb=1
 rfs_boot_size_mb=64
-bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-msd.sh
+bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-microsd.sh
 flash_back=bbai64-microsd-to-emmc
+extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/microsd-extlinux.conf
