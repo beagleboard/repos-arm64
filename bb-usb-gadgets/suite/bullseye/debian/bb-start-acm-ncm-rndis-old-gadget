@@ -43,9 +43,9 @@ usb_bcdUSB="0x0200"
 usb_serialnr="000000"
 usb_product="USB Device"
 
-usb_iserialnumber="1234BBBK5678"
+usb_iserialnumber="$(cat /proc/device-tree/serial-number)"
 usb_imanufacturer="BeagleBoard.org"
-usb_iproduct="BeagleBoneBlack"
+usb_iproduct="BeagleBone"
 
 #mac address:
 #cpsw_0_mac = eth0 - wlan0 (in eeprom)
@@ -138,6 +138,8 @@ run_libcomposite () {
 		fi
 	fi
 
+	cd /sys/kernel/config/usb_gadget/g_multi
+	#echo super-speed > max_speed
 	ls /sys/class/udc/ > UDC
 
 	echo "${log} g_multi Created"
