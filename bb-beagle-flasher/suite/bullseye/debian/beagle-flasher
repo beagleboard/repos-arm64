@@ -326,12 +326,12 @@ copy_rootfs () {
 partition_drive () {
 	message="INFO: Erasing: [${destination}]"                                                  ; broadcast
 	flush_cache
-	message="INFO: [dd if=/dev/zero of=${destination} bs=1M count=108 status=progress]"        ; broadcast
-	dd if=/dev/zero of=${destination} bs=1M count=108 status=progress
+	message="INFO: [dd if=/dev/zero of=${destination} bs=1M count=148 status=progress]"        ; broadcast
+	dd if=/dev/zero of=${destination} bs=1M count=148 status=progress
 	message="--------------------------------------------------------------------------------" ; broadcast
 	sync
-	message="INFO: [dd if=${destination} of=/dev/null bs=1M count=108 status=progress]"        ; broadcast
-	dd if=${destination} of=/dev/null bs=1M count=108 status=progress
+	message="INFO: [dd if=${destination} of=/dev/null bs=1M count=148 status=progress]"        ; broadcast
+	dd if=${destination} of=/dev/null bs=1M count=148 status=progress
 	message="--------------------------------------------------------------------------------" ; broadcast
 	sync
 	flush_cache
