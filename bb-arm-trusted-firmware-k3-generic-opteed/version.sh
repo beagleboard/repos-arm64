@@ -4,7 +4,7 @@
 
 package_name="bb-arm-trusted-firmware-k3-generic-opteed"
 debian_pkg_name="${package_name}"
-package_version="2.5.20211014.1"
+package_version="2.5.20211014.2"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,6 @@ debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
 
-bullseye_version="~bullseye+20211015"
+clear_changelog="enable"
+
+bullseye_version="~bullseye+20220106"
