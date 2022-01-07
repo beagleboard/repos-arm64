@@ -1,6 +1,6 @@
-generic-sys-mods (1.20220106.0-0~bullseye+20220106) bullseye; urgency=low
+generic-sys-mods (1.20220106.1-0~bullseye+20220106) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jan 2022 12:02:44 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jan 2022 20:41:45 -0600
 

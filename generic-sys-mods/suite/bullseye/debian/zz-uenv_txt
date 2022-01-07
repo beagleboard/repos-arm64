@@ -26,6 +26,8 @@ if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/firmware/
 		rm -f /boot/firmware/initrd.img || true
 		cp -v /boot/initrd.img-${version} /boot/firmware/initrd.img
+		mkdir -p /boot/firmware/overlays/
+		cp -v /boot/dtbs/${version}/ti/overlays/*.dtbo /boot/firmware/overlays/
 		echo "zz-uenv_txt: Updated extlinux.conf /boot/firmware/ for: [${version}]"
 	fi
 fi
