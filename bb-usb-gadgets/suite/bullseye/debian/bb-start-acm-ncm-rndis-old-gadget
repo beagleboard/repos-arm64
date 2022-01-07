@@ -56,6 +56,9 @@ usb_iproduct="BeagleBone"
 #cpsw_5_mac = usb1 (USB host, pc side)
 
 run_libcomposite () {
+	echo "${log} g_multi FIXME, new board, sleep 5 for a bug to be fixed later..."
+	###FIXME:
+	sleep 5
 	if [ ! -d /sys/kernel/config/usb_gadget/g_multi/ ] ; then
 		echo "${log} Creating g_multi"
 		mkdir -p /sys/kernel/config/usb_gadget/g_multi || true
