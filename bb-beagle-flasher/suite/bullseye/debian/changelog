@@ -1,6 +1,6 @@
-bb-beagle-flasher (1.20220106.1-0~bullseye+20220106) bullseye; urgency=low
+bb-beagle-flasher (1.20220106.2-0~bullseye+20220106) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jan 2022 17:06:32 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jan 2022 21:43:58 -0600
 
