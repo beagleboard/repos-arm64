@@ -17,13 +17,17 @@ generate_header () {
 	echo "Section: misc" >> ./suite/${dist}/debian/${wfile}
 	echo "Priority: optional" >> ./suite/${dist}/debian/${wfile}
 	echo "Maintainer: Robert Nelson <robertcnelson@gmail.com>" >> ./suite/${dist}/debian/${wfile}
-	echo "Build-Depends: debhelper-compat (= ${debhelper})" >> ./suite/${dist}/debian/${wfile}
+	echo "Build-Depends:" >> ./suite/${dist}/debian/${wfile}
+	echo " debhelper-compat (= ${debhelper})" >> ./suite/${dist}/debian/${wfile}
 	echo "Standards-Version: 4.5.0" >> ./suite/${dist}/debian/${wfile}
 	echo "Rules-Requires-Root: no" >> ./suite/${dist}/debian/${wfile}
 	echo "" >> ./suite/${dist}/debian/${wfile}
-	echo "Package: bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
+	echo "Package:" >> ./suite/${dist}/debian/${wfile}
+	echo " bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
-	echo "Depends: tasksel, \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
+	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
+	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
+	echo " , \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
 	echo "Description: BeagleBoard.org Kernel Branches" >> ./suite/${dist}/debian/${wfile}
 	echo " This package contains tasksel information for the BeagleBoard.org Kernel Branch." >> ./suite/${dist}/debian/${wfile}
 }
@@ -33,11 +37,15 @@ generate_kernel_ti () {
 	echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
-	echo "Pre-Depends: linux-image-${latest_kernel}," >> ./suite/${dist}/debian/${wfile}
-	echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
-	echo "Recommends: bb-u-boot-beagleboneai64," >> ./suite/${dist}/debian/${wfile}
+	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+	echo " linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
+	echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
+	echo " , bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+	echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+	echo " bb-u-boot-beagleboneai64" >> ./suite/${dist}/debian/${wfile}
 	if [ "x${sgxj721e}" = "xenabled" ] ; then
-		echo "            ti-sgx-j721e-modules-${latest_kernel}," >> ./suite/${dist}/debian/${wfile}
+		echo " , ti-sgx-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	fi
 	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
