@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20220106: add bits..."
+version_message="1.20220112.0: add cleanup grow_partition.service and beagle-flasher-init-shutdown.service..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -126,6 +126,9 @@ example_failure () {
 	message="rfs_partition=dual"                                                               ; broadcast
 	message="rfs_boot_startmb=1"                                                               ; broadcast
 	message="rfs_boot_size_mb=128"                                                             ; broadcast
+	message="bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-emmc.sh"                  ; broadcast
+	message="flash_back=bbai64-emmc-to-microsd"                                                ; broadcast
+	message="extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/emmc-extlinux.conf"                 ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
 	exit 2
 }
@@ -141,13 +144,6 @@ write_failure () {
 
 check_running_system () {
 	has_usr_leds="enable"
-	#machine=$(cat /proc/device-tree/model | sed "s/ /_/g" | tr -d '\000')
-
-	#case "${machine}" in
-	#	TI_AM5728_BeagleBoard*)
-	#		unset has_usr_leds
-	#		;;
-	#esac
 
 	if [ "x${has_usr_leds}" = "xenable" ] ; then
 		cylon_leds & CYLON_PID=$!
@@ -302,6 +298,14 @@ copy_rootfs () {
 		message="INFO: [cat /tmp/rootfs/etc/default/generic-sys-mods]"                             ; broadcast
 		message="`cat /tmp/rootfs/etc/default/generic-sys-mods`"                                   ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
+	fi
+
+	if [ -f /tmp/rootfs/etc/systemd/system/multi-user.target.wants/beagle-flasher-init-shutdown.service ] ; then
+		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/beagle-flasher-init-shutdown.service || true
+	fi
+
+	if [ -f /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service ] ; then
+		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service || true
 	fi
 
 	message="Copying: ${source}p${media_rootfs} -> ${destination}p${media_rootfs} complete"    ; broadcast

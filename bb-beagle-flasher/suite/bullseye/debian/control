@@ -17,8 +17,8 @@ Depends:
  , ${misc:Depends}
  , systemd (>= 230)
  , bash
- , dosfstools
  , coreutils
+ , dosfstools
  , e2fsprogs
  , fdisk
  , mount
