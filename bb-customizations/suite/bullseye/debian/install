@@ -4,3 +4,4 @@ debian/86-remoteproc-noroot.rules /etc/udev/rules.d/
 debian/87-iio-noroot.rules /etc/udev/rules.d/
 debian/beaglebg.jpg /usr/share/backgrounds/bbb.io/
 debian/beagleboard-logo.svg /usr/share/backgrounds/bbb.io/
+debian/xfce4-desktop.xml /etc/bbb.io/templates/xfce4/
