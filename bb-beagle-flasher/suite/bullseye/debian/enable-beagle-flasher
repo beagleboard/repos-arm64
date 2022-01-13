@@ -7,7 +7,8 @@ if ! id | grep -q root; then
 fi
 
 if [ -f /etc/default/beagle-flasher ] ; then
-	sed -i -e 's:quiet:init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
+	#sed -i -e 's:quiet:init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
+	sed -i -e 's:net.ifnames=0:net.ifnames=0 init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
 	systemctl enable beagle-flasher-init-shutdown.service || true
 	systemctl disable grow_partition.service || true
 else
