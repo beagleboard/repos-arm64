@@ -2,3 +2,5 @@ debian/10-of-symlink.rules /etc/udev/rules.d/
 debian/80-i2c-noroot.rules /etc/udev/rules.d/
 debian/86-remoteproc-noroot.rules /etc/udev/rules.d/
 debian/87-iio-noroot.rules /etc/udev/rules.d/
+debian/beaglebg.jpg /usr/share/backgrounds/bbb.io/
+debian/beagleboard-logo.svg /usr/share/backgrounds/bbb.io/
