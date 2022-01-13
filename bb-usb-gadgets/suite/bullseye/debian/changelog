@@ -1,6 +1,6 @@
-bb-usb-gadgets (1.20220112.6-0~bullseye+20220112) bullseye; urgency=low
+bb-usb-gadgets (1.20220112.7-0~bullseye+20220112) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 12 Jan 2022 16:54:11 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 12 Jan 2022 19:55:01 -0600
 
