@@ -8,7 +8,8 @@ Homepage: https://github.com/beagleboard/j721e-evm
 
 Package: bb-customizations
 Architecture: arm64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
 Description: beagleboard.org customizations
  beagleboard.org customizations
-
