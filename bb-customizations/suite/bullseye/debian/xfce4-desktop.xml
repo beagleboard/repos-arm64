@@ -14,7 +14,7 @@
         <property name="last-single-image" type="empty"/>
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="1"/>
+          <property name="image-style" type="int" value="4"/>
           <property name="last-image" type="string" value="/usr/share/backgrounds/bbb.io/beagleboard-logo.svg"/>
           <property name="rgba1" type="array">
             <value type="double" value="0.207843"/>
