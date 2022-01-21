@@ -2,9 +2,9 @@
 
 #https://github.com/beagleboard/k3-image-gen
 
-package_name="bb-k3-image-gen-j721e-evm"
+package_name="bb-k3-image-gen-j721e-evm-next"
 debian_pkg_name="${package_name}"
-package_version="1.20210626.6"
+package_version="1.20211206.0"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20211015"
+bullseye_version="~bullseye+20220121"
