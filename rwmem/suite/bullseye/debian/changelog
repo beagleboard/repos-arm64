@@ -1,6 +1,6 @@
-rwmem (2.0-git20210806.0-0~bullseye+20220125) bullseye; urgency=low
+rwmem (2.0-git20210806.1-0~bullseye+20220125) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jan 2022 16:49:40 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jan 2022 16:54:01 -0600
 
