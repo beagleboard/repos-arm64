@@ -1,0 +1,21 @@
+Source: beagleconnect-msp430
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 10)
+ , ca-certificates
+ , git
+ , python2-dev
+ , python-tk
+Standards-Version: 4.5.1
+
+Package: beagleconnect-msp430
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , python2-minimal
+ , python-tk
+Description: beagleboard.org beagleconnect msp430 tools
+ beagleboard.org beagleconnect msp430 tools
