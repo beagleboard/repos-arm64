@@ -1,3 +1,63 @@
+mesa (21.0.2-1rcnee0~bullseye+20220205) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 05 Feb 2022 11:08:08 -0600
+
+mesa (21.0.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * drisw-move-zink-down.diff: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 08 Apr 2021 13:57:35 +0300
+
+mesa (21.0.1-2) experimental; urgency=medium
+
+  * Move zink down the list below the sw drivers. (LP: #1920665)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 07 Apr 2021 13:18:01 +0300
+
+mesa (21.0.1-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 25 Mar 2021 21:12:09 +0200
+
+mesa (21.0.0-1) experimental; urgency=medium
+
+  * New upstream release. (LP: #1917763)
+  * control: Add directx-headers-dev to build-depends for amd64 and arm64
+    on Linux, which is what WSL2 currently supports.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 15 Mar 2021 19:22:33 +0200
+
+mesa (21.0.0~rc5-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 22 Feb 2021 10:32:24 +0200
+
+mesa (21.0.0~rc4-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 08 Feb 2021 13:01:20 +0200
+
+mesa (21.0.0~rc3-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 30 Jan 2021 12:25:57 +0200
+
+mesa (21.0.0~rc2-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * lavapipe-Defer-lavapipe-warning-to-CreateDevice.patch: Dropped,
+    upstream.
+  * rules: Fix osmesa confflag to use a boolean.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 22 Jan 2021 13:44:42 +0200
+
 mesa (20.3.5-1) unstable; urgency=medium
 
   * New upstream release.
