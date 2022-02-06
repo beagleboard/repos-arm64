@@ -1,8 +1,66 @@
-mesa (21.0.2-1rcnee0~bullseye+20220205) bullseye; urgency=low
+mesa (21.1.6-1rcnee0~bullseye+20220206) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 05 Feb 2022 11:08:08 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 06 Feb 2022 12:31:42 -0600
+
+mesa (21.1.6-1) experimental; urgency=medium
+
+  * New upstream release.
+  * fix-ftbfs.diff: Dropped, fixed upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 03 Aug 2021 13:10:20 +0300
+
+mesa (21.1.4-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 Jul 2021 16:26:26 +0300
+
+mesa (21.1.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * iris-avoid-abort-if-enomem.diff: Don't abort when out of memory.
+    (LP: #1918855)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 18 Jun 2021 14:33:09 +0300
+
+mesa (21.1.0-4) experimental; urgency=medium
+
+  * fix-ftbfs.diff: Fix build on armel/armhf/mipsel.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 17 May 2021 10:38:04 +0300
+
+mesa (21.1.0-3) experimental; urgency=medium
+
+  * rules: Drop the rule to clean up vulkan headers, not needed anymore.
+  * rules: Update vulkan layer option selection.
+  * libgbm1.symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 06 May 2021 20:25:50 +0300
+
+mesa (21.1.0-2) experimental; urgency=medium
+
+  * control: Bump libdrm-dev build-dep.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 06 May 2021 16:46:12 +0300
+
+mesa (21.1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Build with llvm-12.
+  * path_max.diff: Refreshed.
+  * rules: vulkan_intel.h is gone.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 06 May 2021 16:05:12 +0300
+
+mesa (21.0.3-1) experimental; urgency=medium
+
+  * New upstream release.
+  * rules: Limit d3d12 by DEB_HOST_ARCH, not DEB_HOST_ARCH_CPU. (Closes:
+    #986660)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 22 Apr 2021 10:01:11 +0300
 
 mesa (21.0.2-1) experimental; urgency=medium
 

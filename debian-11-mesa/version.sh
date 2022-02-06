@@ -20,4 +20,4 @@ debian_untar=""
 debian_patch="${package_name}_${debian_version}.diff.gz"
 local_patch="rcnee0"
 
-bullseye_version="~bullseye+20220205"
+bullseye_version="~bullseye+20220206"
