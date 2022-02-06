@@ -2,11 +2,11 @@
 
 #mirror="http://http.debian.net/debian"
 #https://snapshot.debian.org/package/mesa/
-mirror="https://snapshot.debian.org/archive/debian/20210408T151518Z/"
+mirror="https://snapshot.debian.org/archive/debian/20210803T153742Z/"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="21.0.2"
+package_version="21.1.6"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="${package_name}-${package_version}"
 
