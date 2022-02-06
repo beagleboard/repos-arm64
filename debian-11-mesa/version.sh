@@ -1,12 +1,10 @@
 #!/bin/bash -e
 
-#mirror="http://http.debian.net/debian"
-#https://snapshot.debian.org/package/mesa/
-mirror="https://snapshot.debian.org/archive/debian/20211125T203520Z/"
+mirror="http://http.debian.net/debian"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="21.2.6"
+package_version="21.3.5"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="${package_name}-${package_version}"
 

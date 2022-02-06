@@ -1,8 +1,56 @@
-mesa (21.2.6-1rcnee0~bullseye+20220206) bullseye; urgency=low
+mesa (21.3.5-1rcnee0~bullseye+20220206) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 06 Feb 2022 14:02:21 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 06 Feb 2022 15:06:32 -0600
+
+mesa (21.3.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * iris-inter-context-busy-tracking.diff: Fix a regression causing
+    flickering and corruption on Intel. (Closes: #1003987)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 28 Jan 2022 15:49:51 +0200
+
+mesa (21.3.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Switch to libglvnd-core-dev build-dep. (Closes: #1003264)
+  * freedreno-afuc-Disable-the-disassembler-on-32-bit-bu.diff: Dropped,
+    upstream.
+  * Build with llvm-13 again.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 13 Jan 2022 14:35:37 +0200
+
+mesa (21.3.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Enable turnip, freedreno vulkan driver.
+  * freedreno-afuc-Disable-the-disassembler-on-32-bit-bu.diff: Fix ftbfs
+    on armhf.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 04 Jan 2022 10:30:13 +0200
+
+mesa (21.3.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 25 Nov 2021 16:35:02 +0200
+
+mesa (21.3.0~rc5-1) experimental; urgency=medium
+
+  * New upstream prerelease.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 17 Nov 2021 10:42:29 +0200
+
+mesa (21.3.0~rc1-1) experimental; urgency=medium
+
+  * New upstream prerelease.
+  * fix-python-shebang.diff: Dropped, upstream.
+  * libgbm1.symbols: Updated.
+  * rules: Enable crocus gallium driver. (LP: #1947200)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Oct 2021 11:40:14 +0300
 
 mesa (21.2.6-1) unstable; urgency=medium
 
