@@ -28,3 +28,13 @@ Recommends:
  , ti-sgx-j721e-modules-5.10.90-ti-arm64-r33
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti in Debian.
+
+Package: bbb.io-kernel-mainline
+Section: metapackages
+Architecture: all
+Pre-Depends: linux-image-5.17.0-rc3-arm64-r0
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks (= ${source:Version})
+Description: BeagleBoard.org Mainline
+ This metapackage will install Mainline in Debian.

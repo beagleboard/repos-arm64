@@ -49,6 +49,19 @@ generate_kernel_ti () {
 	echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
 }
 
+generate_mainline_kernel () {
+	echo "" >> ./suite/${dist}/debian/${wfile}
+	echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
+	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
+	echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
+	echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
+	echo " , bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+	echo "Description: BeagleBoard.org Mainline" >> ./suite/${dist}/debian/${wfile}
+	echo " This metapackage will install Mainline in Debian." >> ./suite/${dist}/debian/${wfile}
+}
+
 do_bullseye () {
 	arch="arm64"
 	dist="bullseye"
@@ -58,7 +71,8 @@ do_bullseye () {
 
 	sgxj721e="enabled"
 
-	msg="5.10-ti" ; var="ti-arm64" ; ver="LTS510" ; current_kernel ; generate_kernel_ti
+	msg="5.10-ti"  ; var="ti-arm64" ; ver="LTS510" ; current_kernel ; generate_kernel_ti
+	msg="mainline" ; var="arm64"    ; ver="STABLE" ; current_kernel ; generate_mainline_kernel
 }
 
 do_bullseye
