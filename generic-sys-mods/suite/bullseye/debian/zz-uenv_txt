@@ -19,9 +19,9 @@ if [ -f /boot/firmware/uEnv.txt ] ; then
 fi
 
 if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
-	if [ -f /boot/Image-${version} ] ; then
+	if [ -f /boot/vmlinuz-${version} ] ; then
 		rm -f /boot/firmware/Image || true
-		cp -v /boot/Image-${version} /boot/firmware/Image
+		cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
 		rm -rf /boot/firmware/*.dtb || true
 		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/firmware/
 		rm -f /boot/firmware/initrd.img || true
