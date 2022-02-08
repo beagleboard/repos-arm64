@@ -23,11 +23,11 @@ if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 		rm -f /boot/firmware/Image || true
 		cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
 		rm -rf /boot/firmware/*.dtb || true
-		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/firmware/
+		cp -v /usr/lib/linux-image-${version}/ti/k3-j721e-*.dtb /boot/firmware/ || true
 		rm -f /boot/firmware/initrd.img || true
-		cp -v /boot/initrd.img-${version} /boot/firmware/initrd.img
+		cp -v /boot/initrd.img-${version} /boot/firmware/initrd.img || true
 		mkdir -p /boot/firmware/overlays/
-		cp -v /boot/dtbs/${version}/ti/overlays/*.dtbo /boot/firmware/overlays/
+		cp -v /usr/lib/linux-image-${version}/ti/overlays/*.dtbo /boot/firmware/overlays/ || true
 		echo "zz-uenv_txt: Updated extlinux.conf /boot/firmware/ for: [${version}]"
 	fi
 fi
