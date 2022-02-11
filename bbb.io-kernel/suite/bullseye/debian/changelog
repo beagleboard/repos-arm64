@@ -1,6 +1,6 @@
-bbb.io-kernel (1.20220207.0-0~bullseye+20220207) bullseye; urgency=low
+bbb.io-kernel (1.20220210.0-0~bullseye+20220210) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 07 Feb 2022 13:20:57 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 10 Feb 2022 22:47:01 -0600
 
