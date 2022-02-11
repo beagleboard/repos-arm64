@@ -1,0 +1,30 @@
+Source: bb-u-boot-beagleboneai64-beta
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , bb-k3-image-gen-j721e-evm,
+ , bb-arm-trusted-firmware-k3-generic-opteed
+ , bb-optee-os-k3-j721e
+ , bc,
+ , bison
+ , ca-certificates
+ , device-tree-compiler
+ , flex
+ , gcc-arm-linux-gnueabihf
+ , git
+ , libssl-dev
+ , u-boot-tools
+Standards-Version: 4.5.1
+Homepage: https://github.com/beagleboard/u-boot
+
+Package: bb-u-boot-beagleboneai64-beta
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , bb-k3-image-gen-j721e-evm
+ , mmc-utils
+Description: beagleboard.org u-boot for beagleboneai64
+ beagleboard.org u-boot for beagleboneai64

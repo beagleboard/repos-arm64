@@ -1,0 +1,11 @@
+debian/install.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/convert-to-extlinux-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/convert-to-extlinux-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-beagleboneai64-beta
+r5/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64-beta
+a72/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64-beta
+a72/u-boot.img /opt/u-boot/bb-u-boot-beagleboneai64-beta
