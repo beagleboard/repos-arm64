@@ -26,6 +26,7 @@ generate_header () {
 	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
+	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
 	echo " , \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
 	echo "Description: BeagleBoard.org Kernel Branches" >> ./suite/${dist}/debian/${wfile}
 	echo " This package contains tasksel information for the BeagleBoard.org Kernel Branch." >> ./suite/${dist}/debian/${wfile}
