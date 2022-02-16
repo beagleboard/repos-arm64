@@ -15,4 +15,6 @@ echo "ROOT_PARTITION=${ROOT_PARTITION}" >> /etc/default/generic-sys-mods
 
 chmod +x /etc/kernel/postinst.d/zz-uenv_txt || true
 
+cp -vf /etc/bbb.io/templates/profile /etc/profile
+
 #DEBHELPER#

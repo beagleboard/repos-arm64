@@ -1,4 +1,5 @@
 debian/bb-growpart /usr/bin
 debian/bb-resizefs /usr/bin
 debian/bb-setup-mac-address /usr/bin
+debian/profile /etc/bbb.io/templates/
 debian/zz-uenv_txt /etc/kernel/postinst.d/
