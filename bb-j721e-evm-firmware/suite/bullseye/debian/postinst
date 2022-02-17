@@ -12,15 +12,15 @@ check_n_ln () {
 	fi
 }
 
-wfirm="j7-c66_0-fw" ; check_n_ln
-wfirm="j7-c66_1-fw" ; check_n_ln
-wfirm="j7-c71_0-fw" ; check_n_ln
-wfirm="j7-main-r5f0_0-fw" ; check_n_ln
-wfirm="j7-main-r5f0_1-fw" ; check_n_ln
-wfirm="j7-main-r5f1_0-fw" ; check_n_ln
-wfirm="j7-main-r5f1_1-fw" ; check_n_ln
-wfirm="j7-mcu-r5f0_0-fw" ; check_n_ln
-wfirm="j7-mcu-r5f0_1-fw" ; check_n_ln
+#wfirm="j7-c66_0-fw" ; check_n_ln
+#wfirm="j7-c66_1-fw" ; check_n_ln
+#wfirm="j7-c71_0-fw" ; check_n_ln
+#wfirm="j7-main-r5f0_0-fw" ; check_n_ln
+#wfirm="j7-main-r5f0_1-fw" ; check_n_ln
+#wfirm="j7-main-r5f1_0-fw" ; check_n_ln
+#wfirm="j7-main-r5f1_1-fw" ; check_n_ln
+#wfirm="j7-mcu-r5f0_0-fw" ; check_n_ln
+#wfirm="j7-mcu-r5f0_1-fw" ; check_n_ln
 
 case "$1" in
 	configure)
