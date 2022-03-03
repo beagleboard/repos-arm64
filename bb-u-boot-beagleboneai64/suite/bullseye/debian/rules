@@ -5,7 +5,7 @@
 export DH_VERBOSE=1
 
 #U-Boot
-UB_TAG=v2021.01-ti-08.00.00.004
+UB_TAG=v2021.01-ti-08.01.00.006
 UB_CONFIG=j721e_evm_
 
 override_dh_strip:
