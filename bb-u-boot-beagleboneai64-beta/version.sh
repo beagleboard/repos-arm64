@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-beagleboneai64-beta"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20220302.1"
+package_version="2021.10.20220303.0"
 package_source=""
 src_dir=""
 
