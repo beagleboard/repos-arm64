@@ -12,6 +12,7 @@ Architecture: arm64
 Pre-Depends:
  ${misc:Pre-Depends}
  , bbb.io-vsx-examples
+ , libatomic1
 Depends:
  systemd (>= 230)
 Breaks: npm
