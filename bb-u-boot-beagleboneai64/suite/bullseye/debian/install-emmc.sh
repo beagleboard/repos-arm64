@@ -20,11 +20,4 @@ if [ -b /dev/mmcblk0 ] ; then
 	dd if=/dev/zero of=/dev/mmcblk0boot0 seek=3 count=6 bs=128k
 	dd if=/dev/zero of=/dev/mmcblk0boot0 seek=9 count=16 bs=128k
 	dd if=/dev/zero of=/dev/mmcblk0boot0 seek=25 count=3 bs=128k
-
-	if [ -d /boot/firmware/ ] ; then
-		cp -v /opt/u-boot/bb-k3-image-gen-j721e-evm/sysfw.itb /boot/firmware/
-		cp -v ${wdir}/tiboot3.bin /boot/firmware/
-		cp -v ${wdir}/tispl.bin /boot/firmware/
-		cp -v ${wdir}/u-boot.img /boot/firmware/
-	fi
 fi
