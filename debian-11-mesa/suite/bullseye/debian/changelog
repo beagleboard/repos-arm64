@@ -1,20 +1,14 @@
-mesa (22.0.0~rc2-1rcnee2~bullseye+20220309) bullseye; urgency=low
+mesa (22.0.0-1rcnee0~bullseye+20220315) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 09 Mar 2022 10:59:38 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 15 Mar 2022 08:48:11 -0500
 
-mesa (22.0.0~rc2-1rcnee1~bullseye+20220307) bullseye; urgency=low
+mesa (22.0.0-1) experimental; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 07 Mar 2022 20:07:24 -0600
-
-mesa (22.0.0~rc2-1rcnee0~bullseye+20220307) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 07 Mar 2022 19:38:37 -0600
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 13 Mar 2022 20:46:36 +0200
 
 mesa (22.0.0~rc2-1) experimental; urgency=medium
 
