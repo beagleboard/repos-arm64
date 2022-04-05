@@ -178,6 +178,7 @@ start_run () {
 	dist="debian"
 	deb_arch="arm64"
 	suite="bullseye" ; runner
+	suite="focal" ; runner
 }
 
 start_run

@@ -1,4 +1,4 @@
-ti-rpmsg-char (0.4.1.20220222.1-0~bullseye+20220405) bullseye; urgency=low
+ti-rpmsg-char (0.4.1.20220222.1-0~focal+20220405) focal; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
