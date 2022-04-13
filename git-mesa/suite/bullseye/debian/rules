@@ -13,7 +13,7 @@ DEB_HOST_ARCH_OS   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 DEB_HOST_ARCH_CPU  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
 # for finding the correct llvm-config when meson doesn't know about it yet
-export PATH:=/usr/lib/llvm-13/bin/:$(PATH)
+export PATH:=/usr/lib/llvm-14/bin/:$(PATH)
 
 export DEB_BUILD_MAINT_OPTIONS=optimize=-lto
 
@@ -44,7 +44,6 @@ VULKAN_DRIVERS =
 
 confflags_DRI3 = -Ddri3=disabled
 confflags_OSMESA =  -Dosmesa=true
-confflags_SSE2 = -Dsse2=true
 
 # hurd doesn't do direct rendering
 ifeq ($(DEB_HOST_ARCH_OS), hurd)
@@ -134,9 +133,6 @@ else
   endif
 endif
 
-ifeq ($(DEB_HOST_ARCH), i386)
-	confflags_SSE2 = -Dsse2=false
-endif
 
 empty:=
 space := $(empty) $(empty)
@@ -168,7 +164,6 @@ confflags += \
 	$(confflags_GALLIUM) \
 	$(confflags_GLES) \
 	$(confflags_OSMESA) \
-	$(confflags_SSE2) \
 	$(confflags_VALGRIND) \
 	$(confflags_VULKAN)
 
