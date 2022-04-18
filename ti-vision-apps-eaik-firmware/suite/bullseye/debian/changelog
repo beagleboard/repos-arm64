@@ -1,0 +1,6 @@
+ti-vision-apps-eaik-firmware (1.20220418.0-0~bullseye+20220418) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 18 Apr 2022 16:24:18 -0500
+

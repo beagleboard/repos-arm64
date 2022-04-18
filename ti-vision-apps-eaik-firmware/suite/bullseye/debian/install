@@ -1,0 +1,5 @@
+debian/vx_app_rtos_linux_c6x_1.out /lib/firmware/vision_apps_eaik/
+debian/vx_app_rtos_linux_c6x_2.out /lib/firmware/vision_apps_eaik/
+debian/vx_app_rtos_linux_c7x_1.out /lib/firmware/vision_apps_eaik/
+debian/vx_app_rtos_linux_mcu2_0.out /lib/firmware/vision_apps_eaik/
+debian/vx_app_rtos_linux_mcu2_1.out /lib/firmware/vision_apps_eaik/
