@@ -17,4 +17,4 @@ debian_patch=""
 
 dist="debian"
 suite="buster"
-deb_arch="armhf"
+deb_arch="arm64"
