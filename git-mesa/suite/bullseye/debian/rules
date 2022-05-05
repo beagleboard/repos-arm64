@@ -44,6 +44,7 @@ VULKAN_DRIVERS =
 
 confflags_DRI3 = -Ddri3=disabled
 confflags_OSMESA =  -Dosmesa=true
+confflags_SSE2 = -Dsse2=true
 
 # hurd doesn't do direct rendering
 ifeq ($(DEB_HOST_ARCH_OS), hurd)
@@ -85,6 +86,7 @@ else
 		# svga needs xa state tracker
 		confflags_GALLIUM += -Dgallium-xa=enabled
 		VULKAN_DRIVERS += intel
+		confflags_VULKAN += intel-nullhw
 	endif
 
 	# Non-Linux ports lack epoll, so wayland isn't ready yet:
@@ -133,6 +135,9 @@ else
   endif
 endif
 
+ifeq ($(DEB_HOST_ARCH), i386)
+	confflags_SSE2 = -Dsse2=false
+endif
 
 empty:=
 space := $(empty) $(empty)
@@ -164,6 +169,7 @@ confflags += \
 	$(confflags_GALLIUM) \
 	$(confflags_GLES) \
 	$(confflags_OSMESA) \
+	$(confflags_SSE2) \
 	$(confflags_VALGRIND) \
 	$(confflags_VULKAN)
 
@@ -174,14 +180,8 @@ override_dh_clean:
 	rm -rf $$(find -name Makefile.in)
 	rm -rf bin/install-sh bin/ltmain.sh
 	for file in debian/*.in; do rm -f $${file%%.in}; done
-	rm -rf src/amd/compiler/__pycache__/ src/amd/registers/__pycache__
-	rm -rf src/amd/vulkan/*.pyc src/amd/vulkan/__pycache__/
-	rm -rf src/compiler/nir/*.pyc src/compiler/nir/__pycache__/
-	rm -rf src/egl/generate/*.pyc src/egl/generate/__pycache__/
-	rm -rf src/gallium/auxiliary/util/*.pyc src/gallium/auxiliary/util/__pycache__/
-	rm -rf src/intel/vulkan/*.pyc src/intel/vulkan/__pycache__/
-	rm -rf src/mapi/glapi/gen/*.pyc src/mapi/glapi/gen/__pycache__/ src/mapi/new/__pycache__/
-	rm -rf src/mesa/main/*.pyc src/mesa/main/__pycache__/
+	find -name '*.pyc' -delete
+	find -name '__pycache__' -delete
 	dh_clean
 
 override_dh_auto_configure:
