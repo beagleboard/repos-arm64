@@ -1,0 +1,19 @@
+Source: ti-c7000-cgt-v2.1
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , lsb-release
+ , wget
+Standards-Version: 4.5.1
+Homepage: https://www.ti.com/tool/download/C7000-CGT/2.1.0.LTS
+
+Package: ti-c7000-cgt-v2.1
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Description: TI C7000 C/C++ CODE GENERATION TOOLS
+ TI C7000 C/C++ CODE GENERATION TOOLS
+
