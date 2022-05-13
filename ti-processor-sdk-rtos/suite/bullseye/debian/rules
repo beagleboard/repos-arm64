@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+wfile1="ti-processor-sdk-rtos-j721e-evm-08_01_00_13.tar.gz"
+wfile2="opkg-utils-master.tar.gz"
+
+# Disable dh_link
+override_dh_link:
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/ ; tar xf ./debian/$(wfile1) -C ./tmp/ ; tar xf ./debian/$(wfile2) -C ./tmp/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/
+
+%:
+	dh $@
