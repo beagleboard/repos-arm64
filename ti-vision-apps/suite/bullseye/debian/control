@@ -1,0 +1,17 @@
+Source: ti-vision-apps
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , lsb-release
+Standards-Version: 4.5.1
+
+Package: ti-vision-apps
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Description: TI vision-apps
+ TI vision-apps
+

@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+wfile="tivision_apps.tar.xz"
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/ ; tar xf ./debian/$(wfile) -C ./tmp/
