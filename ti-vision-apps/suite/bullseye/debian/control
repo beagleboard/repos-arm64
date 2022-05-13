@@ -10,8 +10,6 @@ Standards-Version: 4.5.1
 Package: ti-vision-apps
 Architecture: arm64
 Depends:
- ${shlibs:Depends}
- , ${misc:Depends}
+ ${misc:Depends}
 Description: TI vision-apps
  TI vision-apps
-
