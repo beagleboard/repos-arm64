@@ -2,7 +2,7 @@
 
 package_name="ti-processor-sdk-rtos"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.13.2"
+package_version="8.1.0.13.3"
 package_source=""
 src_dir=""
 
