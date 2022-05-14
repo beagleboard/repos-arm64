@@ -1,0 +1,21 @@
+Source: ti-tensorflow-8.1
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , bash
+ , ca-certificates
+ , git
+ , python3-pip
+Standards-Version: 4.5.1
+
+Package: ti-tensorflow-8.1
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+ , ti-vision-apps
+ , ti-processor-sdk-rtos
+ , ti-processor-sdk-rtos-meta-psdkla
+Description: TI vision-apps
+ TI vision-apps
