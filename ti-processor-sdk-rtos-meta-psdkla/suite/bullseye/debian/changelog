@@ -1,0 +1,6 @@
+ti-processor-sdk-rtos-meta-psdkla (8.1.0.0-0~bullseye+20220513) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 May 2022 19:51:21 -0500
+

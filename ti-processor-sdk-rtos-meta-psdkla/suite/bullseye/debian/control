@@ -1,14 +1,18 @@
-Source: ti-vision-apps
+Source: ti-processor-sdk-rtos-meta-psdkla
 Section: misc
 Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
+ , ca-certificates
+ , git
 Standards-Version: 4.5.1
 
-Package: ti-vision-apps
+Package: ti-processor-sdk-rtos-meta-psdkla
 Architecture: arm64
 Depends:
  ${misc:Depends}
+ , ti-vision-apps
+ , ti-processor-sdk-rtos
 Description: TI vision-apps
  TI vision-apps
