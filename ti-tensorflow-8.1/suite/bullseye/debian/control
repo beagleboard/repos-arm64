@@ -5,11 +5,13 @@ Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
  , bash
+ , build-essential
  , ca-certificates
  , curl
  , git
  , unzip
  , python3-pip
+ , zlib1g-dev
 Standards-Version: 4.5.1
 
 Package: ti-tensorflow-8.1
