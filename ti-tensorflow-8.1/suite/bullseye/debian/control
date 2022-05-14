@@ -8,6 +8,7 @@ Build-Depends:
  , ca-certificates
  , curl
  , git
+ , unzip
  , python3-pip
 Standards-Version: 4.5.1
 
