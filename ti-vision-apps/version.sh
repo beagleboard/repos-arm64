@@ -2,7 +2,7 @@
 
 package_name="ti-vision-apps"
 debian_pkg_name="${package_name}"
-package_version="8.2.0.5.2"
+package_version="8.2.0.5.3"
 package_source=""
 src_dir=""
 
