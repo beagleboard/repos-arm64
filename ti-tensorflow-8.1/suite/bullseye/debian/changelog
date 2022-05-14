@@ -1,6 +1,6 @@
-ti-tensorflow-8.1 (8.1.0.2-0~bullseye+20220513) bullseye; urgency=low
+ti-tensorflow-8.1 (8.1.0.3-0~bullseye+20220513) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 May 2022 20:16:17 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 May 2022 20:21:09 -0500
 
