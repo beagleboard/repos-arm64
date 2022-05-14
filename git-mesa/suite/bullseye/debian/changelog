@@ -1,14 +1,15 @@
-mesa (22.1.0-git20210510.0-0~bullseye+20220511) bullseye; urgency=low
+mesa (22.1.0-git20210510.1-0~bullseye+20220513) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 11 May 2022 08:20:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 May 2022 20:43:31 -0500
 
-mesa (22.1.0-git20210504.1-0~bullseye+20220505) bullseye; urgency=low
+mesa (22.1.0~rc5-1) experimental; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release candidate.
+  * rules: Fix enabling intel-nullhw, reorganize setting vulkan-layers.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 May 2022 10:28:11 -0500
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 13 May 2022 12:09:18 +0300
 
 mesa (22.1.0~rc3-1) experimental; urgency=medium
 
