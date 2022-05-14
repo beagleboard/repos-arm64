@@ -10,14 +10,13 @@ Build-Depends:
  , cmake
  , git
  , libtool
- , unzip
  , python3-dev
+ , python3-nump
  , python3-pip
  , python3-pybind11
+ , swig
+ , unzip
  , zlib1g-dev
- , ti-vision-apps
- , ti-processor-sdk-rtos
- , ti-processor-sdk-rtos-meta-psdkla
 Standards-Version: 4.5.1
 
 Package: ti-tensorflow-8.1
