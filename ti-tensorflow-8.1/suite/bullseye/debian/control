@@ -11,6 +11,7 @@ Build-Depends:
  , git
  , unzip
  , python3-pip
+ , python3-pybind11
  , zlib1g-dev
 Standards-Version: 4.5.1
 
