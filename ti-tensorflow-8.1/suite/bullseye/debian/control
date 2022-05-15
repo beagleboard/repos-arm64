@@ -8,6 +8,7 @@ Build-Depends:
  , ca-certificates
  , curl
  , cmake
+ , dh-python
  , git
  , libtool
  , python3-dev
