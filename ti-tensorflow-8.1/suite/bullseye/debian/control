@@ -25,7 +25,6 @@ Architecture: arm64
 Depends:
  ${misc:Depends}
  , ti-vision-apps
- , ti-processor-sdk-rtos
- , ti-processor-sdk-rtos-meta-psdkla
+ , python3-numpy
 Description: TI vision-apps
  TI vision-apps
