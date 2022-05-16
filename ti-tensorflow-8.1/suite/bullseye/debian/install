@@ -1,1 +1,3 @@
+./tmp/opt/tensorflow/tensorflow/lite/tools/make/gen/linux_aarch64/lib/*.a /usr/lib
+./tmp/opt/tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip/tmp/usr/* /usr
 tmp/opt/* /opt

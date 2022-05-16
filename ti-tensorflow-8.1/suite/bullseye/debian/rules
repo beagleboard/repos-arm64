@@ -24,7 +24,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.1 --depth 1 https://github.com/TexasInstruments/tensorflow.git ./tmp/opt/tensorflow/ ; mkdir -p ./tmp/opt/tensorflow/lite/tools/make/downloads/flatbuffers ; tar xf ./debian/$(wfile) --strip-components=1 -C ./tmp/opt/tensorflow/lite/tools/make/downloads/flatbuffers
 	python3 -m pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
 	cd ./tmp/opt/tensorflow/tensorflow/lite/tools/make/ ; /bin/bash ./download_dependencies.sh
-	cd ./tmp/opt/tensorflow/ ; make -f tensorflow/lite/tools/make/Makefile ; cp -v ./tensorflow/lite/tools/make/gen/linux_aarch64/lib/libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y tensorflow/lite/tools/pip_package/build_pip_package.sh
+	cd ./tmp/opt/tensorflow/ ; make -f tensorflow/lite/tools/make/Makefile ; cp -v ./tensorflow/lite/tools/make/gen/linux_aarch64/lib/libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y tensorflow/lite/tools/pip_package/build_pip_package.sh ; cd ./tmp/opt/tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip ; dpkg-deb -xv python3-tflite-runtime_2.4.0-1_arm64.deb ./tmp/
 
 %:
 	dh $@
