@@ -26,5 +26,7 @@ Depends:
  ${misc:Depends}
  , ti-vision-apps
  , python3-numpy
+Breaks: python3-tflite-runtime
+Conflicts: python3-tflite-runtime
 Description: TI vision-apps
  TI vision-apps
