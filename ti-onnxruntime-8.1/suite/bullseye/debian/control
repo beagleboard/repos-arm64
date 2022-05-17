@@ -10,6 +10,7 @@ Build-Depends:
  , git
  , python3-dev
  , python3-flake8
+ , python3-numpy
  , python3-pip
  , unzip
 Standards-Version: 4.5.1

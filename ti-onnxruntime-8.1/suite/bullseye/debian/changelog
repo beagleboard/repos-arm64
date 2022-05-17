@@ -1,6 +1,6 @@
-ti-onnxruntime-8.1 (8.1.0.5-0~bullseye+20220517) bullseye; urgency=low
+ti-onnxruntime-8.1 (8.1.0.6-0~bullseye+20220517) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 May 2022 12:34:14 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 May 2022 12:39:59 -0500
 
