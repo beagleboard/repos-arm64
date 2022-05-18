@@ -20,5 +20,7 @@ Package: ti-onnxruntime-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}
+ , python3-numpy
+ , python3-protobuf
 Description: TI vision-apps
  TI vision-apps
