@@ -1,0 +1,18 @@
+Source: ti-neo-ai-dlr-8.1
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , bash
+ , ca-certificates
+ , cmake
+ , git
+Standards-Version: 4.5.1
+
+Package: ti-neo-ai-dlr-8.1
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+Description: TI vision-apps
+ TI vision-apps
