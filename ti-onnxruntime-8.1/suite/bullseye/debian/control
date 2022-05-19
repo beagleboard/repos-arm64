@@ -13,7 +13,6 @@ Build-Depends:
  , python3-numpy
  , python3-pip
  , python3-pybind11
- , tree
  , unzip
 Standards-Version: 4.5.1
 
