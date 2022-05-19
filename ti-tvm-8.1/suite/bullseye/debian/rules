@@ -22,7 +22,6 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.1_UPDATE1 --depth 1 https://github.com/TexasInstruments/tvm ./tmp/opt/tvm/
 	cd ./tmp/opt/tvm/ ; git submodule update --init --recursive ; mkdir build
 	cd ./tmp/opt/tvm/build/ ; cmake -DUSE_SORT=ON -DUSE_LLVM=llvm-config -DUSE_TIDL=ON -DUSE_TIDL_RT_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/tidl_j7_08_01_00_05/ti_dl/rt .. ; make -j4 ; make install DESTDIR=../../../
-	cd ./tmp/ ; tree
 
 %:
 	dh $@

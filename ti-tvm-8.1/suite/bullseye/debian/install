@@ -1,1 +1,2 @@
-tmp/opt/* /opt
+tmp/usr/local/* /usr
+#tmp/opt/* /opt
