@@ -7,7 +7,11 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
+ , python3-dev
+ , python3-pip
  , llvm
+ , llvm-11-dev
+ , ti-processor-sdk-rtos-meta-psdkla
 Standards-Version: 4.5.1
 
 Package: ti-neo-ai-dlr-8.1

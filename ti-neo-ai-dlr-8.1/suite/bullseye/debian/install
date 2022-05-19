@@ -1,1 +1,3 @@
-tmp/opt/* /opt
+tmp/usr/local/* /usr
+tmp/opt/neo-ai-dlr/dist-packages/* /usr/lib/python3.9/dist-packages
+#tmp/opt/* /opt

@@ -2,7 +2,7 @@
 
 package_name="ti-neo-ai-dlr-8.1"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.0"
+package_version="8.1.0.1"
 package_source=""
 src_dir=""
 
