@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+# Disable dh_link
+override_dh_link:
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
+
+override_dh_auto_configure:
+	#mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.1 --depth 1 https://github.com/TexasInstruments/onnxruntime.git ./tmp/opt/onnxruntime/
+	#unzip debian/protoc-3.11.3-linux-aarch_64.zip -d ./tmp/opt/onnxruntime/cmake/external/protoc-3.11.3-linux-aarch_64
+	#cp -v debian/tool.cmake ./tmp/opt/onnxruntime/
+	#cd ./tmp/opt/onnxruntime/ ; ./build.sh --parallel 4 --skip_tests --build_shared_lib --config Release --cmake_extra_defines="CMAKE_TOOLCHAIN_FILE=../tool.cmake" --path_to_protoc_exe ./cmake/external/protoc-3.11.3-linux-aarch_64/bin/protoc --use_tidl --build_wheel ; python3 -m pip install build/Linux/Release/dist/onnxruntime_tidl-1.7.0-cp39-cp39-linux_aarch64.whl --target ./dist-packages/ --no-deps
+	#cd ./tmp/opt/onnxruntime/build/Linux/Release ; make install DESTDIR=../../../../../
+
+%:
+	dh $@
