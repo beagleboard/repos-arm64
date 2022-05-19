@@ -1,7 +1,7 @@
-/usr/local/include/onnxruntime/* /usr/include/onnxruntime
-/usr/local/lib/libonnxruntime.so.1.7.0 /usr/lib
-/usr/local/lib/libonnxruntime.so /usr/lib
-/usr/local/bin/onnx_test_runner /usr/bin
+tmp/usr/include/onnxruntime/* /usr/include/onnxruntime
+tmp/usr/lib/libonnxruntime.so.1.7.0 /usr/lib
+tmp/usr/lib/libonnxruntime.so /usr/lib
+tmp/usr/bin/onnx_test_runner /usr/bin
 tmp/opt/onnxruntime/dist-packages/onnxruntime/* /usr/lib/python3.9/dist-packages/onnxruntime
 tmp/opt/onnxruntime/dist-packages/onnxruntime_tidl-1.7.0.dist-info/* /usr/lib/python3.9/dist-packages/onnxruntime_tidl-1.7.0.dist-info
 #tmp/opt/* /opt
