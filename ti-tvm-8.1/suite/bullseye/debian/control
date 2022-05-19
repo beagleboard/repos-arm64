@@ -1,4 +1,4 @@
-Source: ti-neo-ai-dlr-8.1
+Source: ti-tvm-8.1
 Section: misc
 Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
@@ -10,7 +10,7 @@ Build-Depends:
  , llvm
 Standards-Version: 4.5.1
 
-Package: ti-neo-ai-dlr-8.1
+Package: ti-tvm-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}

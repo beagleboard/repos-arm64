@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+# Disable dh_link
+override_dh_link:
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.1_UPDATE1 --depth 1 https://github.com/TexasInstruments/tvm ./tmp/opt/tvm/
+	cd ./tmp/opt/tvm/ ; git submodule update --init --recursive ; mkdir build
+	cd ./tmp/opt/tvm/build/ ; cmake -DUSE_SORT=ON -DUSE_LLVM=llvm-config -DUSE_TIDL=ON -DUSE_TIDL_RT_PATH=${TIDL_PATH}/ti_dl/rt .. ; make ; make install
+	#cd ./tmp/opt/onnxruntime/build/Linux/Release ; make install DESTDIR=../../../../../
+
+%:
+	dh $@
