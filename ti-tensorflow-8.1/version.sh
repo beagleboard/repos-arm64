@@ -2,7 +2,7 @@
 
 package_name="ti-tensorflow-8.1"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.19"
+package_version="8.1.0.20"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_dl_1="https://github.com/google/flatbuffers/archive/v1.12.0.tar.gz"
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220516"
+bullseye_version="~bullseye+20220520"

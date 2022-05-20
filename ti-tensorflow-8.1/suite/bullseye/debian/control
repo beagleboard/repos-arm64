@@ -23,7 +23,6 @@ Package: ti-tensorflow-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}
- , ti-vision-apps
  , python3-numpy
 Breaks: python3-tflite-runtime
 Conflicts: python3-tflite-runtime
