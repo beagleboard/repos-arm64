@@ -1,3 +1,3 @@
 tmp/usr/local/* /usr
-tmp/opt/neo-ai-dlr/lib/python3.9/site-packages/* /usr/lib/python3.9/dist-packages
+tmp/opt/neo-ai-dlr/usr/lib/python3.9/site-packages/* /usr/lib/python3.9/site-packages
 #tmp/opt/* /opt
