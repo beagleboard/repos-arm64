@@ -1,3 +1,9 @@
+mesa (22.1.0-git20210518.0-0~bullseye+20220520) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 20 May 2022 08:41:28 -0500
+
 mesa (22.1.0-git20210510.1-0~bullseye+20220513) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
