@@ -2,7 +2,7 @@
 
 package_name="ti-vision-apps"
 debian_pkg_name="${package_name}"
-package_version="8.2.0.5.3"
+package_version="8.2.0.5.4"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_dl_1="http://192.168.1.98/internal/dl/files/tivision_apps.tar.xz"
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220513"
+bullseye_version="~bullseye+20220520"
