@@ -9,6 +9,7 @@ Build-Depends:
  , dh-python
  , git
  , ti-processor-sdk-rtos
+ , ti-rpmsg-char
  , tree
 Standards-Version: 4.5.1
 
@@ -17,5 +18,6 @@ Architecture: arm64
 Depends:
  ${misc:Depends}
  , python3-numpy
+ , ti-rpmsg-char
 Description: TI vision-apps
  TI vision-apps
