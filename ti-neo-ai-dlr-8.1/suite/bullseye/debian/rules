@@ -25,7 +25,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.1 --depth 1 https://github.com/TexasInstruments/neo-ai-dlr ./tmp/opt/neo-ai-dlr/
 	cd ./tmp/opt/neo-ai-dlr/ ; git submodule update --init --recursive ; mkdir build
 	cd ./tmp/opt/neo-ai-dlr/build/ ; cmake -DUSE_TESTS=OFF -DUSE_SORT=ON -DUSE_LLVM=llvm-config -DUSE_TIDL=ON -DUSE_TIDL_RT_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/tidl_j7_08_01_00_05/ti_dl/rt .. ; make -j4 ; make install DESTDIR=../../../
-	cd ./tmp/opt/neo-ai-dlr/python ; python3 setup.py install --target ./dist-packages/ --no-deps
+	cd ./tmp/opt/neo-ai-dlr/python ; python3 setup.py install
 
 %:
 	dh $@
