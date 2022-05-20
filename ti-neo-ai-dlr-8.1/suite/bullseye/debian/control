@@ -15,11 +15,14 @@ Build-Depends:
  , llvm
  , llvm-11-dev
  , ti-processor-sdk-rtos-meta-psdkla
+ , tree
 Standards-Version: 4.5.1
 
 Package: ti-neo-ai-dlr-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}
+Breaks: ti-tvm-8.1
+Conflicts: ti-tvm-8.1
 Description: TI vision-apps
  TI vision-apps
