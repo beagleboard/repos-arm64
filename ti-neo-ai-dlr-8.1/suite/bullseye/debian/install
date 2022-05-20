@@ -1,4 +1,5 @@
 tmp/usr/local/* /usr
-tmp/opt/neo-ai-dlr/build/lib/libdlr.so /usr/lib
+tmp/opt/neo-ai-dlr/build/lib/* /usr/lib
+tmp/opt/neo-ai-dlr/build/bin/* /usr/bin
 tmp/opt/neo-ai-dlr/usr/lib/python3.9/site-packages/* /usr/lib/python3.9/site-packages
 #tmp/opt/* /opt
