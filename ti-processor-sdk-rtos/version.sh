@@ -2,7 +2,7 @@
 
 package_name="ti-processor-sdk-rtos"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.13.3"
+package_version="8.1.0.13.4"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,4 @@ debian_dl_2="http://192.168.1.98/internal/dl/files/opkg-utils-master.tar.gz"
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220513"
+bullseye_version="~bullseye+20220520"

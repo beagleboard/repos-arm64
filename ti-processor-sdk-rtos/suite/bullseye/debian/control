@@ -10,6 +10,5 @@ Package: ti-processor-sdk-rtos
 Architecture: arm64
 Depends:
  ${misc:Depends}
- , ti-vision-apps
 Description: TI vision-apps
  TI vision-apps
