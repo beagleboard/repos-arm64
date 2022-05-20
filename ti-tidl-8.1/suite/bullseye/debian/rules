@@ -19,8 +19,11 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/ ; make tfl_delegate onnxrt_EP -j6
-	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/ ; tree
+	ln -s /usr/bin/g++ /usr/bin/aarch64-none-linux-gnu-g++
+	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/tidl_j7_08_01_00_05/ ; sed -i.bak '/STATIC_LIBS += $(VISION_APPS_UTILS_LIBS)/d' ./ti_dl/rt/src/a72/concerto.mak
+	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/tidl_j7_08_01_00_05/ ; sed -i.bak 's/ti_rpmsg_char/ti_rpmsg_char tivision_apps/' ./ti_dl/rt/src/a72/concerto.mak
+	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/tidl_j7_08_01_00_05/ ; PSDK_INSTALL_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/ GCC_LINUX_ARM_ROOT=/usr make tfl_delegate onnxrt_EP -j4
+	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/tidl_j7_08_01_00_05/ ; tree
 	#mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.1 --depth 1 https://github.com/TexasInstruments/onnxruntime.git ./tmp/opt/onnxruntime/
 	#unzip debian/protoc-3.11.3-linux-aarch_64.zip -d ./tmp/opt/onnxruntime/cmake/external/protoc-3.11.3-linux-aarch_64
 	#cp -v debian/tool.cmake ./tmp/opt/onnxruntime/

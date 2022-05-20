@@ -8,7 +8,7 @@ Build-Depends:
  , cmake
  , dh-python
  , git
- , ti-processor-sdk-rtos-meta-psdkla
+ , ti-processor-sdk-rtos
  , tree
 Standards-Version: 4.5.1
 
