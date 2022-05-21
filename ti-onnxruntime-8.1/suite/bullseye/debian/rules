@@ -24,6 +24,7 @@ override_dh_auto_configure:
 	cp -v debian/tool.cmake ./tmp/opt/onnxruntime/
 	cd ./tmp/opt/onnxruntime/ ; ./build.sh --parallel 4 --skip_tests --build_shared_lib --config Release --cmake_extra_defines="CMAKE_TOOLCHAIN_FILE=../tool.cmake" --path_to_protoc_exe ./cmake/external/protoc-3.11.3-linux-aarch_64/bin/protoc --use_tidl --build_wheel ; python3 -m pip install build/Linux/Release/dist/onnxruntime_tidl-1.7.0-cp39-cp39-linux_aarch64.whl --target ./dist-packages/ --no-deps
 	cd ./tmp/opt/onnxruntime/build/Linux/Release ; make install DESTDIR=../../../../../
+	cd ./tmp/opt/onnxruntime/cmake/external/protobuf/ ; ./autogen.sh ; ./configure ; make -j4
 
 %:
 	dh $@
