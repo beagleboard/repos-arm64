@@ -10,6 +10,7 @@ Build-Depends:
  , git
  , ti-processor-sdk-rtos
  , ti-rpmsg-char
+ , ti-vision-apps
  , tree
 Standards-Version: 4.5.1
 
@@ -19,5 +20,6 @@ Depends:
  ${misc:Depends}
  , python3-numpy
  , ti-rpmsg-char
+ , ti-vision-apps
 Description: TI vision-apps
  TI vision-apps
