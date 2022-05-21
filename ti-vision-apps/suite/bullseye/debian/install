@@ -1,2 +1,3 @@
 tmp/usr/include/* /usr/include
+tmp/usr/lib/libtivision_apps* /usr/lib
 tmp/opt/* /opt
