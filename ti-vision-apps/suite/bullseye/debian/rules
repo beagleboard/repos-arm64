@@ -6,6 +6,15 @@ export DH_VERBOSE=1
 
 DEB_BUILD_OPTIONS=noautodbgsym
 
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
+
 wfile="tivision_apps.tar.xz"
 
 override_dh_auto_configure:
