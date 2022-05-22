@@ -6,9 +6,6 @@ export DH_VERBOSE=1
 
 DEB_BUILD_OPTIONS=noautodbgsym
 
-# Disable dh_link
-override_dh_link:
-
 # Disable dh_strip
 override_dh_strip:
 
@@ -16,7 +13,7 @@ override_dh_strip:
 override_dh_strip_nondeterminism:
 
 # Disable dh_shlibdeps
-override_dh_shlibdeps:
+#override_dh_shlibdeps:
 
 override_dh_auto_configure:
 	ln -s /usr/bin/g++ /usr/bin/aarch64-none-linux-gnu-g++
