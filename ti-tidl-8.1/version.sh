@@ -2,7 +2,7 @@
 
 package_name="ti-tidl-8.1"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.6"
+package_version="8.1.0.7"
 package_source=""
 src_dir=""
 
