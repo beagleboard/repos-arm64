@@ -1,0 +1,21 @@
+Source: ti-edgeai-gst-plugins-8.1
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , cmake
+ , git
+ , meson
+ , libgstreamer1.0-dev
+ , libgstreamer-plugins-base1.0-dev
+ , libdevil1c2
+Standards-Version: 4.5.1
+
+Package: ti-edgeai-gst-plugins-8.1
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+Description: TI vision-apps
+ TI vision-apps
