@@ -15,7 +15,7 @@ override_dh_strip_nondeterminism:
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone https://github.com/dmlc/dlpack.git ./tmp/opt/dlpack/ ; cd ./tmp/opt/dlpack/ ; git checkout -b tidl_branch 3ec04430e89a6834e5a1b99471f415fa939bf642
 	mkdir ./tmp/opt/dlpack/build/
-	cd ./tmp/opt/dlpack/build/ ; cmake .. ; make -j4
+	cd ./tmp/opt/dlpack/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j4 ; make install DESTDIR=../../../
 
 %:
 	dh $@
