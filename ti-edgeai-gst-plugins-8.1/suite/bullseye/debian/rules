@@ -17,7 +17,7 @@ override_dh_auto_configure:
 	cp -v debian/meson.build ./tmp/opt/edgeai-gst-plugins/
 	cd ./tmp/opt/edgeai-gst-plugins/ ; meson build --prefix=/usr -Dpkg_config_path=pkgconfig
 	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build
-	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build install
+	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build install DESTDIR=../../../
 
 %:
 	dh $@
