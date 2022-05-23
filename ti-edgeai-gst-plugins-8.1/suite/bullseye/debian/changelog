@@ -1,6 +1,6 @@
-ti-edgeai-gst-plugins-8.1 (8.1.0.3-0~bullseye+20220523) bullseye; urgency=low
+ti-edgeai-gst-plugins-8.1 (8.1.0.4-0~bullseye+20220523) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 23 May 2022 15:40:47 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 23 May 2022 15:45:34 -0500
 

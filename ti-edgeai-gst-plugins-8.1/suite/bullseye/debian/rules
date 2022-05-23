@@ -14,7 +14,7 @@ override_dh_strip_nondeterminism:
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch release-0.5.3 https://github.com/TexasInstruments/edgeai-gst-plugins.git ./tmp/opt/edgeai-gst-plugins/
-	cd ./tmp/opt/edgeai-gst-plugins/ ; meson build --prefix=/usr/local -Dpkg_config_path=pkgconfig
+	cd ./tmp/opt/edgeai-gst-plugins/ ; meson build --prefix=/usr -Dpkg_config_path=pkgconfig
 	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build
 	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build install
 

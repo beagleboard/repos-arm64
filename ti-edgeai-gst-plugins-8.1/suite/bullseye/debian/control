@@ -13,6 +13,7 @@ Build-Depends:
  , meson
  , ti-edgeai-tiovx-modules-8.1
  , ti-neo-ai-dlr-8.1
+ , ti-rpmsg-char
  , ti-vision-apps
 Standards-Version: 4.5.1
 
