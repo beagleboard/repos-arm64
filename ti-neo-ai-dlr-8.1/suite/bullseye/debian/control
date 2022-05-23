@@ -15,6 +15,7 @@ Build-Depends:
  , python3-charset-normalizer
  , python3-distro
  , python3-idna
+ , python3-matplotlib
  , python3-numpy
  , python3-requests
  , python3-urllib3
@@ -32,6 +33,7 @@ Depends:
  , python3-charset-normalizer
  , python3-distro
  , python3-idna
+ , python3-matplotlib
  , python3-numpy
  , python3-requests
  , python3-urllib3
