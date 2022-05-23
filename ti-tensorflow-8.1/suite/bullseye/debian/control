@@ -17,6 +17,7 @@ Build-Depends:
  , swig
  , unzip
  , zlib1g-dev
+ , tree
 Standards-Version: 4.5.1
 
 Package: ti-tensorflow-8.1
