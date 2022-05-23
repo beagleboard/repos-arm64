@@ -12,6 +12,7 @@ Build-Depends:
  , libdevil1c2
  , meson
  , ti-vision-apps
+ , ti-edgeai-tiovx-modules-8.1
 Standards-Version: 4.5.1
 
 Package: ti-edgeai-gst-plugins-8.1
