@@ -1,4 +1,4 @@
-Source: ti-onnxruntime-8.1
+Source: ti-edgeai-tiovx-modules-8.1
 Section: misc
 Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
@@ -9,7 +9,7 @@ Build-Depends:
  , git
 Standards-Version: 4.5.1
 
-Package: ti-onnxruntime-8.1
+Package: ti-edgeai-tiovx-modules-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}
