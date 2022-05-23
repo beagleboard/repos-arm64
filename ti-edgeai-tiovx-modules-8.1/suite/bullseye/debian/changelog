@@ -1,6 +1,6 @@
-ti-edgeai-tiovx-modules-8.1 (8.1.0.1-0~bullseye+20220523) bullseye; urgency=low
+ti-edgeai-tiovx-modules-8.1 (8.1.0.2-0~bullseye+20220523) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 23 May 2022 09:05:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 23 May 2022 09:12:42 -0500
 
