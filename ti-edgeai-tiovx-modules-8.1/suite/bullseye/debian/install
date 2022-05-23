@@ -7,4 +7,6 @@
 #tmp/opt/onnxruntime/cmake/external/protobuf/* /opt/onnxruntime/cmake/external/protobuf
 #tmp/opt/onnxruntime/include/* /opt/onnxruntime/include
 #tmp/opt/onnxruntime/onnxruntime/core/providers/* /opt/onnxruntime/onnxruntime/core/providers
-tmp/opt/* /opt
+#tmp/opt/* /opt
+/usr/lib/edgeai-tiovx-modules/
+/usr/include/edgeai-tiovx-modules/include/
