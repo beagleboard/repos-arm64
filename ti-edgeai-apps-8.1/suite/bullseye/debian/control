@@ -7,6 +7,11 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
+ , libyaml-cpp-dev
+ , libopencv-core-dev
+ , libopencv-imgproc-dev
+ , ti-neo-ai-dlr-8.1
+ , ti-rpmsg-char
  , wget
 Standards-Version: 4.5.1
 
