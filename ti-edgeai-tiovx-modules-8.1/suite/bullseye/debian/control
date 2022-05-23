@@ -7,7 +7,7 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
- , ti-processor-sdk-rtos
+ , ti-vision-apps
 Standards-Version: 4.5.1
 
 Package: ti-edgeai-tiovx-modules-8.1
