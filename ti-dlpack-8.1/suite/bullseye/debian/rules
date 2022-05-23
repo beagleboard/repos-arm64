@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone --depth 1 https://github.com/dmlc/dlpack.git ./tmp/opt/dlpack/ ; cd ./tmp/opt/dlpack/ ; git checkout -b tidl_branch 3ec0443
+	mkdir -p ./tmp/opt/dlpack/ ; make -j4
+
+%:
+	dh $@
