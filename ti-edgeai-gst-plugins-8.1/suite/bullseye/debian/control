@@ -7,10 +7,11 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
- , meson
  , libgstreamer1.0-dev
  , libgstreamer-plugins-base1.0-dev
  , libdevil1c2
+ , meson
+ , ti-vision-apps
 Standards-Version: 4.5.1
 
 Package: ti-edgeai-gst-plugins-8.1
