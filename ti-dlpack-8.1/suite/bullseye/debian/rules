@@ -13,7 +13,7 @@ override_dh_strip:
 override_dh_strip_nondeterminism:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --depth 1 https://github.com/dmlc/dlpack.git ./tmp/opt/dlpack/ ; cd ./tmp/opt/dlpack/ ; git checkout -b tidl_branch 3ec0443
+	mkdir -p ./tmp/opt/ ; git clone --depth 1 https://github.com/dmlc/dlpack.git ./tmp/opt/dlpack/ ; cd ./tmp/opt/dlpack/ ; git checkout -b tidl_branch 3ec04430e89a6834e5a1b99471f415fa939bf642
 	mkdir -p ./tmp/opt/dlpack/ ; make -j4
 
 %:
