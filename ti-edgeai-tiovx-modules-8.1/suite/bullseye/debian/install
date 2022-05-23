@@ -1,12 +1,1 @@
-#tmp/usr/local/include/onnxruntime/* /usr/include/onnxruntime
-#tmp/usr/local/lib/libonnxruntime.so.1.7.0 /usr/lib
-#tmp/usr/local/lib/libonnxruntime.so /usr/lib
-#tmp/usr/local/bin/onnx_test_runner /usr/bin
-#tmp/opt/onnxruntime/dist-packages/onnxruntime/* /usr/lib/python3.9/dist-packages/onnxruntime
-#tmp/opt/onnxruntime/dist-packages/onnxruntime_tidl-1.7.0.dist-info/* /usr/lib/python3.9/dist-packages/onnxruntime_tidl-1.7.0.dist-info
-#tmp/opt/onnxruntime/cmake/external/protobuf/* /opt/onnxruntime/cmake/external/protobuf
-#tmp/opt/onnxruntime/include/* /opt/onnxruntime/include
-#tmp/opt/onnxruntime/onnxruntime/core/providers/* /opt/onnxruntime/onnxruntime/core/providers
-#tmp/opt/* /opt
-/usr/lib/edgeai-tiovx-modules/
-/usr/include/edgeai-tiovx-modules/include/
+tmp/usr/local/* /usr

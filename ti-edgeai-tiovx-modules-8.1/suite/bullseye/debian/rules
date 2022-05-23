@@ -18,7 +18,7 @@ override_dh_shlibdeps:
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch release-0.2 --depth 1 https://github.com/TexasInstruments/edgeai-tiovx-modules.git ./tmp/opt/edgeai-tiovx-modulesa/
 	mkdir -p ./tmp/opt/edgeai-tiovx-modulesa/build/
-	cd ./tmp/opt/edgeai-tiovx-modulesa/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr/local .. ; sed -i.bak s!^build_app!#build_app! ../test/CMakeLists.txt ; make -j4 ; make install
+	cd ./tmp/opt/edgeai-tiovx-modulesa/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr .. ; sed -i.bak s!^build_app!#build_app! ../test/CMakeLists.txt ; make -j4 ; make install DESTDIR=../../../
 
 %:
 	dh $@
