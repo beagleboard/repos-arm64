@@ -15,7 +15,6 @@ Build-Depends:
  , ti-neo-ai-dlr-8.1
  , ti-rpmsg-char
  , ti-vision-apps
- , tree
 Standards-Version: 4.5.1
 
 Package: ti-edgeai-gst-plugins-8.1
