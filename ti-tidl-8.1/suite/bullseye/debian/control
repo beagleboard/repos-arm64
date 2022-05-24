@@ -9,6 +9,8 @@ Build-Depends:
  , dh-python
  , git
  , ti-processor-sdk-rtos
+ , ti-onnxruntime-8.1
+ , ti-onnxruntime-src-8.1
  , ti-rpmsg-char
  , ti-tensorflow-8.1
  , ti-vision-apps
@@ -20,8 +22,9 @@ Architecture: arm64
 Depends:
  ${misc:Depends}
  , python3-numpy
+ , ti-onnxruntime-8.1
  , ti-rpmsg-char
  , ti-tensorflow-8.1
  , ti-vision-apps
-Description: TI vision-apps
- TI vision-apps
+Description: TI tidl
+ TI tidl
