@@ -1,6 +1,6 @@
-ti-tidl-8.1 (8.1.0.10-0~bullseye+20220524) bullseye; urgency=low
+ti-tidl-8.1 (8.1.0.11-0~bullseye+20220524) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 24 May 2022 13:47:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 24 May 2022 13:57:06 -0500
 

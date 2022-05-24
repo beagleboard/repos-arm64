@@ -9,6 +9,7 @@ Build-Depends:
  , dh-python
  , git
  , ti-processor-sdk-rtos
+ , ti-neo-ai-dlr-8.1
  , ti-onnxruntime-8.1
  , ti-onnxruntime-src-8.1
  , ti-rpmsg-char
