@@ -1,1 +1,1 @@
-tmp/opt/tensorflow* /opt/tensorflow
+tmp/opt/tensorflow/* /opt/tensorflow
