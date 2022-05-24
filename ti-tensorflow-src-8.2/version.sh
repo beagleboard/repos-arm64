@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-package_name="ti-tensorflow-src-8.1"
+package_name="ti-tensorflow-src-8.2"
 debian_pkg_name="${package_name}"
 package_version="8.2.0.0"
 package_source=""
