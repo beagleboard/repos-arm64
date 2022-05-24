@@ -7,8 +7,7 @@ export DH_VERBOSE=1
 DEB_BUILD_OPTIONS=noautodbgsym
 
 override_dh_auto_configure:
-	env
-	mkdir -p ./tmp/opt/tensorflow/ ; cp -rv /opt/tensorflow/ ./tmp/opt/tensorflow/
+	mkdir -p ./tmp/opt/tensorflow/ ; cp -rv /opt/tensorflow/* ./tmp/opt/tensorflow/
 	python3 -m pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
 	cd ./tmp/opt/tensorflow/tensorflow/lite/tools/make/ ; ./download_dependencies.sh
 	cd ./tmp/opt/tensorflow/ ; make -f tensorflow/lite/tools/make/Makefile ; cp -v ./tensorflow/lite/tools/make/gen/linux_aarch64/lib/libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y tensorflow/lite/tools/pip_package/build_pip_package.sh ; cd ./tensorflow/lite/tools/pip_package/gen/tflite_pip/ ; dpkg-deb -xv python3-tflite-runtime_2.4.0-1_arm64.deb ./tmp/
