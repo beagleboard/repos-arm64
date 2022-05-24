@@ -1,0 +1,17 @@
+Source: ti-tensorflow-src-8.2
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , git
+ , unzip
+Standards-Version: 4.5.1
+
+Package: ti-tensorflow-src-8.2
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+Description: TI tensorflow src
+ TI tensorflow src /opt/tensorflow
