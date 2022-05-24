@@ -21,5 +21,6 @@ Package: ti-edgeai-gst-plugins-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}
-Description: TI vision-apps
- TI vision-apps
+ , python3-gi
+Description: TI edgeai-gst-plugins
+ TI edgeai-gst-plugins
