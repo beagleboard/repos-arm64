@@ -8,6 +8,7 @@ Build-Depends:
  , cmake
  , dh-python
  , git
+ , libprotobuf-dev
  , ti-processor-sdk-rtos
  , ti-neo-ai-dlr-8.1
  , ti-onnxruntime-8.1
