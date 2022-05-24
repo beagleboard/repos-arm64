@@ -4,20 +4,17 @@ Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
- , ca-certificates
  , curl
  , cmake
  , dh-python
- , git
  , libtool
  , python3-dev
  , python3-numpy
  , python3-pip
  , python3-pybind11
  , swig
- , unzip
+ , ti-tensorflow-src-8.1
  , zlib1g-dev
- , tree
 Standards-Version: 4.5.1
 
 Package: ti-tensorflow-8.1
@@ -27,5 +24,5 @@ Depends:
  , python3-numpy
 Breaks: python3-tflite-runtime
 Conflicts: python3-tflite-runtime
-Description: TI vision-apps
- TI vision-apps
+Description: TI tensorflow
+ TI tensorflow
