@@ -7,7 +7,6 @@ Build-Depends:
  , ca-certificates
  , git
  , unzip
- , tree
 Standards-Version: 4.5.1
 
 Package: ti-tensorflow-src-8.1
