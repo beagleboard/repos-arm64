@@ -10,7 +10,7 @@ Build-Depends:
  , tree
 Standards-Version: 4.5.1
 
-Package: ti-tensorflow-8.1
+Package: ti-tensorflow-src-8.1
 Architecture: arm64
 Depends:
  ${misc:Depends}
