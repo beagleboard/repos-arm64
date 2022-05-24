@@ -4,7 +4,7 @@
 
 package_name="ti-edgeai-apps-8.1"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.3"
+package_version="8.1.0.4"
 package_source=""
 src_dir=""
 

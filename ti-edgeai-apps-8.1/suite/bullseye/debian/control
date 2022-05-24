@@ -10,6 +10,7 @@ Build-Depends:
  , libyaml-cpp-dev
  , libopencv-core-dev
  , libopencv-imgproc-dev
+ , pkg-config
  , ti-neo-ai-dlr-8.1
  , ti-rpmsg-char
  , ti-dlpack-src-8.1
