@@ -8,7 +8,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/opt/edge_ai_apps/ ; cp -r /opt/edge_ai_apps/* ./tmp/opt/edge_ai_apps/
 	mkdir -p ./tmp/opt/model_zoo/ ; cp -r /opt/model_zoo/* ./tmp/opt/model_zoo/
 	mkdir -p ./tmp/opt/edge_ai_apps/apps_cpp/build/
-	cd ./tmp/opt/edge_ai_apps/apps_cpp/build/ ; cmake .. ; make -j4 ; make install DESTDIR=../../../
+	cd ./tmp/opt/edge_ai_apps/apps_cpp/build/ ; cmake .. ; make -j4 ; make install DESTDIR=../../../../
 
 %:
 	dh $@
