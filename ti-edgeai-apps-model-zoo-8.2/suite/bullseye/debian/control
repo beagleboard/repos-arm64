@@ -4,6 +4,8 @@ Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
+ , ca-certificates
+ , git
  , ti-edgeai-apps-src-8.2
  , wget
 Standards-Version: 4.5.1
