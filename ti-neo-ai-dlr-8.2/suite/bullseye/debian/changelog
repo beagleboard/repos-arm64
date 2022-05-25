@@ -1,6 +1,6 @@
-ti-neo-ai-dlr-8.2 (8.2.0.1-0~bullseye+20220525) bullseye; urgency=low
+ti-neo-ai-dlr-8.2 (8.2.0.2-0~bullseye+20220525) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 May 2022 10:01:13 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 May 2022 10:18:12 -0500
 

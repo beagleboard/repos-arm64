@@ -14,8 +14,8 @@ override_dh_auto_configure:
 	ln -s /usr/bin/g++ /usr/bin/aarch64-none-linux-gnu-g++
 	sed -i.bak '/STATIC_LIBS += $(VISION_APPS_UTILS_LIBS)/d' /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ti_dl/rt/src/a72/concerto.mak
 	sed -i.bak 's/ti_rpmsg_char/ti_rpmsg_char tivision_apps/' /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ti_dl/rt/src/a72/concerto.mak
-	#cd /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ ; PSDK_INSTALL_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/ GCC_LINUX_ARM_ROOT=/usr ONNX_REPO_PATH=/opt/onnxruntime TIDL_PROTOBUF_PATH=/opt/onnxruntime/cmake/external/protobuf make tidl_rt tfl_delegate onnxrt_EP -j4
-	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ ; PSDK_INSTALL_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_01_00_13/ GCC_LINUX_ARM_ROOT=/usr TIDL_PROTOBUF_PATH=/opt/onnxruntime/cmake/external/protobuf make tidl_rt tfl_delegate -j4
+	#cd /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ ; PSDK_INSTALL_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/ GCC_LINUX_ARM_ROOT=/usr TIDL_PROTOBUF_PATH=/opt/onnxruntime/cmake/external/protobuf ONNX_REPO_PATH=/opt/onnxruntime make tidl_rt tfl_delegate onnxrt_EP -j4
+	cd /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ ; PSDK_INSTALL_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/ GCC_LINUX_ARM_ROOT=/usr TIDL_PROTOBUF_PATH=/opt/onnxruntime/cmake/external/protobuf make tidl_rt tfl_delegate -j4
 	mkdir -p ./tmp/lib
 	cp -v /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ti_dl/rt/out/J7/A72/LINUX/release/libvx_tidl_rt.so* ./tmp/lib
 	cp -v /opt/ti-processor-sdk-rtos-j721e-evm-08_02_00_06/tidl_j721e_08_02_00_11/ti_dl/tfl_delegate/out/J7/A72/LINUX/release/libtidl_tfl_delegate.so* ./tmp/lib

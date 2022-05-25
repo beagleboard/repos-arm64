@@ -1,5 +1,5 @@
 tmp/usr/local/* /usr
 tmp/opt/neo-ai-dlr/include/dlr.h /usr/include
 tmp/opt/neo-ai-dlr/build/lib/libdlr.so /usr/lib
-tmp/opt/neo-ai-dlr/usr/lib/python3.9/site-packages/dlr-1.8.0-py3.9.egg/dlr/* /usr/lib/python3.9/site-packages/dlr
+tmp/opt/neo-ai-dlr/usr/lib/python3.9/site-packages/dlr-1.10.0-py3.9.egg/dlr/* /usr/lib/python3.9/site-packages/dlr
 #tmp/opt/* /opt
