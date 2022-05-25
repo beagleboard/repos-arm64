@@ -10,6 +10,7 @@ Build-Depends:
  , libglib2.0-dev
  , libgstreamer1.0-dev
  , libgstreamer-plugins-base1.0-dev
+ , libncurses-dev
  , libopencv-core-dev
  , libopencv-imgproc-dev
  , libyaml-cpp-dev

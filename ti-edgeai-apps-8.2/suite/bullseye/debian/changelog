@@ -1,6 +1,6 @@
-ti-edgeai-apps-8.2 (8.2.0.3-0~bullseye+20220525) bullseye; urgency=low
+ti-edgeai-apps-8.2 (8.2.0.4-0~bullseye+20220525) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 May 2022 12:34:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 May 2022 13:19:20 -0500
 
