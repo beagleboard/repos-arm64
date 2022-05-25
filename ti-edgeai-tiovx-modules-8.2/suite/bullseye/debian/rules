@@ -5,10 +5,10 @@
 export DH_VERBOSE=1
 
 # Disable dh_strip
-#override_dh_strip:
+override_dh_strip:
 
 # Disable dh_strip_nondeterminism
-#override_dh_strip_nondeterminism:
+override_dh_strip_nondeterminism:
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch release-8.2 --depth 1 https://github.com/TexasInstruments/edgeai-tiovx-modules.git ./tmp/opt/edgeai-tiovx-modulesa/

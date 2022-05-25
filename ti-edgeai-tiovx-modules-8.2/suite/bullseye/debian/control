@@ -7,6 +7,7 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
+ , ti-neo-ai-dlr-8.2
  , ti-vision-apps-8.2
 Standards-Version: 4.5.1
 
