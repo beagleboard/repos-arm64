@@ -7,9 +7,10 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
- , libyaml-cpp-dev
+ , libglib2.0-dev
  , libopencv-core-dev
  , libopencv-imgproc-dev
+ , libyaml-cpp-dev
  , pkg-config
  , ti-neo-ai-dlr-8.2
  , ti-rpmsg-char
