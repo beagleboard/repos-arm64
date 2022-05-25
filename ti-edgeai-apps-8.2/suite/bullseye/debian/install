@@ -1,1 +1,4 @@
-tmp/opt/* /opt
+tmp/usr/local/* /usr
+tmp/opt/edge_ai_apps/apps_cpp/bin/Release/* /usr/bin
+tmp/model_zoo/* /opt/model_zoo
+#tmp/opt/* /opt
