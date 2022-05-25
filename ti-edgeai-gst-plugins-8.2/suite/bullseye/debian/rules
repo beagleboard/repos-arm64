@@ -6,6 +6,7 @@ export DH_VERBOSE=1
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch release-0.6.0 https://github.com/TexasInstruments/edgeai-gst-plugins.git ./tmp/opt/edgeai-gst-plugins/
+	cp -v debian/meson.build ./tmp/opt/edgeai-gst-plugins/
 	cd ./tmp/opt/edgeai-gst-plugins/ ; meson build --prefix=/usr -Dpkg_config_path=pkgconfig
 	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build
 	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build install
