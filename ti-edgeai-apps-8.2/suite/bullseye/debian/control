@@ -8,15 +8,17 @@ Build-Depends:
  , cmake
  , git
  , libglib2.0-dev
+ , libgstreamer1.0-dev
  , libopencv-core-dev
  , libopencv-imgproc-dev
  , libyaml-cpp-dev
  , pkg-config
- , ti-neo-ai-dlr-8.2
- , ti-rpmsg-char
  , ti-dlpack-src-8.2
+ , ti-neo-ai-dlr-8.2
  , ti-onnxruntime-src-8.2
+ , ti-rpmsg-char
  , ti-tensorflow-src-8.2
+ , ti-vision-apps-8.2
  , wget
 Standards-Version: 4.5.1
 
@@ -24,5 +26,5 @@ Package: ti-edgeai-apps-8.2
 Architecture: arm64
 Depends:
  ${misc:Depends}
-Description: TI -edgeai-apps
- TI -edgeai-apps
+Description: TI edgeai-apps
+ TI edgeai-apps
