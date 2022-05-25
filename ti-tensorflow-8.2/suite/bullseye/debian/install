@@ -1,0 +1,15 @@
+./tmp/opt/tensorflow/tensorflow/lite/*.h /usr/include/tensorflow/lite/
+./tmp/opt/tensorflow/tensorflow/lite/c/*.h /usr/include/tensorflow/lite/c/
+./tmp/opt/tensorflow/tensorflow/lite/core/*.h /usr/include/tensorflow/lite/core/
+./tmp/opt/tensorflow/tensorflow/lite/core/api/*.h /usr/include/tensorflow/lite/core/api/
+./tmp/opt/tensorflow/tensorflow/lite/kernels/*.h /usr/include/tensorflow/lite/kernels/
+./tmp/opt/tensorflow/tensorflow/lite/profiling/*.h /usr/include/tensorflow/lite/profiling/
+./tmp/opt/tensorflow/tensorflow/lite/schema/*.h /usr/include/tensorflow/lite/schema/
+./tmp/opt/tensorflow/tensorflow/lite/schema/schema.fbs /usr/include/tensorflow/lite/schema/
+./tmp/opt/tensorflow/tensorflow/lite/tools/*.h /usr/include/tensorflow/lite/tools/
+./tmp/opt/tensorflow/tensorflow/lite/delegates/nnapi/*.h /usr/include/tensorflow/lite/delegates/nnapi/
+./tmp/opt/tensorflow/tensorflow/lite/experimental/resource/*.h /usr/include/tensorflow/lite/experimental/resource/
+./tmp/opt/tensorflow/tensorflow/lite/kernels/internal/*.h /usr/include/tensorflow/lite/kernels/internal/
+./tmp/opt/tensorflow/tensorflow/lite/tools/make/gen/linux_aarch64/lib/*.a /usr/lib
+./tmp/opt/tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip/tmp/usr/* /usr
+#tmp/opt/* /opt
