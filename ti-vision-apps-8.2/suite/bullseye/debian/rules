@@ -14,7 +14,6 @@ wfile="tivision_apps_08_02_00_06.tar.xz"
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/ ; tar xf ./debian/$(wfile) -C ./tmp/
-	cd ./tmp/ ; tree
 
 %:
 	dh $@
