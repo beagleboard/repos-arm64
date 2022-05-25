@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# Disable dh_strip
+#override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+#override_dh_strip_nondeterminism:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/edge_ai_apps/ ; cp -r /opt/edge_ai_apps/* ./tmp/opt/edge_ai_apps/
+	cd ./tmp/opt/edge_ai_apps/ ; ./download_models.sh --recommended
+
+%:
+	dh $@

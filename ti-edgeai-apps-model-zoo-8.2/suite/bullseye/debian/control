@@ -1,0 +1,16 @@
+Source: ti-edgeai-apps-model-zoo-8.2
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ti-edgeai-apps-src-8.2
+ , wget
+Standards-Version: 4.5.1
+
+Package: ti-edgeai-apps-model-zoo-8.2
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+Description: TI edgeai apps model-zoo
+ TI edgeai apps model-zoo
