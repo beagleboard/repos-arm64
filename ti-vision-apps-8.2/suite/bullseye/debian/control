@@ -4,6 +4,15 @@ Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
+ , libgles2
+ , libegl1
+ , libgbm1
+ , libwayland-client0
+ , libwayland-server0
+ , libwayland-egl1
+ , libfreetype6
+ , libdevil1c2
+ , ti-rpmsg-char
 Standards-Version: 4.5.1
 
 Package: ti-vision-apps-8.2

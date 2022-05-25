@@ -12,6 +12,7 @@ Build-Depends:
  , libwayland-egl1
  , libfreetype6
  , libdevil1c2
+ , ti-rpmsg-char
  , tree
 Standards-Version: 4.5.1
 
