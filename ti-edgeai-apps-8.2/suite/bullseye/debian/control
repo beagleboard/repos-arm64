@@ -17,8 +17,10 @@ Build-Depends:
  , pkg-config
  , ti-dlpack-src-8.2
  , ti-neo-ai-dlr-8.2
+ , ti-onnxruntime-8.2
  , ti-onnxruntime-src-8.2
  , ti-rpmsg-char
+ , ti-tensorflow-8.2
  , ti-tensorflow-src-8.2
  , ti-vision-apps-8.2
  , wget
