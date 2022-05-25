@@ -1,0 +1,31 @@
+Source: ti-tidl-8.2
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , cmake
+ , dh-python
+ , git
+ , ti-processor-sdk-rtos-8.2
+ , ti-neo-ai-dlr-8.2
+ , ti-onnxruntime-8.2
+ , ti-onnxruntime-src-8.2
+ , ti-rpmsg-char
+ , ti-tensorflow-8.2
+ , ti-vision-apps-8.2
+ , tree
+Standards-Version: 4.5.1
+
+Package: ti-tidl-8.2
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+ , python3-numpy
+ , ti-onnxruntime-8.2
+ , ti-rpmsg-char
+ , ti-tensorflow-8.2
+ , ti-vision-apps-8.2
+Description: TI tidl
+ TI tidl
