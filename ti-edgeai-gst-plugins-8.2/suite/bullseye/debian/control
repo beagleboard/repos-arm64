@@ -1,0 +1,26 @@
+Source: ti-edgeai-gst-plugins-8.2
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , cmake
+ , git
+ , libgstreamer1.0-dev
+ , libgstreamer-plugins-base1.0-dev
+ , libdevil1c2
+ , meson
+ , ti-edgeai-tiovx-modules-8.2
+ , ti-neo-ai-dlr-8.2
+ , ti-rpmsg-char
+ , ti-vision-apps-8.2
+Standards-Version: 4.5.1
+
+Package: ti-edgeai-gst-plugins-8.2
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+ , python3-gi
+Description: TI edgeai-gst-plugins
+ TI edgeai-gst-plugins
