@@ -13,6 +13,7 @@ Build-Depends:
  , libfreetype6
  , libdevil1c2
  , ti-rpmsg-char
+ , ti-neo-ai-dlr-8.2
 Standards-Version: 4.5.1
 
 Package: ti-vision-apps-8.2
@@ -28,5 +29,6 @@ Depends:
  , libfreetype6
  , libdevil1c2
  , ti-rpmsg-char
+ , ti-neo-ai-dlr-8.2
 Description: TI vision-apps
  TI vision-apps

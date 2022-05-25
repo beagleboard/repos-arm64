@@ -1,6 +1,6 @@
-ti-vision-apps-8.2 (8.2.0.3-0~bullseye+20220524) bullseye; urgency=low
+ti-vision-apps-8.2 (8.2.0.4-0~bullseye+20220525) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 24 May 2022 21:01:38 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 May 2022 11:18:25 -0500
 
