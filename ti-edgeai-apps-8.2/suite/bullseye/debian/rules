@@ -4,16 +4,11 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-# Disable dh_strip
-#override_dh_strip:
-
-# Disable dh_strip_nondeterminism
-#override_dh_strip_nondeterminism:
-
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --branch REL.PSDK.LINUX.SK.TDA4VM.08.02.01 --depth 1 https://git.ti.com/git/edgeai/edge_ai_apps ./tmp/opt/edge_ai_apps/
-	cd ./tmp/opt/edge_ai_apps/ ; ./download_models.sh --recommended
-	cd ./tmp/opt/edge_ai_apps/apps_cpp/ ; cmake . -B build ; cmake --build build -j4 ; make install DESTDIR=../../../
+	mkdir -p ./tmp/opt/edge_ai_apps/ ; cp -r /opt/edge_ai_apps/* ./tmp/opt/edge_ai_apps/
+	mkdir -p ./tmp/opt/model_zoo/ ; cp -r /opt/model_zoo/* ./tmp/opt/model_zoo/
+	mkdir -p ./tmp/opt/edge_ai_apps/apps_cpp/build/
+	cd ./tmp/opt/edge_ai_apps/apps_cpp/build/ ; cmake .. ; make -j4 ; make install DESTDIR=../../../
 
 %:
 	dh $@
