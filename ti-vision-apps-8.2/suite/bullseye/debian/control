@@ -19,5 +19,14 @@ Package: ti-vision-apps-8.2
 Architecture: arm64
 Depends:
  ${misc:Depends}
+ , libgles2
+ , libegl1
+ , libgbm1
+ , libwayland-client0
+ , libwayland-server0
+ , libwayland-egl1
+ , libfreetype6
+ , libdevil1c2
+ , ti-rpmsg-char
 Description: TI vision-apps
  TI vision-apps

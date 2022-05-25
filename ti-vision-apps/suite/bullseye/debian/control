@@ -28,5 +28,6 @@ Depends:
  , libwayland-egl1
  , libfreetype6
  , libdevil1c2
+ , ti-rpmsg-char
 Description: TI vision-apps
  TI vision-apps
