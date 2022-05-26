@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -d /opt/model_zoo_old/ ] ; then
+	rm -rf /opt/model_zoo_old/ || true
+fi
+
+if [ -d /opt/model_zoo/ ] ; then
+	echo "Backing up: /opt/model_zoo/ -> /opt/model_zoo_old/"
+	mv /opt/model_zoo/ /opt/model_zoo_old/
+fi
+
+#DEBHELPER#
+
+exit 0
