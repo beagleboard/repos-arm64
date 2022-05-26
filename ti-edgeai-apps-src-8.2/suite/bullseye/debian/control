@@ -12,5 +12,6 @@ Package: ti-edgeai-apps-src-8.2
 Architecture: arm64
 Depends:
  ${misc:Depends}
+ , dialog
 Description: TI edgeai-apps src
  TI edgeai-apps src
