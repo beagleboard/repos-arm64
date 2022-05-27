@@ -12,7 +12,7 @@ override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
-	git clone -b $(UB_TAG) https://github.com/beagleboard/u-boot.git --depth=1
+	git clone -b $(UB_TAG) https://git.beagleboard.org/beagleboard/u-boot.git --depth=1
 	cd ./u-boot/ ; make CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig O=../r5 ; make -j5 CROSS_COMPILE=arm-linux-gnueabihf- O=../r5 ; cd ../
 	cd ./u-boot/ ; make CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../a72 ; make -j5 CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/bb-arm-trusted-firmware-k3-generic-opteed/bl31.bin TEE=/opt/u-boot/bb-optee-os-k3-j721e/tee-pager_v2.bin DM=../debian/ipc_echo_testb_mcu1_0_release_strip.xer5f O=../a72 ; cd ../
 
