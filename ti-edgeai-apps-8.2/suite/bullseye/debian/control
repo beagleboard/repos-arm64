@@ -32,6 +32,6 @@ Package: ti-edgeai-apps-8.2
 Architecture: arm64
 Depends:
  ${misc:Depends}
- , libyaml-cpp0.6
+ , libyaml-cpp-dev
 Description: TI edgeai apps
  TI edgeai apps
