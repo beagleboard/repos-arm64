@@ -1,8 +1,0 @@
-debian/install.sh /opt/u-boot/bb-u-boot-j721e-evm
-debian/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-j721e-evm
-debian/bl31.bin /opt/u-boot/bb-u-boot-j721e-evm
-debian/sysfw.itb /opt/u-boot/bb-u-boot-j721e-evm
-debian/tee-pager_v2.bin /opt/u-boot/bb-u-boot-j721e-evm
-r5/tiboot3.bin /opt/u-boot/bb-u-boot-j721e-evm
-a72/tispl.bin /opt/u-boot/bb-u-boot-j721e-evm
-a72/u-boot.img /opt/u-boot/bb-u-boot-j721e-evm

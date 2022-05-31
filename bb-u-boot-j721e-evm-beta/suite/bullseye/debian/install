@@ -1,5 +1,0 @@
-debian/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-j721e-evm-beta
-debian/sysfw.itb /opt/u-boot/bb-u-boot-j721e-evm-beta
-r5/tiboot3.bin /opt/u-boot/bb-u-boot-j721e-evm-beta
-a72/tispl.bin /opt/u-boot/bb-u-boot-j721e-evm-beta
-a72/u-boot.img /opt/u-boot/bb-u-boot-j721e-evm-beta
