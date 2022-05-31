@@ -5,7 +5,6 @@ Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
  , bb-k3-image-gen-j721e-evm,
- , bb-arm-trusted-firmware-k3-generic-opteed
  , bc,
  , bison
  , ca-certificates
