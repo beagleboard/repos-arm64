@@ -6,6 +6,6 @@ debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
 debian/convert-to-extlinux-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-beagleboneai64
-r5/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64
-a72/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64
-a72/u-boot.img /opt/u-boot/bb-u-boot-beagleboneai64
+tmp/r5/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64
+tmp/a72/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64
+tmp/a72/u-boot.img /opt/u-boot/bb-u-boot-beagleboneai64
