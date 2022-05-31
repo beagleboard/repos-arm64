@@ -4,6 +4,11 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+TARGETDIR=bb-u-boot-beagleboneai64
+
+#optee_os
+TAG=08.01.00.005
+
 #U-Boot
 UB_TAG=v2021.01-ti-08.01.00.006
 UB_CONFIG=j721e_evm_
@@ -12,9 +17,14 @@ override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
+	mkdir -p /opt/u-boot/$(TARGETDIR)/
+	mkdir -p ./tmp/optee_os/ ; git clone -b $(TAG) https://github.com/beagleboard/optee_os --depth=1 ./tmp/optee_os/
+	cd ./tmp/optee_os/ ; make -j4 CFLAGS= LDFLAGS= PLATFORM=k3-j721e CFG_ARM64_core=y
+	cp -v ./tmp/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
+	cp -v debian/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_TAG) https://git.beagleboard.org/beagleboard/u-boot.git --depth=1 ./tmp/u-boot/
-	cd ./tmp/u-boot/ ; make CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig O=../tmp/r5 ; make -j5 CROSS_COMPILE=arm-linux-gnueabihf- O=../tmp/r5
-	cd ./tmp/u-boot/ ; make CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../tmp/a72 ; make -j5 CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/bb-arm-trusted-firmware-k3-generic-opteed/bl31.bin TEE=/opt/u-boot/bb-optee-os-k3-j721e/tee-pager_v2.bin DM=../../debian/ipc_echo_testb_mcu1_0_release_strip.xer5f O=../tmp/a72
+	cd ./tmp/u-boot/ ; make CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig O=../r5 ; make -j5 CROSS_COMPILE=arm-linux-gnueabihf- O=../r5
+	cd ./tmp/u-boot/ ; make CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig O=../a72 ; make -j5 CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/bb-arm-trusted-firmware-k3-generic-opteed/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ipc_echo_testb_mcu1_0_release_strip.xer5f O=../a72
 
 %:
 	dh $@

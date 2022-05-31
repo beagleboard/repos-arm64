@@ -6,7 +6,6 @@ Build-Depends:
  debhelper (>= 9)
  , bb-k3-image-gen-j721e-evm,
  , bb-arm-trusted-firmware-k3-generic-opteed
- , bb-optee-os-k3-j721e
  , bc,
  , bison
  , ca-certificates
@@ -15,9 +14,11 @@ Build-Depends:
  , gcc-arm-linux-gnueabihf
  , git
  , libssl-dev
+ , python3-pycryptodome
+ , python3-pyelftools
  , u-boot-tools
 Standards-Version: 4.5.1
-Homepage: https://git.beagleboard.org/beagleboard/u-boot/-/commits/v2021.01-ti-08.01.00.006
+Homepage: https://git.beagleboard.org/beagleboard/u-boot/
 
 Package: bb-u-boot-beagleboneai64
 Architecture: arm64
