@@ -21,6 +21,7 @@ Depends:
  , ti-tidl-8.2
  , ti-tidl-rt
  , ti-vision-apps-8.2
+ , ti-vision-apps-eaik-firmware-8.2
  , ti-edgeai-apps-src-8.2
  , ti-edgeai-apps-model-zoo-8.2
  , ti-edgeai-apps-8.2
