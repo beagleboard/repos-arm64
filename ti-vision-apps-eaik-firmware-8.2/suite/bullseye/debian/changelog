@@ -1,0 +1,6 @@
+ti-vision-apps-eaik-firmware-8.2 (8.2.0.1-0~bullseye+20220601) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Jun 2022 12:02:59 -0500
+

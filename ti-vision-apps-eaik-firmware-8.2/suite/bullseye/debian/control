@@ -1,0 +1,17 @@
+Source: ti-vision-apps-eaik-firmware-8.2
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13)
+Standards-Version: 4.5.1
+
+Package: ti-vision-apps-eaik-firmware-8.2
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Breaks: ti-vision-apps-eaik-firmware
+Conflicts: ti-vision-apps-eaik-firmware
+Description: beagleboard.org ti-vision-apps-eaik-firmware-8.2
+ beagleboard.org ti-vision-apps-eaik-firmware-8.2
