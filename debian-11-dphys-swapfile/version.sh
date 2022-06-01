@@ -18,4 +18,4 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="rcnee0"
 
-bullseye_version="~bullseye+20220531"
+bullseye_version="~bullseye+20220601"

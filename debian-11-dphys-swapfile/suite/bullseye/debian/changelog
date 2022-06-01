@@ -1,3 +1,15 @@
+dphys-swapfile (20100506-7rcnee0~bullseye+20220601) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Jun 2022 16:15:07 -0500
+
+dphys-swapfile (20100506-7+rpt1) bullseye; urgency=medium
+
+  * Reinstate fallocate.patch for ext filesystems
+
+ -- Serge Schneider <serge@raspberrypi.com>  Tue, 03 May 2022 15:58:42 +0100
+
 dphys-swapfile (20100506-7) unstable; urgency=medium
 
   [ Axel Beckert ]
