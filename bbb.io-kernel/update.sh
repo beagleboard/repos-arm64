@@ -45,7 +45,6 @@ generate_kernel_ti () {
 	echo " bb-u-boot-beagleboneai64" >> ./suite/${dist}/debian/${wfile}
 	if [ "x${sgxj721e}" = "xenabled" ] ; then
 		echo " , ti-sgx-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
-		echo " , ti-vision-apps-eaik-firmware" >> ./suite/${dist}/debian/${wfile}
 	fi
 	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
