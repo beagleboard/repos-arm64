@@ -23,3 +23,10 @@ if [ -b /dev/mmcblk0 ] ; then
 	echo "dd if=${wdir}/tiboot3.bin of=/dev/mmcblk0boot0 bs=128k"
 	dd if=${wdir}/tiboot3.bin of=/dev/mmcblk0boot0 bs=128k
 fi
+
+#if [ -d /boot/firmware/ ] ; then
+#	cp -v /opt/u-boot/bb-k3-image-gen-j721e-evm/sysfw.itb /boot/firmware/
+#	cp -v ${wdir}/tiboot3.bin /boot/firmware/
+#	cp -v ${wdir}/tispl.bin /boot/firmware/
+#	cp -v ${wdir}/u-boot.img /boot/firmware/
+#fi
