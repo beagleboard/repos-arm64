@@ -1,20 +1,9 @@
-mesa (22.1.0-git20210518.1-0~bullseye+20220520) bullseye; urgency=low
+mesa (22.1.0-1) experimental; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release.
+  * mesa-vulkan-drivers.install: Fix installing layers.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 20 May 2022 09:42:21 -0500
-
-mesa (22.1.0-git20210518.0-0~bullseye+20220520) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 20 May 2022 08:41:28 -0500
-
-mesa (22.1.0-git20210510.1-0~bullseye+20220513) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 May 2022 20:43:31 -0500
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 25 May 2022 15:10:32 +0300
 
 mesa (22.1.0~rc5-1) experimental; urgency=medium
 
