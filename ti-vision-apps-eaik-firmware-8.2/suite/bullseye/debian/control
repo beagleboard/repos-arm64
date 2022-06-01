@@ -1,9 +1,9 @@
 Source: ti-vision-apps-eaik-firmware-8.2
 Section: misc
-Priority: extra
+Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
- debhelper-compat (= 13)
+ debhelper (>= 9)
 Standards-Version: 4.5.1
 
 Package: ti-vision-apps-eaik-firmware-8.2
