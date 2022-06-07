@@ -8,14 +8,13 @@ Build-Depends:
  , cmake
  , dh-python
  , git
- , libprotobuf-dev
- , ti-processor-sdk-rtos
+ , ti-processor-sdk-rtos-8.1
  , ti-neo-ai-dlr-8.1
  , ti-onnxruntime-8.1
  , ti-onnxruntime-src-8.1
  , ti-rpmsg-char
  , ti-tensorflow-8.1
- , ti-vision-apps
+ , ti-vision-apps-8.1
  , tree
 Standards-Version: 4.5.1
 
@@ -27,6 +26,6 @@ Depends:
  , ti-onnxruntime-8.1
  , ti-rpmsg-char
  , ti-tensorflow-8.1
- , ti-vision-apps
+ , ti-vision-apps-8.1
 Description: TI tidl
  TI tidl
