@@ -8,6 +8,8 @@ Build-Depends:
  , cmake
  , dh-python
  , git
+ , libfmt-dev
+ , rapidjson-dev
  , python3-dev
  , python3-pip
  , python3-setuptools
@@ -21,7 +23,7 @@ Build-Depends:
  , python3-urllib3
  , llvm
  , llvm-11-dev
- , ti-processor-sdk-rtos-meta-psdkla
+ , ti-processor-sdk-rtos-8.1
  , tree
 Standards-Version: 4.5.1
 
@@ -39,5 +41,5 @@ Depends:
  , python3-urllib3
 Breaks: ti-tvm-8.1
 Conflicts: ti-tvm-8.1
-Description: TI vision-apps
- TI vision-apps
+Description: TI neo-ai-dlr-8.1
+ TI neo-ai-dlr-8.1
