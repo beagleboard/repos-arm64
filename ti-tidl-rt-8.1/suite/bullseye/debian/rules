@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone --depth 1 --single-branch -b master https://git.ti.com/git/jacinto-linux/meta-psdkla.git ./tmp/opt/meta-psdkla/
+
+%:
+	dh $@
