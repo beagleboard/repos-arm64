@@ -26,5 +26,5 @@ Depends:
  , python3-numpy
 Breaks: python3-tflite-runtime
 Conflicts: python3-tflite-runtime
-Description: TI tensorflow
- TI tensorflow
+Description: TI tensorflow-8.1
+ TI tensorflow-8.1
