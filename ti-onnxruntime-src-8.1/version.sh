@@ -2,7 +2,7 @@
 
 package_name="ti-onnxruntime-src-8.1"
 debian_pkg_name="${package_name}"
-package_version="8.1.0.2"
+package_version="8.1.0.3"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_dl_1="https://github.com/protocolbuffers/protobuf/releases/download/v3.11
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220524"
+bullseye_version="~bullseye+20220607"
