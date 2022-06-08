@@ -1,1 +1,2 @@
 tmp/usr/* /usr/
+tmp/vx_app*.out /opt/vision_apps/

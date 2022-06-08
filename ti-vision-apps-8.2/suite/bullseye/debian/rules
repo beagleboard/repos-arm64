@@ -11,9 +11,10 @@ override_dh_strip:
 override_dh_strip_nondeterminism:
 
 wfile="tivision_apps_08_02_00_06.tar.xz"
+wapps="vx_app_08_02_00_06.tar.xz"
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/ ; tar xf ./debian/$(wfile) -C ./tmp/
+	mkdir -p ./tmp/ ; tar xf ./debian/$(wfile) -C ./tmp/ ; tar xf ./debian/$(wapps) -C ./tmp/
 
 %:
 	dh $@
