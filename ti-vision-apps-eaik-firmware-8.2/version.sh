@@ -4,7 +4,7 @@
 
 package_name="ti-vision-apps-eaik-firmware-8.2"
 debian_pkg_name="${package_name}"
-package_version="8.2.0.2"
+package_version="8.2.0.3"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220601"
+bullseye_version="~bullseye+20220607"
