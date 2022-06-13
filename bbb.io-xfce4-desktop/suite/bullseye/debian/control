@@ -28,5 +28,9 @@ Depends:
  , qt5ct
  , wireless-regdb
  , wpagui
+ , barrier
+ , bbb.io-keyring
+ , gnome-desktop3-data
+ , gnome-system-tools
 Description: BeagleBoard.org xfce4 desktop
  This package contains tasksel information for the BeagleBoard.org xfce4 desktop.
