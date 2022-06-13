@@ -10,7 +10,9 @@ Rules-Requires-Root: no
 
 Package: bbb.io-kernel-tasks
 Architecture: all
-Pre-Depends: generic-sys-mods
+Pre-Depends:
+ bb-j721e-evm-firmware
+ , generic-sys-mods
 Depends:
  tasksel
  , generic-sys-mods

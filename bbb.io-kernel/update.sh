@@ -24,7 +24,9 @@ generate_header () {
 	echo "" >> ./suite/${dist}/debian/${wfile}
 	echo "Package: bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
-	echo "Pre-Depends: generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
+	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
+	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
 	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
