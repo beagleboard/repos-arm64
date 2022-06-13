@@ -9,7 +9,10 @@ Rules-Requires-Root: no
 Package: bbb.io-xfce4-desktop
 Architecture: all
 Depends:
- libxfce4ui-utils
+ dphys-swapfile
+ , libxfce4ui-utils
+ , mesa-utils
+ , pipewire-bin
  , thunar
  , xfce4-appfinder
  , xfce4-panel
@@ -23,5 +26,7 @@ Depends:
  , xfwm4
  , adwaita-qt
  , qt5ct
+ , wireless-regdb
+ , wpagui
 Description: BeagleBoard.org xfce4 desktop
  This package contains tasksel information for the BeagleBoard.org xfce4 desktop.
