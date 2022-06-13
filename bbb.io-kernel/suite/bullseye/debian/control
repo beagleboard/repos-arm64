@@ -10,6 +10,7 @@ Rules-Requires-Root: no
 
 Package: bbb.io-kernel-tasks
 Architecture: all
+Pre-Depends: generic-sys-mods
 Depends:
  tasksel
  , generic-sys-mods
@@ -33,7 +34,7 @@ Description: BeagleBoard.org 5.10-ti
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: all
-Pre-Depends: linux-image-5.18.0-arm64-r0
+Pre-Depends: linux-image-5.19.0-rc1-arm64-r0
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks (= ${source:Version})
