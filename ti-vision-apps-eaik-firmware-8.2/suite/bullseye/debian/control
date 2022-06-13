@@ -11,7 +11,7 @@ Architecture: arm64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
-Breaks: ti-vision-apps-eaik-firmware
-Conflicts: ti-vision-apps-eaik-firmware
+Breaks: ti-vision-apps-eaik-firmware, ti-edge-ai-apps-08-00-00-05, ti-edge-ai-apps-recommended-08-00-00-05
+Conflicts: ti-vision-apps-eaik-firmware, ti-edge-ai-apps-08-00-00-05, ti-edge-ai-apps-recommended-08-00-00-05
 Description: beagleboard.org ti-vision-apps-eaik-firmware-8.2
  beagleboard.org ti-vision-apps-eaik-firmware-8.2
