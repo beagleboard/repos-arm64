@@ -9,7 +9,8 @@ Rules-Requires-Root: no
 Package: bbb.io-xfce4-desktop
 Architecture: all
 Depends:
- dphys-swapfile
+ command-not-found
+ , dphys-swapfile
  , libxfce4ui-utils
  , mesa-utils
  , pipewire-bin
