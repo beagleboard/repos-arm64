@@ -16,6 +16,7 @@ override_dh_shlibdeps:
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --branch REL.PSDK.LINUX.SK.TDA4VM.08.02.01 --depth 1 https://git.ti.com/git/edgeai/edge_ai_apps ./tmp/opt/edge_ai_apps/
 	cd ./tmp/opt/edge_ai_apps/ ; find . | grep .git | xargs rm -rf
+	cd ./tmp/opt/edge_ai_apps/docs/ ; make docs
 
 %:
 	dh $@
