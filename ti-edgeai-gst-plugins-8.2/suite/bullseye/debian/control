@@ -23,5 +23,6 @@ Depends:
  ${misc:Depends}
  , python3-gi
  , libgstreamer-plugins-base1.0-dev
+ , gstreamer1.0-tools
 Description: TI edgeai-gst-plugins
  TI edgeai-gst-plugins
