@@ -27,3 +27,14 @@ Depends:
  , ti-edgeai-apps-8.2
 Description: TI Edge AI Base
  TI Edge AI Base
+
+Package: ti-edgeai-8.2-src
+Section: metapackages
+Architecture: all
+Depends:
+ , ti-edgeai-apps-src-8.2
+ , ti-tensorflow-src-8.2
+ , ti-onnxruntime-src-8.2
+ , ti-dlpack-src-8.2
+Description: TI Edge AI Base src
+ TI Edge AI Base src
