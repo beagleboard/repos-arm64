@@ -14,5 +14,6 @@ Depends:
  ${misc:Depends}
  , cmake
  , dialog
+ , python3-opencv
 Description: TI edgeai-apps src
  TI edgeai-apps src
