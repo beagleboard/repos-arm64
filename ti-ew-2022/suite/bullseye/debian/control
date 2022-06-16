@@ -7,7 +7,7 @@ Build-Depends:
 Standards-Version: 4.5.1
 
 Package: ti-ew-2022
-Architecture: arm64
+Architecture: all
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}

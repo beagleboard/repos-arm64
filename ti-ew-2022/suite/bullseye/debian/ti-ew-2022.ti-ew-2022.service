@@ -1,0 +1,9 @@
+[Unit]
+Description=ti ew 2022 demo
+After=lightdm.service
+
+[Service]
+ExecStart=/opt/demo/apps_python/app_edgeai.py /opt/demo/configs/single_input_multi_infer.yaml
+
+[Install]
+WantedBy=multi-user.target
