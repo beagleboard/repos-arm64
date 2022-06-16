@@ -1,0 +1,15 @@
+Source: ti-ew-2022
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 10)
+Standards-Version: 4.5.1
+
+Package: ti-ew-2022
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Description: ti-ew-2022
+ ti-ew-2022

@@ -1,0 +1,76 @@
+title: "Single Input, Multi Inference Demo"
+log_level: 2
+inputs:
+    input0:
+        source: /dev/video2
+        format: jpeg
+        width: 1280
+        height: 720
+        framerate: 30
+    input1:
+        source: /opt/edge_ai_apps/data/videos/video_0000_h264.mp4
+        format: h264_sw
+        width: 1280
+        height: 720
+        framerate: 30
+        loop: True
+    input2:
+        source: /opt/edge_ai_apps/data/images/%04d.jpg
+        width: 1280
+        height: 720
+        index: 0
+        framerate: 1
+        loop: True
+models:
+    model0:
+        model_path: /opt/model_zoo/ONR-SS-8610-deeplabv3lite-mobv2-ade20k32-512x512
+        alpha: 0.4
+    model1:
+        model_path: /opt/model_zoo/TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320
+        viz_threshold: 0.6
+    model2:
+        model_path: /opt/model_zoo/TFL-CL-0000-mobileNetV1-mlperf
+        topN: 5
+    model3:
+        model_path: /opt/model_zoo/TVM-CL-3410-gluoncv-mxnet-mobv2
+        topN: 5
+outputs:
+    output0:
+        sink: kmssink
+        width: 1920
+        height: 1080
+    output1:
+        sink: /opt/edge_ai_apps/data/output/videos/output_video.mkv
+        width: 1920
+        height: 1080
+    output2:
+        sink: /opt/edge_ai_apps/data/output/images/output_image_%04d.jpg
+        width: 1920
+        height: 1080
+
+flows:
+    flow0:
+        input: input1
+        models: [model0, model1, model2, model3]
+        outputs: [output0, output0, output0, output0]
+        mosaic:
+            mosaic0:
+                width:  640
+                height: 360
+                pos_x:  320
+                pos_y:  180
+            mosaic1:
+                width:  640
+                height: 360
+                pos_x:  960
+                pos_y:  180
+            mosaic2:
+                width:  640
+                height: 360
+                pos_x:  320
+                pos_y:  560
+            mosaic3:
+                width:  640
+                height: 360
+                pos_x:  960
+                pos_y:  560
