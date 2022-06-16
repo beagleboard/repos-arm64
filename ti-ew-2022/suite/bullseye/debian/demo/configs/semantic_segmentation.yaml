@@ -47,7 +47,7 @@ outputs:
 
 flows:
     flow0:
-        input: input1
+        input: input0
         models: [model2]
         outputs: [output0]
         mosaic:

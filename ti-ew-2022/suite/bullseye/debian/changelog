@@ -1,6 +1,6 @@
-ti-ew-2022 (1.20220616.0-0~bullseye+20220616) bullseye; urgency=low
+ti-ew-2022 (1.20220616.1-0~bullseye+20220616) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 Jun 2022 13:19:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 Jun 2022 13:27:36 -0500
 
