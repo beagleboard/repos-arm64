@@ -2,7 +2,7 @@
 
 package_name="ti-ew-2022"
 debian_pkg_name="${package_name}"
-package_version="1.20220616.2"
+package_version="1.20220616.3"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220616"
+bullseye_version="~bullseye+20220629"

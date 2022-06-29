@@ -34,6 +34,9 @@ models:
     model3:
         model_path: /opt/model_zoo/TVM-CL-3410-gluoncv-mxnet-mobv2
         topN: 5
+    model4:
+        model_path: /opt/model_zoo/ONR-KD-7060-human-pose-yolox-s-640x640
+        viz_threshold: 0.6    
 outputs:
     output0:
         sink: kmssink
@@ -51,26 +54,26 @@ outputs:
 flows:
     flow0:
         input: input0
-        models: [model0, model1, model2, model3]
+        models: [model4, model1, model2, model0]
         outputs: [output0, output0, output0, output0]
         mosaic:
             mosaic0:
-                width:  640
-                height: 360
-                pos_x:  320
-                pos_y:  180
+                width:  960
+                height: 500
+                pos_x:  0
+                pos_y:  30
             mosaic1:
-                width:  640
-                height: 360
+                width:  960
+                height: 500
                 pos_x:  960
-                pos_y:  180
+                pos_y:  30
             mosaic2:
-                width:  640
-                height: 360
-                pos_x:  320
-                pos_y:  560
+                width:  960
+                height: 500
+                pos_x:  0
+                pos_y:  550
             mosaic3:
-                width:  640
-                height: 360
+                width:  960
+                height: 500
                 pos_x:  960
-                pos_y:  560
+                pos_y:  550
