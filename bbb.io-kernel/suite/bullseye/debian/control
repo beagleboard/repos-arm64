@@ -26,20 +26,20 @@ Architecture: all
 Pre-Depends:
  bb-j721e-evm-firmware
  , generic-sys-mods
- , linux-image-5.10.109-ti-arm64-r49
+ , linux-image-5.10.120-ti-arm64-r50
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-beagleboneai64
- , ti-sgx-j721e-modules-5.10.109-ti-arm64-r49
+ , ti-sgx-j721e-modules-5.10.120-ti-arm64-r50
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti in Debian.
 
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: all
-Pre-Depends: linux-image-5.19.0-rc1-arm64-r0
+Pre-Depends: linux-image-5.19.0-rc4-arm64-r0
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks (= ${source:Version})
