@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/ ; git clone https://github.com/beagleboard/am335x_pru_package --depth 1 ./tmp/am335x_pru_package/
+	cd ./tmp/am335x_pru_package/pru_sw/utils/pasm_source/ ; ./linuxbuild/
+
+%:
+	dh $@

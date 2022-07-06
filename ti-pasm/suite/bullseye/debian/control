@@ -1,0 +1,19 @@
+Source: ti-pasm
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , dh-python
+ , git
+Standards-Version: 4.5.1
+Homepage: https://github.com/beagleboard/am335x_pru_package
+
+Package: ti-pasm
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Description: TI pasm
+ TI pasm
