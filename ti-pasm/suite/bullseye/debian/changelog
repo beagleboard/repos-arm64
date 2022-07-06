@@ -1,6 +1,6 @@
-ti-pasm (0.87.20220706-0~bullseye+20220706) bullseye; urgency=low
+ti-pasm (0.87.20220706.0-0~bullseye+20220706) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 06 Jul 2022 15:10:10 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 06 Jul 2022 15:11:06 -0500
 

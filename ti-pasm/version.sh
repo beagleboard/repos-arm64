@@ -4,7 +4,7 @@
 
 package_name="ti-pasm"
 debian_pkg_name="${package_name}"
-package_version="0.87.20220706"
+package_version="0.87.20220706.0"
 package_source=""
 src_dir=""
 
