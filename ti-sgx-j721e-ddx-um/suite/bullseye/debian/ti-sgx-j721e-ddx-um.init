@@ -126,7 +126,7 @@ load_pvr()
 				# Get a TTY for Weston to use.
 				#
 				if [ -x "$(which openvt)" ] && [ -e "/sys/class/tty/tty0/active" ]; then
-					openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
+					/bin/openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
 				fi
 
 				# Launch Weston.

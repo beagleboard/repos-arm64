@@ -1,6 +1,6 @@
-ti-sgx-j721e-ddx-um (1.15.6133109-k5.10-git20220510.0-0~bullseye+20220708) bullseye; urgency=low
+ti-sgx-j721e-ddx-um (1.15.6133109-k5.10-git20220510.1-0~bullseye+20220708) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 08 Jul 2022 11:33:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 08 Jul 2022 16:19:13 -0500
 
