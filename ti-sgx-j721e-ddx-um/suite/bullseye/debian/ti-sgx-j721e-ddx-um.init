@@ -1,4 +1,4 @@
-#! /bin/sh -e
+#!/bin/bash
 
 ### BEGIN INIT INFO
 # Provides:          ti-sgx-j721e-ddx-um.init
@@ -40,14 +40,21 @@ fi
 # THE SOFTWARE.
 #### ###########################################################################
 
-# Auto-generated for j721e_linux from rogueddk_1.10@5371573
+# Auto-generated for j721e_linux from rogueddk_1.15@6133109
 #
 
 load_pvr()
 {
+	load_modules_exit_status=0
+
 	# Load the PVR Services module.
-	#	
-	if ! /sbin/modprobe -q pvrsrvkm $PVR_SRVKM_PARAMS; then
+	#
+	
+	if [ -n "$PVR_SRVKM_PARAMS" ] && ! /sbin/modprobe -q pvrsrvkm --dry-run --first-time; then
+		echo "Cannot set parameters for pvrsrvkm. Module already loaded."
+		some_modules_already_loaded=1
+		readonly load_modules_exit_status=1
+	elif ! /sbin/modprobe -q pvrsrvkm $PVR_SRVKM_PARAMS; then
 		echo "Module pvrsrvkm failed to load. Retrying."
 		if [ -z $depmod_has_been_run ]; then
 			if [ -e /sbin/depmod ]; then
@@ -64,15 +71,110 @@ load_pvr()
 		/sbin/udevadm control --reload-rules
 	fi
 
-	
 	# Load 3rd party module(s).
 	#
-			echo "Loaded PowerVR consumer services."
-	return 0;
+		
+	if [ -z "$PVR_LOAD_MODULES_ONLY" ]; then
+		# Create the directory for the Wayland socket.
+		#
+		if [ -z "$XDG_RUNTIME_DIR" ]; then
+			export XDG_RUNTIME_DIR=/tmp/wayland
+		fi
+		if [ ! -e $XDG_RUNTIME_DIR ]; then
+			mkdir $XDG_RUNTIME_DIR && chmod 0700 $XDG_RUNTIME_DIR
+		fi
+
+		# If PDumping, enable software rendering for Weston to ensure that
+		# pdump doesn't capture any output from Weston itself.
+		#
+		if pgrep -x pdump > /dev/null 2>&1; then
+				export GBM_ALWAYS_SOFTWARE=1
+				export LIBGL_ALWAYS_SOFTWARE=1
+		fi
+
+		# Try to work out the device node for the display controller.
+		#
+		for dev in /dev/dri/card*; do
+			dev_major=$(($(stat -c '0x%t' "$dev")))
+			dev_minor=$(($(stat -c '0x%T' "$dev")))
+			sys_path=$(readlink -f /sys/dev/char/$dev_major\:$dev_minor)
+
+			while [ -e "$sys_path" -a "$sys_path" != "/sys" ]; do
+				if [ ! -e "${sys_path}/driver" ]; then
+					sys_path="$(dirname "$sys_path")"
+					continue
+				fi
+
+				module="$(basename "$(readlink -f "$sys_path/driver/module")")"
+				if [ "$module" = "DISPLAY_CONTROLLER" ]; then
+					drm_card="$(basename "$dev")"
+				fi
+				break
+			done
+
+			if [ -n "$drm_card" ]; then
+				break
+			fi
+		done
+
+		if [ -e "${XDG_RUNTIME_DIR}/weston.pgid" ]; then
+			echo "Weston is already running. If this is not the case run:"
+			echo "$ sudo rm ${XDG_RUNTIME_DIR}/weston.pgid"
+			echo
+		else
+			# Get a TTY for Weston to use.
+			#
+			if [ -x "$(which openvt)" ] && [ -e "/sys/class/tty/tty0/active" ]; then
+				openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
+			fi
+
+			# Launch Weston.
+			#
+			if [ -n "$drm_card" ]; then
+				if [ -n "$unused_tty" ]; then
+					ps -p $$ -o pgid= > "${XDG_RUNTIME_DIR}/weston.pgid"
+					/usr/bin/weston --backend=drm-backend.so --drm-device="$drm_card" --tty="${unused_tty//[!0-9]}" --idle-time=0  &
+				else
+					last_tty_path="$(ls /dev/tty[1-9][0-9] | sort -V |tail -n 1)"
+
+					echo "To start Weston run (specifying a tty within the given range):"
+					echo "$ sudo /usr/bin/weston --backend=drm-backend.so --drm-device=$drm_card --tty=<8..${last_tty_path//[!0-9]}> --idle-time=0 &"
+					echo
+				fi
+			else
+				echo "Couldn't start Weston automatically."
+			fi
+		fi
+	fi
+
+	if [ -n "$some_modules_already_loaded" ]; then
+		echo
+		echo "Could not set parameters for some modules."
+		echo "To fix this ensure automatic loading of those modules is disabled and restart the driver."
+		echo "See the platform guide for more details."
+	else
+		echo "Loaded PowerVR consumer services."
+	fi
+
+	return $load_modules_exit_status;
 }
 
 unload_pvr()
 {
+	if [ -z "$XDG_RUNTIME_DIR" ]; then
+		XDG_RUNTIME_DIR=/tmp/wayland
+	fi
+
+	# Stop Weston.
+	#
+	if [ -f "${XDG_RUNTIME_DIR}/weston.pgid" ]; then
+		read WESTON_PGID < "${XDG_RUNTIME_DIR}/weston.pgid" && [ -n "$WESTON_PGID" ] && WESTON_PID=$(pgrep -g $WESTON_PGID -x weston) && [ -n "$WESTON_PID" ] && kill $WESTON_PID && while [ -e /proc/$WESTON_PID ] ; do sleep 1; done
+		rm "${XDG_RUNTIME_DIR}/weston.pgid"
+	elif pgrep -x weston > /dev/null; then
+		echo "Warning: Found one of more instances of Weston running."
+		echo "         This may prevent the driver from being unloaded."
+	fi
+
 	# Unload 3rd party module(s).
 	#
 		
