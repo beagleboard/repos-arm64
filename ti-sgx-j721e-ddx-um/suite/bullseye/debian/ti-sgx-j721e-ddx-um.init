@@ -117,32 +117,34 @@ load_pvr()
 			fi
 		done
 
-		if [ -e "${XDG_RUNTIME_DIR}/weston.pgid" ]; then
-			echo "Weston is already running. If this is not the case run:"
-			echo "$ sudo rm ${XDG_RUNTIME_DIR}/weston.pgid"
-			echo
-		else
-			# Get a TTY for Weston to use.
-			#
-			if [ -x "$(which openvt)" ] && [ -e "/sys/class/tty/tty0/active" ]; then
-				openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
-			fi
-
-			# Launch Weston.
-			#
-			if [ -n "$drm_card" ]; then
-				if [ -n "$unused_tty" ]; then
-					ps -p $$ -o pgid= > "${XDG_RUNTIME_DIR}/weston.pgid"
-					/usr/bin/weston --backend=drm-backend.so --drm-device="$drm_card" --tty="${unused_tty//[!0-9]}" --idle-time=0  &
-				else
-					last_tty_path="$(ls /dev/tty[1-9][0-9] | sort -V |tail -n 1)"
-
-					echo "To start Weston run (specifying a tty within the given range):"
-					echo "$ sudo /usr/bin/weston --backend=drm-backend.so --drm-device=$drm_card --tty=<8..${last_tty_path//[!0-9]}> --idle-time=0 &"
-					echo
-				fi
+		if [ -f /usr/bin/weston ] ; then
+			if [ -e "${XDG_RUNTIME_DIR}/weston.pgid" ]; then
+				echo "Weston is already running. If this is not the case run:"
+				echo "$ sudo rm ${XDG_RUNTIME_DIR}/weston.pgid"
+				echo
 			else
-				echo "Couldn't start Weston automatically."
+				# Get a TTY for Weston to use.
+				#
+				if [ -x "$(which openvt)" ] && [ -e "/sys/class/tty/tty0/active" ]; then
+					openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
+				fi
+
+				# Launch Weston.
+				#
+				if [ -n "$drm_card" ]; then
+					if [ -n "$unused_tty" ]; then
+						ps -p $$ -o pgid= > "${XDG_RUNTIME_DIR}/weston.pgid"
+						/usr/bin/weston --backend=drm-backend.so --drm-device="$drm_card" --tty="${unused_tty//[!0-9]}" --idle-time=0  &
+					else
+						last_tty_path="$(ls /dev/tty[1-9][0-9] | sort -V |tail -n 1)"
+
+						echo "To start Weston run (specifying a tty within the given range):"
+						echo "$ sudo /usr/bin/weston --backend=drm-backend.so --drm-device=$drm_card --tty=<8..${last_tty_path//[!0-9]}> --idle-time=0 &"
+						echo
+					fi
+				else
+					echo "Couldn't start Weston automatically."
+				fi
 			fi
 		fi
 	fi
