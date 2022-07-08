@@ -13,6 +13,7 @@ Package: ti-sgx-j721e-ddx-um
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
+ , kbd
 Architecture: arm64
 Description: Userspace libraries for SGX
  Userspace libraries for SGX
