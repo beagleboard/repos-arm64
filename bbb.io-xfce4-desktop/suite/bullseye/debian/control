@@ -33,5 +33,6 @@ Depends:
  , bbb.io-keyring
  , gnome-desktop3-data
  , gnome-system-tools
+ , xfce4-power-manager
 Description: BeagleBoard.org xfce4 desktop
  This package contains tasksel information for the BeagleBoard.org xfce4 desktop.
