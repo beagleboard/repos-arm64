@@ -1,0 +1,19 @@
+Tests: growpart-loop, growpart-lvm
+Restrictions: needs-root isolation-machine allow-stderr
+Depends:
+ cloud-guest-utils,
+ fdisk,
+ gdisk,
+ lvm2,
+
+Tests: growpart-fsimage, growpart-fsimage-middle, growpart-start-matches-size
+Restrictions: allow-stderr
+Depends:
+ cloud-guest-utils,
+ fdisk,
+ gdisk,
+
+Tests: mic
+Restrictions: needs-root isolation-machine allow-stderr
+Depends:
+ cloud-image-utils,

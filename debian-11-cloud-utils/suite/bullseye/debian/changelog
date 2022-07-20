@@ -1,0 +1,541 @@
+cloud-utils (0.33-1bbbio0~bullseye+20220720) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 20 Jul 2022 13:29:55 -0500
+
+cloud-utils (0.33-1) unstable; urgency=medium
+
+  * New upstream version 0.33
+  * d/p/Implement-IMDSv2-support.patch: drop patch (upstreamed)
+  * d/control: switch to dh compat level 13, no changes needed
+  * d/control: mark cloud-guest-utils as Multi-Arch: foreign
+  * d/rules: run tests in override_dh_auto_test
+  * d/rules: o_dh_auto_test: prepend in-tree bin/ to PATH
+  * d/run_tests: exclude test-growpart-lvm (fails in schroot)
+  * d/tests: run upstream tests as autopkgtests
+  * d/gbp.conf: pristine-tar-commit = True
+
+ -- Paride Legovini <paride@debian.org>  Fri, 03 Jun 2022 12:51:54 +0200
+
+cloud-utils (0.31-4) unstable; urgency=medium
+
+  * d/control: bump Standards-Version to 4.6.1, no changes needed
+  * d/control: cloud-image-utils: add Suggests: mtools
+  * d/control: set Rules-Requires-Root: no
+  * d/control: add Paride Legovini to Uploaders
+  * d/rules: drop include pkgos.make (not needed)
+    - d/control: drop openstack-pkg-tools Build-Depends
+  * d/*.manpages: install manpages using dh_installman
+  * d/cloud-utils-euca.install: orphan file, dropped
+  * d/copyright: add Canonical Ltd as a copyright holder
+  * d/copyright: update upstream metadata
+  * d/copyright: use secure Format URI
+  * d/watch: update version and upstream location (LP -> GitHub)
+  * d/upstream: drop upstream signing key (outdated)
+  * d/u/metadata: add upstream metadata file
+
+ -- Paride Legovini <paride@debian.org>  Wed, 01 Jun 2022 10:07:47 +0000
+
+cloud-utils (0.31-3) unstable; urgency=medium
+
+  * Add fdisk depends in cloud-guest-utils (Closes: #1010621).
+  * Run tests at build time.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 05 May 2022 23:44:38 +0200
+
+cloud-utils (0.31-2) unstable; urgency=medium
+
+  * Add support for IMDSv2 in Amazon EC2. (Closes: #952563)
+  * Bump debhelper-compat to version 12
+  * Bump standards compliance to 4.5.0 (no changes needed)
+  * Add noahm@debian.org to Uploaders
+
+ -- Noah Meyerhans <noahm@debian.org>  Thu, 28 May 2020 15:11:57 -0700
+
+cloud-utils (0.31-1) unstable; urgency=medium
+
+  * Adopt the package in the cloud team.
+  * Run wrap-and-sort -bast.
+  * Switch to debhelper-compat.
+  * Drop obsolete Breaks+Replaces.
+  * Drop the cloud-utils-euca package (as euca2ools is removed from Debian).
+  * Fix debian/gbp.conf.
+  * New upstream release.
+  * Drop Julien Danjou from uploaders (Closes: #928581).
+  * Standards-Version bump to 4.4.0.
+  * Set compat level to 11.
+  * Point VCS to Salsa.
+  * Deprecate priority extra, as per policy 4.x.
+  * Removed dependency on util-linux (it's an Essential: yes package).
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 14 Sep 2019 01:29:43 +0200
+
+cloud-utils (0.29-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/copyright: exclude ".bzr/" folder from upstream tarball.
+
+ -- Tiago Ilieve <tiago.myhro@gmail.com>  Wed, 20 Jul 2016 17:09:55 -0300
+
+cloud-utils (0.28-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add signature verification of upstream tarball (fixes
+    'debian-watch-may-check-gpg-signature').
+  * Bump 'Standards-Version' to 3.9.8 (no changes needed).
+
+ -- Tiago Ilieve <tiago.myhro@gmail.com>  Fri, 20 May 2016 02:53:52 -0300
+
+cloud-utils (0.28~bzr281-2) unstable; urgency=medium
+
+  * Add 'cloud-init' as suggestion for 'cloud-guest-utils'.
+  * Add copyright for 'cloud-localds' manpage.
+  * debian/control: wrap-and-sort Build-Depends and Depends.
+  * Fix lintian complaints:
+    - binary-control-field-duplicates-source
+    - capitalization-error-in-description
+    - extended-description-is-probably-too-short
+    - unused-file-paragraph-in-dep5-copyright
+
+ -- Tiago Ilieve <tiago.myhro@gmail.com>  Wed, 30 Mar 2016 22:47:47 -0300
+
+cloud-utils (0.28~bzr281-1) unstable; urgency=medium
+
+  [ Tiago Ilieve ]
+  * New snapshot from upstream.
+  * Add man page for cloud-localds. (Closes: #718247)
+  * Add myself as maintainer.
+  * Add NEWS file.
+    - Mention the removal of deprecated links.
+  * Fix GPT partition resize with sfdisk >= 2.26 (Closes: #784673)
+  * Fix misspelling in growpart man page. (Closes: #793919)
+  * Remove debian/clean as 'ubuntu-cloudimg-keyring.gpg' is not present
+    anymore.
+  * Remove Links for uec-resize-image, uec-publish-image and
+    uec-publish-tarball, as they were deprecated.
+  * Remove obsolete patches which their issues were fixed upstream:
+    - also-support-sfdisk-2.26-and-higher.patch
+    - do-not-use-EXIT-when-trapping.patch
+  * Split binary packages: (Closes: #747229)
+    - cloud-utils (metapackage)
+    - cloud-guest-utils
+    - cloud-image-utils
+    - cloud-utils-euca
+  * Update debian/copyright:
+    - Add 2016 for Canonical contributions.
+    - Add Hewlett-Packard to upstream authors.
+    - Add myself to package maintainers.
+    - Update upstream URL.
+  * Update debian/rules to build with python3.
+  * Update Standards-Version to 3.9.7 (no change).
+
+  [ Antonio Terceiro ]
+  * add myself to Uploaders:
+
+ -- Tiago Ilieve <tiago.myhro@gmail.com>  Thu, 10 Mar 2016 19:52:45 -0300
+
+cloud-utils (0.27-2) unstable; urgency=medium
+
+  * Adjust sfdisk 2.26 patch to not use cut.  closes: #793914.
+
+ -- Clint Adams <clint@debian.org>  Tue, 28 Jul 2015 16:59:38 -0400
+
+cloud-utils (0.27-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refreshed do-not-use-EXIT-when-trapping.patch.
+  * Added also-support-sfdisk-2.26-and-higher.patch (Closes: #783826).
+  * Added Debian package maintainers to debian/copyright.
+  * Build-depends on python-all, not just python.
+  * Standards-Version: 3.9.6 (no change).
+  * Added to debian/rules: include /usr/share/openstack-pkg-tools/pkgos.make
+    and build-depends on openstack-pkg-tools.
+  * Added Homepage field.
+  * Fixed lintian warning about non-canonical Vcs-Git.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 04 May 2015 09:34:24 +0200
+
+cloud-utils (0.26-2) unstable; urgency=low
+
+  * Fixes "trap cleanup EXIT" in growpart: replaces "EXIT" by 0, as it
+    otherwise fails in the Debian initramfs.
+  * Added VCS fields.
+  * Added a debian/gbp.conf
+  * Added myself as uploader.
+  * Fixed the Format: URL of the debian/copyright.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 11 Jun 2013 21:47:17 +0800
+
+cloud-utils (0.26-1) unstable; urgency=low
+
+  * Package it for Debian (Closes: #622946)
+
+ -- Julien Danjou <acid@debian.org>  Tue, 29 Jan 2013 13:34:23 +0100
+
+cloud-utils (0.26-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    * pull in upstream at 0.26
+    * remove client tools cloudimg-sync and ubuntu-cloudimg-query2
+      (LP: #1059781)
+    * ubuntu-cloudimg-query: add 'serial' to output variables (LP: #974569)
+
+ -- Scott Moser <smoser@ubuntu.com>  Mon, 01 Oct 2012 15:08:43 -0400
+
+cloud-utils (0.25-0ubuntu7) quantal; urgency=low
+
+  * Sync to upstream trunk at revision 195 .
+    * adds cloud-localds utility (LP: #1036312)
+    * growpart: bugfix for nbd and loop devices
+    * awareness of hi1.4xlarge
+    * ubuntu-ec2-run: fix issue with block-device-mappings
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 23 Aug 2012 00:45:35 -0400
+
+cloud-utils (0.25-0ubuntu6) quantal; urgency=low
+
+  * Sync to upstream trunk at revision 188
+    * adds cloudimg-sync and ubuntu-cloudimg-query2 [Ben Howard]
+  * debian/control: run wrap-and-sort
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 12 Jul 2012 13:38:44 -0400
+
+cloud-utils (0.25-0ubuntu5) precise; urgency=low
+
+  * cloud-publish-tarball, cloud-publish-image: be more quiet
+    when downloading images by using wget --progress=dot:mega
+  * ubuntu-cloudimg-query, ubuntu-ec2-run: support m1.medium ec2 size
+    and do not assume m1.small or c1.medium imply i386.
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 09 Mar 2012 17:02:53 -0500
+
+cloud-utils (0.25-0ubuntu4) precise; urgency=low
+
+  * growpart: invoke sfdisk with '--no-reread' to avoid udev race
+    conditions (LP: #937352)
+
+ -- Scott Moser <smoser@ubuntu.com>  Tue, 28 Feb 2012 14:40:51 -0500
+
+cloud-utils (0.25-0ubuntu3) precise; urgency=low
+
+  * growpart: allow output of failed sfdisk to get to user
+
+ -- Scott Moser <smoser@ubuntu.com>  Wed, 22 Feb 2012 15:49:34 -0500
+
+cloud-utils (0.25-0ubuntu2) precise; urgency=low
+
+  * cloud-publish-image: fix issue if ramdisk=none
+    this fixes cloud-publish-tarball for no-ramdisk tarballs
+
+ -- Scott Moser <smoser@ubuntu.com>  Sun, 19 Feb 2012 15:18:26 -0500
+
+cloud-utils (0.25-0ubuntu1) precise; urgency=low
+
+  * New upstream release.
+  * fixes for cloud-publish-ubuntu for clouds other than EC2
+  * better support for "loader" kernels in cloud-publish-image
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 16 Feb 2012 15:36:15 -0500
+
+cloud-utils (0.24-0ubuntu1) precise; urgency=low
+
+  * New upstream release
+  * cloud-publish-tarball, cloud-publish-image now accept urls
+  * cloud-publish-image supports older euca2ools or ec2 tools that
+    do not have a '--name' flag in register
+  * cloud-publish-ubuntu: new tool added for one command population
+    of your cloud from images on cloud-images.ubuntu.com
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 27 Oct 2011 15:10:33 -0400
+
+cloud-utils (0.23-0ubuntu7) oneiric; urgency=low
+
+  * cloud-publish-image: do not fail if arch is other than i386 or x86_64.
+    This is to allow 'arm'. (LP: #849093)
+
+ -- Scott Moser <smoser@ubuntu.com>  Tue, 13 Sep 2011 16:29:24 -0400
+
+cloud-utils (0.23-0ubuntu6) oneiric; urgency=low
+
+  * cherry pick some fixes from trunk
+  * ubuntu-ec2-run: add block-device-mapping arguments
+  * cloud-publish-image: default to 'image' type rather than auto
+  * ubuntu-cloudimg-query: hvm instances cannot run on t1.micro
+  * ubuntu-ec2-run: add --help usage, and do not run an instance
+    if no args are given
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 09 Sep 2011 14:33:46 -0700
+
+cloud-utils (0.23-0ubuntu5) oneiric; urgency=low
+
+  * sync with trunk at revision 142
+  * add symlink for legacy name uec-run-instances to cloud-run-instances
+  * ec2metadata:
+    * use 2009-04-04 version of api, which is present in openstack for the
+      metadata url.
+    * correctly provide prefix (keyname) for each item if dumping all metadata
+  * cloud-run-instances: pass '--key' or '-k' to the underlying command
+  * ubuntu-ec2-run: fix bug where --instance-type would be passed twice
+    if the user set it
+
+ -- Scott Moser <smoser@ubuntu.com>  Wed, 17 Aug 2011 15:39:12 -0500
+
+cloud-utils (0.23-0ubuntu4) oneiric; urgency=low
+
+  * sync with trunk at revision 136
+  * ubuntu-cloudimg-query add additional format data options
+
+  [Dustin Kirkland]
+  * bin/ubuntu-ec2-run:
+    - karmic is EOL, hardy still supported, note that we *should*
+      use distro-info eventually
+    - default to t1.micro instead of m1.small (least expensive, can do amd64)
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 11 Aug 2011 09:22:43 +0100
+
+cloud-utils (0.23-0ubuntu3) oneiric; urgency=low
+
+  * fix for ubuntu-ec2-run, which was broken in previous upload
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 04 Aug 2011 15:24:57 -0400
+
+cloud-utils (0.23-0ubuntu2) oneiric; urgency=low
+
+  * sync with trunk at revision 127
+  * fix to cloud-publish-image when interacting with older eucalyptus
+  * bring in 2 new utilities for getting EC2 ami ids
+    - ubuntu-ec2-query : command line utility for querying
+      http://cloud-images.ubuntu.com/query
+    - ubuntu-ec2-run : lightweight wrapper around ec2-run-instances
+      that utilizes ubuntu-ec2-query
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 04 Aug 2011 14:53:07 -0400
+
+cloud-utils (0.23-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release (first upstream release separate from Ubuntu)
+  * ec2metadata: add '--url' flag for specifying metadata service url
+  * ec2metadata: update to use metadata api version 2011-01-01
+    This adds 'instance-action', 'mac', 'profile'
+  * ec2metadata: use urllib2 and correctly identify HTTPErrors
+  * rename 'uec' prefix to 'cloud'
+    there are symlinks providing backwards compat that will issue warnings
+    - uec-publish-tarball: renamed to cloud-publish-tarball
+    - uec-publish-image: renamed to cloud-publish-image
+    - uec-resize-image: renamed to resize-part-image
+  * uec-query-builds: removed
+
+ -- smoser <smoser@brickies.net>  Tue, 26 Jul 2011 22:15:46 -0400
+
+cloud-utils (0.22ubuntu1) oneiric; urgency=low
+
+  * uec-publish-tarball: accept x86_64 as valid arch input, and pass provided
+    arch un-modified to uec-publish-image rather than always changing to 'i386'
+    (LP: #779812)
+  * uec-publish-image: improve searching for existing image.  Handle searching
+    for either the name or the manifest path, and only search images owned by
+    self.
+  * uec-publish-image: register as bucket/basename rather than basename
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 15 Jul 2011 12:14:21 -0400
+
+cloud-utils (0.21ubuntu1) natty; urgency=low
+
+  * make uec-publish-tarball read TMPDIR. Previously it
+    read 'TEMPDIR' environment variable.  Fall back to using
+    that if TMPDIR is not set.
+  * add utility 'growpart' for rewriting a partition table
+    so that a given partition uses available space (LP: #725127)
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 25 Feb 2011 12:54:46 -0500
+
+cloud-utils (0.20ubuntu1) natty; urgency=low
+
+  * uec-publish-image: use --name in euca-register
+  * uec-publish-image: fix for debug so '-v' will give some info
+    (previously needed -vv)
+  * ec2metadata: fix for ancestor-ami-ids retrieval (LP: #706651)
+  * uec-run-instances: add '--attach-volume'
+
+ -- Scott Moser <smoser@ubuntu.com>  Sat, 19 Feb 2011 01:17:35 -0500
+
+cloud-utils (0.19ubuntu1) natty; urgency=low
+
+  * uec-publish-image: fix using ec2-api-tools and ec2-ami-tools
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 13 Jan 2011 13:56:45 -0500
+
+cloud-utils (0.18ubuntu1) natty; urgency=low
+
+  * include write-mime-multipart into the packaging, with man page
+
+ -- Scott Moser <smoser@ubuntu.com>  Tue, 11 Jan 2011 19:50:35 -0500
+
+cloud-utils (0.17ubuntu1) natty; urgency=low
+
+  * uec-publish-tarball: add --rename-[kernel,ramdisk,image] flags
+  * add support for shorter syntax in uec-query-builds
+  * fix ec2metadata under Eucalyptus (LP: #676144)
+  * move write-mime-multipart from cloud-init to cloud-init-multipart
+    in cloud-utils
+
+ -- Scott Moser <smoser@ubuntu.com>  Tue, 11 Jan 2011 09:40:28 -0500
+
+cloud-utils (0.16ubuntu1) maverick; urgency=low
+
+  * uec-run-instances: fix multiple launchpad-ids. (LP: #621473)
+  * uec-run-instances: depend on python-paramiko. (LP: #646823)
+
+ -- Scott Moser <smoser@ubuntu.com>  Mon, 30 Aug 2010 13:56:19 -0400
+
+cloud-utils (0.15ubuntu1) maverick; urgency=low
+
+  * uec-publish-tarball: support --loader flag to use the loader
+    image rather than linux kernel in uec tarballs
+
+ -- Scott Moser <smoser@ubuntu.com>  Tue, 03 Aug 2010 16:12:47 -0400
+
+cloud-utils (0.14-0ubuntu1) maverick; urgency=low
+
+  * debian/control, debian/ssh-import.install, debian/ssh-import.manpages,
+    ssh-import-lp-id, ssh-import-lp-id.1: purge ssh-import* from this
+    source package, now pushed to openssh-server 1:5.5p1-4ubuntu3
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Thu, 22 Jul 2010 15:25:41 +0200
+
+cloud-utils (0.13ubuntu1) maverick; urgency=low
+  [ Dustin Kirkland ]
+  * ssh-import-lp-id: handle multi-line ssh public keys in Launchpad,
+    LP: #596938; thanks to Jos Boumans for the elegant snippet of perl that
+    fixes this
+  [ Clint Byrum ]
+  * uec-run-instances: rewritten command with much larger scope
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 24 Jun 2010 20:40:09 -0400
+
+cloud-utils (0.12ubuntu1) maverick; urgency=low
+
+  * ec2metadata: bring in ec2metadata (LP: #547019)
+
+ -- Scott Moser <smoser@ubuntu.com>  Thu, 10 Jun 2010 17:00:22 -0400
+
+cloud-utils (0.11-0ubuntu1) lucid; urgency=low
+
+  * uec-query-builds: do not throw IndexError on no builds available,
+    or Exception on bad usage, LP: #559236
+  * uec-publish-image: remove error trailing '%s' in error message,
+    LP: #559244
+  * uec-publish-tarball: send stdout through on failure of uec-publish-image,
+    LP: #559244
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 09 Apr 2010 10:03:29 -0400
+
+cloud-utils (0.10-0ubuntu1) lucid; urgency=low
+
+  [ Scott Moser ]
+  * ssh-import-lp-id: allow dss keys
+  * uec-publish-tarball: add -q/--quiet flag
+  * uec-publish-image:
+    - remove trailing slash on bucket input which caused failed register
+    - remove trailing tab in output
+    - on error, make sure user sees command output
+    - add -B/--device-block-mapping pass through to euca-bundle-image
+  * uec-resize-image: make quiet by default, add --verbose,-v
+  * uec-query-builds: support querying 'latest-ec2'
+
+  [ Dustin Kirkland ]
+  * debian/install, debian/manpages, uec-run-instances,
+    uec-run-instances.1: add a wrapper for euca-run-instances that
+    can easily/cleanly inject ssh keys from Launchpad.net, LP: #524101
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Thu, 25 Mar 2010 21:53:59 -0700
+
+cloud-utils (0.9-0ubuntu1) lucid; urgency=low
+
+  * ssh-import-lp-id:
+    - ensure that authorized_keys gets created with the right permissions
+      if it does not yet exist, LP: #531144
+    - drop the sort -u, as this is actually incorrect behavior (rearranging
+      the order of an existing authorized_keys file, even if to prune
+      duplicate entries, is wrong); this does mean that duplicate entries
+      might creep into the file, but the behavior is the same as
+      ssh-copy-id in this sense, LP: #531145
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 02 Mar 2010 23:53:05 -0600
+
+cloud-utils (0.8-0ubuntu1) lucid; urgency=low
+
+  * uec-publish-image: return to using symbolic link for renaming
+    (LP: #522292 is fixed)
+  * uec-publish-tarball: fail before extracting tarball if environment
+    is not set up for euca2ools (LP: #526504)
+
+ -- Scott Moser <smoser@ubuntu.com>  Mon, 01 Mar 2010 12:02:53 -0500
+
+cloud-utils (0.7-0ubuntu1) lucid; urgency=low
+
+  * ssh-import-lp-id: ensure that $HOME is set properly, LP: #528029;
+    add a usage statement
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Thu, 25 Feb 2010 16:19:35 -0600
+
+cloud-utils (0.6-0ubuntu1) lucid; urgency=low
+
+  * debian/control, debian/ssh-import.install, debian/ssh-import.manpages,
+    ssh-import-lp-id, ssh-import-lp-id.1:
+    - add a utility and a binary package for conveniently importing
+      public ssh keys from Launchpad by a LP user id, LP: #524226
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 23 Feb 2010 20:32:40 -0600
+
+cloud-utils (0.5-0ubuntu1) lucid; urgency=low
+
+  [ Scott Moser ]
+  * uec-publish-image: use hard link instead of soft, work around
+    euca2ools bug (LP: #522292)
+  * uec-publish-image: remove temp dir if --working-dir is given
+  * uec-publish-image: add --kernel-file, --ramdisk-file flags
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Thu, 18 Feb 2010 22:58:33 -0600
+
+cloud-utils (0.4-0ubuntu1) lucid; urgency=low
+
+  * Fix package versioning
+
+ -- Dustin Kirkland < kirkland@ubuntu.com>  Thu, 18 Feb 2010 15:04:39 -0600
+
+cloud-utils (0.3ubuntu1) lucid; urgency=low
+
+  [ Dustin Kirkland ]
+  * Makefile, debian/install: ditch the Makefile in favor of a debhelper
+    install
+  * uec-publish-image, uec-publish-tarball, uec-resize-image: add GPLv3
+    headers to all scripts
+  * uec-publish-image: add a note about bashisms
+  * debian/copyright, uec-query-builds: clean up trailing whitespace
+  * debian/control:
+    - improve the description
+    - depend on python, python-yaml
+  * debian/manpages, uec-publish-tarball.1, uec-query-builds.1,
+    uec-resize-image.1, uec-publish-image.1: add a first cut at manpages
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Wed, 17 Feb 2010 21:00:56 -0600
+
+cloud-utils (0.2ubuntu1) lucid; urgency=low
+
+  * add uec-query-builds for querying uec build data from uec-images.u.c
+
+ -- Scott Moser <smoser@ubuntu.com>  Wed, 17 Feb 2010 17:34:27 -0500
+
+cloud-utils (0.2) lucid; urgency=low
+
+  * fix version number to represent native package
+
+ -- Scott Moser <smoser@ubuntu.com>  Mon, 08 Feb 2010 10:18:12 -0500
+
+cloud-utils (0.1ubuntu1) lucid; urgency=low
+
+  * Initial release.
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 05 Feb 2010 18:37:57 -0500

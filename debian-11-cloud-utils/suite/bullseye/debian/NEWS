@@ -1,0 +1,12 @@
+cloud-utils (0.28~bzr281-1) unstable; urgency=medium
+
+  Links for the following uec-* commands were removed:
+
+  - uec-publish-image
+  - uec-publish-tarball
+  - uec-resize-image
+
+  They were deprecated since the version 0.27-0ubuntu3 released on 27 Aug 2013
+  on Ubuntu.
+
+ -- Tiago Ilieve <tiago.myhro@gmail.com>  Thu, 10 Mar 2016 19:52:45 -0300

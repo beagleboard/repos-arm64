@@ -1,0 +1,5 @@
+usr/bin/cloud-localds
+usr/bin/mount-image-callback
+usr/bin/resize-part-image
+usr/bin/ubuntu-cloudimg-query
+usr/bin/write-mime-multipart
