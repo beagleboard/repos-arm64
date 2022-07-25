@@ -1,6 +1,6 @@
-bb-customizations (1.20220725.0-0~bullseye+20220725) bullseye; urgency=low
+bb-customizations (1.20220725.1-0~bullseye+20220725) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 25 Jul 2022 12:29:39 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 25 Jul 2022 12:37:59 -0500
 
