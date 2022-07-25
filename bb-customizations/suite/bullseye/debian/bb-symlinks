@@ -3,7 +3,7 @@
 mkdir -p /dev/bone/pwm/
 
 i=0
-while [ $i -ne 9 ]
+while [ $i -ne 12 ]
 do
 	unset pwm_node
 	if [ -d /sys/class/pwm/pwmchip$i ] ; then
