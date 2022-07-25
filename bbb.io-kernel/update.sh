@@ -23,7 +23,7 @@ generate_header () {
 	echo "Rules-Requires-Root: no" >> ./suite/${dist}/debian/${wfile}
 	echo "" >> ./suite/${dist}/debian/${wfile}
 	echo "Package: bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
-	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
+	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
 	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
@@ -39,7 +39,7 @@ generate_kernel_ti () {
 	echo "" >> ./suite/${dist}/debian/${wfile}
 	echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
+	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
 	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
@@ -60,7 +60,7 @@ generate_mainline_kernel () {
 	echo "" >> ./suite/${dist}/debian/${wfile}
 	echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-	echo "Architecture: all" >> ./suite/${dist}/debian/${wfile}
+	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
