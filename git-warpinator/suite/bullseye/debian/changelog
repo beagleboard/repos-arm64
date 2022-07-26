@@ -1,8 +1,8 @@
-warpinator (1.2.13-0~bullseye+20220726) bullseye; urgency=low
+warpinator (1.2.13-0bbbio0~bullseye+20220726) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Jul 2022 10:13:17 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Jul 2022 11:42:00 -0500
 
 warpinator (1.2.13) vanessa; urgency=medium
 

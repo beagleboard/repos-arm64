@@ -16,5 +16,6 @@ dl_path=""
 debian_version="${package_version}-0"
 debian_patch=""
 debian_diff=""
+local_patch="bbbio0"
 
 bullseye_version="~bullseye+20220726"
