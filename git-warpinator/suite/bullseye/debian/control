@@ -5,6 +5,7 @@ Maintainer: Linux Mint <root@linuxmint.com>
 Build-Depends:
  debhelper-compat (= 12),
  appstream,
+ ca-certificates,
  curl,
  dh-python,
  gnome-pkg-tools (>= 0.10),
@@ -12,7 +13,6 @@ Build-Depends:
  policykit-1,
  python3-grpc-tools (>= 1.14.0),
  python3-protobuf (>= 3.6.1),
- python3-zeroconf,
  gobject-introspection
 Standards-Version: 3.9.6
 
@@ -34,7 +34,6 @@ Depends:
  python3-netaddr,
  python3-netifaces,
  python3-ifaddr,
- python3-zeroconf,
  ${misc:Depends},
  ${python3:Depends}
 Description: Allows simple local network file sharing.
