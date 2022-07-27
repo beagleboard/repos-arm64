@@ -33,7 +33,7 @@ override_dh_auto_configure:
 	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/optee_os/ ; git clone https://github.com/OP-TEE/optee_os.git --depth=1 ./tmp/optee_os/
-	make -C tmp/optee_os -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- PLATFORM=k3 OPTEEMACHINE=k3-am62x CFG_ARM64_core=y all
+	make -C tmp/optee_os -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3 OPTEEMACHINE=k3-am62x CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b lc-ti-u-boot-2021.01 http://gitlab.gfnd.rcn-ee.org/RobertCNelson/lc-u-boot.git --depth=1 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- am62x_evm_a53_defconfig
