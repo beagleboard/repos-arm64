@@ -1,6 +1,6 @@
-bb-u-boot-sk-am62 (2021.01.20220527.1-0~bullseye+20220727) bullseye; urgency=low
+bb-u-boot-sk-am62 (2021.01.20220527.2-0~bullseye+20220727) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Jul 2022 13:54:56 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Jul 2022 14:07:27 -0500
 
