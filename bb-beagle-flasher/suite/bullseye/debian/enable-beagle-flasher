@@ -11,7 +11,12 @@ if [ -f /etc/default/beagle-flasher ] ; then
 	sed -i -e 's:net.ifnames=0:net.ifnames=0 init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
 	systemctl enable beagle-flasher-init-shutdown.service || true
 	systemctl disable grow_partition.service || true
+	echo "log: enable-beagle-flasher"
+	echo "log: media is now setup to flash other media"
+	echo "log: Shutdown system and this flasher will run on next startup"
 else
-	echo "Please setup /etc/default/beagle-flasher, for the BBB or BBAI:"
+	echo "log: enable-beagle-flasher"
+	echo "log: Please setup /etc/default/beagle-flasher, for the bbai64..."
 	echo "# sudo cp -v /etc/beagle-flasher/bbai64-microsd-to-emmc /etc/default/beagle-flasher"
+	echo "log: and rerun..."
 fi
