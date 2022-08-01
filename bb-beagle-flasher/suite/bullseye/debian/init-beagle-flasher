@@ -21,47 +21,47 @@ cylon_leds() {
 	#cat /sys/class/leds/beaglebone\:green\:usr*/trigger
 	local leds_base=/sys/class/leds/beaglebone\:green\:usr
 	if [ -e ${leds_base}0/trigger ] ; then
-		echo none > ${leds_base}0/trigger
-		echo none > ${leds_base}1/trigger
-		echo none > ${leds_base}2/trigger
-		echo none > ${leds_base}3/trigger
+		echo none > ${leds_base}0/trigger || true
+		echo none > ${leds_base}1/trigger || true
+		echo none > ${leds_base}2/trigger || true
+		echo none > ${leds_base}3/trigger || true
 
 		STATE=1
 		while : ; do
 		case $STATE in
 			1)
-				echo 1 > ${leds_base}0/brightness
-				echo 0 > ${leds_base}1/brightness
+				echo 1 > ${leds_base}0/brightness || true
+				echo 0 > ${leds_base}1/brightness || true
 				STATE=2
 				;;
 			2)
-				echo 1 > ${leds_base}1/brightness
-				echo 0 > ${leds_base}0/brightness
+				echo 1 > ${leds_base}1/brightness || true
+				echo 0 > ${leds_base}0/brightness || true
 				STATE=3
 				;;
 			3)
-				echo 1 > ${leds_base}2/brightness
-				echo 0 > ${leds_base}1/brightness
+				echo 1 > ${leds_base}2/brightness || true
+				echo 0 > ${leds_base}1/brightness || true
 				STATE=4
 				;;
 			4)
-				echo 1 > ${leds_base}3/brightness
-				echo 0 > ${leds_base}2/brightness
+				echo 1 > ${leds_base}3/brightness || true
+				echo 0 > ${leds_base}2/brightness || true
 				STATE=5
 				;;
 			5)
-				echo 1 > ${leds_base}2/brightness
-				echo 0 > ${leds_base}3/brightness
+				echo 1 > ${leds_base}2/brightness || true
+				echo 0 > ${leds_base}3/brightness || true
 				STATE=6
 				;;
 			6)
-				echo 1 > ${leds_base}1/brightness
-				echo 0 > ${leds_base}2/brightness
+				echo 1 > ${leds_base}1/brightness || true
+				echo 0 > ${leds_base}2/brightness || true
 				STATE=1
 				;;
 			*)
-				echo 1 > ${leds_base}0/brightness
-				echo 0 > ${leds_base}1/brightness
+				echo 1 > ${leds_base}0/brightness || true
+				echo 0 > ${leds_base}1/brightness || true
 				STATE=2
 				;;
 		esac
@@ -83,10 +83,10 @@ reset_leds() {
 		leds_base=/sys/class/leds/beaglebone\:green\:usr
 
 		if [ -e ${leds_base}0/trigger ] ; then
-			echo ${leds_pattern0} > ${leds_base}0/trigger
-			echo ${leds_pattern1} > ${leds_base}1/trigger
-			echo ${leds_pattern2} > ${leds_base}2/trigger
-			echo ${leds_pattern3} > ${leds_base}3/trigger
+			echo ${leds_pattern0} > ${leds_base}0/trigger || true
+			echo ${leds_pattern1} > ${leds_base}1/trigger || true
+			echo ${leds_pattern2} > ${leds_base}2/trigger || true
+			echo ${leds_pattern3} > ${leds_base}3/trigger || true
 		fi
 	fi
 }
