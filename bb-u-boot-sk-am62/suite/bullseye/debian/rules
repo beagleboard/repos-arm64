@@ -16,7 +16,7 @@ TEE_TAG=08.01.00.005
 
 #U-Boot
 UB_TAG=v2021.01-ti-08.01.00.006
-UB_CONFIG=j721e_evm_
+UB_CONFIG=am62x_evm_
 UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
@@ -28,7 +28,7 @@ override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b ti-linux-firmware https://git.ti.com/git/processor-firmware/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
 	cp -v ./tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/$(TARGETDIR)/
-	cp -v ./tmp/ti-linux-firmware/ti-dm/am62xx/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/$(TARGETDIR)/
+	cp -v ./tmp/ti-linux-firmware/ti-dm/am62xx/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone https://github.com/ARM-software/arm-trusted-firmware --depth=1 ./tmp/arm-trusted-firmware/
 	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
@@ -40,8 +40,8 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j5 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ipc_echo_testb_mcu1_0_release_strip.xer5f
 	cp -v ./tmp/a53/tispl.bin /opt/u-boot/$(TARGETDIR)/
 	cp -v ./tmp/a53/u-boot.img /opt/u-boot/$(TARGETDIR)/
-	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- am62x_evm_r5_defconfig
-	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- O=../r5
+	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig
+	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 	cp -v ./tmp/r5/spl/u-boot-spl.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/k3-image-gen/ ; git clone https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1 ./tmp/k3-image-gen/
 	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SBL=/opt/u-boot/bb-u-boot-sk-am62/u-boot-spl.bin mrproper
