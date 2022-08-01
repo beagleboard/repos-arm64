@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20220112.0: add cleanup grow_partition.service and beagle-flasher-init-shutdown.service..."
+version_message="1.20220801.0: fix led 2 trigger option..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -79,7 +79,7 @@ reset_leds() {
 
 		leds_pattern0=${leds_pattern0:-"heartbeat"}
 		leds_pattern1=${leds_pattern1:-"mmc0"}
-		leds_pattern2=${leds_pattern2:-"cpu0"}
+		leds_pattern2=${leds_pattern2:-"activity"}
 		leds_pattern3=${leds_pattern3:-"mmc1"}
 		leds_base=/sys/class/leds/beaglebone\:green\:usr
 
