@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-#https://github.com/beagleboard/u-boot/commits/v2021.01-ti-08.01.00.006
+#https://git.beagleboard.org/beagleboard/u-boot/-/commits/v2021.01-ti-08.01.00.006/
 
 package_name="bb-u-boot-beagleboneai64-beta"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20220801.0"
+package_version="2021.10.20220801.1"
 package_source=""
 src_dir=""
 
