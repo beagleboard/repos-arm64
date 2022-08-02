@@ -1,6 +1,6 @@
-bbb.io-xfce4-desktop (1.20220712.0-0~bullseye+20220712) bullseye; urgency=low
+bbb.io-xfce4-desktop (1.20220802.0-0~bullseye+20220802) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 12 Jul 2022 16:53:58 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 02 Aug 2022 16:53:57 -0500
 
