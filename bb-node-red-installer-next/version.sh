@@ -2,7 +2,7 @@
 
 package_name="bb-node-red-installer-next"
 debian_pkg_name="${package_name}"
-package_version="3.0.1.0"
+package_version="3.0.1.1"
 package_source=""
 src_dir=""
 
