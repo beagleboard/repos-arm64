@@ -49,7 +49,6 @@ override_dh_auto_configure:
 	cd $(tmp_dir)/node-red/ ; TERM=dumb $(node_bin) $(npm_bin) pack
 	echo "Real Install: node-red@$(node_red_version)"
 	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
-	tree $(tmp_dir)/node-red/
 	rm -rf $(tmp_dir)/node-red/
 	echo "*************************************************************"
 	echo "node-red-dashboard"
@@ -58,9 +57,9 @@ override_dh_auto_configure:
 	cd $(tmp_dir)/node-red-dashboard/ ; TERM=dumb $(node_bin) $(npm_bin) pack
 	echo "Real Install: node-red-dashboard@$(node_red_dashboard_version)"
 	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red-dashboard/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
-	tree $(tmp_dir)/node-red-dashboard/
 	rm -rf $(tmp_dir)/node-red-dashboard/
 	echo "*************************************************************"
+	tree $(project_dir)/
 	echo "move $(project_dir)/ to ./tmp$(project_dir)/"
 	mkdir -p ./tmp$(project_dir)/
 	mv $(project_dir)/* ./tmp$(project_dir)/
