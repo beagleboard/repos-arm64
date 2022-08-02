@@ -1,6 +1,6 @@
-bb-node-red-installer-next (3.0.1.1-0~bullseye+20220802) bullseye; urgency=low
+bb-node-red-installer-next (3.0.1.2-0~bullseye+20220802) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 02 Aug 2022 10:45:42 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 02 Aug 2022 11:01:20 -0500
 
