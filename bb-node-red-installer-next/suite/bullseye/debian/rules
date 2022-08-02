@@ -62,7 +62,7 @@ override_dh_auto_configure:
 	tree $(project_dir)/
 	echo "move $(project_dir)/ to ./tmp$(project_dir)/"
 	mkdir -p ./tmp$(project_dir)/
-	mv $(project_dir)/* ./tmp$(project_dir)/
+	mv -v $(project_dir)/* ./tmp$(project_dir)/
 
 %:
 	dh $@ --with systemd
