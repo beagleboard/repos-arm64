@@ -15,17 +15,10 @@ export PATH := $(project_dir)/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/
 node_bin=$(project_dir)/bin/node
 npm_bin=$(project_dir)/bin/npm
 
-nodejs_version=v12.22.7
+nodejs_version=v14.20.0
 
-node_red_version=2.1.4
-node_red_dashboard_version=3.1.2
-node_red_node_serialport_version=0.15.0
-
-node_red_contrib_gpio=0.51.0
-node_red_contrib_johnny5_version=0.50.0
-
-johnny_five_version=2.1.0
-beaglebone_io_version=4.1.0
+node_red_version=3.0.1
+node_red_dashboard_version=3.1.7
 
 override_dh_auto_configure:
 	mkdir -p $(project_dir)/
@@ -47,7 +40,7 @@ override_dh_auto_configure:
 	echo "*************************************************************"
 	$(node_bin) $(npm_bin) --version
 	echo "*************************************************************"
-	/usr/bin/python2 --version
+	/usr/bin/python3 --version
 	env | grep PATH
 	echo "*************************************************************"
 	echo "node-red"
@@ -65,22 +58,6 @@ override_dh_auto_configure:
 	echo "Real Install: node-red-dashboard@$(node_red_dashboard_version)"
 	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red-dashboard/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
 	rm -rf $(tmp_dir)/node-red-dashboard/
-	echo "*************************************************************"
-	echo "node-red-node-serialport"
-	echo "Fake Install: node-red-node-serialport@$(node_red_node_serialport_version)"
-	TERM=dumb $(node_bin) $(npm_bin) install -g --unsafe-perm=true --loglevel=error --prefix /tmp node-red-node-serialport@$(node_red_node_serialport_version)
-	cd $(tmp_dir)/node-red-node-serialport/ ; TERM=dumb $(node_bin) $(npm_bin) pack
-	echo "Real Install: node-red-node-serialport@$(node_red_node_serialport_version)"
-	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red-node-serialport/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
-	rm -rf $(tmp_dir)/node-red-node-serialport/
-	echo "*************************************************************"
-	echo "node-red-contrib-gpio"
-	echo "Fake Install: node-red-contrib-gpio@$(node_red_contrib_gpio_version)"
-	TERM=dumb $(node_bin) $(npm_bin) install -g --unsafe-perm=true --loglevel=error --prefix /tmp node-red-contrib-gpio@$(node_red_contrib_gpio_version)
-	cd $(tmp_dir)/node-red-contrib-gpio/ ; TERM=dumb $(node_bin) $(npm_bin) pack
-	echo "Real Install: node-red-contrib-gpio@$(node_red_contrib_gpio_version)"
-	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red-contrib-gpio/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
-	rm -rf $(tmp_dir)/node-red-contrib-gpio/
 	echo "*************************************************************"
 	echo "move $(project_dir)/ to ./tmp$(project_dir)/"
 	mkdir -p ./tmp$(project_dir)/
