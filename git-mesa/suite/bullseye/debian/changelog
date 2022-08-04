@@ -1,38 +1,21 @@
-mesa (22.1.5-0.git20220803.0-0~bullseye+20220804) bullseye; urgency=low
+mesa (22.1.5-1.git20220803.0-0~bullseye+20220804) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Aug 2022 08:56:17 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Aug 2022 09:01:28 -0500
 
-mesa (22.1.4-0.git20220715.0-0~bullseye+20220718) bullseye; urgency=low
+mesa (22.1.5-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release.
+  * control: Fix mesa-opencl-icd depends. (Closes: #1014840)
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 18 Jul 2022 10:19:33 -0500
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Aug 2022 09:49:41 +0300
 
-mesa (22.1.3-0.git20220629.0-0~bullseye+20220629) bullseye; urgency=low
+mesa (22.1.3-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 Jun 2022 13:36:02 -0500
-
-mesa (22.1.2-0.git20220616.0-0~bullseye+20220617) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 17 Jun 2022 13:13:20 +0000
-
-mesa (22.1.1-0.git20220601.0-0~bullseye+20220602) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 Jun 2022 08:50:33 -0500
-
-mesa (22.1.1-0.git20210518.1-0~bullseye+20220601) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Jun 2022 15:51:41 -0500
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 06 Jul 2022 09:00:49 +0300
 
 mesa (22.1.0-1) experimental; urgency=medium
 
@@ -55,6 +38,24 @@ mesa (22.1.0~rc3-1) experimental; urgency=medium
   * rules: Add intel-nullhw to vulkan confflags. (part of #1009027)
 
  -- Timo Aaltonen <tjaalton@debian.org>  Tue, 03 May 2022 13:08:46 +0300
+
+mesa (22.0.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 02 Jun 2022 13:42:49 +0300
+
+mesa (22.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 23 May 2022 14:48:48 +0300
+
+mesa (22.0.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 06 May 2022 11:53:29 +0300
 
 mesa (22.0.2-1) unstable; urgency=medium
 
