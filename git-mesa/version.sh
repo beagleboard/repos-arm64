@@ -5,12 +5,12 @@ mirror="http://http.debian.net/debian"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="22.1.4-0.git20220715.0"
+package_version="22.1.5-0.git20220803.0"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
 git_repo="https://gitlab.freedesktop.org/mesa/mesa"
-git_sha="b6b790720cf3901056d84b0f7d9df95191c18524"
+git_sha="fa4b29bcacf415fe18e4e4b3407120612a759bb7"
 reprepro_dir="m/${package_name}"
 dl_path=""
 
@@ -18,4 +18,4 @@ debian_version="${package_version}-0"
 debian_patch=""
 debian_diff=""
 
-bullseye_version="~bullseye+20220718"
+bullseye_version="~bullseye+20220804"
