@@ -1,8 +1,26 @@
-mmc-utils (0+git20191004.73d6c59-1rcnee0~bullseye+20211201) bullseye; urgency=low
+mmc-utils (0+git20220624.d7b343fd-1bbbio0~bullseye+20220810) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Dec 2021 15:59:48 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 10 Aug 2022 08:44:21 -0500
+
+mmc-utils (0+git20220624.d7b343fd-1) unstable; urgency=medium
+
+  * Snapshot, taken from the master (20220624).
+  * Update d/control
+    - Dumped Standards-Version to 4.6.1.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Thu, 04 Aug 2022 15:07:11 +0900
+
+mmc-utils (0+git20191004.73d6c59-2) unstable; urgency=medium
+
+  * d/control
+    - Update upstream URL. (Closes: #997966)
+      Thanks to Andy Isaacson <adi@hexapodia.org>.
+  * d/copyright
+    - Update to 2022.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Wed, 05 Jan 2022 12:28:25 +0900
 
 mmc-utils (0+git20191004.73d6c59-1) unstable; urgency=medium
 

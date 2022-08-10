@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mmc-utils
-Source: http://git.kernel.org/cgit/linux/kernel/git/cjb/mmc-utils-old.git/
+Source: https://git.kernel.org/pub/scm/utils/mmc/mmc-utils.git
 
 Files: *
 Copyright: 2016 SanDisk Corp
@@ -15,7 +15,7 @@ Copyright: ST-Ericsson SA 2010-2011 Author: Sebastian Rasmussen
 License: BSD-3-clause
 
 Files: debian/*
-Copyright: 2016, 2021 Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Copyright: 2016, 2021, 2022 Nobuhiro Iwamatsu <iwamatsu@debian.org>
 License: GPL-2
 
 License: GPL-2
