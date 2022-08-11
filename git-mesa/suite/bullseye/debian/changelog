@@ -1,8 +1,21 @@
-mesa (22.1.5-1.git20220803.0-0~bullseye+20220804) bullseye; urgency=low
+mesa (22.2.0-1.git20220810.0-0~bullseye+20220811) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Aug 2022 09:01:28 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 11 Aug 2022 09:40:05 -0500
+
+mesa (22.2.0~rc2-1) unstable; urgency=medium
+
+  * New upstream release candidate. (Closes: #1016801)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 11 Aug 2022 16:35:13 +0300
+
+mesa (22.2.0~rc1-1) unstable; urgency=medium
+
+  * New upstream release candidate.
+  * revert-enabling-tlsdesc-support.diff: Dropped, obsolete.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Aug 2022 10:33:09 +0300
 
 mesa (22.1.5-1) unstable; urgency=medium
 
