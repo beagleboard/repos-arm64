@@ -1,0 +1,6 @@
+ti-sgx-am62-ddx-um (1.15.6133109-k5.10-git20221011.0-0~bullseye+20220812) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 12 Aug 2022 17:25:57 -0500
+

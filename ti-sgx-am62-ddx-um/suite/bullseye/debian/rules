@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+export DISCIMAGE=/
+export TARGET_PRODUCT=am62_linux
+#export WINDOW_SYSTEM=nulldrmws
+export WINDOW_SYSTEM=wayland
+
+override_dh_strip:
+	# Just disable for now...
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install --destdir=./tmp/
