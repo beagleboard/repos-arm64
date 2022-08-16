@@ -22,8 +22,7 @@ if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 	if [ -f /boot/vmlinuz-${version} ] ; then
 		rm -f /boot/firmware/Image || true
 		cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
-		rm -rf /boot/firmware/*.dtb || true
-		cp -v /usr/lib/linux-image-${version}/ti/k3-j721e-*.dtb /boot/firmware/ || true
+		cp -v /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
 		rm -f /boot/firmware/initrd.img || true
 		cp -v /boot/initrd.img-${version} /boot/firmware/initrd.img || true
 		if [ -d /usr/lib/linux-image-${version}/ti/overlays/ ] ; then
