@@ -47,13 +47,42 @@ generate_kernel_ti () {
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
 	echo " , bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+#	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+#	echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
+#
+#	echo "" >> ./suite/${dist}/debian/${wfile}
+#	echo "Package: bbb.io-kernel-${msg}-k3-am62" >> ./suite/${dist}/debian/${wfile}
+#	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+#	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+#	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+#	echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
+#	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
+#	echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
+#	echo " , bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+#	echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+#	echo " bb-u-boot-sk-am62" >> ./suite/${dist}/debian/${wfile}
+#	if [ "x${sgxam62}" = "xenabled" ] ; then
+#		echo " , ti-sgx-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+#	fi
+#	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+#	echo " This metapackage will install linux-image-${msg} for k3-am62 in Debian." >> ./suite/${dist}/debian/${wfile}
+#
+#	echo "" >> ./suite/${dist}/debian/${wfile}
+#	echo "Package: bbb.io-kernel-${msg}-k3-j721e" >> ./suite/${dist}/debian/${wfile}
+#	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+#	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+#	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+#	echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
+#	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
+#	echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
+#	echo " , bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 	echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 	echo " bb-u-boot-beagleboneai64" >> ./suite/${dist}/debian/${wfile}
 	if [ "x${sgxj721e}" = "xenabled" ] ; then
 		echo " , ti-sgx-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	fi
 	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
-	echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
+	echo " This metapackage will install linux-image-${msg} for k3-j721e in Debian." >> ./suite/${dist}/debian/${wfile}
 }
 
 generate_mainline_kernel () {
@@ -76,6 +105,7 @@ do_bullseye () {
 	wfile="control"
 	generate_header
 
+#	sgxam62="enabled"
 	sgxj721e="enabled"
 
 	msg="5.10-ti"  ; var="ti-arm64" ; ver="LTS510" ; current_kernel ; generate_kernel_ti
