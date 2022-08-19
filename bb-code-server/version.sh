@@ -17,7 +17,6 @@ debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
 
-#debian_dl_1="https://github.com/coder/code-server/releases/download/v4.6.0/code-server-4.6.0-linux-armv7l.tar.gz"
 debian_dl_1="https://github.com/coder/code-server/releases/download/v4.6.0/code-server-4.6.0-linux-arm64.tar.gz"
 
 clear_changelog="enable"
