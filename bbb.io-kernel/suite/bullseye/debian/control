@@ -43,6 +43,7 @@ Depends:
  , bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-sk-am62
+ , ti-sgx-am62-modules-5.10.120-ti-arm64-r61
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-am62 in Debian.
 

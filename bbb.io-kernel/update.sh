@@ -105,7 +105,7 @@ do_bullseye () {
 	wfile="control"
 	generate_header
 
-#	sgxam62="enabled"
+	sgxam62="enabled"
 	sgxj721e="enabled"
 
 	msg="5.10-ti"  ; var="ti-arm64" ; ver="LTS510" ; current_kernel ; generate_kernel_ti
