@@ -1,3 +1,9 @@
+mesa (22.2.0-1.git20220818.1-0~bullseye+20220824) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Aug 2022 11:56:25 -0500
+
 mesa (22.2.0~rc3-1) unstable; urgency=medium
 
   * New upstream release candidate.
