@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20220801.0: fix led 2 trigger option..."
+version_message="1.20220901.0: fix etc/default/generic-sys-mods..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -296,6 +296,7 @@ copy_rootfs () {
 		echo "#This file is sourced by /usb/bin/bb-growpart" > /tmp/rootfs/etc/default/generic-sys-mods
 		echo "ROOT_DRIVE=${destination}" >> /tmp/rootfs/etc/default/generic-sys-mods
 		echo "ROOT_PARTITION=${ROOT_PARTITION}" >> /tmp/rootfs/etc/default/generic-sys-mods
+		echo "ARCH_SOC_MODULES=${ARCH_SOC_MODULES}" >> /tmp/rootfs/etc/default/generic-sys-mods
 
 		message="INFO: [cat /tmp/rootfs/etc/default/generic-sys-mods]"                             ; broadcast
 		message="`cat /tmp/rootfs/etc/default/generic-sys-mods`"                                   ; broadcast
