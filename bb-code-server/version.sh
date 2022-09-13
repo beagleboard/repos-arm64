@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
-#https://github.com/coder/code-server/releases/tag/v4.6.1
+#https://github.com/coder/code-server/releases/tag/v4.7.0
 
 arch="arm64"
-ver="4.6.1"
+ver="4.7.0"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
@@ -24,4 +24,4 @@ debian_dl_1="https://github.com/coder/code-server/releases/download/v${ver}/code
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220906"
+bullseye_version="~bullseye+20220913"
