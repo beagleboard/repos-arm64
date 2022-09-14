@@ -1,0 +1,23 @@
+Source: distrobox
+Section: admin
+Priority: optional
+Maintainer: Michel Alexandre Salim <michel@michel-slm.name>
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.6.1
+Homepage: https://distrobox.privatedns.org/
+Vcs-Browser: https://salsa.debian.org/michel/distrobox
+Vcs-Git: https://salsa.debian.org/michel/distrobox.git
+Rules-Requires-Root: no
+
+Package: distrobox
+Architecture: all
+Depends:
+ podman | docker.io,
+ ${misc:Depends},
+Description: Another tool for containerized command line environments on Linux
+ Use any linux distribution inside your terminal. Distrobox uses podman or
+ docker to create containers using the linux distribution of your choice.
+ Created container will be tightly integrated with the host, allowing to share
+ the HOME directory of the user, external storage, external usb devices and
+ graphical apps (X11/Wayland) and audio.

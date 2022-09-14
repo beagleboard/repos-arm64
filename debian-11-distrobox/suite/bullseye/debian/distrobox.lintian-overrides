@@ -1,0 +1,8 @@
+# pandoc-generated manpages have lintian warnings
+
+# NAME section missing or invalid
+# https://github.com/89luca89/distrobox/issues/367
+bad-whatis-entry
+
+# seems to be because the tables are overly large; suppress
+groff-message
