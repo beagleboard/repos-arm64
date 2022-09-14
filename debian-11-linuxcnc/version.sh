@@ -9,7 +9,7 @@ package_name="linuxcnc"
 debian_pkg_name="${package_name}"
 package_version="2.9.0~pre0+git20220906.02744cdef6"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
-src_dir="${package_name}"
+src_dir="${package_name}-${package_version}"
 
 git_repo=""
 git_sha=""
