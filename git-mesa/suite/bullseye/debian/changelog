@@ -1,8 +1,15 @@
-mesa (22.2.0-1.git20220818.1-0~bullseye+20220824) bullseye; urgency=low
+mesa (22.2.0-1.git20220920.0-0~bullseye+20220921) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Aug 2022 11:56:25 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 21 Sep 2022 09:33:17 -0500
+
+mesa (22.2.0~rc3-2) unstable; urgency=medium
+
+  * nv50-ir-fix-OP_UNION-resolving-when-used-for-vector.diff: Fix a
+    regression on nouveau. (Closes: #1017499)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 20 Sep 2022 13:25:59 +0300
 
 mesa (22.2.0~rc3-1) unstable; urgency=medium
 
