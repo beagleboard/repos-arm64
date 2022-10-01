@@ -1,0 +1,23 @@
+Source: rcnee-internal-testlab
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13)
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+
+Package: rcnee-internal-testlab
+Architecture: arm64
+Depends:
+ bsdextrautils
+ , cockpit-packagekit
+ , cockpit-system
+ , cockpit-ws
+ , gpiod
+ , lsb-release
+ , pastebinit
+ , tree
+ , wireguard-tools
+Description: rcnee-internal-testlab
+ rcnee-internal-testlab
