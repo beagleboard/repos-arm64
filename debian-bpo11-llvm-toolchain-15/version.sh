@@ -3,7 +3,7 @@
 #https://packages.debian.org/source/sid/llvm-toolchain-15
 mirror="https://deb.debian.org/debian"
 
-package_name="llvm-toolchain-14"
+package_name="llvm-toolchain-15"
 debian_pkg_name="${package_name}"
 package_version="15.0.2"
 
