@@ -79,36 +79,12 @@ fi
 #	lsblk | sed 's/^/partition_table:[/' | sed 's/$/]/'
 #fi
 
-machine=$(cat /proc/device-tree/model | sed "s/ /_/g" | tr -d '\000')
-
-if [ "x${SOC}" = "x" ] ; then
-	case "${machine}" in
-	TI_AM5728_Beagle*)
-		mmc0_label="microSD-(primary)"
-		mmc1_label="eMMC-(secondary)"
-		;;
-	TI_OMAP5_uEVM_board)
-		mmc0_label="eMMC-(secondary)"
-		mmc1_label="microSD-(primary)"
-		;;
-	TI_AM335x_PocketBeagle)
-		mmc0_label="microSD"
-		;;
-	*)
-		mmc0_label="microSD-(push-button)"
-		mmc1_label="eMMC-(default)"
-		;;
-	esac
-fi
-
 if [ -b /dev/mmcblk0 ] ; then
-	label=${mmc0_label}
 	drive=/dev/mmcblk0
 	k3_bootloader
 fi
 
 if [ -b /dev/mmcblk1 ] ; then
-	label=${mmc1_label}
 	drive=/dev/mmcblk1
 	k3_bootloader
 fi
@@ -148,23 +124,8 @@ if [ -f /boot/uEnv.txt ] ; then
 fi
 
 echo "pkg check: to individually upgrade run: [sudo apt install --only-upgrade <pkg>]"
-pkg="bb-cape-overlays" ; dpkg_check_version
 pkg="bb-customizations" ; dpkg_check_version
 pkg="bb-usb-gadgets" ; dpkg_check_version
-pkg="bb-wl18xx-firmware" ; dpkg_check_version
-pkg="kmod" ; dpkg_check_version
-pkg="roboticscape" ; dpkg_check_version_replaced
-pkg="librobotcontrol" ; dpkg_check_version
-
-if [ -d /home/debian/ ] ; then
-	pkg="firmware-ti-connectivity" ; dpkg_check_version
-	echo "groups:[`groups debian`]"
-fi
-
-if [ -d /home/machinekit/ ] ; then
-	pkg="firmware-ti-connectivity" ; dpkg_check_version
-	echo "groups:[`groups machinekit`]"
-fi
 
 if [ -d /home/ubuntu/ ] ; then
 	echo "groups:[`groups ubuntu`]"
