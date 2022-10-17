@@ -10,7 +10,25 @@ fi
 k3_bootloader () {
 	test_var=$(strings /dev/mmcblk0boot0 | grep 'U-Boot SPL' | head -n1 || true)
 	if [ ! "x${test_var}" = "x" ] ; then
-		echo "bootloader:[tiboot3.bin]:[/dev/mmcblk0boot0]:[${test_var}]"
+		echo "bootloader:[/dev/mmcblk0boot0]:[tiboot3.bin]:[${test_var}]"
+	fi
+	if [ -f /boot/firmware/tiboot3.bin ] ; then
+		test_var=$(strings /boot/firmware/tiboot3.bin | grep 'U-Boot SPL' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}]:[/boot/firmware/tiboot3.bin]:[${test_var}]"
+		fi
+	fi
+	if [ -f /boot/firmware/tispl.bin ] ; then
+		test_var=$(strings /boot/firmware/tispl.bin | grep 'U-Boot SPL' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}]:[/boot/firmware/tispl.bin]:[${test_var}]"
+		fi
+	fi
+	if [ -f /boot/firmware/u-boot.img ] ; then
+		test_var=$(strings /boot/firmware/u-boot.img | grep '^U-Boot' | grep '(' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}]:[/boot/firmware/u-boot.img]:[${test_var}]"
+		fi
 	fi
 }
 
