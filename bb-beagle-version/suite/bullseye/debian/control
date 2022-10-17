@@ -11,6 +11,7 @@ Architecture: arm64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
+ , binutils
  , xxd
 Description: beagleboard.org beagle-version
  beagleboard.org beagle-version

@@ -7,6 +7,13 @@ if ! id | grep -q root; then
 	exit
 fi
 
+k3_bootloader () {
+	test_var=$(strings /dev/mmcblk0boot0 | grep 'U-Boot SPL' | head -n1 || true)
+	if [ ! "x${test_var}" = "x" ] ; then
+		echo "bootloader:[tiboot3.bin]:[/dev/mmcblk0boot0]:[${test_var}]"
+	fi
+}
+
 dpkg_check_version () {
 	unset pkg_version
 	pkg_version=$(dpkg -l | awk '$2=="'$pkg'" { print $3 }' || true)
@@ -79,13 +86,13 @@ fi
 if [ -b /dev/mmcblk0 ] ; then
 	label=${mmc0_label}
 	drive=/dev/mmcblk0
-	#k3_bootloader
+	k3_bootloader
 fi
 
 if [ -b /dev/mmcblk1 ] ; then
 	label=${mmc1_label}
 	drive=/dev/mmcblk1
-	#k3_bootloader
+	k3_bootloader
 fi
 
 if [ -f /proc/device-tree/chosen/base_dtb ] ; then
