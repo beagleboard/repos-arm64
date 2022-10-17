@@ -9,7 +9,7 @@ package_version="14.0.0"
 
 git_repo=""
 git_sha=""
-reprepro_dir="l/${package_name}"
+reprepro_dir="s/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
 debian_version="${package_version}-3"
