@@ -2,7 +2,7 @@
 
 package_name="bb-u-boot-sk-am62"
 debian_pkg_name="${package_name}"
-package_version="2021.01.20220527.5"
+package_version="2021.01.20221010.0"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220728"
+bullseye_version="~bullseye+20221020"
