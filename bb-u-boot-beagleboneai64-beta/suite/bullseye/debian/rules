@@ -16,7 +16,7 @@ ATF_TAG=bbb.io-08.01.00.006
 TEE_TAG=08.01.00.005
 
 #U-Boot
-UB_TAG=v2021.01-ti-08.01.00.006
+UB_TAG=v2021.01-ti-08.04.01.005
 UB_CONFIG=j721e_evm_
 UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
@@ -35,7 +35,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) https://git.beagleboard.org/beagleboard/optee_os.git --depth=1 ./tmp/optee_os/
 	make -C tmp/optee_os -j4 CFLAGS= LDFLAGS= PLATFORM=k3-j721e CFG_ARM64_core=y
 	cp -v ./tmp/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_TAG) https://git.beagleboard.org/beagleboard/u-boot.git --depth=1 ./tmp/u-boot/
+	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_TAG) https://gitlab.gfnd.rcn-ee.org/RobertCNelson/u-boot.git --depth=1 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)r5_defconfig
 	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 	make -C ./tmp/u-boot -j1 O=../a72 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)a72_defconfig
