@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-#https://github.com/rcn-ee/u-boot/commits/v2021.01-ti-08.04.01.005
+#https://gitlab.gfnd.rcn-ee.org/RobertCNelson/u-boot-bisect/-/commits/v2021.01-ti-08.05.00.001
 
 package_name="bb-u-boot-beagleboneai64-beta"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20221019.6"
+package_version="2021.10.20221019.7"
 package_source=""
 src_dir=""
 
