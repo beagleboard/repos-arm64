@@ -1,0 +1,23 @@
+Authors:
+  Nick Sanders <nick.j.sanders@gmail.com>
+  Raphael Menderico <menderico@gmail.com>
+  James Vera
+  Matthew Blecker
+  John Huang
+  John Hawley
+Download: http://code.google.com/p/stressapptest/
+
+Files: *
+Copyright:
+ (C) 2006-2009 Google Inc.
+License: Apache-2
+ On Debian systems the full text of the Apache
+ License can be found in the `/usr/share/common-licenses/Apache-2.0'
+ file.
+
+Files: debian/*
+Copyright: 2009, Michael Prokop <mika@debian.org>
+License: GPL-2+
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-2'
+ file.

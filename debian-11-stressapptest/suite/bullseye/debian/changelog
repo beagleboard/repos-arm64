@@ -1,0 +1,119 @@
+stressapptest (1.0.9-1.git20180809.0-0~bullseye+20221021) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 21 Oct 2022 14:16:05 -0500
+
+stressapptest (1.0.6-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Backport upstream fix for FTBFS with gcc 12. (Closes: #1013043)
+
+ -- Adrian Bunk <bunk@debian.org>  Mon, 05 Sep 2022 00:42:31 +0300
+
+stressapptest (1.0.6-2) unstable; urgency=medium
+
+  * Add i586 support patch. (Closes: #775642)
+
+ -- Pierre Blanc <pierreblanc75@gmail.com>  Tue, 20 Jan 2015 19:42:47 -0500
+
+stressapptest (1.0.6-1) unstable; urgency=low
+
+  * Merging upstream version 1.0.6. (Closes: #728696)
+  * Fix armhf support patch. (Closes: #728695)
+  
+ -- Pierre Blanc <pierreblanc75@gmail.com>  Wed, 20 Nov 2013 19:47:59 +0100
+
+stressapptest (1.0.4-3) unstable; urgency=low
+
+  * Adopt package. (Closes: #728288)
+  * Update to debhelper 9.
+  * Use dh-autoreconf.
+  * Bump standards to 3.8.4.
+
+ -- Pierre Blanc <pierreblanc75@gmail.com>  Wed, 30 Oct 2013 18:04:08 +0100
+
+stressapptest (1.0.4-2) unstable; urgency=low
+
+  * [3c4bb34] Add debian/patches/support_i486_builds to support
+    building on i486.
+  * [eb882fd] Add autoreconf call to debian/rules.
+
+ -- Michael Prokop <mika@debian.org>  Tue, 12 Jun 2012 01:49:45 +0200
+
+stressapptest (1.0.4-1) unstable; urgency=low
+
+  * [dfea08b] Bump Standards-Version to 3.9.3.
+  * [9c320eb] Merging upstream version 1.0.4.
+  * [73dd8e7] Drop debian/patches/no-static-build (upstream compiles
+    statically only with --with-static now)
+  * [795bc0e] Add armhf support. Thanks to Konstantinos Margaritis
+    <markos@genesi-usa.com> for the initial patch (Closes: #629483)
+  * [efe16ed] Switch to debhelper-7 minimal style, Build-Depending on
+    automake, debhelper (>= 7.0.50~) + quilt, raised compat version to 7.
+  * [ecc2635] Replace Architecture "any" with "amd64 armhf i386 powerpc"
+    (see #677090)
+
+ -- Michael Prokop <mika@debian.org>  Mon, 11 Jun 2012 23:38:13 +0200
+
+stressapptest (1.0.3-2) unstable; urgency=low
+
+  * [ad79dfa] Use Architecture any instead of whitelisting archs.
+  * [f75e14b] Drop CROSS specific configure stuff.
+
+ -- Michael Prokop <mika@debian.org>  Thu, 29 Jul 2010 17:12:37 -0400
+
+stressapptest (1.0.3-1) unstable; urgency=low
+
+  * [e723f0c] Merging upstream version 1.0.3.
+  * [0713e49] Bump Standards-Version to 3.9.1.
+  * [9466bfa] Add libaio-dev to Build-Depends.
+  * [b6a48bb] Rework autoconf handling in debian/rules. (Closes:
+    #575495) - thanks to Reinhard Tartler <siretart@tauware.de>
+    for helping.
+  * [c60a573] Switch to dpkg-source 3.0 (quilt) format.
+  * [05108de] Add quilt patch to build non-static.
+
+ -- Michael Prokop <mika@debian.org>  Thu, 29 Jul 2010 13:04:19 -0400
+
+stressapptest (1.0.1-3) unstable; urgency=low
+
+  * Add sh4 to list of supported architectures. Thanks to
+    Nobuhiro Iwamatsu. [Closes: #561049]
+
+ -- Michael Prokop <mika@debian.org>  Mon, 14 Dec 2009 01:55:03 +0100
+
+stressapptest (1.0.1-2) unstable; urgency=low
+
+  [ Gerfried Fuchs ]
+  * Remove superfluous paragraph separator seperating list from list
+    description in control file.
+
+  [ Michael Prokop ]
+  * Replace 'Architecture: any' with a whitelist of known-to-build-fine
+    archs. Because of linux specific header files the package doesn't
+    build on hurd-i386, kfreebsd-amd64 and kfreebsd-i386.
+    [Closes: #552215]
+
+ -- Michael Prokop <mika@debian.org>  Sun, 13 Dec 2009 02:03:23 +0100
+
+stressapptest (1.0.1-1) unstable; urgency=low
+
+  * Merging upstream version 1.0.1. Upstream's Changelog:
+    - Fix non-x86 build.
+    - Fix lock initialization.
+    - Standardize on posix_memalign.
+    - Do not require -A.
+    - Add STRESSAPPTEST_OS_BSD config for future BSD support.
+    - Improved read error/data corruption handling.
+    - Fix typos.
+    - Add manpage contributed by Michael Prokop <mika@debian.org>.
+  * Updated debian/copyright.
+
+ -- Michael Prokop <mika@debian.org>  Tue, 27 Oct 2009 23:12:30 +0100
+
+stressapptest (1.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #551809).
+
+ -- Michael Prokop <mika@debian.org>  Tue, 20 Oct 2009 20:58:06 +0200

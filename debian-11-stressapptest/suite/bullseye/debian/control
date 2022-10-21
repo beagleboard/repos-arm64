@@ -1,0 +1,24 @@
+Source: stressapptest
+Section: utils
+Priority: extra
+Maintainer: Pierre Blanc <pierreblanc75@gmail.com>
+Build-Depends: debhelper (>= 9), dh-autoreconf, libaio-dev
+Standards-Version: 3.9.4
+Homepage: http://code.google.com/p/stressapptest/
+Vcs-git: git://anonscm.debian.org/collab-maint/stressapptest.git
+Vcs-Browser: http://anonscm.debian.org/git/collab-maint/stressapptest.git
+
+Package: stressapptest
+Architecture: amd64 arm64 armhf i386 powerpc
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: stress test application for simulating high load situations
+ Stressful Application Test (or stressapptest, its unix name) tries to maximize
+ randomized traffic to memory from processor and I/O, with the intent of
+ creating a realistic high load situation in order to test the existing hardware
+ devices in a computer.
+ .
+ Stressapptest may be used for various purposes:
+  * stress test
+  * hardware qualification and debugging
+  * memory interface test
+  * disk testing
