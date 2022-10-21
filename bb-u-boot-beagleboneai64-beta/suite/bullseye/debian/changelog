@@ -1,6 +1,6 @@
-bb-u-boot-beagleboneai64-beta (2021.10.20221019.2-0~bullseye+20221021) bullseye; urgency=low
+bb-u-boot-beagleboneai64-beta (2021.10.20221019.3-0~bullseye+20221021) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 21 Oct 2022 11:02:39 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 21 Oct 2022 11:26:49 -0500
 
