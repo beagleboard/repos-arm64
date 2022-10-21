@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-#https://git.beagleboard.org/beagleboard/u-boot/-/commits/v2021.01-ti-08.01.00.006/
+#https://git.beagleboard.org/beagleboard/u-boot/-/commits/v2021.01-ti-08.05.00.001
 
 package_name="bb-u-boot-beagleboneai64"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20220921.0"
+package_version="2021.10.20221019.0"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220921"
+bullseye_version="~bullseye+20221021"

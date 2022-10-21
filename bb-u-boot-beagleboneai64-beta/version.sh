@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-#https://gitlab.gfnd.rcn-ee.org/RobertCNelson/u-boot-bisect/-/commits/v2021.01-ti-08.05.00.001
+#https://git.beagleboard.org/beagleboard/u-boot/-/commits/v2021.01-ti-08.05.00.001
 
 package_name="bb-u-boot-beagleboneai64-beta"
 debian_pkg_name="${package_name}"
