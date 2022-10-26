@@ -161,6 +161,11 @@ check_running_system () {
 	mount -t tmpfs tmpfs /tmp
 	message="--------------------------------------------------------------------------------" ; broadcast
 
+	message="INFO: /proc/cmdline"                                                              ; broadcast
+	message="INFO: [cat /proc/cmdline]"                                                        ; broadcast
+	cat /proc/cmdline
+	message="--------------------------------------------------------------------------------" ; broadcast
+
 	has_usr_leds="enable"
 
 	if [ "x${has_usr_leds}" = "xenable" ] ; then

@@ -143,6 +143,12 @@ write_failure () {
 }
 
 check_running_system () {
+
+	message="INFO: /proc/cmdline"                                                              ; broadcast
+	message="INFO: [cat /proc/cmdline]"                                                        ; broadcast
+	cat /proc/cmdline
+	message="--------------------------------------------------------------------------------" ; broadcast
+
 	has_usr_leds="enable"
 
 	if [ "x${has_usr_leds}" = "xenable" ] ; then
