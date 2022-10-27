@@ -47,7 +47,8 @@ override_dh_auto_configure:
 	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SBL=/opt/u-boot/bb-u-boot-sk-am62/u-boot-spl.bin mrproper
 	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SYSFW_PATH=/opt/u-boot/bb-u-boot-sk-am62/ti-fs-firmware-am62x-gp.bin SBL=/opt/u-boot/bb-u-boot-sk-am62/u-boot-spl.bin
 	ls -alh ./tmp/k3-image-gen/
-	cp -Lv ./tmp/k3-image-gen/tiboot3-am62x-gp-evm.bin /opt/u-boot/$(TARGETDIR)/tiboot3.bin
+	rm -rf ./tmp/k3-image-gen/tiboot3.bin
+	mv -v ./tmp/k3-image-gen/tiboot3-am62x-gp-evm.bin /opt/u-boot/$(TARGETDIR)/tiboot3.bin
 
 %:
 	dh $@
