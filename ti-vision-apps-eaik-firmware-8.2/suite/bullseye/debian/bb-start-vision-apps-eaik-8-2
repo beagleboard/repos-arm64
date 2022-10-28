@@ -2,3 +2,16 @@
 
 log="bb-start-vision-apps-eaik-8-2"
 
+APP_core0=vision_apps_eaik_8.2/vx_app_rtos_linux_mcu2_0.out
+APP_core1=vision_apps_eaik_8.2/vx_app_rtos_linux_mcu2_1.out
+
+core0="/sys/devices/platform/bus@100000/bus@100000:r5fss@5c00000/5c00000.r5f/remoteproc/remoteproc"
+core1="/sys/devices/platform/bus@100000/bus@100000:r5fss@5c00000/5d00000.r5f/remoteproc/remoteproc"
+
+echo stop > ${core0}*/state
+echo $(APP_core0) > ${core0}*/firmware
+echo start > ${core0}*/state
+
+echo stop > ${core1}*/state
+echo $(APP_core1) > ${core1}*/firmware
+echo start > ${core1}*/state
