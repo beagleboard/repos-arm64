@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
- debhelper (>= 9)
+ debhelper (>= 10)
 Standards-Version: 4.5.1
 
 Package: ti-vision-apps-eaik-firmware-8.2
@@ -11,6 +11,7 @@ Architecture: arm64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
+ , systemd (>= 230)
 Breaks: ti-vision-apps-eaik-firmware, ti-edge-ai-apps-08-00-00-05, ti-edge-ai-apps-recommended-08-00-00-05
 Conflicts: ti-vision-apps-eaik-firmware, ti-edge-ai-apps-08-00-00-05, ti-edge-ai-apps-recommended-08-00-00-05
 Description: beagleboard.org ti-vision-apps-eaik-firmware-8.2

@@ -1,0 +1,12 @@
+[Unit]
+Description=BeagleBoard.org EDGEAI K3 R5
+After=local-fs.target
+ConditionFileIsExecutable=/usr/sbin/bb-start-vision-apps-eaik-8-2
+
+[Service]
+Type=forking
+ExecStartPre=/sbin/modprobe ti_k3_r5_remoteproc
+ExecStart=/usr/sbin/bb-start-vision-apps-eaik-8-2
+
+[Install]
+WantedBy=multi-user.target

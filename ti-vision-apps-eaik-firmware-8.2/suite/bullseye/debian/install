@@ -1,1 +1,2 @@
 debian/vision_apps_eaik/*.out /lib/firmware/vision_apps_eaik/
+debian/vision_apps_eaik_8.2/*.out /lib/firmware/vision_apps_eaik_8.2/
