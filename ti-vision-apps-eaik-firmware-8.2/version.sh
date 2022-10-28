@@ -4,7 +4,7 @@
 
 package_name="ti-vision-apps-eaik-firmware-8.2"
 debian_pkg_name="${package_name}"
-package_version="8.2.0.8"
+package_version="8.2.0.9"
 package_source=""
 src_dir=""
 
