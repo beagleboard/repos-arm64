@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
-#https://github.com/coder/code-server/releases/tag/v4.7.0
+#https://github.com/coder/code-server/releases/tag/v4.8.1
 
 arch="arm64"
-ver="4.7.0"
+ver="4.8.1"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
-package_version="${ver}.1"
+package_version="${ver}.0"
 package_source=""
 src_dir=""
 
