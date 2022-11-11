@@ -1,8 +1,6 @@
 [Unit]
 Description=BeagleBoard.org Code Server
-Documentation=https://github.com/coder/code-server/tree/main/docs
-Wants=network.target
-After=multi-user.target
+After=network.target
 
 [Service]
 Type=exec
@@ -16,4 +14,4 @@ Restart=always
 RestartSec=15
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
