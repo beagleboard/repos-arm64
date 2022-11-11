@@ -339,10 +339,10 @@ partition_drive () {
 
 		if [ "x${extlinux}" != "x" ] ; then
 			if [ -f ${extlinux} ] ; then
-				message="INFO: [/boot/extlinux/extlinux.conf]"                                             ; broadcast
-				cp -v ${extlinux} /boot/extlinux/extlinux.conf
-				message="INFO: [cat /boot/extlinux/extlinux.conf]"                                     ; broadcast
-				message="`cat /boot/extlinux/extlinux.conf`"                                           ; broadcast
+				message="INFO: [/boot/firmware/extlinux/extlinux.conf]"                                             ; broadcast
+				cp -v ${extlinux} /boot/firmware/extlinux/extlinux.conf
+				message="INFO: [cat /boot/firmware/extlinux/extlinux.conf]"                                     ; broadcast
+				message="`cat /boot/firmware/extlinux/extlinux.conf`"                                           ; broadcast
 				message="--------------------------------------------------------------------------------" ; broadcast
 			fi
 		fi
