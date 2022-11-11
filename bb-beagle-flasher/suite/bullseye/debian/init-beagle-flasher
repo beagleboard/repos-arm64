@@ -257,14 +257,14 @@ copy_boot () {
 }
 
 copy_rootfs () {
-	message="INFO: Copying: ${source}p${media_rootfs} -> ${destination}p${media_rootfs}"       ; broadcast
+	message="INFO: Copying: ${source}p${src_rfs_part} -> ${destination}p${dest_rfs_part}"       ; broadcast
 	mkdir -p /tmp/rootfs/ || true
 
-	message="INFO: [mount ${destination}p${media_rootfs} /tmp/rootfs/ -o async,noatime]"       ; broadcast
-	mount ${destination}p${media_rootfs} /tmp/rootfs/ -o async,noatime
+	message="INFO: [mount ${destination}p${dest_rfs_part} /tmp/rootfs/ -o async,noatime]"       ; broadcast
+	mount ${destination}p${dest_rfs_part} /tmp/rootfs/ -o async,noatime
 
 	message="INFO: /usr/bin/rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
-	/usr/bin/rsync -aHAXx /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/uEnv.txt} || write_failure
+	/usr/bin/rsync -aHAXx /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/uEnv.txt,/boot/firmware/*} || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
@@ -278,8 +278,8 @@ copy_rootfs () {
 	message="INFO: Generating: /etc/fstab"                                                     ;  broadcast
 	echo "# /etc/fstab: static file system information." > /tmp/rootfs/etc/fstab
 	echo "#" >> /tmp/rootfs/etc/fstab
-	echo "${destination}p${media_rootfs}  /  ext4  noatime,errors=remount-ro  0  1" >> /tmp/rootfs/etc/fstab
-	if [ "x${media_rootfs}" = "x2" ] ; then
+	echo "${destination}p${dest_rfs_part}  /  ext4  noatime,errors=remount-ro  0  1" >> /tmp/rootfs/etc/fstab
+	if [ "x${dest_rfs_part}" = "x2" ] ; then
 		echo "${destination}p1  /boot/firmware vfat defaults 0 0" >> /tmp/rootfs/etc/fstab
 	fi
 	echo "debugfs  /sys/kernel/debug  debugfs  mode=755,uid=root,gid=gpio,defaults  0  0" >> /tmp/rootfs/etc/fstab
@@ -316,7 +316,7 @@ copy_rootfs () {
 		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service || true
 	fi
 
-	message="Copying: ${source}p${media_rootfs} -> ${destination}p${media_rootfs} complete"    ; broadcast
+	message="Copying: ${source}p${src_rfs_part} -> ${destination}p${dest_rfs_part} complete"    ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
@@ -398,7 +398,8 @@ partition_drive () {
 		message="INFO: Formatting: ${destination} complete"                                        ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
 
-		media_rootfs="1"
+		src_rfs_part="2"
+		dest_rfs_part="1"
 		copy_rootfs
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
 		rfs_boot_startmb=${rfs_boot_startmb:-"1"}
@@ -432,7 +433,8 @@ partition_drive () {
 		message="--------------------------------------------------------------------------------" ; broadcast
 
 		copy_boot
-		media_rootfs="2"
+		src_rfs_part="2"
+		dest_rfs_part="2"
 		copy_rootfs
 	else
 		example_failure

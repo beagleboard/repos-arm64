@@ -336,6 +336,16 @@ partition_drive () {
 		src_rfs_part="2"
 		dest_rfs_part="1"
 		copy_rootfs
+
+		if [ "x${extlinux}" != "x" ] ; then
+			if [ -f ${extlinux} ] ; then
+				message="INFO: [/boot/extlinux/extlinux.conf]"                                             ; broadcast
+				cp -v ${extlinux} /boot/extlinux/extlinux.conf
+				message="INFO: [cat /boot/extlinux/extlinux.conf]"                                     ; broadcast
+				message="`cat /boot/extlinux/extlinux.conf`"                                           ; broadcast
+				message="--------------------------------------------------------------------------------" ; broadcast
+			fi
+		fi
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
 		rfs_boot_startmb=${rfs_boot_startmb:-"1"}
 		rfs_boot_size_mb=${rfs_boot_size_mb:-"128"}
