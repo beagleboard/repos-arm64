@@ -1,10 +1,11 @@
 debian/install.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
 debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-beta
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-beta
+debian/convert-to-extlinux-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
 debian/convert-to-extlinux-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
 debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
-debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-beta
-debian/convert-to-extlinux-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-beta
 tmp/ti-linux-firmware/ti-dm/j721e/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-beagleboneai64-beta
 tmp/arm-trusted-firmware/build/k3/generic/release/bl31.bin /opt/u-boot/bb-u-boot-beagleboneai64-beta
 tmp/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64-beta
