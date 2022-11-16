@@ -3,11 +3,11 @@
 #https://packages.debian.org/source/sid/wayland-protocols
 #https://snapshot.debian.org/package/wayland-protocols/
 #mirror="https://deb.debian.org/debian"
-mirror="https://snapshot.debian.org/archive/debian/20220709T031205Z"
+mirror="https://snapshot.debian.org/archive/debian/20220201T215753Z"
 
 package_name="wayland-protocols"
 debian_pkg_name="${package_name}"
-package_version="1.26"
+package_version="1.25"
 
 git_repo=""
 git_sha=""
