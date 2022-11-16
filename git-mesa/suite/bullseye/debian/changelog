@@ -1,8 +1,8 @@
-mesa (22.2.2-1.git20221019.0-0~bullseye+20221027) bullseye; urgency=low
+mesa (22.2.3-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release. (Closes: #1022730)
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 27 Oct 2022 13:56:39 -0500
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 08 Nov 2022 12:17:23 +0200
 
 mesa (22.2.2-1) unstable; urgency=medium
 

@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-#https://packages.debian.org/source/bullseye-backports/barrier
+#https://packages.debian.org/source/sid/wayland-protocols
 mirror="https://deb.debian.org/debian"
 
 package_name="wayland-protocols"
 debian_pkg_name="${package_name}"
-package_version="1.25"
+package_version="1.27"
 
 git_repo=""
 git_sha=""
