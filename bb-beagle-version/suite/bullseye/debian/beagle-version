@@ -8,9 +8,11 @@ if ! id | grep -q root; then
 fi
 
 k3_bootloader () {
-	test_var=$(strings /dev/mmcblk0boot0 | grep 'U-Boot SPL' | head -n1 || true)
-	if [ ! "x${test_var}" = "x" ] ; then
-		echo "bootloader:[/dev/mmcblk0boot0]:[tiboot3.bin]:[${test_var}]"
+	if [ -b ${drive}boot0 ] ; then
+		test_var=$(strings ${drive}boot0 | grep 'U-Boot SPL' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}boot0]:[tiboot3.bin]:[${test_var}]"
+		fi
 	fi
 	if [ -f /boot/firmware/tiboot3.bin ] ; then
 		test_var=$(strings /boot/firmware/tiboot3.bin | grep 'U-Boot SPL' | head -n1 || true)
@@ -145,10 +147,10 @@ echo "dmesg | grep pinctrl-single"
 dmesg | grep pinctrl-single || true
 echo "dmesg | grep gpio-of-helper"
 dmesg | grep gpio-of-helper || true
-if [ -f /usr/bin/lsusb ] ; then
-	echo "lsusb"
-	lsusb || true
-fi
+echo "lsusb"
+lsusb || true
+echo "lspci"
+lspci || true
 echo "END"
 
 #

@@ -4,7 +4,7 @@
 
 package_name="bb-beagle-version"
 debian_pkg_name="${package_name}"
-package_version="1.20221017.1"
+package_version="1.20221117.0"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20221017"
+bullseye_version="~bullseye+20221117"
