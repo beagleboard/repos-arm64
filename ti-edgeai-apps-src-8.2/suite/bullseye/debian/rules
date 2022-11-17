@@ -16,7 +16,7 @@ override_dh_shlibdeps:
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --branch REL.PSDK.LINUX.SK.TDA4VM.08.02.01-bbbio --depth 1 https://git.beagleboard.org/beagleboard/edge_ai_apps.git ./tmp/opt/edge_ai_apps/
 	cd ./tmp/opt/edge_ai_apps/ ; find . | grep .git | xargs rm -rf
-	cd ./tmp/opt/edge_ai_apps/docs/ ; VERSION=08 SUBVERSION=02 PATCHVERSION=01 make docs
+	cd ./tmp/opt/edge_ai_apps/docs/ ; VERSION=8 SUBVERSION=02 PATCHVERSION=01 make docs
 
 %:
 	dh $@
