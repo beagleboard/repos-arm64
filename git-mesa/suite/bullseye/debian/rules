@@ -62,8 +62,14 @@ else
 
   # radv/lavapipe needs LLVM and the Vulkan loader, so only build on the subset of
   # arches where we have LLVM enabled and where the Vulkan loader is built.
-  ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64))
+  ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el s390x sparc64))
 	VULKAN_DRIVERS += amd swrast
+  endif
+
+  # Only enable amd on riscv64, swrast needs CPU JIT support which doesn't work properly yet
+  ifneq (,$(filter $(DEB_HOST_ARCH), riscv64))
+	VULKAN_DRIVERS += amd
+	confflags_GALLIUM += -Ddraw-use-llvm=false
   endif
 
   ifeq ($(DEB_HOST_ARCH_OS), linux)
@@ -78,8 +84,12 @@ else
 
 	# etnaviv, tegra, vc4 and v3d kernel support are only available on armhf and arm64
 	ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64))
-		GALLIUM_DRIVERS += etnaviv lima panfrost svga tegra vc4 v3d
+		GALLIUM_DRIVERS += etnaviv panfrost svga tegra vc4 v3d
 		VULKAN_DRIVERS += broadcom freedreno imagination-experimental
+	endif
+
+	ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64 riscv64))
+		GALLIUM_DRIVERS += lima
 	endif
 
 	ifneq (,$(filter $(DEB_HOST_ARCH), amd64 i386 x32))
@@ -127,7 +137,7 @@ else
   # build vulkan layers where Vulkan loader is available
   ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32))
 	GALLIUM_DRIVERS += zink
-	VULKAN_LAYERS += device-select overlay
+	VULKAN_LAYERS += device-select intel-nullhw overlay
   endif
 
   ifeq (,$(filter pkg.mesa.nolibva,$(DEB_BUILD_PROFILES)))
