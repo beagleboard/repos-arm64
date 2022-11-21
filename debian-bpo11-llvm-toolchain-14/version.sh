@@ -1,7 +1,9 @@
 #!/bin/bash -e
 
+#https://snapshot.debian.org/package/llvm-toolchain-14/
 #https://packages.debian.org/source/bookworm/llvm-toolchain-14
-mirror="https://deb.debian.org/debian"
+#mirror="https://deb.debian.org/debian"
+mirror="https://snapshot.debian.org/archive/debian/20221008T025242Z"
 
 package_name="llvm-toolchain-14"
 debian_pkg_name="${package_name}"
@@ -12,7 +14,7 @@ git_sha=""
 reprepro_dir="l/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-8"
+debian_version="${package_version}-3"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 
