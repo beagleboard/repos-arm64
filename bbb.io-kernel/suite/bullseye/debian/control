@@ -26,7 +26,7 @@ Architecture: arm64
 Pre-Depends:
  bb-j721e-evm-firmware
  , generic-sys-mods
- , linux-image-5.10.145-ti-arm64-r74
+ , linux-image-5.10.145-ti-arm64-r75
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks (= ${source:Version})
@@ -43,7 +43,7 @@ Depends:
  , bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-sk-am62
- , ti-sgx-am62-modules-5.10.145-ti-arm64-r74
+ , ti-sgx-am62-modules-5.10.145-ti-arm64-r75
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-am62 in Debian.
 
@@ -57,7 +57,7 @@ Depends:
  , bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-beagleboneai64
- , ti-sgx-j721e-modules-5.10.145-ti-arm64-r74
+ , ti-sgx-j721e-modules-5.10.145-ti-arm64-r75
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-j721e in Debian.
 
