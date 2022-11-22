@@ -13,7 +13,8 @@ DEB_HOST_ARCH_OS   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 DEB_HOST_ARCH_CPU  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 
 # for finding the correct llvm-config when meson doesn't know about it yet
-export PATH:=/usr/lib/llvm-14/bin/:$(PATH)
+LLVM_VERSION = 14
+export PATH:=/usr/lib/llvm-$(LLVM_VERSION)/bin/:$(PATH)
 
 export DEB_BUILD_MAINT_OPTIONS=optimize=-lto
 
@@ -46,6 +47,11 @@ VULKAN_LAYERS =
 confflags_DRI3 = -Ddri3=disabled
 confflags_OSMESA =  -Dosmesa=true
 confflags_SSE2 = -Dsse2=true
+
+LLVM_ARCHS     = amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+RUSTICL_ARCHS  = amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x
+VALGRIND_ARCHS = amd64 arm64 armhf i386 mips64el mipsel powerpc ppc64 ppc64el s390x
+WINE_ARCHS     = amd64 arm64 armel armhf i386 powerpc
 
 # hurd doesn't do direct rendering
 ifeq ($(DEB_HOST_ARCH_OS), hurd)
@@ -98,13 +104,16 @@ else
 		confflags_GALLIUM += -Dgallium-xa=enabled
 		VULKAN_DRIVERS += intel
 	endif
+	ifneq (,$(filter $(DEB_HOST_ARCH), amd64))
+		confflags_GALLIUM += -Dintel-clc=enabled
+	endif
 
 	# Non-Linux ports lack epoll, so wayland isn't ready yet:
 	# https://gitlab.freedesktop.org/wayland/wayland/-/issues/72
 	# hurd also lacks *_CLOEXEC
 	EGL_PLATFORMS += ,wayland
 
-	ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armhf i386 mips64el mipsel powerpc ppc64 ppc64el s390x))
+	ifneq (,$(filter $(DEB_HOST_ARCH), $(VALGRIND_ARCHS)))
 		confflags_VALGRIND += -Dvalgrind=enabled
 	endif
 
@@ -121,23 +130,27 @@ else
 
   # LLVM is required for building r300g, radeonsi and llvmpipe drivers.
   # It's also required for building OpenCL support.
-  ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64))
-	GALLIUM_DRIVERS += radeonsi
+  ifneq (,$(filter $(DEB_HOST_ARCH), $(LLVM_ARCHS)))
+	GALLIUM_DRIVERS += radeonsi zink
+
+	# Only enable amd on riscv64, swrast needs CPU JIT support which doesn't work properly yet
+	ifneq (,$(filter $(DEB_HOST_ARCH), riscv64))
+		VULKAN_DRIVERS += amd
+		confflags_GALLIUM += -Ddraw-use-llvm=false
+	else
+		VULKAN_DRIVERS += amd swrast
+	endif
+
+	VULKAN_LAYERS += device-select intel-nullhw overlay
 	confflags_GALLIUM += -Dllvm=enabled
 	confflags_GALLIUM += -Dgallium-opencl=icd
 
 	# nine makes sense only on archs that build wine
-	ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 powerpc))
+	ifneq (,$(filter $(DEB_HOST_ARCH), $(WINE_ARCHS)))
 		confflags_GALLIUM += -Dgallium-nine=true
 	endif
   else
 	confflags_GALLIUM += -Dllvm=disabled
-  endif
-
-  # build vulkan layers where Vulkan loader is available
-  ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sparc64 x32))
-	GALLIUM_DRIVERS += zink
-	VULKAN_LAYERS += device-select intel-nullhw overlay
   endif
 
   ifeq (,$(filter pkg.mesa.nolibva,$(DEB_BUILD_PROFILES)))
@@ -192,7 +205,7 @@ override_dh_clean:
 	rm -rf configure bin/config.guess bin/config.sub config.h.in
 	rm -rf $$(find -name Makefile.in)
 	rm -rf bin/install-sh bin/ltmain.sh
-	for file in debian/*.in; do rm -f $${file%%.in}; done
+	for file in debian/*.links.in; do rm -f $${file%%.in}; done
 	find -name '*.pyc' -delete
 	find -name '__pycache__' -delete
 	dh_clean
@@ -203,7 +216,7 @@ override_dh_auto_configure:
 
 override_dh_auto_install:
 	dh_auto_install
-	for file in debian/*.in; \
+	for file in debian/*.links.in; \
 	do \
 		sed -e"s,\$${DEB_HOST_MULTIARCH},$(DEB_HOST_MULTIARCH),g" \
 			$${file} > $${file%%.in}; \
