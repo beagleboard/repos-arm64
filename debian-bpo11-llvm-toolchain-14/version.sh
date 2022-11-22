@@ -3,7 +3,7 @@
 #https://snapshot.debian.org/package/llvm-toolchain-14/
 #https://packages.debian.org/source/bookworm/llvm-toolchain-14
 #mirror="https://deb.debian.org/debian"
-mirror="https://snapshot.debian.org/archive/debian/20221008T025242Z"
+mirror="https://snapshot.debian.org/archive/debian/20221010T150049Z"
 
 package_name="llvm-toolchain-14"
 debian_pkg_name="${package_name}"
