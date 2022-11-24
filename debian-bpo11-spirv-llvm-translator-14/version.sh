@@ -2,7 +2,7 @@
 
 #https://packages.debian.org/source/bookworm/spirv-llvm-translator-14
 #mirror="https://deb.debian.org/debian"
-mirror="https://snapshot.debian.org/archive/debian/20220604T214028Z"
+mirror="https://snapshot.debian.org/archive/debian/20221002T151753Z"
 
 package_name="spirv-llvm-translator-14"
 debian_pkg_name="${package_name}"
@@ -13,7 +13,7 @@ git_sha=""
 reprepro_dir="s/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-1"
+debian_version="${package_version}-3"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 
