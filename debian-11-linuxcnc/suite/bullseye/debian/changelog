@@ -1,8 +1,61 @@
-linuxcnc (2.9.0~pre0+git20220906.02744cdef6-1bbbio0~bullseye+20220914) bullseye; urgency=low
+linuxcnc (2.9.0~pre0+git20221105.ffb6bda926-1.2bbbio2~bullseye+20221126) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 14 Sep 2022 13:40:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 26 Nov 2022 12:38:34 -0600
+
+linuxcnc (2.9.0~pre0+git20221105.ffb6bda926-1.2bbbio0~bullseye+20221126) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 26 Nov 2022 10:06:23 -0600
+
+linuxcnc (2.9.0~pre0+git20221105.ffb6bda926-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Updated 0010-arm-hppa.patch from upstream to handle hppa1.1 cpu and to
+    exit build earlier if libboost-python is not found.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Tue, 08 Nov 2022 22:38:32 +0100
+
+linuxcnc (2.9.0~pre0+git20221105.ffb6bda926-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Added 0010-arm-hppa.patch from upstream to fix build failures on armv8l
+    and hppa64 CPU build daemons.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Tue, 08 Nov 2022 09:55:13 +0100
+
+linuxcnc (2.9.0~pre0+git20221105.ffb6bda926-1) unstable; urgency=medium
+
+  * New upstream version 2.9.0~pre0+git20221105.ffb6bda926
+  * Fix an old hm2 encoder index bug.
+  * Fix unloading when halscope crashes.
+  * Lots of improvements to docs & translations.
+  * Improved gmoccapy GUI and QtVCP.
+  * d/changelog: remove duplicated entries
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sat, 05 Nov 2022 20:48:00 -0600
+
+linuxcnc (2.9.0~pre0+git20221023.7a5beabae0-1) unstable; urgency=medium
+
+  * New upstream version 2.9.0_pre0+git20221023.7a5beabae0
+  * Add deb package with German translated docs.
+  * Fix autopkgtest.
+  * Fix build on armhf.
+  * Fix a divide-by-zero bug in the software encoder counter component.
+  * Fix some bugs in carousel component.
+  * Fix exception handling bug in python plugin/sai.
+  * Improve AppStream metadata.
+  * Bump language standards to gnu11 & gnu++17.
+  * Add hm2 oneshot support.
+  * Lots of improvements to the docs & translations.
+  * Improvements to several GUIs.
+  * Add scaled sum component.
+  * Add anglejog component.
+  * Update debian/ files
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sun, 23 Oct 2022 22:26:38 -0400
 
 linuxcnc (2.9.0~pre0+git20220906.02744cdef6-1) unstable; urgency=medium
 

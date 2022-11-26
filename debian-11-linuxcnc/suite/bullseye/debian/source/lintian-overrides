@@ -1,2 +1,0 @@
-# False positive - python3 is invoked in d/rules.
-linuxcnc source: python3-depends-but-no-python3-helper linuxcnc-uspace linuxcnc-uspace-dev
