@@ -26,11 +26,6 @@ override_dh_auto_test:
 	$(ignore_test_failures)env LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):$(CURDIR)/build/lib/SPIRV dh_auto_test
 
 
-update-symbols:
-	pkgkde-getbuildlogs
-	echo "pkgkde-symbolshelper batchpatch -v $(DEB_VERSION_EPOCH_UPSTREAM) $(DEB_SOURCE)_$(DEB_DISTRIBUTION)_logs/$(DEB_SOURCE)_$(DEB_VERSION)_*build"
-
-
 ifneq (,$(wildcard .git))
 upstream:
 	git remote show $@ >/dev/null 2>&1 || git remote add $@ $(shell sed -rn 's/Repository: //p' debian/upstream/metadata)
