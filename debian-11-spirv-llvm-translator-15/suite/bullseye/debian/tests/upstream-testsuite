@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e -u -x
+LLVM_VERSION=$(sed -n -r '/^Build/,/^$/s/.*llvm-([0-9]+)-dev.*/\1/p' debian/control)
+cp -a . "$AUTOPKGTEST_TMP"
+cd "$AUTOPKGTEST_TMP"
+mkdir build
+cd build
+cmake \
+	-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include \
+	-DLLVM_SPIRV_INCLUDE_TESTS=ON \
+	-DLLVM_EXTERNAL_LIT=/usr/lib/llvm-${LLVM_VERSION}/build/utils/lit/lit.py \
+	-Wno-dev \
+	..
+make --touch
+rm -f tools/llvm-spirv/llvm-spirv
+cp /usr/bin/llvm-spirv-${LLVM_VERSION} tools/llvm-spirv/llvm-spirv
+make -C test clean
+make test

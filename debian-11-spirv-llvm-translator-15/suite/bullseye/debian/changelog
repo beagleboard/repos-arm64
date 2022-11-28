@@ -1,0 +1,288 @@
+spirv-llvm-translator-15 (15.0.0-1bbbio0~bullseye+20221128) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 28 Nov 2022 09:35:08 -0600
+
+spirv-llvm-translator-15 (15.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Fork source package as spirv-llvm-translator-15.
+  * Rename binary packages: *14* => *15*.
+  * Build with llvm 15.
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 03 Oct 2022 02:09:37 +0200
+
+spirv-llvm-translator-14 (14.0.0-3) unstable; urgency=medium
+
+  * Update .symbols control file.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sun, 02 Oct 2022 13:48:53 +0200
+
+spirv-llvm-translator-14 (14.0.0-2) unstable; urgency=medium
+
+  * Restrict watch file to 14.* releases.
+  * Build with spirv-tools.
+  * Add autopkgtest, ignore failures on !amd64.
+  * Enable build-time tests, ignore failures on !amd64.
+  * Use pkg-kde-tools to manage the .symbols.
+  * Add .symbols control file.
+
+ -- Andreas Beckmann <anbe@debian.org>  Fri, 30 Sep 2022 18:00:36 +0200
+
+spirv-llvm-translator-14 (14.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Fork source package as spirv-llvm-translator-14.
+  * Rename binary packages: *13* => *14*.
+  * Build with llvm 14.
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 16 May 2022 09:29:32 +0200
+
+spirv-llvm-translator (13.0.0-6) unstable; urgency=medium
+
+  * Update .symbols control file.
+
+ -- Andreas Beckmann <anbe@debian.org>  Fri, 30 Sep 2022 16:36:05 +0200
+
+spirv-llvm-translator (13.0.0-5) unstable; urgency=medium
+
+  * Use pkg-kde-tools to manage the .symbols.
+  * Add .symbols control file.
+  * Update Lintian overrides.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 29 Sep 2022 22:34:44 +0200
+
+spirv-llvm-translator (13.0.0-4) unstable; urgency=medium
+
+  * Rename /usr/bin/llvm-spirv to /usr/bin/llvm-spirv-13.
+  * Restrict watch file to 13.* releases.
+  * Enable all hardening flags.
+  * Bump Standards-Version to 4.6.1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 16 May 2022 01:58:34 +0200
+
+spirv-llvm-translator (13.0.0-3) unstable; urgency=medium
+
+  * Rename OpConstFunctionPointerINTEL to OpConstantFunctionPointerINTEL to
+    fix FTBFS with spirv-headers 1.5.5.  (Closes: #1005458)
+  * rules: Parse llvm version from Build-Depends.
+  * control: Provide virtual package libllvmspirvlib-13-dev.
+  * control: Set Rules-Requires-Root: no.
+  * control, install: Multiarchify the packages.
+  * upstream/metadata: Add.
+  * copyright: Update/remove outdated file patterns.
+  * Fix typo.
+  * Update Lintian overrides.
+  * Add myself to Uploaders.
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 16 Feb 2022 23:28:24 +0100
+
+spirv-llvm-translator (13.0.0-2) unstable; urgency=medium
+
+  * control: Drop lldb-13 from build-depends, it's not used and prevents
+    build on mips/mipsel.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 17 Nov 2021 11:00:43 +0200
+
+spirv-llvm-translator (13.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump debhelper to 13.
+  * control: Bump policy to 4.6.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 27 Oct 2021 10:41:14 +0300
+
+spirv-llvm-translator (13.0~git20210929-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * Build with llvm 13.
+  * Add spirv-headers to build-depends, set headers dir.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 29 Sep 2021 14:40:45 +0300
+
+spirv-llvm-translator-12 (12.0.0-6) unstable; urgency=medium
+
+  * Update .symbols control file.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 29 Sep 2022 21:34:40 +0200
+
+spirv-llvm-translator-12 (12.0.0-5) unstable; urgency=medium
+
+  * Use pkg-kde-tools to manage the .symbols.
+  * Add .symbols control file.
+  * Update Lintian overrides.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 29 Sep 2022 04:13:09 +0200
+
+spirv-llvm-translator-12 (12.0.0-4) unstable; urgency=medium
+
+  * Restrict watch file to 12.* releases.
+  * Enable all hardening flags.
+  * Bump Standards-Version to 4.6.1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sun, 15 May 2022 23:58:08 +0200
+
+spirv-llvm-translator-12 (12.0.0-3) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * control: Bump debhelper to 13.
+  * control: Bump policy to 4.6.0.
+  * control: Drop lldb-12 from build-depends, it's not used and prevents
+    build on mips/mipsel.
+
+  [ Andreas Beckmann ]
+  * rules: Parse llvm version from Build-Depends.
+  * control: Set Rules-Requires-Root: no.
+  * control, install: Multiarchify the packages.
+  * upstream/metadata: Add.
+  * copyright: Update/remove outdated file patterns.
+  * Fix typo.
+  * Update Lintian overrides.
+  * Add myself to Uploaders.
+  * Have one set of packages per llvm version:
+    - Fork source package as spirv-llvm-translator-12.
+    - Rename binary packages:
+      + libllvmspirvlib-dev => libllvmspirvlib-12-dev,
+      + llvm-spirv => llvm-spirv-12.
+    - Rename /usr/bin/llvm-spirv to /usr/bin/llvm-spirv-12.
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 09 Feb 2022 20:05:39 +0100
+
+spirv-llvm-translator (12.0.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 16 Aug 2021 09:59:48 +0300
+
+spirv-llvm-translator (12.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 07 Jun 2021 12:24:54 +0300
+
+spirv-llvm-translator (12.0~git20210212-2) experimental; urgency=medium
+
+  * control: Fix libllvmspirvlib-dev depends.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 10 May 2021 12:17:08 +0300
+
+spirv-llvm-translator (12.0~git20210212-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+  * Build against llvm-12.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 12 Apr 2021 20:24:01 +0300
+
+spirv-llvm-translator-11 (11.0.0-4) unstable; urgency=medium
+
+  * Update .symbols control file.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 29 Sep 2022 03:48:48 +0200
+
+spirv-llvm-translator-11 (11.0.0-3) unstable; urgency=medium
+
+  * Use pkg-kde-tools to manage the .symbols.
+  * Add .symbols control file.
+  * Update Lintian overrides.
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 28 Sep 2022 19:10:39 +0200
+
+spirv-llvm-translator-11 (11.0.0-2) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * control: Bump debhelper to 13.
+  * control: Bump policy to 4.6.0.
+  * control: Drop lldb-11 from build-depends, it's not used and prevents
+    build on mips/mipsel.
+
+  [ Andreas Beckmann ]
+  * rules: Parse llvm version from Build-Depends.
+  * control: Set Rules-Requires-Root: no.
+  * control, install: Multiarchify the packages.
+  * upstream/metadata: Add.
+  * copyright: Update/remove outdated file patterns.
+  * Fix typo.
+  * Update Lintian overrides.
+  * Add myself to Uploaders.
+  * Have one set of packages per llvm version:
+    - Fork source package as spirv-llvm-translator-11.
+    - Rename binary packages:
+      + libllvmspirvlib-dev => libllvmspirvlib-11-dev,
+      + llvm-spirv => llvm-spirv-11.
+    - Rename /usr/bin/llvm-spirv to /usr/bin/llvm-spirv-11.
+  * Allow overriding BASE_LLVM_VERSION.
+  * Restrict watch file to 11.* releases.
+  * Enable all hardening flags.
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 11 Apr 2022 10:32:52 +0200
+
+spirv-llvm-translator (11.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Mark -dev as M-A: same.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 20 Oct 2020 11:24:57 +0300
+
+spirv-llvm-translator (11.0~git20200922-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * Build against llvm-11.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 22 Sep 2020 19:45:26 +0300
+
+spirv-llvm-translator (10.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * watch: Updated.
+  * Build against llvm-10.
+  * control: Use debhelper-compat, bump to 12.
+  * control: Bump policy to 4.5.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 01 Apr 2020 20:44:04 +0300
+
+spirv-llvm-translator (9.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/copyright: spirv.hpp is Expat.
+  * Build with llvm-9.
+  * patches: Dropped the only patch, applied upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 24 Sep 2019 12:04:15 +0300
+
+spirv-llvm-translator (8.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Set build type as 'Release'.
+  * debian/patches: Refreshed.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 01 Aug 2019 10:06:44 +0300
+
+spirv-llvm-translator (8.0.0+git20190314-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+  * Build a shared library.
+  * Package llvm-spirv.
+  * Add patch to support clang block syntax.
+  * rules: Drop rpath.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Mar 2019 17:24:46 +0200
+
+spirv-llvm-translator (8.0.0-3) experimental; urgency=medium
+
+  * rules: Rebuild the archive index after stripping.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 15 Mar 2019 09:23:42 +0200
+
+spirv-llvm-translator (8.0.0-2) experimental; urgency=medium
+
+  * rules: Build with -fPIC.
+  * rules: Strip the library.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 14 Mar 2019 23:53:32 +0200
+
+spirv-llvm-translator (8.0.0-1) experimental; urgency=medium
+
+  * Initial release (Closes: #921422)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 06 Feb 2019 01:40:18 +0200

@@ -1,0 +1,28 @@
+Tests: upstream-testsuite
+Architecture: amd64
+Depends:
+ @,
+ cmake,
+ g++,
+ pkgconf,
+ spirv-headers,
+ spirv-tools,
+ clang-15,
+ llvm-15-dev,
+Restrictions:
+ allow-stderr,
+
+Test-Command: debian/tests/upstream-testsuite
+Architecture: !amd64
+Depends:
+ @,
+ cmake,
+ g++,
+ pkgconf,
+ spirv-headers,
+ spirv-tools,
+ clang-15,
+ llvm-15-dev,
+Restrictions:
+ allow-stderr,
+ flaky,
