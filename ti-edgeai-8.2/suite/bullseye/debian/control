@@ -12,6 +12,7 @@ Package: ti-edgeai-8.2-base
 Section: metapackages
 Architecture: all
 Depends:
+ , graphicsmagick-imagemagick-compat
  , ti-edgeai-gst-plugins-8.2
  , ti-edgeai-tiovx-modules-8.2
  , ti-rpmsg-char
