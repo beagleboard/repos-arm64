@@ -7,6 +7,7 @@ Build-Depends:
  , ca-certificates
  , cmake
  , git
+ , graphicsmagick-imagemagick-compat
  , libglib2.0-dev
  , libgstreamer1.0-dev
  , libgstreamer-plugins-base1.0-dev

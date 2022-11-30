@@ -2,7 +2,7 @@
 
 package_name="ti-edgeai-apps-8.2"
 debian_pkg_name="${package_name}"
-package_version="8.2.0.10"
+package_version="8.2.0.11"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220527"
+bullseye_version="~bullseye+20221130"
