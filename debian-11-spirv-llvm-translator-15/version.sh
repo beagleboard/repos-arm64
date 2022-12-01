@@ -17,6 +17,6 @@ dl_path="pool/main/${reprepro_dir}/"
 debian_version="${package_version}-1"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
-local_patch="bbbio4"
+local_patch="bbbio5"
 
-bullseye_version="~bullseye+20221130"
+bullseye_version="~bullseye+20221201"
