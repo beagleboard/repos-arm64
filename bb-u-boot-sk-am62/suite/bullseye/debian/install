@@ -1,4 +1,6 @@
+debian/install.sh /opt/u-boot/bb-u-boot-sk-am62
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-sk-am62
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-sk-am62
 tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/bb-u-boot-sk-am62
 tmp/ti-linux-firmware/ti-dm/am62xx/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-sk-am62
 tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/bb-u-boot-sk-am62
