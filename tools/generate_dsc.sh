@@ -163,7 +163,16 @@ run () {
 		cp -rv ${DIR}/common/* ./debian/common/
 	fi
 
-	debuild -us -uc -S -d
+	if [ -d ${DIR}/override/ ] ; then
+		cp -rv ${DIR}/override/* ./
+	fi
+
+	if [ -d ${DIR}/debian/ ] ; then
+		cp -rv ${DIR}/debian/* ./debian/
+	fi
+
+	#debuild -us -uc -S -d
+	debuild --no-lintian -i -us -uc -S -d
 
 	cd ${DIR}/
 }
