@@ -1,3 +1,9 @@
+spirv-llvm-translator-15 (15.0.0-1bbbio6~bullseye+20221205) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 05 Dec 2022 09:07:09 -0600
+
 spirv-llvm-translator-15 (15.0.0-1bbbio5~bullseye+20221201) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
