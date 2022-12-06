@@ -5,7 +5,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="directx-headers"
 debian_pkg_name="${package_name}"
-package_version="1.606.3+r1"
+package_version="1.606.4"
 
 git_repo=""
 git_sha=""
