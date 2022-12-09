@@ -1,4 +1,6 @@
 debian/install.sh /opt/u-boot/bb-u-boot-sk-am62
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-sk-am62
+debian/install-emmc.sh /opt/u-boot/bb-u-boot-sk-am62
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-sk-am62
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-sk-am62
 tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/bb-u-boot-sk-am62

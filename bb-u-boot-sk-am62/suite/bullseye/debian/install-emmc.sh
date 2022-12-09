@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-wdir="/opt/u-boot/bb-u-boot-beagleboneai64"
+wdir="/opt/u-boot/bb-u-boot-sk-am62"
 
 if [ -b /dev/mmcblk0 ] ; then
 	#mmc extcsd read /dev/mmcblk0
