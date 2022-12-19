@@ -2,8 +2,8 @@
 #
 
 if ! id | grep -q root; then
-	echo "beagle-version must be run as root:"
-	echo "sudo beagle-version"
+	echo "beagle-sgx-drivers-install must be run as root:"
+	echo "sudo beagle-sgx-drivers-install"
 	exit
 fi
 
