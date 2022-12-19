@@ -2,6 +2,8 @@
 
 set -e
 
+/usr/sbin/beagle-sgx-soc-install || true
+
 case "$1" in
   configure)
     # Ask the bus to reload the config file

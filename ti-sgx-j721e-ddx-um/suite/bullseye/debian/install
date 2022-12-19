@@ -1,4 +1,4 @@
-#debian/99-pvr.rules etc/udev/rules.d/
+debian/beagle-sgx-drivers-install /usr/sbin/
 tmp/opt/sgx/targetfs/am62_linux/wayland/release/lib/firmware/* lib/firmware
 tmp/opt/sgx/targetfs/j721e_linux/wayland/release/lib/firmware/* lib/firmware
 tmp/opt/sgx/targetfs/am62_linux/wayland/release/etc/* opt/sgx/targetfs/am62_linux/wayland/release/etc/

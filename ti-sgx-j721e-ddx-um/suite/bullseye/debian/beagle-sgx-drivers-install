@@ -1,0 +1,28 @@
+#!/bin/sh -e
+#
+
+if ! id | grep -q root; then
+	echo "beagle-version must be run as root:"
+	echo "sudo beagle-version"
+	exit
+fi
+
+soc_family=$(cat /sys/devices/soc0/family || true)
+
+BUILD=release
+WINDOW_SYSTEM=wayland
+
+case "${soc_family}" in
+AM62X)
+	TARGET_PRODUCT=am62_linux
+	SRCDIR="/opt/sgx/targetfs/${TARGET_PRODUCT}/${WINDOW_SYSTEM}/${BUILD}"
+	cp -arv ${SRCDIR}/etc/* /etc
+	cp -arv ${SRCDIR}/usr/* /usr
+	;;
+J721E)
+	TARGET_PRODUCT=j721e_linux
+	SRCDIR="/opt/sgx/targetfs/${TARGET_PRODUCT}/${WINDOW_SYSTEM}/${BUILD}"
+	cp -arv ${SRCDIR}/etc/* /etc
+	cp -arv ${SRCDIR}/usr/* /usr
+	;;
+esac
