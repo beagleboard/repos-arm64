@@ -1,9 +1,7 @@
-debian/99-pvr.rules etc/udev/rules.d/
-tmp/opt/sgx/* opt/sgx
+#debian/99-pvr.rules etc/udev/rules.d/
 tmp/opt/sgx/targetfs/am62_linux/wayland/release/lib/firmware/* lib/firmware
 tmp/opt/sgx/targetfs/j721e_linux/wayland/release/lib/firmware/* lib/firmware
-
-#tmp/etc/OpenCL/* etc/OpenCL
-#tmp/usr/lib/* usr/lib
-#tmp/usr/bin/* usr/bin
-#tmp/lib/firmware/* lib/firmware
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/etc/* opt/sgx/targetfs/am62_linux/wayland/release/etc/
+tmp/opt/sgx/targetfs/j721e_linux/wayland/release/etc/* opt/sgx/targetfs/j721e_linux/wayland/release/etc/
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/* opt/sgx/targetfs/am62_linux/wayland/release/usr/
+tmp/opt/sgx/targetfs/j721e_linux/wayland/release/usr/* opt/sgx/targetfs/j721e_linux/wayland/release/usr/
