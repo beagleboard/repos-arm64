@@ -9,11 +9,14 @@ export TARGET_PRODUCT=j721e_linux
 #export WINDOW_SYSTEM=nulldrmws
 export WINDOW_SYSTEM=wayland
 
-git_repo="https://git.ti.com/git/graphics/ti-img-rogue-umlibs.git"
-git_sha="42e01fb5ef6971b344c1652986b1f589f77fecd9"
-
+# Disable dh_strip
 override_dh_strip:
-	# Just disable for now...
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone https://git.ti.com/git/graphics/ti-img-rogue-umlibs.git ./tmp/opt/sgx ; cd ./tmp/opt/sgx ; git checkout -b tmp 42e01fb5ef6971b344c1652986b1f589f77fecd9
