@@ -10,10 +10,10 @@ log="bb-install-modules:"
 . /etc/default/generic-sys-mods
 
 if [ -f /opt/modules/install ] ; then
-	. /opt/modules/install
+	soc_family=$(cat /sys/devices/soc0/family || true)
 
-	case "${ARCH_SOC_MODULES}" in
-	am62)
+	case "${soc_family}" in
+	AM62X)
 		dpkg -i /opt/modules/ti-sgx-am62-modules-${uname}*_arm64.deb || true
 		dpkg -i /opt/modules/bbb.io-kernel-tasks*.deb || true
 		dpkg -i /opt/modules/bbb.io-kernel-${branch}-k3-am62_1*.deb || true
@@ -21,8 +21,9 @@ if [ -f /opt/modules/install ] ; then
 		depmod -a ${uname}
 		update-initramfs -u -k ${uname}
 		cp -v /boot/initrd.img-${uname} /boot/firmware/initrd.img
+		/usr/sbin/beagle-sgx-drivers-install || true
 		;;
-	j721e)
+	J721E)
 		dpkg -i /opt/modules/ti-sgx-j721e-modules-${uname}*_arm64.deb || true
 		dpkg -i /opt/modules/bbb.io-kernel-tasks*.deb || true
 		dpkg -i /opt/modules/bbb.io-kernel-${branch}-k3-j721e_1*.deb || true
@@ -30,6 +31,7 @@ if [ -f /opt/modules/install ] ; then
 		depmod -a ${uname}
 		update-initramfs -u -k ${uname}
 		cp -v /boot/initrd.img-${uname} /boot/firmware/initrd.img
+		/usr/sbin/beagle-sgx-drivers-install || true
 		;;
 	*)
 		echo "Please update ARCH_SOC_MODULES in /etc/default/generic-sys-mods"
