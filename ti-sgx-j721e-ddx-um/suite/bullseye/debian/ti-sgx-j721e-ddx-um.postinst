@@ -2,7 +2,7 @@
 
 set -e
 
-/usr/sbin/beagle-sgx-soc-install || true
+/usr/sbin/beagle-sgx-drivers-install || true
 
 case "$1" in
   configure)
