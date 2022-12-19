@@ -1,5 +1,6 @@
 debian/99-pvr.rules etc/udev/rules.d/
-tmp/etc/OpenCL/* etc/OpenCL
-tmp/usr/lib/* usr/lib
-tmp/usr/bin/* usr/bin
-tmp/lib/firmware/* lib/firmware
+tmp/opt/sgx/* opt/sgx
+#tmp/etc/OpenCL/* etc/OpenCL
+#tmp/usr/lib/* usr/lib
+#tmp/usr/bin/* usr/bin
+#tmp/lib/firmware/* lib/firmware
