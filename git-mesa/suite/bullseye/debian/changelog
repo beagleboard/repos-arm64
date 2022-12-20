@@ -1,14 +1,23 @@
-mesa (22.3.0-2.git20221130.1-0~bullseye+20221206) bullseye; urgency=low
+mesa (22.3.1-1.git20221214.0-0~bullseye+20221220) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 Dec 2022 13:21:59 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 Dec 2022 09:56:22 -0600
 
-mesa (22.3.0-2.git20221130.0-0~bullseye+20221206) bullseye; urgency=low
+mesa (22.3.1-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * New upstream release.
+  * patches: Drop upstreamed patches.
+  * control: Use Rules-Requires-Root: no.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 Dec 2022 10:24:35 -0600
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 15 Dec 2022 13:21:21 +0200
+
+mesa (22.3.0-3) unstable; urgency=medium
+
+  * control: Enable i915 gallium driver. (Closes: #1013311)
+  * rules: Enable intel_hasvk. (Closes: #1025864)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 11 Dec 2022 19:14:28 +0200
 
 mesa (22.3.0-2) unstable; urgency=medium
 
