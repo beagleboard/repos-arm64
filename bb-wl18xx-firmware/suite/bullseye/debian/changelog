@@ -1,6 +1,6 @@
-bb-wl18xx-firmware (1.20221201.1-0~bullseye+20221205) bullseye; urgency=low
+bb-wl18xx-firmware (1.20221220.0-0~bullseye+20221220) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 05 Dec 2022 09:05:01 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 Dec 2022 09:48:37 -0600
 
