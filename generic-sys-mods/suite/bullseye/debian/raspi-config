@@ -2165,8 +2165,8 @@ do_net_names () {
 }
 
 do_update() {
-  apt-get update &&
-  apt-get install raspi-config &&
+  apt update &&
+  apt install generic-sys-mods &&
   printf "Sleeping 5 seconds before reloading raspi-config\n" &&
   sleep 5 &&
   exec raspi-config
