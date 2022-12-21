@@ -18,5 +18,10 @@ Depends:
  , systemd (>= 230)
  , cloud-guest-utils
  , e2fsprogs
+ , whiptail
+ , parted
+ , lua5.1
+ , psmisc
+ , iw
 Description: System tweaks for the Generic Systems
  Various modifications to improve the performance or user experience.
