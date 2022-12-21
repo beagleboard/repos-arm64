@@ -6,7 +6,8 @@
 INTERACTIVE=True
 ASK_TO_REBOOT=0
 BLACKLIST=/etc/modprobe.d/raspi-blacklist.conf
-CONFIG=/boot/firmware/config.txt
+BOOT_MOUNT=/boot/firmware
+CONFIG=${BOOT_MOUNT}/config.txt
 
 USER=${SUDO_USER:-$(who -m | awk '{ print $1 }')}
 INIT="$(ps --no-headers -o comm 1)"
@@ -24,7 +25,7 @@ if is_pi ; then
   if [ -e /proc/device-tree/chosen/os_prefix ]; then
     PREFIX="$(cat /proc/device-tree/chosen/os_prefix)"
   fi
-  CMDLINE="/boot/${PREFIX}cmdline.txt"
+  CMDLINE="${BOOT_MOUNT}/${PREFIX}cmdline.txt"
 else
   CMDLINE=/proc/cmdline
 fi
@@ -675,7 +676,7 @@ No other symbols, punctuation characters, or blank spaces are permitted.\
 }
 
 do_memory_split() { # Memory Split
-  if [ -e /boot/start_cd.elf ]; then
+  if [ -e ${BOOT_MOUNT}/start_cd.elf ]; then
     # New-style memory split setting
     ## get current memory split from /boot/config.txt
     arm=$(vcgencmd get_mem arm | cut -d '=' -f 2 | cut -d 'M' -f 1)
@@ -731,7 +732,7 @@ get_current_memory_split() {
   AVAILABLE_SPLITS="128 192 224 240"
   MEMSPLIT_DESCRIPTION=""
   for SPLIT in $AVAILABLE_SPLITS;do
-    if [ -e /boot/arm${SPLIT}_start.elf ] && cmp /boot/arm${SPLIT}_start.elf /boot/start.elf >/dev/null 2>&1;then
+    if [ -e ${BOOT_MOUNT}/arm${SPLIT}_start.elf ] && cmp ${BOOT_MOUNT}/arm${SPLIT}_start.elf ${BOOT_MOUNT}/start.elf >/dev/null 2>&1;then
       CURRENT_MEMSPLIT=$SPLIT
       MEMSPLIT_DESCRIPTION="Current: ${CURRENT_MEMSPLIT}MiB for ARM, $((256 - $CURRENT_MEMSPLIT))MiB for VideoCore"
       break
@@ -740,7 +741,7 @@ get_current_memory_split() {
 }
 
 set_memory_split() {
-  cp -a /boot/arm${1}_start.elf /boot/start.elf
+  cp -a ${BOOT_MOUNT}/arm${1}_start.elf ${BOOT_MOUNT}/start.elf
   sync
 }
 
@@ -1760,7 +1761,7 @@ get_camera() {
 }
 
 do_camera() {
-  if [ $(deb_ver) -le 10 ] && [ ! -e /boot/start_x.elf ]; then
+  if [ $(deb_ver) -le 10 ] && [ ! -e ${BOOT_MOUNT}/start_x.elf ]; then
     whiptail --msgbox "Your firmware appears to be out of date (no start_x.elf). Please update" 20 60 2
     return 1
   fi
@@ -1912,7 +1913,7 @@ do_legacy() {
 }
 
 do_gldriver() {
-  if [ ! -e /boot/overlays/vc4-kms-v3d.dtbo ]; then
+  if [ ! -e ${BOOT_MOUNT}/overlays/vc4-kms-v3d.dtbo ]; then
     whiptail --msgbox "Driver and kernel not present on your system. Please update" 20 60 2
     return 1
   fi
@@ -2518,10 +2519,10 @@ get_json_string_val() {
 
 # TODO: This is probably broken
 do_apply_os_config() {
-  [ -e /boot/os_config.json ] || return 0
-  NOOBSFLAVOUR=$(get_json_string_val /boot/os_config.json flavour)
-  NOOBSLANGUAGE=$(get_json_string_val /boot/os_config.json language)
-  NOOBSKEYBOARD=$(get_json_string_val /boot/os_config.json keyboard)
+  [ -e ${BOOT_MOUNT}/os_config.json ] || return 0
+  NOOBSFLAVOUR=$(get_json_string_val ${BOOT_MOUNT}/os_config.json flavour)
+  NOOBSLANGUAGE=$(get_json_string_val ${BOOT_MOUNT}/os_config.json language)
+  NOOBSKEYBOARD=$(get_json_string_val ${BOOT_MOUNT}/os_config.json keyboard)
 
   if [ -n "$NOOBSFLAVOUR" ]; then
     printf "Setting flavour to %s based on os_config.json from NOOBS. May take a while\n" "$NOOBSFLAVOUR"
@@ -2594,12 +2595,12 @@ get_overlay_conf() {
 }
 
 get_bootro_now() {
-  findmnt /boot | grep -q " ro,"
+  findmnt ${BOOT_MOUNT} | grep -q " ro,"
   echo $?
 }
 
 get_bootro_conf() {
-  grep /boot /etc/fstab | grep -q "defaults.*,ro[ ,]"
+  grep ${BOOT_MOUNT} /etc/fstab | grep -q "defaults.*,ro[ ,]"
   echo $?
 }
 
@@ -2613,7 +2614,7 @@ enable_overlayfs() {
 
   # mount the boot partition as writable if it isn't already
   if [ $(get_bootro_now) -eq 0 ] ; then
-    if ! mount -o remount,rw /boot 2>/dev/null ; then
+    if ! mount -o remount,rw ${BOOT_MOUNT} 2>/dev/null ; then
       echo "Unable to mount boot partition as writable - cannot enable"
       return 1
     fi
@@ -2686,13 +2687,13 @@ EOF
   update-initramfs -c -k "$KERN"
 
   # rename it so we know it has overlay added
-  mv /boot/initrd.img-"$KERN" /boot/"$INITRD"
+  mv ${BOOT_MOUNT}/initrd.img-"$KERN" ${BOOT_MOUNT}/"$INITRD"
 
   # there is now a modified initramfs ready for use...
 
   # modify config.txt
-  sed -i /boot/config.txt -e "/initramfs.*/d" 
-  echo initramfs "$INITRD" >> /boot/config.txt
+  sed -i ${BOOT_MOUNT}/config.txt -e "/initramfs.*/d" 
+  echo initramfs "$INITRD" >> ${BOOT_MOUNT}/config.txt
 
   # modify command line
   if ! grep -q "boot=overlay" $CMDLINE ; then
@@ -2700,7 +2701,7 @@ EOF
   fi
 
   if [ "$BOOTRO" = "yes" ] ; then
-    if ! mount -o remount,ro /boot 2>/dev/null ; then
+    if ! mount -o remount,ro ${BOOT_MOUNT} 2>/dev/null ; then
       echo "Unable to remount boot partition as read-only"
     fi
   fi
@@ -2710,7 +2711,7 @@ disable_overlayfs() {
   KERN=$(uname -r)
   # mount the boot partition as writable if it isn't already
   if [ $(get_bootro_now) -eq 0 ] ; then
-    if ! mount -o remount,rw /boot 2>/dev/null ; then
+    if ! mount -o remount,rw ${BOOT_MOUNT} 2>/dev/null ; then
       echo "Unable to mount boot partition as writable - cannot disable"
       return 1
     fi
@@ -2720,14 +2721,14 @@ disable_overlayfs() {
   fi
 
   # modify config.txt
-  sed -i /boot/config.txt -e "/initramfs.*/d"
+  sed -i ${BOOT_MOUNT}/config.txt -e "/initramfs.*/d"
   update-initramfs -d -k "${KERN}-overlay"
 
   # modify command line
   sed -i $CMDLINE -e "s/\(.*\)boot=overlay \(.*\)/\1\2/"
 
   if [ "$BOOTRO" = "yes" ] ; then
-    if ! mount -o remount,ro /boot 2>/dev/null ; then
+    if ! mount -o remount,ro ${BOOT_MOUNT} 2>/dev/null ; then
       echo "Unable to remount boot partition as read-only"
     fi
   fi
@@ -2738,7 +2739,7 @@ enable_bootro() {
     echo "Overlay in use; cannot update fstab"
     return 1
   fi
-  sed -i /etc/fstab -e "s/\(.*\/boot.*\)defaults\(.*\)/\1defaults,ro\2/"
+  sed -i /etc/fstab -e "s/\(.*\${BOOT_MOUNT}.*\)defaults\(.*\)/\1defaults,ro\2/"
 }
 
 disable_bootro() {
@@ -2746,7 +2747,7 @@ disable_bootro() {
     echo "Overlay in use; cannot update fstab"
     return 1
   fi
-  sed -i /etc/fstab -e "s/\(.*\/boot.*\)defaults,ro\(.*\)/\1defaults\2/"
+  sed -i /etc/fstab -e "s/\(.*\${BOOT_MOUNT}.*\)defaults,ro\(.*\)/\1defaults\2/"
 }
 
 do_overlayfs() {
