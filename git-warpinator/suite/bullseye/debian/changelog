@@ -1,8 +1,69 @@
-warpinator (1.2.13-0bbbio1~bullseye+20220726) bullseye; urgency=low
+warpinator (1.4.3-0bbbio0~bullseye+20230106) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Jul 2022 11:46:29 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Jan 2023 10:01:32 -0600
+
+warpinator (1.4.3) vera; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 16 Dec 2022 13:19:08 +0000
+
+warpinator (1.4.2) vera; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 02 Dec 2022 17:36:01 +0000
+
+warpinator (1.4.1) vera; urgency=medium
+
+  [ Michael Webster ]
+  * auth.py: remove leftover self, and get_group_code() always needs to return a code.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Nov 2022 14:50:00 +0000
+
+warpinator (1.4.0) vera; urgency=medium
+
+  [ Michael Webster ]
+  * Rework group code presentation and enforcement in preferences.
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Nov 2022 10:56:04 +0000
+
+warpinator (1.2.15) vera; urgency=medium
+
+  [ Michael Webster ]
+  * Add github workflow.
+
+  [ dogey11 ]
+  * Update README.md
+
+  [ Michael Webster ]
+  * transfers: Don't allow a received file to be saved outside of the transfer folder.
+  * transfers: Use g_file_query_exists() instead of g_file_test().
+  * transfers: Always remove existing files before beginning a transfer.
+  * transfers: Use Pathlib.Path instead of GFile for path safety check.
+  * Add a script to allow testing the preferences window directly.
+  * Don't allow incoming transfers to fill the disk.
+
+  [ Juliano Marcelino ]
+  * Added instructions for Arch Linux via pacman (#144)
+
+  [ Michael Webster ]
+  * Check number of files received against the original request.
+  * transfers: Change method used to check relative paths.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 22 Nov 2022 11:37:29 +0000
+
+warpinator (1.2.14) vanessa; urgency=medium
+
+  [ Michael Webster ]
+  * grpc: Use 1.44 instead of 1.46 for now - there is a polling issue in 1.46+ that causes excessive CPU use.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Sep 2022 15:38:59 +0100
 
 warpinator (1.2.13) vanessa; urgency=medium
 
