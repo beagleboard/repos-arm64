@@ -126,6 +126,7 @@ if [ -f /boot/uEnv.txt ] ; then
 fi
 
 echo "pkg check: to individually upgrade run: [sudo apt install --only-upgrade <pkg>]"
+pkg="bb-u-boot-beagleboneai64" ; dpkg_check_version
 pkg="bb-customizations" ; dpkg_check_version
 pkg="bb-usb-gadgets" ; dpkg_check_version
 

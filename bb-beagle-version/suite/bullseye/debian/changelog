@@ -1,6 +1,6 @@
-bb-beagle-version (1.20221117.0-0~bullseye+20221117) bullseye; urgency=low
+bb-beagle-version (1.20230106.0-0~bullseye+20230106) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Nov 2022 13:57:39 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Jan 2023 13:18:41 -0600
 
