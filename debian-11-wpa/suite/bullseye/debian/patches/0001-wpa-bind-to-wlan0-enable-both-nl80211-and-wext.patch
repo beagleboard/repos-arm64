@@ -1,16 +1,16 @@
-From 8a910c4e23f1d7d7dc813a6f8ec517d07a7790d6 Mon Sep 17 00:00:00 2001
+From 72ddb76ed5dab149e3e8b7b67d905c32e171387b Mon Sep 17 00:00:00 2001
 From: Robert Nelson <robertcnelson@gmail.com>
-Date: Fri, 19 Nov 2021 13:24:25 -0600
-Subject: [PATCH] wpa_supplicant: bind to wlan0
+Date: Fri, 6 Jan 2023 09:18:42 -0600
+Subject: [PATCH] wpa bind-to-wlan0 enable-both-nl80211-and-wext
 
 Signed-off-by: Robert Nelson <robertcnelson@gmail.com>
 ---
- wpa_supplicant/systemd/wpa_supplicant-nl80211.service.arg.in | 4 ++--
- wpa_supplicant/systemd/wpa_supplicant.service.arg.in         | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+ .../systemd/wpa_supplicant-nl80211.service.arg.in           | 6 +++---
+ wpa_supplicant/systemd/wpa_supplicant.service.arg.in        | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/wpa_supplicant/systemd/wpa_supplicant-nl80211.service.arg.in b/wpa_supplicant/systemd/wpa_supplicant-nl80211.service.arg.in
-index 03ac507..e1258d1 100644
+index aa12795..5ce4d43 100644
 --- a/wpa_supplicant/systemd/wpa_supplicant-nl80211.service.arg.in
 +++ b/wpa_supplicant/systemd/wpa_supplicant-nl80211.service.arg.in
 @@ -1,6 +1,6 @@
@@ -21,14 +21,19 @@ index 03ac507..e1258d1 100644
  After=sys-subsystem-net-devices-%i.device
  Before=network.target
  Wants=network.target
-@@ -12,4 +12,4 @@ Type=simple
- ExecStart=@BINDIR@/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-nl80211-%I.conf -Dnl80211 -i%I
+@@ -9,8 +9,8 @@ Wants=network.target
+ 
+ [Service]
+ Type=simple
+-ExecStart=@BINDIR@/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-nl80211-%I.conf -Dnl80211 -i%I
++ExecStart=@BINDIR@/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-nl80211-%I.conf -Dnl80211,wext -i%I
+ ExecReload=/bin/kill -HUP $MAINPID
  
  [Install]
--Alias=multi-user.target.wants/wpa_supplicant-nl80211@%i.service
+-WantedBy=multi-user.target
 +WantedBy=sys-subsystem-net-devices-%i.device
 diff --git a/wpa_supplicant/systemd/wpa_supplicant.service.arg.in b/wpa_supplicant/systemd/wpa_supplicant.service.arg.in
-index 7788b38..ca17dff 100644
+index 2097be3..a523750 100644
 --- a/wpa_supplicant/systemd/wpa_supplicant.service.arg.in
 +++ b/wpa_supplicant/systemd/wpa_supplicant.service.arg.in
 @@ -1,6 +1,6 @@
@@ -39,11 +44,16 @@ index 7788b38..ca17dff 100644
  After=sys-subsystem-net-devices-%i.device
  Before=network.target
  Wants=network.target
-@@ -12,4 +12,4 @@ Type=simple
- ExecStart=@BINDIR@/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I
+@@ -9,8 +9,8 @@ Wants=network.target
+ 
+ [Service]
+ Type=simple
+-ExecStart=@BINDIR@/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I
++ExecStart=@BINDIR@/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -Dnl80211,wext -i%I
+ ExecReload=/bin/kill -HUP $MAINPID
  
  [Install]
--Alias=multi-user.target.wants/wpa_supplicant@%i.service
+-WantedBy=multi-user.target
 +WantedBy=sys-subsystem-net-devices-%i.device
 -- 
 2.30.2
