@@ -38,7 +38,7 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/k3-image-gen/ ; git clone -b $(K3_TAG) https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1 ./tmp/k3-image-gen/
-	make -C ./tmp/k3-image-gen/ SOC=j721e CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
+	make -C ./tmp/k3-image-gen/ SOC=j721e CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/j721e -Isoc/j721e/evm -Iinclude'
 	rm -rf ./tmp/k3-image-gen/sysfw.itb ; mv -v ./tmp/k3-image-gen/sysfw-j721e-evm.itb ./tmp/k3-image-gen/sysfw.itb
 	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) https://git.ti.com/git/processor-firmware/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
 	cp -v ./tmp/ti-linux-firmware/ti-dm/j721e/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
