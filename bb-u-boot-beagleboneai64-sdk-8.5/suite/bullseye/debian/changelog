@@ -1,6 +1,6 @@
-bb-u-boot-beagleboneai64-sdk-8.5 (2021.10.20230109.2-0~bullseye+20230109) bullseye; urgency=low
+bb-u-boot-beagleboneai64-sdk-8.5 (2021.10.20230109.3-0~bullseye+20230109) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Jan 2023 16:29:52 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Jan 2023 17:11:51 -0600
 
