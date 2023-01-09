@@ -1,6 +1,6 @@
-ti-rpmsg-char (0.4.1.20220222.1-0~bullseye+20220405) bullseye; urgency=low
+ti-rpmsg-char (0.5.2.20221220.0-0~bullseye+20230109) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 05 Apr 2022 15:01:05 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Jan 2023 17:41:04 -0600
 
