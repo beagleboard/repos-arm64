@@ -1,0 +1,6 @@
+ti-processor-sdk-rtos-8.5 (8.5.0.0-0~bullseye+20230109) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Jan 2023 17:52:57 -0600
+
