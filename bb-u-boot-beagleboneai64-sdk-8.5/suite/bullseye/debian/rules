@@ -4,24 +4,29 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-TARGETDIR=bb-u-boot-beagleboneai64
+TARGETDIR=bb-u-boot-beagleboneai64-sdk-8.5
 
-#ti-linux-firmware
+#k3-image-gen (meta-ti/recipes-bsp/ti-linux-fw/)
+#https://git.ti.com/gitweb?p=k3-image-gen/k3-image-gen.git;a=commit;h=fde253192d1839723b777323596a697bf8d6332c
+K3_TAG=08.05.00.005
+
+#ti-linux-firmware (meta-ti/recipes-bsp/ti-linux-fw/)
 #https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
-TILF_TAG=08.03.00.003
+#https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=dce263bceabc3a9ebc0f9158a47c1c86b875b0bd
+TILF_TAG=08.05.00.005
 
-#arm-trusted-firmware
+#arm-trusted-firmware (meta-ti/recipes-bsp/trusted-firmware-a/)
 #https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=tags
-#ATF_TAG=08.03.00.002
-ATF_TAG=bbb.io-08.01.00.006
+#https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=1309c6c805190bd376c0561597653f3f8ecd0f58
+ATF_TAG=08.05.00.005
 
-#optee_os
+#optee_os (meta-ti/recipes-security/optee/)
 #https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=tags
-#TEE_TAG=08.04.00.002
-TEE_TAG=08.01.00.005
+#https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=commit;h=afacf356f9593a7f83cae9f96026824ec242ff52
+TEE_TAG=08.05.00.005
 
 #U-Boot
-UB_TAG=v2021.01-ti-08.05.00.001
+UB_TAG=v2021.01-ti-08.05.00.005-SDK-8.5
 UB_CONFIG=j721e_evm_
 UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
@@ -32,12 +37,15 @@ override_dh_strip:
 
 override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b ${TILF_TAG} https://git.ti.com/git/processor-firmware/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
+	mkdir -p ./tmp/k3-image-gen/ ; git clone -b $(K3_TAG) https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1 ./tmp/k3-image-gen/
+	make -C ./tmp/k3-image-gen/ SOC=j721e CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
+	rm -rf ./tmp/k3-image-gen/sysfw.itb ; mv -v ./tmp/k3-image-gen/sysfw-j721e-evm.itb ./tmp/k3-image-gen/sysfw.itb
+	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) https://git.ti.com/git/processor-firmware/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
 	cp -v ./tmp/ti-linux-firmware/ti-dm/j721e/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
+	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) https://git.ti.com/git/atf/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
 	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/generic/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) https://git.beagleboard.org/beagleboard/optee_os.git --depth=1 ./tmp/optee_os/
+	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) https://git.ti.com/git/optee/ti-optee-os.git --depth=1 ./tmp/optee_os/
 	make -C tmp/optee_os -j4 CFLAGS= LDFLAGS= PLATFORM=k3-j721e CFG_ARM64_core=y
 	cp -v ./tmp/optee_os/out/arm-plat-k3/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_TAG) https://git.beagleboard.org/beagleboard/u-boot.git --depth=1 ./tmp/u-boot/
