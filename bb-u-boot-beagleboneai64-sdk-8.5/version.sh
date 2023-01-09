@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-beagleboneai64-sdk-8.5"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20230109.1"
+package_version="2021.10.20230109.2"
 package_source=""
 src_dir=""
 
