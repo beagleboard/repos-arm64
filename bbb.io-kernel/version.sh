@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230117"
+bullseye_version="~bullseye+20230124"
