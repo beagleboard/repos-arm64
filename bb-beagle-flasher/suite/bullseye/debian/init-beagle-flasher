@@ -335,6 +335,17 @@ copy_rootfs () {
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
+
+	soc_family=$(cat /sys/devices/soc0/family || true)
+
+	case "${soc_family}" in
+	AM62X)
+		if [ -f /usr/share/beagleconnect/play/cc2538-bsl.py ] ; then
+			/usr/share/beagleconnect/play/cc2538-bsl.py /usr/share/beagleconnect/play/
+		fi
+		;;
+	esac
+
 	if [ "x${has_usr_leds}" = "xenable" ] ; then
 		reset_leds
 	fi
