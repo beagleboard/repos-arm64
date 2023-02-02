@@ -18,3 +18,4 @@ debian/greybus_mikrobus_beagleconnect.bin /usr/share/beagleconnect/cc1352/
 debian/wpanusb_beagleconnect.bin /usr/share/beagleconnect/cc1352/
 debian/usb_uart_bridge_lp.hex /usr/share/beagleconnect/msp430/
 debian/usb_uart_bridge.hex  /usr/share/beagleconnect/msp430/
+tmp/usr/share/beagleconnect/* /usr/share/beagleconnect/
