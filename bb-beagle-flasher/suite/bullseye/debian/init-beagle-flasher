@@ -316,6 +316,19 @@ copy_rootfs () {
 		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service || true
 	fi
 
+	soc_family=$(cat /sys/devices/soc0/family || true)
+
+	case "${soc_family}" in
+	AM62X)
+		if [ -f /usr/share/beagleconnect/play/cc2538-bsl.py ] ; then
+			/usr/share/beagleconnect/play/cc2538-bsl.py /usr/share/beagleconnect/play/ &> /tmp/rootfs/var/log/cc2538.log
+			cat /tmp/rootfs/var/log/cc2538.log
+			mac=$(cat /tmp/rootfs/var/log/cc2538.log | grep '^Primary IEEE Address:' | awk -F 'Address: ' '{print $2}' || true)
+			echo "MACADDR=${mac}" >> /tmp/rootfs/etc/default/lowpan
+		fi
+		;;
+	esac
+
 	message="Copying: ${source}p${src_rfs_part} -> ${destination}p${dest_rfs_part} complete"    ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
@@ -334,17 +347,6 @@ copy_rootfs () {
 	dd if=${destination} of=/dev/null count=100000 status=progress
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
-
-
-	soc_family=$(cat /sys/devices/soc0/family || true)
-
-	case "${soc_family}" in
-	AM62X)
-		if [ -f /usr/share/beagleconnect/play/cc2538-bsl.py ] ; then
-			/usr/share/beagleconnect/play/cc2538-bsl.py /usr/share/beagleconnect/play/
-		fi
-		;;
-	esac
 
 	if [ "x${has_usr_leds}" = "xenable" ] ; then
 		reset_leds
