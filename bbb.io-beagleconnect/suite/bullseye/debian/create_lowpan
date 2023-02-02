@@ -22,10 +22,12 @@ fi
 CHANNEL=$1
 PANID=$2
 IPADDR=$3
+MACADDR=$4
 
 echo "create_lowpan:CHANNEL:$CHANNEL"
 echo "create_lowpan:PANID:$PANID"
 echo "create_lowpan:IPADDR:$IPADDR"
+echo "create_lowpan:MACADDR:$MACADDR"
 
 # check for wpan0
 ip link show wpan0 1> /dev/null 2>&1
@@ -43,7 +45,8 @@ if [[ $? == '0' ]]; then
     ip link set lowpan0 down
 else
     echo ". create lowpan0"
-    ip link add link wpan0 name lowpan0 type lowpan
+    iwpan dev wpan0 interface add wpan1 type node $MACADDR
+    ip link add link wpan1 name lowpan0 type lowpan
 fi
 #set channel and activate device
 
