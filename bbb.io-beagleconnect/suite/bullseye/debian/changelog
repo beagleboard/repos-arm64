@@ -1,6 +1,6 @@
-beagleconnect (1.20230202.0-0~bullseye+20230202) bullseye; urgency=low
+beagleconnect (1.20230202.1-0~bullseye+20230202) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 Feb 2023 14:22:49 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 Feb 2023 14:25:20 -0600
 

@@ -13,7 +13,7 @@ override_dh_auto_configure:
 	git clone https://github.com/jadonk/gbridge.git
 	cd gbridge ; git checkout 8ba7f56f04191d74b28346dcd5a22f01608f65df -b tmp ; autoreconf -vfi ; GBNETLINKDIR=../greybus ./configure --enable-uart --enable-tcpip --disable-gbsim --enable-netlink --disable-bluetooth ; make -j2
 	mkdir -p ./tmp/usr/share/beagleconnect/
-	unzip debian/cc1352-wpanusb-0.0.2.zip -d ./tmp/usr/share/beagleconnect/ --strip-components 1
+	unzip debian/cc1352-wpanusb-0.0.2.zip -d ./tmp/usr/share/beagleconnect/
 	mv ./tmp/usr/share/beagleconnect/build/freedom/ ./tmp/usr/share/beagleconnect/
 	mv ./tmp/usr/share/beagleconnect/build/play/ ./tmp/usr/share/beagleconnect/
 	rm -rf ./tmp/usr/share/beagleconnect/build/
