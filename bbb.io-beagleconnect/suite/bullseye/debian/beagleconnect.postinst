@@ -9,7 +9,7 @@ if [ -f /etc/default/lowpan ] ; then
 else
 	CHN="1"
 	PAN="0xabcd"
-	IP6="2001:db8::2/64"
+	#IP6="2001:db8::2/64"
 	ACKREQ=0
 fi
 
