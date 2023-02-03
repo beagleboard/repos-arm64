@@ -1,8 +1,16 @@
-wpa (2:2.10-10bbbio1~bullseye+20230106) bullseye; urgency=low
+wpa (2:2.10-11bbbio1~bullseye+20230202) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Jan 2023 17:58:53 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 Feb 2023 21:03:41 -0600
+
+wpa (2:2.10-11) unstable; urgency=medium
+
+  * Drop security level to 0 with OpenSSL 3.0 when using TLS 1.0/1.1
+    (Closes: #1011121, LP: #1958267)
+  * Drop dependency on lsb-base.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 31 Jan 2023 12:58:02 +0100
 
 wpa (2:2.10-10) unstable; urgency=medium
 
