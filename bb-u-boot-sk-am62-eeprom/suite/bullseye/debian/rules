@@ -44,8 +44,8 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 	cp -v ./tmp/r5/spl/u-boot-spl.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/k3-image-gen/ ; git clone https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1 ./tmp/k3-image-gen/
-	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SBL=/opt/u-boot/bb-u-boot-sk-am62/u-boot-spl.bin mrproper
-	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SYSFW_PATH=/opt/u-boot/bb-u-boot-sk-am62/ti-fs-firmware-am62x-gp.bin SBL=/opt/u-boot/bb-u-boot-sk-am62/u-boot-spl.bin
+	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SBL=/opt/u-boot/$(TARGETDIR)/u-boot-spl.bin mrproper
+	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SYSFW_PATH=/opt/u-boot/$(TARGETDIR)/ti-fs-firmware-am62x-gp.bin SBL=/opt/u-boot/$(TARGETDIR)/u-boot-spl.bin
 	ls -alh ./tmp/k3-image-gen/
 	rm -rf ./tmp/k3-image-gen/tiboot3.bin ; mv -v ./tmp/k3-image-gen/tiboot3-am62x-gp-evm.bin ./tmp/k3-image-gen/tiboot3.bin
 
