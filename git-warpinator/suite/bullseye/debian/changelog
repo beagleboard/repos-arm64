@@ -1,8 +1,17 @@
-warpinator (1.4.3-0bbbio0~bullseye+20230106) bullseye; urgency=low
+warpinator (1.4.4-0bbbio0~bullseye+20230202) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Jan 2023 10:01:32 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 Feb 2023 20:41:05 -0600
+
+warpinator (1.4.4) vera; urgency=medium
+
+  [ Michael Webster ]
+  * transfers.py: Fix typo.
+  * transfers.py: Add missing import.
+  * Notifications: re-enable actions in the flatpak version.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 26 Jan 2023 14:16:19 +0000
 
 warpinator (1.4.3) vera; urgency=medium
 
