@@ -1,6 +1,6 @@
-bb-wlan0-defaults (1.20221220.0-0~bullseye+20221220) bullseye; urgency=low
+bb-wlan0-defaults (1.20230202.0-0~bullseye+20230202) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 Dec 2022 12:27:37 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 Feb 2023 20:33:15 -0600
 
