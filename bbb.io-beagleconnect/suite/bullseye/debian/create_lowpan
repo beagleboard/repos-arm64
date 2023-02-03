@@ -9,25 +9,25 @@ fi
 
 [ -z "$1" ] && {
   echo "Missing channel!"
-  echo "USAGE: $0 <CHANNEL> <PAN ID>"
+  echo "USAGE: $0 <CHANNEL> <PAN ID> [<MAC ADDR> [IPV6 ADDR]]"
   exit 1
 }
 
 [ -z "$2" ] && {
   echo "Missing PAN ID!"
-  echo "USAGE: $0 <CHANNEL> <PAN ID>"
+  echo "USAGE: $0 <CHANNEL> <PAN ID> [<MAC ADDR> [IPV6 ADDR]]"
   exit 1
 }
 
 CHANNEL=$1
 PANID=$2
-IPADDR=$3
-MACADDR=$4
+MACADDR=$3
+IPADDR=$4
 
 echo "create_lowpan:CHANNEL:$CHANNEL"
 echo "create_lowpan:PANID:$PANID"
-echo "create_lowpan:IPADDR:$IPADDR"
 echo "create_lowpan:MACADDR:$MACADDR"
+echo "create_lowpan:IPADDR:$IPADDR"
 
 # check for wpan0
 ip link show wpan0 1> /dev/null 2>&1
@@ -45,7 +45,9 @@ if [[ $? == '0' ]]; then
     ip link set lowpan0 down
 else
     echo ". create lowpan0"
-    iwpan phy `iwpan phy | grep -m1 wpan_phy | cut -d' ' -f2` interface add wpan1 type node $MACADDR
+    if [ ! -z "$MACADDR" -a "$MACADDR" != " " ]; then
+      iwpan phy `iwpan phy | grep -m1 wpan_phy | cut -d' ' -f2` interface add wpan1 type node $MACADDR
+    fi
     ip link add link wpan1 name lowpan0 type lowpan
 fi
 #set channel and activate device
@@ -63,3 +65,4 @@ if [ ! -z "$IPADDR" -a "$IPADDR" != " " ]; then
     echo ". adding IPv6 address $IPADDR to lowpan0"
     ip -6 addr add $IPADDR dev lowpan0
 fi
+
