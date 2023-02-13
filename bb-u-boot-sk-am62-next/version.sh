@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-sk-am62-next"
 debian_pkg_name="${package_name}"
-package_version="2021.01.20230213.1"
+package_version="2021.01.20230213.2"
 package_source=""
 src_dir=""
 
