@@ -19,7 +19,7 @@ UB_CONFIG=am62x_evm_
 UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
-UB_BRANCH=lc-ti-u-boot-2021.01-next
+UB_BRANCH=lc-ti-u-boot-2021.01-blank-eeprom
 
 override_dh_strip:
 	# Just disable for now...
