@@ -4,7 +4,7 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-TARGETDIR=bb-u-boot-sk-am62
+TARGETDIR=bb-u-boot-sk-am62-next
 #/opt/u-boot/$(TARGETDIR)/
 
 #arm-trusted-firmware
