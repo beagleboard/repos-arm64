@@ -19,6 +19,7 @@ UB_CONFIG=am62x_evm_
 UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
+UB_BRANCH=lc-ti-u-boot-2021.01-next
 
 override_dh_strip:
 	# Just disable for now...
@@ -34,7 +35,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/optee_os/ ; git clone https://github.com/OP-TEE/optee_os.git ./tmp/optee_os/ ; cd ./tmp/optee_os/ ; git checkout $(TEE_TAG) -b tmp ; cd -
 	make -C tmp/optee_os -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3 OPTEEMACHINE=k3-am62x CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b lc-ti-u-boot-2021.01 https://gitlab.gfnd.rcn-ee.org/RobertCNelson/lc-u-boot.git --depth=1 ./tmp/u-boot/
+	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_BRANCH) https://gitlab.gfnd.rcn-ee.org/RobertCNelson/lc-u-boot.git --depth=1 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- am62x_evm_a53_defconfig
 	make -C ./tmp/u-boot -j5 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ipc_echo_testb_mcu1_0_release_strip.xer5f
 	cp -v ./tmp/a53/tispl.bin /opt/u-boot/$(TARGETDIR)/
