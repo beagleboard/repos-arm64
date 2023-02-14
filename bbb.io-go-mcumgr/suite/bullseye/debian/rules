@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# Disable dh_dwz
+override_dh_dwz:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone https://github.com/apache/mynewt-mcumgr-cli ./tmp/opt/mynewt-mcumgr-cli/
+	cd ./tmp/opt/mynewt-mcumgr-cli/mcumgr/ ; go build
+
+%:
+	dh $@

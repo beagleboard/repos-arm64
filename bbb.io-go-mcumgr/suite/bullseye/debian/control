@@ -1,0 +1,20 @@
+Source: bbb.io-go-mcumgr
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper-compat (= 12),
+ , ca-certificates
+ , dh-golang
+ , git
+ , golang-any
+ , unzip
+Standards-Version: 4.5.1
+
+Package: bbb.io-go-mcumgr
+Architecture: any
+Built-Using: ${misc:Built-Using}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: MCU Manager (mcumgr) is the application tool that enables a user to communicate with and manage remote devices running an mcumgr server.
+

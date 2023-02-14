@@ -1,0 +1,6 @@
+bbb.io-go-mcumgr (0.0.0-git20221004.0-0~bullseye+20230213) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 13 Feb 2023 18:01:38 -0600
+
