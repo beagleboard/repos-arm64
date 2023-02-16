@@ -17,5 +17,7 @@ Depends:
  , ${misc:Depends}
  , bc
  , systemd (>= 230)
+Recommends:
+ bbb.io-getting-started
 Description: usb gadget customizations
  usb gadget customizations
