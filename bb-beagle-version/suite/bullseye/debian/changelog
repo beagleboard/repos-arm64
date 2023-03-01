@@ -1,6 +1,6 @@
-bb-beagle-version (1.20230301.0-0~bullseye+20230301) bullseye; urgency=low
+bb-beagle-version (1.20230301.1-0~bullseye+20230301) bullseye; urgency=low
 
-  * dump sk-am62 eeprom details, check for wl18xx
+  * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Mar 2023 14:52:19 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 01 Mar 2023 15:28:52 -0600
 
