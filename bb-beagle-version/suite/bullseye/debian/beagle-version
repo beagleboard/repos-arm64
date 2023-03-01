@@ -52,6 +52,11 @@ dpkg_check_version_replaced () {
 	fi
 }
 
+if [ -f /sys/bus/i2c/devices/0-0050/eeprom ] ; then
+	board_eeprom=$(xxd -p -s 266 -l 46 /sys/bus/i2c/devices/0-0050/eeprom | xxd -p -r || true)
+	echo "eeprom:[${board_eeprom}]"
+fi
+
 if [ -f /sys/bus/i2c/devices/2-0050/eeprom ] ; then
 	board_eeprom=$(xxd -p -s 266 -l 46 /sys/bus/i2c/devices/2-0050/eeprom | xxd -p -r || true)
 	echo "eeprom:[${board_eeprom}]"
@@ -125,10 +130,22 @@ if [ -f /boot/uEnv.txt ] ; then
 	fi
 fi
 
+soc_family=$(cat /sys/devices/soc0/family || true)
+
 echo "pkg check: to individually upgrade run: [sudo apt install --only-upgrade <pkg>]"
-pkg="bb-u-boot-beagleboneai64" ; dpkg_check_version
+
+case "${soc_family}" in
+AM62X)
+	pkg="bb-u-boot-sk-am62" ; dpkg_check_version
+	;;
+J721E)
+	pkg="bb-u-boot-beagleboneai64" ; dpkg_check_version
+	;;
+esac
+
 pkg="bb-customizations" ; dpkg_check_version
 pkg="bb-usb-gadgets" ; dpkg_check_version
+pkg="bb-wl18xx-firmware" ; dpkg_check_version
 
 if [ -d /home/ubuntu/ ] ; then
 	echo "groups:[`groups ubuntu`]"
