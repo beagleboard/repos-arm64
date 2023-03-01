@@ -17,4 +17,5 @@
 # -rw-r----- 1 root i2c 0 XXXXXXXXX
 #
 
+SUBSYSTEM=="i2c", DEVPATH=="*0-005*", RUN+="/bin/chown root:gpio /sys$env{DEVPATH}/eeprom", RUN+="/bin/chmod 0640 /sys$env{DEVPATH}/eeprom"
 SUBSYSTEM=="i2c", DEVPATH=="*2-005*", RUN+="/bin/chown root:gpio /sys$env{DEVPATH}/eeprom", RUN+="/bin/chmod 0640 /sys$env{DEVPATH}/eeprom"
