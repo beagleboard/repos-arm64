@@ -49,6 +49,18 @@ main_install () {
 		chown -R root:root ${wfile}
 	fi
 	echo "${package}:Installed"
+
+	chmod +x /opt/node-red/bin/corepack
+	chmod +x /opt/node-red/bin/node-red
+	chmod +x /opt/node-red/bin/node-red-pi
+	chmod +x /opt/node-red/bin/npm
+	chmod +x /opt/node-red/bin/npx
+
+	sed -i -e 's:env node:env /opt/node-red/bin/node:g' /opt/node-red/lib/node_modules/corepack/dist/corepack.js
+	sed -i -e 's:env node:env /opt/node-red/bin/node:g' /opt/node-red/lib/node_modules/node-red/red.js
+	sed -i -e 's:env node:env /opt/node-red/bin/node:g' /opt/node-red/lib/node_modules/node-red/bin/node-red-pi
+	sed -i -e 's:env node:env /opt/node-red/bin/node:g' /opt/node-red/lib/node_modules/npm/bin/npm-cli.js
+	sed -i -e 's:env node:env /opt/node-red/bin/node:g' /opt/node-red/lib/node_modules/npm/bin/npx-cli.js
 }
 
 case "$1" in
