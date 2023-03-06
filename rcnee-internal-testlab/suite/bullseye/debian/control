@@ -11,12 +11,13 @@ Package: rcnee-internal-testlab
 Architecture: arm64
 Depends:
  bsdextrautils
- , cockpit-packagekit
  , cockpit-system
  , cockpit-ws
  , gpiod
- , nfs-common
  , lsb-release
+ , nfs-common
+ , ncdu
+ , openjdk-11-jre-headless
  , pastebinit
  , tree
  , wireguard-tools
