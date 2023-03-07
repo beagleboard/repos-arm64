@@ -27,9 +27,7 @@ Pre-Depends:
  bb-j721e-evm-firmware
  , generic-sys-mods
  , linux-image-5.10.162-ti-arm64-r95
-Depends:
- ${misc:Depends}
- , bbb.io-kernel-tasks (= ${source:Version})
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti in Debian.
 
@@ -38,9 +36,7 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-5.10-ti
-Depends:
- ${misc:Depends}
- , bbb.io-kernel-tasks (= ${source:Version})
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-sk-am62
  , ti-sgx-am62-modules-5.10.162-ti-arm64-r95
@@ -52,9 +48,7 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-5.10-ti
-Depends:
- ${misc:Depends}
- , bbb.io-kernel-tasks (= ${source:Version})
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-beagleboneai64
  , ti-sgx-j721e-modules-5.10.162-ti-arm64-r95
@@ -65,8 +59,14 @@ Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.3.0-rc1-arm64-r0
-Depends:
- ${misc:Depends}
- , bbb.io-kernel-tasks (= ${source:Version})
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org Mainline
  This metapackage will install Mainline in Debian.
+
+Package: bbb.io-kernel-6.3-k3-arm64
+Section: metapackages
+Architecture: arm64
+Pre-Depends: linux-image-6.3.0-rc1-arm64-k3-r1
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Description: BeagleBoard.org 6.3-k3-arm64 for k3-arm64
+ This metapackage will install linux-image-6.3-k3-arm64 for in Debian.
