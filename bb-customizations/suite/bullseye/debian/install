@@ -16,6 +16,7 @@ debian/beagleboard-logo.svg /usr/share/backgrounds/bbb.io/
 debian/nginx-autoindex /etc/bbb.io/templates/nginx/
 debian/Node-RED-ui.html /etc/bbb.io/templates/nginx/
 debian/Node-RED.html /etc/bbb.io/templates/nginx/
+debian/BeaglePlay-io.html /etc/bbb.io/templates/nginx/
 debian/VSCode.html /etc/bbb.io/templates/nginx/
 debian/xfce4-desktop.xml /etc/bbb.io/templates/xfce4/
 debian/ssh.service /etc/avahi/services/
