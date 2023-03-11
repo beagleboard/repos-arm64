@@ -92,7 +92,7 @@ generate_mainline_kernel () {
 
 generate_kernel_k3 () {
 	echo "" >> ./suite/${dist}/debian/${wfile}
-	echo "Package: bbb.io-kernel-${msg}-arm64" >> ./suite/${dist}/debian/${wfile}
+	echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
