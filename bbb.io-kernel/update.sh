@@ -111,9 +111,10 @@ do_bullseye () {
 	sgxam62="enabled"
 	sgxj721e="enabled"
 
-	msg="5.10-ti"  ; var="ti-arm64" ; ver="LTS510" ; current_kernel ; generate_kernel_ti
-	msg="mainline" ; var="arm64"    ; ver="STABLE" ; current_kernel ; generate_mainline_kernel
-	msg="6.3-k3"   ; var="k3-arm64" ; ver="V63X"   ; current_kernel ; generate_kernel_k3
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
+	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
+	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 }
 
 do_bullseye
