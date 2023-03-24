@@ -8,6 +8,7 @@ fi
 log="bb-install-modules:"
 
 . /etc/default/generic-sys-mods
+. /opt/modules/install
 
 if [ -f /opt/modules/install ] ; then
 	soc_family=$(cat /sys/devices/soc0/family || true)
