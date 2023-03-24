@@ -22,7 +22,9 @@ if [ -f /opt/modules/install ] ; then
 		depmod -a ${uname}
 		update-initramfs -u -k ${uname}
 		cp -v /boot/initrd.img-${uname} /boot/firmware/initrd.img
-		/usr/sbin/beagle-sgx-drivers-install || true
+		if [ -f /usr/sbin/beagle-sgx-drivers-install ] ; then
+			/usr/sbin/beagle-sgx-drivers-install || true
+		fi
 		;;
 	J721E)
 		dpkg -i /opt/modules/ti-sgx-j721e-modules-${uname}*_arm64.deb || true
@@ -32,7 +34,9 @@ if [ -f /opt/modules/install ] ; then
 		depmod -a ${uname}
 		update-initramfs -u -k ${uname}
 		cp -v /boot/initrd.img-${uname} /boot/firmware/initrd.img
-		/usr/sbin/beagle-sgx-drivers-install || true
+		if [ -f /usr/sbin/beagle-sgx-drivers-install ] ; then
+			/usr/sbin/beagle-sgx-drivers-install || true
+		fi
 		;;
 	*)
 		echo "Please update ARCH_SOC_MODULES in /etc/default/generic-sys-mods"
