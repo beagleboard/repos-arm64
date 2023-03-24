@@ -6,17 +6,37 @@ if ! id | grep -q root; then
 	exit
 fi
 
+soc_family=$(cat /sys/devices/soc0/family || true)
+
 if [ -f /etc/default/beagle-flasher ] ; then
 	#sed -i -e 's:quiet:init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
 	sed -i -e 's:net.ifnames=0:net.ifnames=0 init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
 	systemctl enable beagle-flasher-init-shutdown.service || true
 	systemctl disable grow_partition.service || true
 	echo "log: enable-beagle-flasher"
+	case "${soc_family}" in
+	AM62X)
+		echo "log: enabling BeaglePlay CC1352P firmware flasher"
+		echo "    fdtoverlays /overlays/k3-am625-beagleplay-bcfserial-no-firmware.dtbo" >> /boot/firmware/extlinux/extlinux.conf
+		;;
+	esac
 	echo "log: media is now setup to flash other media"
+	echo "log: [cat /boot/firmware/extlinux/extlinux.conf]"
+	echo "------------------------------------------------"
+	cat  /boot/firmware/extlinux/extlinux.conf
+	echo "------------------------------------------------"
 	echo "log: Shutdown system and this flasher will run on next startup"
 else
 	echo "log: enable-beagle-flasher"
-	echo "log: Please setup /etc/default/beagle-flasher, for the bbai64..."
-	echo "# sudo cp -v /etc/beagle-flasher/bbai64-microsd-to-emmc /etc/default/beagle-flasher"
-	echo "log: and rerun..."
+	case "${soc_family}" in
+	AM62X)
+		echo "log: Please setup /etc/default/beagle-flasher, for the BeaglePlay..."
+		echo "# sudo cp -v /etc/beagle-flasher/beagleplay-microsd-to-emmc /etc/default/beagle-flasher"
+		;;
+	J721E)
+		echo "log: Please setup /etc/default/beagle-flasher, for the bbai64..."
+		echo "# sudo cp -v /etc/beagle-flasher/bbai64-microsd-to-emmc /etc/default/beagle-flasher"
+		;;
+	esac
+	echo "log: and rerun... [sudo enable-beagle-flasher]"
 fi

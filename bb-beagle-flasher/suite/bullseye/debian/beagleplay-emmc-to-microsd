@@ -1,0 +1,9 @@
+source=/dev/mmcblk0
+destination=/dev/mmcblk1
+rfs_partition=dual
+rfs_boot_startmb=1
+rfs_boot_size_mb=128
+bootloader=/opt/u-boot/bb-u-boot-beagleplay/install-microsd.sh
+flash_back=beagleplay-microsd-to-emmc
+extlinux=/opt/u-boot/bb-u-boot-beagleplay/microsd-extlinux.conf
+flash_cc1352p=enable
