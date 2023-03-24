@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20221010.1, rsync add -H option for hardlinks, final image running out of space..."
+version_message="1.20230324.0, rsync add progress indicator..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -235,7 +235,7 @@ copy_boot () {
 	mount ${destination}p1 /tmp/boot/ -o sync
 
 	message="rsync: (-aHAXx) /boot/firmware/ -> /tmp/boot/" ; broadcast
-	rsync -aHAXx /boot/firmware/ /tmp/boot/ || write_failure
+	rsync -aHAXx --human-readable --info=progress2 /boot/firmware/ /tmp/boot/ || write_failure
 	flush_cache
 
 	if [ "x${extlinux}" != "x" ] ; then
@@ -263,14 +263,14 @@ copy_rootfs () {
 	mount ${destination}p${dest_rfs_part} /tmp/rootfs/ -o async,noatime
 
 	message="INFO: /usr/bin/rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
-	/usr/bin/rsync -aHAXx --human-readable --info=name0,progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/uEnv.txt,/boot/firmware/*} || write_failure
+	/usr/bin/rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
 	message="INFO: Copying: Kernel modules"                                                    ; broadcast
 	mkdir -p /tmp/rootfs/lib/modules/$(uname -r)/ || true
 	message="INFO: /usr/bin/rsync: (-aHAXx) /lib/modules/$(uname -r)/ -> /tmp/rootfs/lib/modules/$(uname -r)/" ; broadcast
-	/usr/bin/rsync -aHAXx --human-readable --info=name0,progress2 /lib/modules/$(uname -r)/* /tmp/rootfs/lib/modules/$(uname -r)/ || write_failure
+	/usr/bin/rsync -aHAXx --human-readable --info=progress2 /lib/modules/$(uname -r)/* /tmp/rootfs/lib/modules/$(uname -r)/ || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
@@ -285,6 +285,7 @@ copy_rootfs () {
 	message="INFO: [cat /tmp/rootfs/etc/fstab]"                                                ; broadcast
 	message="`cat /tmp/rootfs/etc/fstab`"                                                      ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
+	flush_cache
 
 	if [ "x${flash_back}" != "x" ] ; then
 		if [ -f /etc/beagle-flasher/${flash_back} ] ; then
@@ -314,6 +315,7 @@ copy_rootfs () {
 	if [ -f /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service ] ; then
 		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service || true
 	fi
+	flush_cache
 
 	message="Copying: ${source}p${src_rfs_part} -> ${destination}p${dest_rfs_part} complete"    ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
