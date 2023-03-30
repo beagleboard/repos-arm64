@@ -7,8 +7,9 @@ export DH_VERBOSE=1
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/tensorflow/ ; cp -r /opt/tensorflow/* ./tmp/opt/tensorflow/
 	python3 -m pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
+	mkdir -p ./tmp/opt/tflite_build/ ; cd ./tmp/opt/tflite_build/ ; cmake ../tensorflow/tensorflow/lite ; cmake --build . -j ; cp -v ./libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y  ../tensorflow/tensorflow/lite/tools/pip_package/build_pip_package_with_cmake.sh
 	cd ./tmp/opt/tensorflow/tensorflow/lite/tools/make/ ; ./download_dependencies.sh
-	cd ./tmp/opt/tensorflow/ ; make -f tensorflow/lite/tools/make/Makefile -j4 ; cp -v ./tensorflow/lite/tools/make/gen/linux_aarch64/lib/libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y tensorflow/lite/tools/pip_package/build_pip_package.sh ; cd ./tensorflow/lite/tools/pip_package/gen/tflite_pip/ ; dpkg-deb -xv python3-tflite-runtime_2.4.0-1_arm64.deb ./tmp/
+	cd ./tmp/opt/tensorflow/ ; make -f tensorflow/lite/tools/make/Makefile -j4 ; cp -v ./tensorflow/lite/tools/make/gen/linux_aarch64/lib/libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y tensorflow/lite/tools/pip_package/build_pip_package_with_cmake.sh ; cd ./tensorflow/lite/tools/pip_package/gen/tflite_pip/ ; dpkg-deb -xv python3-tflite-runtime_2.4.0-1_arm64.deb ./tmp/
 	cd ./tmp/opt/tensorflow/ ; tree
 
 %:
