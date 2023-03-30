@@ -5,7 +5,9 @@
 export DH_VERBOSE=1
 
 wfile="v1.12.0.tar.gz"
-git_branch="TIDL_PSDK_8.2"
+#meta-psdkla/recipes-tisdk/ti-tidl/ti-tidl.bb
+#git://github.com/TexasInstruments/tensorflow;branch=tidl-j7-2.8;rev=233657497d2735cae9e840df9e650e268149070d;protocol=https;name=tensorflow;destsuffix=${S}/tensorflow  \
+git_branch="TIDL_PSDK_8.4"
 
 # Disable dh_strip
 override_dh_strip:
