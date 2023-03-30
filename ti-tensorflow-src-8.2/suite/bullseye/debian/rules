@@ -5,7 +5,6 @@
 export DH_VERBOSE=1
 
 wfile="v1.12.0.tar.gz"
-git_branch="TIDL_PSDK_8.2"
 
 # Disable dh_strip
 override_dh_strip:
@@ -14,7 +13,7 @@ override_dh_strip:
 override_dh_strip_nondeterminism:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(git_branch) --depth 1 https://github.com/TexasInstruments/tensorflow.git ./tmp/opt/tensorflow/ ; mkdir -p ./tmp/opt/tensorflow/tensorflow/lite/tools/make/downloads/flatbuffers ; tar xf ./debian/$(wfile) --strip-components=1 -C ./tmp/opt/tensorflow/tensorflow/lite/tools/make/downloads/flatbuffers
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.2 --depth 1 https://github.com/TexasInstruments/tensorflow.git ./tmp/opt/tensorflow/ ; mkdir -p ./tmp/opt/tensorflow/tensorflow/lite/tools/make/downloads/flatbuffers ; tar xf ./debian/$(wfile) --strip-components=1 -C ./tmp/opt/tensorflow/tensorflow/lite/tools/make/downloads/flatbuffers
 	cd ./tmp/opt/tensorflow/ ; find . | grep .git | xargs rm -rf
 
 %:
