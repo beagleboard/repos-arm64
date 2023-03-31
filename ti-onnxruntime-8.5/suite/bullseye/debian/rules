@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/onnxruntime/ ; cp -r /opt/onnxruntime/* ./tmp/opt/onnxruntime/
+	cd ./tmp/opt/onnxruntime/ ; ./build.sh --parallel 4 --skip_tests --build_shared_lib --config Release --cmake_extra_defines="CMAKE_TOOLCHAIN_FILE=../tool.cmake" --path_to_protoc_exe ./cmake/external/protoc-3.11.3-linux-aarch_64/bin/protoc --use_tidl --build_wheel --skip_submodule_sync --enable_pybind ; python3 -m pip install build/Linux/Release/dist/onnxruntime_tidl-1.7.0-cp39-cp39-linux_aarch64.whl --target ./dist-packages/ --no-deps
+	cd ./tmp/opt/onnxruntime/build/Linux/Release ; make install DESTDIR=../../../../../
+	cd ./tmp/opt/onnxruntime/ ; tree
+
+%:
+	dh $@
