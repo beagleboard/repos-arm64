@@ -2,7 +2,7 @@
 
 package_name="ti-tensorflow-8.5"
 debian_pkg_name="${package_name}"
-package_version="8.5.0.0"
+package_version="8.5.0.1"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230330"
+bullseye_version="~bullseye+20230331"
