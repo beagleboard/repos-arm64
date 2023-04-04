@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ -d /run/systemd/system ] && [ "$1" = remove ]; then
+    systemctl mask --runtime ti-sgx-j721e-ddx-um.service
+    systemctl stop ti-sgx-j721e-ddx-um.service || true
+fi
+
+#DEBHELPER#
+
+exit 0
