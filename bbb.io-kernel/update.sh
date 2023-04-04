@@ -56,7 +56,7 @@ generate_kernel_ti () {
 	echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 	echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
-	echo " bb-u-boot-sk-am62" >> ./suite/${dist}/debian/${wfile}
+	echo " bb-u-boot-beagleplay" >> ./suite/${dist}/debian/${wfile}
 	if [ "x${sgxam62}" = "xenabled" ] ; then
 		echo " , ti-sgx-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	fi
