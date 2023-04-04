@@ -191,7 +191,6 @@ confflags += \
 	-Dshared-glapi=enabled \
 	-Dgallium-omx=disabled \
 	-Dgallium-pvr-alias=tidss \
-	-Dgallium-sgx-alias=tidss \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
 	-Dimagination-srv=true \
