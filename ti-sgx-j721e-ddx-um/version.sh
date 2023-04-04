@@ -4,7 +4,7 @@
 
 package_name="ti-sgx-j721e-ddx-um"
 debian_pkg_name="${package_name}"
-package_version="1.15.6133109-k5.10-git20221011.6"
+package_version="1.15.6133109-k5.10-git20221130.0"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20221219"
+bullseye_version="~bullseye+20230404"

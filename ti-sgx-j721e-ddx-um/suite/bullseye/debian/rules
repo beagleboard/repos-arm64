@@ -14,7 +14,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone https://git.ti.com/git/graphics/ti-img-rogue-umlibs.git ./tmp/opt/sgx ; cd ./tmp/opt/sgx ; git checkout -b tmp 42e01fb5ef6971b344c1652986b1f589f77fecd9
+	mkdir -p ./tmp/opt/ ; git clone https://git.ti.com/git/graphics/ti-img-rogue-umlibs.git ./tmp/opt/sgx ; cd ./tmp/opt/sgx ; git checkout -b tmp 36a3a6a34c5737916b3ae2c5676ebd293c2624d5
 	rm ./tmp/opt/sgx/targetfs/am62_linux/wayland/release/etc/init.d/rc.pvr || true ; rm ./tmp/opt/sgx/targetfs/j721e_linux/wayland/release/etc/init.d/rc.pvr || true
 
 %:

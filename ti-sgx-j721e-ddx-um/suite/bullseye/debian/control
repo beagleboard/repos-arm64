@@ -16,6 +16,7 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , kbd
+ , ti-sgx-1.15-firmware
 Architecture: arm64
 Description: Userspace libraries for SGX
  Userspace libraries for SGX
