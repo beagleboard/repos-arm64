@@ -9,7 +9,7 @@ package_version="2023.01+dfsg"
 
 git_repo=""
 git_sha=""
-reprepro_dir="b/${package_name}"
+reprepro_dir="g/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
 debian_version="${package_version}-1"
