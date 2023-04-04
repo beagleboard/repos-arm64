@@ -1,0 +1,3 @@
+debian/99-pvr.rules etc/udev/rules.d/
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/etc/* etc
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/* usr
