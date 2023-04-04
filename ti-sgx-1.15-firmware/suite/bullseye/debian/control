@@ -1,0 +1,21 @@
+Source: ti-sgx-1.15-firmware
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , git
+ , libdrm-dev
+ , libwayland-dev
+Standards-Version: 4.5.0
+Homepage: https://git.ti.com/gitweb?p=graphics/ti-img-rogue-umlibs.git;a=summary
+
+Package: ti-sgx-1.15-firmware
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , kbd
+Architecture: arm64
+Description: Userspace firmware for SGX
+ Userspace firmware for SGX
