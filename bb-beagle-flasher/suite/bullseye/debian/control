@@ -25,5 +25,7 @@ Depends:
  , rsync
  , util-linux
  , mmc-utils
+ , bb-u-boot-beagleboneai64
+ , bb-u-boot-beagleplay
 Description: beagleboard.org beagle-flasher
  beagleboard.org beagle-flasher
