@@ -1,4 +1,6 @@
 debian/99-pvr.rules etc/udev/rules.d/
 tmp/opt/sgx/targetfs/am62_linux/wayland/release/etc/* etc
-tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/* usr
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/bin/* usr/local/bin
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/include/* usr/local/include
 tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/lib/* usr/local/lib
+tmp/opt/sgx/targetfs/am62_linux/wayland/release/usr/share/* usr/local/share

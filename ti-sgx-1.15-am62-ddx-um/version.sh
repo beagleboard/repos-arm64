@@ -4,7 +4,7 @@
 
 package_name="ti-sgx-1.15-am62-ddx-um"
 debian_pkg_name="${package_name}"
-package_version="1.15.6133109-k5.10-git20221130.4"
+package_version="1.15.6133109-k5.10-git20221130.5"
 package_source=""
 src_dir=""
 
