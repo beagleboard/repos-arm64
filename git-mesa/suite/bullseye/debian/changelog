@@ -1,8 +1,20 @@
-mesa (22.3.3-1.git20230111.0-0~bullseye+20230113) bullseye; urgency=low
+mesa (22.3.5-1.git20230208.0-0~bullseye+20230404) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 Jan 2023 16:01:56 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Apr 2023 08:13:56 -0500
+
+mesa (22.3.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Feb 2023 20:43:32 +0200
+
+mesa (22.3.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 28 Jan 2023 12:37:15 +0200
 
 mesa (22.3.3-1) unstable; urgency=medium
 
