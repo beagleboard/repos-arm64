@@ -1,4 +1,4 @@
-ti-k3conf (0.2.0-git20220622.1-0~bullseye+20230405) bullseye; urgency=low
+ti-k3conf (0.2.0-git20220622.1-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
