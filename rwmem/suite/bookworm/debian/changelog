@@ -1,4 +1,4 @@
-rwmem (2.0-git20210806.3-0~bullseye+20230405) bullseye; urgency=low
+rwmem (2.0-git20210806.3-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 

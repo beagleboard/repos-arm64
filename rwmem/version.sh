@@ -4,7 +4,7 @@
 
 package_name="rwmem"
 debian_pkg_name="${package_name}"
-package_version="2.0-git20210806.2"
+package_version="2.0-git20210806.3"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
@@ -19,4 +19,5 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20220125"
+bullseye_version="~bullseye+20230405"
+bookworm_version="~bookworm+20230405"
