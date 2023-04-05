@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -d /opt/vsx-examples/examples_old/ ] ; then
+	rm -rf /opt/vsx-examples/examples_old/ || true
+fi
+
+if [ -d /opt/vsx-examples/examples/ ] ; then
+	echo "Backing up: /opt/vsx-examples/examples/ -> /opt/vsx-examples/examples_old/"
+	mv /opt/vsx-examples/examples/ /opt/vsx-examples/examples_old/
+else
+	mkdir -p /opt/vsx-examples/examples/ || true
+fi
+
+#DEBHELPER#
+
+exit 0

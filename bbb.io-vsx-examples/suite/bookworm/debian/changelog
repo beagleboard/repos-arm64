@@ -1,4 +1,4 @@
-bbb.io-vsx-examples (1.20230201.2-0~bullseye+20230405) bullseye; urgency=low
+bbb.io-vsx-examples (1.20230201.2-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
