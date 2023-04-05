@@ -7,7 +7,7 @@ ver="4.10.0"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
-package_version="${ver}.0"
+package_version="${ver}.1"
 package_source=""
 src_dir=""
 
@@ -24,4 +24,5 @@ debian_dl_1="https://github.com/coder/code-server/releases/download/v${ver}/code
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230228"
+bullseye_version="~bullseye+20230405"
+bookworm_version="~bookworm+20230405"
