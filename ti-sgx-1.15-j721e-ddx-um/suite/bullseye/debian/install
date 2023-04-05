@@ -1,3 +1,6 @@
 debian/99-pvr.rules etc/udev/rules.d/
 tmp/opt/sgx/targetfs/j721e_linux/wayland/release/etc/* etc
-tmp/opt/sgx/targetfs/j721e_linux/wayland/release/usr/* usr
+tmp/opt/sgx/targetfs/j721e_linux/wayland/release/usr/bin/* usr/bin
+tmp/opt/sgx/targetfs/j721e_linux/wayland/release/usr/include/* usr/include/sgx
+tmp/opt/sgx/targetfs/j721e_linux/wayland/release/usr/lib/* usr/lib
+tmp/opt/sgx/targetfs/j721e_linux/wayland/release/usr/share/* usr/share
