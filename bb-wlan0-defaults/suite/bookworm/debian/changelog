@@ -1,4 +1,4 @@
-bb-wlan0-defaults (1.20230202.1-0~bullseye+20230405) bullseye; urgency=low
+bb-wlan0-defaults (1.20230202.1-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
