@@ -28,6 +28,7 @@ start_run () {
 	dist="debian"
 	deb_arch="arm64"
 	suite="bullseye" ; runner
+	suite="bookworm" ; runner
 	suite="focal" ; runner
 }
 
