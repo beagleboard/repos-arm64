@@ -2,7 +2,7 @@
 
 package_name="bbb.io-getting-started"
 debian_pkg_name="${package_name}"
-package_version="1.20230405.0"
+package_version="1.20230405.1"
 package_source=""
 src_dir=""
 
@@ -20,3 +20,4 @@ debian_dl_1="https://git.beagleboard.org/beagleboard/getting-started-archive/-/r
 clear_changelog="enable"
 
 bullseye_version="~bullseye+20230405"
+bookworm_version="~bookworm+20230405"
