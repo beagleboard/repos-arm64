@@ -2,7 +2,7 @@
 
 package_name="bbb.io-keyring"
 debian_pkg_name="${package_name}"
-package_version="1.20220421.0"
+package_version="1.20230405.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-buster_version="~buster+20220421"
-bullseye_version="~bullseye+20220421"
-bionic_version="~bionic+20220421"
-focal_version="~focal+20220421"
+bullseye_version="~bullseye+20230405"
+bookworm_version="~bookworm+20230405"
