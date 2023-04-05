@@ -1,0 +1,174 @@
+#!/bin/sh -e
+#
+
+if ! id | grep -q root; then
+	echo "beagle-version must be run as root:"
+	echo "sudo beagle-version"
+	exit
+fi
+
+k3_bootloader () {
+	if [ -b ${drive}boot0 ] ; then
+		test_var=$(strings ${drive}boot0 | grep 'U-Boot SPL' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}boot0]:[tiboot3.bin]:[${test_var}]"
+		fi
+	fi
+	if [ -f /boot/firmware/tiboot3.bin ] ; then
+		test_var=$(strings /boot/firmware/tiboot3.bin | grep 'U-Boot SPL' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}]:[/boot/firmware/tiboot3.bin]:[${test_var}]"
+		fi
+	fi
+	if [ -f /boot/firmware/tispl.bin ] ; then
+		test_var=$(strings /boot/firmware/tispl.bin | grep 'U-Boot SPL' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}]:[/boot/firmware/tispl.bin]:[${test_var}]"
+		fi
+	fi
+	if [ -f /boot/firmware/u-boot.img ] ; then
+		test_var=$(strings /boot/firmware/u-boot.img | grep '^U-Boot' | grep '(' | head -n1 || true)
+		if [ ! "x${test_var}" = "x" ] ; then
+			echo "bootloader:[${drive}]:[/boot/firmware/u-boot.img]:[${test_var}]"
+		fi
+	fi
+}
+
+dpkg_check_version () {
+	unset pkg_version
+	pkg_version=$(dpkg -l | awk '$2=="'$pkg'" { print $3 }' || true)
+	if [ ! "x${pkg_version}" = "x" ] ; then
+		echo "pkg:[$pkg]:[$pkg_version]"
+	else
+		echo "WARNING:pkg:[$pkg]:[NOT_INSTALLED]"
+	fi
+}
+
+dpkg_check_version_replaced () {
+	unset pkg_version
+	pkg_version=$(dpkg -l | awk '$2=="'$pkg'" { print $3 }' || true)
+	if [ ! "x${pkg_version}" = "x" ] ; then
+		echo "pkg:[$pkg]:[$pkg_version]:[GOT_REPLACED_BY_NEXT]"
+	fi
+}
+
+if [ -f /sys/bus/i2c/devices/0-0050/eeprom ] ; then
+	board_eeprom=$(xxd -p -s 10 -l 46 /sys/bus/i2c/devices/0-0050/eeprom | xxd -p -r || true)
+	echo "eeprom:[${board_eeprom}]"
+fi
+
+if [ -f /sys/bus/i2c/devices/2-0050/eeprom ] ; then
+	board_eeprom=$(xxd -p -s 266 -l 46 /sys/bus/i2c/devices/2-0050/eeprom | xxd -p -r || true)
+	echo "eeprom:[${board_eeprom}]"
+fi
+
+device_model=$(cat /proc/device-tree/model | sed "s/ /_/g" | tr -d '\000')
+
+case "${device_model}" in
+SanCloud_BeagleBone_Enhanced)
+	wifi_8723bu_driver=$(lsmod | grep 8723bu | grep -v cfg | awk '{print $1}' || true)
+	if [ "x${wifi_8723bu_driver}" != "x" ] ; then
+		echo "model:[${device_model}]:WiFi AP Enabled:[https://github.com/lwfinger/rtl8723bu]"
+	else
+		echo "model:[${device_model}]:WiFi AP Broken on Mainline"
+	fi
+	;;
+*)
+	echo "model:[${device_model}]"
+	;;
+esac
+
+if [ -f /etc/dogtag ] ; then
+	echo "dogtag:[`cat /etc/dogtag`]"
+fi
+
+#if [ -f /bin/lsblk ] ; then
+#	lsblk | sed 's/^/partition_table:[/' | sed 's/$/]/'
+#fi
+
+if [ -b /dev/mmcblk0 ] ; then
+	drive=/dev/mmcblk0
+	k3_bootloader
+fi
+
+if [ -b /dev/mmcblk1 ] ; then
+	drive=/dev/mmcblk1
+	k3_bootloader
+fi
+
+if [ -f /proc/device-tree/chosen/base_dtb ] ; then
+	echo "UBOOT: Booted Device-Tree:[`cat /proc/device-tree/chosen/base_dtb`]"
+fi
+if [ -d /proc/device-tree/chosen/overlays/ ] ; then
+	ls /proc/device-tree/chosen/overlays/ -p | grep -v / | grep -v name | sed 's/^/UBOOT: Loaded Overlay:[/' | sed 's/$/]/'
+fi
+
+echo "kernel:[`uname -r`]"
+
+if [ -f /usr/bin/nodejs ] ; then
+	echo "nodejs:[`/usr/bin/nodejs --version`]"
+fi
+
+if [ -f /boot/uEnv.txt ] ; then
+	unset test_var
+	test_var=$(cat /boot/uEnv.txt | grep -v '#' | grep dtb | grep -v dtbo || true)
+	if [ "x${test_var}" != "x" ] ; then
+		echo "device-tree-override:[$test_var]"
+	fi
+fi
+
+if [ -f /boot/uEnv.txt ] ; then
+	echo "/boot/uEnv.txt Settings:"
+	unset test_var
+	test_var=$(cat /boot/uEnv.txt | grep -v '#' | grep enable_uboot_overlays=1 || true)
+	if [ "x${test_var}" != "x" ] ; then
+		if [ -f /uEnv.txt ] ; then
+			echo "/uEnv.txt exists, uboot overlays is DISABLED, remove /uEnv.txt"
+		fi
+		cat /boot/uEnv.txt | grep uboot_ | grep -v '#' | sed 's/^/uboot_overlay_options:[/' | sed 's/$/]/'
+		cat /boot/uEnv.txt | grep dtb_overlay | grep -v '#' | sed 's/^/uboot_overlay_options:[/' | sed 's/$/]/'
+	fi
+fi
+
+soc_family=$(cat /sys/devices/soc0/family || true)
+
+echo "pkg check: to individually upgrade run: [sudo apt install --only-upgrade <pkg>]"
+
+case "${soc_family}" in
+AM62X)
+	pkg="bb-u-boot-sk-am62" ; dpkg_check_version
+	;;
+J721E)
+	pkg="bb-u-boot-beagleboneai64" ; dpkg_check_version
+	;;
+esac
+
+pkg="bb-customizations" ; dpkg_check_version
+pkg="bb-usb-gadgets" ; dpkg_check_version
+pkg="bb-wl18xx-firmware" ; dpkg_check_version
+
+if [ -d /home/ubuntu/ ] ; then
+	echo "groups:[`groups ubuntu`]"
+fi
+
+if [ -d /home/beagle/ ] ; then
+	echo "groups:[`groups beagle`]"
+fi
+
+echo "cmdline:[`cat /proc/cmdline`]"
+
+echo "dmesg | grep remote"
+dmesg | grep remote || true
+echo "dmesg | grep pru"
+dmesg | grep pru || true
+echo "dmesg | grep pinctrl-single"
+dmesg | grep pinctrl-single || true
+echo "dmesg | grep gpio-of-helper"
+dmesg | grep gpio-of-helper || true
+echo "lsusb"
+lsusb || true
+echo "lspci"
+lspci || true
+echo "END"
+
+#
