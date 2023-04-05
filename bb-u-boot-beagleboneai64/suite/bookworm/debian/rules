@@ -18,7 +18,8 @@ ATF_TAG=bbb.io-08.01.00.006
 #optee_os
 #https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=tags
 #TEE_TAG=08.04.00.002
-TEE_TAG=08.01.00.005
+#TEE_TAG=08.01.00.005
+TEE_TAG=bbb.io-08.01.00.005
 
 #U-Boot
 UB_TAG=v2021.01-ti-08.05.00.001
