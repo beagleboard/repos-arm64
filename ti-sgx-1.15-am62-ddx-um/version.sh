@@ -4,7 +4,7 @@
 
 package_name="ti-sgx-1.15-am62-ddx-um"
 debian_pkg_name="${package_name}"
-package_version="1.15.6133109-k5.10-git20221130.7"
+package_version="1.15.6133109-k5.10-git20221130.8"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230404"
+bullseye_version="~bullseye+20230405"
