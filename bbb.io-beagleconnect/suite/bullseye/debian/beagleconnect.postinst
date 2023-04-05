@@ -19,6 +19,10 @@ echo "# set IP6 to \"\" if not required; note: set a prefix length" >> /etc/defa
 echo "IP6=\"${IP6}\"" >> /etc/default/lowpan
 echo "# Set ack requests (Only enable if all devices on your PAN support acks)" >> /etc/default/lowpan
 echo "ACKREQ=0" >> /etc/default/lowpan
+if [ ! "x${MACADDR}" = "x" ] ; then
+	echo "# MAC address" >> /etc/default/lowpan
+	echo "MACADDR=${MACADDR}" >> /etc/default/lowpan
+fi
 
 #DEBHELPER#
 

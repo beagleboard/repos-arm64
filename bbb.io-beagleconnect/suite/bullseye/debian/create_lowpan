@@ -7,22 +7,15 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-[ -z "$1" ] && {
-  echo "Missing channel!"
-  echo "USAGE: $0 <CHANNEL> <PAN ID> [<MAC ADDR> [IPV6 ADDR]]"
-  exit 1
-}
+. /etc/default/lowpan
 
-[ -z "$2" ] && {
-  echo "Missing PAN ID!"
-  echo "USAGE: $0 <CHANNEL> <PAN ID> [<MAC ADDR> [IPV6 ADDR]]"
-  exit 1
-}
-
-CHANNEL=$1
-PANID=$2
-MACADDR=$3
-IPADDR=$4
+CHANNEL=${CHN}
+PANID=${PAN}
+if [ "x${MACADDR}" = "x" ] ; then
+	#Default from a BeaglePlay in the lab
+	MACADDR=00:12:4B:00:29:B9:98:84
+fi
+IPADDR=${IP6}
 
 echo "create_lowpan:CHANNEL:$CHANNEL"
 echo "create_lowpan:PANID:$PANID"
