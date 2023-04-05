@@ -1,4 +1,4 @@
-generic-sys-mods (1.20230324.3-0~bullseye+20230405) bullseye; urgency=low
+generic-sys-mods (1.20230324.3-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
