@@ -4,7 +4,7 @@
 
 package_name="ti-sgx-1.18-firmware"
 debian_pkg_name="${package_name}"
-package_version="1.18.6276027-git20221213.0"
+package_version="1.18.6276027-git20221213.1"
 package_source=""
 src_dir=""
 
