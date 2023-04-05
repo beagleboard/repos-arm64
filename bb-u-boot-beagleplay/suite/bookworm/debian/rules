@@ -28,7 +28,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b ti-linux-firmware https://git.ti.com/git/processor-firmware/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
 	cp -v ./tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/$(TARGETDIR)/
 	cp -v ./tmp/ti-linux-firmware/ti-dm/am62xx/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone https://github.com/ARM-software/arm-trusted-firmware ./tmp/arm-trusted-firmware/ ; cd ./tmp/arm-trusted-firmware/ ; git checkout $(ATF_TAG) -b tmp ; cd -
+	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b beagleplay-release https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
 	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/optee_os/ ; git clone https://github.com/OP-TEE/optee_os.git ./tmp/optee_os/ ; cd ./tmp/optee_os/ ; git checkout $(TEE_TAG) -b tmp ; cd -
