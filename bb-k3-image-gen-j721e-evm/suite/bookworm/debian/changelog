@@ -1,4 +1,4 @@
-bb-k3-image-gen-j721e-evm (1.20211206.2-0~bullseye+20230405) bullseye; urgency=low
+bb-k3-image-gen-j721e-evm (1.20211206.2-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
