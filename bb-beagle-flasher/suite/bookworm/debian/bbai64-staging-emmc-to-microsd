@@ -1,0 +1,7 @@
+source=/dev/mmcblk0
+destination=/dev/mmcblk1
+rfs_partition=dual
+rfs_boot_startmb=1
+rfs_boot_size_mb=128
+flash_back=bbai64-staging-microsd-to-emmc
+extlinux=/opt/u-boot/bb-u-boot-beagleboneai64-staging/microsd-extlinux.conf

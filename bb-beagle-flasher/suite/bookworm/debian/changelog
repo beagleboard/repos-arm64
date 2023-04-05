@@ -1,4 +1,4 @@
-bb-beagle-flasher (1.20230324.4-0~bullseye+20230405) bullseye; urgency=low
+bb-beagle-flasher (1.20230324.4-0~bookworm+20230405) bookworm; urgency=low
 
   * Rebuild for Bookworm
 

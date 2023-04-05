@@ -1,0 +1,8 @@
+source=/dev/mmcblk1
+destination=/dev/mmcblk0
+rfs_partition=dual
+rfs_boot_startmb=1
+rfs_boot_size_mb=128
+bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-emmc.sh
+flash_back=bbai64-emmc-to-microsd
+extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/emmc-extlinux.conf
