@@ -4,7 +4,7 @@
 
 package_name="bb-j721e-evm-firmware"
 debian_pkg_name="${package_name}"
-package_version="1.20220613.2"
+package_version="1.20220613.3"
 package_source=""
 src_dir=""
 
