@@ -17,7 +17,6 @@ debian_version="${package_version}-0"
 debian_patch=""
 debian_diff=""
 
-
 clear_changelog="enable"
 
 bullseye_version="~bullseye+20230405"
