@@ -58,7 +58,7 @@ generate_kernel_ti () {
 	echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 	echo " bb-u-boot-beagleplay" >> ./suite/${dist}/debian/${wfile}
 	if [ "x${sgxam62}" = "xenabled" ] ; then
-		echo " , ti-sgx-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		echo " , ti-${sgxmodule}-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	fi
 	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo " This metapackage will install linux-image-${msg} for k3-am62 in Debian." >> ./suite/${dist}/debian/${wfile}
@@ -73,7 +73,7 @@ generate_kernel_ti () {
 	echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 	echo " bb-u-boot-beagleboneai64" >> ./suite/${dist}/debian/${wfile}
 	if [ "x${sgxj721e}" = "xenabled" ] ; then
-		echo " , ti-sgx-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		echo " , ti-${sgxmodule}-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	fi
 	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo " This metapackage will install linux-image-${msg} for k3-j721e in Debian." >> ./suite/${dist}/debian/${wfile}
@@ -110,6 +110,7 @@ do_bullseye () {
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
+	sgxmodule="sgx"
 
 	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
 	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
@@ -126,6 +127,7 @@ do_bookworm () {
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
+	sgxmodule="sgx-1.18"
 
 	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
 	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
