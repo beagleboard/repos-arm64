@@ -1,13 +1,18 @@
 #debian bullseye:
 sudo sbuild-shell source:bullseye-arm64-sbuild
 
+cat /etc/apt/sources.list ; \
 echo "deb http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bullseye main" > /etc/apt/sources.list ; \
 echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bullseye main" >> /etc/apt/sources.list ; \
 echo "deb http://repos.rcn-ee.net/debian-arm64 bullseye main" >> /etc/apt/sources.list ; \
 echo "deb-src http://repos.rcn-ee.net/debian-arm64 bullseye main" >> /etc/apt/sources.list ; \
 cat /etc/apt/sources.list ; \
-apt update ; apt install --yes gnupg ; \
-apt-key adv --keyserver keyserver.ubuntu.com --recv-key D284E608A4C46402 ; \
+apt update ; apt install -yq bbb.io-keyring ; \
+echo "deb http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bullseye main" > /etc/apt/sources.list ; \
+echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bullseye main" >> /etc/apt/sources.list ; \
+echo "deb [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-archive-keyring.gpg] http://repos.rcn-ee.net/debian-arm64 bullseye main" >> /etc/apt/sources.list ; \
+echo "deb-src [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-archive-keyring.gpg] http://repos.rcn-ee.net/debian-arm64 bullseye main" >> /etc/apt/sources.list ; \
+cat /etc/apt/sources.list ; \
 apt update ; apt-get clean ; echo "done..." ; exit
 
 #debian bookworm:
@@ -24,4 +29,5 @@ echo "deb http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bookworm main"
 echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bookworm main" >> /etc/apt/sources.list ; \
 echo "deb [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-archive-keyring.gpg] http://repos.rcn-ee.net/debian-arm64 bookworm main" >> /etc/apt/sources.list ; \
 echo "deb-src [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-archive-keyring.gpg] http://repos.rcn-ee.net/debian-arm64 bookworm main" >> /etc/apt/sources.list ; \
+cat /etc/apt/sources.list ; \
 apt update ; apt-get clean ; echo "done..." ; exit
