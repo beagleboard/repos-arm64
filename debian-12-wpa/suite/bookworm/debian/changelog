@@ -1,4 +1,4 @@
-wpa (2:2.10-12bbbio1~bullseye+20230406) bullseye; urgency=low
+wpa (2:2.10-12bbbio1~bookworm+20230406) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
@@ -314,6 +314,13 @@ wpa (2:2.9.0-8) unstable; urgency=medium
   * Reupload as 2.9.0 to undo an accidental experimental upload to unstable.
 
  -- Andrej Shadura <andrewsh@debian.org>  Sat, 22 Feb 2020 11:25:29 +0300
+
+wpa (2:2.9+git20200213+877d9a0-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * Refresh patches.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 15 Feb 2020 16:53:28 +0100
 
 wpa (2:2.9-7) unstable; urgency=medium
 
