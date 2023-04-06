@@ -56,7 +56,7 @@ else
 	confflags_DIRECT_RENDERING = -Dglx-direct=true
 	confflags_GBM = -Dgbm=enabled
 	confflags_GALLIUM += -Dgallium-extra-hud=true
-	confflags_GALLIUM += -Dgallium-vdpau=enabled
+	#confflags_GALLIUM += -Dgallium-vdpau=enabled
 	confflags_GALLIUM += -Dlmsensors=enabled
 
   # radv/lavapipe needs LLVM and the Vulkan loader, so only build on the subset of
