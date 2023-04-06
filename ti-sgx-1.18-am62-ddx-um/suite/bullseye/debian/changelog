@@ -1,4 +1,4 @@
-ti-sgx-1.18-am62-ddx-um (1.18.6276027-git20221213.1-0~bookworm+20230405) bookworm; urgency=low
+ti-sgx-1.18-am62-ddx-um (1.18.6276027-git20221213.1-0~bullseye+20230405) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
