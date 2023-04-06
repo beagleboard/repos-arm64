@@ -50,25 +50,25 @@ load_pvr()
 	# Load the PVR Services module.
 	#
 	
-	if [ -n "$PVR_SRVKM_PARAMS" ] && ! /sbin/modprobe -q pvrsrvkm --dry-run --first-time; then
+	if [ -n "$PVR_SRVKM_PARAMS" ] && ! /usr/sbin/modprobe -q pvrsrvkm --dry-run --first-time; then
 		echo "Cannot set parameters for pvrsrvkm. Module already loaded."
 		some_modules_already_loaded=1
 		readonly load_modules_exit_status=1
-	elif ! /sbin/modprobe -q pvrsrvkm $PVR_SRVKM_PARAMS; then
+	elif ! /usr/sbin/modprobe -q pvrsrvkm $PVR_SRVKM_PARAMS; then
 		echo "Module pvrsrvkm failed to load. Retrying."
 		if [ -z $depmod_has_been_run ]; then
-			if [ -e /sbin/depmod ]; then
-				echo "Running /sbin/depmod"
-				/sbin/depmod && depmod_has_been_run=1
+			if [ -e /usr/sbin/depmod ]; then
+				echo "Running /usr/sbin/depmod"
+				/usr/sbin/depmod && depmod_has_been_run=1
 			fi
 		fi
-		if ! /sbin/modprobe -q pvrsrvkm $PVR_SRVKM_PARAMS ; then return; fi
+		if ! /usr/sbin/modprobe -q pvrsrvkm $PVR_SRVKM_PARAMS ; then return; fi
 	fi
 
 	# Reload udev rules
 	#
-	if [ -e /sbin/udevadm ]; then
-		/sbin/udevadm control --reload-rules
+	if [ -e /usr/bin/udevadm ]; then
+		/usr/bin/udevadm control --reload-rules
 	fi
 
 	# Load 3rd party module(s).
@@ -125,8 +125,8 @@ load_pvr()
 			else
 				# Get a TTY for Weston to use.
 				#
-				if [ -x "$(which /bin/openvt)" ] && [ -e "/sys/class/tty/tty0/active" ]; then
-					/bin/openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
+				if [ -x "$(which /usr/bin/openvt)" ] && [ -e "/sys/class/tty/tty0/active" ]; then
+					/usr/bin/openvt -s -l && read unused_tty < /sys/class/tty/tty0/active
 				fi
 
 				# Launch Weston.
@@ -182,7 +182,7 @@ unload_pvr()
 		
 	# Unload the PVR Services module.
 	#
-	if /sbin/modprobe -r pvrsrvkm; then :; else return 1; fi
+	if /usr/sbin/modprobe -r pvrsrvkm; then :; else return 1; fi
 
 	echo "Unloaded PowerVR consumer services."
 	return 0;
