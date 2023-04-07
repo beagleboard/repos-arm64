@@ -90,7 +90,7 @@ else
 
 	# etnaviv, tegra, vc4 and v3d kernel support are only available on armhf and arm64
 	ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64))
-		GALLIUM_DRIVERS += etnaviv panfrost svga tegra vc4 v3d
+		GALLIUM_DRIVERS += etnaviv panfrost svga tegra vc4 v3d pvr
 		VULKAN_DRIVERS += broadcom freedreno
 	endif
 
@@ -192,6 +192,7 @@ confflags += \
 	-Dgallium-omx=disabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
+	-Dgallium-pvr-alias=tidss \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_GBM) \
 	$(confflags_DRI3) \
