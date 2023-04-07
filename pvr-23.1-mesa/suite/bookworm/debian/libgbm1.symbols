@@ -1,5 +1,6 @@
 libgbm.so.1 libgbm1 #MINVER#
 | libgbm1-private
+ gbm_bo_blit@Base 22.3.5
  gbm_bo_create@Base 7.11~1
  gbm_bo_create_with_modifiers2@Base 21.3.0~rc1
  gbm_bo_create_with_modifiers@Base 17.1.0~rc2

@@ -322,7 +322,9 @@ libGLX_mesa.so.0 libglx-mesa0
  glFramebufferTexture3D@Base 0
  glFramebufferTexture3DEXT@Base 0
  glFramebufferTexture@Base 0
+ glFramebufferTextureARB@Base 22.3.5
  glFramebufferTextureLayer@Base 0
+ glFramebufferTextureLayerARB@Base 22.3.5
  glFramebufferTextureLayerEXT@Base 0
  glFrontFace@Base 0
  glFrustum@Base 0
@@ -783,6 +785,7 @@ libGLX_mesa.so.0 libglx-mesa0
  glProgramLocalParameter4fARB@Base 0
  glProgramLocalParameter4fvARB@Base 0
  glProgramParameteri@Base 0
+ glProgramParameteriARB@Base 22.3.5
  glProgramStringARB@Base 0
  glProgramUniform1f@Base 12.0.1
  glProgramUniform1fv@Base 12.0.1
