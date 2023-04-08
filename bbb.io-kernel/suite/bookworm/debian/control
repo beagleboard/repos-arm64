@@ -39,7 +39,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-beagleplay
- , ti-sgx-1.18-am62-modules-5.10.162-ti-arm64-r99
+ , ti-sgx-23.1-am62-modules-5.10.162-ti-arm64-r99
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-am62 in Debian.
 
@@ -51,7 +51,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Recommends:
  bb-u-boot-beagleboneai64
- , ti-sgx-1.18-j721e-modules-5.10.162-ti-arm64-r99
+ , ti-sgx-23.1-j721e-modules-5.10.162-ti-arm64-r99
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-j721e in Debian.
 

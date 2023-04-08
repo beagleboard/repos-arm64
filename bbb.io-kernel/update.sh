@@ -127,7 +127,7 @@ do_bookworm () {
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
-	sgxmodule="sgx-1.18"
+	sgxmodule="sgx-23.1"
 
 	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
 	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
