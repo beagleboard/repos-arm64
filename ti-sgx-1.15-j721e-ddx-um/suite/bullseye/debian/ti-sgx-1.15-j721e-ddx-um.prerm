@@ -3,8 +3,8 @@
 set -e
 
 if [ -d /run/systemd/system ] && [ "$1" = remove ]; then
-    systemctl mask --runtime ti-sgx-j721e-ddx-um.service
-    systemctl stop ti-sgx-j721e-ddx-um.service || true
+    systemctl mask --runtime ti-sgx-1.15-j721e-ddx-um.service
+    systemctl stop ti-sgx-1.15-j721e-ddx-um.service || true
 fi
 
 #DEBHELPER#

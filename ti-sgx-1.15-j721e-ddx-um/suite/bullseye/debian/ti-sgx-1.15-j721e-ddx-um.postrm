@@ -4,7 +4,7 @@ set -e
 
 # drop the temporary mask from prerm
 if [ -d /run/systemd/system ] && [ "$1" = remove ]; then
-        systemctl unmask --runtime ti-sgx-j721e-ddx-um.service
+        systemctl unmask --runtime ti-sgx-1.15-j721e-ddx-um.service
 fi
 
 #DEBHELPER#
