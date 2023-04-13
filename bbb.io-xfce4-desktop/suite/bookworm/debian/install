@@ -1,0 +1,3 @@
+debian/fbdev.xorg.conf /etc/bbb.io/templates/
+debian/modesetting.xorg.conf /etc/bbb.io/templates/
+debian/modesetting-glamor.xorg.conf /etc/bbb.io/templates/
