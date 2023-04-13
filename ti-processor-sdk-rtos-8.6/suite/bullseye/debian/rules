@@ -20,7 +20,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; tar xf ./debian/$(wfile1) -C ./tmp/opt/ ; tar xf ./debian/$(wfile2) -C ./tmp/opt/ti-processor-sdk-rtos-j721e-evm-08_05_00_11/
+	mkdir -p ./tmp/opt/ ; tar xf ./debian/$(wfile1) -C ./tmp/opt/ ; tar xf ./debian/$(wfile2) -C ./tmp/opt/ti-processor-sdk-rtos-j721e-evm-08_06_00_12/
 
 %:
 	dh $@
