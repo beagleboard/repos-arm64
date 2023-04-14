@@ -1,0 +1,43 @@
+Source: ti-neo-ai-dlr-8.5
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , cmake
+ , dh-python
+ , git
+ , libfmt-dev
+ , rapidjson-dev
+ , python3-dev
+ , python3-pip
+ , python3-setuptools
+ , python3-certifi
+ , python3-charset-normalizer
+ , python3-distro
+ , python3-idna
+ , python3-matplotlib
+ , python3-numpy
+ , python3-requests
+ , python3-urllib3
+ , llvm
+ , llvm-11-dev
+ , ti-processor-sdk-rtos-8.5
+ , tree
+Standards-Version: 4.5.1
+
+Package: ti-neo-ai-dlr-8.5
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+ , python3-certifi
+ , python3-charset-normalizer
+ , python3-distro
+ , python3-idna
+ , python3-matplotlib
+ , python3-numpy
+ , python3-requests
+ , python3-urllib3
+Description: TI neo-ai-dlr 8.5
+ TI neo-ai-dlr 8.5
