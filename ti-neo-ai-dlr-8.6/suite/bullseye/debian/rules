@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch TIDL_PSDK_8.6.0 --depth 1 https://github.com/TexasInstruments/neo-ai-dlr ./tmp/opt/neo-ai-dlr/
+	cd ./tmp/opt/neo-ai-dlr/ ; git submodule update --init --recursive ; mkdir build
+	cd ./tmp/opt/neo-ai-dlr/build/ ; cmake -DUSE_TIDL=ON -DUSE_TIDL_RT_PATH=/opt/ti-processor-sdk-rtos-j721e-evm-08_06_00_12/tidl_j721e_08_06_00_10/arm-tidl/rt -DDLR_BUILD_TESTS=OFF .. ; make -j4 ; make install DESTDIR=../../../
+	cd ./tmp/opt/neo-ai-dlr/python ; python3 setup.py install --prefix=../usr
+
+%:
+	dh $@
