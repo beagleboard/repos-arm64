@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch release-8.5 --depth 1 https://github.com/TexasInstruments/edgeai-tiovx-modules.git ./tmp/opt/edgeai-tiovx-modules/
+	mkdir -p ./tmp/opt/edgeai-tiovx-modules/build/
+	cd ./tmp/opt/edgeai-tiovx-modules/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j4 ; make install DESTDIR=../../../
+
+%:
+	dh $@

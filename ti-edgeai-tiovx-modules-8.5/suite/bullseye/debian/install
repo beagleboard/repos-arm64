@@ -1,0 +1,2 @@
+tmp/usr/include/* /usr/include
+tmp/usr/lib/edgeai-tiovx-modules/* /usr/lib
