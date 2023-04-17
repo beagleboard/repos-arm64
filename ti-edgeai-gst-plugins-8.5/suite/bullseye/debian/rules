@@ -3,6 +3,7 @@
 
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
+export SOC=j721e
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone https://github.com/TexasInstruments/edgeai-gst-plugins.git ./tmp/opt/edgeai-gst-plugins/ ; cd ./tmp/opt/edgeai-gst-plugins/ ; git checkout df929745b7f6b975f87b689780398d31b3a32dc8 -b tmp ; cd -
