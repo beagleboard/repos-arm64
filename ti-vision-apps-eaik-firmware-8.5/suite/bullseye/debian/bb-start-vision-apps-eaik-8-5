@@ -1,0 +1,35 @@
+#!/bin/bash
+
+log="bb-start-vision-apps-eaik-8-5"
+
+APP_core0="vision_apps_eaik_8.5/vx_app_rtos_linux_mcu2_0.out"
+APP_core1="vision_apps_eaik_8.5/vx_app_rtos_linux_mcu2_1.out"
+
+core0=$(ls /sys/devices/platform/bus@100000/bus@100000:r5fss@5c00000/5c00000.r5f/remoteproc/ | grep remoteproc || true)
+core1=$(ls /sys/devices/platform/bus@100000/bus@100000:r5fss@5c00000/5d00000.r5f/remoteproc/ | grep remoteproc || true)
+
+core0_state=$(cat /sys/class/remoteproc/${core0}/state || true)
+core1_state=$(cat /sys/class/remoteproc/${core1}/state || true)
+
+if [ "x${core1_state}" = "xrunning" ] ; then
+	echo stop > /sys/class/remoteproc/${core1}/state
+fi
+
+if [ "x${core0_state}" = "xrunning" ] ; then
+	echo stop > /sys/class/remoteproc/${core0}/state
+fi
+
+if [ "x${core0_state}" = "xoffline" ] ; then
+	if [ "x${core1_state}" = "xoffline" ] ; then
+		echo ${APP_core0} > /sys/class/remoteproc/${core0}/firmware
+		echo start > /sys/class/remoteproc/${core0}/state
+
+		echo ${APP_core1} > /sys/class/remoteproc/${core1}/firmware
+		echo start > /sys/class/remoteproc/${core1}/state
+		sync
+	else
+		echo "${log}: core1 is still [${core1_state}]"
+	fi
+else
+	echo "${log}: core0 is still [${core0_state}]"
+fi

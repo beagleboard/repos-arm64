@@ -1,0 +1,2 @@
+tmp/vision_apps_eaik/*.out /lib/firmware/vision_apps_eaik_8.5/
+debian/bb-start-vision-apps-eaik-8-5 /usr/sbin/
