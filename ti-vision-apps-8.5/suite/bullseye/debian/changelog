@@ -1,0 +1,6 @@
+ti-vision-apps-8.5 (8.5.0.0-0~bullseye+20230417) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 17 Apr 2023 11:24:40 -0500
+
