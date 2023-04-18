@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -d /opt/edge_ai_apps_old/ ] ; then
+	rm -rf /opt/edge_ai_apps_old/ || true
+fi
+
+if [ -d /opt/edge_ai_apps/ ] ; then
+	echo "Backing up: /opt/edge_ai_apps/ -> /opt/edge_ai_apps_old/"
+	mv /opt/edge_ai_apps/ /opt/edge_ai_apps_old/
+fi
+
+#DEBHELPER#
+
+exit 0

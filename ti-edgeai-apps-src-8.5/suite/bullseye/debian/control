@@ -1,0 +1,22 @@
+Source: ti-edgeai-apps-src-8.5
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , git
+ , python3-sphinx
+Standards-Version: 4.5.1
+
+Package: ti-edgeai-apps-src-8.5
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+ , cmake
+ , dialog
+ , python3-opencv
+ , libdrm-tests
+ , python3-sphinx
+Description: TI edgeai-apps src 8.5
+ TI edgeai-apps src 8.5
