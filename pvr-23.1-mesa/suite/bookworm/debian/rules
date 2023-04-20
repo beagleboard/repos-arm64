@@ -93,7 +93,7 @@ else
 		#GALLIUM_DRIVERS += etnaviv panfrost svga tegra vc4 v3d
 		GALLIUM_DRIVERS += etnaviv panfrost svga tegra vc4 v3d pvr
 		#VULKAN_DRIVERS += broadcom freedreno
-		VULKAN_DRIVERS += freedreno
+		VULKAN_DRIVERS += freedreno pvr
 	endif
 
 	ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64 riscv64))
