@@ -136,7 +136,7 @@ echo "pkg check: to individually upgrade run: [sudo apt install --only-upgrade <
 
 case "${soc_family}" in
 AM62X)
-	pkg="bb-u-boot-sk-am62" ; dpkg_check_version
+	pkg="bb-u-boot-beagleplay" ; dpkg_check_version
 	;;
 J721E)
 	pkg="bb-u-boot-beagleboneai64" ; dpkg_check_version
