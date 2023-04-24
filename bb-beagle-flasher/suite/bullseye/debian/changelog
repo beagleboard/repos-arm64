@@ -1,6 +1,6 @@
-bb-beagle-flasher (1.20230324.4-0~bullseye+20230405) bullseye; urgency=low
+bb-beagle-flasher (1.20230424.0-0~bullseye+20230424) bullseye; urgency=low
 
-  * Rebuild for Bookworm
+  * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Apr 2023 15:25:00 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 24 Apr 2023 14:02:25 -0500
 
