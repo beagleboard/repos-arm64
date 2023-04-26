@@ -13,11 +13,11 @@ fi
 
 echo "bb-wl18xx-firmware: [${WLFW}] was set in /etc/default/bb-wl18xx-fw"
 
-if [ -f /lib/firmware/ti-connectivity/wl18xx-fw-4.bin ] ; then
-	rm -f /lib/firmware/ti-connectivity/wl18xx-fw-4.bin || true
-	cp -v /lib/firmware/ti-connectivity/git/${WLFW} /lib/firmware/ti-connectivity/wl18xx-fw-4.bin
+if [ -f /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin ] ; then
+	rm -f /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin || true
+	cp -v /usr/lib/firmware/ti-connectivity/git/${WLFW} /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin
 else
-	cp -v /lib/firmware/ti-connectivity/git/${WLFW} /lib/firmware/ti-connectivity/wl18xx-fw-4.bin
+	cp -v /usr/lib/firmware/ti-connectivity/git/${WLFW} /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin
 fi
 
 case "$1" in

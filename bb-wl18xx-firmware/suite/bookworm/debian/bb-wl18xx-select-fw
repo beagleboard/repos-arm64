@@ -31,17 +31,17 @@ FW_OPTION=$(whiptail --title "TI wl18xx Firmware Options" --menu "Choose TI wl18
 if [ "x${WLFW}" = "xwl18xx-fw-4-${FW_OPTION}.bin" ] ; then
 	echo "The chosen [wl18xx-fw-4-${FW_OPTION}.bin] firmware is already enabled."
 else
-	if [ -f /lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin ] ; then
+	if [ -f /usr/lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin ] ; then
 		echo "Updating /etc/default/bb-wl18xx-fw with [WLFW=wl18xx-fw-4-${FW_OPTION}.bin]"
 		echo "WLFW=wl18xx-fw-4-${FW_OPTION}.bin" > /etc/default/bb-wl18xx-fw
-		rm -rf /lib/firmware/ti-connectivity/wl18xx-fw-4.bin
-		cp -v /lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin /lib/firmware/ti-connectivity/wl18xx-fw-4.bin
+		rm -rf /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin
+		cp -v /usr/lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin
 		sync
 		#Some users dont run with an initrd.img
 		if [ -f /boot/initrd.img-`uname -r` ] ; then
 			update-initramfs -u || true
 		fi
 	else
-		echo "Unable to find /lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin"
+		echo "Unable to find /usr/lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin"
 	fi
 fi
