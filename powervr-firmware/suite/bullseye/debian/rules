@@ -1,7 +1,24 @@
 #!/usr/bin/make -f
-# See debhelper(7) (uncomment to enable)
-# output every command that modifies files on the build system.
-DH_VERBOSE = 1
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# Disable dh_link
+override_dh_link:
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/
+	cp -v debian/*.fw ./tmp/
 
 %:
 	dh $@

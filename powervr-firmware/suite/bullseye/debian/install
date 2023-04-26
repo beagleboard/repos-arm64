@@ -1,2 +1,2 @@
-debian/rogue_4.40.2.51_v1.fw /lib/firmware/powervr/
-debian/rogue_33.15.11.3_v1.fw /lib/firmware/powervr/
+tmp/rogue_4.40.2.51_v1.fw /lib/firmware/powervr/
+tmp/rogue_33.15.11.3_v1.fw /lib/firmware/powervr/
