@@ -1,6 +1,6 @@
-powervr-firmware (0.0.0-git2022912.2-0~bullseye+20230425) bullseye; urgency=low
+powervr-firmware (0.0.0-git2022912.3-0~bullseye+20230425) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Apr 2023 20:23:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Apr 2023 20:36:30 -0500
 
