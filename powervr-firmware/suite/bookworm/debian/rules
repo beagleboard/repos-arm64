@@ -4,9 +4,6 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-# Disable dh_link
-override_dh_link:
-
 # Disable dh_strip
 override_dh_strip:
 
@@ -17,9 +14,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/
-	cp -v debian/*.fw ./tmp/
+	mkdir -p ./tmp/ ; git clone -b powervr https://gitlab.freedesktop.org/frankbinns/linux-firmware.git ./tmp/sgx
 
 %:
 	dh $@
-

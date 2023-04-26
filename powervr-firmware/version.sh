@@ -4,7 +4,7 @@
 
 package_name="powervr-firmware"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-git2022912.4"
+package_version="0.0.0-git2022912.5"
 package_source=""
 src_dir=""
 
