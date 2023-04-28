@@ -1,3 +1,0 @@
-debian/99-pvr.rules etc/udev/rules.d/
-tmp/opt/sgx/targetfs/am62_linux/lws-generic/release/etc/* etc
-tmp/opt/sgx/targetfs/am62_linux/lws-generic/release/usr/* usr
