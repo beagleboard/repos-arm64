@@ -19,4 +19,4 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20230425"
+bookworm_version="~bookworm+20230428"
