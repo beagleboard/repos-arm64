@@ -17,6 +17,7 @@ override_dh_auto_configure:
 	mv ./tmp/usr/share/beagleconnect/build/freedom/ ./tmp/usr/share/beagleconnect/
 	mv ./tmp/usr/share/beagleconnect/build/play/ ./tmp/usr/share/beagleconnect/
 	rm -rf ./tmp/usr/share/beagleconnect/build/
+	git clone https://git.beagleboard.org/beagleconnect/cc1352-firmware.git ./tmp/cc1352-firmware/
 
 %:
 	dh $@ --with systemd
