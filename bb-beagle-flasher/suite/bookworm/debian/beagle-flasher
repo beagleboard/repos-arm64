@@ -323,8 +323,8 @@ copy_rootfs () {
 	flush_cache
 
 	if [ "x${flash_cc1352p}" = "xenable" ] ; then
-		if [ -f /usr/share/beagleconnect/play/cc2538-bsl.py ] ; then
-			/usr/share/beagleconnect/play/cc2538-bsl.py /usr/share/beagleconnect/play/ &> /tmp/rootfs/var/log/cc2538.log
+		if [ -f /usr/share/beagleconnect/firmware/0.2.1/play/cc2538-bsl.py ] ; then
+			/usr/share/beagleconnect/firmware/0.2.1/play/cc2538-bsl.py /usr/share/beagleconnect/firmware/0.2.1/play/wpanusb/ &> /tmp/rootfs/var/log/cc2538.log
 			cat /tmp/rootfs/var/log/cc2538.log
 			mac=$(cat /tmp/rootfs/var/log/cc2538.log | grep '^Primary IEEE Address:' | awk -F 'Address: ' '{print $2}' || true)
 			echo "MACADDR=${mac}" >> /tmp/rootfs/etc/default/lowpan

@@ -268,11 +268,6 @@ copy_rootfs () {
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
-	message="INFO: /usr/bin/rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
-	/usr/bin/rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
-	message="--------------------------------------------------------------------------------" ; broadcast
-	flush_cache
-
 	message="INFO: Copying: Kernel modules"                                                    ; broadcast
 	mkdir -p /tmp/rootfs/lib/modules/$(uname -r)/ || true
 	message="INFO: /usr/bin/rsync: (-aHAXx) /lib/modules/$(uname -r)/ -> /tmp/rootfs/lib/modules/$(uname -r)/" ; broadcast
@@ -324,8 +319,8 @@ copy_rootfs () {
 	flush_cache
 
 	if [ "x${flash_cc1352p}" = "xenable" ] ; then
-		if [ -f /usr/share/beagleconnect/play/cc2538-bsl.py ] ; then
-			/usr/share/beagleconnect/play/cc2538-bsl.py /usr/share/beagleconnect/play/ &> /tmp/rootfs/var/log/cc2538.log
+		if [ -f /usr/share/beagleconnect/firmware/0.2.1/play/cc2538-bsl.py ] ; then
+			/usr/share/beagleconnect/firmware/0.2.1/play/cc2538-bsl.py /usr/share/beagleconnect/firmware/0.2.1/play/wpanusb/ &> /tmp/rootfs/var/log/cc2538.log
 			cat /tmp/rootfs/var/log/cc2538.log
 			mac=$(cat /tmp/rootfs/var/log/cc2538.log | grep '^Primary IEEE Address:' | awk -F 'Address: ' '{print $2}' || true)
 			echo "MACADDR=${mac}" >> /tmp/rootfs/etc/default/lowpan
