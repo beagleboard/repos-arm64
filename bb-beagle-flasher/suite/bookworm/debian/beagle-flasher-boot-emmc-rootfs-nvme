@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20230324.0, rsync add progress indicator..."
+version_message="1.20230424.0, rsync run twice on rootfs..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -234,6 +234,11 @@ copy_rootfs () {
 
 	message="INFO: [mount ${destination}p${dest_rfs_part} /tmp/rootfs/ -o async,noatime]"       ; broadcast
 	mount ${destination}p${dest_rfs_part} /tmp/rootfs/ -o async,noatime
+
+	message="INFO: /usr/bin/rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
+	/usr/bin/rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
+	message="--------------------------------------------------------------------------------" ; broadcast
+	flush_cache
 
 	message="INFO: /usr/bin/rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
 	/usr/bin/rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
