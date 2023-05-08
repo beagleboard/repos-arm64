@@ -1,8 +1,28 @@
-libiio (0.24-1bbbio0~bullseye+20220720) bullseye; urgency=low
+libiio (0.24-4) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  [ A. Maitland Bottoms ]
+  * install the right iiod.service file for iiod
+  * edit previous changelog entry for correctness
+  * Include the following Debian Janitor improvements from salsa.
+  
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Fix day-of-week for changelog entry 0.6.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 20 Jul 2022 14:16:08 -0500
+ -- A. Maitland Bottoms <bottoms@debian.org>  Mon, 23 Jan 2023 21:16:11 -0500
+
+libiio (0.24-3) unstable; urgency=medium
+
+  * fix python-libiio.install (Closes: #1021086)
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Sat, 21 Jan 2023 17:37:55 -0400
+
+libiio (0.24-2) unstable; urgency=medium
+
+  * update python install (Closes: #1020104)
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Wed, 21 Sep 2022 23:10:28 -0400
 
 libiio (0.24-1) unstable; urgency=medium
 
@@ -171,7 +191,7 @@ libiio (0.6) unstable; urgency=low
   * Improved I/O handling in IIOD
   * New API functions
 
- -- Paul Cercueil <paul.cercueil@analog.com>  Tue, 4 Dec 2015 12:58:52 +0200
+ -- Paul Cercueil <paul.cercueil@analog.com>  Tue, 04 Dec 2015 12:58:52 +0200
 
 libiio (0.5) unstable; urgency=low
 

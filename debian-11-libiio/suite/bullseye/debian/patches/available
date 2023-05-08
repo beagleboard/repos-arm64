@@ -1,0 +1,70 @@
+From f1f93012768e27723ebaaadd7a3339530420196f Mon Sep 17 00:00:00 2001
+From: "A. Maitland Bottoms" <bottoms@debian.org>
+Date: Sun, 28 Aug 2022 20:26:53 -0400
+Subject: [PATCH] available
+
+spelling fix
+
+Signed-off-by: A. Maitland Bottoms <bottoms@debian.org>
+---
+ man/iio_attr.1.in     | 2 +-
+ man/iio_info.1.in     | 2 +-
+ man/iio_readdev.1.in  | 2 +-
+ man/iio_writedev.1.in | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/man/iio_attr.1.in b/man/iio_attr.1.in
+index aa497513..0b30e85a 100644
+--- a/man/iio_attr.1.in
++++ b/man/iio_attr.1.in
+@@ -87,7 +87,7 @@ Read and Write IIO Debug attributes
+ Scan for available IIO contexts, optional arg of specific backend(s) 'ip', 'usb' or 'ip,usb'.
+ Specific options for USB include Vendor ID, Product ID to limit scanning to specific devices 'usb=0456:b673'.
+ vid,pid are hexadecimal numbers (no prefix needed), "*" (match any for pid only)
+-If no argument is given, it checks all that are availble.
++If no argument is given, it checks all that are available.
+ .TP
+ .B \-h, \-\-help
+ Tells
+diff --git a/man/iio_info.1.in b/man/iio_info.1.in
+index 9fb15aed..2fa6ce24 100644
+--- a/man/iio_info.1.in
++++ b/man/iio_info.1.in
+@@ -82,7 +82,7 @@ with no address part
+ Scan for available IIO contexts, optional arg of specific backend(s) 'ip', 'usb' or 'ip,usb'.
+ Specific options for USB include Vendor ID, Product ID to limit scanning to specific devices 'usb=0456:b673'.
+ vid,pid are hexadecimal numbers (no prefix needed), "*" (match any for pid only)
+-If no argument is given, it checks all that are availble.
++If no argument is given, it checks all that are available.
+ .TP
+ .B \-a, \-\-auto
+ Scan for available contexts and if only one is available use it.
+diff --git a/man/iio_readdev.1.in b/man/iio_readdev.1.in
+index 6d0f0c26..a312c20d 100644
+--- a/man/iio_readdev.1.in
++++ b/man/iio_readdev.1.in
+@@ -81,7 +81,7 @@ Scan for available contexts and if only one is available use it.
+ Scan for available IIO contexts, optional arg of specific backend(s) 'ip', 'usb' or 'ip,usb'.
+ Specific options for USB include Vendor ID, Product ID to limit scanning to specific devices 'usb=0456:b673'.
+ vid,pid are hexadecimal numbers (no prefix needed), "*" (match any for pid only)
+-If no argument is given, it checks all that are availble.
++If no argument is given, it checks all that are available.
+ .SH RETURN VALUE
+ If the specified device is not found, a non-zero exit code is returned.
+ 
+diff --git a/man/iio_writedev.1.in b/man/iio_writedev.1.in
+index 723d5b6e..7d95f706 100644
+--- a/man/iio_writedev.1.in
++++ b/man/iio_writedev.1.in
+@@ -65,7 +65,7 @@ with no address part
+ Scan for available IIO contexts, optional arg of specific backend(s) 'ip', 'usb' or 'ip,usb'.
+ Specific options for USB include Vendor ID, Product ID to limit scanning to specific devices 'usb=0456:b673'.
+ vid,pid are hexadecimal numbers (no prefix needed), "*" (match any for pid only)
+-If no argument is given, it checks all that are availble.
++If no argument is given, it checks all that are available.
+ .RE
+ .TP
+ .B \-t \-\-trigger
+-- 
+2.35.1
+

@@ -3,3 +3,4 @@ reproducible-build.patch
 python-setup-libiio
 debian-soversion-udev-rules
 service-documentation
+available

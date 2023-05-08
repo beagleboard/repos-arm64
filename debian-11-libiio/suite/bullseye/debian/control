@@ -23,7 +23,7 @@ Build-Depends: bison,
 	       python3-setuptools,
 	       python3-sphinx,
 	       python3-sphinx-rtd-theme
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: https://github.com/analogdevicesinc/libiio
 Vcs-Browser: https://salsa.debian.org/debian/libiio
@@ -58,7 +58,6 @@ Package: iiod
 Architecture: linux-any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: libiio0 (>= ${binary:Version}),
-         lsb-base (>=3.0-6),
 	 ${misc:Depends},
          ${shlibs:Depends}
 Section: net

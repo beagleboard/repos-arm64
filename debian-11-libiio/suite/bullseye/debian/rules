@@ -5,7 +5,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@ --builddirectory=build --with python3
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DCMAKE_SKIP_INSTALL_RPATH=On \
+	dh_auto_configure -- -DCMAKE_SKIP_INSTALL_RPATH=On -DWITH_SYSTEMD=On -DWITH_SYSVINIT=On \
 		-DPYTHON_BINDINGS=ON -DWITH_DOC=ON -DWITH_MAN=ON
 
 override_dh_compress:
