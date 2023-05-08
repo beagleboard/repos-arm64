@@ -4,3 +4,4 @@ python-setup-libiio
 debian-soversion-udev-rules
 service-documentation
 available
+0001-local.c-sys-firmware-isnt-mapped-in-docker.patch
