@@ -116,6 +116,7 @@ do_bullseye () {
 	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 }
 
 do_bookworm () {
@@ -133,6 +134,7 @@ do_bookworm () {
 	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 }
 
 do_bullseye
