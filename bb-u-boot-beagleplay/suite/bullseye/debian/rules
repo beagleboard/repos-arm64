@@ -14,7 +14,7 @@ TILF_TAG=08.06.00.007
 ATF_TAG=c19116dd61068d70808ff71efbe914e50a5346e3
 
 #optee_os
-TEE_TAG=4adb4a1feaa06adfba13066c73830b1a8972b879
+TEE_TAG=3.19.0
 
 #U-Boot
 UB_CONFIG=am62x_evm
@@ -34,7 +34,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b beagleplay-release https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
 	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/optee_os/ ; git clone https://github.com/OP-TEE/optee_os.git ./tmp/optee_os/ ; cd ./tmp/optee_os/ ; git checkout $(TEE_TAG) -b tmp ; cd -
+	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) https://git.beagleboard.org/beagleboard/optee_os.git --depth=1 ./tmp/optee_os/
 	make -C tmp/optee_os -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3 OPTEEMACHINE=k3-am62x CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) https://git.beagleboard.org/beagleboard/u-boot.git --depth=1 ./tmp/u-boot/
