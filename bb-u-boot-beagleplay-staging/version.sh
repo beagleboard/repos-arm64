@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-beagleplay-staging"
 debian_pkg_name="${package_name}"
-package_version="2021.01.20230213.3"
+package_version="2021.01.20230213.4"
 package_source=""
 src_dir=""
 

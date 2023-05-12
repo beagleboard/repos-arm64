@@ -11,17 +11,17 @@ TARGETDIR=bb-u-boot-beagleplay-staging
 TILF_TAG=08.06.00.007
 
 #arm-trusted-firmware
-ATF_TAG=08.06.00.007
+ATF_TAG=bbb.io-08.06.00.007
 
 #optee_os
-TEE_TAG=3.19.0
+TEE_TAG=3.20.0
 
 #U-Boot
 UB_CONFIG=am62x_evm
 UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
-UB_BRANCH=v2021.01-ti-BeaglePlay-Release
+UB_BRANCH=v2021.01-ti-BeaglePlay-Staging
 
 override_dh_strip:
 	# Just disable for now...
