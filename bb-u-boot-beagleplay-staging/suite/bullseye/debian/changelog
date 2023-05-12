@@ -1,0 +1,6 @@
+bb-u-boot-beagleplay-staging (2021.01.20230213.3-0~bullseye+20230512) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 12 May 2023 15:43:40 -0500
+

@@ -1,0 +1,14 @@
+debian/install.sh /opt/u-boot/bb-u-boot-beagleplay-staging
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleplay-staging
+debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleplay-staging
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay-staging
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/ti-linux-firmware/ti-sysfw/ti-fs-stub-firmware-am62x-gp-signed.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/ti-linux-firmware/ti-dm/am62xx/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/optee/core/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/a53/tispl.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/a53/u-boot.img /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/r5/spl/u-boot-spl.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+tmp/k3-image-gen/tiboot3.bin /opt/u-boot/bb-u-boot-beagleplay-staging
