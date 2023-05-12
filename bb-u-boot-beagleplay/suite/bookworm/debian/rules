@@ -11,7 +11,7 @@ TARGETDIR=bb-u-boot-beagleplay
 TILF_TAG=08.06.00.007
 
 #arm-trusted-firmware
-ATF_TAG=08.06.00.007
+ATF_TAG=bbb.io-08.06.00.007
 
 #optee_os
 TEE_TAG=3.19.0
