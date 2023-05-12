@@ -28,7 +28,7 @@ override_dh_strip:
 
 override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/ti-linux-firmware/
+	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) https://git.beagleboard.org/beagleboard/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
 	cp -v ./tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/$(TARGETDIR)/
 	cp -v ./tmp/ti-linux-firmware/ti-dm/am62xx/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
