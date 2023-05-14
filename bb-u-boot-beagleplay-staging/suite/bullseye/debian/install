@@ -12,3 +12,4 @@ tmp/a53/tispl.bin /opt/u-boot/bb-u-boot-beagleplay-staging
 tmp/a53/u-boot.img /opt/u-boot/bb-u-boot-beagleplay-staging
 tmp/r5/spl/u-boot-spl.bin /opt/u-boot/bb-u-boot-beagleplay-staging
 tmp/k3-image-gen/tiboot3.bin /opt/u-boot/bb-u-boot-beagleplay-staging
+debian/beagleplay-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleplay-staging
