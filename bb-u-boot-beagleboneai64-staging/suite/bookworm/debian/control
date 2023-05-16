@@ -1,0 +1,33 @@
+Source: bb-u-boot-beagleboneai64-staging
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , bb-k3-image-gen-j721e-evm,
+ , bc,
+ , bison
+ , ca-certificates
+ , device-tree-compiler
+ , flex
+ , gcc-arm-linux-gnueabihf
+ , git
+ , libssl-dev
+ , python3-cryptography
+ , python3-dev
+ , python3-pycryptodome
+ , python3-pyelftools
+ , wget
+ , u-boot-tools
+Standards-Version: 4.5.1
+Homepage: https://git.beagleboard.org/beagleboard/u-boot/
+
+Package: bb-u-boot-beagleboneai64-staging
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , bb-k3-image-gen-j721e-evm
+ , mmc-utils
+Description: beagleboard.org u-boot for beagleboneai64
+ beagleboard.org u-boot for beagleboneai64

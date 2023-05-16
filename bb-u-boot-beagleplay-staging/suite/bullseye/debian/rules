@@ -4,8 +4,9 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+SOC=am62xx
+
 TARGETDIR=bb-u-boot-beagleplay-staging
-#/opt/u-boot/$(TARGETDIR)/
 
 #ti-linux-firmware
 TILF_TAG=08.06.00.007
@@ -29,8 +30,8 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) https://git.beagleboard.org/beagleboard/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
+	cp -v ./tmp/ti-linux-firmware/ti-dm/$(SOC)/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
 	cp -v ./tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/$(TARGETDIR)/
-	cp -v ./tmp/ti-linux-firmware/ti-dm/am62xx/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
 	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
