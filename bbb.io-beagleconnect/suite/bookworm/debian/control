@@ -1,0 +1,27 @@
+Source: beagleconnect
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 10)
+ , ca-certificates
+ , git
+ , libavahi-client-dev
+ , libbluetooth-dev
+ , libnl-genl-3-dev
+ , libnl-3-dev
+ , pkg-config
+ , unzip
+ , wpan-tools
+Standards-Version: 4.5.1
+
+Package: beagleconnect
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , systemd (>= 230)
+ , python3-serial
+ , wpan-tools
+Description: beagleboard.org beagleconnect
+ beagleboard.org beagleconnect

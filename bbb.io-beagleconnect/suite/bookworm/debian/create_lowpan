@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#From: https://github.com/RIOT-Makers/wpan-raspbian/blob/master/usr/local/sbin/create_lowpan
+
+if [[ $EUID -ne 0 ]]; then
+  echo "You must be a root user" 2>&1
+  exit 1
+fi
+
+. /etc/default/lowpan
+
+CHANNEL=${CHN}
+PANID=${PAN}
+if [ "x${MACADDR}" = "x" ] ; then
+	#Default from a BeaglePlay in the lab
+	MACADDR=00:12:4B:00:29:B9:98:84
+fi
+IPADDR=${IP6}
+
+echo "create_lowpan:CHANNEL:$CHANNEL"
+echo "create_lowpan:PANID:$PANID"
+echo "create_lowpan:MACADDR:$MACADDR"
+echo "create_lowpan:IPADDR:$IPADDR"
+
+# check for wpan0
+ip link show wpan0 1> /dev/null 2>&1
+if [[ $? == '0' ]] ; then
+    echo ". taking wpan0 down"
+    ip link set dev wpan0 down
+else
+    echo "! no wpan device found, exit!"
+    exit 1
+fi
+# check for lowpan0
+ip link show lowpan0 1> /dev/null 2>&1
+if [[ $? == '0' ]]; then
+    echo ". lowpan0 exists"
+    ip link set lowpan0 down
+else
+    echo ". create lowpan0"
+    if [ ! -z "$MACADDR" -a "$MACADDR" != " " ]; then
+      iwpan phy `iwpan phy | grep -m1 wpan_phy | cut -d' ' -f2` interface add wpan1 type node $MACADDR
+    fi
+    ip link add link wpan1 name lowpan0 type lowpan
+fi
+#set channel and activate device
+
+###FIXME: I had to unload/reload bcfserial, so the phyX index increased.
+#iwpan phy phy0 set channel 0 $CHANNEL
+iwpan phy `iwpan phy | grep -m1 wpan_phy | cut -d' ' -f2` set channel 0 $CHANNEL
+
+iwpan dev wpan1 set pan_id $PANID
+ip link set wpan1 up
+ip link set lowpan0 up
+# add IPv6 address
+if [ ! -z "$IPADDR" -a "$IPADDR" != " " ]; then
+    sleep 1
+    echo ". adding IPv6 address $IPADDR to lowpan0"
+    ip -6 addr add $IPADDR dev lowpan0
+fi
+

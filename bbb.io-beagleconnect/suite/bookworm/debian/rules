@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_strip:
+	# Just disable for now...
+
+override_dh_auto_configure:
+	git clone https://github.com/jadonk/greybus.git
+	cd greybus ; git checkout f7fe50f8c0ab4545a0850e0552b99ad7522287b8 -b tmp ; cd ../
+	git clone https://git.beagleboard.org/beagleconnect/linux/gbridge.git
+	cd gbridge ; git checkout 058084cf9fb614aa7f72408df2bb0368464e93c0 -b tmp ; autoreconf -vfi ; GBNETLINKDIR=../greybus ./configure --enable-uart --enable-tcpip --disable-gbsim --enable-netlink --disable-bluetooth ; make -j2
+	mkdir -p ./tmp/usr/share/beagleconnect/
+	unzip debian/cc1352-wpanusb-0.0.2.zip -d ./tmp/usr/share/beagleconnect/
+	mv ./tmp/usr/share/beagleconnect/build/freedom/ ./tmp/usr/share/beagleconnect/
+	mv ./tmp/usr/share/beagleconnect/build/play/ ./tmp/usr/share/beagleconnect/
+	rm -rf ./tmp/usr/share/beagleconnect/build/
+	git clone https://git.beagleboard.org/beagleconnect/cc1352-firmware.git ./tmp/cc1352-firmware/
+
+%:
+	dh $@ --with systemd
+
+override_dh_installinit:
+	dh_installinit --name=lowpan --no-stop-on-upgrade --no-start
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=lowpan --no-enable
+
+override_dh_systemd_start:
+	dh_systemd_start --name=lowpan --no-start

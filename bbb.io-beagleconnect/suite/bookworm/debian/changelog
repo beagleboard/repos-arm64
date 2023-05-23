@@ -1,4 +1,4 @@
-beagleconnect (1.20230523.0-0~bullseye+20230523) bullseye; urgency=low
+beagleconnect (1.20230523.0-0~bookworm+20230523) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
