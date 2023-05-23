@@ -4,7 +4,7 @@
 
 package_name="bb-j721e-evm-firmware"
 debian_pkg_name="${package_name}"
-package_version="1.20220613.3"
+package_version="1.20230523.0"
 package_source=""
 src_dir=""
 
@@ -19,5 +19,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230405"
-bookworm_version="~bookworm+20230405"
+bullseye_version="~bullseye+20230523"
+bookworm_version="~bookworm+20230523"

@@ -28,6 +28,11 @@ wfirm="j7-main-r5f1_1-fw" ; remove_ln
 wfirm="j7-mcu-r5f0_0-fw" ; remove_ln
 wfirm="j7-mcu-r5f0_1-fw" ; remove_ln
 
+if [ -f /lib/firmware/cadence/mhdp8546.bin ] ; then
+	rm /lib/firmware/cadence/mhdp8546.bin || true
+fi
+	cp -v /lib/firmware/cadence/ti/mhdp8546.bin /lib/firmware/cadence/mhdp8546.bin
+
 case "$1" in
 	configure)
 		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then

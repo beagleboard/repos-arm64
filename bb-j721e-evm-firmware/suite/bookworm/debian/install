@@ -7,4 +7,5 @@ debian/j7-main-r5f1_0-fw.tisdk /lib/firmware/
 debian/j7-main-r5f1_1-fw.tisdk /lib/firmware/
 debian/j7-mcu-r5f0_0-fw.tisdk /lib/firmware/
 debian/j7-mcu-r5f0_1-fw.tisdk /lib/firmware/
+debian/mhdp8546.bin /lib/firmware/cadence/ti/
 debian/pvdec_full_bin.fw /lib/firmware/
