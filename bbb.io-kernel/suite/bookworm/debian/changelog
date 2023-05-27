@@ -1,6 +1,6 @@
-bbb.io-kernel (1.20230523.0-0~bookworm+20230523) bookworm; urgency=low
+bbb.io-kernel (1.20230527.0-0~bookworm+20230527) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 23 May 2023 09:32:56 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 27 May 2023 12:04:14 -0500
 
