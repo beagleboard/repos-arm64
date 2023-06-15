@@ -99,7 +99,7 @@ Description: BeagleBoard.org Mainline
 Package: bbb.io-kernel-6.3-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.3.6-arm64-k3-r18
+Pre-Depends: linux-image-6.3.8-arm64-k3-r20
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.3-k3-arm64 for k3-arm64
  This metapackage will install linux-image-6.3-k3-arm64 for in Debian.
