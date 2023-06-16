@@ -1,0 +1,6 @@
+bbb.io-clickid-manifests (1.20230616.0-0~bullseye+20230616) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 16 Jun 2023 15:54:37 -0500
+
