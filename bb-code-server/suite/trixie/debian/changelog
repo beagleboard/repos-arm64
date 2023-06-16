@@ -1,4 +1,4 @@
-bb-code-server (4.14.0.0-0~bookworm+20230616) bookworm; urgency=low
+bb-code-server (4.14.0.0-0~trixie+20230616) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
