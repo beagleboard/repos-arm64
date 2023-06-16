@@ -7,7 +7,7 @@ package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
 git_repo="https://git.beagleboard.org/beagleconnect/manifesto.git"
-git_sha="cade30fef0716c6fdbcd77f53a74e0a6ca30bd4b"
+git_sha="d937e007d09e16aa53e8f7407f9126acd9e711c8"
 reprepro_dir="b/${package_name}"
 dl_path=""
 

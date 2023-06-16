@@ -2,5 +2,5 @@ bbb.io-clickid-manifests (1.20230616.1-0~bookworm+20230616) bookworm; urgency=lo
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 16 Jun 2023 16:00:19 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 16 Jun 2023 16:04:02 -0500
 
