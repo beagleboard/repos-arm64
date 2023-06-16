@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-mirror="https://snapshot.debian.org/archive/debian/20211102T152554Z/"
+mirror="https://deb.debian.org/debian"
 
 package_name="debootstrap"
 debian_pkg_name="${package_name}"
-package_version="1.0.125"
+package_version="1.0.128+nmu2"
 
 git_repo=""
 git_sha=""
