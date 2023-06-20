@@ -1,4 +1,4 @@
-bbb.io-kernel (1.20230620.0-0~bookworm+20230620) bookworm; urgency=low
+bbb.io-kernel (1.20230620.0-0~trixie+20230620) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
