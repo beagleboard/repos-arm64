@@ -2,7 +2,7 @@
 
 package_name="bbb.io-clickid-manifests"
 debian_pkg_name="${package_name}"
-package_version="1.20230616.3"
+package_version="1.20230616.4"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
