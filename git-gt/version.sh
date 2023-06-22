@@ -4,7 +4,7 @@
 
 package_name="gt"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-git20220507.1"
+package_version="0.0.0-git20220507.2"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
@@ -19,5 +19,7 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230405"
-bookworm_version="~bookworm+20230405"
+bullseye_version="~bullseye+20230622"
+bookworm_version="~bookworm+20230622"
+trixie_version="~trixie+20230622"
+jammy_version="~jammy+20230622"

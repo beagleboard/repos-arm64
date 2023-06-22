@@ -1,4 +1,4 @@
-gt (0.0.0-git20220507.2-0~bookworm+20230622) bookworm; urgency=low
+gt (0.0.0-git20220507.2-0~trixie+20230622) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
