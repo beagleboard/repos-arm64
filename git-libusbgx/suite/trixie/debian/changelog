@@ -1,4 +1,4 @@
-libusbgx (0.2.0-git20210811.3-0~bookworm+20230622) bookworm; urgency=low
+libusbgx (0.2.0-git20210811.3-0~trixie+20230622) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
