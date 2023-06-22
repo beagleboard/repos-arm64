@@ -1,2 +1,2 @@
-build/*.mnfb /usr/lib/firmware/mikrobus/
+build/*.mnfb /lib/firmware/mikrobus/
 manifesto /usr/bin/
