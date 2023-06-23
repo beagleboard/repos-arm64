@@ -1,6 +1,6 @@
-bbb.io-kernel (1.20230623.0-0~trixie+20230623) trixie; urgency=low
+bbb.io-kernel (1.20230623.1-0~trixie+20230623) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 09:44:58 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 13:33:08 -0500
 

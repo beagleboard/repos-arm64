@@ -26,12 +26,10 @@ generate_header () {
 	echo "Package: bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
-	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
-	echo " , bbb.io-clickid-manifests" >> ./suite/${dist}/debian/${wfile}
+	echo " bbb.io-clickid-manifests" >> ./suite/${dist}/debian/${wfile}
 	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
-	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
 	echo " , \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
 	echo "Description: BeagleBoard.org Kernel Branches" >> ./suite/${dist}/debian/${wfile}
 	echo " This package contains tasksel information for the BeagleBoard.org Kernel Branch." >> ./suite/${dist}/debian/${wfile}
@@ -43,9 +41,7 @@ generate_kernel_ti () {
 	echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
-	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
-	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
-	echo " , linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+	echo " linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 	echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 	echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
