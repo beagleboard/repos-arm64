@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230623.0-0~trixie+20230623) trixie; urgency=low
+generic-sys-mods (1.20230623.1-0~trixie+20230623) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 09:25:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 10:28:23 -0500
 
