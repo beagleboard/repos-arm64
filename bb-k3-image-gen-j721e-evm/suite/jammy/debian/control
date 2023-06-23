@@ -1,0 +1,23 @@
+Source: bb-k3-image-gen-j721e-evm
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , device-tree-compiler
+ , gcc-arm-linux-gnueabihf
+ , git
+ , python3-dev
+ , wget
+ , u-boot-tools
+Standards-Version: 4.5.1
+Homepage: https://github.com/beagleboard/k3-image-gen
+
+Package: bb-k3-image-gen-j721e-evm
+Architecture: all
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Description: BeagleBoard.org System Firmware j721e-evm
+ BeagleBoard.org System Firmware (SYSFW) and Configuration Image Generator TI K3 Family SoCs j721e-evm
