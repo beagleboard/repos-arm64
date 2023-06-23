@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.3-0~bookworm+20230623) bookworm; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.3-0~jammy+20230623) jammy; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
