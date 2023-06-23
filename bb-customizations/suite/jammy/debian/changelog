@@ -1,4 +1,4 @@
-bb-customizations (1.20230623.0-0~bullseye+20230623) bullseye; urgency=low
+bb-customizations (1.20230623.0-0~jammy+20230623) jammy; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
