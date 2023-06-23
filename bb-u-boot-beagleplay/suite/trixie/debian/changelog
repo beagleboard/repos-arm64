@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2021.01.20230213.8-0~bullseye+20230623) bullseye; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.8-0~trixie+20230623) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
