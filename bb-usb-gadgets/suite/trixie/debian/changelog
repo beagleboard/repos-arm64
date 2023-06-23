@@ -1,4 +1,4 @@
-bb-usb-gadgets (1.20230623.0-0~bookworm+20230623) bookworm; urgency=low
+bb-usb-gadgets (1.20230623.0-0~trixie+20230623) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
