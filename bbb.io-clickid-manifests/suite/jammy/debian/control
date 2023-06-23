@@ -1,0 +1,15 @@
+Source: bbb.io-clickid-manifests
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13)
+ , python-is-python3
+Standards-Version: 4.5.0
+Homepage: https://git.beagleboard.org/beagleconnect/manifesto
+
+Package: bbb.io-clickid-manifests
+Architecture: any
+Depends: ${misc:Depends}
+Description: clickid-manifests for Beaglebone.
+ This package contains clickid-manifests for Beaglebone.

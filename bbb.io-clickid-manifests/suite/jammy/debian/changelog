@@ -1,4 +1,4 @@
-bbb.io-clickid-manifests (1.20230616.5-0~bullseye+20230623) bullseye; urgency=low
+bbb.io-clickid-manifests (1.20230616.5-0~jammy+20230623) jammy; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
