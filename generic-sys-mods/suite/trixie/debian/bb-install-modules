@@ -1,0 +1,49 @@
+#!/bin/sh
+
+if ! id | grep -q root; then
+	echo "must be run as root"
+	exit
+fi
+
+log="bb-install-modules:"
+
+. /etc/default/generic-sys-mods
+. /opt/modules/install
+
+if [ -f /opt/modules/install ] ; then
+	soc_family=$(cat /sys/devices/soc0/family || true)
+
+	case "${soc_family}" in
+	AM62X)
+		systemctl stop lightdm.service || true
+		dpkg -i /opt/modules/ti-sgx-am62-modules-${uname}*_arm64.deb || true
+		dpkg -i /opt/modules/bbb.io-kernel-tasks*.deb || true
+		dpkg -i /opt/modules/bbb.io-kernel-${branch}-k3-am62_1*.deb || true
+		dpkg -i /opt/modules/bbb.io-kernel-${branch}_1*.deb || true
+		depmod -a ${uname}
+		update-initramfs -u -k ${uname}
+		cp -v /boot/initrd.img-${uname} /boot/firmware/initrd.img
+		if [ -f /usr/sbin/beagle-sgx-drivers-install ] ; then
+			/usr/sbin/beagle-sgx-drivers-install || true
+		fi
+		systemctl start lightdm.service || true
+		;;
+	J721E)
+		systemctl stop lightdm.service || true
+		dpkg -i /opt/modules/ti-sgx-j721e-modules-${uname}*_arm64.deb || true
+		dpkg -i /opt/modules/bbb.io-kernel-tasks*.deb || true
+		dpkg -i /opt/modules/bbb.io-kernel-${branch}-k3-j721e_1*.deb || true
+		dpkg -i /opt/modules/bbb.io-kernel-${branch}_1*.deb || true
+		depmod -a ${uname}
+		update-initramfs -u -k ${uname}
+		cp -v /boot/initrd.img-${uname} /boot/firmware/initrd.img
+		if [ -f /usr/sbin/beagle-sgx-drivers-install ] ; then
+			/usr/sbin/beagle-sgx-drivers-install || true
+		fi
+		systemctl start lightdm.service || true
+		;;
+	*)
+		echo "Please update ARCH_SOC_MODULES in /etc/default/generic-sys-mods"
+		;;
+	esac
+fi
