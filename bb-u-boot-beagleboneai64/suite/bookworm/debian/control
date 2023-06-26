@@ -4,8 +4,8 @@ Priority: extra
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
- , bb-k3-image-gen-j721e-evm,
- , bc,
+ , bb-k3-image-gen-j721e-evm
+ , bc
  , bison
  , ca-certificates
  , device-tree-compiler
@@ -24,10 +24,11 @@ Homepage: https://git.beagleboard.org/beagleboard/u-boot/
 
 Package: bb-u-boot-beagleboneai64
 Architecture: arm64
+Pre-Depends:
+ bb-k3-image-gen-j721e-evm
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
- , bb-k3-image-gen-j721e-evm
  , mmc-utils
 Description: beagleboard.org u-boot for beagleboneai64
  beagleboard.org u-boot for beagleboneai64
