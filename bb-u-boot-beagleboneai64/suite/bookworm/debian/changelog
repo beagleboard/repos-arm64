@@ -1,6 +1,6 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.4-0~bookworm+20230626) bookworm; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.5-0~bookworm+20230626) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 26 Jun 2023 09:48:47 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 26 Jun 2023 10:58:23 -0500
 
