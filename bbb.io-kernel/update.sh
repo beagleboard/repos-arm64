@@ -26,7 +26,8 @@ generate_header () {
 	echo "Package: bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
-	echo " bbb.io-clickid-manifests" >> ./suite/${dist}/debian/${wfile}
+	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
+	echo " , bbb.io-clickid-manifests" >> ./suite/${dist}/debian/${wfile}
 	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
@@ -192,11 +193,11 @@ do_jammy () {
 	unset sgxj721e
 	unset sgxmodule
 
-	#msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	#msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	#msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	#msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	#msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
 }
 
 do_bullseye
