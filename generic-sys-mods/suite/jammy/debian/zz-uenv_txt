@@ -20,13 +20,15 @@ fi
 
 if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 	if [ -f /boot/vmlinuz-${version} ] ; then
+		echo "Updating: Device Trees"
+		cp -v /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
+
 		rm -f /boot/firmware/Image || true
 		echo "Updating: /boot/firmware/Image"
 		cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
-		echo "Updating: Device Trees"
-		cp /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
+
 		rm -f /boot/firmware/initrd.img || true
-		echo "Updating /boot/firmware/initrd.img"
+		echo "Updating: /boot/firmware/initrd.img"
 		cp -v /boot/initrd.img-${version} /boot/firmware/initrd.img || true
 		if [ -d /usr/lib/linux-image-${version}/ti/overlays/ ] ; then
 			mkdir -p /boot/firmware/overlays/ || true
