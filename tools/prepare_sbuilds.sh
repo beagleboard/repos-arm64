@@ -48,13 +48,13 @@ arch="arm64"
 options="--exclude=debfoster"
 setup_update_sbuild
 
-dist="trixie"
+dist="bookworm"
 unset flavor
 arch="arm64"
 options="--exclude=debfoster"
 setup_update_sbuild
 
-dist="bookworm"
+dist="trixie"
 unset flavor
 arch="arm64"
 options="--exclude=debfoster"
