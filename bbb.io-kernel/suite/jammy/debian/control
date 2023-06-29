@@ -53,6 +53,68 @@ Recommends:
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-j721e in Debian.
 
+Package: bbb.io-kernel-6.1-ti
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ linux-image-6.1.26-ti-arm64-r3
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Description: BeagleBoard.org 6.1-ti
+ This metapackage will install linux-image-6.1-ti in Debian.
+
+Package: bbb.io-kernel-6.1-ti-k3-am62
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-ti
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleplay
+Description: BeagleBoard.org 6.1-ti
+ This metapackage will install linux-image-6.1-ti for k3-am62 in Debian.
+
+Package: bbb.io-kernel-6.1-ti-k3-j721e
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-ti
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleboneai64
+Description: BeagleBoard.org 6.1-ti
+ This metapackage will install linux-image-6.1-ti for k3-j721e in Debian.
+
+Package: bbb.io-kernel-6.1-rt-ti
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ linux-image-6.1.26-ti-rt-arm64-r3
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Description: BeagleBoard.org 6.1-rt-ti
+ This metapackage will install linux-image-6.1-rt-ti in Debian.
+
+Package: bbb.io-kernel-6.1-rt-ti-k3-am62
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-rt-ti
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleplay
+Description: BeagleBoard.org 6.1-rt-ti
+ This metapackage will install linux-image-6.1-rt-ti for k3-am62 in Debian.
+
+Package: bbb.io-kernel-6.1-rt-ti-k3-j721e
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-rt-ti
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleboneai64
+Description: BeagleBoard.org 6.1-rt-ti
+ This metapackage will install linux-image-6.1-rt-ti for k3-j721e in Debian.
+
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
