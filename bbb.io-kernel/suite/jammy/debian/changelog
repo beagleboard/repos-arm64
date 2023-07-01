@@ -1,6 +1,6 @@
-bbb.io-kernel (1.20230630.0-0~jammy+20230630) jammy; urgency=low
+bbb.io-kernel (1.20230701.0-0~jammy+20230701) jammy; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 30 Jun 2023 09:11:19 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 01 Jul 2023 13:51:55 -0500
 
