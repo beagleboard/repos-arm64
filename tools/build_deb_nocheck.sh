@@ -70,6 +70,7 @@ run () {
 
 runner () {
 	if [ -d ./suite/${suite}/ ] ; then
+		echo ${suite}
 		run
 	fi
 }
