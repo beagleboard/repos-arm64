@@ -190,7 +190,6 @@ start_run () {
 	suite="bullseye" ; runner
 	suite="bookworm" ; runner
 	suite="trixie" ; runner
-	suite="focal" ; runner
 	suite="jammy" ; runner
 }
 
