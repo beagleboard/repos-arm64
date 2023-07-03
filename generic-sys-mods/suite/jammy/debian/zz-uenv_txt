@@ -35,6 +35,7 @@ if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 			echo "Updating: overlays"
 			cp /usr/lib/linux-image-${version}/ti/overlays/*.dtbo /boot/firmware/overlays/ || true
 		fi
+		echo "${version}" > /boot/firmware/kversion
 		echo "zz-uenv_txt: Updated extlinux.conf /boot/firmware/ for: [${version}]"
 	fi
 fi

@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230623.2-0~bookworm+20230626) bookworm; urgency=low
+generic-sys-mods (1.20230703.0-0~bookworm+20230703) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 26 Jun 2023 09:54:58 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 03 Jul 2023 15:11:19 -0500
 
