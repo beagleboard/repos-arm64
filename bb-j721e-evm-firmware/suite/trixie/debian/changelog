@@ -1,0 +1,6 @@
+bb-j721e-evm-firmware (1.20230705.0-0~trixie+20230705) trixie; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jul 2023 16:32:42 -0500
+
