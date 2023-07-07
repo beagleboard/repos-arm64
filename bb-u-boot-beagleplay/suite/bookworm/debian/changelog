@@ -1,6 +1,6 @@
-bb-u-boot-beagleplay (2021.01.20230213.8-0~bookworm+20230623) bookworm; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.9-0~bookworm+20230707) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 09:41:07 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 07 Jul 2023 15:33:00 -0500
 
