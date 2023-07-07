@@ -3,8 +3,8 @@ debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleplay
 debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleplay
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay
-debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagleplay
-debian/emmc-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagleplay
+debian/microsd-extlinux-swap.conf /opt/u-boot/bb-u-boot-beagleplay
+debian/emmc-extlinux-swap.conf /opt/u-boot/bb-u-boot-beagleplay
 debian/beagleplay-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleplay
 debian/beagleplay-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleplay
 debian/beagleplay-emmc-to-microsd-w-swap /opt/u-boot/bb-u-boot-beagleplay
