@@ -203,6 +203,9 @@ check_running_system () {
 			/usr/sbin/update-initramfs -c -k $(uname -r) || true
 			message="--------------------------------------------------------------------------------" ; broadcast
 		fi
+		if [ -f /boot/firmware/initrd.img ] ; then
+			cp -v /boot/initrd.img-$(uname -r) /boot/firmware/initrd.img
+		fi
 	fi
 	flush_cache
 }
@@ -431,7 +434,7 @@ partition_drive () {
 		message="INFO: /sbin/sfdisk: [/sbin/sfdisk ${sfdisk_options} ${destination}]"              ; broadcast
 		message="INFO: /sbin/sfdisk: [${partition_one_start_mb}M,${partition_one_size_mb}M,${partition_one_fstype},*]" ; broadcast
 		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
-			message="INFO: /sbin/sfdisk: [${partition_two_start_mb}M,${partition_two_size_mb},0x82,-]" ; broadcast
+			message="INFO: /sbin/sfdisk: [${partition_two_start_mb}M,${partition_two_size_mb}M,0x82,-]" ; broadcast
 			message="INFO: /sbin/sfdisk: [${partition_three_start_mb}M,,,-]" ; broadcast
 		else
 			message="INFO: /sbin/sfdisk: [${partition_two_start_mb}M,,,-]" ; broadcast
@@ -441,7 +444,7 @@ partition_drive () {
 		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
 			LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
 				${partition_one_start_mb}M,${partition_one_size_mb}M,${partition_one_fstype},*
-				${partition_two_start_mb}M,${partition_two_size_mb},0x82,-
+				${partition_two_start_mb}M,${partition_two_size_mb}M,0x82,-
 				${partition_three_start_mb}M,,,-
 			__EOF__
 		else
