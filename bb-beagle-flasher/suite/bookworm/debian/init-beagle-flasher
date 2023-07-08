@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20230424.0, rsync run twice on rootfs..."
+version_message="1.20230707.0, add swap support on am62..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -213,8 +213,8 @@ format_boot () {
 }
 
 format_root () {
-	message="/sbin/mkfs.ext4 ${ext4_options} ${destination}p2 -L ${rootfs_label}"              ; broadcast
-	LC_ALL=C /sbin/mkfs.ext4 ${ext4_options} ${destination}p2 -L ${rootfs_label}
+	message="/sbin/mkfs.ext4 ${ext4_options} ${destination}p${dest_rfs_part} -L ${rootfs_label}"              ; broadcast
+	LC_ALL=C /sbin/mkfs.ext4 ${ext4_options} ${destination}p${dest_rfs_part} -L ${rootfs_label}
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 }
@@ -228,9 +228,7 @@ format_single_root () {
 
 copy_boot () {
 	message="Copying: ${source}p1 -> ${destination}p1" ; broadcast
-
 	mount ${source}p1 /boot/firmware || true
-
 	mkdir -p /tmp/boot/ || true
 
 	mount ${destination}p1 /tmp/boot/ -o sync
@@ -282,6 +280,9 @@ copy_rootfs () {
 	if [ "x${dest_rfs_part}" = "x2" ] ; then
 		echo "${destination}p1  /boot/firmware vfat defaults 0 0" >> /tmp/rootfs/etc/fstab
 	fi
+	if [ "x${rfs_swap_size_mb}" != "x" ] ; then
+		echo "${destination}p2  none    swap    sw      0       0" >>/tmp/rootfs/etc/fstab
+	fi
 	echo "debugfs  /sys/kernel/debug  debugfs  mode=755,uid=root,gid=gpio,defaults  0  0" >> /tmp/rootfs/etc/fstab
 	message="INFO: [cat /tmp/rootfs/etc/fstab]"                                                ; broadcast
 	message="`cat /tmp/rootfs/etc/fstab`"                                                      ; broadcast
@@ -289,10 +290,16 @@ copy_rootfs () {
 	flush_cache
 
 	if [ "x${flash_back}" != "x" ] ; then
-		if [ -f /etc/beagle-flasher/${flash_back} ] ; then
-			message="INFO: [cp -v /etc/beagle-flasher/${flash_back} /tmp/rootfs/etc/default/beagle-flasher]" ; broadcast
-			cp -v /etc/beagle-flasher/${flash_back} /tmp/rootfs/etc/default/beagle-flasher
+		if [ -f ${flash_back} ] ; then
+			message="INFO: [cp -v ${flash_back} /tmp/rootfs/etc/default/beagle-flasher]" ; broadcast
+			cp -v ${flash_back} /tmp/rootfs/etc/default/beagle-flasher
 			message="--------------------------------------------------------------------------------" ; broadcast
+		else
+			if [ -f /etc/beagle-flasher/${flash_back} ] ; then
+				message="INFO: [cp -v /etc/beagle-flasher/${flash_back} /tmp/rootfs/etc/default/beagle-flasher]" ; broadcast
+				cp -v /etc/beagle-flasher/${flash_back} /tmp/rootfs/etc/default/beagle-flasher
+				message="--------------------------------------------------------------------------------" ; broadcast
+			fi
 		fi
 	fi
 
@@ -384,23 +391,21 @@ partition_drive () {
 	fi
 
 	if [ "x${rfs_partition}" = "xsingle" ] ; then
-		rfs_rootfs_startmb=${rfs_rootfs_startmb:-"4"}
+		partition_one_start_mb=${rfs_rootfs_startmb:-"4"}
+		partition_one_fstype=${rfs_sfdisk_fstype:-"L"}
 
-		if [ "x${rfs_rootfs_type}" = "xext4" ] ; then
-			sfdisk_fstype="L"
-		fi
 		single_root_label=${single_root_label:-"rootfs"}
 
-		sfdisk_options="--force"
+		sfdisk_options="--force --wipe-partitions always"
 
 		message="INFO: Partitioning: ${destination}"                                               ; broadcast
 		message="INFO: /sbin/sfdisk: [$(LC_ALL=C /sbin/sfdisk --version)]"                         ; broadcast
 		message="INFO: /sbin/sfdisk: [/sbin/sfdisk ${sfdisk_options} ${destination}]"              ; broadcast
-		message="INFO: /sbin/sfdisk: [${rfs_rootfs_startmb}M,,${sfdisk_fstype},*]"                 ; broadcast
+		message="INFO: /sbin/sfdisk: [${partition_one_start_mb}M,,${partition_one_fstype},*]"                 ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
 
 		LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
-			${rfs_rootfs_startmb}M,,${sfdisk_fstype},*
+			${partition_one_start_mb}M,,${partition_one_fstype},*
 		__EOF__
 
 		flush_cache
@@ -413,39 +418,67 @@ partition_drive () {
 		dest_rfs_part="1"
 		copy_rootfs
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
-		rfs_boot_startmb=${rfs_boot_startmb:-"1"}
-		rfs_boot_size_mb=${rfs_boot_size_mb:-"128"}
-		rfs_sfdisk_fstype=${rfs_sfdisk_fstype:-"0xc"}
+		partition_one_start_mb=${rfs_boot_startmb:-"1"}
+		partition_one_size_mb=${rfs_boot_size_mb:-"128"}
+		partition_one_fstype=${rfs_sfdisk_fstype:-"0xc"}
 
-		sfdisk_rootfs_startmb=$(($rfs_boot_startmb + $rfs_boot_size_mb))
+		partition_two_start_mb=$(($partition_one_start_mb + $partition_one_size_mb))
+
+		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
+			partition_two_size_mb="${rfs_swap_size_mb}"
+			partition_three_start_mb=$(($partition_one_start_mb + $partition_one_size_mb + $partition_two_size_mb))
+		fi
 
 		boot_label=${boot_label:-"FIRMWARE"}
 		rootfs_label=${rootfs_label:-"rootfs"}
 
-		sfdisk_options="--force"
+		sfdisk_options="--force --wipe-partitions always"
 
 		message="INFO: Partitioning: ${destination}"                                               ; broadcast
 		message="INFO: /sbin/sfdisk: [$(LC_ALL=C /sbin/sfdisk --version)]"                         ; broadcast
 		message="INFO: /sbin/sfdisk: [/sbin/sfdisk ${sfdisk_options} ${destination}]"              ; broadcast
-		message="INFO: /sbin/sfdisk: [${rfs_boot_startmb}M,${rfs_boot_size_mb}M,${rfs_sfdisk_fstype},*]" ; broadcast
-		message="INFO: /sbin/sfdisk: [${sfdisk_rootfs_startmb}M,,,-]" ; broadcast
+		message="INFO: /sbin/sfdisk: [${partition_one_start_mb}M,${partition_one_size_mb}M,${partition_one_fstype},*]" ; broadcast
+		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
+			message="INFO: /sbin/sfdisk: [${partition_two_start_mb}M,${partition_two_size_mb},0x82,-]" ; broadcast
+			message="INFO: /sbin/sfdisk: [${partition_three_start_mb}M,,,-]" ; broadcast
+		else
+			message="INFO: /sbin/sfdisk: [${partition_two_start_mb}M,,,-]" ; broadcast
+		fi
 		message="--------------------------------------------------------------------------------" ; broadcast
 
-		LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
-			${rfs_boot_startmb}M,${rfs_boot_size_mb}M,${rfs_sfdisk_fstype},*
-			${sfdisk_rootfs_startmb}M,,,-
-		__EOF__
+		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
+			LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
+				${partition_one_start_mb}M,${partition_one_size_mb}M,${partition_one_fstype},*
+				${partition_two_start_mb}M,${partition_two_size_mb},0x82,-
+				${partition_three_start_mb}M,,,-
+			__EOF__
+		else
+			LC_ALL=C /sbin/sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
+				${partition_one_start_mb}M,${partition_one_size_mb}M,${partition_one_fstype},*
+				${partition_two_start_mb}M,,,-
+			__EOF__
+		fi
 
 		flush_cache
+
+		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
+			src_rfs_part="3"
+			dest_rfs_part="3"
+		else
+			src_rfs_part="2"
+			dest_rfs_part="2"
+		fi
+
 		message="INFO: Formatting: ${destination}"                                                 ; broadcast
 		format_boot
 		format_root
+		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
+			LC_ALL=C /sbin/mkswap ${destination}p2"
+		fi
 		message="INFO: Formatting: ${destination} complete"                                        ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
 
 		copy_boot
-		src_rfs_part="2"
-		dest_rfs_part="2"
 		copy_rootfs
 	else
 		example_failure
