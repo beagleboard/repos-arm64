@@ -465,7 +465,7 @@ partition_drive () {
 		format_boot
 		format_root
 		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
-			LC_ALL=C /sbin/mkswap ${destination}p2"
+			LC_ALL=C /sbin/mkswap ${destination}p2
 		fi
 		message="INFO: Formatting: ${destination} complete"                                        ; broadcast
 		message="--------------------------------------------------------------------------------" ; broadcast
