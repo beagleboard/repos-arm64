@@ -16,11 +16,9 @@ Last-Update: 2022-10-18
  src/ipa/raspberrypi/raspberrypi.cpp | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/src/ipa/raspberrypi/raspberrypi.cpp b/src/ipa/raspberrypi/raspberrypi.cpp
-index 14b06a4..3e4383f 100644
 --- a/src/ipa/raspberrypi/raspberrypi.cpp
 +++ b/src/ipa/raspberrypi/raspberrypi.cpp
-@@ -60,7 +60,7 @@ using utils::Duration;
+@@ -66,7 +66,7 @@
  /* Configure the sensor with these values initially. */
  constexpr double defaultAnalogueGain = 1.0;
  constexpr Duration defaultExposureTime = 20.0ms;
@@ -29,7 +27,7 @@ index 14b06a4..3e4383f 100644
  constexpr Duration defaultMaxFrameDuration = 250.0s;
  
  /*
-@@ -69,7 +69,7 @@ constexpr Duration defaultMaxFrameDuration = 250.0s;
+@@ -75,7 +75,7 @@
   * we rate-limit the controller Prepare() and Process() calls to lower than or
   * equal to this rate.
   */

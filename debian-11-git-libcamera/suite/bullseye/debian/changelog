@@ -1,25 +1,18 @@
-libcamera (0.0.3-6bbbio0~bullseye+20230710) bullseye; urgency=low
+libcamera (0.0.4-1bbbio0~bullseye+20230710) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 10 Jul 2023 11:26:55 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 10 Jul 2023 12:04:39 -0500
 
-libcamera (0.0.3-6) unstable; urgency=medium
+libcamera (0.0.4-1) experimental; urgency=medium
 
-  * Use the DEB_HOST_GNU_TYPE for the build directory.
+  * New upstream version 0.0.4
+  * Bump SONAME to libcamera0.0.4
+  * Add superficial tests
+  * Don't ignore tests failures at build time (Closes: #1024782)
+  * Upload to experimental because of the current Bookworm freeze
 
- -- Andrej Shadura <andrewsh@debian.org>  Mon, 06 Mar 2023 10:40:47 +0100
-
-libcamera (0.0.3-5) unstable; urgency=medium
-
-  [ Dylan Aïssi ]
-  * Add superficial tests.
-  * Add allow-stderr for tests.
-
-  [ George Kiagiadakis ]
-  * Add rule to re-sign the IPA modules after dh_strip.
-
- -- Andrej Shadura <andrewsh@debian.org>  Mon, 06 Mar 2023 09:45:00 +0100
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 01 Feb 2023 22:02:03 +0100
 
 libcamera (0.0.3-4) unstable; urgency=medium
 
