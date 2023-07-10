@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20230707.0, add swap support on am62..."
+version_message="1.20230710.0, add swap to non-swap to swap..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
@@ -294,7 +294,7 @@ copy_rootfs () {
 	echo "# /etc/fstab: static file system information." > /tmp/rootfs/etc/fstab
 	echo "#" >> /tmp/rootfs/etc/fstab
 	echo "${destination}p${dest_rfs_part}  /  ext4  noatime,errors=remount-ro  0  1" >> /tmp/rootfs/etc/fstab
-	if [ "x${dest_rfs_part}" = "x2" ] ; then
+	if [ "x${dest_rfs_part}" = "x2" ] || [ "x${dest_rfs_part}" = "x3" ] ; then
 		echo "${destination}p1  /boot/firmware vfat defaults 0 0" >> /tmp/rootfs/etc/fstab
 	fi
 	if [ "x${rfs_swap_size_mb}" != "x" ] ; then

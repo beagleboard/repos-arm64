@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20230707.0, add swap support on am62..."
+version_message="1.20230710.0, add swap to non-swap to swap..."
 
 #mke2fs -c
 #Check the device for bad blocks before creating the file system.
