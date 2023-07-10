@@ -1,4 +1,4 @@
-libcamera (0.0.4-3bbbio0~bullseye+20230710) bullseye; urgency=low
+libcamera (0.0.4-3bbbio0~bookworm+20230710) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 

@@ -1,0 +1,2 @@
+ppc64el-fix-ftbfs-gcc.patch
+skip_failing_tests.patch

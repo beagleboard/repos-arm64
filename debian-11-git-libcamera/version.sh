@@ -4,7 +4,7 @@
 #https://snapshot.debian.org/package/libcamera/
 
 #mirror="http://http.debian.net/debian"
-mirror="https://snapshot.debian.org/archive/debian/20230202T212152Z"
+mirror="https://snapshot.debian.org/archive/debian/20230306T203828Z"
 
 package_name="libcamera"
 debian_pkg_name="${package_name}"
@@ -17,9 +17,10 @@ git_sha=""
 reprepro_dir="libc/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-1"
+debian_version="${package_version}-3"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio0"
 
 bullseye_version="~bullseye+20230710"
+bookworm_version="~bookworm+20230710"
