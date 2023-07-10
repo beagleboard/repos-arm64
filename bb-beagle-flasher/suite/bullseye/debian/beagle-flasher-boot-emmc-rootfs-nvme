@@ -203,8 +203,19 @@ check_running_system () {
 			/usr/sbin/update-initramfs -c -k $(uname -r) || true
 			message="--------------------------------------------------------------------------------" ; broadcast
 		fi
+		if [ -f /boot/firmware/initrd.img ] ; then
+			cp -v /boot/initrd.img-$(uname -r) /boot/firmware/initrd.img
+		fi
 	fi
 	flush_cache
+
+	if [ -f /etc/default/generic-sys-mods ] ; then
+		message="INFO: [cat /etc/default/generic-sys-mods]"                             ; broadcast
+		cat /etc/default/generic-sys-mods
+		. /etc/default/generic-sys-mods
+		src_rfs_part=${ROOT_PARTITION}
+		message="--------------------------------------------------------------------------------" ; broadcast
+	fi
 }
 
 format_boot () {
@@ -339,15 +350,13 @@ partition_drive () {
 		message="--------------------------------------------------------------------------------" ; broadcast
 
 		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
-			src_rfs_part="3"
+			src_rfs_part=${src_rfs_part:-"3"}
 			dest_rfs_part="1"
 		else
-			src_rfs_part="2"
+			src_rfs_part=${src_rfs_part:-"2"}
 			dest_rfs_part="1"
 		fi
-
 		copy_rootfs
-
 		if [ "x${extlinux}" != "x" ] ; then
 			if [ -f ${extlinux} ] ; then
 				message="INFO: [/boot/firmware/extlinux/extlinux.conf]"                                             ; broadcast
@@ -402,10 +411,10 @@ partition_drive () {
 		flush_cache
 
 		if [ "x${rfs_swap_size_mb}" != "x" ] ; then
-			src_rfs_part="3"
+			src_rfs_part=${src_rfs_part:-"3"}
 			dest_rfs_part="3"
 		else
-			src_rfs_part="2"
+			src_rfs_part=${src_rfs_part:-"2"}
 			dest_rfs_part="2"
 		fi
 
