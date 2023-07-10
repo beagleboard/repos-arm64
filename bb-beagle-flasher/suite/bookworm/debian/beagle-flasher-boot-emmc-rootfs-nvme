@@ -135,6 +135,27 @@ example_failure () {
 
 write_failure () {
 	message="ERROR: writing to [destination=${destination}] failed..."                         ; broadcast
+
+	if [ "x${has_usr_leds}" = "xenable" ] ; then
+		if [ -e /proc/$CYLON_PID ]; then
+			kill $CYLON_PID > /dev/null 2>&1
+		fi
+
+		leds_pattern0=${leds_pattern0:-"heartbeat"}
+		leds_pattern1=${leds_pattern1:-"heartbeat"}
+		leds_pattern2=${leds_pattern2:-"heartbeat"}
+		leds_pattern3=${leds_pattern3:-"heartbeat"}
+		leds_base=/sys/class/leds/beaglebone\:green\:usr
+
+		if [ -e ${leds_base}0/trigger ] ; then
+			echo ${leds_pattern0} > ${leds_base}0/trigger || true
+			echo ${leds_pattern1} > ${leds_base}1/trigger || true
+			echo ${leds_pattern2} > ${leds_base}2/trigger || true
+			echo ${leds_pattern3} > ${leds_base}3/trigger || true
+		fi
+		message="Debug: Setting Heartbeat"                                                         ; broadcast
+	fi
+
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 	if [ "x${destination}" != "x" ] ; then
