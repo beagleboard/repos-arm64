@@ -5,14 +5,27 @@ dl_src () {
 		rm -rf ./src/
 	fi
 
-	git clone https://git.beagleboard.org/beagleboard/raspi-config.git ./src/
+	git clone https://git.beagleboard.org/beagleboard/${repo}.git ./src/
 }
 
-copy_all () {
+copy_some () {
 	cp -v ./src/${wfile} ./suite/bullseye/debian/
 }
 
+copy_all () {
+	cp -v ./src/${wfile} ./suite/bookworm/debian/
+	cp -v ./src/${wfile} ./suite/bullseye/debian/
+	cp -v ./src/${wfile} ./suite/jammy/debian/
+	cp -v ./src/${wfile} ./suite/trixie/debian/
+}
+
+repo="raspi-config"
 dl_src
 
-wfile="LICENSE" ; copy_all
-wfile="raspi-config" ; copy_all
+wfile="LICENSE" ; copy_some
+wfile="raspi-config" ; copy_some
+
+repo="usr-customizations"
+dl_src
+
+wfile="arm64/usr/sbin/beagle-kversion" ; copy_all
