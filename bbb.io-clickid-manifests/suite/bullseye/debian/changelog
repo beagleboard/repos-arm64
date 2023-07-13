@@ -1,6 +1,6 @@
-bbb.io-clickid-manifests (1.20230616.5-0~bullseye+20230623) bullseye; urgency=low
+bbb.io-clickid-manifests (1.20230713.0-0~bullseye+20230713) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Add MikroE UV Click
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 09:43:14 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 13 Jul 2023 15:01:46 -0500
 
