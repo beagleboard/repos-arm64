@@ -44,8 +44,7 @@ generate_kernel_ti () {
 		echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
-		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
-		echo " linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
@@ -108,6 +107,15 @@ generate_kernel_k3 () {
 	fi
 }
 
+changelog () {
+	git diff ./suite/${dist}/debian/control > /tmp/changelog-readme.diff
+	cat /tmp/changelog-readme.diff | grep +Pre-Depends: | awk '{print $2}' | awk -F ',' '{print $1}' > /tmp/changelog-readme.cat
+	sort -u /tmp/changelog-readme.cat > /tmp/changelog-readme.sort
+	echo "  * Kernel Updates" > suite/${dist}/readme.log
+	ts "  *" /tmp/changelog-readme.sort >> suite/${dist}/readme.log
+	cat suite/${dist}/readme.log
+}
+
 do_bullseye () {
 	arch="arm64"
 	dist="bullseye"
@@ -133,6 +141,7 @@ do_bullseye () {
 	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	changelog
 }
 
 do_bookworm () {
@@ -160,6 +169,7 @@ do_bookworm () {
 	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	changelog
 }
 
 do_trixie () {
@@ -187,6 +197,7 @@ do_trixie () {
 	#msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	changelog
 }
 
 do_jammy () {
@@ -214,6 +225,7 @@ do_jammy () {
 	#msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	changelog
 }
 
 do_bullseye
