@@ -1,6 +1,6 @@
-bb-code-server (4.14.1.0-0~jammy+20230705) jammy; urgency=low
+bb-code-server (4.14.1.1-0~jammy+20230714) jammy; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Debian Bookworm 12, forced to disable --cert to get code-server to start
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jul 2023 22:26:05 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Jul 2023 12:21:36 -0500
 
