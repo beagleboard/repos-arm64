@@ -1,6 +1,10 @@
-bb-code-server (4.14.1.1-0~bookworm+20230714) bookworm; urgency=low
+bb-code-server (4.15.0.0-0~bookworm+20230723) bookworm; urgency=low
 
   * Debian Bookworm 12, forced to disable --cert to get code-server to start
+  * Changed
+  * --Updated to Code 1.80.1.
+  * Added
+  * --trusted-origin flag for specifying origins that you trust but do not control (for example a reverse proxy).
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Jul 2023 12:21:36 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 23 Jul 2023 14:06:49 -0500
 

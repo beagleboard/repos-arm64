@@ -1,1 +1,5 @@
   * Debian Bookworm 12, forced to disable --cert to get code-server to start
+  * Changed
+  * --Updated to Code 1.80.1.
+  * Added
+  * --trusted-origin flag for specifying origins that you trust but do not control (for example a reverse proxy).
