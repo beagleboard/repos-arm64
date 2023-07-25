@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-beagleplay-mainline"
 debian_pkg_name="${package_name}"
-package_version="2023.07.20230725.2"
+package_version="2023.07.20230725.3"
 package_source=""
 src_dir=""
 
