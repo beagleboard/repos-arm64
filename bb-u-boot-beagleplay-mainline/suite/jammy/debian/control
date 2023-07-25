@@ -1,0 +1,30 @@
+Source: bb-u-boot-beagleplay-mainline
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , bc,
+ , bison
+ , ca-certificates
+ , device-tree-compiler
+ , flex
+ , gcc-arm-linux-gnueabihf
+ , git
+ , libssl-dev
+ , python3-cryptography
+ , python3-jsonschema
+ , python3-pycryptodome
+ , python3-pyelftools
+ , rsync
+ , u-boot-tools
+Standards-Version: 4.5.1
+
+Package: bb-u-boot-beagleplay-mainline
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , mmc-utils
+Description: bb-u-boot-beagleplay-mainline
+ bb-u-boot-beagleplay-mainline
