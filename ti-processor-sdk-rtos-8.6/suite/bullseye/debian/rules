@@ -4,7 +4,7 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-wfile1="ti-processor-sdk-rtos-j721e-evm-08_06_00_12.tar.gz"
+wfile1="ti-processor-sdk-rtos-j721e-evm-08_06_01_03.tar.gz"
 wfile2="opkg-utils-master.tar.gz"
 
 # Disable dh_link
@@ -20,7 +20,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; tar xf ./debian/$(wfile1) -C ./tmp/opt/ ; tar xf ./debian/$(wfile2) -C ./tmp/opt/ti-processor-sdk-rtos-j721e-evm-08_06_00_12/
+	mkdir -p ./tmp/opt/ ; tar xf ./debian/$(wfile1) -C ./tmp/opt/ ; tar xf ./debian/$(wfile2) -C ./tmp/opt/ti-processor-sdk-rtos-j721e-evm-08_06_01_03/
 
 %:
 	dh $@
