@@ -17,6 +17,7 @@ Build-Depends:
  , python3-pycryptodome
  , python3-pyelftools
  , rsync
+ , swig
  , u-boot-tools
 Standards-Version: 4.5.1
 
