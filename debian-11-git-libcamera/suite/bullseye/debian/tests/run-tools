@@ -1,7 +1,0 @@
-#!/bin/sh -e
-# autopkgtest check: Run cam and lc-compliance both with the --list option.
-
-cam --list
-
-lc-compliance --list
-
