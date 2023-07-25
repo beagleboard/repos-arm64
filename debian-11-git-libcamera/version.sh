@@ -6,7 +6,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="libcamera"
 debian_pkg_name="${package_name}"
-package_version="0.0.5"
+package_version="0.1.0"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
@@ -20,5 +20,5 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio1"
 
-bullseye_version="~bullseye+20230710"
-bookworm_version="~bookworm+20230710"
+bullseye_version="~bullseye+20230725"
+bookworm_version="~bookworm+20230725"

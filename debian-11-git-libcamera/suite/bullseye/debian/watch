@@ -4,6 +4,6 @@ opts="mode=git, pgpmode=none, repack, compression=xz" \
     https://git.libcamera.org/libcamera/libcamera.git/ \
     refs/tags/v@ANY_VERSION@
 
-opts="mode=git, pgpmode=none, pretty=0.0.1+git%cd+%h, repack, compression=xz" \
-    https://git.libcamera.org/libcamera/libcamera.git/ \
-    HEAD
+#opts="mode=git, pgpmode=none, pretty=0.0.5+git%cd+%h, repack, compression=xz" \
+#    https://git.libcamera.org/libcamera/libcamera.git/ \
+#    HEAD

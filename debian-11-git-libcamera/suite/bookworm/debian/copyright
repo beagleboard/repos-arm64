@@ -5,22 +5,22 @@ Source: https://libcamera.org/
 
 Files: *
 Copyright:
- 2018—2022 Libcamera contributors
+ 2018—2023 Libcamera contributors
  2019      Giulio Benetti
  2018—2019 Jacopo Mondi
- 2018—2022 Kieran Bingham
- 2018—2022 Laurent Pinchart
+ 2018—2023 Kieran Bingham
+ 2018—2023 Laurent Pinchart
  2019      Mickael Guene
  2018—2019 Niklas Söderlund
  2019      Paul Elder
  2018—2022 Google Inc.
- 2021—2022 Ideas on Board Oy
+ 2021—2023 Ideas on Board Oy
 License: GPL-2+
 
 Files:
  */*/meson.build
 Copyright:
- 2018—2022 Libcamera contributors
+ 2018—2023 Libcamera contributors
 License: CC0-1.0
 
 Files:
@@ -30,7 +30,7 @@ Files:
  src/apps/common/dng_writer.*
  include/libcamera/*
 Copyright:
- 2018—2022 Libcamera contributors
+ 2018—2023 Libcamera contributors
  2019      Giulio Benetti
  2018—2019 Jacopo Mondi
  2018—2019 Kieran Bingham
@@ -39,8 +39,8 @@ Copyright:
  2018—2019 Niklas Söderlund
  2019      Paul Elder
  2018—2021 Google Inc.
- 2019—2022 Raspberry Pi Ltd.
- 2021—2022 Ideas on Board Oy
+ 2019—2023 Raspberry Pi Ltd.
+ 2021—2023 Ideas on Board Oy
 License: LGPL-2.1+
 
 Files:
@@ -99,11 +99,11 @@ Copyright: 2009, Guennadi Liakhovetski <g.liakhovetski@gmx.de>
 License: GPL-2
 
 Files:
- src/ipa/raspberrypi/*
- src/libcamera/pipeline/raspberrypi/*
+ src/ipa/rpi/*
+ src/libcamera/pipeline/rpi/*
  utils/raspberrypi/ctt/*
 Copyright:
- 2019—2022 Raspberry Pi Ltd
+ 2019—2023 Raspberry Pi Ltd
 License: BSD-2-Clause
 
 Files: include/linux/rkisp1-config.h
@@ -111,7 +111,7 @@ Copyright: 2017, Rockchip Electronics Co., Ltd.
 License: GPL-2+
 
 Files: Documentation/*
-Copyright: 2020—2022 Libcamera contributors
+Copyright: 2020—2023 Libcamera contributors
 License: CC-BY-SA-4.0
 
 Files: Documentation/theme/static/search.png
@@ -128,6 +128,7 @@ Copyright:
  2019 Emmanuel Arias <emmanuelarias30@gmail.com>
  2019—2022 Andrej Shadura <andrewsh@debian.org>
  2020 IOhannes m zmölnig <umlaeute@debian.org>
+ 2022-2023 Collabora Ltd.
 License: GPL-2+
 
 License: GPL-2+

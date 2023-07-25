@@ -16,9 +16,9 @@ Last-Update: 2022-10-18
  src/ipa/raspberrypi/raspberrypi.cpp | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
---- a/src/ipa/raspberrypi/raspberrypi.cpp
-+++ b/src/ipa/raspberrypi/raspberrypi.cpp
-@@ -71,7 +71,7 @@
+--- a/src/ipa/rpi/common/ipa_base.cpp
++++ b/src/ipa/rpi/common/ipa_base.cpp
+@@ -41,7 +41,7 @@
  /* Configure the sensor with these values initially. */
  constexpr double defaultAnalogueGain = 1.0;
  constexpr Duration defaultExposureTime = 20.0ms;
@@ -27,7 +27,7 @@ Last-Update: 2022-10-18
  constexpr Duration defaultMaxFrameDuration = 250.0s;
  
  /*
-@@ -80,7 +80,7 @@
+@@ -50,7 +50,7 @@
   * we rate-limit the controller Prepare() and Process() calls to lower than or
   * equal to this rate.
   */
@@ -35,4 +35,4 @@ Last-Update: 2022-10-18
 +constexpr Duration controllerMinFrameDuration = 1s / 30.0;
  
  /* List of controls handled by the Raspberry Pi IPA */
- static const ControlInfoMap::Map ipaControls{
+ const ControlInfoMap::Map ipaControls{

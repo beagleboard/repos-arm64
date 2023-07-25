@@ -1,14 +1,37 @@
-libcamera (0.0.5-2bbbio1~bullseye+20230710) bullseye; urgency=low
+libcamera (0.1.0-2bbbio1~bullseye+20230725) bullseye; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 10 Jul 2023 16:00:53 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jul 2023 09:41:20 -0500
 
-libcamera (0.0.5-2bbbio0~bullseye+20230710) bullseye; urgency=low
+libcamera (0.1.0-2) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * Only make the tests fail for key architectures: amd64 arm64 armhf
+  * Add texlive-latex-extra as alternative to doxygen-latex in Build-deps
+  * Upload to unstable
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 10 Jul 2023 14:34:39 -0500
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 22 Jul 2023 11:11:04 +0200
+
+libcamera (0.1.0-1) experimental; urgency=medium
+
+  * New upstream version 0.1.0
+  * Bump SONAME to libcamera0.1
+  * Build python bindings:
+      - New binary package: python3-libcamera
+      - New Build-Deps: libpython3-dev and python3-pybind11
+  * Move v4l2-compat.so from usr/lib/*/ to usr/lib/*/libcamera/
+  * Install ipa_verify and use it to check IPA signatures
+  * Verify modules signatures after resigning
+  * Add new test verifying the signature of IPA modules
+  * Disable doxygen-latex in Build-Deps for sh4
+  * Disable scan of git HEAD in the watch file to avoid confusing
+      tracker.debian.org
+  * Refresh debian/patches/ppc64el-fix-ftbfs-gcc.patch
+  * Drop debian/libcamera-v4l2.lintian-overrides, no longer required
+  * Disable reprotest on salsa-ci
+  * Refresh debian/copyright
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 17 Jul 2023 14:49:07 +0200
 
 libcamera (0.0.5-2) unstable; urgency=medium
 

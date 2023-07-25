@@ -1,3 +1,7 @@
 Tests: run-tools
 Depends: @
 Restrictions: superficial, allow-stderr
+
+Tests: check-IPA-modules-signatures
+Depends: @
+Restrictions: superficial
