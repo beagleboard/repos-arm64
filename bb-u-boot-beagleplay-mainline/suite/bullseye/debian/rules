@@ -24,9 +24,6 @@ TEE_REPO="https://github.com/OP-TEE/optee_os"
 
 #U-Boot
 UB_CONFIG=am62x_evm
-UB_ATF=bl31.bin
-UB_TEE=tee-pager_v2.bin
-UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
 UB_BRANCH=BeaglePlay-V1-mainline-rfc
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 
@@ -39,14 +36,16 @@ override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=1 /opt/u-boot/$(TARGETDIR)/arm-trusted-firmware/
 	make -C /opt/u-boot/$(TARGETDIR)/arm-trusted-firmware/ -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v /opt/u-boot/$(TARGETDIR)/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=1 ./tmp/optee_os/
-	make -C tmp/optee_os -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3 OPTEEMACHINE=k3-am62x CFG_ARM64_core=y all
-	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
+	mkdir -p /opt/u-boot/$(TARGETDIR)/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=1 /opt/u-boot/$(TARGETDIR)/optee_os/
+	make -C /opt/u-boot/$(TARGETDIR)/optee_os/ -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3-am62x CFG_WITH_SOFTWARE_PRNG=y CFG_ARM64_core=y all
+	cp -v /opt/u-boot/$(TARGETDIR)/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=1 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
-	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	ls -lha ./tmp/r5
 	make -C ./tmp/u-boot -j1 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_a53_defconfig
-	make -C ./tmp/u-boot -j5 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ipc_echo_testb_mcu1_0_release_strip.xer5f
+	make -C ./tmp/u-boot -j5 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	ls -lha ./tmp/a53
 
 %:
 	dh $@
