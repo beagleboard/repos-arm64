@@ -17,6 +17,7 @@ Build-Depends:
  , python3-jsonschema
  , python3-pycryptodome
  , python3-pyelftools
+ , python3-yaml
  , rsync
  , swig
  , u-boot-tools
