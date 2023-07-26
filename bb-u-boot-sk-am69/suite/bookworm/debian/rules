@@ -48,14 +48,11 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
 	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	ls -lha ./tmp/r5/
 	cp -v ./tmp/r5/tiboot3-j784s4-gp-evm.bin ./tmp/pkg/tiboot3.bin
-	#cp -v ./tmp/r5/sysfw.itb ./tmp/pkg/
 	make -C ./tmp/u-boot -j1 O=../a72 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_a72_defconfig
 	make -C ./tmp/u-boot -j5 O=../a72 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	ls -lha ./tmp/a72/
-	#cp -v ./tmp/a72/tispl.bin_unsigned ./tmp/pkg/tispl.bin
-	#cp -v ./tmp/a72/u-boot.img_unsigned ./tmp/pkg/u-boot.img
+	cp -v ./tmp/a72/tispl.bin_unsigned ./tmp/pkg/tispl.bin
+	cp -v ./tmp/a72/u-boot.img_unsigned ./tmp/pkg/u-boot.img
 
 %:
 	dh $@
