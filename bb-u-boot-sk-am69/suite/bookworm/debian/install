@@ -1,6 +1,6 @@
 tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/ti-linux-firmware/ti-sysfw/ti-fs-stub-firmware-am62x-gp.bin /opt/u-boot/bb-u-boot-sk-am69
-tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/bb-u-boot-sk-am69
+tmp/arm-trusted-firmware/build/k3/j784s4/release/bl31.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/optee/core/tee-pager_v2.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-sk-am69
