@@ -1,0 +1,6 @@
+bb-u-boot-sk-am69 (2023.04.20230101.0-0~bookworm+20230726) bookworm; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 26 Jul 2023 16:51:29 -0500
+
