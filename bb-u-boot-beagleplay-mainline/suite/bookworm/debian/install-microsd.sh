@@ -14,5 +14,5 @@ if [ -d /boot/firmware/ ] ; then
 	if [ ! -d /boot/firmware/ti-sysfw/ ] ; then
 		mkdir -p /boot/firmware/ti-sysfw/
 	fi
-	cp -v ${wdir}/ti-fs-stub-firmware-am62x-gp-signed.bin /boot/firmware/ti-sysfw/
+	cp -v ${wdir}/ti-fs-stub-firmware-am62x-gp.bin /boot/firmware/ti-sysfw/
 fi
