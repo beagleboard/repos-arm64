@@ -49,7 +49,7 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
 	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/r5/
-	cp -v ./tmp/r5/tiboot3-am62x-gp-evm.bin ./tmp/pkg/tiboot3.bin
+	cp -v ./tmp/r5/tiboot3-am62x-hs-fs-evm.bin ./tmp/pkg/tiboot3.bin
 	make -C ./tmp/u-boot -j1 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_a53_defconfig
 	make -C ./tmp/u-boot -j5 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/a53/
