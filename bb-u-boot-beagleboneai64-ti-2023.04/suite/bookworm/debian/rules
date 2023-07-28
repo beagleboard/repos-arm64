@@ -4,7 +4,7 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-TARGETDIR=bb-u-boot-beagleplay-ti-2023.04
+TARGETDIR=bb-u-boot-beagleboneai64-ti-2023.04
 #/opt/u-boot/$(TARGETDIR)/
 
 #ti-linux-firmware
