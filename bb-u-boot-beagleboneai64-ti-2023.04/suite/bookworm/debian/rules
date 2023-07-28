@@ -1,0 +1,61 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+TARGETDIR=bb-u-boot-beagleplay-ti-2023.04
+#/opt/u-boot/$(TARGETDIR)/
+
+#ti-linux-firmware
+#HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
+#Mirror: https://github.com/beagleboard/ti-linux-firmware
+TILF_TAG=09.00.00.007
+TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+
+#arm-trusted-firmware
+#HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
+#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=blob;f=meta-ti-bsp/recipes-bsp/trusted-firmware-a/trusted-firmware-a-ti.inc;h=64bfec676bc10ce0a6525ca62a4a4f1b2de40033;hb=HEAD
+#2.9+
+ATF_TAG=v2.9.0
+ATF_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
+
+#optee_os
+#HEAD: https://github.com/OP-TEE/optee_os
+#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=tree;f=meta-ti-bsp/recipes-security/optee;h=2738e2c3962d809b136441ed84148964b4d3228a;hb=HEAD
+#3.22.0+
+TEE_TAG=master
+TEE_REPO="https://github.com/OP-TEE/optee_os"
+
+#U-Boot
+UB_CONFIG=j721e_evm
+UB_BRANCH=ti-u-boot-2023.04
+UB_REPO="https://github.com/beagleboard/ti-u-boot.git"
+
+override_dh_strip:
+	# Just disable for now...
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/pkg/
+	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
+	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/
+	make -C ./tmp/arm-trusted-firmware/ -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=generic SPD=opteed all
+	cp -v ./tmp/arm-trusted-firmware/build/k3/generic/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
+	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=5 ./tmp/optee_os/
+	make -C ./tmp/optee_os/ -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3-j721e CFG_ARM64_core=y all
+	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
+	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/
+	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
+	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	ls -lha ./tmp/r5/
+	cp -v ./tmp/r5/tiboot3.bin ./tmp/pkg/tiboot3.bin
+	make -C ./tmp/u-boot -j1 O=../a72 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_a72_defconfig
+	make -C ./tmp/u-boot -j5 O=../a72 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	ls -lha ./tmp/a72/
+	cp -v ./tmp/a72/tispl.bin ./tmp/pkg/tispl.bin
+	cp -v ./tmp/a72/u-boot.img ./tmp/pkg/u-boot.img
+
+%:
+	dh $@
+

@@ -1,0 +1,5 @@
+source=/dev/mmcblk0
+destination=/dev/nvme0n1
+rfs_partition=hybrid
+rfs_rootfs_startmb=1
+extlinux=/opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04/nvme-extlinux.conf

@@ -1,0 +1,6 @@
+bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230717.1-0~bookworm+20230728) bookworm; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Jul 2023 18:00:34 -0500
+
