@@ -3,8 +3,8 @@ debian/install-microsd.sh /opt/u-boot/bb-u-boot-sk-am69
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-sk-am69
 debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-sk-am69
 debian/sk-am69-microsd-to-nvme /opt/u-boot/bb-u-boot-sk-am69
-tmp/arm-trusted-firmware/build/k3/j784s4/release/bl31.bin /opt/u-boot/bb-u-boot-sk-am69
-tmp/optee/core/tee-pager_v2.bin /opt/u-boot/bb-u-boot-sk-am69
+tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-sk-am69
+tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-sk-am69
