@@ -1,0 +1,8 @@
+source=/dev/mmcblk0
+destination=/dev/mmcblk1
+rfs_partition=dual
+rfs_boot_startmb=1
+rfs_boot_size_mb=128
+flash_back=/opt/u-boot/bb-u-boot-beagleplay-ti-2023.04/beagleplay-microsd-to-emmc
+extlinux=/opt/u-boot/bb-u-boot-beagleplay-ti-2023.04/microsd-extlinux.conf
+flash_cc1352p=enable

@@ -1,0 +1,16 @@
+debian/install.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/emmc-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/beagleplay-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/beagleplay-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/beagleplay-emmc-to-microsd-w-swap /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/beagleplay-microsd-to-emmc-w-swap /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+tmp/optee/core/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
