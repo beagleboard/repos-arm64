@@ -1,16 +1,17 @@
 Source: ti-k3conf
-Section: misc
-Priority: extra
+Section: devel
+Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9),
-Standards-Version: 4.5.1
-Homepage: https://git.ti.com/cgit/k3conf/k3conf/
+Standards-Version: 4.5.0
+Homepage: https://git.ti.com/cgit/k3conf/k3conf
 
 Package: ti-k3conf
 Architecture: arm64
-Depends:
- ${shlibs:Depends}
- , ${misc:Depends}
-Description: beagleboard.org ti k3conf
- beagleboard.org ti k3conf for beagleboard devices
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Powerful Diagnostic Tool for Texas Instruments K3 based Processors
+ K3CONF is a Linux user-space application designed to provide a quick'n easy way 
+ to dynamically diagnose Texas Instruments' K3 architecture based processors. 
+ k3conf is intended to provide a similar experience to that of OMAPCONF that 
+ runs on legacy TI platforms.

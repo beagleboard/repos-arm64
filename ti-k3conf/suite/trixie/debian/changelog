@@ -1,4 +1,4 @@
-ti-k3conf (0.2.0-git20230719.0-0~bullseye+20230728) bullseye; urgency=low
+ti-k3conf (0.2.0-git20230719.0-0~trixie+20230728) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
