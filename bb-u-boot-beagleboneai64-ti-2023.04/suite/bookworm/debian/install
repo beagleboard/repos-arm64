@@ -7,8 +7,9 @@ debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
 debian/bbai64-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
 debian/bbai64-emmc-to-nvme /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
 debian/bbai64-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
-tmp/arm-trusted-firmware/build/k3/generic/release/bl31.bin /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
-tmp/optee/core/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
+tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
+tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
+tmp/pkg/sysfw.itb /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
 tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-beagleboneai64-ti-2023.04
