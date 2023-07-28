@@ -288,7 +288,7 @@ copy_rootfs () {
 	echo "# /etc/fstab: static file system information." > /tmp/rootfs/etc/fstab
 	echo "#" >> /tmp/rootfs/etc/fstab
 	echo "${destination}p${dest_rfs_part}  /  ext4  noatime,errors=remount-ro  0  1" >> /tmp/rootfs/etc/fstab
-	echo "/dev/mmcblk0p1  /boot/firmware vfat defaults 0 0" >> /tmp/rootfs/etc/fstab
+	echo "${source}p1  /boot/firmware vfat defaults 0 0" >> /tmp/rootfs/etc/fstab
 	echo "debugfs  /sys/kernel/debug  debugfs  mode=755,uid=root,gid=gpio,defaults  0  0" >> /tmp/rootfs/etc/fstab
 	message="INFO: [cat /tmp/rootfs/etc/fstab]"                                                ; broadcast
 	message="`cat /tmp/rootfs/etc/fstab`"                                                      ; broadcast
