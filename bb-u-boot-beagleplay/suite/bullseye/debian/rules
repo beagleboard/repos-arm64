@@ -8,13 +8,26 @@ TARGETDIR=bb-u-boot-beagleplay
 #/opt/u-boot/$(TARGETDIR)/
 
 #ti-linux-firmware
+#HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
+#Mirror: https://github.com/beagleboard/ti-linux-firmware
 TILF_TAG=08.06.00.007
+TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 
 #arm-trusted-firmware
+#HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
+#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=blob;f=meta-ti-bsp/recipes-bsp/trusted-firmware-a/trusted-firmware-a-ti.inc;h=64bfec676bc10ce0a6525ca62a4a4f1b2de40033;hb=HEAD
+#2.9+
 ATF_TAG=bbb.io-08.06.00.007
+ATF_REPO="https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git"
+ATF_BOARD=lite
 
 #optee_os
+#HEAD: https://github.com/OP-TEE/optee_os
+#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=tree;f=meta-ti-bsp/recipes-security/optee;h=2738e2c3962d809b136441ed84148964b4d3228a;hb=HEAD
+#3.22.0+
 TEE_TAG=3.20.0
+TEE_REPO="https://github.com/OP-TEE/optee_os"
+TEE_BOARD=k3-am62x
 
 #U-Boot
 UB_CONFIG=am62x_evm
@@ -22,29 +35,37 @@ UB_ATF=bl31.bin
 UB_TEE=tee-pager_v2.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
 UB_BRANCH=v2021.01-ti-BeaglePlay-Release
+UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
+UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
+MCORE=a53
 
 override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
+	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) https://git.beagleboard.org/beagleboard/ti-linux-firmware.git --depth=1 ./tmp/ti-linux-firmware/
+	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/
 	cp -v ./tmp/ti-linux-firmware/ti-sysfw/ti-fs-firmware-am62x-gp.bin /opt/u-boot/$(TARGETDIR)/
 	cp -v ./tmp/ti-linux-firmware/ti-dm/am62xx/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git --depth=1 ./tmp/arm-trusted-firmware/
-	make -C tmp/arm-trusted-firmware -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=lite K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
-	cp -v ./tmp/arm-trusted-firmware/build/k3/lite/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) https://git.beagleboard.org/beagleboard/optee_os.git --depth=1 ./tmp/optee_os/
-	make -C tmp/optee_os -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=k3 OPTEEMACHINE=k3-am62x CFG_ARM64_core=y all
+	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/
+	make -C ./tmp/arm-trusted-firmware/ -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
+	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin ./tmp/pkg/
+	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
+	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=5 ./tmp/optee_os/
+	make -C ./tmp/optee_os/ -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(TEE_BOARD) CFG_WITH_SOFTWARE_PRNG=y CFG_ARM64_core=y all
+	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) https://git.beagleboard.org/beagleboard/u-boot.git --depth=1 ./tmp/u-boot/
-	make -C ./tmp/u-boot -j1 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_a53_defconfig
-	make -C ./tmp/u-boot -j5 O=../a53 ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ipc_echo_testb_mcu1_0_release_strip.xer5f
-	cp -v ./tmp/a53/tispl.bin /opt/u-boot/$(TARGETDIR)/
-	cp -v ./tmp/a53/u-boot.img /opt/u-boot/$(TARGETDIR)/
+	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
 	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+	ls -lha ./tmp/r5/
 	cp -v ./tmp/r5/spl/u-boot-spl.bin /opt/u-boot/$(TARGETDIR)/
+	make -C ./tmp/u-boot -j1 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig
+	make -C ./tmp/u-boot -j5 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ipc_echo_testb_mcu1_0_release_strip.xer5f
+	ls -lha ./tmp/$(MCORE)/
+	cp -v ./tmp/$(MCORE)/tispl.bin ./tmp/pkg/tispl.bin
+	cp -v ./tmp/$(MCORE)/u-boot.img ./tmp/pkg/u-boot.img
 	mkdir -p ./tmp/k3-image-gen/ ; git clone https://git.ti.com/git/k3-image-gen/k3-image-gen.git --depth=1 ./tmp/k3-image-gen/
 	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SBL=/opt/u-boot/$(TARGETDIR)/u-boot-spl.bin mrproper
 	cd ./tmp/k3-image-gen/ ; make SOC=am62x CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf- 'CFLAGS=-fno-builtin -Wall -Iinclude/soc/am62x -Isoc/am62x/evm -Iinclude' SYSFW_PATH=/opt/u-boot/$(TARGETDIR)/ti-fs-firmware-am62x-gp.bin SBL=/opt/u-boot/$(TARGETDIR)/u-boot-spl.bin
