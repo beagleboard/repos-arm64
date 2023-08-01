@@ -1,6 +1,6 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.5-0~bullseye+20230626) bullseye; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.6-0~bullseye+20230801) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * BeagleBone AI64, add extlinux.conf boot options over serial
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 26 Jun 2023 10:58:23 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 15:53:22 -0500
 
