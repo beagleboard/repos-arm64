@@ -1,6 +1,7 @@
-bb-beagle-flasher (1.20230728.0-0~bookworm+20230728) bookworm; urgency=low
+bb-beagle-flasher (1.20230801.0-0~bookworm+20230801) bookworm; urgency=low
 
   * SK-AM69, support microSD -> usb sata
+  * BBIA64/BeaglePlay, use u-boot versions of script files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Jul 2023 10:20:13 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 18:53:35 -0500
 
