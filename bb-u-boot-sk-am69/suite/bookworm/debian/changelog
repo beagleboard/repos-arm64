@@ -1,6 +1,6 @@
-bb-u-boot-sk-am69 (2023.04.20230717.2-0~bookworm+20230728) bookworm; urgency=low
+bb-u-boot-sk-am69 (2023.04.20230717.3-0~bookworm+20230801) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * SK-AM69, add extlinux.conf boot options over serial
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Jul 2023 18:23:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 18:16:15 -0500
 
