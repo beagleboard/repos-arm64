@@ -4,7 +4,7 @@
 
 package_name="bb-u-boot-beagleboneai64-ti-2023.04"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20230717.2"
+package_version="2023.04.20230717.3"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20230728"
+bookworm_version="~bookworm+20230801"
