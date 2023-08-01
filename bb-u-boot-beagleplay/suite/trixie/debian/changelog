@@ -1,6 +1,6 @@
-bb-u-boot-beagleplay (2021.01.20230213.13-0~trixie+20230731) trixie; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.14-0~trixie+20230801) trixie; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * BeaglePlay, add extlinux.conf boot options over serial
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 31 Jul 2023 13:19:21 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 14:24:27 -0500
 
