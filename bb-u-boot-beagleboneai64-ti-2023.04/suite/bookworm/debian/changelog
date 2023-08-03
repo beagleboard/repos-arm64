@@ -1,6 +1,7 @@
-bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230717.3-0~bookworm+20230801) bookworm; urgency=low
+bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230717.4-0~bookworm+20230803) bookworm; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 15:56:34 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 13:18:57 -0500
 

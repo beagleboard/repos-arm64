@@ -1,1 +1,2 @@
   * BeagleBone AI64, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
