@@ -1,6 +1,7 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.6-0~jammy+20230801) jammy; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.7-0~jammy+20230803) jammy; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 15:53:22 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 10:43:32 -0500
 
