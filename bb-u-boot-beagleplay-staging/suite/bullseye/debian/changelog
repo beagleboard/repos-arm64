@@ -1,6 +1,7 @@
-bb-u-boot-beagleplay-staging (2021.01.20230213.5-0~bullseye+20230514) bullseye; urgency=low
+bb-u-boot-beagleplay-staging (2021.01.20230213.6-0~bullseye+20230803) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * BeaglePlay, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 14 May 2023 14:17:04 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 13:42:46 -0500
 
