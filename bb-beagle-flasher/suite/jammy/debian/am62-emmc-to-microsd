@@ -2,6 +2,6 @@ source=/dev/mmcblk0
 destination=/dev/mmcblk1
 rfs_partition=dual
 rfs_boot_startmb=1
-rfs_boot_size_mb=128
+rfs_boot_size_mb=256
 flash_back=am62-microsd-to-emmc
 extlinux=/opt/u-boot/bb-u-boot-sk-am62/microsd-extlinux.conf

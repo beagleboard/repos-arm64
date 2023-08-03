@@ -124,7 +124,7 @@ example_failure () {
 	message="destination=/dev/mmcblk1"                                                         ; broadcast
 	message="rfs_partition=dual"                                                               ; broadcast
 	message="rfs_boot_startmb=1"                                                               ; broadcast
-	message="rfs_boot_size_mb=128"                                                             ; broadcast
+	message="rfs_boot_size_mb=256"                                                             ; broadcast
 	message="bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-emmc.sh"                  ; broadcast
 	message="flash_back=bbai64-emmc-to-microsd"                                                ; broadcast
 	message="extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/emmc-extlinux.conf"                 ; broadcast
