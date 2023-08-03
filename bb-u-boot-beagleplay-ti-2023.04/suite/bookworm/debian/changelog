@@ -1,6 +1,7 @@
-bb-u-boot-beagleplay-ti-2023.04 (2023.04.20230717.4-0~bookworm+20230801) bookworm; urgency=low
+bb-u-boot-beagleplay-ti-2023.04 (2023.04.20230717.5-0~bookworm+20230803) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * BeaglePlay, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 14:39:37 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 13:20:56 -0500
 
