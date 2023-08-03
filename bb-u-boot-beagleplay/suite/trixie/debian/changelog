@@ -1,6 +1,7 @@
-bb-u-boot-beagleplay (2021.01.20230213.14-0~trixie+20230801) trixie; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.15-0~trixie+20230803) trixie; urgency=low
 
   * BeaglePlay, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 14:24:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 10:27:48 -0500
 
