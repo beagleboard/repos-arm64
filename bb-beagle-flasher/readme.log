@@ -1,3 +1,4 @@
   * SK-AM69, support microSD -> usb sata
   * BBIA64/BeaglePlay, use u-boot versions of script files
   * Bump FAT partition to 256MB for boot recovery images
+  * Use /proc/sysrq-trigger to shutdown flasher in single user mode

@@ -389,7 +389,15 @@ copy_rootfs () {
 	unset are_we_flasher
 	are_we_flasher=$(grep init-beagle-flasher /proc/cmdline || true)
 	if [ ! "x${are_we_flasher}" = "x" ] ; then
-		message="INFO: [We are init]"                                                      ; broadcast
+		message="INFO: [We are init, trying to shutdown, we may crash, data is RO so safe]" ; broadcast
+
+		if [ -f /proc/sysrq-trigger ] ; then
+			#For sync
+			echo s > /proc/sysrq-trigger
+			#For shutdown the system
+			echo o > /proc/sysrq-trigger
+		fi
+
 		#When run as init
 		exec /sbin/init
 		exit #We should not hit that
