@@ -1,4 +1,4 @@
-Source: bb-u-boot-beagleboneai64
+Source: bb-u-boot-beagleboneai64-08.06.00.007
 Section: misc
 Priority: extra
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
@@ -22,7 +22,7 @@ Build-Depends:
  , u-boot-tools
 Standards-Version: 4.5.1
 
-Package: bb-u-boot-beagleboneai64
+Package: bb-u-boot-beagleboneai64-08.06.00.007
 Architecture: arm64
 Pre-Depends:
  bb-k3-image-gen-j721e-evm
