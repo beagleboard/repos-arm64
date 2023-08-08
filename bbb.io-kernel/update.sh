@@ -141,6 +141,7 @@ do_bullseye () {
 	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
@@ -169,6 +170,7 @@ do_bookworm () {
 	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
@@ -197,6 +199,7 @@ do_trixie () {
 	#msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
@@ -225,6 +228,7 @@ do_jammy () {
 	#msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
 	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
