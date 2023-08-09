@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64-08.06.00.007 (2021.10.20230216.14-0~bullseye+20230808) bullseye; urgency=low
+bb-u-boot-beagleboneai64-08.06.00.007 (2021.10.20230216.14-0~bookworm+20230808) bookworm; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
