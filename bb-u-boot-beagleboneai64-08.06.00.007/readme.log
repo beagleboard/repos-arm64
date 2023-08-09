@@ -1,5 +1,5 @@
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * ti-sysfw: 08.04.00.002 ~ 08.04.00.005: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2d9a1002663a20673d942826c558ba4b472ffe9a
-  * TF-A: 08.03.00.003 ~ 08.04.00.002: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=6541aa24f834daa80da701e0054dfe3a16cda0ce
-  * OP-TEE: 08.00.00.001 ~ 08.04.00.002: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=commit;h=cac3fef2a0b8cb0acb891c5b160a70d1b283907b
+  * ti-sysfw: 08.04.01.005: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=5821e95ea734538f809d4acf0ffe69e68ed95ec1
+  * TF-A: 08.04.01.005: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=35f4c7295bafeb32c8bcbdfb6a3f2e74a57e732b
+  * OP-TEE: 08.04.01.005: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=commit;h=8e155bae3a5eb9d1a3ed9260bd7281a7a35f5086
