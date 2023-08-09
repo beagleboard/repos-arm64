@@ -1,1 +1,2 @@
-k3-image-gen/sysfw.itb /opt/u-boot/bb-k3-image-gen-beagleboneai64
+tmp/pkg/sysfw.itb /opt/u-boot/bb-k3-image-gen-beagleboneai64
+tmp/pkg/ti-fs-firmware-j721e-gp.bin /opt/u-boot/bb-k3-image-gen-beagleboneai64

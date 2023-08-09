@@ -23,9 +23,11 @@ override_dh_strip:
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
-	git clone -b $(TAG) https://github.com/beagleboard/k3-image-gen.git --depth=5
-	cd ./k3-image-gen/ ; make SOC=j721e SOC_TYPE=gp CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
-	ls -lha ./k3-image-gen/
+	git clone -b $(TAG) https://github.com/beagleboard/k3-image-gen.git --depth=5 ./tmp/k3-image-gen/
+	make -C ./tmp/k3-image-gen/ SOC=j721e SOC_TYPE=gp CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
+	ls -lha ./tmp/k3-image-gen/
+	cp -v ./tmp/k3-image-gen/sysfw-j721e-evm.itb ./tmp/pkg/sysfw.itb
+	cp -v ./tmp/k3-image-gen/ti-fs-firmware-j721e-gp.bin ./tmp/pkg/
 
 %:
 	dh $@
