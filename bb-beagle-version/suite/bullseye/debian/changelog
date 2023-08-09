@@ -1,6 +1,6 @@
-bb-beagle-version (1.20230623.0-0~bullseye+20230623) bullseye; urgency=low
+bb-beagle-version (1.20230808.0-0~bullseye+20230808) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Dump firmware version of ti-sci 44083000.dmsc version
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Jun 2023 09:31:43 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 19:25:04 -0500
 

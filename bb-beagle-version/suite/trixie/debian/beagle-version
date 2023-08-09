@@ -157,6 +157,8 @@ fi
 
 echo "cmdline:[`cat /proc/cmdline`]"
 
+echo "dmesg | grep ti-sci"
+dmesg | grep ti-sci || true
 echo "dmesg | grep optee"
 dmesg | grep optee || true
 echo "dmesg | grep remote"
