@@ -1,10 +1,10 @@
-bb-u-boot-beagleboneai64-08.06.00.007 (2021.10.20230216.10-0~bullseye+20230808) bullseye; urgency=low
+bb-u-boot-beagleboneai64-08.06.00.007 (2021.10.20230216.11-0~bullseye+20230808) bullseye; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * ti-sysfw: 08.04.01.005: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=5821e95ea734538f809d4acf0ffe69e68ed95ec1
-  * TF-A: 08.04.01.005: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=35f4c7295bafeb32c8bcbdfb6a3f2e74a57e732b
-  * OP-TEE: 08.04.01.005: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=commit;h=8e155bae3a5eb9d1a3ed9260bd7281a7a35f5086
+  * ti-sysfw: 08.05.00.006 ~ 08.05.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=17cc30de6c1ce7ab6010f2391986241f3bffd8cb
+  * TF-A: 08.05.00.005 ~ 08.05.00.007: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=1309c6c805190bd376c0561597653f3f8ecd0f58
+  * OP-TEE: 08.05.00.007: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=shortlog;h=d6c5d0037b46f46caf71d67d7825d4b722cbcddf
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 20:59:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 21:22:20 -0500
 
