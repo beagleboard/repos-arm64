@@ -4,7 +4,7 @@
 
 package_name="bb-k3-image-gen-beagleboneai64"
 debian_pkg_name="${package_name}"
-package_version="1.20220722.2"
+package_version="1.20220923.0"
 package_source=""
 src_dir=""
 
