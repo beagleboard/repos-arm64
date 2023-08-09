@@ -1,6 +1,7 @@
-bb-beagle-version (1.20230808.0-0~bookworm+20230808) bookworm; urgency=low
+bb-beagle-version (1.20230808.1-0~bookworm+20230808) bookworm; urgency=low
 
-  * Dump firmware version of ti-sci 44083000.dmsc version
+  * Dump firmware version of ti-sci 44083000.dmsc
+  * grab ti-sci and optee firmware builds from journalctl
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 19:25:04 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 20:12:11 -0500
 

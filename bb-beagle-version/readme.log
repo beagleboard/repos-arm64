@@ -1,1 +1,2 @@
-  * Dump firmware version of ti-sci 44083000.dmsc version
+  * Dump firmware version of ti-sci 44083000.dmsc
+  * grab ti-sci and optee firmware builds from journalctl
