@@ -1,0 +1,68 @@
+#!/usr/bin/make -f
+
+DEB_MAKE_BUILD_TARGET := all
+# Also build PDF and HTML documentation if nodoc is not set
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+	DEB_MAKE_BUILD_TARGET += pdf html
+	DEB_CONFIGURE_EXTRA_FLAGS := \
+		--enable-doxygen-pdf \
+		--enable-doxygen-html
+else
+	DEB_CONFIGURE_EXTRA_FLAGS := \
+		--disable-doxygen-pdf \
+		--disable-doxygen-html
+endif
+
+DEB_CONFIGURE_EXTRA_FLAGS += \
+	--disable-werror \
+	--disable-internal-jimtcl \
+	--disable-internal-libjaylink \
+	\
+	--enable-arm-jtag-ew \
+	--enable-at91rm9200 \
+	--enable-bcm2835gpio \
+	--enable-buspirate \
+	--enable-dummy \
+	--enable-ep93xx \
+	--enable-jlink \
+	--enable-opendous \
+	--enable-osbdm \
+	--enable-remote-bitbang \
+	--enable-rlink \
+	--enable-rshim \
+	--enable-sysfsgpio \
+	--enable-ulink \
+	--enable-usbprog \
+	--enable-vsllink \
+
+configure_flags_parport := \
+	--enable-parport \
+	--enable-parport_ppdev
+
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+# Some adapters are only supported on Linux.
+DEB_CONFIGURE_EXTRA_FLAGS += $(configure_flags_parport)
+DEB_CONFIGURE_EXTRA_FLAGS += --enable-gw16012 \
+			     --enable-amtjtagaccel \
+			     --enable-ftdi \
+			     --enable-stlink \
+			     --enable-ti-icdi \
+			     $(configure_flags_parport)
+endif
+
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
+# Parport drivers only work on Linux and kFreeBSD, conditionally add them here.
+DEB_CONFIGURE_EXTRA_FLAGS += $(configure_flags_parport) \
+			     --enable-ftdi \
+			     --enable-stlink \
+			     --enable-ti-icdi
+endif
+
+override_dh_auto_build:
+	dh_auto_build -- $(DEB_MAKE_BUILD_TARGET)
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(DEB_CONFIGURE_EXTRA_FLAGS)
+
+%:
+	dh $@
