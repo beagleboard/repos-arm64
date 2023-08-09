@@ -15,13 +15,17 @@ export DH_VERBOSE=1
 #TAG=08.03.00.005
 #https://github.com/beagleboard/k3-image-gen/compare/08.03.00.005...08.04.00.005
 TAG=08.04.00.005
+#https://github.com/beagleboard/k3-image-gen/compare/08.04.00.005...08.04.01.005
+#TAG=08.04.01.005
 
 override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
+	mkdir -p ./tmp/pkg/
 	git clone -b $(TAG) https://github.com/beagleboard/k3-image-gen.git --depth=5
 	cd ./k3-image-gen/ ; make SOC=j721e SOC_TYPE=gp CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
+	ls -lha ./k3-image-gen/
 
 %:
 	dh $@

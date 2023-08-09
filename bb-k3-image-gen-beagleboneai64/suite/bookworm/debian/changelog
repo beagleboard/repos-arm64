@@ -1,8 +1,8 @@
-bb-k3-image-gen-beagleboneai64 (1.20220722.0-0~bookworm+20230808) bookworm; urgency=low
+bb-k3-image-gen-beagleboneai64 (1.20220722.1-0~bookworm+20230808) bookworm; urgency=low
 
   * 08.02.00.006 - https://github.com/beagleboard/k3-image-gen/compare/08.01.00.006...08.02.00.006
   * 08.03.00.005 - https://github.com/beagleboard/k3-image-gen/compare/08.02.00.006...08.03.00.005
   * 08.04.00.005 - https://github.com/beagleboard/k3-image-gen/compare/08.03.00.005...08.04.00.005
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 23:36:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 23:40:21 -0500
 
