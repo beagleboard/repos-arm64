@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
- , bb-k3-image-gen-j721e-evm
+ , bb-k3-image-gen-beagleboneai64
  , bc
  , bison
  , ca-certificates
@@ -25,7 +25,7 @@ Standards-Version: 4.5.1
 Package: bb-u-boot-beagleboneai64-08.06.00.007
 Architecture: arm64
 Pre-Depends:
- bb-k3-image-gen-j721e-evm
+ bb-k3-image-gen-beagleboneai64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}

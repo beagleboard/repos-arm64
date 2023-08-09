@@ -1,6 +1,6 @@
 bb-k3-image-gen-beagleboneai64 (1.20211206.4-0~bullseye+20230808) bullseye; urgency=low
 
-  * 08.01.00.006
+  * 08.01.00.006 - https://git.ti.com/gitweb?p=k3-image-gen/k3-image-gen.git;a=tags
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 22:49:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 23:02:46 -0500
 
