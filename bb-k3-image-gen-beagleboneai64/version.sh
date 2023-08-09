@@ -4,7 +4,7 @@
 
 package_name="bb-k3-image-gen-beagleboneai64"
 debian_pkg_name="${package_name}"
-package_version="1.20211206.4"
+package_version="1.20220214.0"
 package_source=""
 src_dir=""
 
@@ -21,5 +21,3 @@ clear_changelog="enable"
 
 bullseye_version="~bullseye+20230808"
 bookworm_version="~bookworm+20230808"
-trixie_version="~trixie+20230808"
-jammy_version="~jammy+20230808"

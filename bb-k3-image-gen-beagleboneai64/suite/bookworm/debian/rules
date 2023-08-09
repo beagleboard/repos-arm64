@@ -6,7 +6,10 @@ CFLAGS += -fno-builtin -Wall -Iinclude/soc/j721e -Isoc/j721e/evm -Iinclude
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-TAG=08.01.00.006
+#https://git.ti.com/gitweb?p=k3-image-gen/k3-image-gen.git;a=tags
+#https://github.com/beagleboard/k3-image-gen/compare/08.01.00.006...08.02.00.006
+#TAG=08.01.00.006
+TAG=08.02.00.006
 
 override_dh_strip:
 	# Just disable for now...
