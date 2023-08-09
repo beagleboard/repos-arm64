@@ -1,8 +1,10 @@
-bb-k3-image-gen-beagleboneai64 (1.20220923.0-0~bullseye+20230808) bullseye; urgency=low
+bb-k3-image-gen-beagleboneai64 (1.20221128.0-0~bullseye+20230808) bullseye; urgency=low
 
   * 08.02.00.006 - https://github.com/beagleboard/k3-image-gen/compare/08.01.00.006...08.02.00.006
   * 08.03.00.005 - https://github.com/beagleboard/k3-image-gen/compare/08.02.00.006...08.03.00.005
   * 08.04.00.005 - https://github.com/beagleboard/k3-image-gen/compare/08.03.00.005...08.04.00.005
+  * 08.04.01.005 - https://github.com/beagleboard/k3-image-gen/compare/08.04.00.005...08.04.01.005
+  * 08.05.00.007 - https://github.com/beagleboard/k3-image-gen/compare/08.04.01.005...08.05.00.007
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 23:50:17 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 23:56:37 -0500
 
