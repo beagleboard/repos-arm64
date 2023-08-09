@@ -18,7 +18,9 @@ export DH_VERBOSE=1
 #https://github.com/beagleboard/k3-image-gen/compare/08.04.00.005...08.04.01.005
 #TAG=08.04.01.005
 #https://github.com/beagleboard/k3-image-gen/compare/08.04.01.005...08.05.00.007
-TAG=08.05.00.007
+#TAG=08.05.00.007
+#https://github.com/beagleboard/k3-image-gen/compare/08.05.00.007...08.06.00.007
+TAG=08.06.00.007
 
 override_dh_strip:
 	# Just disable for now...
