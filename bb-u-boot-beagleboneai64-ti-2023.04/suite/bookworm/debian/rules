@@ -15,15 +15,13 @@ TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=blob;f=meta-ti-bsp/recipes-bsp/trusted-firmware-a/trusted-firmware-a-ti.inc;h=64bfec676bc10ce0a6525ca62a4a4f1b2de40033;hb=HEAD
-#2.9+
+#
 ATF_TAG=v2.9.0
 ATF_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 ATF_BOARD=generic
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
-#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=tree;f=meta-ti-bsp/recipes-security/optee;h=2738e2c3962d809b136441ed84148964b4d3228a;hb=HEAD
 #3.22.0+
 TEE_TAG=master
 TEE_REPO="https://github.com/OP-TEE/optee_os"
