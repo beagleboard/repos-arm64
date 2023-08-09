@@ -1,10 +1,10 @@
-bb-u-boot-beagleboneai64-08.06.00.007 (2021.10.20230216.8-0~bullseye+20230808) bullseye; urgency=low
+bb-u-boot-beagleboneai64-08.06.00.007 (2021.10.20230216.9-0~bullseye+20230808) bullseye; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * ti-sysfw: 08.03.00.004 ~ 08.03.00.005: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=5aa15e59927a5c4acc4dd61d213ab6cef7c0209f
-  * TF-A: 08.00.00.001 ~ 08.03.00.002: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=0693f356eb2a25adf8758d98058120bed082cc73
+  * ti-sysfw: 08.04.00.002 ~ 08.04.00.005: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2d9a1002663a20673d942826c558ba4b472ffe9a
+  * TF-A: 08.03.00.003 ~ 08.04.00.002: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=6541aa24f834daa80da701e0054dfe3a16cda0ce
   * OP-TEE: 08.00.00.001 ~ 08.04.00.002: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=commit;h=cac3fef2a0b8cb0acb891c5b160a70d1b283907b
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 19:53:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 20:37:05 -0500
 

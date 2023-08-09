@@ -9,27 +9,26 @@ TARGETDIR=bb-u-boot-beagleboneai64-08.06.00.007
 
 #ti-linux-firmware
 #Grab Tag: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
-#Mirror: https://github.com/beagleboard/ti-linux-firmware
-#TILF_TAG=08.03.00.003
-TILF_TAG=08.03.00.005
-#08.06.00.007
+#ti-sysfw: 08.04.00.002 ~ 08.04.00.005: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2d9a1002663a20673d942826c558ba4b472ffe9a
+#
+TILF_TAG=08.04.00.005
 TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
 #Grab Tag: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=tags
-#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=blob;f=meta-ti-bsp/recipes-bsp/trusted-firmware-a/trusted-firmware-a-ti.inc;h=64bfec676bc10ce0a6525ca62a4a4f1b2de40033;hb=HEAD
-#2.9+
-#ATF_TAG=08.03.00.002 (SAME)
-ATF_TAG=bbb.io-08.01.00.006
+#TF-A: 08.03.00.003 ~ 08.04.00.002: https://git.ti.com/gitweb?p=atf/arm-trusted-firmware.git;a=commit;h=6541aa24f834daa80da701e0054dfe3a16cda0ce
+#
+#ATF_TAG=bbb.io-08.01.00.006
+ATF_TAG=08.04.00.002
 ATF_REPO="https://git.beagleboard.org/beagleboard/arm-trusted-firmware.git"
 ATF_BOARD=generic
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
 #Grab Tag: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=tags
-#https://git.ti.com/gitweb?p=arago-project/meta-ti.git;a=tree;f=meta-ti-bsp/recipes-security/optee;h=2738e2c3962d809b136441ed84148964b4d3228a;hb=HEAD
-#3.22.0+
+#OP-TEE: 08.00.00.001 ~ 08.04.00.002: https://git.ti.com/gitweb?p=optee/ti-optee-os.git;a=commit;h=cac3fef2a0b8cb0acb891c5b160a70d1b283907b
+#
 #TEE_TAG=08.04.00.002
 #TEE_TAG=08.01.00.005
 TEE_TAG=bbb.io-08.01.00.005
