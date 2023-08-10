@@ -1,6 +1,7 @@
-bb-customizations (1.20230714.0-0~bookworm+20230714) bookworm; urgency=low
+bb-customizations (1.20230810.0-0~bookworm+20230810) bookworm; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
+  * Add udev rule for mikrobus 80-mikrobus-noroot.rules
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Jul 2023 14:22:12 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 10 Aug 2023 10:51:35 -0500
 
