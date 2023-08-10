@@ -12,7 +12,6 @@ Build-Depends:
  , wget
  , u-boot-tools
 Standards-Version: 4.5.1
-Homepage: https://github.com/beagleboard/k3-image-gen
 
 Package: bb-k3-image-gen-j721e-evm
 Architecture: all

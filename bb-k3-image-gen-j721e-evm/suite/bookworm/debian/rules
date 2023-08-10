@@ -6,14 +6,32 @@ CFLAGS += -fno-builtin -Wall -Iinclude/soc/j721e -Isoc/j721e/evm -Iinclude
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-TAG=08.01.00.006
+#https://git.ti.com/gitweb?p=k3-image-gen/k3-image-gen.git;a=tags
+#
+#TAG=08.01.00.006
+#https://github.com/beagleboard/k3-image-gen/compare/08.01.00.006...08.02.00.006
+#TAG=08.02.00.006
+#https://github.com/beagleboard/k3-image-gen/compare/08.02.00.006...08.03.00.005
+#TAG=08.03.00.005
+#https://github.com/beagleboard/k3-image-gen/compare/08.03.00.005...08.04.00.005
+#TAG=08.04.00.005
+#https://github.com/beagleboard/k3-image-gen/compare/08.04.00.005...08.04.01.005
+#TAG=08.04.01.005
+#https://github.com/beagleboard/k3-image-gen/compare/08.04.01.005...08.05.00.007
+#TAG=08.05.00.007
+#https://github.com/beagleboard/k3-image-gen/compare/08.05.00.007...08.06.00.007
+TAG=08.06.00.007
 
 override_dh_strip:
 	# Just disable for now...
 
 override_dh_auto_configure:
-	git clone -b $(TAG) https://github.com/beagleboard/k3-image-gen --depth=1
-	cd ./k3-image-gen/ ; make SOC=j721e CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
+	mkdir -p ./tmp/pkg/
+	git clone -b $(TAG) https://github.com/beagleboard/k3-image-gen.git --depth=5 ./tmp/k3-image-gen/
+	make -C ./tmp/k3-image-gen/ SOC=j721e SOC_TYPE=gp CONFIG=evm CROSS_COMPILE=arm-linux-gnueabihf-
+	ls -lha ./tmp/k3-image-gen/
+	cp -v ./tmp/k3-image-gen/sysfw-j721e-evm.itb ./tmp/pkg/sysfw.itb
+	cp -v ./tmp/k3-image-gen/ti-fs-firmware-j721e-gp.bin ./tmp/pkg/
 
 %:
 	dh $@
