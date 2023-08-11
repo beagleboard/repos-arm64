@@ -1,7 +1,10 @@
-bb-u-boot-beagleplay (2021.01.20230213.15-0~bullseye+20230803) bullseye; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.16-0~bullseye+20230810) bullseye; urgency=low
 
   * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
+  * ti-sysfw: 08.06.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2944354aca1f95525c30d625cb17672930e72572
+  * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
+  * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 10:27:48 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 10 Aug 2023 19:55:45 -0500
 
