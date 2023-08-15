@@ -1,10 +1,8 @@
-bbb.io-kernel (1.20230808.0-0~bullseye+20230808) bullseye; urgency=low
+bbb.io-kernel (1.20230814.0-0~bullseye+20230814) bullseye; urgency=low
 
   * Kernel Updates
-  * linux-image-6.4.6-arm64-k3-r13
-  * linux-image-6.4.6-rt-arm64-k3-r13
-  * linux-image-6.5.0-rc5-arm64-k3-r3
-  * linux-image-6.5.0-rc5-arm64-r0
+  * linux-image-6.5.0-rc6-arm64-k3-r4
+  * linux-image-6.5.0-rc6-arm64-r0
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Aug 2023 16:54:26 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 14 Aug 2023 22:27:55 -0500
 
