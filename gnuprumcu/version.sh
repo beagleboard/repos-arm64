@@ -14,7 +14,7 @@ dl_path=""
 debian_version="${package_version}-0"
 debian_patch=""
 debian_diff=""
-local_patch="bbbio1"
+local_patch="bbbio2"
 
 focal_version="~focal+20211224"
 bullseye_version="~bullseye+20230816"
