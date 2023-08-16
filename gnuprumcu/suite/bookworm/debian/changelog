@@ -1,4 +1,4 @@
-gnuprumcu (0.9.4-git20230525.0-0bbbio1~bullseye+20230816) bullseye; urgency=low
+gnuprumcu (0.9.4-git20230525.0-0bbbio1~bookworm+20230816) bookworm; urgency=low
 
   * Add I/O header for am62x.
   * Fix bit field length in AM572x's SPP register.
@@ -9,7 +9,7 @@ gnuprumcu (0.9.4-git20230525.0-0bbbio1~bullseye+20230816) bullseye; urgency=low
 
  -- Robert Nelson <robertcnelson@gmail.com>  Wed, 16 Aug 2023 15:13:45 -0500
 
-gnuprumcu (0.9.4-git20230525.0-0bbbio1~bullseye+20230816) bullseye; urgency=low
+gnuprumcu (0.9.4-git20230525.0-0bbbio1~bookworm+20230816) bookworm; urgency=low
 
   * Add I/O header for am62x.
   * Fix bit field length in AM572x's SPP register.
