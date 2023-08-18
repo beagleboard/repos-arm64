@@ -16,15 +16,13 @@ TILF_REPO="https://gitea.gfnd.rcn-ee.org/RobertCNelson/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-#2.9+
 ATF_TAG=v2.9.0
 ATF_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 ATF_BOARD=lite
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
-#3.22.0+
-TEE_TAG=master
+TEE_TAG=3.22.0
 TEE_REPO="https://github.com/OP-TEE/optee_os"
 TEE_BOARD=k3-am62x
 

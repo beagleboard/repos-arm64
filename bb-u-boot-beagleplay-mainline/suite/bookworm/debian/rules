@@ -22,8 +22,7 @@ ATF_BOARD=lite
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
-#3.22.0+
-TEE_TAG=master
+TEE_TAG=3.22.0
 TEE_REPO="https://github.com/OP-TEE/optee_os"
 TEE_BOARD=k3-am62x
 
