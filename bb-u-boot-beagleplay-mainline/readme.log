@@ -1,1 +1,2 @@
   * Bump FAT partition to 256MB for boot recovery images
+  * extlinux.conf boot option to flash the other media
