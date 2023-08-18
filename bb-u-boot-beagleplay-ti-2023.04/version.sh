@@ -1,10 +1,11 @@
 #!/bin/bash -e
 
 #https://git.beagleboard.org/beagleboard/u-boot/
+#https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
 
 package_name="bb-u-boot-beagleplay-ti-2023.04"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20230717.5"
+package_version="2023.04.20230809.0"
 package_source=""
 src_dir=""
 
@@ -19,4 +20,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20230803"
+bookworm_version="~bookworm+20230818"

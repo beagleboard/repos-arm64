@@ -1,6 +1,7 @@
 debian/install.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
 debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
 debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
+debian/erase-emmc.sh /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
 debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagleplay-ti-2023.04
