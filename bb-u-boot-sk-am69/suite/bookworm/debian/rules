@@ -11,7 +11,8 @@ TARGETDIR=bb-u-boot-sk-am69
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
 TILF_TAG=09.00.00.007
-TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+#TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+TILF_REPO="https://gitea.gfnd.rcn-ee.org/RobertCNelson/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
