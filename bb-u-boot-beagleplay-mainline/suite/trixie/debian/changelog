@@ -1,7 +1,7 @@
-bb-u-boot-beagleplay-mainline (2023.10.20230815.4-0~trixie+20230818) trixie; urgency=low
+bb-u-boot-beagleplay-mainline (2023.10.20230815.5-0~trixie+20230818) trixie; urgency=low
 
   * Bump FAT partition to 256MB for boot recovery images
   * extlinux.conf boot option to flash the other media
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 15:19:14 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 16:40:32 -0500
 
