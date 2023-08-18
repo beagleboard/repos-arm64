@@ -41,7 +41,7 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
+	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/
 	make -C ./tmp/arm-trusted-firmware/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) K3_USART=0x8 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin ./tmp/pkg/
