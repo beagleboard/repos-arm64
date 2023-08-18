@@ -1,6 +1,6 @@
-bb-u-boot-sk-am69 (2023.04.20230717.3-0~bookworm+20230801) bookworm; urgency=low
+bb-u-boot-sk-am69 (2023.04.20230809.0-0~bookworm+20230818) bookworm; urgency=low
 
   * SK-AM69, add extlinux.conf boot options over serial
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Aug 2023 18:16:15 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 11:23:58 -0500
 
