@@ -2,3 +2,4 @@
   * BBIA64/BeaglePlay, use u-boot versions of script files
   * Bump FAT partition to 256MB for boot recovery images
   * Use /proc/sysrq-trigger to shutdown flasher in single user mode
+  * Add timeout around /proc/sysrq-trigger to log what is happening
