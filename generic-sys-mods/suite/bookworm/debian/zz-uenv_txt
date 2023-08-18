@@ -20,8 +20,10 @@ fi
 
 if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 	if [ -f /boot/vmlinuz-${version} ] ; then
+		mkdir -p /boot/firmware/ti/ || true
 		echo "Updating: Device Trees"
-		cp -v /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
+		cp /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
+		cp -v /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ti/ || true
 
 		rm -f /boot/firmware/Image || true
 		echo "Updating: /boot/firmware/Image"

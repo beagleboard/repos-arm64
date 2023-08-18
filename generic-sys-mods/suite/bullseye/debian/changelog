@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230712.0-0~bullseye+20230712) bullseye; urgency=low
+generic-sys-mods (1.20230818.0-0~bullseye+20230818) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Mainline u-boot, wants to see device trees under /ti/*.dtb now
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 12 Jul 2023 15:02:08 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 14:46:30 -0500
 
