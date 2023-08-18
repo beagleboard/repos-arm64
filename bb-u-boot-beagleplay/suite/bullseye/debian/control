@@ -17,6 +17,10 @@ Build-Depends:
  , python3-jsonschema
  , python3-pycryptodome
  , python3-pyelftools
+ , python3-setuptools
+ , python3-yaml
+ , rsync
+ , swig
  , u-boot-tools
 Standards-Version: 4.5.1
 
