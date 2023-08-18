@@ -11,7 +11,8 @@ TARGETDIR=bb-u-boot-beagleplay-mainline
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
 TILF_TAG=09.00.00.007
-TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+#TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+TILF_REPO="https://gitea.gfnd.rcn-ee.org/RobertCNelson/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
@@ -40,7 +41,7 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
+	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/
 	make -C ./tmp/arm-trusted-firmware/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin ./tmp/pkg/
