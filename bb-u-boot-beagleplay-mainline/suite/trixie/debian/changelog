@@ -1,6 +1,6 @@
-bb-u-boot-beagleplay-mainline (2023.07.20230725.7-0~trixie+20230725) trixie; urgency=low
+bb-u-boot-beagleplay-mainline (2023.10.20230815.0-0~trixie+20230818) trixie; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Bump FAT partition to 256MB for boot recovery images
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jul 2023 19:58:01 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 10:16:19 -0500
 
