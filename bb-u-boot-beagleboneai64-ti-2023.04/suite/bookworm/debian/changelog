@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.0-0~bookworm+20230810) bookworm; urgency=low
+bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.1-0~bookworm+20230818) bookworm; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -6,5 +6,5 @@ bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.0-0~bookworm+20230810) boo
   * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
   * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 10 Aug 2023 17:11:07 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 20:04:46 -0500
 

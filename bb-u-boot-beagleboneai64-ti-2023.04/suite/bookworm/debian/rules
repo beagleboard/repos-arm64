@@ -8,10 +8,11 @@ TARGETDIR=bb-u-boot-beagleboneai64-ti-2023.04
 #/opt/u-boot/$(TARGETDIR)/
 
 #ti-linux-firmware
-#Grab Tag: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
-#ti-sysfw: 09.00.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=905eb58564581d951d148f45828e8c8a142a5938
+#HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
+#Mirror: https://github.com/beagleboard/ti-linux-firmware
 TILF_TAG=09.00.00.007
-TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+#TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
+TILF_REPO="https://gitea.gfnd.rcn-ee.org/RobertCNelson/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
@@ -27,8 +28,10 @@ TEE_BOARD=k3-j721e
 
 #U-Boot
 UB_CONFIG=j721e_evm
-UB_BRANCH=ti-u-boot-2023.04
-UB_REPO="https://github.com/beagleboard/ti-u-boot.git"
+#UB_BRANCH=ti-u-boot-2023.04
+#UB_REPO="https://github.com/beagleboard/ti-u-boot.git"
+UB_BRANCH=v2023.04-ti-09.00.00.007
+UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-j721e-gp-evm.bin
 UB_ITB=sysfw-j721e-gp-evm.itb
 MCORE=a72
@@ -39,23 +42,23 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
+	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/ ; git --git-dir ./tmp/arm-trusted-firmware/.git log --pretty=oneline
-	make -C ./tmp/arm-trusted-firmware/ -j4 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) SPD=opteed all
+	make -C ./tmp/arm-trusted-firmware/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin ./tmp/pkg/
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=5 ./tmp/optee_os/ ; git --git-dir ./tmp/optee_os/.git log --pretty=oneline
-	make -C ./tmp/optee_os/ -j4 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(TEE_BOARD) CFG_ARM64_core=y all
+	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(TEE_BOARD) CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
 	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
-	make -C ./tmp/u-boot -j5 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	make -C ./tmp/u-boot -j8 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/r5/
 	cp -v ./tmp/r5/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
 	cp -v ./tmp/r5/$(UB_ITB) ./tmp/pkg/sysfw.itb
 	make -C ./tmp/u-boot -j1 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig
-	make -C ./tmp/u-boot -j5 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
+	make -C ./tmp/u-boot -j8 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/$(MCORE)/
 	cp -v ./tmp/$(MCORE)/tispl.bin ./tmp/pkg/tispl.bin
 	cp -v ./tmp/$(MCORE)/u-boot.img ./tmp/pkg/u-boot.img
@@ -63,3 +66,5 @@ override_dh_auto_configure:
 %:
 	dh $@
 
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
