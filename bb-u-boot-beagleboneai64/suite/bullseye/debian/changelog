@@ -1,10 +1,11 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.8-0~bullseye+20230810) bullseye; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.9-0~bullseye+20230818) bullseye; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * ti-sysfw: 08.06.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2944354aca1f95525c30d625cb17672930e72572
   * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
   * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
+  * extlinux.conf boot option to flash the other media
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 10 Aug 2023 16:48:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 20:11:20 -0500
 

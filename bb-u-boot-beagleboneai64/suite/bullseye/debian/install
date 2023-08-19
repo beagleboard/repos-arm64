@@ -1,6 +1,7 @@
 debian/install.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64
+debian/erase-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
 debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
