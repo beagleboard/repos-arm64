@@ -32,7 +32,8 @@ UB_CONFIG=am62x_evm
 #UB_REPO="https://github.com/beagleboard/ti-u-boot.git"
 UB_BRANCH=v2023.04-ti-09.00.00.007
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
-UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
+UB_TIBOOT=tiboot3-am62x-gp-evm.bin
+#UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
 
 override_dh_strip:
@@ -58,8 +59,8 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j1 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig
 	make -C ./tmp/u-boot -j8 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/$(MCORE)/
-	cp -v ./tmp/$(MCORE)/tispl.bin ./tmp/pkg/tispl.bin
-	cp -v ./tmp/$(MCORE)/u-boot.img ./tmp/pkg/u-boot.img
+	cp -v ./tmp/$(MCORE)/tispl.bin_unsigned ./tmp/pkg/tispl.bin
+	cp -v ./tmp/$(MCORE)/u-boot.img_unsigned ./tmp/pkg/u-boot.img
 
 %:
 	dh $@
