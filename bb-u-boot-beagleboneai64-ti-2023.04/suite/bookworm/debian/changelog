@@ -1,10 +1,12 @@
-bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.1-0~bookworm+20230818) bookworm; urgency=low
+bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.2-0~bookworm+20230820) bookworm; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * ti-sysfw: 09.00.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=905eb58564581d951d148f45828e8c8a142a5938
   * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
   * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
+  * Run flasher from extlinux.conf
+  * Build with board j721e_beagleboneai64*.config configs
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 20:04:46 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 20 Aug 2023 13:22:31 -0500
 

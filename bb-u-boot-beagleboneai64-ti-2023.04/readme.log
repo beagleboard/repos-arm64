@@ -3,3 +3,5 @@
   * ti-sysfw: 09.00.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=905eb58564581d951d148f45828e8c8a142a5938
   * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
   * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
+  * Run flasher from extlinux.conf
+  * Build with board j721e_beagleboneai64*.config configs
