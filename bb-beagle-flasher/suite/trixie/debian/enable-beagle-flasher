@@ -11,7 +11,6 @@ soc_family=$(cat /sys/devices/soc0/family || true)
 if [ -f /etc/default/beagle-flasher ] ; then
 	#sed -i -e 's:quiet:init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
 	sed -i -e 's:net.ifnames=0 quiet:net.ifnames=0 quiet init=/usr/sbin/init-beagle-flasher:g' /boot/firmware/extlinux/extlinux.conf
-	systemctl enable beagle-flasher-init-shutdown.service || true
 	systemctl disable grow_partition.service || true
 	echo "log: enable-beagle-flasher"
 	case "${soc_family}" in

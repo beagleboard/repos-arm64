@@ -345,10 +345,6 @@ copy_rootfs () {
 		message="--------------------------------------------------------------------------------" ; broadcast
 	fi
 
-	if [ -f /tmp/rootfs/etc/systemd/system/multi-user.target.wants/beagle-flasher-init-shutdown.service ] ; then
-		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/beagle-flasher-init-shutdown.service || true
-	fi
-
 	if [ -f /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service ] ; then
 		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service || true
 	fi

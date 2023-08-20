@@ -22,7 +22,6 @@ wfile="arm64/usr/sbin/beagle-flasher-boot-emmc-rootfs-nvme" ; copy_all
 wfile="arm64/usr/sbin/beagle-flasher-boot-mmc-rootfs-sda" ; copy_all
 wfile="arm64/usr/sbin/enable-beagle-flasher" ; copy_all
 wfile="arm64/usr/sbin/init-beagle-flasher" ; copy_all
-wfile="arm64/usr/sbin/init-shutdown-beagle-flasher" ; copy_all
 wfile="arm64/etc/beagle-flasher/bbai64-emmc-to-microsd" ; copy_all
 wfile="arm64/etc/beagle-flasher/bbai64-emmc-to-nvme" ; copy_all
 wfile="arm64/etc/beagle-flasher/bbai64-microsd-to-emmc" ; copy_all
