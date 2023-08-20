@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.2-0~bookworm+20230820) bookworm; urgency=low
+bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.3-0~bookworm+20230820) bookworm; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -8,5 +8,5 @@ bb-u-boot-beagleboneai64-ti-2023.04 (2023.04.20230809.2-0~bookworm+20230820) boo
   * Run flasher from extlinux.conf
   * Build with board j721e_beagleboneai64*.config configs
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 20 Aug 2023 13:22:31 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 20 Aug 2023 13:45:18 -0500
 
