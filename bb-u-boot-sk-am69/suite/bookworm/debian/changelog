@@ -1,6 +1,10 @@
-bb-u-boot-sk-am69 (2023.04.20230809.2-0~bookworm+20230818) bookworm; urgency=low
+bb-u-boot-sk-am69 (2023.04.20230809.3-0~bookworm+20230820) bookworm; urgency=low
 
   * SK-AM69, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
+  * ti-sysfw: 09.00.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=905eb58564581d951d148f45828e8c8a142a5938
+  * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
+  * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 11:35:42 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 20 Aug 2023 17:41:07 -0500
 
