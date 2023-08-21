@@ -28,7 +28,8 @@ TEE_BOARD=k3-am62x
 
 #U-Boot
 UB_CONFIG=am62x_evm
-UB_CONFIG_BOARD=am625_beagleplay
+#UB_CONFIG_BOARD=am625_beagleplay
+UB_CONFIG_BOARD=beagleplay
 #UB_BRANCH=ti-u-boot-2023.04
 #UB_REPO="https://github.com/beagleboard/ti-u-boot.git"
 UB_BRANCH=v2023.04-ti-09.00.00.007
