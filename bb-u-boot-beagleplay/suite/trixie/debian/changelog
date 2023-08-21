@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2021.01.20230213.17-0~trixie+20230818) trixie; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.18-0~trixie+20230821) trixie; urgency=low
 
   * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -6,6 +6,7 @@ bb-u-boot-beagleplay (2021.01.20230213.17-0~trixie+20230818) trixie; urgency=low
   * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
   * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
   * Enable a extlinux.conf option to flash eMMC directly
+  * extlinux.conf more vocal on eMMC vs microSD
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 18 Aug 2023 16:46:10 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 21 Aug 2023 14:43:38 -0500
 
