@@ -1,3 +1,4 @@
   * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * extlinux.conf boot option to flash the other media
+  * Enable a extlinux.conf option to flash eMMC directly
+  * extlinux.conf more vocal on eMMC vs microSD
