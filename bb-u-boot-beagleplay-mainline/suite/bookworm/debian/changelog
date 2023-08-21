@@ -1,7 +1,9 @@
-bb-u-boot-beagleplay-mainline (2023.10.20230818.1-0~bookworm+20230821) bookworm; urgency=low
+bb-u-boot-beagleplay-mainline (2023.10.20230818.2-0~bookworm+20230821) bookworm; urgency=low
 
+  * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * extlinux.conf boot option to flash the other media
+  * Enable a extlinux.conf option to flash eMMC directly
+  * extlinux.conf more vocal on eMMC vs microSD
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 21 Aug 2023 13:49:52 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 21 Aug 2023 15:04:20 -0500
 
