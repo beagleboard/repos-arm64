@@ -29,7 +29,7 @@ TEE_BOARD=k3-am62x
 #U-Boot
 UB_CONFIG=am62x_evm
 UB_CONFIG_BOARD=beagleplay
-UB_BRANCH=BeaglePlay-V4-mainline-rfc
+UB_BRANCH=BeaglePlay-V4.1-mainline-rfc
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 MCORE=a53
