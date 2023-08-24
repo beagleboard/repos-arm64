@@ -2,7 +2,7 @@
 
 package_name="ti-edgeai-tiovx-kernels-8.6"
 debian_pkg_name="${package_name}"
-package_version="8.6.0.0"
+package_version="8.6.0.1"
 package_source=""
 src_dir=""
 
