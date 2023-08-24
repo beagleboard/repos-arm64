@@ -9,6 +9,7 @@ Build-Depends:
  , git
  , ti-neo-ai-dlr-8.6
  , ti-vision-apps-8.6
+ , ti-edgeai-tiovx-kernels-8.6
 Standards-Version: 4.5.1
 
 Package: ti-edgeai-tiovx-modules-8.6
