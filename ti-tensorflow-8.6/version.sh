@@ -2,7 +2,7 @@
 
 package_name="ti-tensorflow-8.6"
 debian_pkg_name="${package_name}"
-package_version="8.6.0.3"
+package_version="8.6.0.4"
 package_source=""
 src_dir=""
 

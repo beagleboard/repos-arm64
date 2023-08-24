@@ -3,6 +3,7 @@
 ./tmp/opt/tensorflow/tensorflow/lite/core/*.h /usr/include/tensorflow/lite/core/
 ./tmp/opt/tensorflow/tensorflow/lite/core/api/*.h /usr/include/tensorflow/lite/core/api/
 ./tmp/opt/tensorflow/tensorflow/lite/kernels/*.h /usr/include/tensorflow/lite/kernels/
+./tmp/opt/tensorflow/tensorflow/lite/internal/*.h /usr/include/tensorflow/lite/internal/
 ./tmp/opt/tensorflow/tensorflow/lite/profiling/*.h /usr/include/tensorflow/lite/profiling/
 ./tmp/opt/tensorflow/tensorflow/lite/schema/*.h /usr/include/tensorflow/lite/schema/
 ./tmp/opt/tensorflow/tensorflow/lite/schema/schema.fbs /usr/include/tensorflow/lite/schema/
