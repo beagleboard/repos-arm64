@@ -15,7 +15,6 @@ Build-Depends:
  , python3-pybind11
  , swig
  , ti-tensorflow-src-8.6
- , tree
  , unzip
  , zlib1g-dev
 Standards-Version: 4.5.1
