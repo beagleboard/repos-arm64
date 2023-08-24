@@ -1,0 +1,6 @@
+ti-edgeai-dl-inferer-8.6 (8.6.0.0-0~bullseye+20230824) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 24 Aug 2023 12:30:42 -0500
+

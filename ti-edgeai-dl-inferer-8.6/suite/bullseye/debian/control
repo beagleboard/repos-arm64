@@ -1,0 +1,23 @@
+Source: ti-edgeai-dl-inferer-8.6
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , cmake
+ , git
+ , meson
+ , ti-edgeai-tiovx-modules-8.6
+ , ti-edgeai-tiovx-kernels-8.6
+ , ti-neo-ai-dlr-8.6
+ , ti-rpmsg-char
+ , ti-vision-apps-8.6
+Standards-Version: 4.5.1
+
+Package: ti-edgeai-dl-inferer-8.6
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+Description: TI ti-edgeai-dl-inferer 8.6
+ TI ti-edgeai-dl-inferer 8.6
