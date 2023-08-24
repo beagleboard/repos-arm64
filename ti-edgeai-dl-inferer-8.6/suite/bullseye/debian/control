@@ -12,6 +12,7 @@ Build-Depends:
  , ti-edgeai-tiovx-kernels-8.6
  , ti-edgeai-tiovx-modules-8.6
  , ti-neo-ai-dlr-8.6
+ , ti-onnxruntime-8.6
  , ti-rpmsg-char
  , ti-tensorflow-8.6
  , ti-tensorflow-src-8.6
