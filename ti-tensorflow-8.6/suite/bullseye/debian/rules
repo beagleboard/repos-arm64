@@ -4,11 +4,13 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+SRC=tensorflow
+
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/tensorflow/ ; cp -r /opt/tensorflow/* ./tmp/opt/tensorflow/
+	mkdir -p ./tmp/opt/$(SRC)/ ; cp -r /opt/$(SRC)/* ./tmp/opt/$(SRC)/
 	python3 -m pip install --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
-	mkdir -p ./tmp/opt/tflite_build/ ; cd ./tmp/opt/tflite_build/ ; cmake ../tensorflow/tensorflow/lite ; cmake --build . -j ; cp -v ./libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y ../tensorflow/tensorflow/lite/tools/pip_package/build_pip_package_with_cmake.sh ; cd ../tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip/ ; dpkg-deb -xv python3-tflite-runtime_2.8.2-1_arm64.deb ./tmp/
-	cd ./tmp/opt/tensorflow/ ; tree
+	mkdir -p ./tmp/opt/tflite_build/ ; cd ./tmp/opt/tflite_build/ ; cmake ../$(SRC)/tensorflow/lite ; cmake --build . -j ; cp -v ./libtensorflow-lite.a /usr/lib/ ; BUILD_DEB=y ../$(SRC)/tensorflow/lite/tools/pip_package/build_pip_package_with_cmake.sh ; cd ../$(SRC)/tensorflow/lite/tools/pip_package/gen/tflite_pip/ ; dpkg-deb -xv python3-tflite-runtime_2.8.2-1_arm64.deb ./tmp/
+	cd ./tmp/opt/$(SRC)/ ; tree
 
 %:
 	dh $@
