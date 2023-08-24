@@ -1,0 +1,19 @@
+Source: ti-edgeai-tiovx-modules-8.6
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , cmake
+ , git
+ , ti-neo-ai-dlr-8.6
+ , ti-vision-apps-8.6
+Standards-Version: 4.5.1
+
+Package: ti-edgeai-tiovx-modules-8.6
+Architecture: arm64
+Depends:
+ ${misc:Depends}
+Description: TI edgeai-tiovx-modules 8.6
+ TI edgeai-tiovx-modules 8.6
