@@ -13,7 +13,7 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/
 	cp -v debian/common.cmake ./tmp/opt/$(SRC)/
 	mkdir -p ./tmp/opt/$(SRC)/build/
-	cd ./tmp/opt/$(SRC)/build/ ; cmake -DUSE_DLR_RT -DUSE_TENSORFLOW_RT -DUSE_ONNX_RT -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j4 ; make install DESTDIR=../../../
+	cd ./tmp/opt/$(SRC)/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j8 ; make install DESTDIR=../../../
 
 %:
 	dh $@
