@@ -39,6 +39,9 @@ imaging_deps = dependency('imaging')
 tiovx_deps = dependency('tiovx')
 ti_vision_apps_dep = dependency('ti_vision_apps')
 edgeai_tiovx_modules_dep = dependency('edgeai_tiovx_modules')
+edgeai_tiovx_kernels_dep = dependency('edgeai_tiovx_kernels')
+ti_stereo_perception_dep = dependency('ti_stereo_perception')
+edgeai_dl_inferer_dep = dependency('edgeai_dl_inferer')
 
 # Find TIOVX dependencies and headers
 c = meson.get_compiler('c')
@@ -57,8 +60,21 @@ plugin_deps = [
  tiovx_deps,
  ti_vision_apps_dep,
  edgeai_tiovx_modules_dep,
+ edgeai_tiovx_kernels_dep,
  math_dep
  ]
+
+if get_option('dl-plugins').enabled()
+  plugin_deps += [
+   edgeai_dl_inferer_dep,
+   ]
+endif
+
+if SOC == 'j721e' or SOC == 'j721s2' or SOC == 'j784s4'
+  plugin_deps += [
+   ti_stereo_perception_dep
+   ]
+endif
 
 # Examples dependencies
 example_deps = [
@@ -67,8 +83,15 @@ example_deps = [
  imaging_deps,
  tiovx_deps,
  ti_vision_apps_dep,
- edgeai_tiovx_modules_dep
+ edgeai_tiovx_modules_dep,
+ edgeai_tiovx_kernels_dep
  ]
+
+if SOC == 'j721e' or SOC == 'j721s2' or SOC == 'j784s4'
+  example_deps += [
+   ti_stereo_perception_dep
+   ]
+endif
 
 # Define test dependencies
 test_deps = [
@@ -79,8 +102,15 @@ test_deps = [
  imaging_deps,
  tiovx_deps,
  ti_vision_apps_dep,
- edgeai_tiovx_modules_dep
+ edgeai_tiovx_modules_dep,
+ edgeai_tiovx_kernels_dep
  ]
+
+if SOC == 'j721e' or SOC == 'j721s2' or SOC == 'j784s4'
+  test_deps += [
+   ti_stereo_perception_dep
+   ]
+endif
 
 # Verify if profiling was enabled
 if get_option('profiling').enabled()
@@ -162,7 +192,6 @@ warning_flags = [
   '-Wunused-label',
   '-Wunused-value',
   '-Wunused-variable',
-  '-Wno-unused-result',
   '-Werror',
 ]
 foreach extra_arg : warning_flags
