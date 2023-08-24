@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+wfile="tivision_apps_08_06_01_03.tar.xz"
+wapps="vx_app_08_06_01_03.tar.xz"
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/ ; tar xf ./debian/$(wfile) -C ./tmp/ ; tar xf ./debian/$(wapps) -C ./tmp/
+
+%:
+	dh $@
