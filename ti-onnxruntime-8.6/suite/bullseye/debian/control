@@ -15,7 +15,6 @@ Build-Depends:
  , python3-pybind11
  , ti-onnxruntime-src-8.6
  , unzip
- , tree
 Standards-Version: 4.5.1
 
 Package: ti-onnxruntime-8.6
