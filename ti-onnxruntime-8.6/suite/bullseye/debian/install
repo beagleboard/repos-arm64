@@ -1,4 +1,5 @@
 tmp/usr/local/include/onnxruntime/* /usr/include/onnxruntime
+tmp/usr/local/include/onnxruntime/* /usr/include/onnxruntime/include/onnxruntime
 tmp/usr/local/lib/libonnxruntime.so.1.7.0 /usr/lib
 tmp/usr/local/lib/libonnxruntime.so /usr/lib
 tmp/usr/local/bin/onnx_test_runner /usr/bin
