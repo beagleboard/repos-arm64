@@ -4,6 +4,13 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+SRC_REPO="https://github.com/TexasInstruments/onnxruntime.git"
+SRC_BRANCH=tidl-j7
+SRC_SHA=134edd824c834936690c23dde585c4eeaa74bdd4
+SRC=onnxruntime
+
+#git://github.com/TexasInstruments/onnxruntime;branch=tidl-j7;rev=134edd824c834936690c23dde585c4eeaa74bdd4;protocol=https;name=onnxruntime;destsuffix=${S}/onnxruntime  \
+
 # Disable dh_strip
 override_dh_strip:
 
@@ -14,11 +21,14 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch tidl-j7 --depth 1 https://github.com/TexasInstruments/onnxruntime.git ./tmp/opt/onnxruntime/
-	unzip debian/protoc-3.11.3-linux-aarch_64.zip -d ./tmp/opt/onnxruntime/cmake/external/protoc-3.11.3-linux-aarch_64
-	cp -v debian/tool.cmake ./tmp/opt/onnxruntime/
-	cd ./tmp/opt/onnxruntime/ ; git submodule update --init --recursive
-	cd ./tmp/opt/onnxruntime/ ; find . | grep .git | xargs rm -rf
+	mkdir -p ./tmp/opt/ ; git clone $(SRC_REPO) ./tmp/opt/$(SRC)/ ; cd ./tmp/opt/$(SRC)/ ; git checkout -b tmp $(SRC_SHA)
+	unzip debian/protoc-3.11.3-linux-aarch_64.zip -d ./tmp/opt/$(SRC)/cmake/external/protoc-3.11.3-linux-aarch_64
+	cp -v debian/tool.cmake ./tmp/opt/$(SRC)/
+	cd ./tmp/opt/$(SRC)/ ; git submodule update --init --recursive
+	cd ./tmp/opt/$(SRC)/ ; find . | grep .git | xargs rm -rf
 
 %:
 	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
