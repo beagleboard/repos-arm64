@@ -4,6 +4,10 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+SRC_REPO="https://github.com/TexasInstruments/tensorflow.git"
+SRC_BRANCH=tidl-j7-2.8
+SRC=tensorflow
+
 wfile="v1.12.0.tar.gz"
 #https://git.ti.com/gitweb?p=jacinto-linux/meta-psdkla.git;a=blob;f=recipes-tisdk/ti-tidl/ti-tidl.bb;h=5fb0a01691f694adc2a9e0e58d294dc72c51361a;hb=ff9c924f7d4071753d95985827924b8719d49d0a
 #git://github.com/TexasInstruments/tensorflow;branch=tidl-j7-2.8;rev=233657497d2735cae9e840df9e650e268149070d;protocol=https;name=tensorflow;destsuffix=${S}/tensorflow  \
@@ -15,8 +19,11 @@ override_dh_strip:
 override_dh_strip_nondeterminism:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch tidl-j7-2.8 --depth 1 https://github.com/TexasInstruments/tensorflow.git ./tmp/opt/tensorflow/ ; mkdir -p ./tmp/opt/tensorflow/tensorflow/lite/tools/make/downloads/flatbuffers ; tar xf ./debian/$(wfile) --strip-components=1 -C ./tmp/opt/tensorflow/tensorflow/lite/tools/make/downloads/flatbuffers
-	cd ./tmp/opt/tensorflow/ ; find . | grep .git | xargs rm -rf
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/ ; mkdir -p ./tmp/opt/$(SRC)/tensorflow/lite/tools/make/downloads/flatbuffers ; tar xf ./debian/$(wfile) --strip-components=1 -C ./tmp/opt/$(SRC)/tensorflow/lite/tools/make/downloads/flatbuffers
+	cd ./tmp/opt/$(SRC)/ ; find . | grep .git | xargs rm -rf
 
 %:
 	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

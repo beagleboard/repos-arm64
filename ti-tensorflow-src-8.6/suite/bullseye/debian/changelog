@@ -1,6 +1,7 @@
-ti-tensorflow-src-8.6 (8.6.0.0-1~bullseye+20230725) bullseye; urgency=low
+ti-tensorflow-src-8.6 (8.6.0.1-0~bullseye+20230825) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * processor-sdk-linux-08_06_01_03
+  * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jul 2023 15:28:22 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 16:16:13 -0500
 
