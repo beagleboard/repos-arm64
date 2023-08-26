@@ -1,0 +1,7 @@
+ti-dlpack-src-8.6 (8.6.0.0-0~bullseye+20230826) bullseye; urgency=low
+
+  * processor-sdk-linux-08_06_01_03
+  * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 26 Aug 2023 00:03:03 -0500
+

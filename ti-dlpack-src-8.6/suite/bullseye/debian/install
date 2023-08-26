@@ -1,0 +1,2 @@
+tmp/opt/dlpack/include/dlpack/*.h /usr/include/dlpack/
+tmp/opt/dlpack/* /opt/dlpack
