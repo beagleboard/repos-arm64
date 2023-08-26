@@ -1,6 +1,7 @@
-ti-edgeai-dl-inferer-8.6 (8.6.0.6-0~bullseye+20230825) bullseye; urgency=low
+ti-edgeai-dl-inferer-8.6 (8.6.0.7-0~bullseye+20230825) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * processor-sdk-linux-08_06_01_03
+  * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 10:05:00 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 22:18:26 -0500
 

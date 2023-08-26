@@ -36,4 +36,6 @@ ti-neo-ai-dlr-8.6
 ti-vision-apps-8.6
 ti-edgeai-tiovx-kernels-8.6
 ti-edgeai-tiovx-modules-8.6
+ti-edgeai-dl-inferer-8.6
+ti-edgeai-gst-plugins-8.6
 #

@@ -11,8 +11,8 @@ Build-Depends:
  , libgstreamer-plugins-base1.0-dev
  , libdevil1c2
  , meson
- , ti-edgeai-tiovx-modules-8.6
  , ti-edgeai-tiovx-kernels-8.6
+ , ti-edgeai-tiovx-modules-8.6
  , ti-neo-ai-dlr-8.6
  , ti-rpmsg-char
  , ti-vision-apps-8.6

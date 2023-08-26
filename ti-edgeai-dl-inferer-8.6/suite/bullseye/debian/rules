@@ -5,15 +5,19 @@
 export DH_VERBOSE=1
 export SOC=j721e
 
+#SRC_URI = "git://git.ti.com/edgeai/edgeai-dl-inferer.git;tag=EDGEAI_APP_STACK_08_06_00_02;nobranch=1;protocol=git"
+
 SRC_REPO="https://git.ti.com/git/edgeai/edgeai-dl-inferer.git"
 SRC_BRANCH=EDGEAI_APP_STACK_08_06_01_00
+#SRC_SHA=
 SRC=edgeai-dl-inferer
+
+#cp -v debian/common.cmake ./tmp/opt/$(SRC)/
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/
-	cp -v debian/common.cmake ./tmp/opt/$(SRC)/
 	mkdir -p ./tmp/opt/$(SRC)/build/
-	cd ./tmp/opt/$(SRC)/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j8 ; make install DESTDIR=../../../
+	cd ./tmp/opt/$(SRC)/build/ ; cmake -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j8 ; make install DESTDIR=../../../
 
 %:
 	dh $@
