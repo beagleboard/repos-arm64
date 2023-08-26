@@ -2,7 +2,7 @@
 
 package_name="ti-neo-ai-dlr-8.6"
 debian_pkg_name="${package_name}"
-package_version="8.6.0.0"
+package_version="8.6.0.1"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230414"
+bullseye_version="~bullseye+20230825"
