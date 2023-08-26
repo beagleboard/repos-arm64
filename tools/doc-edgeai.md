@@ -29,4 +29,6 @@ https://git.ti.com/gitweb?p=rpmsg/ti-rpmsg-char.git;a=summary
 ti-tensorflow-src
 ti-tensorflow
 ti-onnxruntime-src
+ti-onnxruntime
+ti-processor-sdk-rtos-8.6
 #

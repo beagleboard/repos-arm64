@@ -11,7 +11,7 @@ git_sha=""
 reprepro_dir="t/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-0"
+debian_version="${package_version}-0.1"
 debian_untar=""
 debian_patch=""
 
@@ -20,4 +20,4 @@ debian_dl_2="https://git.yoctoproject.org/cgit/cgit.cgi/opkg-utils/snapshot/opkg
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230725"
+bullseye_version="~bullseye+20230825"
