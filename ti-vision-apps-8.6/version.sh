@@ -2,7 +2,7 @@
 
 package_name="ti-vision-apps-8.6"
 debian_pkg_name="${package_name}"
-package_version="8.6.0.0"
+package_version="8.6.0.1"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,4 @@ debian_dl_2="https://github.com/rcn-ee/ti-edge-ai-bins/raw/main/8.6/vx_app_08_06
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230824"
+bullseye_version="~bullseye+20230825"
