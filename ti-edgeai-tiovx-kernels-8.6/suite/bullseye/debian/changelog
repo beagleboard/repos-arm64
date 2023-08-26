@@ -1,7 +1,7 @@
-ti-edgeai-tiovx-kernels-8.6 (8.6.0.2-0~bullseye+20230825) bullseye; urgency=low
+ti-edgeai-tiovx-kernels-8.6 (8.6.0.3-0~bullseye+20230825) bullseye; urgency=low
 
   * processor-sdk-linux-08_06_01_03
   * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 21:42:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 21:47:26 -0500
 
