@@ -14,9 +14,9 @@ SRC=edgeai-dl-inferer
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/
-	cp -v debian/common.cmake ./tmp/opt/$(SRC)/
+	cp -v debian/common.cmake ./tmp/opt/$(SRC)/cmake/
 	mkdir -p ./tmp/opt/$(SRC)/build/
-	cd ./tmp/opt/$(SRC)/build/ ; cmake -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j8 ; make install DESTDIR=../../../
+	cd ./tmp/opt/$(SRC)/build/ ; cmake -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_INSTALL_PREFIX=/usr .. ; make VERBOSE=1 -j8 ; make install DESTDIR=../../../
 
 %:
 	dh $@

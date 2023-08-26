@@ -119,7 +119,7 @@ include_directories(SYSTEM ${TENSORFLOW_INSTALL_DIR}
 endif()
 
 if(USE_ONNX_RT)
-include_directories(${TARGET_FS}/usr/include/onnxruntime/core/session)
+include_directories(${TARGET_FS}/usr/include/onnxruntime)
 include_directories(SYSTEM ${ONNXRT_INSTALL_DIR}/include/onnxruntime
                     SYSTEM ${ONNXRT_INSTALL_DIR}/include/onnxruntime/core/session
                     )
