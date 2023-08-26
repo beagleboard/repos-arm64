@@ -24,6 +24,7 @@ Build-Depends:
  , llvm
  , llvm-11-dev
  , ti-processor-sdk-rtos-8.6
+ , ti-tidl-rt-8.6
  , tree
 Standards-Version: 4.5.1
 
