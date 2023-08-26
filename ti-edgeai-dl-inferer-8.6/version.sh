@@ -2,7 +2,7 @@
 
 package_name="ti-edgeai-dl-inferer-8.6"
 debian_pkg_name="${package_name}"
-package_version="8.6.0.7"
+package_version="8.6.0.8"
 package_source=""
 src_dir=""
 
