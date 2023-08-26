@@ -1,0 +1,7 @@
+ti-tidl-rt-8.6 (8.6.0.0-0~bullseye+20230825) bullseye; urgency=low
+
+  * processor-sdk-linux-08_06_01_03
+  * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 21:17:35 -0500
+

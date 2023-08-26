@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+#https://git.ti.com/gitweb?p=processor-sdk-vision/arm-tidl.git;a=summary
+#https://git.ti.com/gitweb?p=jacinto-linux/meta-psdkla.git;a=blob;f=recipes-tisdk/ti-tidl/ti-tidl.bb;h=5fb0a01691f694adc2a9e0e58d294dc72c51361a;hb=refs/tags/REL.PSDK.JACINTO.08.06.01.03
+
+SRC_REPO="https://git.ti.com/git/processor-sdk-vision/arm-tidl.git"
+SRC_BRANCH=REL.TIDL.J7.08.06.00.10
+#SRC_SHA=
+SRC=arm-tidl
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/
+
+%:
+	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
