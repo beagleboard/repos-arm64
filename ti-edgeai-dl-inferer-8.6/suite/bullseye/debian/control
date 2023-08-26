@@ -9,6 +9,7 @@ Build-Depends:
  , git
  , libyaml-cpp-dev
  , meson
+ , ti-dlpack-src-8.6
  , ti-edgeai-tiovx-kernels-8.6
  , ti-edgeai-tiovx-modules-8.6
  , ti-neo-ai-dlr-8.6
