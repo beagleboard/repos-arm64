@@ -9,7 +9,7 @@ export SOC=j721e
 #SRC_URI = "git://git.ti.com/edgeai/edgeai-tiovx-kernels.git;tag=EDGEAI_APP_STACK_08_06_00_02;nobranch=1;protocol=git"
 
 SRC_REPO="https://git.ti.com/git/edgeai/edgeai-tiovx-kernels.git"
-SRC_BRANCH=EDGEAI_APP_STACK_08_06_01_00
+SRC_BRANCH=EDGEAI_APP_STACK_08_06_00_02
 #SRC_SHA=
 SRC=edgeai-tiovx-kernels
 

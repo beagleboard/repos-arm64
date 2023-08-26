@@ -1,0 +1,2 @@
+  * processor-sdk-linux-08_06_01_03
+  * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
