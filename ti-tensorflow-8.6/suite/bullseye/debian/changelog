@@ -1,7 +1,7 @@
-ti-tensorflow-8.6 (8.6.0.5-0~bullseye+20230825) bullseye; urgency=low
+ti-tensorflow-8.6 (8.6.0.6-0~bullseye+20230825) bullseye; urgency=low
 
   * processor-sdk-linux-08_06_01_03
   * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 16:29:26 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 22:31:10 -0500
 
