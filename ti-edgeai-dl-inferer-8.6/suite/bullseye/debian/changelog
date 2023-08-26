@@ -1,7 +1,7 @@
-ti-edgeai-dl-inferer-8.6 (8.6.0.11-0~bullseye+20230826) bullseye; urgency=low
+ti-edgeai-dl-inferer-8.6 (8.6.0.12-0~bullseye+20230826) bullseye; urgency=low
 
   * processor-sdk-linux-08_06_01_03
   * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 26 Aug 2023 00:06:53 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 26 Aug 2023 00:12:15 -0500
 
