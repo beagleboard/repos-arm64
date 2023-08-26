@@ -5,13 +5,23 @@
 export DH_VERBOSE=1
 export SOC=j721e
 
+#SRC_URI = "git://github.com/TexasInstruments/edgeai-gst-plugins.git;tag=EDGEAI_APP_STACK_08_06_00_02;nobranch=1;protocol=https"
+
+SRC_REPO="https://github.com/TexasInstruments/edgeai-gst-plugins.git"
+SRC_BRANCH=EDGEAI_APP_STACK_08_06_00_02
+#SRC_SHA=
+SRC=edgeai-gst-plugins
+
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch EDGEAI_APP_STACK_08_06_01_00 --depth 1 https://github.com/TexasInstruments/edgeai-gst-plugins.git ./tmp/opt/edgeai-gst-plugins/
-	cp -v debian/meson.build ./tmp/opt/edgeai-gst-plugins/
-	cd ./tmp/opt/edgeai-gst-plugins/ ; meson build --prefix=/usr -Dpkg_config_path=pkgconfig
-	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build
-	cd ./tmp/opt/edgeai-gst-plugins/ ; ninja -C build install
-	rm -r ./tmp/opt/edgeai-gst-plugins/build/gst-libs/gst/tiovx/libgsttiovx-1.0.so.1.0.p/
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/
+	cp -v debian/meson.build ./tmp/opt/$(SRC)/
+	cd ./tmp/opt/$(SRC)/ ; meson build --prefix=/usr -Dpkg_config_path=pkgconfig
+	cd ./tmp/opt/$(SRC)/ ; ninja -C build
+	cd ./tmp/opt/$(SRC)/ ; ninja -C build install
+	rm -r ./tmp/opt/$(SRC)/build/gst-libs/gst/tiovx/libgsttiovx-1.0.so.1.0.p/
 
 %:
 	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
