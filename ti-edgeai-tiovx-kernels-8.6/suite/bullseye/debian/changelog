@@ -1,6 +1,7 @@
-ti-edgeai-tiovx-kernels-8.6 (8.6.0.1-0~bullseye+20230824) bullseye; urgency=low
+ti-edgeai-tiovx-kernels-8.6 (8.6.0.2-0~bullseye+20230825) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * processor-sdk-linux-08_06_01_03
+  * MACHINE=j7-evm bitbake -k tisdk-edgeai-image
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 24 Aug 2023 11:12:24 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 25 Aug 2023 21:42:06 -0500
 

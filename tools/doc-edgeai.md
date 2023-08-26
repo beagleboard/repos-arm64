@@ -33,4 +33,6 @@ ti-onnxruntime
 ti-processor-sdk-rtos-8.6
 ti-tidl-rt-8.6
 ti-neo-ai-dlr-8.6
+ti-vision-apps-8.6
+ti-edgeai-tiovx-kernels-8.6
 #

@@ -5,6 +5,14 @@
 export DH_VERBOSE=1
 export SOC=j721e
 
+#https://git.ti.com/gitweb?p=edgeai/edgeai-tiovx-kernels.git;a=commit;h=44a4a9ab698d22a1e60f1865d02423107eb2db29
+#SRC_URI = "git://git.ti.com/edgeai/edgeai-tiovx-kernels.git;tag=EDGEAI_APP_STACK_08_06_00_02;nobranch=1;protocol=git"
+
+SRC_REPO="https://git.ti.com/git/edgeai/edgeai-tiovx-kernels.git"
+SRC_BRANCH=EDGEAI_APP_STACK_08_06_01_00
+#SRC_SHA=
+SRC=edgeai-tiovx-kernels
+
 # Disable dh_strip
 override_dh_strip:
 
@@ -12,9 +20,12 @@ override_dh_strip:
 override_dh_strip_nondeterminism:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch EDGEAI_APP_STACK_08_06_01_00 --depth 1 https://git.ti.com/git/edgeai/edgeai-tiovx-kernels.git ./tmp/opt/edgeai-tiovx-kernels/
-	mkdir -p ./tmp/opt/edgeai-tiovx-kernels/build/
-	cd ./tmp/opt/edgeai-tiovx-kernels/build/ ; cmake -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j4 ; make install DESTDIR=../../../
+	mkdir -p ./tmp/opt/ ; git clone --single-branch --branch $(SRC_BRANCH) --depth 1 $(SRC_REPO) ./tmp/opt/$(SRC)/
+	mkdir -p ./tmp/opt/$(SRC)/build/
+	cd ./tmp/opt/$(SRC)/build/ ; cmake -DCMAKE_SKIP_RPATH=TRU -DCMAKE_INSTALL_PREFIX=/usr .. ; make -j4 ; make install DESTDIR=../../../
 
 %:
 	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
