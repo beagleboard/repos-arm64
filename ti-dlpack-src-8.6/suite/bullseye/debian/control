@@ -1,4 +1,4 @@
-Source: ti-dlpack-src-8.2
+Source: ti-dlpack-src-8.6
 Section: misc
 Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
@@ -9,9 +9,9 @@ Build-Depends:
  , git
 Standards-Version: 4.5.1
 
-Package: ti-dlpack-src-8.2
+Package: ti-dlpack-src-8.6
 Architecture: arm64
 Depends:
  ${misc:Depends}
-Description: TI dlpack
- TI dlpack
+Description: TI dlpack 8.6
+ TI dlpack 8.6
