@@ -42,20 +42,20 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; git --git-dir ./tmp/ti-linux-firmware/.git log --pretty=oneline
 	cp -v ./tmp/ti-linux-firmware/ti-dm/j721e/$(UB_DM) /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/ ; git --git-dir ./tmp/arm-trusted-firmware/.git log --pretty=oneline
-	make -C ./tmp/arm-trusted-firmware/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) SPD=opteed all
+	make -C ./tmp/arm-trusted-firmware/ -j CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin ./tmp/pkg/
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=5 ./tmp/optee_os/ ; git --git-dir ./tmp/optee_os/.git log --pretty=oneline
-	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(TEE_BOARD) CFG_ARM64_core=y all
+	make -C ./tmp/optee_os/ -j O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(TEE_BOARD) CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
-	make -C ./tmp/u-boot -j1 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
-	make -C ./tmp/u-boot -j8 O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+	make -C ./tmp/u-boot O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig
+	make -C ./tmp/u-boot -j O=../r5 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 	ls -lha ./tmp/r5/
 	cp -v ./tmp/r5/tiboot3.bin ./tmp/pkg/
-	make -C ./tmp/u-boot -j1 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig
-	make -C ./tmp/u-boot -j8 O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/$(UB_DM)
+	make -C ./tmp/u-boot O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig
+	make -C ./tmp/u-boot -j O=../$(MCORE) ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/$(UB_DM)
 	ls -lha ./tmp/$(MCORE)/
 	cp -v ./tmp/$(MCORE)/tispl.bin ./tmp/pkg/tispl.bin
 	cp -v ./tmp/$(MCORE)/u-boot.img ./tmp/pkg/u-boot.img
