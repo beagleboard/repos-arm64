@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2021.01.20230213.18-0~trixie+20230821) trixie; urgency=low
+bb-u-boot-beagleplay (2021.01.20230213.19-0~trixie+20230828) trixie; urgency=low
 
   * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -8,5 +8,5 @@ bb-u-boot-beagleplay (2021.01.20230213.18-0~trixie+20230821) trixie; urgency=low
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 21 Aug 2023 14:43:38 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 28 Aug 2023 23:30:56 -0500
 
