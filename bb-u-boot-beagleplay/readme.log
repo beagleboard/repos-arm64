@@ -5,3 +5,4 @@
   * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
+  * add homeassistant specific extlinux.conf files
