@@ -1,4 +1,4 @@
-rcnee-internal-testlab (1.20230906.0-0~bullseye+20230906) bullseye; urgency=low
+rcnee-internal-testlab (1.20230906.0-0~trixie+20230906) trixie; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
