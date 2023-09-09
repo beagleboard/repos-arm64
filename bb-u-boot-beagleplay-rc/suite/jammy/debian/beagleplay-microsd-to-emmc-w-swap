@@ -1,0 +1,10 @@
+source=/dev/mmcblk1
+destination=/dev/mmcblk0
+rfs_partition=dual
+rfs_boot_startmb=1
+rfs_boot_size_mb=256
+rfs_swap_size_mb=2048
+bootloader=/opt/u-boot/bb-u-boot-beagleplay-rc/install-emmc.sh
+flash_back=/opt/u-boot/bb-u-boot-beagleplay-rc/beagleplay-emmc-to-microsd-w-swap
+extlinux=/opt/u-boot/bb-u-boot-beagleplay-rc/emmc-extlinux-w-swap.conf
+flash_cc1352p=enable
