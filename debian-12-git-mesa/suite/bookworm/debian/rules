@@ -82,8 +82,8 @@ else
 
 	# etnaviv, tegra, vc4 and v3d kernel support are only available on armhf and arm64
 	ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64))
-		GALLIUM_DRIVERS += etnaviv panfrost svga tegra vc4 v3d
-		VULKAN_DRIVERS += broadcom freedreno panfrost imagination-experimental
+		GALLIUM_DRIVERS += etnaviv svga tegra vc4 v3d
+		VULKAN_DRIVERS += broadcom freedreno imagination-experimental
 	endif
 
 	ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64 riscv64))
