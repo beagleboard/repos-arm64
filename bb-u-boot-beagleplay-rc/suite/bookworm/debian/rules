@@ -13,7 +13,7 @@ TARGETDIR=bb-u-boot-beagleplay-rc
 TILF_TAG=09.00.00.009
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
-TILF_REPO="https://gitea.gfnd.rcn-ee.org/RobertCNelson/ti-linux-firmware.git"
+TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
