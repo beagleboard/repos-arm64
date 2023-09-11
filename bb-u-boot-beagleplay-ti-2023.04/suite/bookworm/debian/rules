@@ -10,30 +10,37 @@ TARGETDIR=bb-u-boot-beagleplay-ti-2023.04
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.00.00.007
+TILF_TAG=09.00.00.009
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
-TILF_REPO="https://gitea.gfnd.rcn-ee.org/RobertCNelson/ti-linux-firmware.git"
+#Local Mirror
+TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #arm-trusted-firmware
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-ATF_TAG=v2.9.0
-ATF_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
+#ATF_TAG=v2.9.0
+ATF_TAG=master
+#ATF_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
+#Local Mirror
+ATF_REPO="https://gitea.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
 ATF_BOARD=lite
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
-TEE_TAG=3.22.0
-TEE_REPO="https://github.com/OP-TEE/optee_os"
+#TEE_TAG=3.22.0
+TEE_TAG=master
+#TEE_REPO="https://github.com/OP-TEE/optee_os"
+#Local Mirror
+TEE_REPO="https://gitea.gfnd.rcn-ee.org/mirror/optee_os.git"
 TEE_BOARD=k3-am62x
 
 #U-Boot
 UB_CONFIG=am62x_evm
 #UB_CONFIG_BOARD=am625_beagleplay
 UB_CONFIG_BOARD=beagleplay
-#UB_BRANCH=ti-u-boot-2023.04
-#UB_REPO="https://github.com/beagleboard/ti-u-boot.git"
-UB_BRANCH=v2023.04-ti-09.00.00.007
+UB_BRANCH=v2023.04-ti-09.00.00.009-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
+#Local Mirror
+#UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 #UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
@@ -45,15 +52,15 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
-	mkdir -p ./tmp/arm-trusted-firmware/ ; git clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/ ; git --git-dir ./tmp/arm-trusted-firmware/.git log --pretty=oneline
+	mkdir -p ./tmp/arm-trusted-firmware/ ; git -c http.sslVerify=false clone -b $(ATF_TAG) $(ATF_REPO) --depth=5 ./tmp/arm-trusted-firmware/ ; git --git-dir ./tmp/arm-trusted-firmware/.git log --pretty=oneline
 	make -C ./tmp/arm-trusted-firmware/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(ATF_BOARD) K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin ./tmp/pkg/
 	cp -v ./tmp/arm-trusted-firmware/build/k3/$(ATF_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/optee_os/ ; git clone -b $(TEE_TAG) $(TEE_REPO) --depth=5 ./tmp/optee_os/ ; git --git-dir ./tmp/optee_os/.git log --pretty=oneline
+	mkdir -p ./tmp/optee_os/ ; git -c http.sslVerify=false clone -b $(TEE_TAG) $(TEE_REPO) --depth=5 ./tmp/optee_os/ ; git --git-dir ./tmp/optee_os/.git log --pretty=oneline
 	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(TEE_BOARD) CFG_WITH_SOFTWARE_PRNG=y CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
+	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
 	make -C ./tmp/u-boot -j1 O=../r5 CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig $(UB_CONFIG_BOARD)_r5.config
 	make -C ./tmp/u-boot -j8 O=../r5 CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/r5/

@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleplay-ti-2023.04"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20230809.9"
+package_version="2023.04.20230906.0"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20230821"
+bookworm_version="~bookworm+20230911"
