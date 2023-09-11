@@ -1,6 +1,6 @@
-powervr-firmware (0.0.0-git2022912.5-0~bookworm+20230425) bookworm; urgency=low
+powervr-firmware (0.0.0-git20230830.0-0~bookworm+20230910) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Update PowerVR AXE-1-16M and GX6250 firmware to v1.0.OS@6476056
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Apr 2023 21:32:37 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 10 Sep 2023 22:39:21 -0500
 

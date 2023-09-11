@@ -1,4 +1,4 @@
-powervr-firmware (0.0.0-git20230830.0-0~bullseye+20230910) bullseye; urgency=low
+powervr-firmware (0.0.0-git20230830.0-0~trixie+20230910) trixie; urgency=low
 
   * Update PowerVR AXE-1-16M and GX6250 firmware to v1.0.OS@6476056
 
