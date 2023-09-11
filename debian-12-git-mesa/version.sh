@@ -5,7 +5,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="23.3.0-1.git20230903.1"
+package_version="23.2.0-1.git20230903.1"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
