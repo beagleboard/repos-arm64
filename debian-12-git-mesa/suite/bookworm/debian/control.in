@@ -375,23 +375,6 @@ Description: Mesa Vulkan graphics drivers
  Vulkan is a low-overhead 3D graphics and compute API. This package
  includes Vulkan drivers provided by the Mesa project.
 
-Package: mesa-opencl-icd
-Section: libs
-Architecture: @LLVM_ARCHS@
-Pre-Depends: ${misc:Pre-Depends}
-Depends:
- libclc-@LLVM_VERSION@,
- ocl-icd-libopencl1 | libopencl1,
- ${shlibs:Depends},
- ${misc:Depends},
-Provides: opencl-icd
-Multi-Arch: same
-Description: free implementation of the OpenCL API -- ICD runtime
- This package contains the mesa implementation of the OpenCL (Open Compute
- Language) library, which is intended for use with an ICD loader. OpenCL
- provides a standardized interface for computational analysis on graphical
- processing units.
-
 Package: mesa-drm-shim
 Section: libs
 Architecture: amd64 arm64 armel armhf i386 mips64el mipsel powerpc ppc64 ppc64el s390x sparc64
