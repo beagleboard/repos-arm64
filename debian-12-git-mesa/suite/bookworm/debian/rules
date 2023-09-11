@@ -59,6 +59,7 @@ else
 	confflags_GALLIUM += -Dgallium-extra-hud=true
 	confflags_GALLIUM += -Dgallium-vdpau=enabled
 	confflags_GALLIUM += -Dlmsensors=enabled
+	confflags_GALLIUM += -Dgallium-opencl=disabled
 
   # radv/lavapipe needs LLVM and the Vulkan loader, so only build on the subset of
   # arches where we have LLVM enabled and where the Vulkan loader is built.
