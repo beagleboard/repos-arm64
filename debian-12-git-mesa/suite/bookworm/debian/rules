@@ -312,3 +312,6 @@ regen_control:
 	    -e"s,@VALGRIND_ARCHS@,$(VALGRIND_ARCHS),g" \
 	    -e"s,@WINE_ARCHS@,$(WINE_ARCHS),g" \
 	    debian/control.in > debian/control
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
