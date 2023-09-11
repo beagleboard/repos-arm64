@@ -1,0 +1,1 @@
+  * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0 which works in Windows 11
