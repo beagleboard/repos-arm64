@@ -10,7 +10,6 @@ Package: bbb.io-xfce4-desktop
 Architecture: all
 Depends:
  command-not-found
- , dphys-swapfile
  , libxfce4ui-utils
  , mesa-utils
  , pipewire-bin
@@ -28,7 +27,6 @@ Depends:
  , adwaita-qt
  , qt5ct
  , wireless-regdb
- , wpagui
  , barrier
  , bbb.io-keyring
  , gnome-desktop3-data
