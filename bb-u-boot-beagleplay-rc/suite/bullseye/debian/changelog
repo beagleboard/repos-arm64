@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay-rc (2023.10.20230908.0-0~bullseye+20230909) bullseye; urgency=low
+bb-u-boot-beagleplay-rc (2023.10.20230909.0-0~bullseye+20230910) bullseye; urgency=low
 
   * U-Boot Next
   * BeaglePlay, add extlinux.conf boot options over serial
@@ -6,5 +6,5 @@ bb-u-boot-beagleplay-rc (2023.10.20230908.0-0~bullseye+20230909) bullseye; urgen
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 09 Sep 2023 11:27:29 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 10 Sep 2023 22:00:09 -0500
 
