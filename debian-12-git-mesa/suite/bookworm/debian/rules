@@ -52,14 +52,11 @@ ifeq ($(DEB_HOST_ARCH_OS), hurd)
 	confflags_DIRECT_RENDERING = -Dglx-direct=false
 	confflags_GBM = -Dgbm=disabled
 else
-	GALLIUM_DRIVERS += r300 r600
-
 	confflags_DIRECT_RENDERING = -Dglx-direct=true
 	confflags_GBM = -Dgbm=enabled
 	confflags_GALLIUM += -Dgallium-extra-hud=true
 	confflags_GALLIUM += -Dgallium-vdpau=enabled
 	confflags_GALLIUM += -Dlmsensors=enabled
-	confflags_GALLIUM += -Dgallium-opencl=disabled
 
   # radv/lavapipe needs LLVM and the Vulkan loader, so only build on the subset of
   # arches where we have LLVM enabled and where the Vulkan loader is built.
@@ -126,7 +123,7 @@ else
   # LLVM is required for building r300g, radeonsi and llvmpipe drivers.
   # It's also required for building OpenCL support.
   ifneq (,$(filter $(DEB_HOST_ARCH), $(LLVM_ARCHS)))
-	GALLIUM_DRIVERS += radeonsi zink
+	GALLIUM_DRIVERS += zink
 
 	# Only enable amd on riscv64, swrast needs CPU JIT support which doesn't work properly yet
 	ifneq (,$(filter $(DEB_HOST_ARCH), riscv64))
@@ -138,7 +135,7 @@ else
 
 	VULKAN_LAYERS += device-select intel-nullhw overlay
 	confflags_GALLIUM += -Dllvm=enabled
-	confflags_GALLIUM += -Dgallium-opencl=icd
+	confflags_GALLIUM += -Dgallium-opencl=disabled
 
 	# Build rusticl for archs where rustc is available
 	ifneq (,$(filter $(DEB_HOST_ARCH), $(RUSTICL_ARCHS)))
