@@ -1,14 +1,8 @@
-mesa (23.2.0-1.git20230905.2-0~bookworm+20230911) bookworm; urgency=low
+mesa (23.2.0-1.git20230905.4-0~bookworm+20230911) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 11 Sep 2023 14:13:25 -0500
-
-mesa (23.2.0-1.git20230905.1-0~bookworm+20230911) bookworm; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 11 Sep 2023 13:11:20 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 11 Sep 2023 19:01:44 -0500
 
 mesa (23.2.0~rc3-1) experimental; urgency=medium
 
