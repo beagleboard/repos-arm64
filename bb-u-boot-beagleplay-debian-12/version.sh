@@ -19,4 +19,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230902"
+bookworm_version="~bookworm+20230902"
+trixie_version="~trixie+20230902"
+jammy_version="~jammy+20230902"
