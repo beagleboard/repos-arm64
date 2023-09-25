@@ -23,3 +23,5 @@ local_patch="bbbio1"
 
 lunar_version="~lunar+20230919"
 bullseye_version="~bullseye+20230925"
+bookworm_version="~bookworm+20230925"
+jammy_version="~jammy+20230925"

@@ -1,4 +1,4 @@
-ell (0.58-2bbbio1~bullseye+20230925) bullseye; urgency=low
+ell (0.58-2bbbio1~jammy+20230925) jammy; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
