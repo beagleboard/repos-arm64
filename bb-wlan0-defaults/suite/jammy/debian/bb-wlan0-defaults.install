@@ -6,4 +6,4 @@ debian/mlan0-DHCP.network /etc/bbb.io/templates/
 debian/wlan0-DHCP.network /etc/bbb.io/templates/
 debian/wpa_supplicant-mlan0.conf /etc/bbb.io/templates/
 debian/wpa_supplicant-wlan0.conf /etc/bbb.io/templates/
-debian/99-unmanaged-devices.conf /etc/bbb.io/templates/
+debian/local-ignore-softap0.conf /etc/bbb.io/templates/
