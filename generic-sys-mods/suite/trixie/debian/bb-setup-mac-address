@@ -37,6 +37,14 @@ get_mac_addr () {
 		is_mac_valid
 	fi
 
+	#BeaglePlay
+	mac_address="/proc/device-tree/bus@f0000/ethernet@8000000/ethernet-ports/port@1/local-mac-address"
+	if [ -f ${mac_address} ] ; then
+		mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
+		echo "${log} ethernet@8000000: ${mac_addr0}"
+		is_mac_valid
+	fi
+
 	#Some devices are showing a blank mac_addr0 [00:00:00:00:00:00], let's fix that up...
 	if [ "x${is_valid}" = "x" ] ; then
 		echo "${log} mac came up 00:00:00:00:00:00 fixing..."

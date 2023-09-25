@@ -1,7 +1,7 @@
-generic-sys-mods (1.20230922.2-0~bookworm+20230925) bookworm; urgency=low
+generic-sys-mods (1.20230922.3-0~bookworm+20230925) bookworm; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 25 Sep 2023 17:02:17 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 25 Sep 2023 17:22:14 -0500
 
