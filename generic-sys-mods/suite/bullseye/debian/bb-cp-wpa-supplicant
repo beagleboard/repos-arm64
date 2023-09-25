@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if ! id | grep -q root; then
-	echo "must be run as root"
-	exit
-fi
-
-if [ -f /boot/firmware/wpa_supplicant.conf ] ; then
-fi
