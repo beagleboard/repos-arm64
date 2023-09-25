@@ -25,6 +25,10 @@
 
 if [ -f /etc/default/bb-mac-addr ] ; then
 	. /etc/default/bb-mac-addr
+elif [ -f /usr/bin/bb-setup-mac-address ] ; then
+	/usr/bin/bb-setup-mac-address
+	sync
+	. /etc/default/bb-mac-addr
 fi
 
 if [ -f /etc/default/bb-boot ] ; then
@@ -174,7 +178,6 @@ run_libcomposite () {
 		#fi
 	fi
 
-	echo "${log} g_multi FIXME, new board, sleep 5 for a bug to be fixed later..."
 	###FIXME:
 	sleep 5
 
