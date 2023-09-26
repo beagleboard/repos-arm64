@@ -3,14 +3,14 @@
 #https://tracker.debian.org/pkg/wpa
 #https://packages.debian.org/source/trixie/iwd
 #https://snapshot.debian.org/package/iwd/
-#https://snapshot.debian.org/archive/debian/20230613T153359Z/pool/main/i/iwd/
+#https://snapshot.debian.org/archive/debian/20230627T212729Z/pool/main/i/iwd/
 
 #mirror="http://http.debian.net/debian"
-mirror="https://snapshot.debian.org/archive/debian/20230613T153359Z"
+mirror="https://snapshot.debian.org/archive/debian/20230627T212729Z"
 
 package_name="iwd"
 debian_pkg_name="${package_name}"
-package_version="2.5"
+package_version="2.6"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 

@@ -1,8 +1,15 @@
-iwd (2.5-1bbbio1~bookworm+20230926) bookworm; urgency=low
+iwd (2.6-1bbbio1~bookworm+20230926) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Sep 2023 10:28:45 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Sep 2023 16:37:38 -0500
+
+iwd (2.6-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 27 Jun 2023 18:20:24 +0200
 
 iwd (2.5-1) unstable; urgency=medium
 
