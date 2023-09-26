@@ -1,8 +1,17 @@
-iwd (2.7-2bbbio1~bookworm+20230926) bookworm; urgency=low
+iwd (2.8-1bbbio1~bookworm+20230926) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Sep 2023 16:47:25 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Sep 2023 16:55:22 -0500
+
+iwd (2.8-1) unstable; urgency=medium
+
+  * add patch 2001 to use system group sudo instead of wheel;
+    closes: bug#1050325, thanks to Michael Biebl and Simon McVittie
+  * tighten build-dependency on libell-dev
+  * update copyright info: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 30 Aug 2023 19:44:59 +0200
 
 iwd (2.7-2) unstable; urgency=medium
 

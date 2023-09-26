@@ -17,7 +17,7 @@ Last-Update: 2021-11-30
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -279,7 +279,7 @@
+@@ -281,7 +281,7 @@
  endif
  
  if SYSTEMD_SERVICE
@@ -26,7 +26,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
  systemd_unit_DATA += src/iwd.service
  dbus_bus_DATA += src/net.connman.iwd.service
-@@ -365,7 +365,7 @@
+@@ -367,7 +367,7 @@
  endif
  
  if SYSTEMD_SERVICE
@@ -35,7 +35,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
  systemd_unit_DATA += wired/ead.service
  dbus_bus_DATA += wired/net.connman.ead.service
-@@ -592,8 +592,8 @@
+@@ -594,8 +594,8 @@
  
  TESTS = $(unit_tests)
  
@@ -46,7 +46,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  			src/80-iwd.link src/pkcs8.conf unit/gencerts.cnf \
  			doc/main.conf \
  			$(manual_pages) $(patsubst %.1,%.rst, \
-@@ -608,7 +608,8 @@
+@@ -610,7 +610,8 @@
  AM_CFLAGS += -DHAVE_PKCS8_SUPPORT
  endif
  
