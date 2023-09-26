@@ -1,8 +1,22 @@
-iwd (2.6-1bbbio1~bookworm+20230926) bookworm; urgency=low
+iwd (2.7-2bbbio1~bookworm+20230926) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Sep 2023 16:37:38 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 26 Sep 2023 16:47:25 -0500
+
+iwd (2.7-2) unstable; urgency=medium
+
+  * drop patch 2001, obsoleted since upstream release v1.23;
+    closes: bug#1043265, thanks to Diederik de Haas
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 08 Aug 2023 11:23:48 +0200
+
+iwd (2.7-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 06 Jul 2023 18:57:37 +0200
 
 iwd (2.6-1) unstable; urgency=medium
 
