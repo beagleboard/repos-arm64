@@ -2,12 +2,15 @@
 
 #https://tracker.debian.org/pkg/wpa
 #https://packages.debian.org/source/trixie/iwd
+#https://snapshot.debian.org/package/iwd/
+#https://snapshot.debian.org/archive/debian/20230613T153359Z/pool/main/i/iwd/
 
-mirror="http://http.debian.net/debian"
+#mirror="http://http.debian.net/debian"
+mirror="https://snapshot.debian.org/archive/debian/20230613T153359Z"
 
 package_name="iwd"
 debian_pkg_name="${package_name}"
-package_version="2.8"
+package_version="2.5"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
@@ -19,7 +22,6 @@ dl_path="pool/main/${reprepro_dir}/"
 debian_version="${package_version}-1"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
-local_patch="bbbio2"
+local_patch="bbbio1"
 
-sid_version="~sid+20230919"
-lunar_version="~lunar+20230919"
+bookworm_version="~bookworm+20230926"
