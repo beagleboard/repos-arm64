@@ -1,6 +1,6 @@
-rcnee-internal-testlab (1.20230906.2-0~jammy+20230906) jammy; urgency=low
+rcnee-internal-testlab (1.20230929.1-0~jammy+20230929) jammy; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Move NFS server to TrueNAS on Proxmox
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 06 Sep 2023 20:07:09 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Sep 2023 14:35:52 -0500
 
