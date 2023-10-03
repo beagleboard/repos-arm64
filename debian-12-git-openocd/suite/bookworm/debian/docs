@@ -1,0 +1,16 @@
+AUTHORS
+BUGS
+NEWS
+README
+NEWTAPS
+TODO
+contrib/loaders
+doc/manual/
+doc/openocd.pdf
+doc/openocd.html/
+debian/README.source
+
+# Note: Documentation files that are meant for Doxygen are not included here.
+
+# Note: README.Win32 is not listed, not really relevant on Debian.
+

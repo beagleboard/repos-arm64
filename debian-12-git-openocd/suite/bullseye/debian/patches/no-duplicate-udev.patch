@@ -1,0 +1,26 @@
+From: Jonathan McDowell <noodles@earth.li>
+Date: Sat, 6 Jun 2020 21:44:25 +0200
+Subject: Don't install the udev file into /usr/share
+
+Last-Update: 2017-09-25
+
+We install the udev rules into /etc/udev/ so there's no need for a
+duplicate copy in /usr/share/
+---
+ Makefile.am | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 930a307..249438a 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -13,8 +13,7 @@ nobase_dist_pkgdata_DATA = \
+ 	contrib/libdcc/dcc_stdio.c \
+ 	contrib/libdcc/dcc_stdio.h \
+ 	contrib/libdcc/example.c \
+-	contrib/libdcc/README \
+-	contrib/60-openocd.rules
++	contrib/libdcc/README
+ 
+ SUBDIRS =
+ DIST_SUBDIRS =

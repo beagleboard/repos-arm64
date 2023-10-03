@@ -1,0 +1,19 @@
+openocd for Debian
+------------------
+
+ * Support for the Amontec JTAG Accelerator and the Gateworks GW16012
+   is disabled on Debian GNU/kFreeBSD for now, as there's no kFreeBSD
+   support in that code (yet).
+
+ * Support for the OpenOCD+trace ETM capture device is disabled for now
+   as per upstream recommendation. It's just a proof-of-concept right now.
+
+ * OpenOCD comes with a so-called 'target library' of config files:
+    - /usr/share/openocd/scripts/interface/*: JTAG hardware dongle config files
+    - /usr/share/openocd/scripts/target/*: Target config files
+    - /usr/share/openocd/scripts/board/*: Board config files
+
+ * More documentation is available in the openocd(1) manpage and the
+   openocd info pages (type 'info openocd' or 'pinfo openocd').
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 15 Jul 2009 21:29:41 +0200
