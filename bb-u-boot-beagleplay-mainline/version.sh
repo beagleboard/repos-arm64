@@ -1,10 +1,11 @@
 #!/bin/bash -e
 
 #https://git.beagleboard.org/beagleboard/u-boot/
+#https://github.com/u-boot/u-boot/commits/master
 
 package_name="bb-u-boot-beagleplay-mainline"
 debian_pkg_name="${package_name}"
-package_version="2023.10.20230818.3"
+package_version="2023.10.20231005.0"
 package_source=""
 src_dir=""
 
@@ -19,7 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230821"
-bookworm_version="~bookworm+20230821"
-trixie_version="~trixie+20230821"
-jammy_version="~jammy+20230821"
+bullseye_version="~bullseye+20231005"
+bookworm_version="~bookworm+20231005"
+trixie_version="~trixie+20231005"
+jammy_version="~jammy+20231005"

@@ -1,9 +1,13 @@
-bb-u-boot-beagleplay-mainline (2023.10.20230818.3-0~trixie+20230821) trixie; urgency=low
+bb-u-boot-beagleplay-mainline (2023.10.20231005.0-0~trixie+20231005) trixie; urgency=low
 
+  * 20231005 - master - https://github.com/u-boot/u-boot/commit/cb59d23584a7a0f2431025a56f4938d424c49ca5
+  * 20231005 - 09.00.00.010 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.010
+  * 20231005 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=be3e0b896f58a7b0dffcdc8cf795b9f2dfa29915
+  * 20231005 - master - https://github.com/OP-TEE/optee_os/commit/6558b5657faf169a4a8742d104ceb4a22b12bd74
   * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 21 Aug 2023 20:25:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Oct 2023 11:06:41 -0500
 
