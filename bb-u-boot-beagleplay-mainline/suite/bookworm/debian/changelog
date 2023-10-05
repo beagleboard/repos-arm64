@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay-mainline (2023.10.20231005.0-0~bookworm+20231005) bookworm; urgency=low
+bb-u-boot-beagleplay-mainline (2023.10.20231005.1-0~bookworm+20231005) bookworm; urgency=low
 
   * 20231005 - master - https://github.com/u-boot/u-boot/commit/cb59d23584a7a0f2431025a56f4938d424c49ca5
   * 20231005 - 09.00.00.010 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.010
@@ -9,5 +9,5 @@ bb-u-boot-beagleplay-mainline (2023.10.20231005.0-0~bookworm+20231005) bookworm;
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Oct 2023 11:06:41 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Oct 2023 11:36:05 -0500
 
