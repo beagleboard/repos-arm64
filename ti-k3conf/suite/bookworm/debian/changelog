@@ -1,6 +1,6 @@
-ti-k3conf (0.2.0-git20230719.1-0~bookworm+20230728) bookworm; urgency=low
+ti-k3conf (0.3.0-0.git2023106.0-0~bookworm+20231009) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * k3conf 0.3.0
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Jul 2023 09:52:34 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Oct 2023 09:52:40 -0500
 
