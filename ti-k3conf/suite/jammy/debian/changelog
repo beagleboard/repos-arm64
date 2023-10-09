@@ -1,6 +1,6 @@
-ti-k3conf (0.3.0-0.git2023106.0-0~jammy+20231009) jammy; urgency=low
+ti-k3conf (0.3.0-0.git2023106.1-0~jammy+20231009) jammy; urgency=low
 
   * k3conf 0.3.0
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Oct 2023 09:52:40 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Oct 2023 10:02:20 -0500
 

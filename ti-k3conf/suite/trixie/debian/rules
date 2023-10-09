@@ -7,5 +7,7 @@ DEB_BUILD_OPTIONS=noautodbgsym
 export DH_VERBOSE=1
 
 %:
-	dh $@  
+	dh $@
 
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

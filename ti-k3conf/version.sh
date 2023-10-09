@@ -4,7 +4,7 @@
 
 package_name="ti-k3conf"
 debian_pkg_name="${package_name}"
-package_version="0.3.0-0.git2023106.0"
+package_version="0.3.0-0.git2023106.1"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 

@@ -2,13 +2,17 @@ Source: ti-k3conf
 Section: devel
 Priority: optional
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
-Build-Depends: debhelper-compat (= 9)
-Standards-Version: 4.5.0
+Build-Depends:
+ debhelper-compat (= 9)
+ , cmake
+Standards-Version: 4.5.1
 Homepage: https://git.ti.com/cgit/k3conf/k3conf
 
 Package: ti-k3conf
 Architecture: arm64
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends:
+ ${misc:Depends}
+ , ${shlibs:Depends}
 Description: Powerful Diagnostic Tool for Texas Instruments K3 based Processors
  K3CONF is a Linux user-space application designed to provide a quick'n easy way 
  to dynamically diagnose Texas Instruments' K3 architecture based processors. 
