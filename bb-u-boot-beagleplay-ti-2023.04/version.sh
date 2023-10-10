@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleplay-ti-2023.04"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20230926.0-09.00.00.010"
+package_version="2023.04.20231002.0-09.00.00.011"
 package_source=""
 src_dir=""
 
