@@ -1,7 +1,0 @@
-bb-u-boot-beagleplay-staging (2021.01.20230213.6-0~bookworm+20230803) bookworm; urgency=low
-
-  * BeaglePlay, add extlinux.conf boot options over serial
-  * Bump FAT partition to 256MB for boot recovery images
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Aug 2023 13:42:46 -0500
-
