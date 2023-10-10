@@ -10,7 +10,7 @@ TARGETDIR=bb-u-boot-beagleplay-ti-2023.04
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.00.00.009
+TILF_TAG=09.00.00.010
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -37,7 +37,7 @@ TEE_BOARD=k3-am62x
 UB_CONFIG=am62x_evm
 #UB_CONFIG_BOARD=am625_beagleplay
 UB_CONFIG_BOARD=beagleplay
-UB_BRANCH=v2023.04-ti-09.00.00.009-BeaglePlay
+UB_BRANCH=v2023.04-ti-09.00.00.010-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
 #UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
