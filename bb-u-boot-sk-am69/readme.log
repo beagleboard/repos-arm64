@@ -1,6 +1,7 @@
+  * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=tag;h=refs/tags/09.00.00.011
+  * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.011
+  * 20231010 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=b06b509eb2b7f0f4dce1b4133500cf30aa0dcd4a
+  * 20231010 - master - https://github.com/OP-TEE/optee_os/commit/e57b52dd9ef8a6ca5323e58f1284b7fd9515b948
   * SK-AM69, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * ti-sysfw: 09.00.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=905eb58564581d951d148f45828e8c8a142a5938
-  * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-  * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
   * extlinux.conf: force fdt /k3-am69-sk.dtb
