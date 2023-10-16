@@ -1,10 +1,11 @@
 #!/bin/bash -e
 
 #https://git.beagleboard.org/beagleboard/u-boot/
+#https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
 
 package_name="bb-u-boot-beagleplay"
 debian_pkg_name="${package_name}"
-package_version="2021.01.20230213.20"
+package_version="2023.04.20231002.2-09.00.00.011"
 package_source=""
 src_dir=""
 
@@ -19,4 +20,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230902"
+bullseye_version="~bullseye+20231016"
