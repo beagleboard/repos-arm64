@@ -1,6 +1,6 @@
-powervr-firmware (0.0.0-git20230830.0-0~bullseye+20230910) bullseye; urgency=low
+powervr-firmware (0.0.0-git20231003.0-0~bullseye+20231017) bullseye; urgency=low
 
-  * Update PowerVR AXE-1-16M and GX6250 firmware to v1.0.OS@6476056
+  * Update PowerVR AXE-1-16M and GX6250 firmware to v1.0.OS@6495159
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 10 Sep 2023 22:39:21 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Oct 2023 10:39:02 -0500
 
