@@ -1,13 +1,14 @@
-bb-u-boot-beagleplay-mainline (2023.10.20231005.1-0~bullseye+20231005) bullseye; urgency=low
+bb-u-boot-beagleplay-mainline (2023.10.20231023.0-0~bullseye+20231023) bullseye; urgency=low
 
-  * 20231005 - master - https://github.com/u-boot/u-boot/commit/cb59d23584a7a0f2431025a56f4938d424c49ca5
-  * 20231005 - 09.00.00.010 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.010
-  * 20231005 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=be3e0b896f58a7b0dffcdc8cf795b9f2dfa29915
-  * 20231005 - master - https://github.com/OP-TEE/optee_os/commit/6558b5657faf169a4a8742d104ceb4a22b12bd74
+  * 20231023 - master - https://github.com/u-boot/u-boot/commit/d6b3297dde4a14f60a9cec55cd1c01bccc1bf1a6
+  * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.011
+  * 20231020 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=d1a974a3b7059bd87d28bca3dc66519ba8d0eafc
+  * 20231020 - 4.0.0 - https://github.com/OP-TEE/optee_os/commits/4.0.0
   * BeaglePlay, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
+  * Flasher scripts, echo Serial over HDMI
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Oct 2023 11:36:05 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 23 Oct 2023 13:14:18 -0500
 
