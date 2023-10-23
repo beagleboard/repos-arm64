@@ -17,8 +17,8 @@ TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-#TFA_TAG=v2.9.0
 TFA_TAG=master
+#TFA_TAG=v2.9.0
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="https://gitea.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
@@ -26,8 +26,8 @@ TFA_BOARD=j784s4
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
-#OPTEE_TAG=3.22.0
-OPTEE_TAG=master
+#OPTEE_TAG=master
+OPTEE_TAG=4.0.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="https://gitea.gfnd.rcn-ee.org/mirror/optee_os.git"
