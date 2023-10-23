@@ -27,7 +27,7 @@ TFA_BOARD=lite
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
 #OPTEE_TAG=master
-OPTEE_TAG=4.0.0-rc1
+OPTEE_TAG=4.0.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="https://gitea.gfnd.rcn-ee.org/mirror/optee_os.git"
