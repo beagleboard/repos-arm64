@@ -40,6 +40,19 @@ Recommends:
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-am62 in Debian.
 
+Package: bbb.io-kernel-5.10-ti-k3-am62-developer
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-5.10-ti-k3-am62
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleplay
+ , bb-u-boot-beagleplay-ti-2023.04
+ , bb-u-boot-beagleplay-mainline
+Description: BeagleBoard.org 5.10-ti
+ This metapackage will install linux-image-5.10-ti for k3-am62 developer in Debian.
+
 Package: bbb.io-kernel-5.10-ti-k3-j721e
 Section: metapackages
 Architecture: arm64
@@ -51,6 +64,18 @@ Recommends:
  , ti-sgx-23.1-j721e-modules-5.10.168-ti-arm64-r111
 Description: BeagleBoard.org 5.10-ti
  This metapackage will install linux-image-5.10-ti for k3-j721e in Debian.
+
+Package: bbb.io-kernel-5.10-ti-k3-j721e-developer
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-5.10-ti-k3-j721e
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleboneai64
+ , bb-u-boot-beagleboneai64-ti-2023.04
+Description: BeagleBoard.org 5.10-ti
+ This metapackage will install linux-image-5.10-ti for k3-j721e developer in Debian.
 
 Package: bbb.io-kernel-6.1-ti
 Section: metapackages
@@ -72,6 +97,19 @@ Recommends:
 Description: BeagleBoard.org 6.1-ti
  This metapackage will install linux-image-6.1-ti for k3-am62 in Debian.
 
+Package: bbb.io-kernel-6.1-ti-k3-am62-developer
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-ti-k3-am62
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleplay
+ , bb-u-boot-beagleplay-ti-2023.04
+ , bb-u-boot-beagleplay-mainline
+Description: BeagleBoard.org 6.1-ti
+ This metapackage will install linux-image-6.1-ti for k3-am62 developer in Debian.
+
 Package: bbb.io-kernel-6.1-ti-k3-j721e
 Section: metapackages
 Architecture: arm64
@@ -83,6 +121,18 @@ Recommends:
  , ti-sgx-23.1-j721e-modules-6.1.46-ti-arm64-r9
 Description: BeagleBoard.org 6.1-ti
  This metapackage will install linux-image-6.1-ti for k3-j721e in Debian.
+
+Package: bbb.io-kernel-6.1-ti-k3-j721e-developer
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-ti-k3-j721e
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleboneai64
+ , bb-u-boot-beagleboneai64-ti-2023.04
+Description: BeagleBoard.org 6.1-ti
+ This metapackage will install linux-image-6.1-ti for k3-j721e developer in Debian.
 
 Package: bbb.io-kernel-6.1-rt-ti
 Section: metapackages
@@ -104,6 +154,19 @@ Recommends:
 Description: BeagleBoard.org 6.1-rt-ti
  This metapackage will install linux-image-6.1-rt-ti for k3-am62 in Debian.
 
+Package: bbb.io-kernel-6.1-rt-ti-k3-am62-developer
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-rt-ti-k3-am62
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleplay
+ , bb-u-boot-beagleplay-ti-2023.04
+ , bb-u-boot-beagleplay-mainline
+Description: BeagleBoard.org 6.1-rt-ti
+ This metapackage will install linux-image-6.1-rt-ti for k3-am62 developer in Debian.
+
 Package: bbb.io-kernel-6.1-rt-ti-k3-j721e
 Section: metapackages
 Architecture: arm64
@@ -115,6 +178,18 @@ Recommends:
  , ti-sgx-23.1-j721e-modules-6.1.46-ti-rt-arm64-r9
 Description: BeagleBoard.org 6.1-rt-ti
  This metapackage will install linux-image-6.1-rt-ti for k3-j721e in Debian.
+
+Package: bbb.io-kernel-6.1-rt-ti-k3-j721e-developer
+Section: metapackages
+Architecture: arm64
+Pre-Depends:
+ bbb.io-kernel-6.1-rt-ti-k3-j721e
+Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
+Recommends:
+ bb-u-boot-beagleboneai64
+ , bb-u-boot-beagleboneai64-ti-2023.04
+Description: BeagleBoard.org 6.1-rt-ti
+ This metapackage will install linux-image-6.1-rt-ti for k3-j721e developer in Debian.
 
 Package: bbb.io-kernel-mainline
 Section: metapackages

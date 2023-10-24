@@ -64,6 +64,22 @@ generate_kernel_ti () {
 		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-am62 in Debian." >> ./suite/${dist}/debian/${wfile}
 
+		if [ "x${am62_dev}" = "xenabled" ] ; then
+			echo "" >> ./suite/${dist}/debian/${wfile}
+			echo "Package: bbb.io-kernel-${msg}-k3-am62-developer" >> ./suite/${dist}/debian/${wfile}
+			echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+			echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+			echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+			echo " bbb.io-kernel-${msg}-k3-am62" >> ./suite/${dist}/debian/${wfile}
+			echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+			echo " bb-u-boot-beagleplay" >> ./suite/${dist}/debian/${wfile}
+			echo " , bb-u-boot-beagleplay-ti-2023.04" >> ./suite/${dist}/debian/${wfile}
+			echo " , bb-u-boot-beagleplay-mainline" >> ./suite/${dist}/debian/${wfile}
+			echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+			echo " This metapackage will install linux-image-${msg} for k3-am62 developer in Debian." >> ./suite/${dist}/debian/${wfile}
+		fi
+
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}-k3-j721e" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
@@ -78,6 +94,21 @@ generate_kernel_ti () {
 		fi
 		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-j721e in Debian." >> ./suite/${dist}/debian/${wfile}
+
+		if [ "x${j721e_dev}" = "xenabled" ] ; then
+			echo "" >> ./suite/${dist}/debian/${wfile}
+			echo "Package: bbb.io-kernel-${msg}-k3-j721e-developer" >> ./suite/${dist}/debian/${wfile}
+			echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+			echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+			echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+			echo " bbb.io-kernel-${msg}-k3-j721e" >> ./suite/${dist}/debian/${wfile}
+			echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+			echo " bb-u-boot-beagleboneai64" >> ./suite/${dist}/debian/${wfile}
+			echo " , bb-u-boot-beagleboneai64-ti-2023.04" >> ./suite/${dist}/debian/${wfile}
+			echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+			echo " This metapackage will install linux-image-${msg} for k3-j721e developer in Debian." >> ./suite/${dist}/debian/${wfile}
+		fi
 	fi
 }
 
@@ -153,6 +184,8 @@ do_bookworm () {
 	debhelper="13"
 	wfile="control"
 	generate_header
+	am62_dev="enabled"
+	j721e_dev="enabled"
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
@@ -165,6 +198,9 @@ do_bookworm () {
 	unset sgxam62
 	unset sgxj721e
 	unset sgxmodule
+
+	unset am62_dev
+	unset j721e_dev
 
 	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
