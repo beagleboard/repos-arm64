@@ -41,6 +41,7 @@ UB_BRANCH=v2023.04-ti-09.00.00.011-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
 #UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
+#TI: 2023.10.26: hs-fs will NOT work on gp devices...
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 #UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
