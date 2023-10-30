@@ -43,7 +43,6 @@ UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 #UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
-MCORE=a53
 
 override_dh_strip:
 	# Just disable for now...
