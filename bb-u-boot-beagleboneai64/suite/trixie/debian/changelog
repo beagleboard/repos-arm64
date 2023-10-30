@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.12-0~trixie+20231030) trixie; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.13-0~trixie+20231030) trixie; urgency=low
 
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -9,5 +9,5 @@ bb-u-boot-beagleboneai64 (2021.10.20230216.12-0~trixie+20231030) trixie; urgency
   * extlinux.conf more vocal on eMMC vs microSD
   * add homeassistant specific extlinux.conf files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 30 Oct 2023 14:59:55 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 30 Oct 2023 15:09:39 -0500
 

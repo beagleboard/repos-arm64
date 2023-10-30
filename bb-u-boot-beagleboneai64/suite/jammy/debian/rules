@@ -41,6 +41,7 @@ UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
+MCORE=a72
 
 override_dh_strip:
 	# Just disable for now...
