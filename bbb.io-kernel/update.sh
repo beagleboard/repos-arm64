@@ -147,7 +147,41 @@ changelog () {
 	cat suite/${dist}/readme.log
 }
 
+do_jammy () {
+	#22.04
+	arch="arm64"
+	dist="jammy"
+	debhelper="13"
+	wfile="control"
+	generate_header
+
+	sgxam62="enabled"
+	sgxj721e="enabled"
+	sgxmodule="sgx-23.1"
+
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
+	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
+
+	unset sgxam62
+	unset sgxj721e
+	unset sgxmodule
+
+	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	changelog
+}
+
 do_bullseye () {
+	#11.x
 	arch="arm64"
 	dist="bullseye"
 	debhelper="13"
@@ -167,18 +201,21 @@ do_bullseye () {
 	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
 	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
 
-	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
-	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="V66X" ; current_kernel ; generate_kernel_k3
+	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
 do_bookworm () {
+	#12.x
 	arch="arm64"
 	dist="bookworm"
 	debhelper="13"
@@ -202,18 +239,21 @@ do_bookworm () {
 	unset am62_dev
 	unset j721e_dev
 
-	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
-	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="V66X" ; current_kernel ; generate_kernel_k3
+	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
 do_trixie () {
+	#13.x
 	arch="arm64"
 	dist="trixie"
 	debhelper="13"
@@ -232,49 +272,21 @@ do_trixie () {
 	unset sgxj721e
 	unset sgxmodule
 
-	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
-	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="V66X" ; current_kernel ; generate_kernel_k3
+	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
-do_jammy () {
-	arch="arm64"
-	dist="jammy"
-	debhelper="13"
-	wfile="control"
-	generate_header
-
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxmodule="sgx-23.1"
-
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-
-	unset sgxam62
-	unset sgxj721e
-	unset sgxmodule
-
-	msg="mainline"  ; var="arm64"    ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
-	msg="6.3-k3"    ; var="k3-arm64"    ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.3-rt-k3" ; var="k3-arm64-rt" ; ver="V63X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-k3"    ; var="k3-arm64"    ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.4-rt-k3" ; var="k3-arm64-rt" ; ver="V64X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X" ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="V66X" ; current_kernel ; generate_kernel_k3
-	changelog
-}
-
+do_jammy
 do_bullseye
 do_bookworm
 do_trixie
-do_jammy
 
