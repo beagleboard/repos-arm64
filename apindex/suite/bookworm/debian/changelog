@@ -1,6 +1,6 @@
-apindex (2.2-1.20230319.7-0~bookworm+20231128) bookworm; urgency=low
+apindex (2.2-1.20231128.0-0~bookworm+20231128) bookworm; urgency=low
 
   * apindex for docker.io builders
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Nov 2023 10:09:06 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Nov 2023 17:33:47 -0600
 
