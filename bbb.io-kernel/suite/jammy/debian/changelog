@@ -1,10 +1,8 @@
-bbb.io-kernel (1.20231128.0-0~jammy+20231128) jammy; urgency=low
+bbb.io-kernel (1.20231129.0-0~jammy+20231129) jammy; urgency=low
 
   * Kernel Updates
-  * linux-image-6.1.46-ti-arm64-r10
-  * linux-image-6.1.46-ti-rt-arm64-r10
-  * linux-image-6.7.0-rc3-arm64-k3-r6
-  * linux-image-6.7.0-rc3-arm64-r0
+  * linux-image-6.1.46-ti-arm64-r11
+  * linux-image-6.1.46-ti-rt-arm64-r11
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Nov 2023 08:51:50 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 Nov 2023 10:27:17 -0600
 
