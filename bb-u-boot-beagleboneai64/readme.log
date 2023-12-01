@@ -6,3 +6,4 @@
   * Enable a extlinux.conf option to flash other media directly
   * extlinux.conf more vocal on eMMC vs microSD
   * add homeassistant specific extlinux.conf files
+  * Flasher scripts, echo Serial over HDMI
