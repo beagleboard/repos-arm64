@@ -1,2 +1,3 @@
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
+  * dont load /dev/bone/pwm when BONE-FAN is loaded
