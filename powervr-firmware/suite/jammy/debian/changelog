@@ -1,6 +1,6 @@
-powervr-firmware (0.0.0-git20231123.0-0~jammy+20231204) jammy; urgency=low
+powervr-firmware (0.0.0-git20231123.2-0~jammy+20231204) jammy; urgency=low
 
   * Update PowerVR AXE-1-16M firmware to 1.0.OS@6503725 (https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/)
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 04 Dec 2023 20:07:20 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 04 Dec 2023 20:10:39 -0600
 
