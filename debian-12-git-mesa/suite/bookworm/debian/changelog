@@ -1,8 +1,44 @@
-mesa (23.2.0-1.git20230905.4-0~bookworm+20230911) bookworm; urgency=low
+mesa (23.2.1-1bbbio0~bookworm+20231204) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 11 Sep 2023 19:01:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 04 Dec 2023 18:56:24 -0600
+
+mesa (23.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump directx-headers-dev build-dep.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 29 Sep 2023 08:38:02 +0300
+
+mesa (23.2.0~rc4-1) unstable; urgency=medium
+
+  * New upstream release candidate.
+  * egl-wayland-Always-initialise-fd_display_gpu.patch: Dropped,
+    upstream.
+  * fix-clover-build-without-spirv.diff: Fix clover build.
+  * control, rules: Bump llvm to 16. (Closes: #1051680)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 25 Sep 2023 10:01:44 +0300
+
+mesa (23.2.0~rc3-3) unstable; urgency=medium
+
+  * control, rules: Drop mipsel.
+  * rules: Update archs which have rustc (add powerpc, ppc64, riscv64,
+    x32)
+  * egl-wayland-Always-initialise-fd_display_gpu.patch: Re-add the fix
+    for gtk4 autopkgtests.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Sep 2023 15:49:02 +0300
+
+mesa (23.2.0~rc3-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * rules: Disable panfrost vulkan driver again as upstream doesn't want
+    it shipped yet.
+  * rules: Drop virtio from armel, FTBFS.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 19 Sep 2023 11:46:59 +0300
 
 mesa (23.2.0~rc3-1) experimental; urgency=medium
 
@@ -13,6 +49,12 @@ mesa (23.2.0~rc3-1) experimental; urgency=medium
     are fixed with current toolchain.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Thu, 07 Sep 2023 15:28:51 +0300
+
+mesa (23.1.7-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 08 Sep 2023 13:32:25 +0300
 
 mesa (23.1.6-1) unstable; urgency=medium
 
