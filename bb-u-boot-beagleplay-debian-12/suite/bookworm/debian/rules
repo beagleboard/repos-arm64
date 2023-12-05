@@ -13,15 +13,15 @@ TARGETDIR=bb-u-boot-beagleplay
 TILF_TAG=09.00.00.011
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
-TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
+TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-TFA_TAG=master
-#TFA_TAG=v2.9.0
+#TFA_TAG=master
+TFA_TAG=v2.10.0
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
-TFA_REPO="https://gitea.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
+TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
 TFA_BOARD=lite
 
 #optee_os
@@ -30,7 +30,7 @@ TFA_BOARD=lite
 OPTEE_TAG=4.0.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
-OPTEE_REPO="https://gitea.gfnd.rcn-ee.org/mirror/optee_os.git"
+OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-am62x
 
 #U-Boot
@@ -40,7 +40,7 @@ UB_CONFIG_BOARD=beagleplay
 UB_BRANCH=v2023.04-ti-09.00.00.011-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
-#UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
+#UB_REPO="https://git.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 #UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
