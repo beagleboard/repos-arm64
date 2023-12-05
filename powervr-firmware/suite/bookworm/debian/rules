@@ -14,7 +14,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/ ; git clone -b powervr https://gitlab.freedesktop.org/frankbinns/linux-firmware.git ./tmp/sgx
+	mkdir -p ./tmp/ ; git clone https://git.gfnd.rcn-ee.org/kernel.org/linux-firmware.git ./tmp/firmware --depth=1
 
 %:
 	dh $@
