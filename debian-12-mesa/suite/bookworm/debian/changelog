@@ -1,8 +1,71 @@
-mesa (23.2.1-1bbbio0~bookworm+20231204) bookworm; urgency=low
+mesa (23.3.0-1bbbio0~bookworm+20231204) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 04 Dec 2023 18:56:24 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 04 Dec 2023 20:33:41 -0600
+
+mesa (23.3.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * rules: Drop checking for linux, now that kfreebsd support got
+    dropped.
+  * rules: Drop a duplicate special case for VULKAN_DRIVERS, and move
+    virtio enabling to the correct place.
+  * rules: LLVM supports JIT on riscv64 now, attempt to enable llvmpipe
+    on it.
+  * rules: Sort default config entries and fix indentation.
+  * rules: Drop WSL_ARCHS, as it's used only once.
+  * rules: Merge two checks for x86 archs.
+  * rules: Handle EGL_PLATFORMS like other lists.
+  * rules: Drop powerpc from wine archs.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 01 Dec 2023 11:39:26 +0200
+
+mesa (23.3.0~rc5-1) experimental; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release candidate.
+  * rules: Fix mangling of the upstream version in clean target to work
+    with upstream rc's.
+
+  [ Fabio Pedretti ]
+  * control, rules: Bump llvm to 17.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 29 Nov 2023 18:24:29 +0200
+
+mesa (23.3.0~rc4-1) experimental; urgency=medium
+
+  [ Fabio Pedretti ]
+  * remove double space
+  * use a variable for WSL archs
+
+  [ Timo Aaltonen ]
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 19 Nov 2023 20:28:57 +0200
+
+mesa (23.3.0~rc3-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 14 Nov 2023 12:02:45 +0200
+
+mesa (23.3.0~rc2-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * control, rules: Drop kfreebsd.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 02 Nov 2023 15:59:11 +0200
+
+mesa (23.3.0~rc1-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * fix-clover-build-without-spirv.diff: Dropped, upstream.
+  * mesa-common-dev.docs: Updated.
+  * libglx-mesa0.symbols: Updated.
+  * control: Drop python3-minimal from -vulkan-drivers Depends.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 26 Oct 2023 14:28:22 +0300
 
 mesa (23.2.1-1) unstable; urgency=medium
 

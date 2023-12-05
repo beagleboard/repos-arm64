@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-#https://gitlab.freedesktop.org/mesa/mesa/-/commits/23.2/
+#https://gitlab.freedesktop.org/mesa/mesa/-/commits/23.3/
 mirror="http://http.debian.net/debian"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="23.2.1"
+package_version="23.3.0"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="${package_name}-${package_version}"
 
