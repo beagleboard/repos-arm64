@@ -69,8 +69,8 @@ arch="arm64"
 options="--exclude=debfoster"
 setup_update_sbuild
 
-dist="jammy"
-unset noble
+dist="noble"
+unset flavor
 arch="arm64"
 options="--exclude=debfoster"
 setup_update_sbuild
