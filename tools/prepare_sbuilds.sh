@@ -69,4 +69,10 @@ arch="arm64"
 options="--exclude=debfoster"
 setup_update_sbuild
 
+dist="jammy"
+unset noble
+arch="arm64"
+options="--exclude=debfoster"
+setup_update_sbuild
+
 #
