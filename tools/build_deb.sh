@@ -81,6 +81,7 @@ start_run () {
 	suite="bookworm" ; runner
 	suite="trixie" ; runner
 	suite="jammy" ; runner
+	suite="noble" ; runner
 }
 
 cleanup () {
@@ -88,6 +89,7 @@ cleanup () {
 	suite="bookworm" ; cleanup_suite
 	suite="trixie" ; cleanup_suite
 	suite="jammy" ; cleanup_suite
+	suite="noble" ; cleanup_suite
 }
 
 start_run

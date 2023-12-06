@@ -31,6 +31,7 @@ start_run () {
 	suite="bookworm" ; runner
 	suite="trixie" ; runner
 	suite="jammy" ; runner
+	suite="noble" ; runner
 }
 
 start_run
