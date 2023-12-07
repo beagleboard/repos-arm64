@@ -1,3 +1,5 @@
+bb-beagle-flasher (1.20231207.0-0~noble+20231207) noble; urgency=low
+
   * SK-AM69, support microSD -> usb sata
   * BBIA64/BeaglePlay, use u-boot versions of script files
   * Bump FAT partition to 256MB for boot recovery images
@@ -5,3 +7,6 @@
   * Add timeout around /proc/sysrq-trigger to log what is happening
   * Remove beagle-flasher-init-shutdown.service, single user will now shutdown
   * e2fsprogs (1.47.0) disable orphan_file, needs v5.15.x kernel
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Dec 2023 16:26:14 -0600
+
