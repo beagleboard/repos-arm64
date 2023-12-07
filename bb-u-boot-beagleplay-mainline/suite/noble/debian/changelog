@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay-mainline (2024.01.20231204.2-0~jammy+20231207) jammy; urgency=low
+bb-u-boot-beagleplay-mainline (2024.01.20231204.2-0~noble+20231207) noble; urgency=low
 
   * 20231204 - v2024.01-rc4 - https://github.com/u-boot/u-boot/commit/2f0282922b2c458eea7f85c500a948a587437b63
   * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.011

@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleplay-mainline"
 debian_pkg_name="${package_name}"
-package_version="2024.01.20231204.1"
+package_version="2024.01.20231204.2"
 package_source=""
 src_dir=""
 
@@ -20,7 +20,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20231206"
-bookworm_version="~bookworm+20231206"
-trixie_version="~trixie+20231206"
-jammy_version="~jammy+20231206"
+bullseye_version="~bullseye+20231207"
+bookworm_version="~bookworm+20231207"
+trixie_version="~trixie+20231207"
+jammy_version="~jammy+20231207"
+noble_version="~noble+20231207"
