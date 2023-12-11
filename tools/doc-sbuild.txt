@@ -4,8 +4,8 @@
 sudo sbuild-shell source:bullseye-arm64-sbuild
 
 apt update ; apt upgrade -yq ; \
-echo "deb http://deb.debian.org/debian bullseye main" > /etc/apt/sources.list ; \
-echo "deb-src http://deb.debian.org/debian bullseye main" >> /etc/apt/sources.list ; \
+echo "deb http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bullseye main" > /etc/apt/sources.list ; \
+echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bullseye main" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-arm64 bullseye main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-arm64 bullseye main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
@@ -16,8 +16,8 @@ apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
 sudo sbuild-shell source:bookworm-arm64-sbuild
 
 apt update ; apt upgrade -yq ; \
-echo "deb http://deb.debian.org/debian bookworm main" > /etc/apt/sources.list ; \
-echo "deb-src http://deb.debian.org/debian bookworm main" >> /etc/apt/sources.list ; \
+echo "deb http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bookworm main" > /etc/apt/sources.list ; \
+echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian bookworm main" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-arm64 bookworm main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-arm64 bookworm main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
@@ -28,8 +28,8 @@ apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
 sudo sbuild-shell source:trixie-arm64-sbuild
 
 apt update ; apt upgrade -yq ; \
-echo "deb http://deb.debian.org/debian trixie main" > /etc/apt/sources.list ; \
-echo "deb-src http://deb.debian.org/debian trixie main" >> /etc/apt/sources.list ; \
+echo "deb http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian trixie main" > /etc/apt/sources.list ; \
+echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/deb.debian.org/debian trixie main" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-arm64 trixie main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-arm64 trixie main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
@@ -40,8 +40,8 @@ apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
 sudo sbuild-shell source:jammy-arm64-sbuild
 
 apt update ; apt upgrade -yq ; \
-echo "deb http://ports.ubuntu.com jammy main universe" > /etc/apt/sources.list ; \
-echo "deb-src http://ports.ubuntu.com jammy main universe" >> /etc/apt/sources.list ; \
+echo "deb http://proxy.gfnd.rcn-ee.org:3142/ports.ubuntu.com jammy main universe" > /etc/apt/sources.list ; \
+echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/ports.ubuntu.com jammy main universe" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-arm64 jammy main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-arm64 jammy main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
@@ -52,8 +52,8 @@ apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
 sudo sbuild-shell source:noble-arm64-sbuild
 
 apt update ; apt upgrade -yq ; \
-echo "deb http://ports.ubuntu.com noble main universe" > /etc/apt/sources.list ; \
-echo "deb-src http://ports.ubuntu.com noble main universe" >> /etc/apt/sources.list ; \
+echo "deb http://proxy.gfnd.rcn-ee.org:3142/ports.ubuntu.com noble main universe" > /etc/apt/sources.list ; \
+echo "deb-src http://proxy.gfnd.rcn-ee.org:3142/ports.ubuntu.com noble main universe" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-arm64 noble main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-arm64 noble main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
