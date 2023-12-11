@@ -1,0 +1,9 @@
+  * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=tag;h=refs/tags/09.00.00.011
+  * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.011
+  * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
+  * 20230707 - 3.22.0 - https://github.com/OP-TEE/optee_os/commits/3.22.0
+  * BeaglePlay, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
+  * Enable a extlinux.conf option to flash eMMC directly
+  * extlinux.conf more vocal on eMMC vs microSD
+  * Flasher scripts, echo Serial over HDMI
