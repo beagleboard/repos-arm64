@@ -180,6 +180,20 @@ do_jammy () {
 	changelog
 }
 
+do_noble () {
+	#24.04
+	arch="arm64"
+	dist="noble"
+	debhelper="13"
+	wfile="control"
+	generate_header
+
+	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
+	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+
+	changelog
+}
+
 do_bullseye () {
 	#11.x
 	arch="arm64"
@@ -286,6 +300,7 @@ do_trixie () {
 }
 
 do_jammy
+do_noble
 do_bullseye
 do_bookworm
 do_trixie
