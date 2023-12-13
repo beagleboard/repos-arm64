@@ -35,8 +35,8 @@ OPTEE_PLATFORM=k3-am62x
 
 #U-Boot
 UB_CONFIG=am62x_evm
-UB_CONFIG_BOARD=am625_beagleplay
-#UB_CONFIG_BOARD=beagleplay
+#UB_CONFIG_BOARD=am625_beagleplay
+UB_CONFIG_BOARD=beagleplay
 UB_BRANCH=v2023.04-ti-09.01.00.008-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
