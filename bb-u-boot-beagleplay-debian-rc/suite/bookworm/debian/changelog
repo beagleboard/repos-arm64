@@ -1,0 +1,14 @@
+bb-u-boot-beagleplay-rc (2023.04.20231018.0-09.01.00.001-0~bookworm+20231213) bookworm; urgency=low
+
+  * 20231018 - 09.01.00.001 - https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=tag;h=refs/tags/09.01.00.001
+  * 20231017 - 09.01.00.001 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.001
+  * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
+  * 20231020 - 4.0.0 - https://github.com/OP-TEE/optee_os/commits/4.0.0
+  * BeaglePlay, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
+  * Enable a extlinux.conf option to flash eMMC directly
+  * extlinux.conf more vocal on eMMC vs microSD
+  * Flasher scripts, echo Serial over HDMI
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 13 Dec 2023 13:18:53 -0600
+
