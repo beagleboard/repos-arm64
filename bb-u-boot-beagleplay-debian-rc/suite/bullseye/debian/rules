@@ -62,11 +62,11 @@ override_dh_auto_configure:
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
-	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UBOOT_CFG_CORTEXR)
+	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- am62x_evm_r5_defconfig am625_beagleplay_r5.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
 	cp -v ./tmp/CORTEXR/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
-	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UBOOT_CFG_CORTEXA)
+	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- am62x_evm_a53_defconfig am625_beagleplay_a53.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
 	cp -v ./tmp/CORTEXA/tispl.bin_unsigned ./tmp/pkg/tispl.bin
