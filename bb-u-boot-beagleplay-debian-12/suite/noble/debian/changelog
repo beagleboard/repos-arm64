@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2023.04.20231206.0-09.01.00.008-0~jammy+20231213) jammy; urgency=low
+bb-u-boot-beagleplay (2023.04.20231206.0-09.01.00.008-0~noble+20231213) noble; urgency=low
 
   * 20231206 - 09.01.00.008 - https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=tag;h=refs/tags/09.01.00.008
   * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008

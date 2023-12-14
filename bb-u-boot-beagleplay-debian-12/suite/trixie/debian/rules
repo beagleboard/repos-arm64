@@ -4,6 +4,10 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+# Disable branch hardening to fix build failure of arch:all build
+# https://bugs.debian.org/1052724
+export DEB_BUILD_MAINT_OPTIONS=hardening=-branch
+
 TARGETDIR=bb-u-boot-beagleplay
 #/opt/u-boot/$(TARGETDIR)/
 
