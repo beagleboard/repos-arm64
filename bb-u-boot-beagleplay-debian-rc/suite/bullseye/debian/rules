@@ -34,10 +34,13 @@ OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-am62x
 
 #U-Boot
-UBOOT_CFG_CORTEXR="am62x_evm_r5_defconfig am625_beagleplay_r5.config"
-UBOOT_CFG_CORTEXA="am62x_evm_a53_defconfig am625_beagleplay_a53.config"
+#UBOOT_CFG_CORTEXR="am62x_evm_r5_defconfig am625_beagleplay_r5.config"
+#UBOOT_CFG_CORTEXA="am62x_evm_a53_defconfig am625_beagleplay_a53.config"
 #UBOOT_CFG_CORTEXR="am62x_evm_r5_defconfig beagleplay_r5.config"
 #UBOOT_CFG_CORTEXA="am62x_evm_a53_defconfig beagleplay_a53.config"
+UB_CONFIG=am62x_evm
+#UB_CONFIG_BOARD=am625_beagleplay
+UB_CONFIG_BOARD=beagleplay
 UB_BRANCH=v2023.04-ti-09.01.00.008-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
@@ -62,11 +65,11 @@ override_dh_auto_configure:
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
-	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- am62x_evm_r5_defconfig am625_beagleplay_r5.config
+	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig $(UB_CONFIG_BOARD)_r5.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
 	cp -v ./tmp/CORTEXR/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
-	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- am62x_evm_a53_defconfig am625_beagleplay_a53.config
+	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig $(UB_CONFIG_BOARD)_$(MCORE).config
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
 	cp -v ./tmp/CORTEXA/tispl.bin_unsigned ./tmp/pkg/tispl.bin
