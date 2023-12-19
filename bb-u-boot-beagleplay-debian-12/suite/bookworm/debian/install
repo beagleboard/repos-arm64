@@ -12,6 +12,7 @@ debian/beagleplay-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleplay
 debian/beagleplay-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleplay
 debian/beagleplay-emmc-to-microsd-w-swap /opt/u-boot/bb-u-boot-beagleplay
 debian/beagleplay-microsd-to-emmc-w-swap /opt/u-boot/bb-u-boot-beagleplay
+tmp/pkg/ti-fs-stub-firmware-am62x-gp.bin /opt/u-boot/bb-u-boot-beagleplay
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagleplay
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleplay
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleplay
