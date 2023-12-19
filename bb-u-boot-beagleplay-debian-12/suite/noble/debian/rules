@@ -8,6 +8,8 @@ export DH_VERBOSE=1
 # https://bugs.debian.org/1052724
 export DEB_BUILD_MAINT_OPTIONS=hardening=-branch
 
+export DEB_CFLAGS_MAINT_STRIP = -fcf-protection
+
 TARGETDIR=bb-u-boot-beagleplay
 #/opt/u-boot/$(TARGETDIR)/
 
