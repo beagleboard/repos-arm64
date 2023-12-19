@@ -1,0 +1,72 @@
+Source: spirv-llvm-translator-16
+Section: libdevel
+Priority: optional
+Maintainer: Debian OpenCL team <pkg-opencl-devel@lists.alioth.debian.org>
+Uploaders:
+ Timo Aaltonen <tjaalton@debian.org>,
+ Andreas Beckmann <anbe@debian.org>,
+Build-Depends: debhelper-compat (= 13),
+ dh-sequence-pkgkde-symbolshelper,
+ cmake,
+ gcc (>= 4:13),
+ pkgconf,
+ spirv-headers (>= 1.6.1+1.3.243),
+ spirv-tools,
+# keep the clang/llvm version in sync, don't forget debian/tests/control
+ libclang-16-dev,
+ llvm-16-dev,
+ clang-16 <!nocheck>,
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Homepage: https://github.com/KhronosGroup/SPIRV-LLVM-Translator
+Vcs-Browser: https://salsa.debian.org/opencl-team/spirv-llvm-translator
+Vcs-Git: https://salsa.debian.org/opencl-team/spirv-llvm-translator.git -b llvm16/main
+
+Package: libllvmspirvlib16
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: bi-directional translator for LLVM/SPIRV -- shared library
+ SPIRV-LLVM-translator is a LLVM/SPIRV bi-directional translator. This
+ package includes a library and a tool for translation between LLVM IR
+ and SPIR-V.
+ .
+ This package includes the shared library.
+
+Package: libllvmspirvlib-16-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ libllvmspirvlib16 (= ${binary:Version}),
+ ${misc:Depends}
+Conflicts:
+ libllvmspirvlib-x.y-dev,
+Breaks:
+ libllvmspirvlib-dev (<< 13.0.0-3~),
+Replaces:
+ libllvmspirvlib-dev (<< 13.0.0-3~),
+ libllvmspirvlib-x.y-dev,
+Provides:
+ libllvmspirvlib-x.y-dev,
+Description: bi-directional translator for LLVM/SPIRV -- development files
+ SPIRV-LLVM-translator is a LLVM/SPIRV bi-directional translator. This
+ package includes a library and a tool for translation between LLVM IR
+ and SPIR-V.
+ .
+ This package includes static libs and headers for development.
+
+Package: llvm-spirv-16
+Architecture: any
+Depends:
+ libllvmspirvlib16 (= ${binary:Version}),
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: bi-directional translator for LLVM/SPIRV
+ SPIRV-LLVM-translator is a LLVM/SPIRV bi-directional translator. This
+ package includes a library and a tool for translation between LLVM IR
+ and SPIR-V.
+ .
+ This package includes the llvm-spirv-16 binary.

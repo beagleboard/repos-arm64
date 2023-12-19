@@ -1,0 +1,188 @@
+From 39969a5c3618083eb65e2ae7f4f6c2168fe3fc3c Mon Sep 17 00:00:00 2001
+From: Mateusz Chudyk <mateuszchudyk@gmail.com>
+Date: Sun, 4 Jun 2023 20:45:02 +0200
+Subject: [PATCH 6/6] [Backport to 16] Fix SPIRV Friendly IR mangling for
+ opcodes from cl_khr_integer_do_product (#2014) (#2016)
+
+---
+ lib/SPIRV/SPIRVUtil.cpp                       |  8 ++++
+ .../SPV_KHR_integer_dot_product-nonsat.ll     | 45 +++++++++++++++++++
+ .../SPV_KHR_integer_dot_product-sat.ll        | 45 +++++++++++++++++++
+ 3 files changed, 98 insertions(+)
+
+diff --git a/lib/SPIRV/SPIRVUtil.cpp b/lib/SPIRV/SPIRVUtil.cpp
+index d826fedb..f79c87c2 100644
+--- a/lib/SPIRV/SPIRVUtil.cpp
++++ b/lib/SPIRV/SPIRVUtil.cpp
+@@ -2322,6 +2322,14 @@ public:
+     case OpSubgroupAvcSicConfigureSkcINTEL:
+       addUnsignedArgs(0, 4);
+       break;
++    case OpUDotKHR:
++    case OpUDotAccSatKHR:
++      addUnsignedArg(-1);
++      break;
++    case OpSUDotKHR:
++    case OpSUDotAccSatKHR:
++      addUnsignedArg(1);
++      break;
+     default:;
+       // No special handling is needed
+     }
+diff --git a/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-nonsat.ll b/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-nonsat.ll
+index d43c4b8e..e9e19a8e 100644
+--- a/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-nonsat.ll
++++ b/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-nonsat.ll
+@@ -6,6 +6,9 @@
+ ; RUN: llvm-spirv -r -emit-opaque-pointers %t.spv -o %t.rev.bc
+ ; RUN: llvm-dis < %t.rev.bc | FileCheck %s --check-prefix=CHECK-LLVM
+ 
++; RUN: llvm-spirv -r -emit-opaque-pointers --spirv-target-env=SPV-IR %t.spv -o %t.rev.bc.spvir
++; RUN: llvm-dis < %t.rev.bc.spvir | FileCheck %s --check-prefix=CHECK-SPV-IR
++
+ ; CHECK-ERROR: Feature requires the following SPIR-V extension:
+ ; CHECK-ERROR-NEXT: SPV_KHR_integer_dot_product
+ 
+@@ -42,6 +45,21 @@ target triple = "spir-unknown-unknown"
+ ; CHECK-LLVM: call spir_func i32 @_Z21__spirv_SUDotKHR_Rintiii(
+ ; CHECK-LLVM: call spir_func i64 @_Z22__spirv_SUDotKHR_Rlongiii(
+ 
++; CHECK-SPV-IR: call spir_func i8 @_Z21__spirv_SDotKHR_Rchariii(
++; CHECK-SPV-IR: call spir_func i16 @_Z22__spirv_SDotKHR_Rshortiii(
++; CHECK-SPV-IR: call spir_func i32 @_Z20__spirv_SDotKHR_Rintiii(
++; CHECK-SPV-IR: call spir_func i64 @_Z21__spirv_SDotKHR_Rlongiii(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z22__spirv_UDotKHR_Rucharjjj(
++; CHECK-SPV-IR: call spir_func i16 @_Z23__spirv_UDotKHR_Rushortjjj(
++; CHECK-SPV-IR: call spir_func i32 @_Z21__spirv_UDotKHR_Ruintjjj(
++; CHECK-SPV-IR: call spir_func i64 @_Z22__spirv_UDotKHR_Rulongjjj(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z22__spirv_SUDotKHR_Rchariji(
++; CHECK-SPV-IR: call spir_func i16 @_Z23__spirv_SUDotKHR_Rshortiji(
++; CHECK-SPV-IR: call spir_func i32 @_Z21__spirv_SUDotKHR_Rintiji(
++; CHECK-SPV-IR: call spir_func i64 @_Z22__spirv_SUDotKHR_Rlongiji(
++
+ ; CHECK-SPIRV: 6 SDotKHR [[#I8]] [[#]] [[#]] [[#]] 0
+ ; CHECK-SPIRV: 6 SDotKHR [[#I16]] [[#]] [[#]] [[#]] 0
+ ; CHECK-SPIRV: 6 SDotKHR [[#I32]] [[#]] [[#]] [[#]] 0
+@@ -95,6 +113,21 @@ define spir_kernel void @TestNonSatPacked(i32 %0, i32 %1) #0 !kernel_arg_addr_sp
+ ; CHECK-LLVM: call spir_func i32 @_Z21__spirv_SUDotKHR_RintDv4_cS_(
+ ; CHECK-LLVM: call spir_func i64 @_Z22__spirv_SUDotKHR_RlongDv4_cS_(
+ 
++; CHECK-SPV-IR: call spir_func i8 @_Z21__spirv_SDotKHR_RcharDv4_cS_(
++; CHECK-SPV-IR: call spir_func i16 @_Z22__spirv_SDotKHR_RshortDv4_cS_(
++; CHECK-SPV-IR: call spir_func i32 @_Z20__spirv_SDotKHR_RintDv4_cS_(
++; CHECK-SPV-IR: call spir_func i64 @_Z21__spirv_SDotKHR_RlongDv4_cS_(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z22__spirv_UDotKHR_RucharDv4_hS_(
++; CHECK-SPV-IR: call spir_func i16 @_Z23__spirv_UDotKHR_RushortDv4_hS_(
++; CHECK-SPV-IR: call spir_func i32 @_Z21__spirv_UDotKHR_RuintDv4_hS_(
++; CHECK-SPV-IR: call spir_func i64 @_Z22__spirv_UDotKHR_RulongDv4_hS_(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z22__spirv_SUDotKHR_RcharDv4_cDv4_h(
++; CHECK-SPV-IR: call spir_func i16 @_Z23__spirv_SUDotKHR_RshortDv4_cDv4_h(
++; CHECK-SPV-IR: call spir_func i32 @_Z21__spirv_SUDotKHR_RintDv4_cDv4_h(
++; CHECK-SPV-IR: call spir_func i64 @_Z22__spirv_SUDotKHR_RlongDv4_cDv4_h(
++
+ ; CHECK-SPIRV: 5 SDotKHR [[#I8]]
+ ; CHECK-SPIRV: 5 SDotKHR [[#I16]]
+ ; CHECK-SPIRV: 5 SDotKHR [[#I32]]
+@@ -145,6 +178,18 @@ define spir_kernel void @TestNonSatVec(<4 x i8> %0, <4 x i8> %1) #0 !kernel_arg_
+ ; CHECK-LLVM: call spir_func i32 @_Z21__spirv_SUDotKHR_RintDv2_sS_(
+ ; CHECK-LLVM: call spir_func i64 @_Z22__spirv_SUDotKHR_RlongDv2_sS_(
+ 
++; CHECK-SPV-IR: call spir_func i16 @_Z22__spirv_SDotKHR_RshortDv2_sS_(
++; CHECK-SPV-IR: call spir_func i32 @_Z20__spirv_SDotKHR_RintDv2_sS_(
++; CHECK-SPV-IR: call spir_func i64 @_Z21__spirv_SDotKHR_RlongDv2_sS_(
++
++; CHECK-SPV-IR: call spir_func i16 @_Z23__spirv_UDotKHR_RushortDv2_tS_(
++; CHECK-SPV-IR: call spir_func i32 @_Z21__spirv_UDotKHR_RuintDv2_tS_(
++; CHECK-SPV-IR: call spir_func i64 @_Z22__spirv_UDotKHR_RulongDv2_tS_(
++
++; CHECK-SPV-IR: call spir_func i16 @_Z23__spirv_SUDotKHR_RshortDv2_sDv2_t(
++; CHECK-SPV-IR: call spir_func i32 @_Z21__spirv_SUDotKHR_RintDv2_sDv2_t(
++; CHECK-SPV-IR: call spir_func i64 @_Z22__spirv_SUDotKHR_RlongDv2_sDv2_t(
++
+ ; CHECK-SPIRV: 5 SDotKHR [[#I16]]
+ ; CHECK-SPIRV: 5 SDotKHR [[#I32]]
+ ; CHECK-SPIRV: 5 SDotKHR [[#I64]]
+diff --git a/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-sat.ll b/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-sat.ll
+index 675d5d89..02bfedd0 100644
+--- a/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-sat.ll
++++ b/test/extensions/KHR/SPV_KHR_integer_dot_product/SPV_KHR_integer_dot_product-sat.ll
+@@ -6,6 +6,9 @@
+ ; RUN: llvm-spirv -r -emit-opaque-pointers %t.spv -o %t.rev.bc
+ ; RUN: llvm-dis < %t.rev.bc | FileCheck %s --check-prefix=CHECK-LLVM
+ 
++; RUN: llvm-spirv -r -emit-opaque-pointers --spirv-target-env=SPV-IR %t.spv -o %t.rev.bc.spvir
++; RUN: llvm-dis < %t.rev.bc.spvir | FileCheck %s --check-prefix=CHECK-SPV-IR
++
+ ; CHECK-ERROR: Feature requires the following SPIR-V extension:
+ ; CHECK-ERROR-NEXT: SPV_KHR_integer_dot_product
+ 
+@@ -42,6 +45,21 @@ target triple = "spir-unknown-unknown"
+ ; CHECK-LLVM: call spir_func i32 @_Z27__spirv_SUDotAccSatKHR_Rintiiii(
+ ; CHECK-LLVM: call spir_func i64 @_Z28__spirv_SUDotAccSatKHR_Rlongiili(
+ 
++; CHECK-SPV-IR: call spir_func i8 @_Z27__spirv_SDotAccSatKHR_Rchariici(
++; CHECK-SPV-IR: call spir_func i16 @_Z28__spirv_SDotAccSatKHR_Rshortiisi(
++; CHECK-SPV-IR: call spir_func i32 @_Z26__spirv_SDotAccSatKHR_Rintiiii(
++; CHECK-SPV-IR: call spir_func i64 @_Z27__spirv_SDotAccSatKHR_Rlongiili(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z28__spirv_UDotAccSatKHR_Rucharjjhj(
++; CHECK-SPV-IR: call spir_func i16 @_Z29__spirv_UDotAccSatKHR_Rushortjjtj(
++; CHECK-SPV-IR: call spir_func i32 @_Z27__spirv_UDotAccSatKHR_Ruintjjjj(
++; CHECK-SPV-IR: call spir_func i64 @_Z28__spirv_UDotAccSatKHR_Rulongjjmj(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z28__spirv_SUDotAccSatKHR_Rcharijci(
++; CHECK-SPV-IR: call spir_func i16 @_Z29__spirv_SUDotAccSatKHR_Rshortijsi(
++; CHECK-SPV-IR: call spir_func i32 @_Z27__spirv_SUDotAccSatKHR_Rintijii(
++; CHECK-SPV-IR: call spir_func i64 @_Z28__spirv_SUDotAccSatKHR_Rlongijli(
++
+ ; CHECK-SPIRV: 7 SDotAccSatKHR [[#I8]] [[#]] [[#]] [[#]] [[#]] 0
+ ; CHECK-SPIRV: 7 SDotAccSatKHR [[#I16]] [[#]] [[#]] [[#]] [[#]] 0
+ ; CHECK-SPIRV: 7 SDotAccSatKHR [[#I32]] [[#]] [[#]] [[#]] [[#]] 0
+@@ -95,6 +113,21 @@ define spir_kernel void @TestSatPacked(i32 %0, i32 %1, i8 %acc8, i16 %acc16, i32
+ ; CHECK-LLVM: call spir_func i32 @_Z27__spirv_SUDotAccSatKHR_RintDv4_cS_i(
+ ; CHECK-LLVM: call spir_func i64 @_Z28__spirv_SUDotAccSatKHR_RlongDv4_cS_l(
+ 
++; CHECK-SPV-IR: call spir_func i8 @_Z27__spirv_SDotAccSatKHR_RcharDv4_cS_c(
++; CHECK-SPV-IR: call spir_func i16 @_Z28__spirv_SDotAccSatKHR_RshortDv4_cS_s(
++; CHECK-SPV-IR: call spir_func i32 @_Z26__spirv_SDotAccSatKHR_RintDv4_cS_i(
++; CHECK-SPV-IR: call spir_func i64 @_Z27__spirv_SDotAccSatKHR_RlongDv4_cS_l(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z28__spirv_UDotAccSatKHR_RucharDv4_hS_h(
++; CHECK-SPV-IR: call spir_func i16 @_Z29__spirv_UDotAccSatKHR_RushortDv4_hS_t(
++; CHECK-SPV-IR: call spir_func i32 @_Z27__spirv_UDotAccSatKHR_RuintDv4_hS_j(
++; CHECK-SPV-IR: call spir_func i64 @_Z28__spirv_UDotAccSatKHR_RulongDv4_hS_m(
++
++; CHECK-SPV-IR: call spir_func i8 @_Z28__spirv_SUDotAccSatKHR_RcharDv4_cDv4_hc(
++; CHECK-SPV-IR: call spir_func i16 @_Z29__spirv_SUDotAccSatKHR_RshortDv4_cDv4_hs(
++; CHECK-SPV-IR: call spir_func i32 @_Z27__spirv_SUDotAccSatKHR_RintDv4_cDv4_hi(
++; CHECK-SPV-IR: call spir_func i64 @_Z28__spirv_SUDotAccSatKHR_RlongDv4_cDv4_hl(
++
+ ; CHECK-SPIRV: 6 SDotAccSatKHR [[#I8]]
+ ; CHECK-SPIRV: 6 SDotAccSatKHR [[#I16]]
+ ; CHECK-SPIRV: 6 SDotAccSatKHR [[#I32]]
+@@ -145,6 +178,18 @@ define spir_kernel void @TestSatVec(<4 x i8> %0, <4 x i8> %1, i8 %acc8, i16 %acc
+ ; CHECK-LLVM: call spir_func i32 @_Z27__spirv_SUDotAccSatKHR_RintDv2_sS_i(
+ ; CHECK-LLVM: call spir_func i64 @_Z28__spirv_SUDotAccSatKHR_RlongDv2_sS_l(
+ 
++; CHECK-SPV-IR: call spir_func i16 @_Z28__spirv_SDotAccSatKHR_RshortDv2_sS_s(
++; CHECK-SPV-IR: call spir_func i32 @_Z26__spirv_SDotAccSatKHR_RintDv2_sS_i(
++; CHECK-SPV-IR: call spir_func i64 @_Z27__spirv_SDotAccSatKHR_RlongDv2_sS_l(
++
++; CHECK-SPV-IR: call spir_func i16 @_Z29__spirv_UDotAccSatKHR_RushortDv2_tS_t(
++; CHECK-SPV-IR: call spir_func i32 @_Z27__spirv_UDotAccSatKHR_RuintDv2_tS_j(
++; CHECK-SPV-IR: call spir_func i64 @_Z28__spirv_UDotAccSatKHR_RulongDv2_tS_m(
++
++; CHECK-SPV-IR: call spir_func i16 @_Z29__spirv_SUDotAccSatKHR_RshortDv2_sDv2_ts(
++; CHECK-SPV-IR: call spir_func i32 @_Z27__spirv_SUDotAccSatKHR_RintDv2_sDv2_ti(
++; CHECK-SPV-IR: call spir_func i64 @_Z28__spirv_SUDotAccSatKHR_RlongDv2_sDv2_tl(
++
+ ; CHECK-SPIRV: 6 SDotAccSatKHR [[#I16]]
+ ; CHECK-SPIRV: 6 SDotAccSatKHR [[#I32]]
+ ; CHECK-SPIRV: 6 SDotAccSatKHR [[#I64]]
+-- 
+2.20.1
+

@@ -1,0 +1,7 @@
+0001-Update-spirv-as-invocations-1934.patch
+0002-Rename-ConvertFToTF32INTEL-to-RoundFToTF32INTEL-1913.patch
+0003-Fix-standalone-builds-with-LLVM_LINK_LLVM_DYLIB-ON-1.patch
+0004-Fix-relationals-builtin-translation-bug.patch
+0005-Use-fp_fast_mode-extension-with-the-capability-2028.patch
+0006-Backport-to-16-Fix-SPIRV-Friendly-IR-mangling-for-op.patch
+visibility-hidden.patch

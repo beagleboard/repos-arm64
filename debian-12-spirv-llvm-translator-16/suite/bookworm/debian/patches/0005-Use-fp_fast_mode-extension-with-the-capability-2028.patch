@@ -1,0 +1,91 @@
+From 17cfdbd491776f99c7d45b91c37b6bf9edde30d2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Pekka=20J=C3=A4=C3=A4skel=C3=A4inen?=
+ <pekka.jaaskelainen@tuni.fi>
+Date: Wed, 31 May 2023 14:48:06 +0300
+Subject: [PATCH 5/6] Use fp_fast_mode extension with the capability (#2028)
+
+---
+ lib/SPIRV/SPIRVWriter.cpp                     | 19 +++++++++----------
+ .../fp_contract_reassoc_fast_mode.ll          |  3 ++-
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/lib/SPIRV/SPIRVWriter.cpp b/lib/SPIRV/SPIRVWriter.cpp
+index 3286731e..5650ad49 100644
+--- a/lib/SPIRV/SPIRVWriter.cpp
++++ b/lib/SPIRV/SPIRVWriter.cpp
+@@ -1681,7 +1681,7 @@ void transAliasingMemAccess(SPIRVModule *BM, MDNode *AliasingListMD,
+                             std::vector<uint32_t> &MemoryAccess,
+                             SPIRVWord MemAccessMask) {
+   if (!BM->isAllowedToUseExtension(
+-        ExtensionID::SPV_INTEL_memory_access_aliasing))
++          ExtensionID::SPV_INTEL_memory_access_aliasing))
+     return;
+   auto *MemAliasList = addMemAliasingINTELInstructions(BM, AliasingListMD);
+   if (!MemAliasList)
+@@ -2619,10 +2619,12 @@ bool LLVMToSPIRVBase::transDecoration(Value *V, SPIRVValue *BV) {
+           if (FMF.allowContract()) {
+             M |= FPFastMathModeAllowContractFastINTELMask;
+             BM->addCapability(CapabilityFPFastMathModeINTEL);
++            BM->addExtension(ExtensionID::SPV_INTEL_fp_fast_math_mode);
+           }
+           if (FMF.allowReassoc()) {
+             M |= FPFastMathModeAllowReassocINTELMask;
+             BM->addCapability(CapabilityFPFastMathModeINTEL);
++            BM->addExtension(ExtensionID::SPV_INTEL_fp_fast_math_mode);
+           }
+         }
+       }
+@@ -2669,20 +2671,17 @@ bool LLVMToSPIRVBase::transAlign(Value *V, SPIRVValue *BV) {
+ void LLVMToSPIRVBase::transMemAliasingINTELDecorations(Instruction *Inst,
+                                                        SPIRVValue *BV) {
+   if (!BM->isAllowedToUseExtension(
+-         ExtensionID::SPV_INTEL_memory_access_aliasing))
++          ExtensionID::SPV_INTEL_memory_access_aliasing))
+     return;
+-  if (MDNode *AliasingListMD =
+-          Inst->getMetadata(LLVMContext::MD_alias_scope)) {
+-    auto *MemAliasList =
+-        addMemAliasingINTELInstructions(BM, AliasingListMD);
++  if (MDNode *AliasingListMD = Inst->getMetadata(LLVMContext::MD_alias_scope)) {
++    auto *MemAliasList = addMemAliasingINTELInstructions(BM, AliasingListMD);
+     if (!MemAliasList)
+       return;
+     BV->addDecorate(new SPIRVDecorateId(DecorationAliasScopeINTEL, BV,
+                                         MemAliasList->getId()));
+   }
+   if (MDNode *AliasingListMD = Inst->getMetadata(LLVMContext::MD_noalias)) {
+-    auto *MemAliasList =
+-        addMemAliasingINTELInstructions(BM, AliasingListMD);
++    auto *MemAliasList = addMemAliasingINTELInstructions(BM, AliasingListMD);
+     if (!MemAliasList)
+       return;
+     BV->addDecorate(
+@@ -4102,8 +4101,8 @@ SPIRVValue *LLVMToSPIRVBase::transIntrinsicInst(IntrinsicInst *II,
+     else
+       // Other LLVM intrinsics shouldn't get to SPIRV, because they
+       // can't be represented in SPIRV or aren't implemented yet.
+-      BM->SPIRVCK(
+-          false, InvalidFunctionCall, II->getCalledOperand()->getName().str());
++      BM->SPIRVCK(false, InvalidFunctionCall,
++                  II->getCalledOperand()->getName().str());
+   }
+   return nullptr;
+ }
+diff --git a/test/extensions/INTEL/SPV_INTEL_fp_fast_math_mode/fp_contract_reassoc_fast_mode.ll b/test/extensions/INTEL/SPV_INTEL_fp_fast_math_mode/fp_contract_reassoc_fast_mode.ll
+index 30282aef..900dfbc2 100644
+--- a/test/extensions/INTEL/SPV_INTEL_fp_fast_math_mode/fp_contract_reassoc_fast_mode.ll
++++ b/test/extensions/INTEL/SPV_INTEL_fp_fast_math_mode/fp_contract_reassoc_fast_mode.ll
+@@ -3,8 +3,9 @@
+ ; RUN: llvm-spirv --spirv-ext=+SPV_INTEL_fp_fast_math_mode -spirv-text %t.bc -o - | FileCheck %s --check-prefix=CHECK-SPIRV-ON
+ ; RUN: llvm-spirv  --spirv-ext=+SPV_INTEL_fp_fast_math_mode %t.bc -o %t.spv
+ ; RUN: llvm-spirv -r -emit-opaque-pointers %t.spv -o - | llvm-dis -o - | FileCheck %s --check-prefix=CHECK-LLVM
+- 
++
+ ; CHECK-SPIRV-ON: 2 Capability FPFastMathModeINTEL
++; CHECK-SPIRV-ON: 8 Extension "SPV_INTEL_fp_fast_math_mode"
+ ; CHECK-SPIRV-ON: 3 Name [[mu:[0-9]+]] "mul"
+ ; CHECK-SPIRV-ON: 3 Name [[su:[0-9]+]] "sub"
+ ; CHECK-SPIRV-ON-DAG: 4 Decorate [[mu]] FPFastMathMode 65536
+-- 
+2.20.1
+
