@@ -1,7 +1,7 @@
-bb-u-boot-beagleplay-mainline (2024.01.20231204.2-0~trixie+20231207) trixie; urgency=low
+bb-u-boot-beagleplay-mainline (2024.01.20231218.0-0~trixie+20231219) trixie; urgency=low
 
-  * 20231204 - v2024.01-rc4 - https://github.com/u-boot/u-boot/commit/2f0282922b2c458eea7f85c500a948a587437b63
-  * 20231010 - 09.00.00.011 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.00.00.011
+  * 20231218 - v2024.01-rc5 - https://github.com/u-boot/u-boot/commit/97a897444235921ce19b4f8a3b27de6f5a9ab367
+  * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
   * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
   * 20231020 - 4.0.0 - https://github.com/OP-TEE/optee_os/commits/4.0.0
   * BeaglePlay, add extlinux.conf boot options over serial
@@ -10,5 +10,5 @@ bb-u-boot-beagleplay-mainline (2024.01.20231204.2-0~trixie+20231207) trixie; urg
   * extlinux.conf more vocal on eMMC vs microSD
   * Flasher scripts, echo Serial over HDMI
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Dec 2023 10:22:06 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Dec 2023 12:53:32 -0600
 
