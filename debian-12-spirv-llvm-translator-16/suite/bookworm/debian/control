@@ -8,7 +8,7 @@ Uploaders:
 Build-Depends: debhelper-compat (= 13),
  dh-sequence-pkgkde-symbolshelper,
  cmake,
- gcc (>= 4:13),
+ gcc (>= 4:12),
  pkgconf,
  spirv-headers (>= 1.6.1+1.3.243),
  spirv-tools,

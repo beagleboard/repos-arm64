@@ -1,3 +1,9 @@
+spirv-llvm-translator-16 (16.0.0-5bbbio1~bookworm+20231219) bookworm; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Dec 2023 08:52:22 -0600
+
 spirv-llvm-translator-16 (16.0.0-5bbbio0~bookworm+20231219) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
