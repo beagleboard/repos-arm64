@@ -1,11 +1,10 @@
-bb-code-server (4.18.0.0-0~noble+20231221) noble; urgency=low
+bb-code-server (4.19.1.0-0~noble+20231221) noble; urgency=low
 
-  * Debian Bookworm 12, forced to disable --cert to get code-server to start -> https://github.com/coder/code-server/issues/5162
   * Changed
-  * --Updated to Code 1.83.1
+  * --Updated to Code 1.84.2
   * Added
   * --trusted-origin flag for specifying origins that you trust but do not control (for example a reverse proxy).
   * --disable-proxy flag. This disables the domain and path proxies but it does not disable the ports panel in Code. That can be disabled by using remote.autoForwardPorts=false in your settings.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Dec 2023 17:01:52 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Dec 2023 17:43:03 -0600
 
