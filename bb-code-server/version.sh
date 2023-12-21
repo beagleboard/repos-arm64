@@ -3,7 +3,7 @@
 #https://github.com/coder/code-server/releases
 
 arch="arm64"
-ver="4.17.1"
+ver="4.18.0"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
@@ -28,3 +28,4 @@ bullseye_version="~bullseye+20231221"
 bookworm_version="~bookworm+20231221"
 trixie_version="~trixie+20231221"
 jammy_version="~jammy+20231221"
+noble_version="~noble+20231221"
