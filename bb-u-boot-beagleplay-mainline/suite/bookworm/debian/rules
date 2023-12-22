@@ -4,6 +4,9 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+#https://manpages.debian.org/bookworm/dpkg-dev/dpkg-buildflags.1.en.html
+export DEB_BUILD_MAINT_OPTIONS = hardening=-fortify
+
 TARGETDIR=bb-u-boot-beagleplay-mainline
 #/opt/u-boot/$(TARGETDIR)/
 
@@ -42,7 +45,6 @@ UB_BRANCH=v2024.01-rc5
 #Local Mirror
 UB_REPO="https://git.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
-#UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
 
 override_dh_strip:
