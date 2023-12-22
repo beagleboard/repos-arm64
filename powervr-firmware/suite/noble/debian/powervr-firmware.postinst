@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -f /usr/lib/firmware/powervr/rogue_33.15.11.3_v1.fw ] ; then
+	rm -f /usr/lib/firmware/powervr/rogue_33.15.11.3_v1.fw || true
+	cp -v /usr/lib/firmware/powervr/git/*.fw /usr/lib/firmware/powervr/
+else
+	cp -v /usr/lib/firmware/powervr/git/*.fw /usr/lib/firmware/powervr/
+fi
+
+case "$1" in
+	configure)
+		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then
+			update-initramfs -u
+		fi
+	;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0
+

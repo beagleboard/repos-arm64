@@ -1,4 +1,4 @@
-powervr-firmware (0.0.0-git20231123.3-0~bullseye+20231222) bullseye; urgency=low
+powervr-firmware (0.0.0-git20231123.3-0~noble+20231222) noble; urgency=low
 
   * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/)
 
