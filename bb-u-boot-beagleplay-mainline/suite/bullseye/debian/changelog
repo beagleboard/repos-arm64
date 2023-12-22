@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay-mainline (2024.01.20231218.0-0~bullseye+20231219) bullseye; urgency=low
+bb-u-boot-beagleplay-mainline (2024.01.20231218.1-0~bullseye+20231222) bullseye; urgency=low
 
   * 20231218 - v2024.01-rc5 - https://github.com/u-boot/u-boot/commit/97a897444235921ce19b4f8a3b27de6f5a9ab367
   * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
@@ -10,5 +10,5 @@ bb-u-boot-beagleplay-mainline (2024.01.20231218.0-0~bullseye+20231219) bullseye;
   * extlinux.conf more vocal on eMMC vs microSD
   * Flasher scripts, echo Serial over HDMI
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Dec 2023 12:53:32 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Dec 2023 12:03:37 -0600
 
