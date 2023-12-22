@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS	 = hardening=+all
+
+include /usr/share/dpkg/pkg-info.mk
+
+LLVM_VERSION	 = $(shell sed -n -r '/^Build/,/^$$/s/.*llvm-([0-9]+)-dev.*/\1/p' debian/control)
+
+%:
+	dh $@ --builddir build/
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_SKIP_RPATH=ON \
+		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include \
+		-DBUILD_SHARED_LIBS=ON \
+		-DLLVM_SPIRV_INCLUDE_TESTS=ON \
+		-DLLVM_EXTERNAL_LIT=/usr/lib/llvm-$(LLVM_VERSION)/build/utils/lit/lit.py \
+		-Wno-dev
+
+execute_after_dh_auto_install:
+	mv debian/tmp/usr/bin/llvm-spirv debian/tmp/usr/bin/llvm-spirv-$(LLVM_VERSION)
+
+ignore_test_failures	 = $(if $(filter $(DEB_HOST_ARCH),amd64),,-)
+override_dh_auto_test:
+	$(ignore_test_failures)env LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):$(CURDIR)/build/lib/SPIRV dh_auto_test
+
+
+update-symbols:
+	pkgkde-getbuildlogs
+	echo "pkgkde-symbolshelper batchpatch -v $(DEB_VERSION_EPOCH_UPSTREAM) $(DEB_SOURCE)_$(DEB_DISTRIBUTION)_logs/$(DEB_SOURCE)_$(DEB_VERSION)_*build"
+
+
+ifneq (,$(wildcard .git))
+upstream:
+	git remote show $@ >/dev/null 2>&1 || git remote add $@ $(shell sed -rn 's/Repository: //p' debian/upstream/metadata)
+	git fetch $@ --prune
+endif
