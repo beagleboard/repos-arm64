@@ -4,11 +4,8 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-# Disable branch hardening to fix build failure of arch:all build
-# https://bugs.debian.org/1052724
-export DEB_BUILD_MAINT_OPTIONS=hardening=-branch
-
-export DEB_CFLAGS_MAINT_STRIP = -fcf-protection
+#https://manpages.ubuntu.com/manpages/noble/en/man1/dpkg-buildflags.1.html
+export DEB_BUILD_MAINT_OPTIONS = hardening=-branch,-fortify qa=-framepointer
 
 TARGETDIR=bb-u-boot-beagleplay
 #/opt/u-boot/$(TARGETDIR)/
@@ -20,7 +17,6 @@ TILF_TAG=09.01.00.008
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
-TILF_BIN="ti-fs-stub-firmware-am62x-gp.bin"
 
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
@@ -42,14 +38,12 @@ OPTEE_PLATFORM=k3-am62x
 
 #U-Boot
 UB_CONFIG=am62x_evm
-#UB_CONFIG_BOARD=am625_beagleplay
 UB_CONFIG_BOARD=beagleplay
 UB_BRANCH=v2023.04-ti-09.01.00.008-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
 #UB_REPO="https://git.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
-#UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
 
 override_dh_strip:
@@ -59,7 +53,6 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
-	cp -v /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ti-sysfw/$(TILF_BIN) ./tmp/pkg/
 	mkdir -p ./tmp/trusted-firmware-a/ ; git -c http.sslVerify=false clone -b $(TFA_TAG) $(TFA_REPO) --depth=5 ./tmp/trusted-firmware-a/ ; git --git-dir ./tmp/trusted-firmware-a/.git log --pretty=oneline
 	make -C ./tmp/trusted-firmware-a/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(TFA_BOARD) K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin ./tmp/pkg/
