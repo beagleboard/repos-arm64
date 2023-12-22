@@ -1,0 +1,6 @@
+ti-linux-firmware-sysfw (0.0.0-09.01.00.008.0-0~bullseye+20231222) bullseye; urgency=low
+
+  * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Dec 2023 15:49:33 -0600
+
