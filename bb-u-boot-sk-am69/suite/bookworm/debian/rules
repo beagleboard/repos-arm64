@@ -4,13 +4,16 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+#https://manpages.debian.org/bookworm/dpkg-dev/dpkg-buildflags.1.en.html
+export DEB_BUILD_MAINT_OPTIONS = hardening=-fortify
+
 TARGETDIR=bb-u-boot-sk-am69
 #/opt/u-boot/$(TARGETDIR)/
 
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.00.00.011
+TILF_TAG=09.01.00.008
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -35,7 +38,7 @@ OPTEE_PLATFORM=k3-j784s4
 
 #U-Boot
 UB_CONFIG=j784s4_evm
-UB_BRANCH=v2023.04-ti-09.00.00.011-BeaglePlay
+UB_BRANCH=v2023.04-ti-09.01.00.008-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
 #UB_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-u-boot.git"
