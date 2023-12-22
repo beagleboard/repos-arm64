@@ -1,4 +1,4 @@
-Source: bb-u-boot-beagleplay-mainline
+Source: bb-u-boot-beagleboneai64-mainline
 Section: misc
 Priority: extra
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
@@ -24,11 +24,11 @@ Build-Depends:
  , u-boot-tools
 Standards-Version: 4.5.1
 
-Package: bb-u-boot-beagleplay-mainline
+Package: bb-u-boot-beagleboneai64-mainline
 Architecture: arm64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , mmc-utils
-Description: bb-u-boot-beagleplay-mainline
- bb-u-boot-beagleplay-mainline
+Description: beagleboard.org u-boot for beagleboneai64-mainline
+ beagleboard.org u-boot for beagleboneai64-mainline

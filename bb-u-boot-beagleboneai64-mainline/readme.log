@@ -1,0 +1,10 @@
+  * 20231222 - next - https://github.com/u-boot/u-boot/commit/4b151562bb8e54160adedbc6a1c0c749c00a2f84
+  * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
+  * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
+  * 20231020 - 4.0.0 - https://github.com/OP-TEE/optee_os/commits/4.0.0
+  * BeagleBone AI64, add extlinux.conf boot options over serial
+  * Bump FAT partition to 256MB for boot recovery images
+  * Enable a extlinux.conf option to flash other media directly
+  * extlinux.conf more vocal on eMMC vs microSD
+  * add homeassistant specific extlinux.conf files
+  * Flasher scripts, echo Serial over HDMI
