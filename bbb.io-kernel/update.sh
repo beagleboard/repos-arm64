@@ -31,6 +31,7 @@ generate_header () {
 	echo " bb-j721e-evm-firmware" >> ./suite/${dist}/debian/${wfile}
 	echo " , bbb.io-clickid-manifests" >> ./suite/${dist}/debian/${wfile}
 	echo " , generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
+	echo " , ti-linux-firmware-sysfw" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
 	echo " , \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
