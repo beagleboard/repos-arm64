@@ -10,7 +10,7 @@ TARGETDIR=bb-u-boot-beagleplay
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.00.00.011
+TILF_TAG=09.01.00.008
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -37,12 +37,11 @@ OPTEE_PLATFORM=k3-am62x
 UB_CONFIG=am62x_evm
 #UB_CONFIG_BOARD=am625_beagleplay
 UB_CONFIG_BOARD=beagleplay
-UB_BRANCH=v2023.04-ti-09.00.00.011-BeaglePlay
+UB_BRANCH=v2023.04-ti-09.01.00.008-BeaglePlay
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
 #UB_REPO="https://git.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
-#UB_TIBOOT=tiboot3-am62x-hs-fs-evm.bin
 MCORE=a53
 
 override_dh_strip:
