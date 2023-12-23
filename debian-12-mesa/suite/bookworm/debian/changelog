@@ -1,6 +1,12 @@
+mesa (23.3.1-3bbbio2~bookworm+20231223) bookworm; urgency=low
+
+  * Rebuild with llvm-17
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 23 Dec 2023 12:27:28 -0600
+
 mesa (23.3.1-3bbbio1~bookworm+20231219) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild with llvm-16
 
  -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Dec 2023 22:23:55 -0600
 
