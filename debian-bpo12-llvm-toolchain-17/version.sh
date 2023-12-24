@@ -7,7 +7,7 @@
 #https://packages.debian.org/source/trixie/llvm-toolchain-17
 
 mirror="https://deb.debian.org/debian"
-mirror="https://snapshot.debian.org/archive/debian/20231130T032551Z"
+#mirror="https://snapshot.debian.org/archive/debian/20231130T032551Z"
 
 package_name="llvm-toolchain-17"
 debian_pkg_name="${package_name}"
@@ -18,7 +18,7 @@ git_sha=""
 reprepro_dir="l/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-1"
+debian_version="${package_version}-3"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 
