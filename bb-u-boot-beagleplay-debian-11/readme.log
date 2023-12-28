@@ -8,3 +8,4 @@
   * extlinux.conf more vocal on eMMC vs microSD
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
+  * extlinux.conf, flasher auto disable k3-am625-beagleplay-bcfserial-no-firmware.dtbo for 5.10.x kernels
