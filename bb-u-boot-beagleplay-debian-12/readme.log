@@ -7,3 +7,4 @@
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
   * Flasher scripts, echo Serial over HDMI
+  * extlinux.conf, unify labels to make flasher change more generic

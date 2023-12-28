@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2023.04.20231206.3-09.01.00.008-0~trixie+20231222) trixie; urgency=low
+bb-u-boot-beagleplay (2023.04.20231206.4-09.01.00.008-0~trixie+20231228) trixie; urgency=low
 
   * 20231206 - 09.01.00.008 - https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=tag;h=refs/tags/09.01.00.008
   * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
@@ -9,6 +9,7 @@ bb-u-boot-beagleplay (2023.04.20231206.3-09.01.00.008-0~trixie+20231222) trixie;
   * Enable a extlinux.conf option to flash eMMC directly
   * extlinux.conf more vocal on eMMC vs microSD
   * Flasher scripts, echo Serial over HDMI
+  * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Dec 2023 14:35:34 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Dec 2023 10:14:47 -0600
 
