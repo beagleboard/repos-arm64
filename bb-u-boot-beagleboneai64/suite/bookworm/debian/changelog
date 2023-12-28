@@ -1,14 +1,15 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.14-0~bookworm+20231201) bookworm; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.15-0~bookworm+20231228) bookworm; urgency=low
 
+  * 20230222 - 08.06.00.007 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2944354aca1f95525c30d625cb17672930e72572
+  * 20230522 - v2.9.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.9.0
+  * 20230707 - 3.22.0 - https://github.com/OP-TEE/optee_os/commits/3.22.0
   * BeagleBone AI64, add extlinux.conf boot options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * ti-sysfw: 08.06.00.007: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2944354aca1f95525c30d625cb17672930e72572
-  * TF-A: v2.9.0: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
-  * OP-TEE: 3.22.0: https://github.com/OP-TEE/optee_os
   * Enable a extlinux.conf option to flash other media directly
   * extlinux.conf more vocal on eMMC vs microSD
   * add homeassistant specific extlinux.conf files
   * Flasher scripts, echo Serial over HDMI
+  * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 01 Dec 2023 17:44:54 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Dec 2023 11:34:28 -0600
 

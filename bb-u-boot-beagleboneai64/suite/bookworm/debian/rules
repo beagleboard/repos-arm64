@@ -4,6 +4,9 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+#https://manpages.debian.org/bookworm/dpkg-dev/dpkg-buildflags.1.en.html
+export DEB_BUILD_MAINT_OPTIONS = hardening=-fortify
+
 TARGETDIR=bb-u-boot-beagleboneai64
 #/opt/u-boot/$(TARGETDIR)/
 
@@ -13,7 +16,7 @@ TARGETDIR=bb-u-boot-beagleboneai64
 TILF_TAG=08.06.00.007
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
-TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
+TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
@@ -21,7 +24,7 @@ TILF_REPO="https://gitea.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 TFA_TAG=v2.9.0
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
-TFA_REPO="https://gitea.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
+TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
 TFA_BOARD=generic
 
 #optee_os
@@ -30,7 +33,7 @@ TFA_BOARD=generic
 OPTEE_TAG=3.22.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
-OPTEE_REPO="https://gitea.gfnd.rcn-ee.org/mirror/optee_os.git"
+OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-j721e
 
 #U-Boot
@@ -38,7 +41,7 @@ UB_CONFIG=j721e_evm
 UB_BRANCH=v2021.01-ti-08.05.00.001
 UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
 #Local Mirror
-#UB_REPO="https://gitea.gfnd.rcn-ee.org/mirror/u-boot.git"
+#UB_REPO="https://git.gfnd.rcn-ee.org/mirror/u-boot.git"
 UB_TIBOOT=tiboot3.bin
 UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
 MCORE=a72
