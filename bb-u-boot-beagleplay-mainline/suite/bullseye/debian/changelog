@@ -1,6 +1,6 @@
-bb-u-boot-beagleplay-mainline (2024.01.20231218.3-0~bullseye+20231228) bullseye; urgency=low
+bb-u-boot-beagleplay-mainline (2024.01.20240103.0-0~bullseye+20240103) bullseye; urgency=low
 
-  * 20231218 - v2024.01-rc5 - https://github.com/u-boot/u-boot/commit/97a897444235921ce19b4f8a3b27de6f5a9ab367
+  * 20240103 - v2024.01-rc6 - https://github.com/u-boot/u-boot/commit/80cb22c58bd9ec11e970bae84510a99171b691eb
   * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
   * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
   * 20231020 - 4.0.0 - https://github.com/OP-TEE/optee_os/commits/4.0.0
@@ -11,5 +11,5 @@ bb-u-boot-beagleplay-mainline (2024.01.20231218.3-0~bullseye+20231228) bullseye;
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Dec 2023 10:41:22 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Jan 2024 09:43:06 -0600
 
