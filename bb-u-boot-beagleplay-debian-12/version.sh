@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
 #https://git.beagleboard.org/beagleboard/u-boot/
-#https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
+#https://github.com/u-boot/u-boot/commits/master
 
 package_name="bb-u-boot-beagleplay"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20231206.4-09.01.00.008"
+package_version="2024.01.20240103.0"
 package_source=""
 src_dir=""
 
@@ -20,7 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20231228"
-trixie_version="~trixie+20231228"
-jammy_version="~jammy+20231228"
-noble_version="~noble+20231228"
+bookworm_version="~bookworm+20240104"
+trixie_version="~trixie+20240104"
+jammy_version="~jammy+20240104"
+noble_version="~noble+20240104"
