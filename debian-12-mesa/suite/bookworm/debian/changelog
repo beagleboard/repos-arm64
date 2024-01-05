@@ -1,8 +1,15 @@
-mesa (23.3.2-1bbbio0~bookworm+20240104) bookworm; urgency=low
+mesa (23.3.2-2bbbio0~bookworm+20240105) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Jan 2024 16:38:41 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Jan 2024 12:20:55 -0600
+
+mesa (23.3.2-2) unstable; urgency=medium
+
+  * patches: Revert two commits on d3d12 that regressed at least swrast.
+    (Closes: #1059971, #1060017)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 05 Jan 2024 11:07:26 +0200
 
 mesa (23.3.2-1) unstable; urgency=medium
 
