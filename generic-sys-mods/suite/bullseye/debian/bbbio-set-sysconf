@@ -137,7 +137,7 @@ q(# This file will be automatically evaluated and installed at next boot
 #root_authorized_key=
 
 # hostname - Set the system hostname.
-#hostname=rpi
+#hostname=BeagleBone
 ));
 
     if (scalar keys %$conf) {

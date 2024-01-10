@@ -28,7 +28,7 @@
 #root_authorized_key=
 
 # hostname - Set the system hostname.
-#hostname=rpi
+#hostname=BeagleBone
 
 # We found the following unhandled keys - That means, the
 # configuration script does not know how to handle them. Please
