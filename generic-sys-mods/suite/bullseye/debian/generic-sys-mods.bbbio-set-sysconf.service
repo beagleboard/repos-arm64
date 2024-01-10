@@ -3,7 +3,7 @@ Description=BeagleBoard Set up system configuration
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/sbin/bbbio-set-sysconf
+ExecStart=/usr/sbin/bbbio-set-sysconf
 
 [Install]
 RequiredBy=basic.target
