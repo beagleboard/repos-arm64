@@ -1,0 +1,26 @@
+Source: generic-sys-mods
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 10)
+Standards-Version: 4.5.1
+
+Package: generic-sys-mods
+Architecture: arm64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , systemd
+ , cloud-guest-utils
+ , e2fsprogs
+ , bsdextrautils
+ , net-tools
+ , gzip
+ , whiptail
+ , parted
+ , lua5.1
+ , psmisc
+ , iw
+Description: System tweaks for the Generic Systems
+ Various modifications to improve the performance or user experience.

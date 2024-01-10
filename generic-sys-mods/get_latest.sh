@@ -5,7 +5,7 @@ dl_src () {
 		rm -rf ./src/
 	fi
 
-	git clone https://git.beagleboard.org/beagleboard/${repo}.git ./src/
+	git clone https://openbeagle.org/beagleboard/${repo}.git ./src/
 }
 
 copy_some () {
@@ -17,6 +17,7 @@ copy_all () {
 	cp -v ./src/${wfile} ./suite/bullseye/debian/
 	cp -v ./src/${wfile} ./suite/jammy/debian/
 	cp -v ./src/${wfile} ./suite/trixie/debian/
+	cp -v ./src/${wfile} ./suite/noble/debian/
 }
 
 repo="raspi-config"
@@ -29,3 +30,10 @@ repo="usr-customizations"
 dl_src
 
 wfile="arm64/usr/sbin/beagle-kversion" ; copy_all
+
+
+repo="bbbio-set-sysconf"
+dl_src
+
+wfile="rootfs/usr/sbin/bbbio-set-sysconf" ; copy_all
+wfile="rootfs/boot/firmware/sysconf.txt" ; copy_all
