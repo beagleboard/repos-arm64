@@ -1,8 +1,17 @@
-mesa (23.3.2-2bbbio0~bookworm+20240105) bookworm; urgency=low
+mesa (23.3.3-1bbbio0~bookworm+20240111) bookworm; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Jan 2024 12:20:55 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 11 Jan 2024 11:52:47 -0600
+
+mesa (23.3.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches, rules: Revert riscv64 back to plain softpipe swrast, drop
+    orcjit patch. (Closes: #1060376)
+  * patches: Drop d3d12 reverts, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 11 Jan 2024 10:10:19 +0200
 
 mesa (23.3.2-2) unstable; urgency=medium
 
