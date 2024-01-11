@@ -55,6 +55,22 @@ if (my $name = delete($conf->{hostname})) {
     $fh->print($name);
     $fh->close;
     system('hostname', '--file', '/etc/hostname');
+
+    my $fha;
+    logger('debug', "Adding '$name' to /etc/hosts");
+    unless ($fha = IO::File->new('/etc/hosts', 'w')) {
+	my $err = $!;
+	logger('error', "Could not write to /etc/hosts '$name': $err");
+	die $err;
+    }
+    $fha->print("127.0.0.1	localhost\n");
+    $fha->print("127.0.1.1	", $name, ".localdomain	", $name, "\n");
+    $fha->print("\n");
+    $fha->print("# The following lines are desirable for IPv6 capable hosts\n");
+    $fha->print("::1		localhost ip6-localhost ip6-loopback\n");
+    $fha->print("ff02::1		ip6-allnodes\n");
+    $fha->print("ff02::2		ip6-allrouters\n");
+    $fha->close;
 }
 
 rewrite_conf_file($filename, $conf);
