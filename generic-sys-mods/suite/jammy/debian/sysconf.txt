@@ -20,13 +20,6 @@
 # leave no space to indicate the line is an example that could be
 # uncommented.
 
-# root_pw - Set a password for the root user (by default, it allows
-# for a passwordless login)
-#root_pw=FooBar
-
-# root_authorized_key - Set an authorized key for a root ssh login
-#root_authorized_key=
-
 # hostname - Set the system hostname.
 #hostname=BeagleBone
 

@@ -20,6 +20,17 @@ copy_all () {
 	cp -v ./src/${wfile} ./suite/noble/debian/
 }
 
+copy_debian () {
+	cp -v ./src/${wfile} ./suite/bullseye/debian/
+	cp -v ./src/${wfile} ./suite/bookworm/debian/
+	cp -v ./src/${wfile} ./suite/trixie/debian/
+}
+
+copy_ubuntu () {
+	cp -v ./src/${wfile} ./suite/jammy/debian/
+	cp -v ./src/${wfile} ./suite/noble/debian/
+}
+
 repo="raspi-config"
 dl_src
 
@@ -35,5 +46,8 @@ wfile="arm64/usr/sbin/beagle-kversion" ; copy_all
 repo="bbbio-set-sysconf"
 dl_src
 
-wfile="rootfs/usr/sbin/bbbio-set-sysconf" ; copy_all
-wfile="rootfs/boot/firmware/sysconf.txt" ; copy_all
+wfile="src/debian/bbbio-set-sysconf" ; copy_debian
+wfile="src/debian/sysconf.txt" ; copy_debian
+
+wfile="src/ubuntu/bbbio-set-sysconf" ; copy_ubuntu
+wfile="src/ubuntu/sysconf.txt" ; copy_ubuntu
