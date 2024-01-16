@@ -4,7 +4,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="libdrm"
 debian_pkg_name="${package_name}"
-package_version="2.4.117"
+package_version="2.4.120"
 
 git_repo=""
 git_sha=""
