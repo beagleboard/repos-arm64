@@ -1,8 +1,19 @@
-mesa (23.3.3-2bbbio0~bookworm+20240116) bookworm; urgency=low
+mesa (24.0.0~rc1-1bbbio0~bookworm+20240117) bookworm; urgency=low
 
-  * Rebuild mesa_23.3.3-2 for repos.rcn-ee.com
+  * Rebuild mesa_24.0.0~rc1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 16 Jan 2024 13:53:44 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 17 Jan 2024 14:49:46 -0600
+
+mesa (24.0.0~rc1-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * patches: Drop the zink reverts.
+  * rules: Modify video-codecs option to build all codecs. Thanks,
+    Safir Secerovic!
+  * control, rules: Bump debhelper-compat to 13, drop dh_missing
+    override as it's the default now.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 16 Jan 2024 19:15:45 +0200
 
 mesa (23.3.3-2) unstable; urgency=medium
 
