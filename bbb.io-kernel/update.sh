@@ -178,6 +178,7 @@ do_jammy () {
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
@@ -208,6 +209,7 @@ do_noble () {
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 
 	changelog
 }
@@ -243,6 +245,7 @@ do_bullseye () {
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
@@ -281,6 +284,7 @@ do_bookworm () {
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
@@ -314,6 +318,7 @@ do_trixie () {
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	changelog
 }
 
