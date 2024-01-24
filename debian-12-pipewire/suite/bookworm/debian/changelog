@@ -1,8 +1,378 @@
-pipewire (0.3.65-3bbbio0~bookworm+20240124) bookworm; urgency=low
+pipewire (1.0.1-1~bpo12+1bbbio0~bookworm+20240124) bookworm; urgency=low
 
-  * Rebuild pipewire_0.3.65-3 for repos.rcn-ee.com
+  * Rebuild pipewire_1.0.1-1~bpo12+1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 12:41:15 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 12:50:00 -0600
+
+pipewire (1.0.1-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+  * Disable ROC, not available in Bookworm
+  * Install udev rules in /lib/udev/rules.d
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 11 Jan 2024 17:40:46 +0100
+
+pipewire (1.0.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add lintian overrides for groff-message in manpages
+  * Update upstream branch in debian/gbp.conf
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 11 Jan 2024 14:59:54 +0100
+
+pipewire (1.0.0-3) unstable; urgency=medium
+
+  * libpipewire-0.3-modules-x11: depend on libcanberra-pulse (Closes: #1059544)
+      module-x11-bell requires the libcanberra PulseAudio backend.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 05 Jan 2024 11:59:35 +0100
+
+pipewire (1.0.0-2) experimental; urgency=medium
+
+  * Install udev rules in /usr/lib/udev/rules.d (Closes: #1057233)
+    Thanks to Chris Hofstaedtler.
+  * Extend hurd-i386 restrictions to hurd-any
+  * Build-Depend on the fixed version of libroc-dev: remove the now
+    useless build-deps on libuv1-dev and libspeexdsp-dev.
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 21 Dec 2023 16:55:55 +0100
+
+pipewire (1.0.0-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+  * Disable ROC, not available in Bookworm
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 27 Nov 2023 11:45:31 +0100
+
+pipewire (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Install new manpages in their respective packages
+  * Update symbols file, 1 symbol is dropped in 1.0.0:
+      - pw_in_valgrind@Base 0.3.6
+      See commit 2738bb4c.
+  * Build ROC modules (Closes: #1002630)
+    - Add libroc-dev in Build-Deps
+    - Add libuv1-dev and libspeexdsp-dev in Build-Deps, those are missing
+      dependencies of libroc-dev. Will dropped once libroc-dev is fixed.
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 27 Nov 2023 11:37:05 +0100
+
+pipewire (0.3.85-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 16 Nov 2023 12:34:36 +0100
+
+pipewire (0.3.85-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 16 Nov 2023 12:12:15 +0100
+
+pipewire (0.3.84-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 02 Nov 2023 18:07:10 +0100
+
+pipewire (0.3.84-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update symbols file
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 02 Nov 2023 17:57:57 +0100
+
+pipewire (0.3.83-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 21 Oct 2023 11:05:50 +0200
+
+pipewire (0.3.83-1) unstable; urgency=medium
+
+  * New upstream release
+  * Disable libcamera-dev from build-deps for hurd-i386
+  * Refresh Don-t-automatically-start-pipewire-for-root-logins.patch
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 20 Oct 2023 16:20:29 +0200
+
+pipewire (0.3.82-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 16 Oct 2023 09:49:06 +0200
+
+pipewire (0.3.82-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update symbols file, 1 symbol is dropped in 0.3.82:
+      - _pw_log_topic_new@Base 0.3.38
+      See commit 57404e44.
+  * Mark libbluetooth-dev as a linux-any only Build-deps because not available
+      on GNU/Hurd.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 13 Oct 2023 11:26:00 +0200
+
+pipewire (0.3.81-1) experimental; urgency=medium
+
+  * New upstream release
+      - Use malloc_trim() when available to release memory (Closes: #1015915)
+  * Drop patch included in upstream release:
+      - 1f1c308c: aec: support both webrtc versions
+  * Switch packages architecture from linux-any to any
+      - GNU/Hurd support was added
+
+ -- Dylan Aïssi <daissi@debian.org>  Sun, 08 Oct 2023 14:28:05 +0200
+
+pipewire (0.3.80-2~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 15 Sep 2023 14:41:31 +0200
+
+pipewire (0.3.80-2) unstable; urgency=medium
+
+  * Cherry-pick upstream recommended patch:
+      - 1f1c308c: aec: support both webrtc versions
+  * Re-enable webrtc-audio-processing in Build-Deps
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 15 Sep 2023 14:37:24 +0200
+
+pipewire (0.3.80-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop patches included in upstream release
+  * Disable webrtc-audio-processing in Build-Deps:
+      pipewire now requires webrtc-audio-processing >= 1.2 which is not yet
+      available in Debian. Therefore the echo-canceller module is not built
+      anymore, and because this module is used and upstream advised against
+      disabling it, new versions of pipewire will only target experimental until
+      we can re-enable it.
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 14 Sep 2023 15:59:17 +0200
+
+pipewire (0.3.79-2) unstable; urgency=medium
+
+  [ Boud Roukema ]
+  * pipewire.README.Debian: Include 3 ways of restarting pipewire-related
+      services (Closes: #1050498)
+
+  [ Dylan Aïssi ]
+  * Cherry-pick upstream patches to fix build on alpha (Closes: #1051128)
+  * Add noinsttest build profile (Closes: #1051191)
+  * Use a wildcard in d/libpipewire-0.3-modules.install to facilitate
+      downstream packaging (Closes: #1040330)
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 11 Sep 2023 12:12:58 +0200
+
+pipewire (0.3.79-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 29 Aug 2023 11:36:54 +0200
+
+pipewire (0.3.79-1) unstable; urgency=medium
+
+  * New upstream release
+      - Make it easier to add a custom profile in ACP (Closes: #1050293)
+
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 29 Aug 2023 11:09:28 +0200
+
+pipewire (0.3.78-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop pipewire-media-session from Recommends fields
+      since it is no longer part of Debian, see #1043405
+
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 22 Aug 2023 13:51:52 +0200
+
+pipewire (0.3.77-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 11 Aug 2023 09:29:33 +0200
+
+pipewire (0.3.77-1) unstable; urgency=low
+
+  * New upstream release
+      - x11-bell: protect libcanberra calls with a mutex (Closes: #1025427)
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 04 Aug 2023 12:10:13 +0200
+
+pipewire (0.3.76-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 04 Aug 2023 11:22:27 +0200
+
+pipewire (0.3.76-1) unstable; urgency=low
+
+  [ Dylan Aïssi ]
+  * New upstream release
+  * Update symbols file, 2 symbols are dropped in 0.3.75:
+      - pw_context_driver_add_listener@Base 0.3.72
+      - pw_context_driver_remove_listener@Base 0.3.72
+      See commit cfd3bcd6.
+  * Install new modules vban-recv and vban-send
+      in libpipewire-0.3-modules.
+
+  [ Evangelos Ribeiro Tzaras ]
+  * pipewire-doc: Register documentation with doc-base
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 28 Jul 2023 11:36:53 +0200
+
+pipewire (0.3.74-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 24 Jul 2023 10:55:34 +0200
+
+pipewire (0.3.74-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update symbols file
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 12 Jul 2023 12:41:04 +0200
+
+pipewire (0.3.73-1) unstable; urgency=medium
+
+  [ Dylan Aïssi ]
+  * New upstream release
+  * Install new modules filter-chain-lv2 and filter-chain-sofa
+      in libpipewire-0.3-modules.
+  * Update symbols file, 1 symbol is dropped: pw_proxy_get_core@Base 0.3.1
+      This function is not declared in any header files, nor used by anything.
+      See commit 54a9b30e.
+
+  [ Sebastien Bacher ]
+  * Don't use libffafo in the Ubuntu build for now since the package
+      is in universe
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 06 Jul 2023 14:50:07 +0200
+
+pipewire (0.3.72-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Improve description of libspa-0.2-libcamera
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 03 Jul 2023 09:59:54 +0200
+
+pipewire (0.3.72-1) experimental; urgency=medium
+
+  * New upstream release
+  * Rename pipewire-libcamera to libspa-0.2-libcamera (Closes: #1030953)
+      pipewire-libcamera is now a transitional package.
+  * Improve packages description by mentioning audio functions
+      (Closes: #1039018)
+  * Drop patch included in upstream release:
+      - ce71b37b: fixes a bug with buffer_size updates for JACK apps
+  * Add libffado-dev in Build-Deps
+  * Install new modules ffado-driver, netjack2-driver and netjack2-manager
+      in libpipewire-0.3-modules.
+  * Update symbols file
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 26 Jun 2023 14:44:38 +0200
+
+pipewire (0.3.71-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Remove minimum version of libcamera-dev, not yet in unstable
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 12 Jun 2023 11:59:49 +0200
+
+pipewire (0.3.71-1) experimental; urgency=medium
+
+  [ Dylan Aïssi ]
+  * New upstream release
+  * Drop patch included in upstream release:
+      - module-pulse-tunnel-avoid-using-NULL-module.patch
+  * Cherry-pick upstream recommended patch:
+      - ce71b37b: fixes a bug with buffer_size updates for JACK apps
+  * Set minimum libcamera to 0.0.5 to force a build against the version in
+      experimental during the freeze.
+  * Install new module-jack-tunnel and module-jackdbus-detect
+      in libpipewire-0.3-modules.
+
+  [ Sebastien Bacher ]
+  * Don't use libmysofa in the Ubuntu build for now since the package
+    is in universe (Closes: #1035718)
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 22 May 2023 12:35:03 +0200
+
+pipewire (0.3.70-2) experimental; urgency=medium
+
+  [ Alban Browaeys ]
+  * Cherry-pick upstream patch:
+      - Fix pulse tunnel unload segfaulting pipewire-pulse (Closes: #1035280)
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 05 May 2023 11:56:36 +0200
+
+pipewire (0.3.70-1) experimental; urgency=medium
+
+  * New upstream release
+  * Install new pw-config in pipewire-bin
+  * Update symbols file
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 20 Apr 2023 17:01:11 +0200
+
+pipewire (0.3.69-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop patch included in upstream release:
+      - 8748c774: fix for nodes staying IDLE in some cases
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 17 Apr 2023 10:08:36 +0200
+
+pipewire (0.3.68-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop patches included in upstream release:
+      - Don-t-build_same_binary_twice.patch
+  * Cherry-pick upstream recommended patch:
+      - 8748c774: fix for nodes staying IDLE in some cases
+  * Install new module-rtp-sap and module-rtp-session in libpipewire-0.3-modules
+  * Don't install for now config override files to enable the upmixing.
+      These files should go in a new binary package.
+  * Update symbols file
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 12 Apr 2023 10:23:25 +0200
+
+pipewire (0.3.67-2) experimental; urgency=medium
+
+  * Set minimum libcamera to 0.0.4 to force a build against the version in
+      experimental during the freeze.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 31 Mar 2023 22:12:00 +0200
+
+pipewire (0.3.67-1) experimental; urgency=medium
+
+  * New upstream release
+  * pipewire-audio: add pulseaudio-module-bluetooth in Conflicts+Replaces
+      to help apt make a choice (Closes: #1031396)
+  * Drop patches included in upstream release:
+      - 3601ecc9: Improve NEWS
+  * Install new pw-encplay in pipewire-bin
+  * Update symbols file
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 09 Mar 2023 15:41:34 +0100
+
+pipewire (0.3.66-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop patch included in upstream release:
+      - fba7083f: module-combine-stream was not installed
+  * Cherry-pick upstream recommended patch:
+      - 3601ecc9: Improve NEWS
+  * Add libmysofa-dev in Build-Deps
+  * Install new pipewire-aes67 in pipewire-bin
+  * Install the upstream recommended PAM limits.d file
+  * Update symbols file
+  * Install filter-chain service file and config files in pipewire and
+      pipewire-bin respectively.
+  * Upload to experimental because of the Bookworm freeze
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 17 Feb 2023 15:01:23 +0100
 
 pipewire (0.3.65-3) unstable; urgency=medium
 
