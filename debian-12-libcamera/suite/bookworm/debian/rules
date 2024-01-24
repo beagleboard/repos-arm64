@@ -27,7 +27,9 @@ else
 endif
 
 override_dh_install:
+ifeq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
 	mv debian/tmp/usr/share/doc/libcamera-0.* debian/tmp/usr/share/doc/libcamera-doc
+endif
 	cp ./obj-${DEB_HOST_GNU_TYPE}/src/apps/ipa-verify/ipa_verify \
 	   debian/tmp/usr/bin/
 	dh_install -X/.doctrees/

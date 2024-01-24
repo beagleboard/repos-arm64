@@ -10,6 +10,7 @@ Build-Depends: debhelper-compat (= 13),
                doxygen <!nodoc>,
                doxygen-latex [!sh4] <!nodoc> | texlive-latex-extra <!nodoc>,
                graphviz <!nodoc>,
+               libdrm-dev <!pkg.libcamera.nosdl>,
                libdw-dev <!pkg.libcamera.notrace>,
                libevent-dev,
                libgnutls28-dev | gnutls-dev,
@@ -26,7 +27,7 @@ Build-Depends: debhelper-compat (= 13),
                libtiff-dev,
                libudev-dev [linux-any],
                libyaml-dev,
-               meson (>= 0.56),
+               meson (>= 0.60),
                openssl,
                pkgconf | pkg-config,
                python3-jinja2,
@@ -45,7 +46,7 @@ Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
 Package: libcamera-dev
 Section: libdevel
 Architecture: any
-Depends: libcamera0.1 (= ${binary:Version}),
+Depends: libcamera0.2 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Multi-Arch: same
@@ -74,7 +75,7 @@ Description: complex camera support library (documentation)
  .
  This package contains the documentation developing with libcamera.
 
-Package: libcamera0.1
+Package: libcamera0.2
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
@@ -150,6 +151,7 @@ Architecture: any
 Depends: ${misc:Depends},
          ${python3:Depends},
          ${shlibs:Depends},
+Multi-Arch: same
 Description: complex camera support library (Python bindings)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level

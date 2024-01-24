@@ -1,8 +1,28 @@
-libcamera (0.1.0-3bbbio0~bookworm+20240124) bookworm; urgency=low
+libcamera (0.2.0-2bbbio0~bookworm+20240124) bookworm; urgency=low
 
-  * Rebuild libcamera_0.1.0-3 for repos.rcn-ee.com
+  * Rebuild libcamera_0.2.0-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 10:25:49 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 11:22:56 -0600
+
+libcamera (0.2.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Bump minimum meson to 0.60
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 22 Jan 2024 10:14:34 +0100
+
+libcamera (0.2.0-1) experimental; urgency=medium
+
+  * New upstream version 0.2.0
+  * Bump SONAME to libcamera0.2
+  * Don't move doc during dh_install if the nodoc profile is set
+     (Closes: #1051195)
+  * Drop patch included in upstream release
+  * Mark python3-libcamera as Multi-Arch: same
+  * Update debian/copyright
+  * Add libdrm-dev in Build-Deps, it was already pulled by dependencies
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 10 Jan 2024 10:41:31 +0100
 
 libcamera (0.1.0-3) unstable; urgency=medium
 

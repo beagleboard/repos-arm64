@@ -1,3 +1,2 @@
 ppc64el-fix-ftbfs-gcc.patch
 skip_failing_tests.patch
-Fix_build_sphinx7.patch
