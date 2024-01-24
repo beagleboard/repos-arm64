@@ -54,9 +54,9 @@ Build-Depends:
  valgrind [@VALGRIND_ARCHS@],
  rustc [@RUSTICL_ARCHS@],
  bindgen (>= 0.60.1~) [@RUSTICL_ARCHS@],
- llvm-spirv-@LLVM_VERSION@ [@RUSTICL_ARCHS@],
- libclc-@LLVM_VERSION@ [@RUSTICL_ARCHS@],
- libllvmspirvlib-@LLVM_VERSION@-dev [@RUSTICL_ARCHS@],
+ llvm-spirv-@LLVM_VERSION@ [@LLVM_ARCHS@],
+ libclc-@LLVM_VERSION@ [@LLVM_ARCHS@],
+ libllvmspirvlib-@LLVM_VERSION@-dev [@LLVM_ARCHS@],
 Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/xorg-team/lib/mesa.git
 Vcs-Browser: https://salsa.debian.org/xorg-team/lib/mesa

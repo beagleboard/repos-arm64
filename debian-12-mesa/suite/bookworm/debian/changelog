@@ -1,3 +1,9 @@
+mesa (24.0.0~rc2-1bbbio1~bookworm+20240124) bookworm; urgency=low
+
+  * Rebuild mesa_24.0.0~rc2-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 10:16:20 -0600
+
 mesa (24.0.0~rc2-1bbbio0~bookworm+20240124) bookworm; urgency=low
 
   * Rebuild mesa_24.0.0~rc2-1 for repos.rcn-ee.com
