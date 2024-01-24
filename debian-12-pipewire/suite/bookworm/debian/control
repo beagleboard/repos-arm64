@@ -10,7 +10,7 @@ Build-Depends: debhelper-compat (= 13),
                libasound2-dev,
                libavahi-client-dev,
                libbluetooth-dev [linux-any],
-               libcamera-dev [!m68k !hurd-any],
+               libcamera-dev [!arm64 !m68k !hurd-any],
                libdbus-1-dev,
                libffado-dev,
                libfreeaptx-dev,
@@ -400,7 +400,7 @@ Description: libraries for the PipeWire multimedia server - JACK client
 
 Package: libspa-0.2-libcamera
 Section: video
-Architecture: amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x alpha hppa ia64 powerpc ppc64 riscv64 sh4 sparc64 x32
+Architecture: amd64 armel armhf i386 mips64el mipsel ppc64el s390x alpha hppa ia64 powerpc ppc64 riscv64 sh4 sparc64 x32
 Multi-Arch: same
 Replaces: pipewire-libcamera (<< 0.3.72-1~)
 Breaks: pipewire-libcamera (<< 0.3.72-1~)

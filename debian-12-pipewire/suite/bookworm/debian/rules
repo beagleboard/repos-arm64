@@ -28,7 +28,7 @@ else
 BLUEZ5_CODEC_LDAC=enabled
 endif
 
-ifneq (,$(filter m68k hurd-amd64 hurd-i386,$(DEB_HOST_ARCH)))
+ifneq (,$(filter arm64 m68k hurd-amd64 hurd-i386,$(DEB_HOST_ARCH)))
 LIBCAMERA=disabled
 else
 LIBCAMERA=disabled
