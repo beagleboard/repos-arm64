@@ -1,14 +1,16 @@
-libcamera (0.1.0-2bbbio2~bookworm+20230725) bookworm; urgency=low
+libcamera (0.1.0-3bbbio0~bookworm+20240124) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild libcamera_0.1.0-3 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jul 2023 09:58:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 10:25:49 -0600
 
-libcamera (0.1.0-2bbbio1~bookworm+20230725) bookworm; urgency=low
+libcamera (0.1.0-3) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * Cherry-pick upstream patch fixing build with sphinx 7 (Closes: #1042634)
+  * Disable again doxygen-latex in Build-Deps for sh4 to help apt choose
+     the alternative.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jul 2023 09:41:20 -0500
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 01 Aug 2023 12:14:41 +0200
 
 libcamera (0.1.0-2) unstable; urgency=medium
 
