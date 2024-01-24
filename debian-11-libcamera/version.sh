@@ -7,7 +7,7 @@ mirror="https://snapshot.debian.org/archive/debian/20230506T145957Z"
 
 package_name="libcamera"
 debian_pkg_name="${package_name}"
-package_version="0.5.0"
+package_version="0.0.5"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 

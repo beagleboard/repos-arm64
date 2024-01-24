@@ -1,8 +1,8 @@
-libcamera (0.5.0-2bbbio2~bullseye+20240124) bullseye; urgency=low
+libcamera (0.0.5-2bbbio2~bullseye+20240124) bullseye; urgency=low
 
-  * Rebuild libcamera_0.5.0-2 for repos.rcn-ee.com
+  * Rebuild libcamera_0.0.5-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 11:37:34 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 11:39:45 -0600
 
 libcamera (0.0.5-2) unstable; urgency=medium
 
