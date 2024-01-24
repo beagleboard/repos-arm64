@@ -3,7 +3,7 @@
 #https://packages.debian.org/source/stable/libcamera
 
 #mirror="http://http.debian.net/debian"
-mirror="https://snapshot.debian.org/archive/debian/20230506T145957Z"
+mirror="https://snapshot.debian.org/archive/debian/20230616T215730Z"
 
 package_name="libcamera"
 debian_pkg_name="${package_name}"
