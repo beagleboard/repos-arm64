@@ -20,6 +20,7 @@ Build-Depends:
  , python3-pyelftools
  , wget
  , u-boot-tools
+ , yamllint
 Standards-Version: 4.5.1
 
 Package: bb-u-boot-beagleboneai64-08.06.00.007

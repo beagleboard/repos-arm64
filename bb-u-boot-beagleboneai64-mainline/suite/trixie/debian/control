@@ -22,6 +22,7 @@ Build-Depends:
  , rsync
  , swig
  , u-boot-tools
+ , yamllint
 Standards-Version: 4.5.1
 
 Package: bb-u-boot-beagleboneai64-mainline
