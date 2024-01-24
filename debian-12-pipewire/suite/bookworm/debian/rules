@@ -31,7 +31,7 @@ endif
 ifneq (,$(filter m68k hurd-amd64 hurd-i386,$(DEB_HOST_ARCH)))
 LIBCAMERA=disabled
 else
-LIBCAMERA=enabled
+LIBCAMERA=disabled
 endif
 
 # lilv and some of its dependencies are in universe
