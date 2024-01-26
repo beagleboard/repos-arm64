@@ -9,5 +9,5 @@ SUBSYSTEM=="pwm", ACTION=="add|change", \
         RUN+="/bin/chmod -R g=u '/sys%p'"
 
 # automatically export pwm channels
-SUBSYSTEM=="pwm", KERNEL=="pwmchip*", ACTION=="add", ATTR{export}="0"
-SUBSYSTEM=="pwm", KERNEL=="pwmchip*", ACTION=="add", ATTR{npwm}!="1",  ATTR{export}="1"
+#SUBSYSTEM=="pwm", KERNEL=="pwmchip*", ACTION=="add", ATTR{export}="0"
+#SUBSYSTEM=="pwm", KERNEL=="pwmchip*", ACTION=="add", ATTR{npwm}!="1",  ATTR{export}="1"

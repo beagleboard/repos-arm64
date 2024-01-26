@@ -1,8 +1,9 @@
-bb-customizations (1.20231201.0-0~trixie+20231201) trixie; urgency=low
+bb-customizations (1.20240126.0-0~trixie+20240126) trixie; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
   * dont load /dev/bone/pwm when BONE-FAN is loaded
+  * disable automatic pwm export, need to find a new way
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 01 Dec 2023 18:02:07 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 26 Jan 2024 17:55:55 -0600
 
