@@ -11,6 +11,7 @@ debian/bbai64-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleboneai64-rc
 debian/bbai64-emmc-to-nvme /opt/u-boot/bb-u-boot-beagleboneai64-rc
 debian/bbai64-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleboneai64-rc
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
+tmp/pkg/sysfw.itb /opt/u-boot/bb-u-boot-beagleboneai64-rc
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc

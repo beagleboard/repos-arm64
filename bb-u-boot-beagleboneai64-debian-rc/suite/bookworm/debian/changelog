@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64-rc (2024.04.20240129.0-0~bookworm+20240130) bookworm; urgency=low
+bb-u-boot-beagleboneai64-rc (2024.04.20240129.1-0~bookworm+20240130) bookworm; urgency=low
 
   * 20240130 - v2024.04-rc1 - https://github.com/u-boot/u-boot/commit/6faba41927bdc8973b59678649ef83c564cc421e
   * 20240108 - 09.02.00.002 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.002
@@ -12,5 +12,5 @@ bb-u-boot-beagleboneai64-rc (2024.04.20240129.0-0~bookworm+20240130) bookworm; u
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Jan 2024 14:11:58 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Jan 2024 15:07:45 -0600
 
