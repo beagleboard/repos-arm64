@@ -1,0 +1,17 @@
+debian/install.sh /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/install-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/erase-emmc.sh /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/emmc-extlinux-homeassistant.conf /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/microsd-extlinux-homeassistant.conf /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/bbai64-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/bbai64-emmc-to-nvme /opt/u-boot/bb-u-boot-beagleboneai64-rc
+debian/bbai64-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleboneai64-rc
+tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
+tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
+tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
+tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64-rc
+tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-beagleboneai64-rc

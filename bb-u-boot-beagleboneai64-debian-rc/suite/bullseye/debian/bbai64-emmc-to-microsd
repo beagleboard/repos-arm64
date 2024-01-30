@@ -1,0 +1,8 @@
+debug_over_display=tty0
+source=/dev/mmcblk0
+destination=/dev/mmcblk1
+rfs_partition=dual
+rfs_boot_startmb=1
+rfs_boot_size_mb=256
+flash_back=/opt/u-boot/bb-u-boot-beagleboneai64-rc/bbai64-microsd-to-emmc
+extlinux=/opt/u-boot/bb-u-boot-beagleboneai64-rc/microsd-extlinux.conf
