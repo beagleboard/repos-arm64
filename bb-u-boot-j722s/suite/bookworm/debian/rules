@@ -39,7 +39,7 @@ OPTEE_PLATFORM=k3-am62x
 #U-Boot
 UBOOT_CFG_CORTEXR="j722s_evm_r5_defconfig"
 UBOOT_CFG_CORTEXA="j722s_evm_a53_defconfig"
-UB_BRANCH=09.02.00.002
+UB_BRANCH="09.02.00.002-dev"
 UB_REPO="https://git.gfnd.rcn-ee.org/development/ti-u-boot.git"
 #Local Mirror
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin

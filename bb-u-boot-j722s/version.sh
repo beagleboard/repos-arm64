@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-j722s"
 debian_pkg_name="${package_name}"
-package_version="2023.04.2024013.2-09.02.00.002"
+package_version="2023.04.20240131.3-09.02.00.002"
 package_source=""
 src_dir=""
 
