@@ -1,0 +1,6 @@
+cnm-firmware (0.0.0-git20230515.0-0~bookworm+20240131) bookworm; urgency=low
+
+  * cnm: FW version : 1.0.3 (https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/)
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 31 Jan 2024 16:02:52 -0600
+
