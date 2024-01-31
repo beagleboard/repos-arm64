@@ -6,10 +6,13 @@ set -e
 
 if [ -f /usr/lib/firmware/cnm/wave521c_k3_codec_fw.bin ] ; then
 	rm -f /usr/lib/firmware/cnm/wave521c_k3_codec_fw.bin || true
-	cp -v /usr/lib/firmware/cnm/git/*.bin /usr/lib/firmware/cnm/
-else
-	cp -v /usr/lib/firmware/cnm/git/*.fw /usr/lib/firmware/cnm/
 fi
+cp -v /usr/lib/firmware/cnm/git/*.bin /usr/lib/firmware/cnm/
+
+if [ -f /usr/lib/firmware/cnm/wave521c_codec_fw.bin ] ; then
+	rm -f /usr/lib/firmware/cnm/wave521c_codec_fw.bin || true
+fi
+cp /usr/lib/firmware/cnm/wave521c_k3_codec_fw.bin /usr/lib/firmware/cnm/wave521c_codec_fw.bin
 
 case "$1" in
 	configure)
