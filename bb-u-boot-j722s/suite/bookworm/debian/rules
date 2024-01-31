@@ -67,8 +67,8 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UBOOT_CFG_CORTEXA)
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
-	cp -v ./tmp/CORTEXA/tispl.bin_unsigned ./tmp/pkg/tispl.bin
-	cp -v ./tmp/CORTEXA/u-boot.img_unsigned ./tmp/pkg/u-boot.img
+	cp -v ./tmp/CORTEXA/tispl.bin ./tmp/pkg/tispl.bin
+	cp -v ./tmp/CORTEXA/u-boot.img ./tmp/pkg/u-boot.img
 
 %:
 	dh $@

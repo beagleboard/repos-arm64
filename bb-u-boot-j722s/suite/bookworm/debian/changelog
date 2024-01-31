@@ -1,6 +1,6 @@
-bb-u-boot-j722s (2023.04.2024013.1-09.02.00.002-0~bookworm+20240131) bookworm; urgency=low
+bb-u-boot-j722s (2023.04.2024013.2-09.02.00.002-0~bookworm+20240131) bookworm; urgency=low
 
-  * Rebuild bb-u-boot-j722s_2023.04.2024013.1-09.02.00.002-0 for repos.rcn-ee.com
+  * Rebuild bb-u-boot-j722s_2023.04.2024013.2-09.02.00.002-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 31 Jan 2024 11:43:16 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 31 Jan 2024 12:01:30 -0600
 
