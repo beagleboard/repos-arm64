@@ -43,7 +43,6 @@ UB_BRANCH=09.02.00.002
 UB_REPO="https://git.gfnd.rcn-ee.org/development/ti-u-boot.git"
 #Local Mirror
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
-UB_ITB=sysfw-j722s-hs-fs-evm.itb
 
 override_dh_strip:
 	# Just disable for now...
@@ -65,7 +64,6 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
 	cp -v ./tmp/CORTEXR/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
-	cp -v ./tmp/CORTEXR/$(UB_ITB) ./tmp/pkg/sysfw.itb
 	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UBOOT_CFG_CORTEXA)
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/

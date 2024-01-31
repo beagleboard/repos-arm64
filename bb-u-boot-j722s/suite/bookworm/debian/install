@@ -2,7 +2,6 @@ debian/install.sh /opt/u-boot/bb-u-boot-j722s
 debian/install-microsd.sh /opt/u-boot/bb-u-boot-j722s
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-j722s
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-j722s
-tmp/pkg/sysfw.itb /opt/u-boot/bb-u-boot-j722s
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-j722s
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-j722s
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-j722s
