@@ -84,6 +84,7 @@ if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     logger('debug', "Setting up iwd with '$iwd_psk_file'");
     if( -f "/boot/firmware/$iwd_psk_file") {
         system("cp /boot/firmware/$iwd_psk_file /var/lib/iwd/");
+        system("systemctl restart iwd.service");
     }
 }
 
