@@ -20,6 +20,13 @@
 # leave no space to indicate the line is an example that could be
 # uncommented.
 
+# beagle_user_pw - Set a password for the beagle user (by default, it allows
+# for a passwordless login)
+#beagle_user_pw=FooBar
+
+# beagle_user_authorized_key - Set an authorized key for a beagle ssh login
+#beagle_user_authorized_key=
+
 # hostname - Set the system hostname.
 #hostname=BeagleBone
 

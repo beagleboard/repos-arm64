@@ -27,6 +27,13 @@
 # root_authorized_key - Set an authorized key for a root ssh login
 #root_authorized_key=
 
+# debian_user_pw - Set a password for the debian user (by default, it allows
+# for a passwordless login)
+#debian_user_pw=FooBar
+
+# debian_user_authorized_key - Set an authorized key for a debian ssh login
+#debian_user_authorized_key=
+
 # hostname - Set the system hostname.
 #hostname=BeagleBone
 

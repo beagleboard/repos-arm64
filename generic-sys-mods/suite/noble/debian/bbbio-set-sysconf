@@ -24,6 +24,18 @@ if (my $pass = delete($conf->{root_pw})) {
     close($pipe);
 }
 
+if (my $user_pass = delete($conf->{beagle_user_pw})) {
+    my $pipe;
+    logger('debug', 'Resetting beagle password');
+    unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
+	my $err = $!;
+	logger('error', "Could not run chpasswd: $err");
+	die $err;
+    }
+    $pipe->print("beagle:$user_pass");
+    close($pipe);
+}
+
 if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
     my $fh;
     logger('debug', "Adding key to root's authorized_keys");
@@ -41,6 +53,26 @@ if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
         die $err;
     }
     $fh->print($root_authorized_key);
+    $fh->close;
+}
+
+if (my $user_authorized_key = delete($conf->{beagle_user_authorized_key})) {
+    my $fh;
+    logger('debug', "Adding key to beagle's authorized_keys");
+    if(! -d "/home/beagle/.ssh") {
+        if(!mkdir("/home/beagle/.ssh", 0700)) {
+            my $err = sprintf("Could not create /home/beagle/.ssh directory: %s", $!);
+            logger('error', $err);
+            die $err;
+        }
+    }
+
+    unless ($fh = IO::File->new('/home/beagle/.ssh/authorized_keys', 'w', 0600)) {
+        my $err = $!;
+        logger('error', "Could not write /home/beagle/.ssh/authorized_keys: $err");
+        die $err;
+    }
+    $fh->print($user_authorized_key);
     $fh->close;
 }
 
@@ -144,6 +176,13 @@ q(# This file will be automatically evaluated and installed at next boot
 # We follow the convention to indent with one space comments, and
 # leave no space to indicate the line is an example that could be
 # uncommented.
+
+# beagle_user_pw - Set a password for the beagle user (by default, it allows
+# for a passwordless login)
+#beagle_user_pw=FooBar
+
+# beagle_user_authorized_key - Set an authorized key for a beagle ssh login
+#beagle_user_authorized_key=
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone

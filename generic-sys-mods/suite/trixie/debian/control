@@ -19,6 +19,7 @@ Depends:
  , gzip
  , whiptail
  , parted
+ , passwd
  , lua5.1
  , psmisc
  , iw
