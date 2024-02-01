@@ -74,6 +74,10 @@ if (my $user_authorized_key = delete($conf->{debian_user_authorized_key})) {
     }
     $fh->print($user_authorized_key);
     $fh->close;
+
+    my $user = 1000;
+    my $group = 1000;
+    chown $user, $group, glob "/home/debian/.ssh/*";
 }
 
 if (my $name = delete($conf->{hostname})) {
