@@ -48,6 +48,8 @@ dl_src
 
 wfile="src/debian/bbbio-set-sysconf" ; copy_debian
 wfile="src/debian/sysconf.txt" ; copy_debian
+wfile="src/debian/ssid.psk" ; copy_debian
 
 wfile="src/ubuntu/bbbio-set-sysconf" ; copy_ubuntu
 wfile="src/ubuntu/sysconf.txt" ; copy_ubuntu
+wfile="src/ubuntu/ssid.psk" ; copy_ubuntu

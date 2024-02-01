@@ -27,6 +27,9 @@
 # beagle_user_authorized_key - Set an authorized key for a beagle ssh login
 #beagle_user_authorized_key=
 
+# iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
+#iwd_psk_file=
+
 # hostname - Set the system hostname.
 #hostname=BeagleBone
 
