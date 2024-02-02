@@ -10,8 +10,8 @@ debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagleboneai64
 debian/bbai64-emmc-to-microsd /opt/u-boot/bb-u-boot-beagleboneai64
 debian/bbai64-emmc-to-nvme /opt/u-boot/bb-u-boot-beagleboneai64
 debian/bbai64-microsd-to-emmc /opt/u-boot/bb-u-boot-beagleboneai64
-tmp/ti-linux-firmware/ti-dm/j721e/ipc_echo_testb_mcu1_0_release_strip.xer5f /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagleboneai64
+tmp/pkg/sysfw.itb /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64

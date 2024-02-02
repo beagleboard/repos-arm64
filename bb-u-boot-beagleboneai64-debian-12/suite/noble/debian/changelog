@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64 (2024.04.20240129.0-0~trixie+20240202) trixie; urgency=low
+bb-u-boot-beagleboneai64 (2024.04.20240129.0-0~noble+20240202) noble; urgency=low
 
   * 20240130 - v2024.04-rc1 - https://github.com/u-boot/u-boot/commit/6faba41927bdc8973b59678649ef83c564cc421e
   * 20240108 - 09.02.00.002 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.002
