@@ -9,10 +9,7 @@ Package: bb-wl18xx-firmware
 Architecture: all
 Depends: ${shlibs:Depends}
  , ${misc:Depends}
- , bb-usb-gadgets
- , bc
  , bsdmainutils
- , bluez
  , coreutils
  , firmware-ti-connectivity
  , whiptail
