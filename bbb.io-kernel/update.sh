@@ -256,8 +256,8 @@ do_bookworm () {
 	debhelper="13"
 	wfile="control"
 	generate_header
-	am62_dev="enabled"
-	j721e_dev="enabled"
+	#am62_dev="enabled"
+	#j721e_dev="enabled"
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
