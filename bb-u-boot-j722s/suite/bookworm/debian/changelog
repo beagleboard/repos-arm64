@@ -1,6 +1,9 @@
-bb-u-boot-j722s (2023.04.20240131.5-09.02.00.003-0~bookworm+20240208) bookworm; urgency=low
+bb-u-boot-j722s (2023.04.20240207.0-09.02.00.004-0~bookworm+20240208) bookworm; urgency=low
 
-  * Rebuild bb-u-boot-j722s_2023.04.20240131.5-09.02.00.003-0 for repos.rcn-ee.com
+  * 20240207 - v2023.04 - https://openbeagle.org/beagley-ai/ti-u-boot/-/commits/09.02.00.004-dev
+  * 20240108 - 09.02.00.004 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.004
+  * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
+  * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 08 Feb 2024 11:28:28 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 08 Feb 2024 16:51:08 -0600
 
