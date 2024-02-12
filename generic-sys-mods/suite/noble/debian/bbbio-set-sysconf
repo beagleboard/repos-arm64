@@ -82,9 +82,17 @@ if (my $user_authorized_key = delete($conf->{beagle_user_authorized_key})) {
 
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     logger('debug', "Setting up iwd with '$iwd_psk_file'");
-    if( -f "/boot/firmware/$iwd_psk_file") {
-        system("cp /boot/firmware/$iwd_psk_file /var/lib/iwd/");
+    if( -f "/boot/firmware/services/$iwd_psk_file") {
+        system("cp /boot/firmware/services/$iwd_psk_file /var/lib/iwd/");
         system("systemctl restart iwd.service");
+    }
+}
+
+if (my $hostapd_file = delete($conf->{hostapd_file})) {
+    logger('debug', "Setting up hostapd with '$hostapd_file'");
+    if( -f "/boot/firmware/services/$hostapd_file") {
+        system("cp /boot/firmware/services/$hostapd_file /etc/hostapd/");
+        system("systemctl restart hostapd.service");
     }
 }
 
@@ -198,6 +206,9 @@ q(# This file will be automatically evaluated and installed at next boot
 
 # iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
 #iwd_psk_file=
+
+# hostapd_file - Set a configuration for hostapd https://wiki.gentoo.org/wiki/Hostapd
+#hostapd_file=SoftAp0.conf
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone

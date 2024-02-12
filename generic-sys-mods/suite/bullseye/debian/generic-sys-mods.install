@@ -7,5 +7,6 @@ debian/bbbio-set-sysconf /usr/sbin
 debian/raspi-config /usr/sbin
 debian/profile /etc/bbb.io/templates/
 debian/sysconf.txt /etc/bbb.io/templates/
-debian/ssid.psk /etc/bbb.io/templates/
+debian/ssid.psk /etc/bbb.io/templates/services/
+debian/SoftAp0.conf /etc/bbb.io/templates/services/
 debian/zz-uenv_txt /etc/kernel/postinst.d/

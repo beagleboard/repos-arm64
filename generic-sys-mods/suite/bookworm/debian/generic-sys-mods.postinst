@@ -17,4 +17,11 @@ chmod +x /etc/kernel/postinst.d/zz-uenv_txt || true
 
 cp -vf /etc/bbb.io/templates/profile /etc/profile
 
+if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
+	if [ ! -d /boot/firmware/services/enable/ ] ; then
+		mkdir -p /boot/firmware/services/enable/ || true
+	fi
+	cp -r /etc/bbb.io/templates/services/* /boot/firmware/services/
+fi
+
 #DEBHELPER#

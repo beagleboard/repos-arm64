@@ -30,9 +30,8 @@
 # iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
 #iwd_psk_file=
 
+# hostapd_file - Set a configuration for hostapd https://wiki.gentoo.org/wiki/Hostapd
+#hostapd_file=SoftAp0.conf
+
 # hostname - Set the system hostname.
 #hostname=BeagleBone
-
-# We found the following unhandled keys - That means, the
-# configuration script does not know how to handle them. Please
-# double-check them!

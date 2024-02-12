@@ -2,3 +2,6 @@
 
 [Security]
 Passphrase=test1234
+
+[Settings]
+AutoConnect=true
