@@ -1,8 +1,21 @@
-ell (0.61-1bbbio0~jammy+20231207) jammy; urgency=low
+ell (0.62-2bbbio0~jammy+20240212) jammy; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild ell_0.62-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Dec 2023 16:56:37 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 10:44:58 -0600
+
+ell (0.62-2) unstable; urgency=medium
+
+  * update symbols: added 5 symbols
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 11 Feb 2024 19:16:57 +0100
+
+ell (0.62-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 11 Feb 2024 19:09:19 +0100
 
 ell (0.61-1) unstable; urgency=medium
 
