@@ -1,20 +1,14 @@
-iwd (2.13-1bbbio2~bookworm+20240115) bookworm; urgency=low
+iwd (2.14-1bbbio1~bookworm+20240212) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild iwd_2.14-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 15 Jan 2024 16:17:29 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 10:40:36 -0600
 
-iwd (2.13-1bbbio1~bookworm+20240115) bookworm; urgency=low
+iwd (2.14-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * update copyright info: update coverage
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 15 Jan 2024 15:46:40 -0600
-
-iwd (2.13-1bbbio0~bookworm+20240115) bookworm; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 15 Jan 2024 15:41:53 -0600
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 11 Feb 2024 19:05:31 +0100
 
 iwd (2.13-1) unstable; urgency=medium
 
