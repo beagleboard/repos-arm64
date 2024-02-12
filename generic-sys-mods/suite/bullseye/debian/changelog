@@ -1,8 +1,8 @@
-generic-sys-mods (1.20240212.3-0~bullseye+20240212) bullseye; urgency=low
+generic-sys-mods (1.20240212.4-0~bullseye+20240212) bullseye; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
   * add basic bbbio-set-sysconf.service
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 11:46:45 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 15:06:34 -0600
 
