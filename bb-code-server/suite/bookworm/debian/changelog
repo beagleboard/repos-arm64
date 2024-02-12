@@ -1,10 +1,10 @@
-bb-code-server (4.19.1.0-0~bookworm+20231221) bookworm; urgency=low
+bb-code-server (4.20.1.0-0~bookworm+20240212) bookworm; urgency=low
 
   * Changed
-  * --Updated to Code 1.84.2
+  * --Updated to Code 1.85.2
   * Added
   * --trusted-origin flag for specifying origins that you trust but do not control (for example a reverse proxy).
   * --disable-proxy flag. This disables the domain and path proxies but it does not disable the ports panel in Code. That can be disabled by using remote.autoForwardPorts=false in your settings.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Dec 2023 17:43:03 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 11:51:19 -0600
 
