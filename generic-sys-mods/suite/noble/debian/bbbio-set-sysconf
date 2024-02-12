@@ -92,7 +92,7 @@ if (my $hostapd_file = delete($conf->{hostapd_file})) {
     logger('debug', "Setting up hostapd with '$hostapd_file'");
     if( -f "/boot/firmware/services/$hostapd_file") {
         system("cp /boot/firmware/services/$hostapd_file /etc/hostapd/SoftAp0.conf");
-        system("systemctl restart hostapd@SoftAp0.service");
+        system("systemctl restart hostapd\@SoftAp0.service");
     }
 }
 
@@ -203,9 +203,6 @@ q(# This file will be automatically evaluated and installed at next boot
 
 # beagle_user_authorized_key - Set an authorized key for a beagle ssh login
 #beagle_user_authorized_key=
-
-# iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
-#iwd_psk_file=
 
 # hostapd_file - Set a configuration for hostapd https://wiki.gentoo.org/wiki/Hostapd
 #hostapd_file=SoftAp0.conf
