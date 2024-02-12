@@ -2,7 +2,7 @@
 
 package_name="bb-wlan0-defaults"
 debian_pkg_name="${package_name}"
-package_version="1.20230922.0"
+package_version="1.20240212.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230925"
-bookworm_version="~bookworm+20230925"
-trixie_version="~trixie+20230925"
-jammy_version="~jammy+20230925"
+bullseye_version="~bullseye+20240212"
+bookworm_version="~bookworm+20240212"
+trixie_version="~trixie+20240212"
+jammy_version="~jammy+20240212"

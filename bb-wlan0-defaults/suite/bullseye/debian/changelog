@@ -1,6 +1,6 @@
-bb-wlan0-defaults (1.20230922.0-0~bullseye+20230925) bullseye; urgency=low
+bb-wlan0-defaults (1.20240212.0-0~bullseye+20240212) bullseye; urgency=low
 
   * udev call hostapd@SoftAp0.service directly
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 25 Sep 2023 17:17:31 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 09:59:07 -0600
 
