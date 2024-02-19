@@ -1,8 +1,22 @@
-mesa (24.0.0-1bbbio0~bookworm+20240201) bookworm; urgency=low
+mesa (24.0.1-1bbbio0~bookworm+20240219) bookworm; urgency=low
 
-  * Rebuild mesa_24.0.0-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.0.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 01 Feb 2024 14:50:34 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 19 Feb 2024 12:38:08 -0600
+
+mesa (24.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * clc-build-fix.diff: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 15 Feb 2024 10:55:39 +0200
+
+mesa (24.0.0-2) experimental; urgency=medium
+
+  * clc-build-fix.diff: Attempt to fix a regression that made requiring
+    llvmspirvlib mandatory.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 08 Feb 2024 17:20:59 +0200
 
 mesa (24.0.0-1) experimental; urgency=medium
 
