@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-j722s"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20240207.0-09.02.00.004"
+package_version="2023.04.20240215.0-09.02.00.005"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20240208"
+bookworm_version="~bookworm+20240219"
