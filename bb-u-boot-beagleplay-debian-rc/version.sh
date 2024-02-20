@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleplay-rc"
 debian_pkg_name="${package_name}"
-package_version="2024.04.20240129.0"
+package_version="2024.04.20240213.0"
 package_source=""
 src_dir=""
 
@@ -20,5 +20,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240130"
-bookworm_version="~bookworm+20240130"
+bullseye_version="~bullseye+20240220"
+bookworm_version="~bookworm+20240220"
