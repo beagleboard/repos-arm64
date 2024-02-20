@@ -1,15 +1,15 @@
-bb-u-boot-beagleplay-mainline (2024.04.20240129.0-0~noble+20240130) noble; urgency=low
+bb-u-boot-beagleplay-mainline (2024.04.20240213.0-0~noble+20240220) noble; urgency=low
 
-  * 20240130 - v2024.04-rc1 - https://github.com/u-boot/u-boot/commit/6faba41927bdc8973b59678649ef83c564cc421e
-  * 20240108 - 09.02.00.002 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.002
-  * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
+  * 20240213 - v2024.04-rc2 - https://github.com/u-boot/u-boot/releases/tag/v2024.04-rc2
+  * 20240214 - 09.02.00.005 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.005
+  * 20240209 - v2.10.2 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=lts-v2.10.2
   * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
-  * BeaglePlay, add extlinux.conf boot options over serial
+  * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
-  * Enable a extlinux.conf option to flash eMMC directly
+  * Enable a extlinux.conf option to flash other media directly
   * extlinux.conf more vocal on eMMC vs microSD
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Jan 2024 15:12:39 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 Feb 2024 09:16:45 -0600
 
