@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
-#https://packages.debian.org/source/trixie/meson
-
+#https://packages.debian.org/source/bookworm/dfu-util
 mirror="https://deb.debian.org/debian"
 
 package_name="dfu-util"
@@ -18,5 +17,5 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 
 dist="debian"
-suite="bookworm"
+suite="bullseye"
 deb_arch="arm64"
