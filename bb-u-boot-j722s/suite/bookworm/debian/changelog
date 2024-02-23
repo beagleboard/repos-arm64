@@ -1,8 +1,8 @@
-bb-u-boot-j722s (2023.04.20240215.0-09.02.00.005-0~bookworm+20240219) bookworm; urgency=low
+bb-u-boot-j722s (2023.04.20240215.1-09.02.00.005-0~bookworm+20240223) bookworm; urgency=low
 
   * 20240214 - 09.02.00.005 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.005
-  * 20231122 - v2.10.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.10.0
+  * 20240209 - v2.10.2 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=lts-v2.10.2
   * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 19 Feb 2024 15:22:43 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Feb 2024 09:31:14 -0600
 
