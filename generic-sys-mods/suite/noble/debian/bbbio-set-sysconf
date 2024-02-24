@@ -5,6 +5,8 @@ use IO::File;
 use IO::Pipe;
 use feature 'switch';
 
+$call_reboot = 0;
+
 my ($filename, $conf);
 
 $filename = '/boot/firmware/sysconf.txt';
@@ -22,6 +24,7 @@ if (my $pass = delete($conf->{root_pw})) {
     }
     $pipe->print("root:$pass");
     close($pipe);
+    $call_reboot = 1;
 }
 
 if (my $user_pass = delete($conf->{beagle_user_pw})) {
@@ -34,6 +37,7 @@ if (my $user_pass = delete($conf->{beagle_user_pw})) {
     }
     $pipe->print("beagle:$user_pass");
     close($pipe);
+    $call_reboot = 1;
 }
 
 if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
@@ -123,9 +127,15 @@ if (my $name = delete($conf->{hostname})) {
     $fha->print("ff02::1		ip6-allnodes\n");
     $fha->print("ff02::2		ip6-allrouters\n");
     $fha->close;
+    $call_reboot = 1;
 }
 
 rewrite_conf_file($filename, $conf);
+
+if ($call_reboot)
+{
+    system("systemctl reboot");
+}
 
 exit 0;
 
