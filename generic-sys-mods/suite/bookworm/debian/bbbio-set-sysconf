@@ -5,7 +5,7 @@ use IO::File;
 use IO::Pipe;
 use feature 'switch';
 
-$call_reboot = 0;
+my $call_reboot = 0;
 
 my ($filename, $conf);
 
@@ -132,8 +132,7 @@ if (my $name = delete($conf->{hostname})) {
 
 rewrite_conf_file($filename, $conf);
 
-if ($call_reboot)
-{
+if ($call_reboot) {
     system("systemctl reboot");
 }
 
