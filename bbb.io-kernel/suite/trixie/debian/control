@@ -120,7 +120,7 @@ Description: BeagleBoard.org 6.1-rt-ti
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.8.0-rc5-arm64-r0
+Pre-Depends: linux-image-6.8.0-rc6-arm64-r0
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org Mainline
  This metapackage will install Mainline in Debian.
@@ -176,7 +176,7 @@ Description: BeagleBoard.org 6.5-rt-k3-arm64 for k3-arm64
 Package: bbb.io-kernel-6.6-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.6.15-arm64-k3-r19
+Pre-Depends: linux-image-6.6.15-arm64-k3-r20
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.6-k3-arm64 for k3-arm64
  This metapackage will install linux-image-6.6-k3-arm64 for in Debian.
@@ -184,7 +184,7 @@ Description: BeagleBoard.org 6.6-k3-arm64 for k3-arm64
 Package: bbb.io-kernel-6.6-rt-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.6.15-rt-arm64-k3-r19
+Pre-Depends: linux-image-6.6.15-rt-arm64-k3-r20
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.6-rt-k3-arm64 for k3-arm64
  This metapackage will install linux-image-6.6-rt-k3-arm64 for in Debian.
@@ -192,7 +192,7 @@ Description: BeagleBoard.org 6.6-rt-k3-arm64 for k3-arm64
 Package: bbb.io-kernel-6.7-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.7.5-arm64-k3-r20
+Pre-Depends: linux-image-6.7.6-arm64-k3-r21
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.7-k3-arm64 for k3-arm64
  This metapackage will install linux-image-6.7-k3-arm64 for in Debian.
@@ -200,7 +200,7 @@ Description: BeagleBoard.org 6.7-k3-arm64 for k3-arm64
 Package: bbb.io-kernel-6.8-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.8.0-rc5-arm64-k3-r4
+Pre-Depends: linux-image-6.8.0-rc6-arm64-k3-r5
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.8-k3-arm64 for k3-arm64
  This metapackage will install linux-image-6.8-k3-arm64 for in Debian.
