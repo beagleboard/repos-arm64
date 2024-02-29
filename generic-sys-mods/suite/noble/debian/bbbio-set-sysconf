@@ -37,6 +37,8 @@ if (my $user_pass = delete($conf->{beagle_user_pw})) {
     }
     $pipe->print("beagle:$user_pass");
     close($pipe);
+    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
+    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
     $call_reboot = 1;
 }
 
