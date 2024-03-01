@@ -1,11 +1,25 @@
-iwd (2.14-1bbbio1~bookworm+20240212) bookworm; urgency=low
+iwd (2.15-1bbbio1~bookworm+20240301) bookworm; urgency=low
 
-  * Rebuild iwd_2.14-1 for repos.rcn-ee.com
+  * Rebuild iwd_2.15-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 10:40:36 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 01 Mar 2024 11:55:57 -0600
+
+iwd (2.15-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * tighten build-dependency on libell-dev
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 28 Feb 2024 07:58:48 +0100
 
 iwd (2.14-1) unstable; urgency=medium
 
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
   * update copyright info: update coverage
 
  -- Jonas Smedegaard <dr@jones.dk>  Sun, 11 Feb 2024 19:05:31 +0100
