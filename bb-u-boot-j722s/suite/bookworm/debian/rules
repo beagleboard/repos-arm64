@@ -13,7 +13,7 @@ TARGETDIR=bb-u-boot-j722s
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.02.00.005
+TILF_TAG=09.02.00.006
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -41,7 +41,6 @@ UBOOT_CFG_CORTEXR="j722s_evm_r5_defconfig"
 UBOOT_CFG_CORTEXA="j722s_evm_a53_defconfig"
 UB_BRANCH="09.02.00.005-dev"
 UB_REPO="https://git.gfnd.rcn-ee.org/development/ti-u-boot.git"
-#Local Mirror
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
 
 override_dh_strip:

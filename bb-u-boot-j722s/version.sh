@@ -1,11 +1,12 @@
 #!/bin/bash -e
 
-#https://git.beagleboard.org/beagleboard/u-boot/
+#https://openbeagle.org/beagleboard/u-boot/
+#https://github.com/u-boot/u-boot/commits/master
 #https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
 
 package_name="bb-u-boot-j722s"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20240215.1-09.02.00.005"
+package_version="2023.04.20240215.2-09.02.00.005"
 package_source=""
 src_dir=""
 
@@ -20,4 +21,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20240223"
+bookworm_version="~bookworm+20240301"
