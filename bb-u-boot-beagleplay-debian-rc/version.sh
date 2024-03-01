@@ -1,11 +1,12 @@
 #!/bin/bash -e
 
-#https://git.beagleboard.org/beagleboard/u-boot/
+#https://openbeagle.org/beagleboard/u-boot/
 #https://github.com/u-boot/u-boot/commits/master
+#https://git.gfnd.rcn-ee.org/mirror/u-boot
 
 package_name="bb-u-boot-beagleplay-rc"
 debian_pkg_name="${package_name}"
-package_version="2024.04.20240213.0"
+package_version="2024.04.20240226.0"
 package_source=""
 src_dir=""
 
@@ -20,5 +21,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240220"
-bookworm_version="~bookworm+20240220"
+bullseye_version="~bullseye+20240301"
+bookworm_version="~bookworm+20240301"
