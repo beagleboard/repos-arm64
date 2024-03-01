@@ -13,7 +13,7 @@ TARGETDIR=bb-u-boot-beagleboneai64-rc
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.02.00.005
+TILF_TAG=09.02.00.006
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -40,8 +40,8 @@ OPTEE_PLATFORM=k3-j721e
 UBOOT_CFG_CORTEXR="j721e_beagleboneai64_r5_defconfig"
 UBOOT_CFG_CORTEXA="j721e_beagleboneai64_a72_defconfig"
 #UB_BRANCH=master
-UB_BRANCH=v2024.04-rc2
-UB_REPO="https://openbeagle.org/beagleboard/u-boot.git"
+UB_BRANCH=v2024.04-rc3
+UB_REPO="https://github.com/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-j721e-gp-evm.bin
 UB_ITB=sysfw-j721e-gp-evm.itb
 

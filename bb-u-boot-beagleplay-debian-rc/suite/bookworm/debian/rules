@@ -42,7 +42,6 @@ UBOOT_CFG_CORTEXA="am62x_beagleplay_a53_defconfig"
 #UB_BRANCH=master
 UB_BRANCH=v2024.04-rc3-BeaglePlay
 UB_REPO="https://github.com/beagleboard/u-boot.git"
-#Local Mirror
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 
 override_dh_strip:
