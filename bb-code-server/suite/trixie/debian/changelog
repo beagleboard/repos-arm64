@@ -1,10 +1,11 @@
-bb-code-server (4.20.1.0-0~trixie+20240212) trixie; urgency=low
+bb-code-server (4.21.2.0-0~trixie+20240229) trixie; urgency=low
 
   * Changed
-  * --Updated to Code 1.85.2
+  * --Updated to Code 1.86.2
+  * --Updated to Node 18.17.1
   * Added
   * --trusted-origin flag for specifying origins that you trust but do not control (for example a reverse proxy).
   * --disable-proxy flag. This disables the domain and path proxies but it does not disable the ports panel in Code. That can be disabled by using remote.autoForwardPorts=false in your settings.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 11:51:19 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 29 Feb 2024 18:46:36 -0600
 
