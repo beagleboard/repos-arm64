@@ -1,6 +1,6 @@
-ti-linux-firmware-sysfw (0.0.0-09.01.00.008.0-0~trixie+20231222) trixie; urgency=low
+ti-linux-firmware-sysfw (0.0.0-09.02.00.006.0-0~trixie+20240301) trixie; urgency=low
 
-  * 20231130 - 09.01.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.01.00.008
+  * 20240301 - 09.02.00.006 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.006
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Dec 2023 15:49:33 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 01 Mar 2024 10:55:06 -0600
 
