@@ -39,7 +39,7 @@ OPTEE_PLATFORM=k3-am62x
 #U-Boot
 UBOOT_CFG_CORTEXR="j722s_evm_r5_defconfig"
 UBOOT_CFG_CORTEXA="j722s_evm_a53_defconfig"
-UB_BRANCH="09.02.00.005-dev"
+UB_TAG="09.02.00.006-dev"
 UB_REPO="https://git.gfnd.rcn-ee.org/development/ti-u-boot.git"
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
 
@@ -58,7 +58,7 @@ override_dh_auto_configure:
 	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(OPTEE_PLATFORM) CFG_WITH_SOFTWARE_PRNG=y CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
+	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_TAG) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
 	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UBOOT_CFG_CORTEXR)
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
