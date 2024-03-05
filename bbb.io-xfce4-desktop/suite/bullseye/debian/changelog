@@ -1,6 +1,6 @@
-bbb.io-xfce4-desktop (1.20230910.0-0~bullseye+20230910) bullseye; urgency=low
+bbb.io-xfce4-desktop (1.20240305.0-0~bullseye+20240305) bullseye; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild bbb.io-xfce4-desktop_1.20240305.0-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 10 Sep 2023 22:51:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 05 Mar 2024 16:28:11 -0600
 
