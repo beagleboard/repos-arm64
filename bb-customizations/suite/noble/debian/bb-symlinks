@@ -1,0 +1,55 @@
+#!/bin/bash
+
+mkdir -p /dev/bone/pwm/
+
+i=0
+while [ $i -ne 12 ]
+do
+	unset pwm_node
+	if [ -d /sys/class/pwm/pwmchip$i ] ; then
+		#pwm_node=$(udevadm info /sys/class/pwm/pwmchip$i/ | grep PWMCHIP_NAME | awk -F '=' '{print $2}')
+		pwm_node=$(udevadm info /sys/class/pwm/pwmchip$i/ | grep DEVPATH | awk -F '/' '{print $5}')
+	fi
+
+	case "${pwm_node}" in
+	3010000.pwm)
+		mkdir -p /dev/bone/pwm/0/
+		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm0/ /dev/bone/pwm/0/a
+		fi
+		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/0/b
+		fi
+		;;
+	3020000.pwm)
+		mkdir -p /dev/bone/pwm/1/
+		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm0/ /dev/bone/pwm/1/a
+		fi
+		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/1/b
+		fi
+		;;
+	3000000.pwm)
+		mkdir -p /dev/bone/pwm/2/
+		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm0/ /dev/bone/pwm/2/a
+		fi
+		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/2/b
+		fi
+		;;
+	3040000.pwm)
+		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/bbai64_P9_25_ehrpwm4_b
+		fi
+		;;
+	3050000.pwm)
+		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm0/ /dev/bone/pwm/bbai64_P8_37_ehrpwm5_a
+		fi
+		;;
+	esac
+
+	i=$(($i+1))
+done
