@@ -12,6 +12,7 @@ TARGETDIR=bb-u-boot-j722s
 
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
+#TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
 TILF_TAG=09.02.00.006
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
@@ -20,6 +21,7 @@ TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
+#TAGS: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/refs/
 #TFA_TAG=master
 TFA_TAG=lts-v2.10.2
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
@@ -29,6 +31,7 @@ TFA_BOARD=lite
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
+#TAGS: https://github.com/OP-TEE/optee_os/tags
 #OPTEE_TAG=master
 OPTEE_TAG=4.1.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
