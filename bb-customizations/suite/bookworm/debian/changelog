@@ -1,9 +1,9 @@
-bb-customizations (1.20240307.0-0~bookworm+20240307) bookworm; urgency=low
+bb-customizations (1.20240307.1-0~bookworm+20240307) bookworm; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
   * dont load /dev/bone/pwm when BONE-FAN is loaded
   * disable automatic pwm export, need to find a new way
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Mar 2024 13:17:25 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Mar 2024 13:20:02 -0600
 
