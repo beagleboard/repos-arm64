@@ -35,5 +35,5 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , mmc-utils
-Description: beagleboard.org u-boot for beagleboneai64
- beagleboard.org u-boot for beagleboneai64
+Description: bb-u-boot-beagleboneai64
+ bb-u-boot-beagleboneai64

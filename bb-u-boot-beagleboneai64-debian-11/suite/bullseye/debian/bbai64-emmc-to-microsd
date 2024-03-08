@@ -4,5 +4,6 @@ destination=/dev/mmcblk1
 rfs_partition=dual
 rfs_boot_startmb=1
 rfs_boot_size_mb=256
+rfs_boot_permissions=user,uid=1000,gid=1000,defaults
 flash_back=/opt/u-boot/bb-u-boot-beagleboneai64/bbai64-microsd-to-emmc
 extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/microsd-extlinux.conf
