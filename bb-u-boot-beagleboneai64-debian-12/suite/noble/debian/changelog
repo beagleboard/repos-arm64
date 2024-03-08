@@ -1,7 +1,7 @@
-bb-u-boot-beagleboneai64 (2024.04.20240226.0-0~noble+20240301) noble; urgency=low
+bb-u-boot-beagleboneai64 (2024.04.20240226.1-0~noble+20240308) noble; urgency=low
 
   * 20240226 - v2024.04-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2024.04-rc3
-  * 20240229 - 09.02.00.006 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.006
+  * 20240308 - 09.02.00.007 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.007
   * 20240209 - v2.10.2 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=lts-v2.10.2
   * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
   * add extlinux.conf boot menu options over serial
@@ -11,5 +11,5 @@ bb-u-boot-beagleboneai64 (2024.04.20240226.0-0~noble+20240301) noble; urgency=lo
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 01 Mar 2024 10:50:26 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 08 Mar 2024 13:25:07 -0600
 
