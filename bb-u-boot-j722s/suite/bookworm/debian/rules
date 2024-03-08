@@ -14,7 +14,7 @@ TARGETDIR=bb-u-boot-j722s
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=cicd.kirkstone.202403071346
+TILF_TAG=09.02.00.007
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -42,7 +42,7 @@ OPTEE_PLATFORM=k3-am62x
 #U-Boot
 UBOOT_CFG_CORTEXR="j722s_evm_r5_defconfig"
 UBOOT_CFG_CORTEXA="j722s_evm_a53_defconfig"
-UB_TAG="09.02.00.006-dev"
+UB_TAG="09.02.00.007-dev"
 UB_REPO="https://git.gfnd.rcn-ee.org/development/ti-u-boot.git"
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
 
