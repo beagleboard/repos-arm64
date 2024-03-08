@@ -13,6 +13,7 @@ Depends:
  , ${misc:Depends}
  , systemd
  , cloud-guest-utils
+ , dos2unix
  , e2fsprogs
  , bsdextrautils
  , net-tools

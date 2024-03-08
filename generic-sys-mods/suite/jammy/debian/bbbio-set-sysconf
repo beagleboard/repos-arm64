@@ -90,6 +90,7 @@ if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     logger('debug', "Setting up iwd with '$iwd_psk_file'");
     if( -f "/boot/firmware/services/$iwd_psk_file") {
         system("cp /boot/firmware/services/$iwd_psk_file /var/lib/iwd/");
+        system("dos2unix -q /var/lib/iwd/$iwd_psk_file");
         system("systemctl restart iwd.service");
     }
 }
@@ -98,6 +99,7 @@ if (my $hostapd_file = delete($conf->{hostapd_file})) {
     logger('debug', "Setting up hostapd with '$hostapd_file'");
     if( -f "/boot/firmware/services/$hostapd_file") {
         system("cp /boot/firmware/services/$hostapd_file /etc/hostapd/SoftAp0.conf");
+        system("dos2unix -q /etc/hostapd/SoftAp0.conf");
         system("systemctl restart hostapd\@SoftAp0.service");
     }
 }
