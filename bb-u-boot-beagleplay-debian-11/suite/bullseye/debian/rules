@@ -9,6 +9,7 @@ TARGETDIR=bb-u-boot-beagleplay
 
 #ti-linux-firmware
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
+#TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
 TILF_TAG=09.01.00.008
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
@@ -17,8 +18,9 @@ TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
+#TAGS: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/refs/
 #TFA_TAG=master
-TFA_TAG=v2.10.0
+TFA_TAG=lts-v2.10.2
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
@@ -26,23 +28,18 @@ TFA_BOARD=lite
 
 #optee_os
 #HEAD: https://github.com/OP-TEE/optee_os
+#TAGS: https://github.com/OP-TEE/optee_os/tags
 #OPTEE_TAG=master
-OPTEE_TAG=4.0.0
+OPTEE_TAG=4.1.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-am62x
 
 #U-Boot
-UB_CONFIG=am62x_evm
-#UB_CONFIG_BOARD=am625_beagleplay
-UB_CONFIG_BOARD=beagleplay
-UB_BRANCH=v2023.04-ti-09.01.00.008-BeaglePlay
-UB_REPO="https://git.beagleboard.org/beagleboard/u-boot.git"
-#Local Mirror
-#UB_REPO="https://git.gfnd.rcn-ee.org/mirror/u-boot.git"
+UB_TAG="v2023.04-ti-09.01.00.008-BeaglePlay"
+UB_REPO="https://openbeagle.org/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
-MCORE=a53
 
 override_dh_strip:
 	# Just disable for now...
@@ -59,12 +56,12 @@ override_dh_auto_configure:
 	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(OPTEE_PLATFORM) CFG_WITH_SOFTWARE_PRNG=y CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_BRANCH) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
-	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UB_CONFIG)_r5_defconfig $(UB_CONFIG_BOARD)_r5.config
+	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_TAG) $(UB_REPO) --depth=5 ./tmp/u-boot/ ; git --git-dir ./tmp/u-boot/.git log --pretty=oneline
+	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- am62x_evm_r5_defconfig beagleplay_r5.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
 	cp -v ./tmp/CORTEXR/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
-	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UB_CONFIG)_$(MCORE)_defconfig $(UB_CONFIG_BOARD)_$(MCORE).config
+	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- am62x_evm_a53_defconfig beagleplay_a53.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
 	cp -v ./tmp/CORTEXA/tispl.bin_unsigned ./tmp/pkg/tispl.bin
