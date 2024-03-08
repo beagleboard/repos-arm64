@@ -14,7 +14,7 @@ TARGETDIR=bb-u-boot-j722s
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.02.00.006
+TILF_TAG=cicd.kirkstone.202403071346
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
