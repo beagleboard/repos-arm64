@@ -1,0 +1,31 @@
+ksmbd-tools for Debian
+----------------------
+
+You will need to have ksmbd module loaded or
+a Linux Kernel 5.15+ with the option
+CONFIG_SMB_SERVER in the kernel configuration.
+
+See the /usr/share/doc/ksmbd-tools/examples/smb.conf.example
+and put a copy to /etc/ksmbd/
+mkdir /etc/ksmbd/
+
+Run ksmbd.mountd to start the kernel mode smb daemon.
+
+A very simple smb.conf is here
+[global]
+        netbios name = SMBD
+
+[me]
+        comment = content server share
+#       guest ok = yes
+        writable = yes
+        path = /some/where
+        write ok = yes
+        store dos attributes = no
+        force user = me
+        force group = me
+        hide dot files = no
+        valid users = me
+        write list = me
+
+ -- Gürkan Myczko <gurkan@phys.ethz.ch>  Fri, 01 Oct 2021 09:46:16 +0200

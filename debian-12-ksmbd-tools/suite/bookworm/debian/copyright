@@ -1,0 +1,78 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: ksmbd-tools
+Upstream-Contact: Namjae Jeon <linkinjeon@gmail.com>
+Source: https://github.com/cifsd-team/ksmbd-tools
+
+Files: *
+Copyright: 2020-2023 Namjae Jeon <linkinjeon@gmail.com>  <linkinjeon@kernel.org>
+           2021 Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
+           2018-2020 Samsung Electronics Co.,
+                     Ltd. <linux-cifsd-devel@lists.sourceforge.net>
+           2020 LG Electronics
+           Taeyang Mok <t.mok@samsung.com>
+           Yunjae Lim <yunjae.lim@samsung.com>
+           Hyunchul Lee <hyc.lee@gmail.com>
+           Gibeom Kim <gibeomii.kim@samsung.com>
+           Pankaj Sharma <pankaj.s01@samsung.com>
+           Anupam Aggarwal <anupam.al@samsung.com>
+           Mayank Singh <mayank.singh@samsung.com>
+           kumar sourav <kumar.sourav@samsung.com>
+           Vivek Trivedi <t.vivek@samsung.com>
+           Amit Sahrawat <a.sahrawat@samsung.com>
+License: GPL-2-or-later
+
+Files: adduser/md4_hash.*
+Copyright: 1993 Colin Plumb
+           1997-1998 Andrew Tridgell
+           Cryptoapi developers.
+           2002 David S. Miller <davem@redhat.com>
+           2002 James Morris <jmorris@intercode.com.au>
+License: GPL-2-or-later
+
+Files: tools/asn1.c
+Copyright: 2000 RP Internet (www.rpi.net.au) (Gregory McLean & Jochen Friedrich)
+License: GPL-2-or-later
+
+Files: include/smbacl.h mountd/smbacl.c
+Copyright: 2007 International Business Machines  Corp.
+                Steve French <sfrench@us.ibm.com>
+           2020 Samsung Electronics Co., Ltd.
+                Namjae Jeon <linkinjeon@kernel.org>
+License: LGPL-2.1-or-later
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License along
+ with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
+
+Files: debian/*
+Copyright: 2021-2023 Gürkan Myczko <tar@debian.org>
+License: GPL-2-or-later
+
+License: GPL-2-or-later
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

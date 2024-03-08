@@ -1,0 +1,4 @@
+mountd/ksmbd.mountd.8
+control/ksmbd.control.8
+adduser/ksmbd.adduser.8
+addshare/ksmbd.addshare.8

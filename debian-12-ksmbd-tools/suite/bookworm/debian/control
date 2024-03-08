@@ -1,0 +1,25 @@
+Source: ksmbd-tools
+Section: utils
+Priority: optional
+Maintainer: Gürkan Myczko <tar@debian.org>
+Build-Depends: debhelper-compat (= 13), autoconf, pkg-config, libnl-3-dev, libnl-genl-3-dev, libglib2.0-dev
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/debian/ksmbd-tools
+Vcs-Git: https://salsa.debian.org/debian/ksmbd-tools.git
+Rules-Requires-Root: no
+Homepage: https://github.com/cifsd-team/ksmbd-tools
+
+Package: ksmbd-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: samba
+Description: cifsd kernel server userspace utilities
+ This is an alternative implementation of the CIFS/SMB3 control utilities.
+ The ksmbd part is focused on delivering speedy SMB3 file serving performance
+ and also supporting features more implemented in kernel-space, like RDMA
+ support for SMB Direct. KSMBD doesn't aim to be as comprehensive as well
+ known Samba for CIFS/SMB support in user-space but is just focused on the
+ performance and kernel feature angle.
+ .
+ The tools can either be used with the kernel module built separately or
+ right from in the Linux kernel.
