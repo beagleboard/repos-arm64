@@ -1,5 +1,5 @@
   * 20240226 - v2024.04-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2024.04-rc3
-  * 20240229 - 09.02.00.006 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.006
+  * 20240308 - 09.02.00.007 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.007
   * 20240209 - v2.10.2 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=lts-v2.10.2
   * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
   * add extlinux.conf boot menu options over serial
