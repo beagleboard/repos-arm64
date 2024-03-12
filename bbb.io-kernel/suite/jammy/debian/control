@@ -190,7 +190,7 @@ Description: BeagleBoard.org 6.6-rt-ti
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.8.0-rc7-arm64-r0
+Pre-Depends: linux-image-6.8.0-arm64-r0
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org Mainline
  This metapackage will install Mainline in Debian.
