@@ -2,11 +2,10 @@
 
 #https://openbeagle.org/beagleboard/u-boot/
 #https://github.com/u-boot/u-boot/commits/master
-#https://git.gfnd.rcn-ee.org/mirror/u-boot
 
 package_name="bb-u-boot-beagleboneai64-mainline"
 debian_pkg_name="${package_name}"
-package_version="2024.04.20240226.0"
+package_version="2024.04.20240311.0"
 package_source=""
 src_dir=""
 
@@ -21,8 +20,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240228"
-bookworm_version="~bookworm+20240228"
-trixie_version="~trixie+20240228"
-jammy_version="~jammy+20240228"
-noble_version="~noble+20240228"
+bullseye_version="~bullseye+20240312"
+bookworm_version="~bookworm+20240312"
+trixie_version="~trixie+20240312"
+jammy_version="~jammy+20240312"
+noble_version="~noble+20240312"
