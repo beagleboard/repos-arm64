@@ -134,6 +134,14 @@ if (my $name = delete($conf->{hostname})) {
     $call_reboot = 1;
 }
 
+if (my $legacy_rndis_support = delete($conf->{legacy_rndis_support})) {
+    logger('debug', "Enabling Legacy RNDIS support");
+    if( -f "/etc/default/bb-boot") {
+        system("sed -i -e 's:USB_RNDIS_DISABLED=yes:#USB_RNDIS_DISABLED=yes:g' /etc/default/bb-boot");
+        $call_reboot = 1;
+    }
+}
+
 rewrite_conf_file($filename, $conf);
 
 if ($call_reboot) {
@@ -225,6 +233,9 @@ q(# This file will be automatically evaluated and installed at next boot
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone
+
+# Legacy RNDIS support - Load usb gadget with RNDIS Support for Windows XP, Vista, 7, 8, and 10
+#legacy_rndis_support=enable
 ));
 
     if (scalar keys %$conf) {
