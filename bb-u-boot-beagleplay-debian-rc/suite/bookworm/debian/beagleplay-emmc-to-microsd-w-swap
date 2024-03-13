@@ -4,6 +4,7 @@ destination=/dev/mmcblk1
 rfs_partition=dual
 rfs_boot_startmb=1
 rfs_boot_size_mb=256
+rfs_boot_permissions=user,uid=1000,gid=1000,defaults
 rfs_swap_size_mb=2048
 flash_back=/opt/u-boot/bb-u-boot-beagleplay-rc/beagleplay-microsd-to-emmc-w-swap
 extlinux=/opt/u-boot/bb-u-boot-beagleplay-rc/microsd-extlinux-w-swap.conf
