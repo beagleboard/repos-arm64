@@ -41,6 +41,10 @@ else
 		if [ -f /boot/initrd.img-`uname -r` ] ; then
 			update-initramfs -u || true
 		fi
+		if [ -f /boot/firmware/initrd.img ] ; then
+			update-initramfs -u || true
+			cp -v /boot/initrd.img-`uname -r` /boot/firmware/initrd.img
+		fi
 	else
 		echo "Unable to find /usr/lib/firmware/ti-connectivity/git/wl18xx-fw-4-${FW_OPTION}.bin"
 	fi
