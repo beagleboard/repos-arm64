@@ -35,6 +35,10 @@ if [ -f /etc/default/bb-boot ] ; then
 	. /etc/default/bb-boot
 fi
 
+if [ -f /etc/default/generic-sys-mods ] ; then
+	. /etc/default/generic-sys-mods
+fi
+
 log="usb_gadget:"
 
 usb_gadget="/sys/kernel/config/usb_gadget"
@@ -160,6 +164,18 @@ run_libcomposite () {
 
 				ln -s functions/mass_storage.usb0 configs/c.1/
 			fi
+		fi
+
+		if [ "x${USB_BOOT_MMC_ENABLED}" = "xyes" ]; then
+			mkdir -p functions/mass_storage.usb1
+			echo ${usb_ms_stall} > functions/mass_storage.usb1/stall
+			echo ${usb_ms_cdrom} > functions/mass_storage.usb1/lun.0/cdrom
+			echo ${usb_ms_nofua} > functions/mass_storage.usb1/lun.0/nofua
+			echo ${usb_ms_removable} > functions/mass_storage.usb1/lun.0/removable
+			echo 0 > functions/mass_storage.usb1/lun.0/ro
+			echo ${ROOT_DRIVE}p1 > functions/mass_storage.usb1/lun.0/file
+
+			ln -s functions/mass_storage.usb1 configs/c.1/
 		fi
 
 		#mkdir -p functions/mass_storage.usb0
