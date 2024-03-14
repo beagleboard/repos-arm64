@@ -35,3 +35,6 @@
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone
+
+# Legacy RNDIS support - Load usb gadget with RNDIS Support for Windows XP, Vista, 7, 8, and 10
+#legacy_rndis_support=enable
