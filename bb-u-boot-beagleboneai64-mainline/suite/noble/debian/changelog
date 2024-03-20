@@ -1,8 +1,8 @@
-bb-u-boot-beagleboneai64-mainline (2024.04.20240311.0-0~noble+20240312) noble; urgency=low
+bb-u-boot-beagleboneai64-mainline (2024.04.20240311.1-0~noble+20240320) noble; urgency=low
 
   * 20240311 - v2024.04-rc4 - https://github.com/u-boot/u-boot/releases/tag/v2024.04-rc4
-  * 20240308 - 09.02.00.007 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.007
-  * 20240209 - v2.10.2 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=lts-v2.10.2
+  * 20240315 - 09.02.00.008 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.008
+  * 20240319 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=57249e77583c8cb36d81725e4bc1996688082838
   * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -11,5 +11,5 @@ bb-u-boot-beagleboneai64-mainline (2024.04.20240311.0-0~noble+20240312) noble; u
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 12 Mar 2024 10:57:41 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 20 Mar 2024 13:38:51 -0500
 

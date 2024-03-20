@@ -14,7 +14,7 @@ TARGETDIR=bb-u-boot-beagleboneai64-mainline
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=09.02.00.007
+TILF_TAG=09.02.00.008
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
@@ -22,8 +22,8 @@ TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 #trusted-firmware-a
 #HEAD: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/
 #TAGS: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/refs/
-#TFA_TAG=master
-TFA_TAG=lts-v2.10.2
+TFA_TAG=master
+#TFA_TAG=lts-v2.10.2
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
@@ -55,7 +55,7 @@ override_dh_auto_configure:
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
 	mkdir -p ./tmp/trusted-firmware-a/ ; git -c http.sslVerify=false clone -b $(TFA_TAG) $(TFA_REPO) --depth=5 ./tmp/trusted-firmware-a/ ; git --git-dir ./tmp/trusted-firmware-a/.git log --pretty=oneline
-	make -C ./tmp/trusted-firmware-a/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(TFA_BOARD) SPD=opteed all
+	make -C ./tmp/trusted-firmware-a/ -j8 CROSS_COMPILE=aarch64-linux-gnu- ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(TFA_BOARD) SPD=opteed all
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin ./tmp/pkg/
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/optee_os/ ; git -c http.sslVerify=false clone -b $(OPTEE_TAG) $(OPTEE_REPO) --depth=5 ./tmp/optee_os/ ; git --git-dir ./tmp/optee_os/.git log --pretty=oneline
