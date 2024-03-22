@@ -14,7 +14,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone -b 09.02.00.006 https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git ./tmp/firmware --depth=1
+	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone -b 09.02.00.009 https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git ./tmp/firmware --depth=1
 
 %:
 	dh $@

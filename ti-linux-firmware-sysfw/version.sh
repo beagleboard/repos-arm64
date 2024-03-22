@@ -4,7 +4,7 @@
 
 package_name="ti-linux-firmware-sysfw"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-09.02.00.006.0"
+package_version="0.0.0-09.02.00.009.0"
 package_source=""
 src_dir=""
 
@@ -19,8 +19,8 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240301"
-bookworm_version="~bookworm+20240301"
-trixie_version="~trixie+20240301"
-jammy_version="~jammy+20240301"
-noble_version="~noble+20240301"
+bullseye_version="~bullseye+20240322"
+bookworm_version="~bookworm+20240322"
+trixie_version="~trixie+20240322"
+jammy_version="~jammy+20240322"
+noble_version="~noble+20240322"
