@@ -2,11 +2,10 @@
 
 #https://openbeagle.org/beagleboard/u-boot/
 #https://github.com/u-boot/u-boot/commits/master
-#https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
 
 package_name="bb-u-boot-beagley-ai"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20240307.0-09.02.00.007"
+package_version="2023.04.20240319.0-09.02.00.009"
 package_source=""
 src_dir=""
 
@@ -21,4 +20,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20240308"
+bullseye_version="~bullseye+20240327"
+bookworm_version="~bookworm+20240327"

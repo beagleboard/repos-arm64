@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-wdir="/opt/u-boot/bb-u-boot-j722s"
+wdir="/opt/u-boot/bb-u-boot-beagley-ai"
 
 if [ -d /boot/firmware/ ] ; then
 	cp -v ${wdir}/tiboot3.bin /boot/firmware/
