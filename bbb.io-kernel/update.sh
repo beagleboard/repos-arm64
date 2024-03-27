@@ -81,6 +81,22 @@ generate_kernel_ti () {
 		fi
 		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-j721e in Debian." >> ./suite/${dist}/debian/${wfile}
+
+		echo "" >> ./suite/${dist}/debian/${wfile}
+		echo "Package: bbb.io-kernel-${msg}-k3-j722s" >> ./suite/${dist}/debian/${wfile}
+		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
+		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+		echo " bb-u-boot-beagley-ai" >> ./suite/${dist}/debian/${wfile}
+#		echo " , bb-u-boot-beagley-ai-mainline" >> ./suite/${dist}/debian/${wfile}
+		if [ "x${sgxj722s}" = "xenabled" ] ; then
+			echo " , ti-${sgxmodule}-j722s-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		fi
+		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo " This metapackage will install linux-image-${msg} for k3-j722s in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
 
@@ -122,6 +138,7 @@ changelog () {
 unset_all () {
 	unset sgxam62
 	unset sgxj721e
+	unset sgxj722s
 	unset sgxmodule
 }
 
