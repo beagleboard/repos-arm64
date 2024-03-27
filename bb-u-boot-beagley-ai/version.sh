@@ -4,7 +4,7 @@
 #https://github.com/u-boot/u-boot/commits/master
 #https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
 
-package_name="bb-u-boot-j722s"
+package_name="bb-u-boot-beagley-ai"
 debian_pkg_name="${package_name}"
 package_version="2023.04.20240307.0-09.02.00.007"
 package_source=""

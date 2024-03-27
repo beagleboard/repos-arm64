@@ -1,4 +1,4 @@
-Source: bb-u-boot-j722s
+Source: bb-u-boot-beagley-ai
 Section: misc
 Priority: extra
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
@@ -25,10 +25,10 @@ Build-Depends:
  , yamllint
 Standards-Version: 4.5.1
 
-Package: bb-u-boot-j722s
+Package: bb-u-boot-beagley-ai
 Architecture: arm64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
-Description: bb-u-boot-j722s
- bb-u-boot-j722s
+Description: bb-u-boot-beagley-ai
+ bb-u-boot-beagley-ai
