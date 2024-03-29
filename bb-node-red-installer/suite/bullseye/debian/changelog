@@ -1,8 +1,8 @@
-bb-node-red-installer (3.1.4.0-0~bullseye+20240207) bullseye; urgency=low
+bb-node-red-installer (3.1.8.0-0~bullseye+20240329) bullseye; urgency=low
 
-  * Node-RED - 3.1.4 - https://www.npmjs.com/package/node-red
-  * node-red-dashboard - 3.6.2 - https://www.npmjs.com/package/node-red-dashboard
+  * Node-RED - 3.1.8 - https://www.npmjs.com/package/node-red
+  * node-red-dashboard - 3.6.5 - https://www.npmjs.com/package/node-red-dashboard
   * nodejs - 16.20.2 - https://nodejs.org/dist/latest-v16.x/
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 07 Feb 2024 10:04:02 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Mar 2024 13:24:55 -0500
 
