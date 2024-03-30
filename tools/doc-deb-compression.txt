@@ -1,0 +1,16 @@
+After https://lwn.net/Articles/967180/ we are moving away from xz in this archive..
+
+Currently our Debian Achive is managed with reprepro 5.3.1-2
+
+Debian 11.x - Bullseye - dpkg - 1.20.13 - gzip
+Debian 12.x - Bookworm - dpkg - 1.21.22 - zstd
+Debian 13.x - Bookworm - dpkg - 1.22.x - zstd
+Ubuntu 22.04 - Jammy - dpkg - 1.21.1 - (early zstd patchset) use gzip
+Ubuntu 24.04 - Noble - dpkg - 1.22.4 - zstd
+
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+
+override_dh_builddeb:
+	dh_builddeb -- -Zzstd
