@@ -6,7 +6,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="meson"
 debian_pkg_name="${package_name}"
-package_version="1.2.3"
+package_version="1.4.0"
 
 git_repo=""
 git_sha=""
