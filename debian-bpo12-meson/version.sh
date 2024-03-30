@@ -2,11 +2,12 @@
 
 #https://packages.debian.org/source/trixie/meson
 
-mirror="https://deb.debian.org/debian"
+#mirror="https://deb.debian.org/debian"
+mirror="https://snapshot.debian.org/archive/debian/20240214T085951Z"
 
 package_name="meson"
 debian_pkg_name="${package_name}"
-package_version="1.4.0"
+package_version="1.3.2"
 
 git_repo=""
 git_sha=""
