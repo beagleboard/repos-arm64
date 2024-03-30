@@ -1,8 +1,21 @@
-mesa (24.0.3-1bbbio0~bookworm+20240319) bookworm; urgency=low
+mesa (24.0.4-1bbbio0~bookworm+20240330) bookworm; urgency=low
 
-  * Rebuild mesa_24.0.3-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.0.4-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Mar 2024 09:45:04 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 30 Mar 2024 11:18:02 -0500
+
+mesa (24.0.4-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * patches: Dropped upstreamed patches.
+
+  [ Fabio Pedretti ]
+  * control: libllvmspirvlib-*-dev is needed even with rusticl disabled
+    (Closes: #1061287)
+  * control: Bump meson build-dep
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 29 Mar 2024 17:59:50 +0200
 
 mesa (24.0.3-1) unstable; urgency=medium
 
