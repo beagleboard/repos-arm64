@@ -78,4 +78,4 @@ override_dh_auto_configure:
 	dh $@
 
 override_dh_builddeb:
-	dh_builddeb -- -Zxz
+	dh_builddeb -- -Zgzip
