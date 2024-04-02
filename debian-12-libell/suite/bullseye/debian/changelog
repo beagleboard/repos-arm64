@@ -1,3 +1,9 @@
+ell (0.64-1bbbio1~bullseye+20240401) bullseye; urgency=low
+
+  * Rebuild ell_0.64-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 01 Apr 2024 22:34:57 -0500
+
 ell (0.64-1bbbio0~bullseye+20240401) bullseye; urgency=low
 
   * Rebuild ell_0.64-1 for repos.rcn-ee.com

@@ -19,4 +19,4 @@ override_dh_auto_test:
 	dbus-run-session -- make CFLAGS="$(CFLAGS) -fno-lto" check VERBOSE=1
 
 override_dh_builddeb:
-	dh_builddeb -- -Zzstd
+	dh_builddeb -- -Zgzip
