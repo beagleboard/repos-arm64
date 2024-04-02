@@ -7,7 +7,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="ell"
 debian_pkg_name="${package_name}"
-package_version="0.63"
+package_version="0.64"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
@@ -22,6 +22,6 @@ debian_patch=""
 local_patch="bbbio0"
 
 lunar_version="~lunar+20230919"
-bullseye_version="~bullseye+20240301"
-bookworm_version="~bookworm+20240301"
-jammy_version="~jammy+20240301"
+bullseye_version="~bullseye+20240401"
+bookworm_version="~bookworm+20240401"
+jammy_version="~jammy+20240401"
