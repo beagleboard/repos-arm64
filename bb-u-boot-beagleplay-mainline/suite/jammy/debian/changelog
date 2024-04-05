@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay-mainline (2024.04.20240402.0-0~jammy+20240402) jammy; urgency=low
+bb-u-boot-beagleplay-mainline (2024.04.20240402.1-0~jammy+20240405) jammy; urgency=low
 
   * 20240402 - v2024.04 - https://github.com/u-boot/u-boot/releases/tag/v2024.04
   * 20240320 - 09.02.00.009 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.009
@@ -11,5 +11,5 @@ bb-u-boot-beagleplay-mainline (2024.04.20240402.0-0~jammy+20240402) jammy; urgen
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 02 Apr 2024 15:56:46 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Apr 2024 11:02:42 -0500
 
