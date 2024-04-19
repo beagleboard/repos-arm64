@@ -5,12 +5,13 @@ dl_src () {
 		rm -rf ./src/
 	fi
 
-	git clone https://git.beagleboard.org/beagleboard/usr-customizations.git ./src/
+	git clone https://openbeagle.org/beagleboard/usr-customizations.git ./src/
 }
 
 copy_some () {
 	cp -v ./src/${wfile} ./suite/bookworm/debian/
 	cp -v ./src/${wfile} ./suite/trixie/debian/
+	cp -v ./src/${wfile} ./suite/noble/debian/
 }
 
 copy_all () {
@@ -18,6 +19,7 @@ copy_all () {
 	cp -v ./src/${wfile} ./suite/bookworm/debian/
 	cp -v ./src/${wfile} ./suite/trixie/debian/
 	cp -v ./src/${wfile} ./suite/jammy/debian/
+	cp -v ./src/${wfile} ./suite/noble/debian/
 }
 
 dl_src

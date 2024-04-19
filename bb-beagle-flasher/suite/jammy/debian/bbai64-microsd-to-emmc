@@ -1,3 +1,4 @@
+debug_over_display=tty0
 source=/dev/mmcblk1
 destination=/dev/mmcblk0
 rfs_partition=dual
