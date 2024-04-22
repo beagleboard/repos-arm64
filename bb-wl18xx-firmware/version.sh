@@ -2,7 +2,7 @@
 
 package_name="bb-wl18xx-firmware"
 debian_pkg_name="${package_name}"
-package_version="1.20240313.0"
+package_version="1.20240422.0"
 package_source=""
 src_dir=""
 
@@ -17,5 +17,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240313"
-bookworm_version="~bookworm+20240313"
+bullseye_version="~bullseye+20240422"
+bookworm_version="~bookworm+20240422"

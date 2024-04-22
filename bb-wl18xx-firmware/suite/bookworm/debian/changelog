@@ -1,6 +1,6 @@
-bb-wl18xx-firmware (1.20240313.0-0~bookworm+20240313) bookworm; urgency=low
+bb-wl18xx-firmware (1.20240422.0-0~bookworm+20240422) bookworm; urgency=low
 
-  * Rebuild bb-wl18xx-firmware_1.20240313.0-0 for repos.rcn-ee.com
+  * Add cc33xx firmware from Version: 1.0.0.1 https://www.ti.com/tool/download/CC33XX-LINUX-AM335
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 13 Mar 2024 12:21:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 22 Apr 2024 16:47:22 -0500
 
