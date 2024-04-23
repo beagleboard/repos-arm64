@@ -69,7 +69,7 @@ Description: BeagleBoard.org 5.10-ti
 Package: bbb.io-kernel-6.1-ti
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.1.80-ti-arm64-r36
+Pre-Depends: linux-image-6.1.80-ti-arm64-r37
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.1-ti
  This metapackage will install linux-image-6.1-ti in Debian.
@@ -112,7 +112,7 @@ Description: BeagleBoard.org 6.1-ti
 Package: bbb.io-kernel-6.1-rt-ti
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.1.80-ti-rt-arm64-r35
+Pre-Depends: linux-image-6.1.80-ti-rt-arm64-r36
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.1-rt-ti
  This metapackage will install linux-image-6.1-rt-ti in Debian.
