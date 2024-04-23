@@ -15,3 +15,4 @@ debian/cc33xx_2nd_loader.bin /usr/lib/firmware/ti-connectivity/
 debian/cc33xx_fw.bin /usr/lib/firmware/ti-connectivity/
 debian/wl18xx.conf /etc/modprobe.d/
 debian/bb-wl18xx-select-fw /usr/sbin/
+debian/cc33xx_enable_ble /usr/sbin/
