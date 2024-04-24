@@ -31,7 +31,7 @@ if (my $pass = delete($conf->{root_password})) {
 
 if (my $user_pass = delete($conf->{user_password})) {
     my $pipe;
-    logger('debug', "Resetting $current_user's password");
+    logger('debug', "Resetting $current_user password");
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
 	my $err = $!;
 	logger('error', "Could not run chpasswd: $err");
@@ -66,7 +66,7 @@ if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
 
 if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
     my $fh;
-    logger('debug', "Adding key to $current_user's authorized_keys");
+    logger('debug', "Adding key to $current_user authorized_keys");
     if(! -d "/home/$current_user/.ssh") {
         if(!mkdir("/home/$current_user/.ssh", 0700)) {
             my $err = sprintf("Could not create /home/$current_user/.ssh directory: %s", $!);
