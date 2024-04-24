@@ -33,14 +33,18 @@ if (my $user_pass = delete($conf->{user_password})) {
     my $pipe;
     logger('debug', "Resetting $current_user password");
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
-	my $err = $!;
-	logger('error', "Could not run chpasswd: $err");
-	die $err;
+        my $err = $!;
+        logger('error', "Could not run chpasswd: $err");
+        die $err;
     }
     $pipe->print("$current_user:$user_pass");
     close($pipe);
-    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
-    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
+    if( -f "/etc/issue") {
+        system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
+    }
+    if( -f "/etc/issue.net") {
+        system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
+    }
     $call_reboot = 1;
 }
 
@@ -90,11 +94,19 @@ if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
 
 if (my $new_user_name = delete($conf->{user_name})) {
     logger('debug', "Changing $current_user to $new_user_name");
-        system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
-        system("groupmod --new-name $new_user_name $current_user");
-        if( -f "/etc/lightdm/lightdm.conf") {
-            system("sed -i -e 's:$current_user :$new_user_name:g' /etc/lightdm/lightdm.conf");
-        }
+    system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
+    system("groupmod --new-name $new_user_name $current_user");
+    if( -f "/etc/issue") {
+        system("sed -i -e 's:\\[$current_user\\]:\\[$new_user_name\\]:g' /etc/issue");
+    }
+    if( -f "/etc/issue.net") {
+        system("sed -i -e 's:\\[$current_user\\]:\\[$new_user_name\\]:g' /etc/issue.net");
+    }
+    if( -f "/etc/lightdm/lightdm.conf") {
+        system("sed -i -e 's:$current_user:$new_user_name:g' /etc/lightdm/lightdm.conf");
+    }
+    if( -f "/usr/lib/systemd/system/bb-code-server.service") {
+        system("sed -i -e 's:$current_user:$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
     }
     $call_reboot = 1;
 }
@@ -269,5 +281,4 @@ q(
     }
     $fh->close;
 }
-
 
