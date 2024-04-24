@@ -20,12 +20,14 @@
 # leave no space to indicate the line is an example that could be
 # uncommented.
 
-# beagle_user_pw - Set a password for the beagle user (by default, it allows
-# for a passwordless login)
-#beagle_user_pw=FooBar
+# user_name - Set a user name for the default user (1000)
+#user_name=beagle
 
-# beagle_user_authorized_key - Set an authorized key for a beagle ssh login
-#beagle_user_authorized_key=
+# user_password - Set a password for user (1000)
+#user_password=FooBar
+
+# user_authorized_key - Set an authorized key for a user (1000) ssh login
+#user_authorized_key=
 
 # iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
 #iwd_psk_file=
@@ -35,6 +37,3 @@
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone
-
-# Legacy RNDIS support - Load usb gadget with RNDIS Support for Windows XP, Vista, 7, 8, and 10
-#legacy_rndis_support=enable
