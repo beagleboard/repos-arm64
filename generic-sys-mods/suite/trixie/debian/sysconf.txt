@@ -43,3 +43,9 @@
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone
+
+# keymap - Set the system keymap.
+#keymap=us
+
+# timezone - Set the system timezone.
+#timezone=America/Chicago

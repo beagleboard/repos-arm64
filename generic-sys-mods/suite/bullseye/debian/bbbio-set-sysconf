@@ -164,6 +164,16 @@ if (my $name = delete($conf->{hostname})) {
     $call_reboot = 1;
 }
 
+if (my $new_keymap = delete($conf->{keymap})) {
+    system("/usr/lib/beagleboard-sys-mods/imager_custom set_keymap '$keymap'");
+    $call_reboot = 1;
+}
+
+if (my $new_timezone = delete($conf->{timezone})) {
+    system("/usr/lib/beagleboard-sys-mods/imager_custom set_timezone '$timezone'");
+    $call_reboot = 1;
+}
+
 if (my $legacy_rndis_support = delete($conf->{legacy_rndis_support})) {
     logger('debug', "Enabling Legacy RNDIS support");
     if( -f "/etc/default/bb-boot") {
@@ -271,6 +281,12 @@ q(# This file will be automatically evaluated and installed at next boot
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone
+
+# keymap - Set the system keymap.
+#keymap=us
+
+# timezone - Set the system timezone.
+#timezone=America/Chicago
 ));
 
     if (scalar keys %$conf) {
