@@ -103,10 +103,15 @@ if (my $new_user_name = delete($conf->{user_name})) {
         system("sed -i -e 's:\\[$current_user\\]:\\[$new_user_name\\]:g' /etc/issue.net");
     }
     if( -f "/etc/lightdm/lightdm.conf") {
-        system("sed -i -e 's:$current_user:$new_user_name:g' /etc/lightdm/lightdm.conf");
+        system("sed -i -e 's:autologin-user=$current_user:autologin-user=$new_user_name:g' /etc/lightdm/lightdm.conf");
     }
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
-        system("sed -i -e 's:$current_user:$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
+        system("sed -i -e 's:User=$current_user:User=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
+        system("sed -i -e 's:Group=$current_user:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
+        system("sed -i -e 's:/home/$current_user/:/home/$new_user_name/:g' /usr/lib/systemd/system/bb-code-server.service");
+        if( -f "/home/$new_user_name/.local/share/code-server/coder.json") {
+            system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /home/$new_user_name/.local/share/code-server/coder.json");
+        }
     }
     $call_reboot = 1;
 }
