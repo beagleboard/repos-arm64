@@ -10,3 +10,4 @@ debian/sysconf.txt /etc/bbb.io/templates/
 debian/ssid.psk /etc/bbb.io/templates/services/
 debian/SoftAp0.conf /etc/bbb.io/templates/services/
 debian/zz-uenv_txt /etc/kernel/postinst.d/
+debian/imager_custom /usr/lib/beagleboard-sys-mods/

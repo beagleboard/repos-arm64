@@ -1,5 +1,13 @@
 #!/bin/bash
 
+dl_rpi () {
+	if [ -d ./src/ ] ; then
+		rm -rf ./src/
+	fi
+
+	git clone https://github.com/RPi-Distro/raspberrypi-sys-mods.git ./src/ --depth=1
+}
+
 dl_src () {
 	if [ -d ./src/ ] ; then
 		rm -rf ./src/
@@ -30,6 +38,10 @@ copy_ubuntu () {
 	cp -v ./src/${wfile} ./suite/jammy/debian/
 	cp -v ./src/${wfile} ./suite/noble/debian/
 }
+
+dl_rpi
+
+wfile="usr/lib/raspberrypi-sys-mods/imager_custom" ; copy_all
 
 repo="raspi-config"
 dl_src
