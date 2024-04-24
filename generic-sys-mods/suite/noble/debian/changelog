@@ -1,8 +1,8 @@
-generic-sys-mods (1.20240424.8-0~noble+20240424) noble; urgency=low
+generic-sys-mods (1.20240424.9-0~noble+20240424) noble; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
   * add basic bbbio-set-sysconf.service
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Apr 2024 14:05:24 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Apr 2024 14:14:10 -0500
 

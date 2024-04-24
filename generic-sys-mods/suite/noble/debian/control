@@ -12,6 +12,7 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , systemd
+ , console-setup-linux
  , cloud-guest-utils
  , dos2unix
  , e2fsprogs
