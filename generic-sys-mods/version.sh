@@ -2,7 +2,7 @@
 
 package_name="generic-sys-mods"
 debian_pkg_name="${package_name}"
-package_version="1.20240424.9"
+package_version="1.20240424.10"
 package_source=""
 src_dir=""
 
