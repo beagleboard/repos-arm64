@@ -7,6 +7,8 @@ use feature 'switch';
 
 my $call_reboot = 0;
 
+my ($current_user) = getpwuid(1000);
+
 my ($filename, $conf);
 
 $filename = '/boot/firmware/sysconf.txt';
@@ -29,13 +31,13 @@ if (my $pass = delete($conf->{root_password})) {
 
 if (my $user_pass = delete($conf->{user_password})) {
     my $pipe;
-    logger('debug', 'Resetting beagle password');
+    logger('debug', "Resetting $current_user's password");
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
 	my $err = $!;
 	logger('error', "Could not run chpasswd: $err");
 	die $err;
     }
-    $pipe->print("beagle:$user_pass");
+    $pipe->print("$current_user:$user_pass");
     close($pipe);
     system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
     system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
@@ -64,18 +66,18 @@ if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
 
 if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
     my $fh;
-    logger('debug', "Adding key to beagle's authorized_keys");
-    if(! -d "/home/beagle/.ssh") {
-        if(!mkdir("/home/beagle/.ssh", 0700)) {
-            my $err = sprintf("Could not create /home/beagle/.ssh directory: %s", $!);
+    logger('debug', "Adding key to $current_user's authorized_keys");
+    if(! -d "/home/$current_user/.ssh") {
+        if(!mkdir("/home/$current_user/.ssh", 0700)) {
+            my $err = sprintf("Could not create /home/$current_user/.ssh directory: %s", $!);
             logger('error', $err);
             die $err;
         }
     }
 
-    unless ($fh = IO::File->new('/home/beagle/.ssh/authorized_keys', 'w', 0600)) {
+    unless ($fh = IO::File->new("/home/$current_user/.ssh/authorized_keys", 'w', 0600)) {
         my $err = $!;
-        logger('error', "Could not write /home/beagle/.ssh/authorized_keys: $err");
+        logger('error', "Could not write /home/$current_user/.ssh/authorized_keys: $err");
         die $err;
     }
     $fh->print($user_authorized_key);
@@ -83,7 +85,7 @@ if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
 
     my $user = 1000;
     my $group = 1000;
-    system("chown -R $user:$group /home/beagle/.ssh/");
+    system("chown -R $user:$group /home/$current_user/.ssh/");
 }
 
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
@@ -218,7 +220,7 @@ q(# This file will be automatically evaluated and installed at next boot
 # leave no space to indicate the line is an example that could be
 # uncommented.
 
-# user_name - Set a user name for the default user (1000)
+# user_name - Set a user name for the user (1000)
 #user_name=beagle
 
 # user_password - Set a password for user (1000)

@@ -26,7 +26,7 @@
 # root_authorized_key - Set an authorized key for a root ssh login
 #root_authorized_key=
 
-# user_name - Set a user name for the default user (1000)
+# user_name - Set a user name for the user (1000)
 #user_name=debian
 
 # user_password - Set a password for user (1000)
