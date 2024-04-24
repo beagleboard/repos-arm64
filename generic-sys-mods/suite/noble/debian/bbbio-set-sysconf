@@ -88,6 +88,17 @@ if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
     system("chown -R $user:$group /home/$current_user/.ssh/");
 }
 
+if (my $new_user_name = delete($conf->{user_name})) {
+    logger('debug', "Changing $current_user to $new_user_name");
+        system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
+        system("groupmod --new-name $new_user_name $current_user");
+        if( -f "/etc/lightdm/lightdm.conf") {
+            system("sed -i -e 's:$current_user :$new_user_name:g' /etc/lightdm/lightdm.conf");
+        }
+    }
+    $call_reboot = 1;
+}
+
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     logger('debug', "Setting up iwd with '$iwd_psk_file'");
     if( -f "/boot/firmware/services/$iwd_psk_file") {
