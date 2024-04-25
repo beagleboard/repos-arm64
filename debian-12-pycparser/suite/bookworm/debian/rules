@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+export PYBUILD_DESTDIR_python3=debian/python3-pycparser
+export PYBUILD_BEFORE_TEST=ln -s {dir}/examples {dir}/utils {build_dir}
+export PYBUILD_AFTER_TEST=rm -f {build_dir}/parser.out \
+       {build_dir}/lextab.py {build_dir}/yacctab.py \
+       {build_dir}/utils {build_dir}/examples
+
+%:
+	dh $@ --with python3 --buildsystem pybuild
+
+override_dh_auto_build: clean-source
+	cd pycparser && python3 _build_tables.py
+	dh_auto_build
+
+override_dh_auto_clean: clean-source
+	dh_auto_clean
+
+override_dh_python3:
+	dh_python3
+	dh_python3-ply $$(find $(PYBUILD_DESTDIR_python3) -name '*tab.py')
+
+clean-source:
+	cd pycparser && rm -f lextab.py yacctab.py c_ast.py
+	rm -rf pycparser/ply
