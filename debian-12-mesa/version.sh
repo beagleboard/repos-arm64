@@ -1,14 +1,14 @@
 #!/bin/bash -e
 
-#https://gitlab.freedesktop.org/mesa/mesa/-/commits/23.3/
+#https://gitlab.freedesktop.org/mesa/mesa/-/commits/24.1/
 mirror="http://http.debian.net/debian"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="24.0.6"
+package_version="24.1.0~rc1"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
-src_dir="${package_name}-${package_version}"
-#src_dir="mesa-24.0.0-rc3"
+#src_dir="${package_name}-${package_version}"
+src_dir="mesa-24.1.0-rc1"
 
 git_repo=""
 git_sha=""

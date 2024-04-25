@@ -1,8 +1,14 @@
-mesa (24.0.6-1bbbio0~bookworm+20240425) bookworm; urgency=low
+mesa (24.1.0~rc1-1bbbio0~bookworm+20240425) bookworm; urgency=low
 
-  * Rebuild mesa_24.0.6-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.1.0~rc1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 25 Apr 2024 11:51:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 25 Apr 2024 12:22:24 -0500
+
+mesa (24.1.0~rc1-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 25 Apr 2024 09:02:09 +0300
 
 mesa (24.0.6-1) unstable; urgency=medium
 
