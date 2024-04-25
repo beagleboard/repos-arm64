@@ -290,4 +290,4 @@ regen_control:
 	    debian/control.in > debian/control
 
 override_dh_builddeb:
-	dh_builddeb -- -Zzstd
+	dh_builddeb -- -Zxz
