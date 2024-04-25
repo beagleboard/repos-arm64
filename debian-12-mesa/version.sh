@@ -18,6 +18,6 @@ dl_path="pool/main/${reprepro_dir}/"
 debian_version="${package_version}-1"
 debian_untar=""
 debian_patch="${package_name}_${debian_version}.diff.gz"
-local_patch="bbbio2"
+local_patch="bbbio3"
 
 bookworm_version="~bookworm+20240425"
