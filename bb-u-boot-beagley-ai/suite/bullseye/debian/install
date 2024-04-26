@@ -1,6 +1,8 @@
 debian/install.sh /opt/u-boot/bb-u-boot-beagley-ai
 debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagley-ai
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagley-ai
+debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagley-ai
+debian/beagley-microsd-to-nvme /opt/u-boot/bb-u-boot-beagley-ai
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagley-ai
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagley-ai
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagley-ai
