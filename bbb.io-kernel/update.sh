@@ -7,7 +7,7 @@ current_kernel () {
 		rm -rf /tmp/LATEST-${var} | true
 	fi
 	unset latest_kernel
-	wget --quiet --directory-prefix=/tmp/ https://rcn-ee.us/repos/latest/${dist}-${arch}/LATEST-${var} || true
+	wget --quiet --directory-prefix=/tmp/ https://rcn-ee.net/repos/latest/${dist}-${arch}/LATEST-${var} || true
 	if [ -f /tmp/LATEST-${var} ] ; then
 		latest_kernel=$(cat "/tmp/LATEST-${var}" | grep "ABI:1 ${ver}" | awk '{print $3}')
 		echo ${dist}-${arch}-${latest_kernel}
