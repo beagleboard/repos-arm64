@@ -95,9 +95,11 @@ if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
 if (my $new_user_name = delete($conf->{user_name})) {
     logger('debug', "Changing $current_user to $new_user_name");
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
-        system("systemctl stop bb-code-server.service || true");
+        system("systemctl stop bb-code-server.service");
+        sleep(2);
     }
-    system("pkill -u $current_user || true");
+    system("pgrep -u $current_user | xargs ps -f -p");
+    system("pkill -u $current_user");
     system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
     system("groupmod --new-name $new_user_name $current_user");
     if( -f "/etc/issue") {
