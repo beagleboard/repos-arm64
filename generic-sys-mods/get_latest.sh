@@ -59,12 +59,12 @@ wfile="arm64/usr/sbin/beagle-kversion" ; copy_all
 repo="bbbio-set-sysconf"
 dl_src
 
-wfile="src/debian/bbbio-set-sysconf" ; copy_debian
-wfile="src/debian/sysconf.txt" ; copy_debian
-wfile="src/debian/ssid.psk" ; copy_debian
-wfile="src/debian/SoftAp0.conf" ; copy_debian
+wfile="src/bbbio-set-sysconf" ; copy_debian
+wfile="src/sysconf.txt" ; copy_debian
+wfile="src/ssid.psk" ; copy_debian
+wfile="src/SoftAp0.conf" ; copy_debian
 
-wfile="src/ubuntu/bbbio-set-sysconf" ; copy_ubuntu
-wfile="src/ubuntu/sysconf.txt" ; copy_ubuntu
-wfile="src/ubuntu/ssid.psk" ; copy_ubuntu
-wfile="src/ubuntu/SoftAp0.conf" ; copy_ubuntu
+wfile="src/bbbio-set-sysconf" ; copy_ubuntu
+wfile="src/sysconf.txt" ; copy_ubuntu
+wfile="src/ssid.psk" ; copy_ubuntu
+wfile="src/SoftAp0.conf" ; copy_ubuntu
