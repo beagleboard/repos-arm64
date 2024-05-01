@@ -8,6 +8,7 @@ use feature 'switch';
 my $call_reboot = 0;
 
 my ($current_user) = getpwuid(1000);
+my ($current_group) = getgrgid(1000);
 
 my ($filename, $conf);
 
@@ -96,12 +97,13 @@ if (my $new_user_name = delete($conf->{user_name})) {
     logger('debug', "Changing $current_user to $new_user_name");
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
         system("systemctl stop bb-code-server.service");
-        sleep(2);
+        system("systemctl disable bb-code-server.service");
+        sleep(5);
     }
     system("pgrep -u $current_user | xargs ps -f -p");
     system("pkill -u $current_user");
     system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
-    system("groupmod --new-name $new_user_name $current_user");
+    system("groupmod --new-name $new_user_name $current_group");
     if( -f "/etc/issue") {
         system("sed -i -e 's:\\[$current_user\\]:\\[$new_user_name\\]:g' /etc/issue");
     }
@@ -113,11 +115,14 @@ if (my $new_user_name = delete($conf->{user_name})) {
     }
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
         system("sed -i -e 's:User=$current_user:User=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
-        system("sed -i -e 's:Group=$current_user:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
+        system("sed -i -e 's:Group=$current_group:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
         system("sed -i -e 's:/home/$current_user/:/home/$new_user_name/:g' /usr/lib/systemd/system/bb-code-server.service");
         if( -f "/home/$new_user_name/.local/share/code-server/coder.json") {
             system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /home/$new_user_name/.local/share/code-server/coder.json");
         }
+        sleep(1);
+        system("systemctl enable bb-code-server.service");
+        sleep(1);
     }
     $call_reboot = 1;
 }
