@@ -97,8 +97,6 @@ if (my $new_user_name = delete($conf->{user_name})) {
     logger('debug', "Changing $current_user to $new_user_name");
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
         system("systemctl stop bb-code-server.service");
-        system("systemctl disable bb-code-server.service");
-        sleep(5);
     }
     system("pgrep -u $current_user | xargs ps -f -p");
     system("pkill -u $current_user");
@@ -120,9 +118,6 @@ if (my $new_user_name = delete($conf->{user_name})) {
         if( -f "/home/$new_user_name/.local/share/code-server/coder.json") {
             system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /home/$new_user_name/.local/share/code-server/coder.json");
         }
-        sleep(1);
-        system("systemctl enable bb-code-server.service");
-        sleep(1);
     }
     $call_reboot = 1;
 }
