@@ -1,0 +1,11 @@
+[Unit]
+Description=Remote GPIO Daemon
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/rgpiod
+ExecStart=/usr/bin/rgpiod -c ${DAEMON_CONF} -w ${DAEMON_WORK} ${DAEMON_OPTS}
+
+[Install]
+WantedBy=multi-user.target

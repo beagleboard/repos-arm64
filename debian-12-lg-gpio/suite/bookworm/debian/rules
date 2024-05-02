@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export prefix=/usr
+export libdir=$(prefix)/lib/$(DEB_HOST_MULTIARCH)
+
+
+%:
+	dh $@ --with python3
+
+get-orig-source:
+	debian/get-orig-source
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

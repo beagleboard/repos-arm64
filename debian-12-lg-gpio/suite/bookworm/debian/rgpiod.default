@@ -1,0 +1,21 @@
+# Defaults for rgpiod, installed at /etc/default/rgpiod by the maintainer scripts
+
+# Additional options passed to the Daemon. By default, this only includes "-l"
+# to bind to localhost only.
+DAEMON_OPTS="-l"
+
+# If you wish to serve other hosts, and to use the "permits" and "users"
+# configuration files under /etc/rgpiod you probably want to use "-x" instead.
+# See rgpiod(1) for further information.
+#DAEMON_OPTS="-x"
+
+# The location of the actual configuration files linked to from /etc/rgpiod,
+# ".lg_secret" which defines the valid users (and passwords), and "permits"
+# which defines the set of commands and interfaces each user is permitted
+# access to.
+DAEMON_CONF=/var/lib/rgpiod
+
+# The "working directory" of the daemon. This defaults to the configuration
+# directory, and primarily matters for the various file-access commands that
+# the daemon implements (see rgpiod(1) for more information)
+DAEMON_WORK=/var/lib/rgpiod

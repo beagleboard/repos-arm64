@@ -1,0 +1,89 @@
+#!/usr/bin/python3
+
+"""
+A simple script for downloading the latest lg archive, extracting the version
+from it, and calling mk-origtargz to convert it into an archive acceptable
+to the debian tooling. This scripts exists as the lg archive structure isn't
+easy to integrate with uscan. Generally it should be sufficient to run this
+to check for a new version (exits with 0 if there is, 1 otherwise like uscan).
+If there is a new version, an appropriate uupdate command line is output.
+"""
+
+import io
+import re
+import sys
+from subprocess import run
+from urllib.request import urlopen
+from pathlib import Path
+from zipfile import ZipFile
+from argparse import ArgumentParser
+
+
+def main(args=None):
+    if args is None:
+        args = sys.argv[1:]
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument(
+        'url', nargs='?', default='http://abyz.me.uk/lg/lg.zip',
+        help="The URL of the lg release archive (default: %(default)s)")
+    config = parser.parse_args(args)
+
+    print(f'Downloading {config.url}', file=sys.stderr)
+    stream = get_archive(config.url)
+    version = get_version(stream)
+    print(f'Found version {version}', file=sys.stderr)
+    output = write_output(stream, version)
+    print('Calling mk-origtargz', file=sys.stderr)
+    output = convert_output(output, version)
+    print('Now run one of:', file=sys.stderr)
+    print(f'uupdate {output} {version}', file=sys.stderr)
+    print(f'gbp import-orig {output} --upstream-version {version}', file=sys.stderr)
+
+
+def get_archive(url):
+    with urlopen(url) as urlfile:
+        return io.BytesIO(urlfile.read())
+
+
+def get_version(stream):
+    regex = re.compile(r'^lg/v(?P<version>\d+\.\d+\.\d+\.\d+)$')
+    with ZipFile(stream) as arc:
+        for info in arc.infolist():
+            if info.file_size == 0:
+                match = regex.match(info.filename)
+                if match:
+                    return match.group('version')
+        raise ValueError('cannot find version in downloaded archive')
+
+
+def write_output(stream, version):
+    output = Path('..') / f'lg-gpio_{version}.zip'
+    if output.exists():
+        if output.read_bytes() == stream.getvalue():
+            raise ValueError(f'{output} already exists with identical content')
+        else:
+            raise ValueError(f'{output} already exists, but contents differ')
+    print(f'Writing {output}', file=sys.stderr)
+    output.write_bytes(stream.getvalue())
+    return output
+
+
+def convert_output(output, version):
+    cmdline = [
+        'mk-origtargz',
+        '--package', 'lg-gpio',
+        '--version', version,
+        str(output.name)
+    ]
+    run(cmdline, cwd=str(output.parent), check=True)
+    for tarball in output.parent.glob(f'lg-gpio_{version}.orig.tar.*'):
+        return tarball
+    raise ValueError(f'cannot find repacked lg-gpio_{version}.orig.tar.*')
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as exc:
+        print(str(exc), file=sys.stderr)
+        sys.exit(1)

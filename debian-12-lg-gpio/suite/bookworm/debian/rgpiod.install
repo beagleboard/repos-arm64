@@ -1,0 +1,3 @@
+usr/bin/rgpiod
+debian/rgpiod-conf/.lg_secret /var/lib/rgpiod
+debian/rgpiod-conf/permits /var/lib/rgpiod

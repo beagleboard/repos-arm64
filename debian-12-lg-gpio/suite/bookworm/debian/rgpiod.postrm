@@ -1,0 +1,36 @@
+#!/bin/sh
+# postrm script for rgpiod
+#
+# see: dh_installdeb(1)
+
+set -e
+
+
+HOME=/var/lib/rgpiod
+CONF=/etc/rgpiod
+
+case "$1" in
+    purge)
+        rm -f $CONF/users $CONF/permits
+        [ -d $CONF ] && rmdir --ignore-fail-on-non-empty $CONF
+        rm -rf $HOME/
+        if getent passwd rgpiod > /dev/null; then
+            deluser --system rgpiod
+            if getent group rgpiod > /dev/null; then
+                delgroup --system rgpiod
+            fi
+        fi
+        ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

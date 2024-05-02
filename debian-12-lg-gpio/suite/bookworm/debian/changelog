@@ -1,0 +1,48 @@
+lg-gpio (0.2.0.0-0ubuntu3bbbio0~bookworm+20240502) bookworm; urgency=low
+
+  * Rebuild lg-gpio_0.2.0.0-0ubuntu3 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 02 May 2024 11:21:06 -0500
+
+lg-gpio (0.2.0.0-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild with Python 3.12 as default
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Fri, 19 Jan 2024 19:51:05 +0000
+
+lg-gpio (0.2.0.0-0ubuntu2) lunar; urgency=medium
+
+  * No-change rebuild with Python 3.11 as default
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Sun, 25 Dec 2022 20:05:41 +0000
+
+lg-gpio (0.2.0.0-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (LP: #1992107)
+  * Removed patches merged upstream:
+    - d/p/add-bias.patch
+    - d/p/fix-groff-warnings.patch
+  * d/control: Fixed architecture for python3-rgpio package
+  * d/copyright: Simplified licensing (everything in public-domain)
+  * d/lib*.symbols: Added symbols definitions for liblgpio1 and librgpio1
+  * d/rgpiod.postrm: Fixed error on removal of rgpiod group
+
+ -- Dave Jones <dave.jones@canonical.com>  Thu, 21 Jul 2022 13:16:04 +0100
+
+lg-gpio (0.1.6.1-0ubuntu3) jammy; urgency=medium
+
+  * No-change rebuild with Python 3.10 as default version
+
+ -- Graham Inggs <ginggs@ubuntu.com>  Thu, 13 Jan 2022 19:31:42 +0000
+
+lg-gpio (0.1.6.1-0ubuntu2) hirsute; urgency=medium
+
+  * d/copyright: Corrected license for debian packaging files
+
+ -- Dave Jones <dave.jones@canonical.com>  Wed, 24 Mar 2021 11:52:05 +0000
+
+lg-gpio (0.1.6.1-0ubuntu1) hirsute; urgency=medium
+
+  * Initial release (LP: #1916901)
+
+ -- Dave Jones <dave.jones@canonical.com>  Thu, 04 Feb 2021 11:00:21 +0000

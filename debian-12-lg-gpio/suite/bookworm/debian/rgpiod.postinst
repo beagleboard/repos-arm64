@@ -1,0 +1,37 @@
+#!/bin/sh
+# postinst script for rgpiod
+#
+# see: dh_installdeb(1)
+
+set -e
+
+
+HOME=/var/lib/rgpiod
+CONF=/etc/rgpiod
+
+case "$1" in
+    configure)
+        if ! getent passwd rgpiod > /dev/null; then
+            echo "Creating rgpiod system user & group..."
+            adduser --quiet --system --home $HOME \
+                --disabled-password --group \
+                --gecos "rgpiod system user" \
+                rgpiod > /dev/null
+        fi
+        chmod 600 $HOME/.lg_secret
+        chmod 600 $HOME/permits
+        chown rgpiod:rgpiod $CONF $HOME $HOME/permits $HOME/.lg_secret
+        ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+        ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,2 @@
+/var/lib/rgpiod/.lg_secret /etc/rgpiod/users
+/var/lib/rgpiod/permits /etc/rgpiod/permits
