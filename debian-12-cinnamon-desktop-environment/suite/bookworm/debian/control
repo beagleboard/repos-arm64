@@ -1,0 +1,113 @@
+Source: cinnamon-desktop-environment
+Section: metapackages
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Christoph Martin <martin@uni-mainz.de>
+Build-Depends: debhelper-compat (= 13)
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Homepage: http://cinnamon.linuxmint.com/
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/cinnamon-desktop-environment
+Vcs-Git: https://salsa.debian.org/cinnamon-team/cinnamon-desktop-environment.git
+
+Package: cinnamon-core
+Architecture: all
+Depends:
+ cinnamon (>= 5.8),
+ cinnamon-control-center (>= 5.8),
+ cinnamon-screensaver (>= 5.8),
+ cinnamon-session (>= 5.8),
+ cinnamon-settings-daemon (>= 5.8),
+ desktop-base,
+ gnome-terminal | x-terminal-emulator,
+ lightdm | gdm3 | x-display-manager,
+ muffin (>= 5.8),
+ nemo (>= 5.8),
+ xserver-xorg,
+ ${misc:Depends},
+Recommends:
+ alsa-utils,
+ anacron,
+ cinnamon-l10n (>= 5.8),
+ gnome-themes-extra,
+ gstreamer1.0-plugins-good,
+ gvfs-fuse,
+ sudo,
+Suggests: cinnamon-desktop-environment
+Description: Cinnamon desktop environment - essential components
+ These are the core components of Cinnamon, a desktop environment which
+ provides advanced innovative features and a traditional user experience.
+ .
+ This metapackage depends on basic components needed to use the desktop
+ environment. Install this if you want a minimal cinnamon desktop.
+
+Package: cinnamon-desktop-environment
+Architecture: any
+Depends:
+ cinnamon-core (>= ${source:Version}),
+ eog,
+ evince | pdf-viewer,
+ fonts-liberation,
+ gedit | gnome-text-editor,
+ gnome-calculator | galculator,
+ gnome-screenshot,
+ xdg-user-dirs-gtk,
+ ${misc:Depends},
+Recommends:
+ blueman,
+ brasero | k3b,
+ cheese,
+ cups,
+ deja-dup | backintime-qt,
+ firefox-esr | firefox | chromium | www-browser,
+ fonts-noto,
+ gdebi,
+ gnome-characters,
+ gnome-disk-utility,
+ gnome-font-viewer,
+ gnome-games,
+ gnome-logs,
+ gnome-software,
+ gnome-sound-recorder,
+ gnome-system-monitor,
+ gnote,
+ gstreamer1.0-libav,
+ gstreamer1.0-plugins-ugly,
+ hexchat,
+ libreoffice-calc,
+ libreoffice-gnome,
+ libreoffice-impress,
+ libreoffice-writer,
+ mate-themes,
+ orca,
+ pidgin,
+ remmina | vinagre,
+ rhythmbox,
+ rhythmbox-plugin-cdrecorder,
+ rhythmbox-plugins,
+ seahorse,
+ shotwell | gnome-photos,
+ simple-scan,
+ sound-juicer,
+ sound-theme-freedesktop,
+ synaptic,
+ system-config-printer,
+ thunderbird | evolution | geary | mail-reader,
+ totem | vlc | mpv | mplayer-gui | smplayer,
+ transmission-gtk | deluge,
+ vino | x2goserver,
+ yelp,
+ zenity,
+Suggests: gedit-plugins, gimp, inkscape, low-memory-monitor [linux-any]
+Description: Cinnamon desktop environment - full desktop with extra components
+ These are the extended components of Cinnamon, a desktop environment which
+ provides advanced innovative features and a traditional user experience.
+ .
+ This metapackage depends on all programs needed to have a fully fledged
+ desktop environment. Install this if you want a complete cinnamon desktop,
+ including graphical apps that allow users to perform almost all everyday tasks.

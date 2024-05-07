@@ -1,0 +1,356 @@
+cinnamon-desktop-environment (5.8.0bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon-desktop-environment_5.8.0 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 13:58:28 -0500
+
+cinnamon-desktop-environment (5.8.0) unstable; urgency=medium
+
+  * Bump to version 5.8
+  * cinnamon-desktop-environment:
+    - move fonts-noto from deps to recommends
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 19 Nov 2023 19:17:17 +0100
+
+cinnamon-desktop-environment (5.6.0) unstable; urgency=medium
+
+  * Bump to version 5.6
+  * Update standards version to 4.6.2, no changes needed
+  * cinnamon-desktop-environment:
+    - add low-memory-monitor to suggests
+    - move inkscape from recommends to suggests
+    - switch architecture from all to any
+    - move gimp from recommends to suggests
+    - move gedit-plugins from recommends to suggests
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 11 Feb 2023 21:00:11 +0100
+
+cinnamon-desktop-environment (5.4.1) unstable; urgency=medium
+
+  * cinnamon-desktop-environment: remove empathy from alternative
+    recommends (Closes: #1016661)
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Thu, 04 Aug 2022 22:26:45 +0200
+
+cinnamon-desktop-environment (5.4.0) experimental; urgency=medium
+
+  * cinnamon-desktop-environment: move browsers, mail clients, media
+    players and instant messaging clients from depends to recommends
+  * Update d/copyright
+  * Standard version to 4.6.1, no changes needed
+  * Bump to version 5.4
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 23:04:57 +0200
+
+cinnamon-desktop-environment (5.2.2) unstable; urgency=medium
+
+  * Changes to cinnamon-desktop-environment depends:
+    - add mpv, mplayer-gui and smplayer as totem and vlc alternative
+    - replace gnome-www-browser alternative with www-browser
+    - add mail-reader as thunderbird and others alternative
+    - add gnome-text-editor as gedit alternative
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 16 Apr 2022 11:12:01 +0200
+
+cinnamon-desktop-environment (5.2.1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Changes to cinnamon-desktop-environment recommends:
+    - add x2goserver as vino alternative
+    - add backintime-qt as deja-dup alternative
+    - add gnome-logs and gnome-characters
+
+  [ Christoph Martin ]
+  * add myself to uploaders
+  * prepare unstable upload
+
+ -- Christoph Martin <martin@uni-mainz.de>  Wed, 26 Jan 2022 11:53:01 +0100
+
+cinnamon-desktop-environment (5.2.0) experimental; urgency=medium
+
+  * Bump to version 5.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 08 Dec 2021 19:13:00 +0100
+
+cinnamon-desktop-environment (5.0.1) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:16:40 +0900
+
+cinnamon-desktop-environment (5.0.0) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump to version 5.0
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:15:48 +0900
+
+cinnamon-desktop-environment (4.8.3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Cinnamon-core: depend on xserver-xorg instead xorg (Closes: #979250)
+  * Move terminal dep. from cinnamon-desktop-environment to cinnamon-core
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 08 Feb 2021 12:38:17 +0900
+
+cinnamon-desktop-environment (4.8.2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Changes to cinnamon-desktop-environment recommends:
+    - added gnome-software, seahorse, deja-dup
+    - remmina instead of vinagre (that remain as alternative)
+  * Remove old transitions meta packages or removed packages:
+    gnome-themes-standard, xchat, gnome-mplayer, gnome-orca
+  * Changes to cinnamon-core: move display manager from recommends
+    to deps and added xorg to make cinnamon working also with
+    minimal installation without recommends
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 04 Jan 2021 21:46:23 +0900
+
+cinnamon-desktop-environment (4.8.1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add gnome-terminal to cinnamon-core recommends.
+
+  [ Norbert Preining ]
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:58 +0900
+
+cinnamon-desktop-environment (4.8.0) experimental; urgency=medium
+
+  * Bump to version 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:29:07 +0900
+
+cinnamon-desktop-environment (4.6.1) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:51:45 +0900
+
+cinnamon-desktop-environment (4.6.0) experimental; urgency=medium
+
+  * Bump dependencies to 4.6
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 30 May 2020 22:52:39 +0900
+
+cinnamon-desktop-environment (4.5+really4.4.1) unstable; urgency=medium
+
+  * Fix versioning
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 10 Feb 2020 10:53:36 +0900
+
+cinnamon-desktop-environment (4.5) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:35:58 +0900
+
+cinnamon-desktop-environment (4.4) experimental; urgency=medium
+
+  * Bump dependencies to 4.4
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:44:27 +0900
+
+cinnamon-desktop-environment (4.3+really4.2.1) unstable; urgency=medium
+
+  * Upload a version that uses 4.2 via +really
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Oct 2019 01:15:35 +0900
+
+cinnamon-desktop-environment (4.3) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:27:28 +0900
+
+cinnamon-desktop-environment (4.2) experimental; urgency=medium
+
+  * Bump dependencies to cinnamon 4.2.
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:51:30 +0900
+
+cinnamon-desktop-environment (4.0) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * Bump dependencies to cinnamon 4.0.
+  * Drop iceweasel from alternatives (Closes: #910996)
+
+  [ Maximiliano Curia ]
+  * Add a debian/salsa-ci.yml file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:47 -0300
+
+cinnamon-desktop-environment (3.8) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump dependencies to cinnamon 3.8.
+
+  [ Maximiliano Curia ]
+  * Update debian/copyright
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:31 +0200
+
+cinnamon-desktop-environment (3.6) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Drop gnome-user-share from recommends. (Closes: #874190)
+  * Add k3b as brasero alternative and gnome-photos as shotwell alternative.
+  * Remove hamster-applet as not update for long time, orphan and depends
+    on deprecated packages. (Closes: #881613)
+  * Drop alternate depends on evince-gtk.
+    Thanks to Jeremy Bicha for the report (Closes: #884359)
+  * Add gnome-disk-utility, gnome-sound-recorder and system-config-printer
+    in recommends of cinnamon-desktop-environment.
+  * Bump dependencies to cinnamon 3.6.
+  * Add gnome-themes-extra that replace gnome-themes-standard
+    Thanks to Alf Gaida (Closes: #892035)
+  * Add orca that replace gnome-orca
+    Jeremy Bicha for the report (Closes: #885099)
+  * Drop alternate depends on evince-gtk. (Closes: #884359)
+  * add gnome-themes-standard as alternative and update changelog
+  * Add orca that replace gnome-orca
+
+  [ Maximiliano Curia ]
+  * Drop gvfs-bin dependency.
+    Thanks to Paul Wise for the report (Closes: 877739)
+  * Bump Standards-Version to 4.1.1.
+  * Use the salsa canonical urls
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+  [ Alf Gaida ]
+  * Add x-terminal-emulator similar as in cinnamon recommends
+  * Update control
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:06:53 +0200
+
+cinnamon-desktop-environment (3.4) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump dependencies to cinnamon 3.4.
+  * Removed deprecated gnome-keyring from recommends.
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:39:29 +0200
+
+cinnamon-desktop-environment (3.2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Bump dependencies to cinnamon 3.2
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:02:26 -0300
+
+cinnamon-desktop-environment (3.0.1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Change alternative depends to prefer firefox-esr, while keeping iceweasel
+    for stable backports (Closes: #837367) Thanks to Jeremy Bicha for
+    reporting.
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 17 Oct 2016 20:29:19 +0200
+
+cinnamon-desktop-environment (3) unstable; urgency=medium
+
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Bump dependencies to cinnamon 3
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 May 2016 12:54:28 +0200
+
+cinnamon-desktop-environment (2.8.0) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Recommend blueman for bluetooth integration. (Closes: #800346)
+  * Recommend hexchat over xchat.
+  * Add gvfs-bin core dependency. (Closes: #801812)
+  * Recommend gvfs-fuse, fuse is finicky, but gnome-core depends on it,
+    and it allows to gracefully use non gvfs aware applications.
+  * Replace fonts-droid with fonts-noto. (Closes: #804679)
+
+  [ Fabio Fantoni ]
+  * Bump cinnamon versions to 2.8.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:45 +0100
+
+cinnamon-desktop-environment (2.6.2) unstable; urgency=medium
+
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 13 Jul 2015 21:38:48 +0200
+
+cinnamon-desktop-environment (2.6.1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Add firefox and thunderbird as alternatives to iceweasel and icedove,
+    to avoid unnecessary forks between Debian and Ubuntu.
+  * Add more alternatives to the suggested programs, to allow users more choice.
+  * Improve descriptions of cinnamon-core and cinnamon-desktop-environment to
+    make it clear that cinnamon-desktop-environment is a fully-fledged desktop,
+    not just the window manager. (Closes: #771418, #764412)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 18 Jun 2015 12:38:31 +0200
+
+cinnamon-desktop-environment (2.6.0) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Drop nemo-fileroller from dependencies.
+  * Dump cinnamon related softwares version to 2.6.
+  * Drop gnome-media from from dependencies. (Closes: #786949)
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:33 +0200
+
+cinnamon-desktop-environment (2.2.4) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Move the dependency on lightdm to a Recommends of
+    lightdm | gdm3 | x-display-manager
+
+  [ Margarita Manterola ]
+  * Add Recommends sound-theme-freedesktop to cinnamon-desktop-environment.
+    (Closes: #766558)
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 25 Oct 2014 16:25:18 +0200
+
+cinnamon-desktop-environment (2.2.3) unstable; urgency=medium
+
+  * Add optional dependency for evince or evince-gtk.
+  * Add synaptic to Recommends for cinnamon-desktop-environment.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 07 Sep 2014 17:08:05 +0200
+
+cinnamon-desktop-environment (2.2.2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * debian/control: cups as recommended in cinnamon-desktop-environment.
+
+  [ Margarita Manterola ]
+  * debian/control: remove cinnamon-bluetooth as it's not available right now.
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 25 Aug 2014 10:08:00 -0700
+
+cinnamon-desktop-environment (2.2.1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * debian/control: cinnamon-translations->cinnamon-l10n.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 27 Jul 2014 00:05:28 +0200
+
+cinnamon-desktop-environment (2.2) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * Initial Release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:21:03 +0200
