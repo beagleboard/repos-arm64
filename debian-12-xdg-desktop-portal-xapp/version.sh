@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-#https://packages.debian.org/source/trixie/xapp
+#https://packages.debian.org/source/trixie/xdg-desktop-portal-xapp
 
 mirror="http://http.debian.net/debian"
 
