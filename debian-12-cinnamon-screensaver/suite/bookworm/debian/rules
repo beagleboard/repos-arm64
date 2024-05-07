@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -D use-debian-pam=true \
+	    --libexecdir=lib/$(DEB_HOST_MULTIARCH)/cinnamon-screensaver
+
+override_dh_python3:
+	dh_python3 usr/share/cinnamon-screensaver

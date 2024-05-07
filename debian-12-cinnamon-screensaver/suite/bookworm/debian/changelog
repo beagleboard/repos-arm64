@@ -1,0 +1,554 @@
+cinnamon-screensaver (6.0.3-2bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon-screensaver_6.0.3-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 12:53:44 -0500
+
+cinnamon-screensaver (6.0.3-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 31 Mar 2024 19:03:14 +0200
+
+cinnamon-screensaver (6.0.3-1) experimental; urgency=medium
+
+  * New upstream version 6.0.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 16 Feb 2024 14:16:16 +0100
+
+cinnamon-screensaver (6.0.2-1) experimental; urgency=medium
+
+  * New upstream version 6.0.2
+  * d/control:
+    - remove gir1.2-accountsservice-1.0 from deps
+    - remove unused librsvg2-bin build-dep
+  * Update symbols
+  * Bump deps and reverse dep breaks to 6.0
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 15:03:03 +0100
+
+cinnamon-screensaver (5.8.1-3) unstable; urgency=medium
+
+  * d/control:
+    - add missed gir packages dependencies to cinnamon-screensaver
+      including the ones that are virtual for now
+    - remove ${gir:Depends} and add gir1.2-gtk-3.0 to
+      gir1.2-cscreensaver-1.0 to avoid unwanted -dev deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 09 Jan 2024 20:20:07 +0100
+
+cinnamon-screensaver (5.8.1-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:31:52 +0200
+
+cinnamon-screensaver (5.8.1-1) experimental; urgency=medium
+
+  * New upstream version 5.8.1
+  * d/control:
+    - add missing dependency on x11-utils
+    - remove old breaks/replaces older that oldstable
+    - bump reverse dep breaks to 5.8
+    - bump cinnamon-desktop deps to 5.8
+  * Update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 13:20:56 +0200
+
+cinnamon-screensaver (5.6.3-1) unstable; urgency=medium
+
+  * New upstream version 5.6.3
+  * Update standards version to 4.6.2, no changes needed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 08 Jan 2023 17:21:20 +0100
+
+cinnamon-screensaver (5.6.2-1) unstable; urgency=medium
+
+  * New upstream version 5.6.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 26 Dec 2022 15:00:51 +0100
+
+cinnamon-screensaver (5.6.1-1) unstable; urgency=medium
+
+  [ Joshua Peisach ]
+  * New upstream version 5.6.1
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster
+
+  [ Fabio Fantoni ]
+  * Update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 25 Nov 2022 18:31:23 +0100
+
+cinnamon-screensaver (5.4.4-1) unstable; urgency=medium
+
+  * New upstream version 5.4.4
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 21 Aug 2022 21:17:09 +0200
+
+cinnamon-screensaver (5.4.2-1) unstable; urgency=medium
+
+  * New upstream version 5.4.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 07 Aug 2022 20:47:27 +0200
+
+cinnamon-screensaver (5.4.1-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Jul 2022 11:43:24 +0200
+
+cinnamon-screensaver (5.4.1-2) experimental; urgency=medium
+
+  * To solve policy issue with libcscreensaver0 package add
+    gir1.2-cscreensaver-1.0 package for move gir files out
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 27 Jul 2022 13:29:51 +0200
+
+cinnamon-screensaver (5.4.1-1) experimental; urgency=medium
+
+  * New upstream version 5.4.1
+  * d/control: add libxdo-dev to build-deps
+  * Update d/copyright
+  * Update symbols
+  * Add lintian override about doc/dbus-interface.html
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 22 Jul 2022 21:46:19 +0200
+
+cinnamon-screensaver (5.4.0-1) unstable; urgency=medium
+
+  * New upstream version 5.4.0
+  * Simplify d/watch
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 01 Jul 2022 14:15:55 +0200
+
+cinnamon-screensaver (5.2.1-1) unstable; urgency=medium
+
+  * New upstream version 5.2.1
+  * Update d/copyright
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 13 Feb 2022 13:11:41 +0100
+
+cinnamon-screensaver (5.2.0-2) unstable; urgency=medium
+
+  * add myself to uploaders
+  * prepare upload to unstable
+
+ -- Christoph Martin <martin@uni-mainz.de>  Wed, 26 Jan 2022 09:02:03 +0100
+
+cinnamon-screensaver (5.2.0-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * New upstream version 5.2.0
+  * Add missing libcscreensaver0 symbols file
+  * Add dh-sequence-gir to build deps
+  * Bump cinnamon deps and breaks to 5.2x
+
+  [ Fabio Fantoni ]
+  * use dh-sequence-python3
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Fri, 26 Nov 2021 11:46:55 -0500
+
+cinnamon-screensaver (5.0.7-1) unstable; urgency=medium
+
+  * New upstream version 5.0.7 (Closes: #998410)
+  * Copyright: don't specially admire COPYING.LIB
+  * Bump Standards-Version to 4.6.0.1, no changes required
+  * Bump watch version to 4
+  * Drop --as-needed linker flag
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Sat, 16 Oct 2021 10:26:19 -0400
+
+cinnamon-screensaver (5.0.6-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:20:03 +0900
+
+cinnamon-screensaver (5.0.6-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.6
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:18:44 +0900
+
+cinnamon-screensaver (4.8.1-3) unstable; urgency=medium
+
+  * readded /etc/pam.d/cinnamon-screensaver
+    Thanks to Christoph Anton Mitterer. (Closes: #990133)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 21 Jun 2021 18:06:36 +0200
+
+cinnamon-screensaver (4.8.1-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:58 +0900
+
+cinnamon-screensaver (4.8.1-1) experimental; urgency=medium
+
+  * Use upstream's Debian-version pam file.
+  * New upstream version 4.8.1 (no changes it seems)
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 19:43:45 +0900
+
+cinnamon-screensaver (4.8.0-1) experimental; urgency=medium
+
+  * New upstream version 4.8.0
+  * remove autoconf related build-deps
+  * Bump inter-cinnamon deps to 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:36:02 +0900
+
+cinnamon-screensaver (4.6.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:55:16 +0900
+
+cinnamon-screensaver (4.6.0-1) experimental; urgency=medium
+
+  * New upstream version 4.6.0
+  * Update patches
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 30 May 2020 23:07:23 +0900
+
+cinnamon-screensaver (4.4.1-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump deps and reverse-deps to avoid partial upgrade on testing migration
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 10 Feb 2020 22:45:42 +0900
+
+cinnamon-screensaver (4.4.1-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:39:30 +0900
+
+cinnamon-screensaver (4.4.1-1) experimental; urgency=medium
+
+  * New upstream version 4.4.1
+  * update patch
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:48:13 +0900
+
+cinnamon-screensaver (4.2.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:28:01 +0900
+
+cinnamon-screensaver (4.2.0-1) experimental; urgency=medium
+
+  * New upstream release (4.2.0)
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:55:00 +0900
+
+cinnamon-screensaver (4.0.3-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (4.0.{2,3})
+    - drop dependencies on xscreensaver packages (Closes: #819763)
+
+  [ Maximiliano Curia ]
+  * Add a basic gbp.conf
+  * Add a debian/salsa-ci.yml file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:50 -0300
+
+cinnamon-screensaver (3.8.2-1) unstable; urgency=medium
+
+  * New upstream release (3.8.2).
+  * Ignore not installed pyc files
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:36 +0200
+
+cinnamon-screensaver (3.8.1-1) experimental; urgency=medium
+
+  * New upstream release (3.8.1).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 19:53:27 +0200
+
+cinnamon-screensaver (3.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0).
+  * update debian/copyright
+  * don't install generated /etc/pam.d/cinnamon-screensaver
+  * libpam-gnome-keyring as recommends instead dep
+  * debian/rules: add dh_missing --list-missing until will be default
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 4.1.4.
+  * Enable hardening bindnow
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:11 +0200
+
+cinnamon-screensaver (3.6.1-2) unstable; urgency=medium
+
+  * New revision
+  * Drop dh-autoreconf (no longer needed with dh >= 10)
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+  * Drop soon to be deprecated dh_install's --list-missing option
+  * Drop .docs file.
+    The documentation is no longer being generated, and installdocs fails
+    when it's not installing anything (this was be ignored in dh <= 10).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 16:31:26 +0200
+
+cinnamon-screensaver (3.6.1-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.6.1).
+  * Bump group breaks (3.6).
+  * Bump cinnamon-desktop dependency for new WallClock api.
+
+  [ Maximiliano Curia ]
+  * Use the salsa canonical urls
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:07:02 +0200
+
+cinnamon-screensaver (3.4.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.4.2).
+  * Install cinnamon-screensaver-dialog in cinnamon-screensaver (Closes: 871576)
+  * Remove old webkit2-3.0 support
+    Thanks: Jeremy Bicha for the report (Closes: 864938)
+  * Add missed python3-xapp dependency to cinnamon-screensaver.
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:25 +0200
+
+cinnamon-screensaver (3.4.1-1) experimental; urgency=medium
+
+  * New upstream release (3.4.1).
+  * Refresh patches
+  * Drop upstream patches
+  * Bump group breaks (3.4)
+  * Release to experimental
+  * Fix Python3 related depends/build-depends to match Python policy
+    (Closes: 866412)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 18:01:21 +0200
+
+cinnamon-screensaver (3.2.13-3) unstable; urgency=medium
+
+  * Import upstream's commit f579336 to allow users to select text in the
+    password text entry. Mostly used for selecting all text and re-entering the
+    password.
+  * Import upstream's commits 29bd6e6 and f3c3d0f to ensure that the screensaver
+    is started and the screen locked before the machine goes into
+    suspend/hibernate.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 02 Apr 2017 13:24:49 +0200
+
+cinnamon-screensaver (3.2.13-2) unstable; urgency=medium
+
+  * Add debian/cinnamon-screensaver-dialog, a helper script to ease the
+    transition from a pre 3.2 screensaver to the 3.2 screensaver. Thanks to
+    Michael Schaller for providing the script. (Closes: 853064)
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 12 Mar 2017 12:24:52 +0100
+
+cinnamon-screensaver (3.2.13-1) unstable; urgency=medium
+
+  * New upstream release (3.2.13).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 03 Jan 2017 20:56:14 +0100
+
+cinnamon-screensaver (3.2.9-4) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:06:32 -0300
+
+cinnamon-screensaver (3.2.9-3) experimental; urgency=medium
+
+  * Add runtime dependency: python3-setproctitle
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 19 Dec 2016 14:26:02 +0100
+
+cinnamon-screensaver (3.2.9-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull automaken
+    instead, causing build failures.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 17 Dec 2016 16:46:37 -0300
+
+cinnamon-screensaver (3.2.9-1) experimental; urgency=medium
+
+  * New upstream release (3.2.9).
+  * Refresh patches
+  * Add new patch: move_pamhelper_to_libexec.patch
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 17 Dec 2016 00:26:56 +0100
+
+cinnamon-screensaver (3.2.6-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Drop gnome-icon-theme dependency
+  * Drop gnome-common build dependency
+  * Drop dbus dependency, not used anymore.
+    Thanks to Simon McVittie for the report (Closes: 835842)
+
+  [ Margarita Manterola ]
+  * New upstream release.
+  * Remove obsolete patches applied upstream.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 09 Dec 2016 00:03:38 +0100
+
+cinnamon-screensaver (3.0.1-1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Add new patch: Migrate-away-from-gnome-common-deprecated-vars-and-
+    macros.patch
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Aug 2016 18:30:26 +0200
+
+cinnamon-screensaver (3.0.0-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Drop upstream applied patch
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 15 May 2016 10:07:52 +0200
+
+cinnamon-screensaver (2.8.0-1) unstable; urgency=medium
+
+  * New upstream release (2.8.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:37 +0100
+
+cinnamon-screensaver (2.6.4-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Transition to libsystemd, thanks to Michael Biebl. (Closes: #779767)
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 13 Jul 2015 21:38:43 +0200
+
+cinnamon-screensaver (2.6.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Build against libwebkit2gtk-4.0-dev. (Closes: #790705, #790713)
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 01 Jul 2015 09:22:51 +0200
+
+cinnamon-screensaver (2.6.3-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release.
+
+  [ Fabio Fantoni ]
+  * Update dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:27 +0200
+
+cinnamon-screensaver (2.4.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 21 Apr 2015 23:18:12 +0200
+
+cinnamon-screensaver (2.4.1-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed 4 patches applied upstream.
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 01 Mar 2015 21:15:24 +0100
+
+cinnamon-screensaver (2.2.4-6) unstable; urgency=medium
+
+  * Split clang_FTBFS into two different patches:
+    +  debian/patches/not_return_from_void
+    +  debian/patches/ignore_clang_format_string_errors
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 25 Oct 2014 19:55:48 +0200
+
+cinnamon-screensaver (2.2.4-5) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Use systemd only with linux to solve FTBFS on kfreebsd. (Closes: #756907)
+    Thanks to Philipp Kern.
+
+  [ Maximiliano Curia ]
+  * New patch: clang_FTBFS
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 14 Aug 2014 03:45:40 +0200
+
+cinnamon-screensaver (2.2.4-4) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * debian/control: removed cinnamon from dependecies and added
+    cinnamon-common as recommends. (Closes: #755190)
+  * New patch: debian/patches/fix-user-switching, fixes user switching
+    with gdm3.
+  * Add systemd support, since ConsoleKit is deprecated.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 26 Jul 2014 17:50:43 +0200
+
+cinnamon-screensaver (2.2.4-3) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:29:26 +0200
+
+cinnamon-screensaver (2.2.4-2) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * Fix code to expect translations in the standard path.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:20:59 +0200
+
+cinnamon-screensaver (2.2.4-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 23 Jun 2014 14:20:22 +0200
+
+cinnamon-screensaver (2.2.3-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Initial release (Closes: #745913).
+  * Update VCS fields.
+  * New upstream release 2.2.3.
+  * Update copyright information.
+  * Set libexecdir.
+  * Update copyright information.
+
+  [ Margarita Manterola ]
+  * New upstream release 2.2.0.
+  * Add myself to uploaders.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 27 May 2014 21:29:32 +0200
