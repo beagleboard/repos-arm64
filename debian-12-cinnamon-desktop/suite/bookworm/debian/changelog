@@ -1,0 +1,545 @@
+cinnamon-desktop (6.0.0-2bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon-desktop_6.0.0-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 12:25:22 -0500
+
+cinnamon-desktop (6.0.0-2) unstable; urgency=medium
+
+  * Release to unstable
+  * fix gsettings-override file name, was broken from 5.8.0-2.1~exp1
+  * d/control: add dpkg-dev >= 1.22.5 to build-deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 30 Mar 2024 13:14:48 +0100
+
+cinnamon-desktop (6.0.0-1) experimental; urgency=medium
+
+  * New upstream version 6.0.0
+  * d/control: add libsystemd-dev to build-deps
+  * Bump reverse dep breaks to 6.0
+  * Update symbols
+  * Add missed breaks of reverse-deps to shared libraries packages
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 13:03:41 +0100
+
+cinnamon-desktop (5.8.0-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.  Closes: #1062060
+
+ -- Steve Langasek <vorlon@debian.org>  Thu, 29 Feb 2024 06:22:50 +0000
+
+cinnamon-desktop (5.8.0-2.1~exp1) experimental; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.
+
+ -- Steve Langasek <vorlon@debian.org>  Wed, 31 Jan 2024 08:53:19 +0000
+
+cinnamon-desktop (5.8.0-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:14:18 +0200
+
+cinnamon-desktop (5.8.0-1) experimental; urgency=medium
+
+  * New upstream version 5.8.0
+  * Bump reverse dep breaks to 5.8
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 12:12:17 +0200
+
+cinnamon-desktop (5.6.2-1) unstable; urgency=medium
+
+  * New upstream bugfix version 5.6.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 08 Apr 2023 18:51:13 +0200
+
+cinnamon-desktop (5.6.1-1) unstable; urgency=medium
+
+  * New upstream version 5.6.1
+  * Update standards version to 4.6.2, no changes needed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 08 Jan 2023 20:44:00 +0100
+
+cinnamon-desktop (5.6.0-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 25 Dec 2022 18:38:17 +0100
+
+cinnamon-desktop (5.6.0-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * New upstream version 5.6.0
+  * Bump reverse dep breaks to 5.6
+
+  [ Fabio Fantoni ]
+  * d/control: replace libgdk-pixbuf2.0-dev with libgdk-pixbuf-2.0-dev
+    in build-deps. (Closes: #1019312)
+
+  [ Debian Janitor ]
+  * d/control: gir1.2-cinnamondesktop-3.0 and gir1.2-cvc-1.0 marked
+    Multi-Arch: same
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 20 Dec 2022 19:25:41 +0100
+
+cinnamon-desktop (5.4.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 11:20:50 +0200
+
+cinnamon-desktop (5.4.2-1) experimental; urgency=medium
+
+  * New upstream version 5.4.2
+  * Add 2 lintian override related to gir1.2-cinnamondesktop-3.0
+  * Update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 20 Jul 2022 21:33:13 +0200
+
+cinnamon-desktop (5.4.1-1) experimental; urgency=medium
+
+  * New upstream version 5.4.1
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 17 Jul 2022 21:27:34 +0200
+
+cinnamon-desktop (5.4.0-1) experimental; urgency=medium
+
+  * New upstream version 5.4.0
+  * Simplify d/watch
+  * d/copyright: update and add missed Upstream-Contact field
+  * d/control: update build-deps
+  * Refresh d/patches
+  * Update d/libcvc0.symbols
+  * Bump breaks of reverse deps to 5.4
+  * Specify that rules don't require root
+  * Bumped Standards-Version to 4.6.1
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:27:13 +0200
+
+cinnamon-desktop (5.2.1-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.2.1
+
+  [ Christoph Martin ]
+  * Add myself to uploaders
+  * prepare unstable release
+
+ -- Christoph Martin <martin@uni-mainz.de>  Tue, 25 Jan 2022 13:27:55 +0100
+
+cinnamon-desktop (5.2.0-1) experimental; urgency=medium
+
+  * New upstream version 5.2.0
+  * Fix/update patches
+
+  * Remove useless --as-needed linker flag, set hardening to all
+  * Add myself to Uploaders
+  * Add missing Build-Depends-Package field in symbol files
+  * Bump deps and breaks, add dh-sequence-gir to build deps
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Fri, 03 Dec 2021 17:35:28 -0500
+
+cinnamon-desktop (5.0.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:17:34 +0900
+
+cinnamon-desktop (5.0.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.0
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:16:24 +0900
+
+cinnamon-desktop (4.8.1-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:58 +0900
+
+cinnamon-desktop (4.8.1-1) experimental; urgency=medium
+
+  * New upstream version 4.8.1
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 19:41:15 +0900
+
+cinnamon-desktop (4.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump debhelper compat level to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * add missed symbols
+
+  [ Norbert Preining ]
+  * New upstream version 4.8.0
+  * Bump debhelper compat level to 13.
+  * Bump breaks to << 4.8 to ensure locked update.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:31:43 +0900
+
+cinnamon-desktop (4.6.3-1) unstable; urgency=medium
+
+  * New upstream version 4.6.3
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 15 Jul 2020 13:44:36 +0900
+
+cinnamon-desktop (4.6.2-1) unstable; urgency=medium
+
+  * New upstream version 4.6.2
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:52:35 +0900
+
+cinnamon-desktop (4.6.1-1) experimental; urgency=medium
+
+  * New upstream version 4.6.1
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 11 Jun 2020 14:10:44 +0900
+
+cinnamon-desktop (4.4.1-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump reverse-deps to avoid partial upgrade on testing migration
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 10 Feb 2020 22:46:35 +0900
+
+cinnamon-desktop (4.4.1-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:37:24 +0900
+
+cinnamon-desktop (4.4.1-1) experimental; urgency=medium
+
+  * New upstream version 4.4.1
+  * Remove gnome-doc-utils, yelp-tools is used (Closes: #945137)
+  * Update symbols file
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:45:31 +0900
+
+cinnamon-desktop (4.2.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Replace evince.desktop with org.gnome.Evince.desktop (Closes: #940677)
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:27:37 +0900
+
+cinnamon-desktop (4.2.0-1) experimental; urgency=medium
+
+  * New upstream release (4.2.0)
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:52:29 +0900
+
+cinnamon-desktop (4.0.1-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (4.0.1)
+
+  [ Maximiliano Curia ]
+  * Add a basic salsa-ci.yml config
+  * Bump Standards Version to 4.4.0
+  * Add an extra repository
+  * Build with extra repository
+  * Copy the trusted.gpg.d instead of just one file
+  * Test check_rc_bugs.py with the junit output
+  * I do need to fetch the git repo to test this
+  * Use salsa-ci/pipeline
+  * Add a basic gbp.conf
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:47 -0300
+
+cinnamon-desktop (3.8.1-2) unstable; urgency=medium
+
+  * New revision
+  * Drop dbgsym-migration rule\
+  * Enable hardening bindnow
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:30 +0200
+
+cinnamon-desktop (3.8.1-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.1).
+
+  [ Maximiliano Curia ]
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 19:45:48 +0200
+
+cinnamon-desktop (3.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0).
+  * Bump group breaks (3.8).
+  * Update debian/copyright.
+  * Update symbols.
+  * debian/rules: remove deprecated dh_install
+  * debian/rules: add dh_missing --list-missing until will be default
+  * debian/control: increase debhelper to 11.1 for improved not-installed usage
+
+  [ Maximiliano Curia ]
+  * Update mimeapps, thunderbird recovered its name
+  * Drop unused source lintian override
+  * Bump Standards-Version to 4.1.4.
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:06 +0200
+
+cinnamon-desktop (3.6.2-2) unstable; urgency=medium
+
+  * New revision
+  * Drop dh-autoreconf (no longer needed with dh >= 10)
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+  * Drop disabled debian/tests.
+    Thanks to Jeremy Bicha for the report (Closes: 894166)
+  * Python script migrated to python3.
+    Thanks to Mike Neac for the heads up
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 27 Mar 2018 17:48:45 +0200
+
+cinnamon-desktop (3.6.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add missed gir1.2-cvc-1.0 and libpulse-dev to libcinnamon-desktop-dev deps.
+  * New upstream release (3.6.2).
+  * Bump group breaks (3.6).
+  * Update symbols.
+  * remove gsettings override of a key removed upstream
+  * update debian/copyright
+
+  [ Maximiliano Curia ]
+  * Disable acc test, dh-acc now gets confused by the libc's ldscripts
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:06:50 +0200
+
+cinnamon-desktop (3.4.2-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Removed PAM auth part that was moved back to cinnamon-screensaver.
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:19 +0200
+
+cinnamon-desktop (3.4.2-1) experimental; urgency=medium
+
+  * New upstream release (3.4.2).
+  * Add missing libaccountsservice-dev build dep
+  * Update symbols file
+  * Add breaks for older cinnamon-settings-daemon
+  * Bump group breaks (3.4)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:32:51 +0200
+
+cinnamon-desktop (3.2.4-4) unstable; urgency=medium
+
+  * Change the default window manager theme to 'Default' as 'Adwaita' doesn't
+    exist as a theme anymore. (Closes: #852974)
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 29 Jan 2017 16:15:57 +0100
+
+cinnamon-desktop (3.2.4-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 19:46:40 -0300
+
+cinnamon-desktop (3.2.4-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull automaken
+    instead, causing build failures.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 17 Dec 2016 16:32:50 -0300
+
+cinnamon-desktop (3.2.4-1) experimental; urgency=medium
+
+  * New upstream release (3.2.4).
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 17 Dec 2016 00:27:36 +0100
+
+cinnamon-desktop (3.2.1-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+  * Remove obsolete patches, they were applied upstream.
+
+  [ Maximiliano Curia ]
+  * Update symbols files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 09 Dec 2016 00:00:47 +0100
+
+cinnamon-desktop (3.0.2-4) unstable; urgency=medium
+
+  * Add a basic x-cinnamon-mimeapps.list file (Closes: 842602)
+    Thanks to David Rabel for the report
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 10 Nov 2016 13:19:00 +0100
+
+cinnamon-desktop (3.0.2-3) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Call autogen.sh with dh_autoreconf
+  * Add upstream patches remove-gtkdocize.patch and fix-libgsystem-path.patch
+  * Add new patch: Make-AX_-macros-optional.patch
+  * Add autoconf-archive as a build dependency. Thanks to Michael Biebl for
+    the report (Closes: #837857)
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 17 Oct 2016 20:08:10 +0200
+
+cinnamon-desktop (3.0.2-2) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Fix dbgsym-migration rules
+
+  [ Maximiliano Curia ]
+  * Add new patch: migrate_deprecated_gnome-common.patch (Closes: #829910)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 21 Jul 2016 14:23:41 +0200
+
+cinnamon-desktop (3.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+    Drop overlay scrollbars change, applied upstream.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 28 May 2016 15:39:38 +0200
+
+cinnamon-desktop (3.0.1-2) unstable; urgency=medium
+
+  * Apply commit 9076d6217ae8a7a5b427c29f95c183b48ee0d751 from upstream, adding
+    the possibility of disabling overlay scrollbars. (Closes: #824700)
+    Thanks to Christoph Anton Mitterer for reporting.
+
+ -- Margarita Manterola <marga@debian.org>  Wed, 18 May 2016 22:07:07 +0200
+
+cinnamon-desktop (3.0.1-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * New upstream release (3.0.1).
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Migrate dbg package to automatic dbgsym
+  * Add missing build dependency
+  * Drop obsolete XS-Testsuite field
+  * Add the new libcvc and it's components
+  * Update the not-installed file
+  * Update symbols file
+  * Add missing dependency in the -dev package
+  * Add a symbols file for libcvc, and inject the gir dependency in it
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 May 2016 12:48:27 +0200
+
+cinnamon-desktop (2.8.1-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 13 Mar 2016 19:57:36 +0100
+
+cinnamon-desktop (2.8.0-1) unstable; urgency=medium
+
+  * New upstream release (2.8.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:27 +0100
+
+cinnamon-desktop (2.6.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Jul 2015 14:54:17 +0200
+
+cinnamon-desktop (2.6.4-2) unstable; urgency=critical
+
+  * Add Breaks to prevent this package from getting installed with older
+    versions of cinnamon. (Closes: #788199)
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 09 Jun 2015 19:58:38 +0200
+
+cinnamon-desktop (2.6.4-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release
+  * Update build dependencies.
+  * Add linux gsettings override, to use systemd by default in Linux.
+
+  [ Fabio Fantoni ]
+  * Removed a patch applied upstream.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:19 +0200
+
+cinnamon-desktop (2.4.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed 2 patches applied upstream.
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Add basic autopkgtests support.
+  * Remove unneeded build dependencies.
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 27 Feb 2015 19:14:57 +0100
+
+cinnamon-desktop (2.2.3-3) unstable; urgency=medium
+
+  * Remove dh-acc from Build-Depends, as it's only used for autopkgtest,
+    that do not run during build time. Add lintian-overrides so that lintian
+    doesn't complain.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 25 Oct 2014 19:54:59 +0200
+
+cinnamon-desktop (2.2.3-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:28:25 +0200
+
+cinnamon-desktop (2.2.3-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:20:51 +0200
+
+cinnamon-desktop (2.2.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update VCS fields.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 19 May 2014 13:46:44 +0200
+
+cinnamon-desktop (2.2.0-1) experimental; urgency=low
+
+  [ Maximiliano Curia ]
+  * Initial release. (Closes: #745912)
+  * New patch: po_gnome-desktop_to_cinnamon-desktop.diff
+  * New patch: add_schemas_to_POTFILES.in
+  * Bump Standards-Version to 3.9.5.
+  * Add abi-compliance-checker info.
+
+  [ Margarita Manterola ]
+  * New upstream release 2.2.0.
+  * Updated patches.
+  * Updated symbol file.
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 28 Apr 2014 22:27:07 +0200
