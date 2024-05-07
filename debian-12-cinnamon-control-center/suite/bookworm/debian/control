@@ -1,0 +1,121 @@
+Source: cinnamon-control-center
+Section: x11
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Christoph Martin <martin@uni-mainz.de>,
+Build-Depends:
+ cinnamon-settings-daemon-dev (>= 6.0),
+ debhelper-compat (= 13),
+ gnome-pkg-tools,
+ iso-codes,
+ libcinnamon-desktop-dev (>= 6.0),
+ libcinnamon-menu-3-dev,
+ libcolord-dev,
+ libgdk-pixbuf-2.0-dev (>= 2.23.0),
+ libglib2.0-dev,
+ libgnomekbd-dev,
+# libgoa-1.0-dev,
+# libgoa-backend-1.0-dev,
+ libgtk-3-dev,
+ libgudev-1.0-dev [linux-any],
+ libmm-glib-dev [linux-any],
+ libnm-dev [linux-any],
+ libnma-dev [linux-any],
+ libnotify-dev,
+ libpolkit-gobject-1-dev,
+ libupower-glib-dev,
+ libwacom-dev [linux-any],
+ libx11-dev,
+ libxkbfile-dev,
+ libxklavier-dev,
+ libxml2-dev,
+ meson,
+ tzdata,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: http://cinnamon.linuxmint.com/
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/cinnamon-control-center
+Vcs-Git: https://salsa.debian.org/cinnamon-team/cinnamon-control-center.git
+
+Package: cinnamon-control-center
+Architecture: any
+Depends:
+ accountsservice,
+ apg,
+ cinnamon-control-center-data (= ${source:Version}),
+ cinnamon-desktop-data (>= 6.0),
+ cinnamon-settings-daemon (>= 6.0),
+ desktop-file-utils,
+ gettext,
+ libcinnamon-control-center1 (= ${binary:Version}),
+ policykit-1-gnome,
+ xdg-utils,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Breaks:
+ cinnamon (<< 6.0~),
+ cinnamon-control-center-goa (<< ${source:Version}),
+ cinnamon-core (<< 5.4~),
+Recommends:
+# cinnamon-control-center-goa,
+ cinnamon-l10n (>= 6.0),
+ iso-codes,
+ mesa-utils,
+Suggests: x11-xserver-utils
+Description: configuration applets for the Cinnamon desktop
+ This package contains configuration applets for the Cinnamon desktop,
+ allowing to set the date and time, regional settings, network configuration,
+ screen resolution, and other Cinnamon parameters.
+
+Package: cinnamon-control-center-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Recommends: cinnamon-control-center (>= ${source:Version})
+Description: configuration applets for Cinnamon - data files
+ This package contains data files (icons, pixmaps, locales files) needed by
+ the configuration applets in the cinnamon-control-center package.
+
+#Package: cinnamon-control-center-goa
+#Architecture: any
+#Depends:
+# cinnamon-control-center (= ${binary:Version}),
+# gnome-online-accounts,
+# ${misc:Depends},
+# ${shlibs:Depends},
+#Breaks:
+# cinnamon (<< 6.0~),
+# cinnamon-control-center (<< ${source:Version}),
+# cinnamon-core (<< 5.4~),
+#Replaces: cinnamon-control-center (<< ${source:Version})
+#Multi-Arch: same
+#Description: configuration applets for the Cinnamon desktop - Gnome Online Account
+# This package contains configuration applets for the Cinnamon desktop, that
+# use Gnome Online Accounts.
+
+Package: libcinnamon-control-center-dev
+Section: libdevel
+Architecture: any
+Depends:
+ libcinnamon-control-center1 (= ${binary:Version}),
+ libgtk-3-dev,
+ ${misc:Depends},
+Multi-Arch: same
+Description: configuration applets for Cinnamon - development files
+ This package contains the development files for the cinnamon control center
+ panels library.
+
+Package: libcinnamon-control-center1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: library used by configuration applets for Cinnamon
+ This package contains the library used by control center panels.

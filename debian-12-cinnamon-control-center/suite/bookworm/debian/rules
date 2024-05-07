@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS  = hardening=+all
+export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+DATA_PKG = cinnamon-control-center-data
+MAIN_PKG = cinnamon-control-center
+
+%:
+	dh $@ --with=gnome
+
+override_dh_gnome_clean:
+	dh_gnome_clean --no-control
+
+override_dh_auto_configure:
+	dh_auto_configure -- -Donlineaccounts=false
+
+override_dh_auto_test:
+	# Disable auto tests
+	:
+
+override_dh_installchangelogs:
+	# Only install the changelog in the arch:all package
+	dh_installchangelogs -i ChangeLog
+	dh_installchangelogs -a -XChangeLog
+	# Put the changelog file in the main package doc dir.
+	install -d debian/$(DATA_PKG)/usr/share/doc/$(MAIN_PKG)
+	[ ! -f debian/$(DATA_PKG)/usr/share/doc/$(DATA_PKG)/changelog ] \
+	    || mv debian/$(DATA_PKG)/usr/share/doc/$(DATA_PKG)/changelog \
+	    debian/$(DATA_PKG)/usr/share/doc/$(MAIN_PKG)/changelog
+
+override_dh_makeshlibs:
+	dh_makeshlibs \
+	    -Xusr/lib/$(DEB_HOST_MULTIARCH)/cinnamon-control-center-1/panels

@@ -1,0 +1,529 @@
+cinnamon-control-center (6.0.1-3bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon-control-center_6.0.1-3 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 13:08:42 -0500
+
+cinnamon-control-center (6.0.1-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 31 Mar 2024 15:02:02 +0200
+
+cinnamon-control-center (6.0.1-2) experimental; urgency=medium
+
+  [ Jeremy Bícha ]
+  * Disable GNOME Online Accounts integration (Closes: #1065114)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 26 Mar 2024 20:14:54 +0100
+
+cinnamon-control-center (6.0.1-1) experimental; urgency=medium
+
+  * New upstream version 6.0.1
+  * Bump deps and breaks of reverse deps to 6.0
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 15:48:53 +0100
+
+cinnamon-control-center (5.8.2-1) unstable; urgency=medium
+
+  * New upstream version 5.8.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 14 Oct 2023 18:40:07 +0200
+
+cinnamon-control-center (5.8.1-1) unstable; urgency=medium
+
+  * New upstream version 5.8.1
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Thu, 29 Jun 2023 10:25:09 +0200
+
+cinnamon-control-center (5.6.1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable)
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.6.1
+  * Update standards version to 4.6.2, no changes needed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 08 Jan 2023 17:17:54 +0100
+
+cinnamon-control-center (5.6.0-1) unstable; urgency=medium
+
+  * New upstream version 5.6.0
+  * d/control: replace libgdk-pixbuf2.0-dev with libgdk-pixbuf-2.0-dev
+    in build-deps. (Closes: #1019311)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 20 Nov 2022 18:02:17 +0100
+
+cinnamon-control-center (5.4.7-1) unstable; urgency=medium
+
+  * New upstream version 5.4.7
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 05 Sep 2022 20:49:52 +0200
+
+cinnamon-control-center (5.4.6-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 15:41:19 +0200
+
+cinnamon-control-center (5.4.6-1) experimental; urgency=medium
+
+  * New upstream version 5.4.6
+  * d/control: add libgudev-1.0-dev to build-deps
+  * Update d/copyright
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 09 Aug 2022 20:45:04 +0200
+
+cinnamon-control-center (5.4.4-1) experimental; urgency=medium
+
+  * New upstream version 5.4.4
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 17 Jul 2022 21:30:24 +0200
+
+cinnamon-control-center (5.4.3-1) experimental; urgency=medium
+
+  * New upstream version 5.4.3
+  * Simplify d/watch
+  * d/control:
+    - remove very old breaks/replaces
+    - remove cinnamon-capplets-data provides/conflicts, not needed anymore
+    - add libupower-glib-dev to build-deps
+    - bump deps and breaks of reverse deps
+  * Remove d/patches: patch applied upstream
+  * Bumped Standards-Version to 4.6.1
+  * Update d/copyright
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:51:06 +0200
+
+cinnamon-control-center (5.2.1-2) unstable; urgency=medium
+
+  * d/patches/fix-network.patch:
+    network: Remove old workaround for openvpn widgets.
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 16 Feb 2022 14:07:33 +0100
+
+cinnamon-control-center (5.2.1-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.2.1
+
+  [ Christoph Martin ]
+  * add myself to uploaders
+  * prepare unstable release
+
+ -- Christoph Martin <martin@uni-mainz.de>  Wed, 26 Jan 2022 09:56:29 +0100
+
+cinnamon-control-center (5.2.0-1) experimental; urgency=medium
+
+  * New upstream version 5.2.0
+
+  * Fix watch file
+  * Add myself to Uploaders
+  * Add rules-requires-root field
+  * Bump cinnamon conflict versions to 5.2
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Sun, 21 Nov 2021 15:32:50 -0500
+
+cinnamon-control-center (5.0.2-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:16:02 +0900
+
+cinnamon-control-center (5.0.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add missed rm_conffile /etc/xdg/menus/cinnamoncc.menu
+    Thanks to Christoph Anton Mitterer. (Closes: #990132)
+  * New upstream version 5.0.2 (Closes: #972499)
+  * Remove broken link to a file removed in c-c-c 4.8
+    Thanks to Andreas Beckman. (Closes: #986477)
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:14:06 +0900
+
+cinnamon-control-center (4.8.2-1) unstable; urgency=medium
+
+  * New upstream version 4.8.2
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 03 Jan 2021 06:31:01 +0900
+
+cinnamon-control-center (4.8.1-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:57 +0900
+
+cinnamon-control-center (4.8.1-1) experimental; urgency=medium
+
+  * New upstream version 4.8.1
+  * adjust B-D according to new upstream
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 19:38:15 +0900
+
+cinnamon-control-center (4.8.0-1) experimental; urgency=medium
+
+  * New upstream version 4.8.0
+  * remove patches for build system, upstream uses meson
+  * update list of installed files
+  * use debhelper compat 13
+  * Bump deps/breaks of inter-cinnamon deps to 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:27:37 +0900
+
+cinnamon-control-center (4.6.2-2) unstable; urgency=medium
+
+  * clean up patches
+  * drop dbus b-d, not necessary anymore
+  * bump standards version
+  * switch to debhelper-compat instead of d/compat
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 14 Aug 2020 14:43:03 +0900
+
+cinnamon-control-center (4.6.1-2) unstable; urgency=medium
+
+  * Don't allow monitors to be dragged apart. (Closes: #965343)
+  * Drop mousetweaks recommends, not used anymore (Closes: #965345)
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 21 Jul 2020 09:51:37 +0900
+
+cinnamon-control-center (4.6.1-1) unstable; urgency=medium
+
+  * New upstream version 4.6.1
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:50:48 +0900
+
+cinnamon-control-center (4.6.0-1) experimental; urgency=medium
+
+  * Drop dbus-glib dependency (Closes: #955828)
+  * update watch file
+  * New upstream version 4.6.0
+  * update patches
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 13 May 2020 22:16:55 +0900
+
+cinnamon-control-center (4.4.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:35:04 +0900
+
+cinnamon-control-center (4.4.0-1) experimental; urgency=medium
+
+  * Drop gnome-doc-utils from B-D (Closes: #945138)
+  * Factor out online-accounts to new package (Closes: #894218)
+  * New upstream version 4.4.0
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 18 Jan 2020 15:05:23 +0900
+
+cinnamon-control-center (4.2.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:27:20 +0900
+
+cinnamon-control-center (4.2.2-1) experimental; urgency=medium
+
+  * New upstream release (4.2.2)
+  * Add myself to the uploaders
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:50:10 +0900
+
+cinnamon-control-center (4.0.1-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (4.0.1)
+
+  [ Maximiliano Curia ]
+  * Add a basic gbp.conf
+  * Add a debian/salsa-ci.yml file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:53 -0300
+
+cinnamon-control-center (3.8.1-1) unstable; urgency=medium
+
+  * New revision
+  * Add patches to fix building twice in a row
+    + Avoid-listing-common-twice.patch
+    + Clean-BUILT_SOURCES.patch
+    + Also-clean-the-generated-policy-file.patch
+    Thanks to Andreas Beckmann for the report (Closes: 901521)
+  * New upstream release (3.8.1).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:44 +0200
+
+cinnamon-control-center (3.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0).
+  * Drop 2 debian/patches applied upstream.
+  * remove useless autoreconf build-depends autotools-dev
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 4.1.4.
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:04 +0200
+
+cinnamon-control-center (3.6.5-2) unstable; urgency=medium
+
+  * New revision
+  * Drop dh-autoreconf (no longer needed with dh >= 10)
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+  * Add patches for network-manager:
+     * Stop-requiring-NetworkManager.pc (Closes: 895445)
+     * Drop-unused-HAVE_NETWORK_MANAGER
+  * Drop network-manager-dev build dep
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 12 Apr 2018 12:50:26 +0200
+
+cinnamon-control-center (3.6.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.6.5). (Closes: #857224)
+  * debian/control:
+    add missing cinnamon-l10n recommends to cinnamon-control-center
+    remove very old gnome-power-manager, gdm and gnome-media-common breaks
+    update network manager build-deps
+    add build-deps and dep to gnome-online-accounts
+  * bump group breaks (3.6)
+  * Remove upstream patch fix-wifi-sec-path.patch
+  * Refresh patches.
+  * Update symbols.
+  * update debian/copyright
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 4.1.1.
+  * Update changelog file
+  * Use the salsa canonical urls
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:07:09 +0200
+
+cinnamon-control-center (3.4.0-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * debian/control: update dependencies
+    added missed gettext and xdg-utils to cinnamon-control-center deps
+    removed unused deps and build-deps of removed sound settings
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:34 +0200
+
+cinnamon-control-center (3.4.0-1) experimental; urgency=medium
+
+  * New upstream release (3.4.0).
+  * Bump group breaks (3.2)
+  * Bump group breaks (3.4)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:31:52 +0200
+
+cinnamon-control-center (3.2.1-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:34:57 -0300
+
+cinnamon-control-center (3.2.1-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull
+    automaken instead, causing build failures.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 18 Dec 2016 17:00:15 +0100
+
+cinnamon-control-center (3.2.1-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Drop upstream applied patch: Migrate-away-from-gnome-common-
+    deprecated-vars-and-macros.patch
+  * New upstream release (3.2.1).
+  * Refresh patches
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 17 Dec 2016 20:10:15 +0100
+
+cinnamon-control-center (3.0.1-2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Drop gnome-icon-theme and gnome-icon-theme-symbolic dependencies. This is
+    part of #833480, thanks to Jeremy Bicha for reporting.
+  * Drop obsolete XS-Testsuite field
+
+  [ Margarita Manterola ]
+  * Add tzdata as build-dependency as it's not longer part of build-essential.
+    Thanks to Lucas Nussbaum for reporting (Closes: #839462).
+  * Add autoconf-archive to prevent a future FTBFS.
+    Thanks to Michael Biebl for reporting (Closes: #837860)
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 16 Oct 2016 16:56:33 +0200
+
+cinnamon-control-center (3.0.1-1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Fix dbgsym-migration rules
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.0.1).
+  * Add new patch: Migrate-away-from-gnome-common-deprecated-vars-and-
+    macros.patch (Closes: #829924)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 04 Aug 2016 12:26:16 +0200
+
+cinnamon-control-center (3.0.0-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Migrate dbg package to automatic dbgsym
+  * Refresh patches
+  * Update install files, remove autostart file
+  * Drop old menu files
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 15 May 2016 12:10:59 +0200
+
+cinnamon-control-center (2.8.1-1) unstable; urgency=medium
+
+  * New upstream release (2.8.1).
+  * Remove upstream patch: Kim-ie-has-moved-Pyonyang-half-an-hour.patch
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:33 +0100
+
+cinnamon-control-center (2.6.0-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Backported a patch that add timezone 8.5 (Closes: #799404).
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 19 Sep 2015 22:53:47 +0200
+
+cinnamon-control-center (2.6.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Improve package dependencies.
+  * New upstream release (2.6.0).
+
+  [ Fabio Fantoni ]
+  * Removed 3 patches applied upstream.
+  * Added debian/patches/fix-wifi-sec-path.patch.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:23 +0200
+
+cinnamon-control-center (2.4.2-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Degrade libcanberra-pulse dependency to recommends, so pulseaudio is
+    optional again.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update copyright information.
+  * Add basic autopkgtests support.
+  * New patch: fix_distclean
+  * Update build dependencies.
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed 2 patches applied upstream.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 03 Mar 2015 10:17:07 +0100
+
+cinnamon-control-center (2.2.11-4) unstable; urgency=medium
+
+  * Make all Network Manager related dependencies linux-any and allow the
+    package to build even if Network Manager is not present, by avoiding
+    building the network panel in that case (debian/patches/allow_optional_nm)
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 25 Oct 2014 15:46:28 +0200
+
+cinnamon-control-center (2.2.11-3) unstable; urgency=medium
+
+  * Add Breaks/Replaces needed for the moving of the changelog file done
+    in the previous upload. Closes: #760348.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 30 Aug 2014 18:54:20 -0700
+
+cinnamon-control-center (2.2.11-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed one patch applied upstream.
+  * Use systemd only with linux to make possible build on kfreebsd.
+
+  [ Margarita Manterola ]
+  * Put the upstream changelog only in the -data package, but inside the
+    directory for the main package.
+
+ -- Margarita Manterola <marga@debian.org>  Fri, 29 Aug 2014 10:46:38 -0700
+
+cinnamon-control-center (2.2.10-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add systemd support, since ConsoleKit is deprecated.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 26 Jul 2014 17:06:14 +0200
+
+cinnamon-control-center (2.2.10-2) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Add patch for upower-0.99 support: debian/patches/upowerd-0.99-support
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:20:55 +0200
+
+cinnamon-control-center (2.2.10-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/copyright: fixed license of some svg files.
+
+  [ Margarita Manterola ]
+  * Added patch to expect translations in the standard path.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 12 Jul 2014 13:58:28 +0200
+
+cinnamon-control-center (2.2.9-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Remove hardening-wrapper as a build dependency.
+  * Remove debian/copyright spurious line.
+  * Add hardening=+all build options
+  * New patch: disable_silent_builds
+  * Add missing icon for the menu file.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 23 Jun 2014 16:09:59 +0200
+
+cinnamon-control-center (2.2.8-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 24 May 2014 19:28:39 +0200
+
+cinnamon-control-center (2.2.7-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Initial release (Closes: #745911).
+  * Add abi-compliance-checker info.
+  * Update VCS fields.
+  * Update copyright information.
+  * Update install files.
+
+  [ Margarita Manterola ]
+  * Add myself to uploaders
+  * Remove obsolete patch 12_add_never_turn_screen_off.patch
+  * Moved gnome-menu dependency to cinnamon-menu.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 May 2014 20:16:31 +0200
