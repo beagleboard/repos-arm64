@@ -18,12 +18,6 @@ override_dh_shlibdeps:
 
 override_dh_auto_configure:
 	mkdir -p ./tmp/sgx/ ; git -c http.sslVerify=false clone -b $(SGX_TAG) $(SGX_REPO) --depth=5 ./tmp/sgx/ ; git --git-dir ./tmp/sgx/.git log --pretty=oneline
-	rm ./tmp/sgx/targetfs/am62_linux/wayland/release/etc/init.d/rc.pvr || true
-	rm ./tmp/sgx/targetfs/am62p_linux/wayland/release/etc/init.d/rc.pvr || true
-	rm ./tmp/sgx/targetfs/j721e_linux/wayland/release/etc/init.d/rc.pvr || true
-	rm ./tmp/sgx/targetfs/j721s2_linux/wayland/release/etc/init.d/rc.pvr || true
-	rm ./tmp/sgx/targetfs/j722s_linux/wayland/release/etc/init.d/rc.pvr || true
-	rm ./tmp/sgx/targetfs/j784s4_linux/wayland/release/etc/init.d/rc.pvr || true
 
 %:
 	dh $@
