@@ -1,0 +1,147 @@
+Source: nemo
+Section: misc
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Christoph Martin <martin@uni-mainz.de>
+Build-Depends:
+ cinnamon-l10n (>= 6.0~),
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ dh-sequence-python3,
+ gtk-doc-tools,
+ intltool,
+ itstool,
+ libatk1.0-dev,
+ libcinnamon-desktop-dev (>= 6.0~),
+ libexempi-dev,
+ libexif-dev,
+ libgail-3-dev,
+ libgirepository1.0-dev,
+ libglib2.0-dev,
+ libglib2.0-doc,
+ libgsf-1-dev,
+ libgtk-3-dev,
+ libgtk-3-doc,
+ libpango1.0-dev,
+ libselinux1-dev [linux-any],
+ libx11-dev,
+ libxapp-dev (>= 2.0.0~),
+ libxext-dev,
+ libxml2-dev,
+ libxrender-dev,
+ meson,
+ python3,
+ python3-gi,
+ x11proto-core-dev,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: http://cinnamon.linuxmint.com/
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/nemo
+Vcs-Git: https://salsa.debian.org/cinnamon-team/nemo.git
+
+Package: gir1.2-nemo-3.0
+Architecture: any
+Section: introspection
+Depends: ${gir:Depends}, ${misc:Depends}
+Description: libraries for nemo components - gir bindings
+ Nemo is the official file manager for the Cinnamon desktop. It allows one
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
+ .
+ This package can be used by other packages using the GIRepository format to
+ generate dynamic bindings.
+Breaks: nemo-python (<< 5.2~)
+Multi-Arch: same
+
+Package: libnemo-extension-dev
+Architecture: any
+Section: libdevel
+Depends:
+ gir1.2-nemo-3.0 (= ${binary:Version}),
+ libglib2.0-dev,
+ libgtk-3-dev,
+ libnemo-extension1 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Nemo component system facilities (development files)
+ Nemo is the official file manager for the Cinnamon desktop. It allows one
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
+ .
+ This package contains the files needed to compile and link nemo extensions.
+
+Package: libnemo-extension1
+Architecture: any
+Section: libs
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Nemo component system facilities
+ Nemo is the official file manager for the Cinnamon desktop. It allows one
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
+ .
+ This package contains the shared library needed by the nemo extensions.
+Breaks: nemo-fileroller (<< 5.2~), nemo-python (<< 5.2~)
+
+Package: nemo
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ cinnamon-desktop-data (>= 6.0~),
+ desktop-file-utils,
+ gsettings-desktop-schemas,
+ gvfs,
+ libglib2.0-data,
+ libnemo-extension1 (= ${binary:Version}),
+ nemo-data (= ${source:Version}),
+ shared-mime-info,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ catdoc,
+ cinnamon-l10n (>= 6.0~),
+ exif,
+ gnome-disk-utility,
+ gvfs-backends,
+ gvfs-fuse,
+ html2text,
+ id3,
+ librsvg2-common,
+ nemo-fileroller (>= 5.2~),
+ odt2txt,
+ poppler-utils,
+ python3-xlrd,
+ python3:any,
+ untex,
+Suggests: eog, evince | pdf-viewer, totem | mp3-decoder, xdg-user-dirs
+Description: File manager and graphical shell for Cinnamon
+ Nemo is the official file manager for the Cinnamon desktop. It allows one
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
+ .
+ Several icon themes and components for viewing different kinds of files
+ are available in separate packages.
+Breaks: cinnamon (<< 5.8~), cinnamon-core (<< 5.4~), nemo-fileroller (<< 5.2~)
+
+Package: nemo-data
+Architecture: all
+Depends: python3:any, ${misc:Depends}, ${python3:Depends}
+Suggests: nemo
+Description: File manager and graphical shell for Cinnamon (data files)
+ Nemo is the official file manager for the Cinnamon desktop. It allows one
+ to browse directories, preview files and launch applications associated
+ with them. It is also responsible for handling the icons on the Cinnamon
+ desktop. It works on local and remote filesystems.
+ .
+ This package contains pictures, localization files and other data
+ needed by nemo.

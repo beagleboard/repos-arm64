@@ -1,0 +1,677 @@
+nemo (6.0.2-2bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild nemo_6.0.2-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 13:38:12 -0500
+
+nemo (6.0.2-2) unstable; urgency=medium
+
+  * Release to unstable
+  * d/control: remove hardcoded libcinnamon-desktop4 dep in nemo
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 31 Mar 2024 20:19:55 +0200
+
+nemo (6.0.2-1) experimental; urgency=medium
+
+  * New upstream version 6.0.2
+  * Update d/copyright
+  * Bump deps and reverse dep breaks to 6.0
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 14:02:12 +0100
+
+nemo (5.8.5-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:41:57 +0200
+
+nemo (5.8.5-1) experimental; urgency=medium
+
+  * New upstream bugfix version 5.8.5
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 23 Sep 2023 11:15:36 +0200
+
+nemo (5.8.4-1) experimental; urgency=medium
+
+  * New upstream version 5.8.4
+  * Bump reverse dep breaks to 5.8
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 13:24:43 +0200
+
+nemo (5.6.5-1) unstable; urgency=medium
+
+  * New upstream bigfix version 5.6.5
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 26 May 2023 11:28:24 +0200
+
+nemo (5.6.4-1) unstable; urgency=medium
+
+  * New upstream bugfix version 5.6.4
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 19 Mar 2023 22:36:15 +0100
+
+nemo (5.6.3-1) unstable; urgency=medium
+
+  * New upstream version 5.6.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 22 Jan 2023 19:08:11 +0100
+
+nemo (5.6.2-1) unstable; urgency=medium
+
+  * New upstream version 5.6.2
+  * Update standards version to 4.6.2, no changes needed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 08 Jan 2023 17:13:36 +0100
+
+nemo (5.6.1-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 25 Dec 2022 19:00:44 +0100
+
+nemo (5.6.1-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable)
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.6.1
+  * d/control: remove xapp from nemo deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 20 Dec 2022 20:01:22 +0100
+
+nemo (5.4.3-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 15:25:44 +0200
+
+nemo (5.4.3-1) experimental; urgency=medium
+
+  * New upstream version 5.4.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 13 Aug 2022 14:43:57 +0200
+
+nemo (5.4.2-1) experimental; urgency=medium
+
+  * New upstream version 5.4.2 (LP: #1945903)
+  * d/control: add html2text to nemo recommends
+  * Update lintian override
+  * Update d/copyright
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Thu, 21 Jul 2022 23:23:44 +0200
+
+nemo (5.4.0-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * gir1.2-nemo-3.0: Add Multi-Arch: same.
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.4.0
+  * d/control: replace texlive-binaries with untex in nemo
+    recommends (Closes: #1006472)
+  * Simplify d/watch
+  * d/control:
+    - remove libnotify-dev from build-deps
+    - remove old breaks/replaces
+    - bump some deps and reverse-deps breaks to 5.4
+  * Bumped Standards-Version to 4.6.1
+  * Remove empty d/patches/series
+  * Restrict selinux build-dep and configure option to linux-any
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:58:57 +0200
+
+nemo (5.2.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.2.4
+  * d/control: add python3:any to nemo deps
+
+  [ Christoph Martin ]
+  * add myself to uploaders
+  * prepare unstable release
+
+ -- Christoph Martin <martin@uni-mainz.de>  Wed, 26 Jan 2022 08:56:06 +0100
+
+nemo (5.2.2-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * Fix watch file
+  * Add myself to Uploaders
+  * Remove --as-needed linker flag
+  * Remove patch applied upstream
+  * Add missing Build-Depends-Package in symbols file
+  * Bump cinnamon deps and breaks to 5.2.0
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.2.2
+  * update xapp deps for package split of 2.2.5-1
+  * add python3-xlrd to nemo recommends for xls search helper
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Mon, 22 Nov 2021 19:55:07 -0500
+
+nemo (5.0.5-1) unstable; urgency=medium
+
+  * New upstream version 5.0.5
+  * d/rules:
+    - hardening from bindnow to all
+    - use full path for --libexecdir
+  * use dh-sequence for gir and python3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 01 Nov 2021 11:07:37 +0100
+
+nemo (5.0.3-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:20:04 +0900
+
+nemo (5.0.3-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.3
+  * Remove d/patches applied upstream
+  * d/patches: mount-archive.nemo_action: Use gnome-disk-image-mounter
+    instead of gvfsd-archive (Closes: #992242)
+  * d/control: added gnome-disk-utility to nemo recommends
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:22:07 +0900
+
+nemo (4.8.6-2) unstable; urgency=medium
+
+  * d/patches: nemo-tree-sidebar.c: Fix states for pin/unpin and
+    create-folder menu items (Closes: #988924)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 20 Jun 2021 15:51:07 +0200
+
+nemo (4.8.6-1) unstable; urgency=medium
+
+  * New upstream version 4.8.6
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 13 Mar 2021 07:47:45 +0900
+
+nemo (4.8.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream bugfix version 4.8.5
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 02 Mar 2021 13:52:49 +0900
+
+nemo (4.8.4-1) unstable; urgency=medium
+
+  * New upstream version 4.8.4
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 07 Jan 2021 00:34:48 +0900
+
+nemo (4.8.3-1) unstable; urgency=medium
+
+  * New upstream version 4.8.3
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 03 Jan 2021 06:37:36 +0900
+
+nemo (4.8.2-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:59 +0900
+
+nemo (4.8.2-1) experimental; urgency=medium
+
+  * New upstream version 4.8.2
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 22:39:55 +0900
+
+nemo (4.8.1-1) experimental; urgency=medium
+
+  * New upstream version 4.8.1
+  * Adjust B-D according to upstream.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 19:48:23 +0900
+
+nemo (4.8.0-1) experimental; urgency=medium
+
+  [ Pino Toscano ]
+  * Drop Debian menu file (wrongly installed in gir1.2-nemo-3.0) and its
+    pixmap, since nemo already provides a .desktop file.
+
+  [ Fabio Fantoni ]
+  * fix some things spotted by lintian
+
+  [ Norbert Preining ]
+  * New upstream version 4.8.0
+  * Remove upstream included patch.
+  * bump b-d xapp to 1.9
+  * bump dh compat to 13
+  * fix libexecdir definition
+  * Bump inter-cinnamon deps to 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:43:54 +0900
+
+nemo (4.6.5-1) unstable; urgency=medium
+
+  * New upstream version 4.6.5
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 14 Aug 2020 15:20:39 +0900
+
+nemo (4.6.4-1) unstable; urgency=medium
+
+  * New upstream version 4.6.4
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 11:02:02 +0900
+
+nemo (4.6.3-1) experimental; urgency=medium
+
+  * New upstream version 4.6.3
+  * switch to debhelper compat 12
+  * bump standards version, no changes necessary
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 11 Jun 2020 14:16:55 +0900
+
+nemo (4.4.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:44:44 +0900
+
+nemo (4.4.2-1) experimental; urgency=medium
+
+  * New upstream version 4.4.2
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 15:57:20 +0900
+
+nemo (4.2.3-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:28:35 +0900
+
+nemo (4.2.3-1) experimental; urgency=medium
+
+  * New upstream release (4.2.3).
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 11:01:45 +0900
+
+nemo (4.0.6-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (4.0.{4,6}).
+
+  [ Maximiliano Curia ]
+  * Add a basic gbp.conf
+  * Add a debian/salsa-ci.yml file
+  * Update symbols file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:52 -0300
+
+nemo (3.8.5-1) unstable; urgency=medium
+
+  * New upstream release (3.8.3).
+  * Disable testsuite
+  * New upstream release (3.8.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:42 +0200
+
+nemo (3.8.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.2).
+  * add missed files to nemo-data.install
+
+  [ Maximiliano Curia ]
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 20:14:22 +0200
+
+nemo (3.8.1-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0).
+  * Update debian/copyright.
+  * update symbols
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.8.1).
+  * Bump Standards-Version to 4.1.4.
+  * testsuite: Let dh_auto_test take care of starting the ninja tests
+  * Update install files
+  * Enable hardening bindnow
+  * Drop dh_makeshlibs override, no longer needed
+  * Drop no longer neede installmime call
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:20 +0200
+
+nemo (3.6.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.6.5).
+  * Update install files.
+  * debian/control:
+    add libxapp-dev to build-deps and update others.
+    bump group breaks (3.6).
+  * Update symbols.
+  * move /usr/share/polkit-1/actions/org.nemo.root.policy to nemo-data
+  * update debian/copyright
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 4.1.1.
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:07:06 +0200
+
+nemo (3.4.7-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.4.7).
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:30 +0200
+
+nemo (3.4.6-1) experimental; urgency=medium
+
+  * New upstream release (3.4.6).
+  * Add libselinux-dev build dep
+  * Update install files
+  * Bump group breaks (3.4)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:31:50 +0200
+
+nemo (3.2.2-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:24:24 -0300
+
+nemo (3.2.2-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull
+    automaken instead, causing build failures.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 18 Dec 2016 16:54:07 +0100
+
+nemo (3.2.2-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add new upstream patch: no-over-rebuild-desktop.patch
+    Thanks to Norbert Preining for reporting and following this upstream
+    (Closes: 825589)
+  * Drop upstream applied patch: do_reap_child.diff
+  * Drop upstream applied patch: Migrate-away-from-gnome-common-
+    deprecated-vars-and-macros.patch
+  * Drop upstream applied patch: window-remove-custom-get_preferred_width-
+    height-impl.patch
+  * Drop upstream applied patch: pathbar-avoid-gtk-warnings.patch
+  * Drop upstream applied patch: pathbar-remove-hardcoded-width-for-
+    sliders.patch
+  * Drop upstream applied patch: fix-desktop-redraw
+  * Drop upstream applied patch: Make-AX_-macros-optional.patch
+  * Drop upstream applied patch: remove-text-icon-preview.patch
+  * Drop upstream applied patch: no-over-rebuild-desktop.patch
+  * New upstream release (3.2.2).
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 17 Dec 2016 20:07:53 +0100
+
+nemo (3.0.6-4) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add new patch: Make-AX_-macros-optional.patch
+
+  [ Margarita Manterola ]
+  * Add new patch: debian/patches/remove-text-icon-preview.patch.
+    Removes preview from icons now that GTK doesn't support it anymore.
+    Thanks to John Kirk for reporting. (Closes: #838526)
+  * Replace dbus-launch with dbus-run-session for tests.
+    Thanks to Simon McVittie for reporting (Closes: #836036)
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 23 Oct 2016 17:26:28 +0200
+
+nemo (3.0.6-3) unstable; urgency=medium
+
+  * Fix desktop redraw issues with gtk >= 3.21. (Closes: #836908)
+    Apply upstream patch f20ec9beee2a3592e723f5140664e2137ab5a7be
+    Thanks to Norbert Preining for reporting and importing the patch.
+  * Add autoconf-archive as an explicit build-dependency. (Closes: #837852)
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 18 Sep 2016 16:04:03 +0200
+
+nemo (3.0.6-2) unstable; urgency=medium
+
+  * Import upstream patches:
+    window-remove-custom-get_preferred_width-height-impl.patch,
+    pathbar-avoid-gtk-warnings.patch and
+    pathbar-remove-hardcoded-width-for-sliders.patch.
+    Thanks to johu for reporting (Closes: 836922)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 08 Sep 2016 18:34:15 +0200
+
+nemo (3.0.6-1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Fix dbgsym migration rules
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * New patch: do_reap_child.diff (Closes: 825757) Thanks to Tony
+    Sultana for reporting
+  * New upstream release (3.0.6).
+  * Add new patch: Migrate-away-from-gnome-common-deprecated-vars-and-macros.patch (Closes: 829829)
+
+  [ Fabio Fantoni ]
+  * Add cinnamon-l10n as build-dep, needed for action files translation.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 02 Aug 2016 20:15:05 +0200
+
+nemo (3.0.3-1) unstable; urgency=medium
+
+  * Add gvfs-fuse as a recommends.
+    (Closes: #797821) Thanks to Christian Hawkins for reporting.
+  * New upstream release.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 28 May 2016 15:49:25 +0200
+
+nemo (3.0.1-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add gcc-6 support patch (Comment-out-url_drag_types-defined-but-not-used)
+   (Closes: #811935) Thanks to Martin Michlmayr for reporting
+  * New upstream release (3.0.0).
+  * New upstream release (3.0.1).
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Drop upstream applied patch
+  * Python scripts migrated to python3
+  * Update symbols files, drops old eel exported symbols, not affecting current packages
+  * Update patch: missing-files-potfiles.in
+  * Add dh-python dependency
+
+  [ Fabio Fantoni ]
+  * Updated patch missing-files-potfiles.in for fix "make check"
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 15 May 2016 10:13:55 +0200
+
+nemo (2.8.7-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 13 Mar 2016 22:51:41 +0100
+
+nemo (2.8.6-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Updated patch missing-files-potfiles.in for fix "make check".
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 08 Feb 2016 17:59:40 +0100
+
+nemo (2.8.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update install files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:31 +0100
+
+nemo (2.6.7-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Jul 2015 15:12:33 +0200
+
+nemo (2.6.6-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Margarita Manterola ]
+  * Added patch imported from Ubuntu to add more files to POTFILES.in
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 18 Jun 2015 13:31:04 +0200
+
+nemo (2.6.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Drop eject from recommends. (Closes: #785513)
+  * Added strict libnemo-extension1 dependency to nemo. (Closes: #785486)
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:22 +0200
+
+nemo (2.4.5-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed 2 patches applied upstream.
+
+  [ Maximiliano Curia ]
+  * Update copyright information.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 02 Mar 2015 15:54:36 +0100
+
+nemo (2.2.4-2) unstable; urgency=low
+
+  * Install typelib into multiarch libdir. (Closes: #762837)
+    Thanks to Iain Lane for the fix.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 27 Sep 2014 15:49:17 +0200
+
+nemo (2.2.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Remove obsolete conffile: /etc/xdg/autostart/nemo-autostart.desktop.
+    (Closes: #755764)
+  * debian/control: cinnamon-translations->cinnamon-l10n.
+
+  [ Maximiliano Curia ]
+  * New patch: clang_FTBFS (Closes: #741866) Thanks to Nicolas Sévelin-
+    Radiguet.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 13 Aug 2014 14:18:16 +0200
+
+nemo (2.2.3-2) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Incorporate old NMU.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:20:54 +0200
+
+nemo (2.2.3-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Removed patches applied upstream:
+    - ignore_files_dir_check
+    - update_po_POTFILES.in
+
+  [ Margarita Manterola ]
+  * Added patch to handle translations correctly.
+  * Added cinnamon-translations to Recommends.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 12 Jul 2014 16:22:47 +0200
+
+nemo (2.2.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Install missing usr/share/polkit-1/actions/org.nemo.root.policy.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 24 May 2014 19:28:37 +0200
+
+nemo (2.2.1-1) experimental; urgency=medium
+
+  * Update VCS fields.
+  * New upstream release.
+  * New patch: update_po_POTFILES.in
+  * New patch: ignore_files_dir_check
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 19 May 2014 13:55:06 +0200
+
+nemo (2.2.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release.
+  * New maintainers (Closes: #745909)
+  * Update build dependencies.
+  * New patch: upstream-stop_gtk_stock_deprecated.diff
+  * New patch: disable_po_check
+  * Add autopkgtests.
+  * Add abi-compliance-checker info.
+
+  [ Margarita Manterola ]
+  * New upstream release 2.2.0
+  * Add myself to uploaders.
+  * Remove unneeded upstream patch.
+  * Remove disable_po_check patch.
+  * Add more build dependencies.
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 28 Apr 2014 22:27:10 +0200
+
+nemo (1.8.4-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/patches/01-disable-deprecated.patch:
+    + Don't disable deprecated functions in rdeps, otherwise nemo FTBFS
+      because it uses some deprecated functions. Closes: #740119.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 06 Mar 2014 00:13:58 +0100
+
+nemo (1.8.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 01 Aug 2013 16:00:05 +0200
+
+nemo (1.8.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Benjamin Drung <bdrung@debian.org>  Sat, 15 Jun 2013 16:37:02 +0200
+
+nemo (1.8.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add gtksourceview syntax highlighting files to nemo-data.
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 09 May 2013 23:16:08 +0200
+
+nemo (1.7.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #692830)
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Fri, 22 Mar 2013 15:54:12 +0100
