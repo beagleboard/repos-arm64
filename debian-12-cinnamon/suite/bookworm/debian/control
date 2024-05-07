@@ -1,0 +1,176 @@
+Source: cinnamon
+Section: x11
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Christoph Martin <martin@uni-mainz.de>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ dh-sequence-python3,
+ gnome-pkg-tools (>= 0.11),
+ gobject-introspection (>= 1.29.15),
+ gtk-doc-tools,
+ intltool,
+ libcinnamon-desktop-dev (>= 6.0~),
+ libcinnamon-menu-3-dev (>= 5.4~),
+ libcjs-dev (>= 6.0~),
+ libdbus-1-dev,
+ libgirepository1.0-dev (>= 1.29.15),
+ libgl-dev,
+ libglib2.0-dev (>= 2.52.0),
+ libgstreamer1.0-dev,
+ libgtk-3-dev (>= 3.9.12),
+ libjson-glib-dev (>= 0.13.2),
+ libmuffin-dev (>= 6.0~),
+ libnm-dev (>= 1.6) [linux-any],
+ libnma-dev [linux-any],
+ libpolkit-agent-1-dev (>= 0.100),
+ libpulse-dev,
+ libstartup-notification0-dev (>= 0.11),
+ libxapp-dev (>= 2.6.0),
+ meson (>= 0.47.0),
+ python3:any,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: http://cinnamon.linuxmint.com
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/cinnamon
+Vcs-Git: https://salsa.debian.org/cinnamon-team/cinnamon.git
+
+Package: cinnamon
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ cinnamon-common (= ${source:Version}),
+ cinnamon-control-center (>= 6.0),
+ cinnamon-desktop-data (>= 6.0),
+ cinnamon-l10n (>= 6.0),
+ cinnamon-screensaver (>= 6.0),
+ cinnamon-session (>= 6.0),
+ cinnamon-settings-daemon (>= 6.0),
+ cjs (>= 6.0),
+ cups-pk-helper,
+ dbus,
+ gir1.2-accountsservice-1.0,
+ gir1.2-caribou-1.0,
+ gir1.2-cmenu-3.0 (>= 5.4),
+ gir1.2-cvc-1.0 (>= 6.0),
+ gir1.2-ecal-2.0,
+ gir1.2-edataserver-1.2,
+ gir1.2-gdkpixbuf-2.0,
+ gir1.2-gkbd-3.0,
+ gir1.2-glib-2.0,
+ gir1.2-gsound-1.0,
+ gir1.2-gtk-3.0,
+ gir1.2-ical-3.0,
+ gir1.2-keybinder-3.0,
+ gir1.2-nemo-3.0 (>= 6.0),
+ gir1.2-nm-1.0 [linux-any],
+ gir1.2-nma-1.0 [linux-any],
+ gir1.2-notify-0.7,
+ gir1.2-pango-1.0,
+ gir1.2-polkit-1.0,
+ gir1.2-soup-3.0,
+ gir1.2-timezonemap-1.0,
+ gir1.2-upowerglib-1.0,
+ gir1.2-xapp-1.0 (>= 2.6.0),
+ gkbd-capplet,
+ gnome-backgrounds,
+ gnome-themes-extra,
+ gsettings-desktop-schemas (>= 0.1.7),
+ iso-flags-png-320x240,
+ libcinnamon-menu-3-0 (>= 5.4),
+ libcjs0 (>= 5.4),
+ libglib2.0-bin,
+ mesa-utils,
+ muffin (>= 6.0~),
+ nemo (>= 6.0),
+ network-manager-gnome [linux-any],
+ pkexec,
+ policykit-1-gnome (>= 0.105-6),
+ psmisc,
+ python3,
+ python3-dbus,
+ python3-distro,
+ python3-gi,
+ python3-gi-cairo,
+ python3-pampy,
+ python3-pexpect,
+ python3-pil,
+ python3-pyinotify,
+ python3-requests,
+ python3-setproctitle,
+ python3-tinycss2,
+ python3-tz,
+ ${gir:Depends},
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Recommends:
+ blueman,
+ cinnamon-core,
+ gnome-online-accounts-gtk,
+ gnome-terminal,
+ inxi,
+ libcanberra-pulse,
+ libxapp-gtk3-module,
+ metacity-common,
+ touchegg,
+ xapp-sn-watcher,
+ xdg-desktop-portal-gtk,
+ xdg-desktop-portal-xapp,
+Suggests: cinnamon-desktop-environment, cinnamon-doc, python3-opencv
+Provides: notification-daemon, x-window-manager
+Breaks: cinnamon-core (<< 5.4~), cinnamon-common (<< 6.0.4-2~)
+Replaces: cinnamon-common (<< 6.0.4-2~)
+Description: Innovative and comfortable desktop
+ Cinnamon is a desktop environment which provides advanced innovative
+ features and a traditional user experience.
+ .
+ The desktop layout is similar to GNOME 2.  The underlying technology is
+ forked from gnome-shell.  The emphasis is put on making users feel at home
+ and providing them with an easy to use and comfortable desktop experience.
+
+Package: cinnamon-common
+Architecture: all
+Depends:
+ gettext,
+ gir1.2-cinnamondesktop-3.0 (>= 6.0),
+ gir1.2-meta-muffin-0.0 (>= 6.0~),
+ libglib2.0-bin,
+ python3-xapp,
+ xdg-utils,
+ ${misc:Depends},
+ ${python3:Depends},
+Breaks: cinnamon (<< 6.0.4-2~)
+Replaces: cinnamon (<< 6.0.4-2~)
+Description: Innovative and comfortable desktop (Common data files)
+ Cinnamon is a desktop environment which provides advanced innovative
+ features and a traditional user experience.
+ .
+ The desktop layout is similar to GNOME 2.  The underlying technology is
+ forked from gnome-shell.  The emphasis is put on making users feel at home
+ and providing them with an easy to use and comfortable desktop experience.
+ .
+ This package contains the data files needed by Cinnamon
+
+Package: cinnamon-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Recommends: devhelp
+Description: Innovative and comfortable desktop (Documentation)
+ Cinnamon is a desktop environment which provides advanced innovative
+ features and a traditional user experience.
+ .
+ The desktop layout is similar to GNOME 2.  The underlying technology is
+ forked from gnome-shell.  The emphasis is put on making users feel at home
+ and providing them with an easy to use and comfortable desktop experience.
+ .
+ This package contains the documentation files distributed with Cinnamon.

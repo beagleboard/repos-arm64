@@ -1,0 +1,1221 @@
+cinnamon (6.0.4-4bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon_6.0.4-4 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 13:30:43 -0500
+
+cinnamon (6.0.4-4) unstable; urgency=medium
+
+  * d/patches: add upstream patch to remove GNOME Online Accounts from
+    cinnamon-settings and show GNOME Online Accounts GTK, if installed
+  * d/control: remove gir1.2-goa-1.0 from deps and add
+    gnome-online-accounts-gtk to recommends of cinnamon
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 06 Apr 2024 11:28:38 +0200
+
+cinnamon (6.0.4-3) unstable; urgency=medium
+
+  * Release to unstable
+  * d/control:
+    - move cinnamon-l10n from recommends to depends in cinnamon
+    - remove hardcoded libcinnamon-desktop4 and libmuffin0 dep in cinnamon
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 31 Mar 2024 20:32:20 +0200
+
+cinnamon (6.0.4-2) experimental; urgency=medium
+
+  * move config.js to cinnamon-common, was in cinnamon because contained
+    a different parameter in some architectures, now it no longer present
+  * move x-cinnamon-portals.conf to cinnamon where there is the needed
+    dep, this also reduces conflicts with upstream packages
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 27 Feb 2024 22:28:26 +0100
+
+cinnamon (6.0.4-1) experimental; urgency=medium
+
+  * New upstream version 6.0.4 (Closes: #1061532)
+    Initial wayland support was added, is important know that
+    is still incomplete and experimental
+  * d/patches: remove 2 patches applied upstream and refresh others
+  * Removed d/x-cinnamon-portals.conf, added upstream
+  * d/control:
+    - change cinnamon dep. from gir1.2-soup-2.4 to gir1.2-soup-3.0
+    - remove libxfixes-dev from build-deps as not needed anymore
+    - bump version of needed deps to 6.0
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 15:44:59 +0100
+
+cinnamon (5.8.4-4) unstable; urgency=medium
+
+  * Move gir files from public to private path in /usr/share/cinnamon
+    and from cinnamon to cinnamon-common package (Closes: #1057391)
+  * d/rules:
+    - add override_dh_shlibdeps with muffin private libraries path
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 01 Jan 2024 15:31:43 +0100
+
+cinnamon (5.8.4-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:47:46 +0200
+
+cinnamon (5.8.4-2) experimental; urgency=medium
+
+  * d/patches/replace-pil-image-antialias.patch: Add upstream fix for pillow 10
+    (Closes: #1051210)
+  * Add x-cinnamon-portals.conf until the upstream provides it.
+    Thanks to Simon McVittie (Closes: #1050801)
+  * d/control: add xdg-desktop-portal-gtk to cinnamon recommends
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 15 Sep 2023 20:49:45 +0200
+
+cinnamon (5.8.4-1) experimental; urgency=medium
+
+  * New upstream version 5.8.4
+  * Provide .gir files in cinnamon package as full -dev package is
+    not needed for applets, extensions and desklets
+  * d/control:
+    - add xdg-desktop-portal-xapp to cinnamon recommends
+    - add touchegg to cinnamon recommends
+    - build-depend on libgl-dev instead of transitional libgl1-mesa-dev
+    - bump version of needed deps to 5.8
+    - remove gir1.2-gnomedesktop-3.0 from deps as now unused
+  * Refresh d/patches
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 13:51:03 +0200
+
+cinnamon (5.6.8-1) unstable; urgency=medium
+
+  * New upstream bugfix version 5.6.8 (Closes: #1032912)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 19 Mar 2023 22:38:37 +0100
+
+cinnamon (5.6.7-1) unstable; urgency=medium
+
+  * New upstream version 5.6.7
+  * Update standards version to 4.6.2, no changes needed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 16 Jan 2023 20:39:02 +0100
+
+cinnamon (5.6.5-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 25 Dec 2022 19:59:48 +0100
+
+cinnamon (5.6.5-1) experimental; urgency=medium
+
+  * New upstream version 5.6.5
+  * Refresh d/patches
+  * d/control: remove xapp from cinnamon deps and add to recommends
+    libxapp-gtk3-module and xapp-sn-watcher
+  * Bump version of needed deps to 5.6
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 20 Dec 2022 21:21:44 +0100
+
+cinnamon (5.4.12-2) unstable; urgency=medium
+
+  * d/control:
+    - remove gir1.2-clutter-1.0 and gir1.2-cogl-1.0 as a maintained fork
+      was integrated in muffin (from mutter) and used instead the deprecate
+      and not maintained one
+    - remove gir1.2-gtkclutter-1.0 as now unused
+  * debian/patches: add a patch to fix the upload-system-info path
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 04 Nov 2022 17:38:34 +0100
+
+cinnamon (5.4.12-1) unstable; urgency=medium
+
+  * New upstream version 5.4.12
+  * d/control:
+    - update muffin deps and build-deps to 5.4.7
+    - remove gir1.2-meta-muffin-0.0 from build-deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 09 Sep 2022 11:32:02 +0200
+
+cinnamon (5.4.11-1) unstable; urgency=medium
+
+  * New upstream version 5.4.11
+  * d/cinnamon.gsettings-override: set theme to cinnamon
+  * d/control: readd gir1.2-soup-2.4 to deps as temp. workaround
+    because many applets and desklet require it
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 21 Aug 2022 20:24:51 +0200
+
+cinnamon (5.4.10-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 17:09:45 +0200
+
+cinnamon (5.4.10-1) experimental; urgency=medium
+
+  * New upstream version 5.4.10
+  * d/control: remove libsoup2.4-dev from build-deps and
+    gir1.2-soup-2.4 from deps
+  * Refresh d/patches
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 13 Aug 2022 14:47:32 +0200
+
+cinnamon (5.4.9-1) experimental; urgency=medium
+
+  * New upstream version 5.4.9
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 01 Aug 2022 21:10:00 +0200
+
+cinnamon (5.4.8-1) experimental; urgency=medium
+
+  * New upstream version 5.4.8
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 25 Jul 2022 22:52:38 +0200
+
+cinnamon (5.4.7-1) experimental; urgency=medium
+
+  * New upstream version 5.4.7
+  * d/rules: remove the move of thumbnail not present
+  * Specify that rules don't require root
+  * Bumped Standards-Version to 4.6.1
+  * d/control: update cinnamon-settings-daemon dep to 5.4.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 24 Jul 2022 21:16:29 +0200
+
+cinnamon (5.4.5-1) experimental; urgency=medium
+
+  * New upstream version 5.4.5
+  * Disable d/patches/always-add-default-theme.patch
+  * d/control: update muffin deps and build-deps to 5.4.2
+  * Update cinnamon lintian overrides
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 20 Jul 2022 23:24:31 +0200
+
+cinnamon (5.4.2-1) experimental; urgency=medium
+
+  * New upstream version 5.4.2
+  * Simplify and update d/watch
+  * d/control:
+    - add inxi to cinnamon recommends
+    - add devhelp to cinnanon-doc recommends
+    - add libxapp-dev to build-deps
+    - add gir1.2-gsound-1.0 to cinnamon deps
+    - update meson min. version
+    - remove libclutter-1.0-dev from build-deps
+  * Bump version of deps and breaks of reverse deps to 5.4
+  * Update d/copyright
+  * d/patches: remove 4 patches applied upstream and refresh others
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 23:01:00 +0200
+
+cinnamon (5.2.7-4) unstable; urgency=medium
+
+  * d/control: add psmisc to cinnamon depends
+    Thanks to Martin Simmons for reporting (Closes: #1006887)
+  * d/control: add pkexec to cinnamon depends
+  * d/patches: add fixes from upstream:
+    - calendar events: Check if evolution-data-server is running before
+      enabling events
+    - calendar-server: Add return after calling app.quit()
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 11 Apr 2022 20:24:21 +0200
+
+cinnamon (5.2.7-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * update d/copyright
+
+ -- Christoph Martin <martin@uni-mainz.de>  Tue, 12 Apr 2022 12:08:31 +0200
+
+cinnamon (5.2.7-2) unstable; urgency=medium
+
+  * add myself to uploaders
+  * prepare unstable upload
+
+ -- Christoph Martin <martin@uni-mainz.de>  Wed, 26 Jan 2022 09:42:51 +0100
+
+cinnamon (5.2.7-1) experimental; urgency=medium
+
+  * New upstream version 5.2.7
+  * Add python3-requests to cinnamon depends
+  * d/patches:
+    - add a revert of workaround for meson 0.60.2 regression
+    that cause FTBFS after his fix
+    - gtkdoc: remove dependencies on custom target files
+  * Add Joshua to uploaders
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 31 Dec 2021 16:13:31 +0100
+
+cinnamon (5.2.6-1) experimental; urgency=medium
+
+  * New upstream version 5.2.6 (Closes: #1001536, #1002412)
+  * update xapp deps for package split of 2.2.5-1
+  * use dh-sequence-gir and dh-sequence-python3
+  * d/patches: remove applied upstream and refresh others
+  * d/control: add deps for calendar server
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 04 Dec 2021 12:46:20 +0100
+
+cinnamon (5.0.6-1) unstable; urgency=medium
+
+  * New upstream version 5.0.6
+  * Remove a d/patches applied upstream
+  * d/patches: add 2 patches from upstream:
+    - fix menu-editor with python 3.10
+    - capy better multiarch path support, fix some archs
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 17 Oct 2021 12:44:24 +0200
+
+cinnamon (5.0.5-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * d/patches: apply 3 fixes from upstream to avoid a crash, issue
+    on cinnamon restart and fallback session
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:18:09 +0900
+
+cinnamon (5.0.5-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.5 (Closes: #985138)
+  * Remove a d/patches applied upstream and refresh others
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:17:04 +0900
+
+cinnamon (4.8.6-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Remove x-terminal-emulator alternative from gnome-terminal
+    recommend in cinnamon (Closes: #960244)
+  * d/patches/GWL-fixes.patch: fixes some bugs that occur when
+    move app window to another workspace.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 15 Feb 2021 09:12:15 +0900
+
+cinnamon (4.8.6-1) unstable; urgency=medium
+
+  * New upstream version 4.8.6
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 16 Jan 2021 20:12:34 +0900
+
+cinnamon (4.8.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Remove old transitions meta packages:
+    gnome-themes-standard, gir1.2-networkmanager-1.0
+  * removed old breaks/replaces
+
+  [ Norbert Preining ]
+  * New upstream version 4.8.5
+  * Remove upstream included patch.
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 03 Jan 2021 06:28:38 +0900
+
+cinnamon (4.8.4-2) unstable; urgency=medium
+
+  * Include upstream patch for desktop files in sub-folders.
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 02 Jan 2021 08:09:23 +0900
+
+cinnamon (4.8.4-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream version 4.8.4
+
+  [ Fabio Fantoni ]
+  * Add metapackages as recommends and suggest (Closes: #958454)
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 26 Dec 2020 15:52:30 +0900
+
+cinnamon (4.8.3-3) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * d/control: Remove unused build-dependency on libcroco3-dev (Closes: #967027)
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 21 Dec 2020 04:31:36 +0900
+
+cinnamon (4.8.3-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:58 +0900
+
+cinnamon (4.8.3-1) experimental; urgency=medium
+
+  * New upstream version 4.8.3
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 15 Dec 2020 12:56:42 +0900
+
+cinnamon (4.8.2-1) experimental; urgency=medium
+
+  * Update/rename lintian tags.
+  * Ensure postinstall aborts on failed sub-commands.
+  * Add dbus to dependencies for dbus-send command.
+  * New upstream version 4.8.2
+  * Adjust B-D according to upstream.
+  * Remove patches for upstream fixes.
+  * Fix some lintian warnings.
+  * install new files, remove dh_missing override, fail on missing files.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 23:09:48 +0900
+
+cinnamon (4.8.0-2) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add firefox-esr to favorites (Closes: #918917)
+  * Disable network manager in configure on not-linux archs.
+  * Add some build related fixes from upstream.
+  * Remove override_dh_girepository (fix i386 build).
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 06 Dec 2020 09:29:49 +0900
+
+cinnamon (4.8.0-1) experimental; urgency=medium
+
+  * New upstream version 4.8.0 (Closes: #969245)
+  * update/cleanup patches
+  * update B-D versions
+  * use meson, use 4.8 deps, dh compat 13
+  * Bump xapp dependency.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:33:22 +0900
+
+cinnamon (4.6.7-2) experimental; urgency=medium
+
+  * Fixes for new cjs
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 29 Sep 2020 10:18:39 +0900
+
+cinnamon (4.6.7-1) unstable; urgency=medium
+
+  * New upstream version 4.6.7
+  * update patch
+  * bump standards version, no changes necessary
+  * use debhelerp-compat instead of debian/compat
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 16 Aug 2020 00:54:59 +0900
+
+cinnamon (4.6.6-1) unstable; urgency=medium
+
+  * New upstream version 4.6.6
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:53:26 +0900
+
+cinnamon (4.6.3-1) experimental; urgency=medium
+
+  * New upstream version 4.6.3
+  * update patches
+  * bump deps to 4.6
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 11 Jun 2020 14:06:09 +0900
+
+cinnamon (4.4.8-4) unstable; urgency=medium
+
+  * drop dbus-glib necessity (Closes: #955826)
+  * fix python 3.8 noisiness (Closes: #956001), thanks Joshua Peisach
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 17 Apr 2020 08:28:33 +0900
+
+cinnamon (4.4.8-3) unstable; urgency=medium
+
+  * Suggest python3-opencv instead of python-opencv (Closes: #954155)
+  * Cherry-pick fix for OS detection with Python 3.8 (Closes: #955594)
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 03 Apr 2020 10:33:38 +0900
+
+cinnamon (4.4.8-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:38:04 +0900
+
+cinnamon (4.4.8-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add missed header to latest patch
+
+  [ Norbert Preining ]
+  * New upstream version 4.4.8
+  * update patches
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:46:28 +0900
+
+cinnamon (4.2.4-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add missed python3-setproctitle dep.
+
+  [ Norbert Preining ]
+  * Upload to unstable
+  * Add option to disable local extension in restart dialog (Closes: #785336)
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:27:45 +0900
+
+cinnamon (4.2.4-1) experimental; urgency=medium
+
+  * New upstream release (4.2.4)
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 04 Sep 2019 21:13:33 +0900
+
+cinnamon (4.2.3-1) experimental; urgency=medium
+
+  * New upstream release (4.2.3)
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:53:15 +0900
+
+cinnamon (4.0.10-2) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * add dependency on gir1.2-nemo-3.0 (Closes: #936089, #936100)
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 30 Aug 2019 10:17:08 -0300
+
+cinnamon (4.0.10-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New revision
+  * Replace gvfs-bin calls with gio calls.
+    Thanks to Simon McVittie for the heads up (Closes: 877738)
+  * Salsa CI automatic initialization by Tuco
+  * Add a basic gbp.conf
+  * Add lintian-override for muffin rpath
+  * Release to unstable
+
+  [ Norbert Preining ]
+  * Fix disappearing systray indicators (upstream fix)
+  * New upstream releases (4.0.5, 4.0.10)
+  * Fix cinnamon-settings for PIL >= 6.0.0 (VERSION was removed)
+    (Closes: #931777, #932578)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:52 -0300
+
+cinnamon (3.8.8-1) unstable; urgency=medium
+
+  * New upstream release (3.8.4).
+  * New upstream release (3.8.5).
+  * New upstream release (3.8.8).
+  * Refresh patches
+  * Update install files
+  * Use dh_missing
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:47 +0200
+
+cinnamon (3.8.3-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Removed 6 debian/patches applied upstream.
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.8.3).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 24 May 2018 09:15:09 +0200
+
+cinnamon (3.8.1-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0). (Closes: #856699)
+  * Refresh patches
+  * fix mistake in debian/control
+  * add to cinnamon-common.install 2 new policy files
+  * remove unused lintian overrides
+
+  [ Maximiliano Curia ]
+  * Keep pulseaudio optional, degrade libcanberra-pulse to a recommends
+  * New upstream release (3.8.1).
+  * Bump Standards-Version to 4.1.4.
+  * Refresh patches
+  * Bump group breaks (3.8)
+  * Reenable always-add-default-theme.patch
+  * Add cs_startup.py fixes.
+    Add upstream patches:
+     Startup-settings-Use-icons-in-button-box.patch
+     Startup-settings-Fix-blurry-icons.patch
+     Startup-settings-Fix-using-the-wrong-variable.patch
+     Startup-settings-Show-delay-units-and-only-show-delay-whe.patch
+     Startup-settings-Fix-creation-of-autostart-files.patch
+  * Add upstream patch Spices.py-Use-https-for-spices-downloads.patch
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:03 +0200
+
+cinnamon (3.6.7-8) unstable; urgency=medium
+
+  * Remove gettext tweaking from py2 py3 patch
+    Thanks to Peter for the report (Closes: 894894)
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 05 Apr 2018 23:21:55 +0200
+
+cinnamon (3.6.7-7) unstable; urgency=medium
+
+  * New revision
+  * Fix typo in the network-user-connections patch.
+    Thanks to Tollef Fog Heen for reporting (Closes: 894850)
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 05 Apr 2018 12:17:38 +0200
+
+cinnamon (3.6.7-6) unstable; urgency=medium
+
+  * New revision
+  * Rediff patches (Closes: #894625) Thanks to Frank McCormick for the report
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 03 Apr 2018 15:35:33 +0200
+
+cinnamon (3.6.7-5) unstable; urgency=medium
+
+  * New revision
+  * Rediff patches
+  * Bump xapp gir dependency
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 28 Mar 2018 09:57:29 +0200
+
+cinnamon (3.6.7-4) unstable; urgency=medium
+
+  * New revision
+  * Make /usr/share/cinnamon py2 and py3 compatible
+  * Also compile the python files with python2
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 27 Mar 2018 16:54:17 +0200
+
+cinnamon (3.6.7-3) unstable; urgency=medium
+
+  * New revision
+  * Compile the python files in postinst
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 21:19:04 +0200
+
+cinnamon (3.6.7-2) unstable; urgency=medium
+
+  * New revision
+  * Drop dh-autoreconf (no longer needed with dh >= 10)
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+  * Drop call to dh_installwm
+  * Add python3 helper
+  * Refresh patches
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 19:47:35 +0200
+
+cinnamon (3.6.7-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Make cinnamon-doc Multi-Arch: foreign (Closes: #874330)
+    Thanks to Hugh McMaster
+  * New upstream release (3.6.7). (Closes: #882394)
+  * Refresh patches
+  * Remove jquery dep as file that use it is now removed
+  * debian/control: update dependencies
+    network-manager components from recommends to deps (Closes: #872767)
+    add gnome-themes-extra that replace gnome-themes-standard (Closes: #892274)
+  * debian/patches: Network applet: Port to libnm (Closes: #857231)
+  * move usr/share/polkit-1/actions/*.policy to cinnamon-common
+
+  [ Maximiliano Curia ]
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:07:10 +0200
+
+cinnamon (3.4.6-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.4.6).
+  * Remove unused dep: gir1.2-javascriptcoregtk-3.0 (Closes: 864937)
+    Thanks: Jeremy Bicha for the report
+  * Refresh patches
+  * debian/control: update dependencies
+    added gettext and xdg-utils to cinnamon-common deps (Closes: 869395)
+  * replaced obsolete python-imaging with python-pil (Closes: 866420)
+    Thanks: Matthias Klose for the report
+  * Remove gnome-keyring from configure.ac and build-deps,
+    seems unused because not linked (Closes: 867919)
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+  * Remove unused dep.
+    Thanks to Jeremy Bicha for the report (Closes: 864937)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:32 +0200
+
+cinnamon (3.4.4-1) experimental; urgency=medium
+
+  * New upstream release (3.4.4).
+  * Refresh patches
+  * Update install files
+  * Update install files
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:31:51 +0200
+
+cinnamon (3.2.7-4) unstable; urgency=medium
+
+  * Cherry pick "window-tracker: fix memory leak" (e2dfda9)
+    Fixes a memory leak when switching between windows of the same
+    application.
+  * Cherry pick "[Sound applet] Fix a segmentation fault" (f8347d6)
+    Fixes a segfault when launching the player from the sound applet if menu
+    animations were disabled.
+  * Cherry pick "theme-node: Fix leak on stylesheet change" (62c7d5c)
+    Fixes a memory leak when previewing the different desktop styles.
+  * Cherry pick "Fix hotcorner hover delay timeout removal" (103967a)
+    Removes 4 useless error lines in .xsession-errors whenever a hot-corner is
+    activated.
+  * Cherry pick "cinnamon-desktop-editor: use the default icon when file is
+    nonexistent" (887e8cd)
+    Fixes a stacktrace when the custom icon for a launcher points to an absolute
+    path that has been removed.
+  * Cherry pick "st-bin.c: Fix y_fill setter (it was setting x_fill to the value
+    of the existing y_fill, before it is set in the same call)." (dec0dd1)
+    Corrects a typo for the y_fill property of one-child containers.
+  * Cherry pick "cs_screensaver.py: Expose setting for floating widgets."
+    (a625a95).
+    Allows the user to easily disable floating widgets from the config screen.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 20 May 2017 14:11:02 +0200
+
+cinnamon (3.2.7-3) unstable; urgency=medium
+
+  * Revert the policykit patch now that the new polkit-1-gnome agent gets
+    started by the desktop file. Add a versioned dependency on the fixed
+    polkit-1-agent.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 22 Apr 2017 16:15:58 +0200
+
+cinnamon (3.2.7-2) unstable; urgency=medium
+
+  * Rename "Adwaita" metacity-1 thumbnail to "Default". Force "Default" theme
+    to always be included in the list of available themes. (Closes: #852973).
+  * Ship thumbnails for all metacity-1 and gtk-3.0 themes currently
+    shipped in Debian. (Closes: #853064)
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 29 Jan 2017 16:16:24 +0100
+
+cinnamon (3.2.7-1) unstable; urgency=medium
+
+  * Add muffin runtime dependency
+  * New upstream release (3.2.7).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 03 Jan 2017 21:23:08 +0100
+
+cinnamon (3.2.6-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:34:20 -0300
+
+cinnamon (3.2.6-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull
+    automaken instead, causing build failures.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 18 Dec 2016 16:56:00 +0100
+
+cinnamon (3.2.6-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release. (Closes: 845136)
+  * Remove old gnome migration patch, it was applied upstream.
+  * Added patch for the changed location of iso-flags-png.
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.2.6).
+  * Add python runtime dependency (needed for cinnamon-menu-editor)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 17 Dec 2016 20:33:18 +0100
+
+cinnamon (3.0.7-3) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add blueman recommends
+  * Update patch: add_policykit-1-gnome_to_session point to the new
+    polkit-gnome-authentication-agent-1 location. (Closes: 845764)
+    Thanks to halcyon for reporting
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 06 Dec 2016 22:47:45 +0100
+
+cinnamon (3.0.7-2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Drop python-gconf dependency. (Closes: 832324) Thanks to Emilio
+    Pozuelo Monfort for the report
+  * Drop gnome-icon-theme-symbolic dependency. Cinnamon already depends on
+    gnome-themes-standard that pulls in the right icon themes.
+    Thanks to Jeremy Bicha for reporting (Closes: 833480)
+
+  [ Margarita Manterola ]
+  * Add blueman as an option for bluetooth settings in cinnamon-settings.py.
+  * Add explicit dependency on autoconf-archive to prevent future FTBFS.
+    Thanks to Michael Biebl for reporting (Closes: 837842).
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 16 Oct 2016 18:57:05 +0200
+
+cinnamon (3.0.7-1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Add metacity-common as a recommends, as this package ships a bunch of
+    basic windowing themes including Adwaita (the default).
+  * Fix dbgsym-migration rules
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Add new patch: fix_upower_segfault.patch (Closes: 827507) Thanks to
+    Krzysztof Słychań for the report
+  * New upstream release (3.0.7).
+  * Add new patch: Migrate-away-from-gnome-common-deprecated-vars-and-
+    macros.patch (Closes: #830053)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Aug 2016 20:19:46 +0200
+
+cinnamon (3.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+    Drop overlay-scrollbars patch as this is now upstream.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 28 May 2016 15:36:13 +0200
+
+cinnamon (3.0.2-2) unstable; urgency=medium
+
+  * Apply 0677dbf4e9fead24b6dbbf2465ee3f0609c54865 from upstream to expose
+    the gtk-overlay-scrollbars setting.  Also, set this to disabled by
+    default. (Closes: 824551). Thanks to Christoph Anton Mitterer for reporting.
+  * Move versioned dependencies on other cinnamon packages to >= 3.0.
+
+ -- Margarita Manterola <marga@debian.org>  Wed, 18 May 2016 22:42:13 +0200
+
+cinnamon (3.0.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Update debian patches.
+  * Imported Upstream version 2.8.8
+  * update changelog and patches
+
+  [ Maximiliano Curia ]
+  * Update default favorite apps. Thanks to musca for reporting via irc.
+  * Bump Standards-Version to 3.9.7, no changes needed.
+  * Add new patch: Fix-middle-click-action-in-the-photo-frame.patch
+    (Closes: #761309) Thanks to Martín Ferrari for the report and patch
+  * Add new patch: photoframe-recurse-subdirectories.patch (Closes:
+    #761310) Thanks to Martín Ferrari for the report and patch
+  * New upstream release (3.0.1).
+  * New upstream release (3.0.2).
+  * Update default favorite apps.
+  * Automatic update with ddeb_migration3.py
+  * Bump Standards-Version to 3.9.7, no changes needed.
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Bump Standards-Version to 3.9.8
+  * Refresh patches, drop the applied upstream
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 15 May 2016 11:59:31 +0200
+
+cinnamon (2.8.7-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add cinnamon-doc suggests. (Closes: 805900) Thanks to Christoph
+    Anton Mitterer for reporting.
+  * New patch: 0007-Drop-nm-applet-from-the-session-files.patch (Closes:
+    #818084) Thanks to Christian Pernegger for reporting.
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Update debian patches.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 13 Mar 2016 19:43:24 +0100
+
+cinnamon (2.8.6-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #802552)
+  * Update debian patches.
+  * Add missing dependency of gvfs-open.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:34 +0100
+
+cinnamon (2.6.13-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 13 Jul 2015 21:38:44 +0200
+
+cinnamon (2.6.12-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * debian/patches: removed some unused or not needed patches.
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * New patch: desktop_file_add_main_category.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Jul 2015 15:47:14 +0200
+
+cinnamon (2.6.8-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Margarita Manterola ]
+  * Remove gnome-settings-daemon and gnome-session-bin from debian/control.
+    They are not needed.
+
+  [ Maximiliano Curia ]
+  * Make network-manager a recommends (instead of Depends), so other
+    network managers (or none) can be used. (Closes: #776465)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 18 Jun 2015 13:22:21 +0200
+
+cinnamon (2.6.7-3) unstable; urgency=high
+
+  * Re-add doc package.
+  * Use urgency=high to fix testing.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 13 Jun 2015 20:48:03 +0200
+
+cinnamon (2.6.7-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Enable lock on suspend by default for security. (Closes: #788280)
+
+  [ Maximiliano Curia ]
+  * Split dh_install rules for arch and indep cases.
+  * Update copyright information.
+
+  [ Margarita Manterola ]
+  * Remove doc package, it's causing cinnamon to be held in NEW and breaking
+    users as a consequence.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 13 Jun 2015 15:04:03 +0200
+
+cinnamon (2.6.7-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Improve dependencies to use latest cinnamon packages. (Closes: #781888)
+  * New upstream release (Closes: #787345).
+
+  [ Fabio Fantoni ]
+  * debian/patches: 2 patches removed and all other refreshed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:25 +0200
+
+cinnamon (2.4.8-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: 4 patches refreshed.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 21 Apr 2015 23:18:14 +0200
+
+cinnamon (2.4.6-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release. (Closes: #774480)
+  * debian/patches: removed 6 patches applied upstream and 10 refreshed.
+  * Added gnome-backgrounds to dependencies and added a patch to use it and
+    fix the cinnamon-settings background module. (Closes: #764416)
+  * Added a patch to fix view of brightness setting in cinnamon-settings.
+
+  [ Maximiliano Curia ]
+  * Update copyright information.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 02 Mar 2015 23:54:50 +0100
+
+cinnamon (2.2.16-5) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New patch: photoframe-desklet-fix-memory-leak.patch. (Closes: #761314)
+  * New patch: fix-theme-regressions-with-gtk-3.14.patch. (Closes: #770556)
+  * New patch: fix-cinnamon2d-session.patch (Closes: #772145).
+
+ -- Margarita Manterola <marga@debian.org>  Fri, 05 Dec 2014 15:43:08 +0100
+
+cinnamon (2.2.16-4) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add missing dependency: gnome-themes-standard. (Closes: #763883)
+
+  [ Margarita Manterola ]
+  * Modified add_capi_search_path so that /usr/lib/cinnamon is tried first
+    when querying for capi.py, as some users might still have an old capi.pyc
+    in the old path.
+  * Make gir1.2-nmgtk-1.0 and network-manager-gnome linux-any dependencies,
+    to make cinnamon installable on kFreeBSD.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 25 Oct 2014 20:00:06 +0200
+
+cinnamon (2.2.16-3) unstable; urgency=high
+
+  [ Maximiliano Curia ]
+  * New patch: make_nm_optional to build in kFreeBSD.
+  * Change capi mangling in debian/rules: modify the installed file directly.
+  * Remove patch: capi-py_ccc_search_path.
+  * New patch: add_capi_search_path to add the new path to
+    cinnamon-settings.py.
+
+  [ Margarita Manterola ]
+  * Modify the capi solution to install in /usr/lib/cinnamon instead of
+    /usr/lib/cinnamon-settings/bin.
+  * Urgency high as this means all non-amd64 currently have a very broken
+    cinnamon experience.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 07 Sep 2014 12:29:49 +0200
+
+cinnamon (2.2.16-2) unstable; urgency=medium
+
+  * Add {python:Depends} to cinnamon-common control file.
+  * Add python-pil as an explicit dependency of cinnamon-common.
+  * Remove cinnamon-bluetooth recommends as the package has been dropped.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 30 Aug 2014 10:46:54 -0700
+
+cinnamon (2.2.16-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release. (Closes: #756387)
+
+ -- Margarita Manterola <marga@debian.org>  Fri, 22 Aug 2014 16:17:59 -0700
+
+cinnamon (2.2.14-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * debian/control: cinnamon-translations->cinnamon-l10n.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 26 Jul 2014 16:50:00 +0200
+
+cinnamon (2.2.14-2) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Incorporate changes from old NMU: remove libecal1.2-dev, libfolks-dev,
+    libtelepathy-glib-dev and libtelepathy-logger-dev from Build Dependencies.
+  * Move misc.js to cinnamon, since it's arch dependent (Closes: #733461).
+  * Change favorite application from xchat to pidgin.
+  * New patch: debian/patches/calendar-applet-upower-support, fixes upower
+    support in calendar applet.
+
+  [ Fabio Fantoni ]
+  * Move "/usr/lib/cinnamon-* /usr/share/cinnamon/" to cinnamon-common.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:20:57 +0200
+
+cinnamon (2.2.14-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/control: added gksu to recommends, needed to start
+    cinnamon-settings-users.
+  * Refresh patches.
+
+  [ Margarita Manterola ]
+  * Add cinnamon-translations to Recommends.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 12 Jul 2014 12:03:59 +0200
+
+cinnamon (2.2.13-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+  * Add python-opencv as a Suggests (used for taking pictures of the user).
+
+  [ Maximiliano Curia ]
+  * Refresh patches.
+  * New patch: replace_firefox_with_iceweasel.
+
+  [ Fabio Fantoni ]
+  * debian/control:
+    - more strict cinnamon related packages dependencies.
+    - added to recommends gnome-terminal or x-terminal-emulator.
+    - cinnamon also provide notification-daemon.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 23 Jun 2014 16:54:11 +0200
+
+cinnamon (2.2.10-2) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add missing python-pam and python-pexpect dependencies to cinnamon.
+
+ -- Margarita Manterola <marga@debian.org>  Thu, 29 May 2014 13:55:25 +0200
+
+cinnamon (2.2.10-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 24 May 2014 19:28:40 +0200
+
+cinnamon (2.2.9-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update cinnamon dependencies.
+  * Update VCS fields.
+  * Refresh patches.
+  * Add network-manager-gnome as a cinnamon dependency, as the session
+    requires it.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 19 May 2014 14:50:43 +0200
+
+cinnamon (2.2.3-1) experimental; urgency=medium
+
+  * New upstream release (Closes: #719538, #737565, #745319).
+  * New maintainers (Closes: #743026)
+
+  [ Nicolas Bourdaud ]
+  * Delete patch: delete-unused-imports.patch (applied upstream)
+  * Delete patch: remove-background-bumpmap.patch (applied upstream)
+  * Updated: no-mdmsetup-settings.patch
+
+  [ Maximiliano Curia ]
+  * Refresh patches.
+  * Update build dependencies.
+  * Update install files.
+  * Bump Standards-Version to 3.9.5
+  * Update Vcs fields.
+  * New maintainer.
+  * Update rules to dh 9.
+  * Use iceweasel by default.
+  * Do not depend on translations.
+  * Update the wm file.
+  * New patch: paneljs_icon_search_path
+  * New patch: policy_csu_path
+  * New patch: capi-py_ccc_search_path
+  * New patch: start_cinnamon
+  * New patch: add_policykit-1-gnome_to_session
+
+  [ Margarita Manterola ]
+  * Added patch to fix the relocation of cinnamon-settings
+  * Added cinnamon-screensaver and nemo-autoload as dependencies for cinnamon.
+  * Updated to 2.2.3.
+  * Refreshed patches for 2.2.3
+  * Added myself to Uploaders.
+  * Move libgnome-menu dependencies to libcinnamon-menu.
+  * Updated libgstreamer dependency to 1.0.
+  * Install missing icons
+  * Added a bunch of patches to change /usr/lib to /usr/share/cinnamon
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 28 Apr 2014 22:27:12 +0200
+
+cinnamon (1.7.4-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Drop unused build dependencies on libecal1.2-dev, libedataserver1.2-dev,
+    libfolks-dev, libtelepathy-glib-dev and libtelepathy-logger-dev. They look
+    like a wrong copy&paste from the gnome-shell package. (Closes: #721555)
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 01 Sep 2013 23:58:28 +0200
+
+cinnamon (1.7.4-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Port to GDBus. In newer versions of gjs the gjs-dbus module has been
+    dropped. (Closes: #718573)
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 05 Aug 2013 02:05:23 +0200
+
+cinnamon (1.7.4-2) unstable; urgency=low
+
+  * Fix dependency on python-gi-cairo (Closes: #705903)
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Thu, 25 Apr 2013 13:12:41 +0200
+
+cinnamon (1.7.4-1) unstable; urgency=low
+
+  * New upstream cinnamon_1.7.4
+    - menu-editor: Use GLib.Error for catching errors (Closes: #704835)
+    - delete patch remove-gtk-menubutton.patch (rendered useless)
+    - delete patch reenable-notification-action.patch (applied upstream)
+  * Remove unused imports from cinnamon-settings (Closes: #704919)
+    - new patch: delete-unused-imports.patch
+  * Remove useless dependencies (gir1.2-gtkclutter-1.0)
+  * Add dependency on python-gi-cairo
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Sun, 21 Apr 2013 13:17:48 +0200
+
+cinnamon (1.7.3-1) unstable; urgency=low
+
+  * New upstream cinnamon_1.7.3
+  * Allow notification action. (Closes: #698418)
+    - new patch: reenable-notification-action.patch
+  * Speed up menu loading on some hardware. (Closes: #702761)
+    - new patch: remove-background-bumpmap.patch (Thanks to Paul Brook)
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Wed, 03 Apr 2013 10:16:17 +0200
+
+cinnamon (1.7.2-1) unstable; urgency=low
+
+  * New upstream cinnamon_1.7.2
+    - Fix clock text dropshadow. (Closes: #694688)
+  * Add python-pyinotify dependency. (Closes: #702239)
+  * Improve cinnamon-screensaver-lock-dialog manpage. (Closes: #702237)
+  * Add various missing gir dependencies.
+  * Handle missing bindings with cinnamon-settings. (Closes: #702281)
+    - new patch: handle-missing-bindings.patch (thanks to Stephan Sürken)
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Fri, 15 Mar 2013 22:39:29 +0100
+
+cinnamon (1.7.1-1) unstable; urgency=low
+
+  [ Laszlo Boszormenyi (GCS) ]
+  * Bump debian policy version to 3.9.4: no changes
+  * Enable hardening compilation flags
+
+  [ Nicolas Bourdaud ]
+  * New upstream cinnamon_1.7.1
+  * Set cinnnamon as alternative for x-window-manager (Closes: #700896)
+  * Add missing dependency to gir1.2-caribou-1.0.
+    (Fixes LP: #1106062 and LP: #1126721)
+  * Remove embedded jquery version. new patch: remove-embbeded-jquery.patch
+  * Make cinnamon-looking-glass runnable without GTK+-3.6
+    - new patch: remove-gtk-menubutton.patch
+  * Do not display mdmsetup in cinnamon-settings:
+    - new patch: no-mdmsetup-settings.patch
+  * Provides manpage for cinnamon-looking-glass and
+    cinnamon-screensaver-lock-dialog.
+  * Bump minimal version of libmuffin-dev build-depends to 1.7.1
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Sun, 03 Mar 2013 23:35:50 +0100
+
+cinnamon (1.6.7-2) unstable; urgency=low
+
+  * new patch: network-user-connection.patch
+    Set connections and passwords as user-owned, following matching changes
+    in nm-applet and gnome-control-center. (Closes: #698571)
+  * Remove caribou as dependency. (LP: #1106062)
+  * Restrict libgudev-glib-dev and libnm-glib-dev build-dependencies to
+    Linux platforms: should fix the build on FreeBSD and Hurd.
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Thu, 07 Feb 2013 13:40:30 +0100
+
+cinnamon (1.6.7-1) unstable; urgency=low
+
+  * New upstream cinnamon_1.6.7
+     - Fix keyboard settings applet. (Closes: #695217)
+  * Remove the useless dependency of cinnamon on cups-pk-helper
+  * Update debian/watch: stop using redirector (thanks to Bart Martens)
+  * Add libgl1-mesa-dev as build depends: should fix build on ARM
+  * Build bluetooth support only on Linux architectures.
+  * Add python-dbus and python-imaging dependencies. (Closes: #693935)
+  * Do not install browser plugin in multiarch folder. (Closes: #695338)
+  * Install translation files in the standard folder. (Closes: #695286)
+    new patch: fix-gettext-files-path.patch
+  * Move packaging git repo to Alioth.
+  * Use rpath to fix the use of libgnome-bluetooth. (Closes: #695408)
+     - update: disable-bluetooth-applet-hack.patch
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Tue, 11 Dec 2012 18:24:48 +0100
+
+cinnamon (1.6.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #657395)
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Thu, 01 Nov 2012 17:49:55 +0100
