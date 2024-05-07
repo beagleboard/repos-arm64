@@ -1,0 +1,606 @@
+cinnamon-settings-daemon (6.0.0-2bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon-settings-daemon_6.0.0-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 12:46:28 -0500
+
+cinnamon-settings-daemon (6.0.0-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 31 Mar 2024 14:42:35 +0200
+
+cinnamon-settings-daemon (6.0.0-1) experimental; urgency=medium
+
+  * New upstream version 6.0.0
+  * Add link for new csd-settings-remap
+  * d/patches: refresh and add remove of new link creation
+  * d/control:
+    - bump cinnamon-desktop build-deps/deps to 6.0
+    - bump breaks of reverse deps
+  * Update d/copyright
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 14:37:53 +0100
+
+cinnamon-settings-daemon (5.8.1-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:27:08 +0200
+
+cinnamon-settings-daemon (5.8.1-2) experimental; urgency=medium
+
+  * d/control: make pipewire default doing reverse of priority
+    of pulseaudio and pipewire in the Recommends
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 03 Sep 2023 21:20:05 +0200
+
+cinnamon-settings-daemon (5.8.1-1) experimental; urgency=medium
+
+  * New upstream version 5.8.1
+  * d/control:
+    - bump cinnamon-desktop build-dep/dep to 5.8
+    - bump breaks of reverse deps
+    - remove python3-tinycss from deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 13:10:16 +0200
+
+cinnamon-settings-daemon (5.6.2-3) unstable; urgency=medium
+
+  * d/control: add pipewire-pulse alternative to pulseaudio recommend
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 14 Jun 2023 20:24:31 +0200
+
+cinnamon-settings-daemon (5.6.2-2) unstable; urgency=medium
+
+  * Remove broken symlinks to csd-locate-pointer and csd-list-wacom
+    Thanks to Andreas Beckmann (Closes: #1035860)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 10 May 2023 22:15:56 +0200
+
+cinnamon-settings-daemon (5.6.2-1) unstable; urgency=medium
+
+  * New upstream bugfix version 5.6.2
+  * Replace libfontconfig1-dev build-dep. with libfontconfig-dev
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 19 Mar 2023 22:29:11 +0100
+
+cinnamon-settings-daemon (5.6.1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable)
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.6.1
+  * Update standards version to 4.6.2, no changes needed
+  * d/control: bump cinnamon-desktop build-dep/dep to 5.6.1
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 08 Jan 2023 21:03:19 +0100
+
+cinnamon-settings-daemon (5.4.5-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 11:32:45 +0200
+
+cinnamon-settings-daemon (5.4.5-1) experimental; urgency=medium
+
+  * New upstream version 5.4.5
+  * d/control: add libpango1.0-dev, remove libxtst-dev and
+    xserver-xorg-input-wacom from build-deps
+  * Update d/copyright
+  * Refresh d/patches
+  * d/rules: remove link creation for csd-wacom-osd as was removed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 09 Aug 2022 20:41:48 +0200
+
+cinnamon-settings-daemon (5.4.3-1) experimental; urgency=medium
+
+  * New upstream version 5.4.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 24 Jul 2022 20:25:20 +0200
+
+cinnamon-settings-daemon (5.4.2-1) experimental; urgency=medium
+
+  * New upstream version 5.4.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 17 Jul 2022 21:29:31 +0200
+
+cinnamon-settings-daemon (5.4.1-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * cinnamon-settings-daemon-dev: Add Multi-Arch: same.
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.4.1 (Closes: 897577)
+  * Update d/copyright
+  * d/control:
+    - dump meson required version to 0.47
+    - remove libdbus-glib-1-dev from build-deps
+    - dump deps and breaks of reverse-deps to 5.4
+  * Simplify d/watch
+  * Refresh d/patches
+  * Add removed etc files to maintscript
+  * Specify that rules don't require root
+  * Bumped Standards-Version to 4.6.1
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:47:16 +0200
+
+cinnamon-settings-daemon (5.2.0-3) unstable; urgency=medium
+
+  * add myself to uploaders
+  * prepare unstable release
+
+ -- Christoph Martin <martin@uni-mainz.de>  Tue, 25 Jan 2022 19:51:18 +0100
+
+cinnamon-settings-daemon (5.2.0-2) experimental; urgency=medium
+
+  * add a path that remove creation of link to binaries using a
+    script
+  * add symlink to /usr/bin using dh_link to make working the
+    .desktop files that don't have full path
+  * remove tracker-gui and gnome-search-tool from suggests
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 02 Jan 2022 09:42:19 +0100
+
+cinnamon-settings-daemon (5.2.0-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * New upstream version 5.2.0
+  * Remove useless --as-needed linker flag, set bindnow to all
+  * Add myself as Uploader
+  * Bump Cinnamon deps and breaks to 5.2
+
+  [ Laurent Bigonville ]
+  * Explicitly disable gudev on non-linux architectures, this fixes the FTBFS
+    (Closes: 1001617)
+  * Disable polkit support on non-linux architectures, polkit is not
+    functional on these, only the libraries are built there
+  * Explicitly disable wacom and logind support on non-linux architectures
+  * Drop the libdbus-glib-1-dev dependency in cinnamon-settings-daemon-dev,
+    that looks useless looking at the pkg-config file
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Sat, 04 Dec 2021 12:26:21 -0500
+
+cinnamon-settings-daemon (5.0.4-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:20:03 +0900
+
+cinnamon-settings-daemon (5.0.4-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.4
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:19:51 +0900
+
+cinnamon-settings-daemon (4.8.5-1) unstable; urgency=medium
+
+  * New upstream version 4.8.5
+  * Don't use dropped meson option: install_binfiles
+  * Install new files in /usr/bin
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 16 Jan 2021 20:21:56 +0900
+
+cinnamon-settings-daemon (4.8.3-1) unstable; urgency=medium
+
+  * New upstream version 4.8.3
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 03 Jan 2021 06:32:52 +0900
+
+cinnamon-settings-daemon (4.8.2-3) unstable; urgency=high
+
+  [ Fabio Fantoni ]
+  * d/control: Avoid libwacom-dev when not using xserver-xorg-input-wacom
+    Thanks to Simon McVittie (Closes: 977762)
+  * d/control: Don't B-D on librsvg2-dev where not needed
+    Thanks to Simon McVittie
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 21 Dec 2020 04:27:03 +0900
+
+cinnamon-settings-daemon (4.8.2-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:59 +0900
+
+cinnamon-settings-daemon (4.8.2-1) experimental; urgency=medium
+
+  * New upstream version 4.8.2
+  * Bump B-D on cinnamon-desktop to 4.8 according to upstream changes
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 05 Dec 2020 21:18:47 +0900
+
+cinnamon-settings-daemon (4.8.1-1) experimental; urgency=medium
+
+  * New upstream version 4.8.1
+  * switch to meson
+  * bump dh compat to 13
+  * remove and don't install apport file
+  * Remove unused override stanza from d/rules.
+  * Bump inter-cinnamon deps to 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:38:32 +0900
+
+cinnamon-settings-daemon (4.6.4-1) unstable; urgency=medium
+
+  * New upstream version 4.6.4
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:57:22 +0900
+
+cinnamon-settings-daemon (4.6.3-1) experimental; urgency=medium
+
+  * New upstream version 4.6.3
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 19 Jun 2020 19:15:14 +0900
+
+cinnamon-settings-daemon (4.6.1-2) experimental; urgency=medium
+
+  * Bump B-D on libcinnamon-desktop-dev to 4.6 to fix build errors
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Jun 2020 22:20:35 +0900
+
+cinnamon-settings-daemon (4.6.1-1) experimental; urgency=medium
+
+  * New upstream release 4.6.1
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 30 May 2020 23:18:13 +0900
+
+cinnamon-settings-daemon (4.4.0-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump deps and reverse-deps to avoid partial upgrade on testing migration
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 10 Feb 2020 22:49:24 +0900
+
+cinnamon-settings-daemon (4.4.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:40:41 +0900
+
+cinnamon-settings-daemon (4.4.0-1) experimental; urgency=medium
+
+  * New upstream version 4.4.0
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:49:42 +0900
+
+cinnamon-settings-daemon (4.2.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:28:12 +0900
+
+cinnamon-settings-daemon (4.2.2-1) experimental; urgency=medium
+
+  * New upstream release (4.2.2)
+  * Add python3-tinycss to deps
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:56:14 +0900
+
+cinnamon-settings-daemon (4.0.3-1) unstable; urgency=medium
+
+  * New upstream release (4.0.3)
+
+  [ Fabio Fantoni ]
+  * Readd missed xserver-xorg-input-wacom to build-deps. (Closes: 929341)
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:50 -0300
+
+cinnamon-settings-daemon (3.8.4-2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New revision
+  * Release to unstable
+
+  [ Jeremy Bicha ]
+  * Add housekeeping-fix-improper-notify_notification_close.patch:
+    - Fix build with glib2.0 2.57.2 (Closes: 905657)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 04 Sep 2018 11:30:00 +0200
+
+cinnamon-settings-daemon (3.8.4-1) unstable; urgency=medium
+
+  * New upstream release (3.8.4).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:39 +0200
+
+cinnamon-settings-daemon (3.8.2-1) experimental; urgency=medium
+
+  * Update install files
+  * New upstream release (3.8.2).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 20:10:14 +0200
+
+cinnamon-settings-daemon (3.8.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Drop dh-autoreconf (no longer needed with dh >= 10)
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+  * Add Suggests to the default associated programs.
+    Thanks to Simon McVittie (Closes: 895481)
+  * Bump Standards-Version to 4.1.4.
+  * Drop unused debian/cinnamon-update-wallpaper-cache.c file
+  * Update debian/copyright
+  * Enable hardening bindnow
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+  [ Fabio Fantoni ]
+  * Update debian/copyright
+  * New upstream release (3.8.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:14 +0200
+
+cinnamon-settings-daemon (3.6.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.6.0).
+  * Update install files.
+  * Bump group breaks (3.6).
+  * Add cinnamon-l10n to cinnamon-control-center recommends
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.6.1).
+  * Use the salsa canonical urls
+  * Set new ml as Maintainer
+  * New upstream release (3.6.2).
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:07:03 +0200
+
+cinnamon-settings-daemon (3.4.4-2) sid; urgency=medium
+
+  * New revision
+  * Bump cinnamon-desktop build dep
+  * Drop obsolete link
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 21:14:49 +0200
+
+cinnamon-settings-daemon (3.4.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.4.4).
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:27 +0200
+
+cinnamon-settings-daemon (3.4.2-1) experimental; urgency=medium
+
+  * New upstream release (3.4.2).
+  * Update install files
+  * Update install files
+  * Bump group breaks (3.4)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:31:47 +0200
+
+cinnamon-settings-daemon (3.2.1-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:18:17 -0300
+
+cinnamon-settings-daemon (3.2.1-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull automaken
+    instead, causing build failures.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 18 Dec 2016 16:49:39 +0100
+
+cinnamon-settings-daemon (3.2.1-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Drop upstream applied patches
+  * Update install files
+  * New upstream release (3.2.1).
+  * Disable unbuildable wacom plugin
+  * Bump cinnamon-desktop build dependency
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 17 Dec 2016 21:36:38 +0100
+
+cinnamon-settings-daemon (3.0.1-3) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add new patch: gnome-common-deprecation.patch
+    Thanks to Michael Biebl for reporting (Closes: 829904)
+  * Drop gtk-doc-tools build dependency.
+    Thanks to Michael Biebl for reporting (Closes: 837822)
+  * Update install files
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 17 Oct 2016 21:31:35 +0200
+
+cinnamon-settings-daemon (3.0.1-2) unstable; urgency=medium
+
+  * Change the default touchpad scrolling to not be the "reverse" / "natural",
+    but the classic one instead. Thanks Christoph Anton Mitterer for reporting.
+    (Closes: #824428)
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 16 May 2016 14:00:48 +0200
+
+cinnamon-settings-daemon (3.0.1-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * New upstream release (3.0.1).
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Dropping patches applied upstream
+  * Bump cinnamon-desktop build dependency
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 15 May 2016 10:09:31 +0200
+
+cinnamon-settings-daemon (2.8.4-2) unstable; urgency=medium
+
+  * New patch: power: refresh device if any properties changed
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Bump Standards-Version to 3.9.7, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Mar 2016 12:18:15 +0200
+
+cinnamon-settings-daemon (2.8.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 13 Mar 2016 22:47:30 +0100
+
+cinnamon-settings-daemon (2.8.3-2) unstable; urgency=medium
+
+  * Bump cinnamon-desktop build dependency.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 19 Jan 2016 13:29:58 +0100
+
+cinnamon-settings-daemon (2.8.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:40 +0100
+
+cinnamon-settings-daemon (2.6.3-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Transition to libsystemd, thanks to Michael Biebl. (Closes: #779771)
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 13 Jul 2015 21:38:47 +0200
+
+cinnamon-settings-daemon (2.6.3-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Jul 2015 14:58:34 +0200
+
+cinnamon-settings-daemon (2.6.2-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release.
+
+  [ Fabio Fantoni ]
+  * Update dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:30 +0200
+
+cinnamon-settings-daemon (2.4.3-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed 4 patches applied upstream.
+
+  [ Maximiliano Curia ]
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 01 Mar 2015 22:32:55 +0100
+
+cinnamon-settings-daemon (2.2.4.repack-7) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add patch to fix calculator media key. (Closes: #762382)
+  * Add patch to enable 3 finger tap. (Closes: #766300)
+    Thanks to Andrew Chadwick.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 25 Oct 2014 16:14:13 +0200
+
+cinnamon-settings-daemon (2.2.4.repack-6) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Use systemd only with linux to solves FTBFS on kfreebsd. (Closes: #761370)
+    Thanks to Pino Toscano.
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 3.9.6, no further changes.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 06 Oct 2014 12:46:00 +0200
+
+cinnamon-settings-daemon (2.2.4.repack-5) unstable; urgency=medium
+
+  * Remove xserver-xorg-input-wacom as a dependency on kFreeBSD and Hurd as well
+    as s390x, also not available there.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 07 Sep 2014 16:47:46 +0200
+
+cinnamon-settings-daemon (2.2.4.repack-4) unstable; urgency=medium
+
+  * Move more build dependencies to linux-any in order to get kFreeBSD to work.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 30 Aug 2014 19:02:37 -0700
+
+cinnamon-settings-daemon (2.2.4.repack-3) unstable; urgency=medium
+
+  * Remove xserver-xorg-input-wacom as a dependency on s390x, as it's not
+    available there.
+  * Use libgudev only on linux to allow building on kFreeBSD.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 30 Aug 2014 10:46:53 -0700
+
+cinnamon-settings-daemon (2.2.4.repack-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Fix usr/bin/cinnamon-settings-daemon broken link making it compatible
+    with multiarch. (Closes: #755766)
+
+  [ Margarita Manterola ]
+  * Add patch to fix battery status in power panel (Closes: #755896).
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 26 Jul 2014 22:31:55 +0200
+
+cinnamon-settings-daemon (2.2.4.repack-1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Repack orig.tar.gz without upstream debian and .pc dirs
+  * Add systemd support, since ConsoleKit is deprecated.
+  * New patch: xrandr-manager-upower-0.99-support
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:21:01 +0200
+
+cinnamon-settings-daemon (2.2.4-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Add librsvg2-dev to Build-Depends otherwise the wacom plugin is missing.
+  * Change recommend systemd-services in consolekit as the configure use
+    systemd only if specified and it isn't, so use consolekit instead.
+  * Replace suggest metacity with muffin
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 23 Jun 2014 13:12:10 +0200
+
+cinnamon-settings-daemon (2.2.3-1) experimental; urgency=low
+
+  [ Maximiliano Curia ]
+  * Initial release (Closes: #745915).
+  * Add autopkgtests.
+  * Update install files.
+  * Update source_cinnamon-settings-daemon.py.
+  * Update VCS fields.
+  * New upstream release 2.2.3.
+  * Update copyright information.
+
+  [ Margarita Manterola ]
+  * Remove control.in and gnome sequence in debian/rules.
+  * New upstream release 2.2.1.
+  * Add myself to uploaders.
+  * Fix desktop file installation
+  * Fix /etc/dbus-1 file installation
+  * Use upstream manpage
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 May 2014 20:16:29 +0200
