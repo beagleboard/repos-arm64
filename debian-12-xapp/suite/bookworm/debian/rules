@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,now
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -D docs=true \
+	    -D deprecated_warnings=false \
+	    -D debian_derivative=true
+

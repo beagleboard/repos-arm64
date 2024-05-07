@@ -1,0 +1,183 @@
+Source: xapp
+Section: x11
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Norbert Preining <norbert@preining.info>,
+ Christoph Martin <martin@uni-mainz.de>,
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ dh-sequence-python3,
+ gobject-introspection,
+ gtk-doc-tools,
+ intltool,
+ libcairo2-dev,
+ libdbus-1-dev,
+ libdbusmenu-gtk3-dev,
+ libgdk-pixbuf-2.0-dev,
+ libgirepository1.0-dev,
+ libglib2.0-dev,
+ libgnomekbd-dev,
+ libgtk-3-dev,
+ libx11-dev,
+ libxkbfile-dev,
+ meson,
+ python-gi-dev,
+ python3:any,
+ valac,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: http://cinnamon.linuxmint.com/
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/xapp
+Vcs-Git: https://salsa.debian.org/cinnamon-team/xapp.git
+
+Package: gir1.2-xapp-1.0
+Section: introspection
+Architecture: any
+Depends: ${gir:Depends}, ${misc:Depends}, ${python3:Depends}
+Description: Introspection data for Xapp
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package contains the introspection data for Xapp.
+Breaks: cinnamon (<< 5.2), cinnamon-screensaver (<< 4.0)
+
+Package: libxapp-dev
+Section: libdevel
+Architecture: any
+Depends:
+ gir1.2-xapp-1.0 (= ${binary:Version}),
+ libcairo2-dev,
+ libglib2.0-dev,
+ libgnomekbd-dev,
+ libgtk-3-dev,
+ libxapp1 (= ${binary:Version}),
+ libxkbfile-dev,
+ ${misc:Depends},
+Description: XApp library - development files
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package provides the include files and static library for the Xapp
+ library functions.
+
+Package: libxapp-gtk3-module
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ xapps-common (>= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Breaks: libxapp1 (<< 2.2.6-1~), xapp (<< 2.4.2-1~), xapps-common (<< 2.4.2-1~)
+Replaces:
+ libxapp1 (<< 2.2.6-1~),
+ xapp (<< 2.4.2-1~),
+ xapps-common (<< 2.4.2-1~),
+Description: GTK 3.0 module for the XApp library
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package contains a GTK 3.0 module to make features of the XApp library
+ available to GTK 3.0 applications.
+
+Package: libxapp1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ xapps-common (>= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ libxapp-gtk3-module (= ${binary:Version}),
+ xapp-sn-watcher (= ${binary:Version}),
+Description: XApp library
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This library is used by several Xapp apps.
+Replaces: xapps-common (<< 2.0.6-2~)
+Breaks: nemo (<< 5.2), xapps-common (<< 2.0.6-2~)
+
+Package: mate-xapp-status-applet
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ gir1.2-gdkpixbuf-2.0,
+ gir1.2-gio-2.0,
+ gir1.2-glib-2.0,
+ gir1.2-gobject-2.0,
+ gir1.2-gtk-3.0,
+ gir1.2-matepanelapplet-4.0,
+ gir1.2-xapp-1.0 (>= ${source:Version}),
+ mate-panel,
+ python3,
+ python3-gi,
+ python3-setproctitle,
+ xapps-common (>= ${source:Version}),
+ ${misc:Depends},
+ ${python3:Depends},
+Breaks: xapps-common (<< 2.4.2-1~)
+Replaces: xapps-common (<< 2.4.2-1~)
+Description: XApp status icon applet for the MATE panel
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package contains the MATE panel applet to display XAppStatusIcon
+ indicators of several XApp apps.
+
+Package: xapp-sn-watcher
+Architecture: any
+Depends:
+ default-dbus-session-bus | dbus-session-bus,
+ xapps-common (>= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Suggests: mate-xapp-status-applet
+Breaks: libxapp1 (<< 2.2.6-1~), xapp (<< 2.4.2-1~), xapps-common (<< 2.4.2-1~)
+Replaces:
+ libxapp1 (<< 2.2.6-1~),
+ xapp (<< 2.4.2-1~),
+ xapps-common (<< 2.4.2-1~),
+Description: D-Bus session bus service to support the XApp library
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package contains xapp-sn-watcher.
+
+Package: xapps-common
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ python3,
+ python3-gi,
+ xdg-utils,
+ ${misc:Depends},
+ ${python3:Depends},
+Recommends: inxi, netcat
+Description: Files that are common across Xapp desktop applications
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package includes files that are shared between several XApp
+ apps (i18n files and configuration schemas).
+Breaks: cinnamon (<< 4.0)
+
+Package: xapps-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: devhelp, ${misc:Depends}
+Description: Libxapp documentation
+ Xapp provides components which are common to multiple desktop environments
+ and required to implement cross-DE solutions.
+ .
+ This package contains documentation for Xapp library
