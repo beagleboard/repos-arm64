@@ -1,0 +1,6 @@
+ti-sgx-23.3-j722s-ddx-um (23.3.6512818.0-0bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild ti-sgx-23.3-j722s-ddx-um_23.3.6512818.0-0 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 16:35:22 -0500
+
