@@ -1,0 +1,30 @@
+Source: nemo-fileroller
+Section: misc
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Christoph Martin <martin@uni-mainz.de>
+Build-Depends:
+ debhelper-compat (= 13),
+ libglib2.0-dev,
+ libnemo-extension-dev (>= 4.6),
+ meson,
+Homepage: https://github.com/linuxmint/nemo-extensions/
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/nemo-fileroller
+Vcs-Git: https://salsa.debian.org/cinnamon-team/nemo-fileroller.git
+
+Package: nemo-fileroller
+Architecture: any
+Depends: file-roller, nemo (>= 4.6), ${misc:Depends}, ${shlibs:Depends}
+Recommends: cinnamon-l10n (>= 4.6)
+Description: File Roller integration for Nemo
+ Nemo File Roller is an Nemo extension which allows you to create and extract
+ archives in Nemo. This extension adds "Extract Here" (for archive files) and
+ "Compress..." items to the right-click menu.
