@@ -1,0 +1,381 @@
+cinnamon-translations (6.0.2-2bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cinnamon-translations_6.0.2-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 12:17:18 -0500
+
+cinnamon-translations (6.0.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 30 Mar 2024 11:14:57 +0100
+
+cinnamon-translations (6.0.2-1) experimental; urgency=medium
+
+  * New upstream version 6.0.2
+  * Bump breaks of reverse deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 13:10:20 +0100
+
+cinnamon-translations (5.8.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:07:39 +0200
+
+cinnamon-translations (5.8.2-1) experimental; urgency=medium
+
+  * New upstream version 5.8.2
+  * Bump breaks of reverse deps
+  * Update standards version to 4.6.2, no changes needed
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 12:16:17 +0200
+
+cinnamon-translations (5.6.1-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 25 Dec 2022 18:28:57 +0100
+
+cinnamon-translations (5.6.1-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * New upstream version 5.6.1
+  * Bump breaks of reverse deps
+
+  [ Fabio Fantoni ]
+  * d/control: remove cinnamon-translations break/replace, not needed
+    anymore as older that oldstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 20 Dec 2022 19:19:41 +0100
+
+cinnamon-translations (5.4.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 11:15:07 +0200
+
+cinnamon-translations (5.4.2-1) experimental; urgency=medium
+
+  * New upstream version 5.4.2
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 24 Jul 2022 15:10:39 +0200
+
+cinnamon-translations (5.4.1-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * Simplify watch file
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.4.1
+  * d/control: remove old breaks/replaces
+  * Standard version to 4.6.1, no changes needed
+  * Bump breaks of reverse deps
+  * Add nemo to breaks of reverse deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:30:12 +0200
+
+cinnamon-translations (5.2.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.2.2
+
+  [ Christoph Martin ]
+  * add myself to uploaders
+  * prepare unstable upload
+
+ -- Christoph Martin <martin@uni-mainz.de>  Tue, 25 Jan 2022 18:36:27 +0100
+
+cinnamon-translations (5.2.1-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * Fix watch file
+  * Add Rules-Requires-Root field
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.2.1
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Sun, 21 Nov 2021 14:07:08 -0500
+
+cinnamon-translations (5.0.2-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:20:04 +0900
+
+cinnamon-translations (5.0.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.2
+  * Use debhelper-compat and dump to dh-compat 13
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:20:21 +0900
+
+cinnamon-translations (4.8.3-1) unstable; urgency=medium
+
+  * New upstream version 4.8.3
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 03 Jan 2021 06:35:30 +0900
+
+cinnamon-translations (4.8.2-3) unstable; urgency=high
+
+  * d/control: add cinnamon versioned breaks to avoid partial upgrade.
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 22 Dec 2020 14:42:46 +0100
+
+cinnamon-translations (4.8.2-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:59 +0900
+
+cinnamon-translations (4.8.2-1) experimental; urgency=medium
+
+  * New upstream version 4.8.2
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 15 Dec 2020 13:00:31 +0900
+
+cinnamon-translations (4.8.1-1) experimental; urgency=medium
+
+  * New upstream version 4.8.1
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 11 Dec 2020 08:41:45 +0900
+
+cinnamon-translations (4.8.0-1) experimental; urgency=medium
+
+  * New upstream version 4.8.0
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:39:03 +0900
+
+cinnamon-translations (4.6.2-1) unstable; urgency=medium
+
+  * New upstream version 4.6.2
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:58:00 +0900
+
+cinnamon-translations (4.6.1-1) experimental; urgency=medium
+
+  * New upstream version 4.6.1
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 19 Jun 2020 19:15:55 +0900
+
+cinnamon-translations (4.6.0-1) experimental; urgency=medium
+
+  * New upstream version 4.6.0
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 30 May 2020 23:21:14 +0900
+
+cinnamon-translations (4.4.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:41:15 +0900
+
+cinnamon-translations (4.4.2-1) experimental; urgency=medium
+
+  * New upstream version 4.4.2
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:50:28 +0900
+
+cinnamon-translations (4.2.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:28:16 +0900
+
+cinnamon-translations (4.2.2-1) experimental; urgency=medium
+
+  [ David Mohammed ]
+  * New upstream release (4.2.2)
+  * Control & Compat: Update for debhelper 12
+  * Control: Bump StandardsVersion
+  * Rules: Turn on verbose as per debian packaging policy
+  * Control: Expand extended description to resolve lintian information
+    report
+  * Copyright: Use secure copyright file specification URI.
+
+  [ Norbert Preining ]
+  * Import orig.tar into pristine tar and upstream branch
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:58:27 +0900
+
+cinnamon-translations (4.0.2-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (4.0.{1,2})
+
+  [ Maximiliano Curia ]
+  * Add a basic gbp.conf
+  * Add a debian/salsa-ci.yml file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:49 -0300
+
+cinnamon-translations (3.8.2-1) unstable; urgency=medium
+
+  * New upstream release (3.8.2).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:34 +0200
+
+cinnamon-translations (3.8.1-1) experimental; urgency=medium
+
+  * New upstream release (3.8.1).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 19:14:54 +0200
+
+cinnamon-translations (3.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0).
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 4.1.4.
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:15 +0200
+
+cinnamon-translations (3.6.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Make cinnamon-l10n Multi-Arch: foreign (closes: #874327)
+    Thanks to Hugh McMaster
+  * New upstream release (3.6.4).
+
+  [ Maximiliano Curia ]
+  * Use the salsa canonical urls
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:06:58 +0200
+
+cinnamon-translations (3.4.3-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:24 +0200
+
+cinnamon-translations (3.4.3-1) experimental; urgency=medium
+
+  * New upstream release (3.4.3).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:31:43 +0200
+
+cinnamon-translations (3.2.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 19:58:07 -0300
+
+cinnamon-translations (3.2.2-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Update homepage entry
+  * New upstream release (3.2.2).
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 Dec 2016 22:20:20 +0100
+
+cinnamon-translations (3.0.3-1) unstable; urgency=medium
+
+  * New upstream release (3.0.3).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 22 Jul 2016 12:01:47 +0200
+
+cinnamon-translations (3.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 28 May 2016 15:59:28 +0200
+
+cinnamon-translations (3.0.0-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 May 2016 13:03:19 +0200
+
+cinnamon-translations (2.8.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:42 +0100
+
+cinnamon-translations (2.6.3-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Jul 2015 14:52:44 +0200
+
+cinnamon-translations (2.6.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:31 +0200
+
+cinnamon-translations (2.4.4-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 21 Apr 2015 23:18:13 +0200
+
+cinnamon-translations (2.4.3-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed one patch applied upstream.
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 28 Feb 2015 14:36:32 +0100
+
+cinnamon-translations (2.2.4-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/copyright: fixed the source license and changed the debian/
+
+ -- Margarita Manterola <marga@debian.org>  Fri, 22 Aug 2014 12:06:10 -0700
+
+cinnamon-translations (2.2.3-4) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Renamed cinnamon-translations binary in cinnamon-l10n.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 27 Jul 2014 00:05:29 +0200
+
+cinnamon-translations (2.2.3-3) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:30:00 +0200
+
+cinnamon-translations (2.2.3-2) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Initial release.
+  * Improve copyright information.
+
+  [ Fabio Fantoni ]
+  * Generate mo files on package build to follow Debian policy.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:21:02 +0200
