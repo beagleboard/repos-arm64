@@ -9,7 +9,7 @@ Uploaders:
  Joshua Peisach <itzswirlz2020@outlook.com>,
  Norbert Preining <norbert@preining.info>,
  Christoph Martin <martin@uni-mainz.de>,
-Build-Depends: dpkg-dev (>= 1.22.5),
+Build-Depends: dpkg-dev,
  adwaita-icon-theme <!nocheck>,
  at-spi2-core <!nocheck>,
  cinnamon-desktop-data (>= 6.0),
