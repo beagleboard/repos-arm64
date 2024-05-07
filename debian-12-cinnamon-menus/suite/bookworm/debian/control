@@ -1,0 +1,73 @@
+Source: cinnamon-menus
+Section: x11
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Christoph Martin <martin@uni-mainz.de>
+Homepage: http://cinnamon.linuxmint.com
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ gnome-pkg-tools,
+ gobject-introspection,
+ gtk-doc-tools,
+ intltool,
+ libgirepository1.0-dev,
+ libglib2.0-dev,
+ meson
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/cinnamon-menus
+Vcs-Git: https://salsa.debian.org/cinnamon-team/cinnamon-menus.git
+
+Package: gir1.2-cmenu-3.0
+Section: introspection
+Architecture: any
+Multi-Arch: same
+Depends:
+ libcinnamon-menu-3-0 (= ${binary:Version}),
+ ${gir:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: GObject introspection data for the Cinnamon menu library
+ This package contains introspection data for Cinnamon menu, an
+ implementation of the desktop menu specification from freedesktop.org.
+ .
+ It can be used by languages supporting dynamic bindings with
+ the GIRepository format.
+Breaks: cinnamon (<< 5.2~)
+
+Package: libcinnamon-menu-3-0
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Cinnamon implementation of the freedesktop menu specification
+ The package contains an implementation of the draft
+ "Desktop Menu Specification" from freedesktop.org:
+ .
+ http://www.freedesktop.org/Standards/menu-spec
+ .
+ This package contains the shared library.
+Breaks: cinnamon (<< 5.2~), cinnamon-control-center (<< 5.2~)
+
+Package: libcinnamon-menu-3-dev
+Section: libdevel
+Architecture: any
+Depends:
+ gir1.2-cmenu-3.0 (= ${binary:Version}),
+ libcinnamon-menu-3-0 (= ${binary:Version}),
+ libglib2.0-dev,
+ ${misc:Depends}
+Description: Development files for the Cinnamon menu library
+ The package contains an implementation of the draft
+ "Desktop Menu Specification" from freedesktop.org:
+ .
+ http://www.freedesktop.org/Standards/menu-spec
+ .
+ This package contains the development headers.
