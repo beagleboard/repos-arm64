@@ -240,12 +240,13 @@ do_bookworm () {
 	wfile="control"
 	generate_header
 
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxmodule="sgx-23.1"
+	unset_all
 
 	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
 
+	sgxam62="enabled"
+	sgxj721e="enabled"
+	sgxj722s="enabled"
 	sgxmodule="sgx-23.3"
 	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
 	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
