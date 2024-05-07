@@ -1,0 +1,190 @@
+Source: muffin
+Section: x11
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Norbert Preining <norbert@preining.info>,
+ Christoph Martin <martin@uni-mainz.de>,
+Build-Depends: dpkg-dev (>= 1.22.5),
+ adwaita-icon-theme <!nocheck>,
+ at-spi2-core <!nocheck>,
+ cinnamon-desktop-data (>= 6.0),
+ cinnamon-settings-daemon (>= 6.0) <!nocheck>,
+ dbus <!nocheck>,
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ dmz-cursor-theme <!nocheck>,
+ gnome-pkg-tools,
+ gobject-introspection,
+ gtk-doc-tools,
+ libcairo2-dev,
+ libcanberra-gtk3-dev,
+ libcinnamon-desktop-dev (>= 6.0),
+ libdrm-dev [linux-any],
+ libegl-dev,
+ libegl1-mesa-dev [linux-any],
+ libfribidi-dev,
+ libgbm-dev (>= 17.3) [linux-any],
+ libgdk-pixbuf-2.0-dev,
+ libgirepository1.0-dev,
+ libgl-dev,
+ libgles2-mesa-dev | libgles2-dev,
+ libglib2.0-dev (>= 2.61.1),
+ libgraphene-1.0-dev (>= 1.9.3),
+ libgtk-3-dev,
+ libgudev-1.0-dev [linux-any],
+ libice-dev,
+ libinput-dev [linux-any],
+ libjson-glib-dev,
+ libnvidia-egl-wayland-dev [linux-any],
+ libpam0g-dev,
+ libpango1.0-dev,
+ libpipewire-0.3-dev [linux-any],
+ libsm-dev,
+ libstartup-notification0-dev,
+ libsystemd-dev [linux-any],
+ libwacom-dev [linux-any],
+ libwayland-dev,
+ libx11-dev,
+ libx11-xcb-dev,
+ libxau-dev,
+ libxcb-randr0-dev,
+ libxcb-res0-dev,
+ libxcomposite-dev,
+ libxcursor-dev,
+ libxdamage-dev,
+ libxext-dev,
+ libxfixes-dev,
+ libxi-dev,
+ libxinerama-dev,
+ libxkbcommon-dev,
+ libxkbcommon-x11-dev,
+ libxkbfile-dev,
+ libxrandr-dev,
+ libxrender-dev,
+ libxt-dev,
+ meson (>= 0.50),
+ pkgconf,
+ systemd-dev [linux-any],
+ wayland-protocols (>= 1.25) [linux-any],
+ xauth <!nocheck>,
+ xcvt [linux-any],
+ xkb-data,
+ xserver-xorg-core [linux-any],
+ xvfb <!nocheck>,
+ xwayland [linux-any],
+ zenity,
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+Homepage: http://cinnamon.linuxmint.com/
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/muffin
+Vcs-Git: https://salsa.debian.org/cinnamon-team/muffin.git
+
+Package: gir1.2-meta-muffin-0.0
+Section: introspection
+Architecture: any
+Multi-Arch: same
+Depends:
+ libmuffin0t64 (= ${binary:Version}),
+ ${gir:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: GObject introspection data for Muffin
+ Muffin is a window manager performing compositing as well based on
+ GTK+ and Clutter and used in Cinnamon desktop environment.
+ .
+ This package contains the GObject introspection data which may be
+ used to generate dynamic bindings.
+Breaks: cinnamon (<< 6.0~), cinnamon-common (<< 6.0~)
+
+Package: libmuffin-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ gir1.2-meta-muffin-0.0 (= ${binary:Version}),
+ libatk1.0-dev,
+ libcairo2-dev,
+ libcinnamon-desktop-dev (>= 6.0),
+ libdrm-dev,
+ libegl1-mesa-dev,
+ libgdk-pixbuf-2.0-dev,
+ libgles2-mesa-dev | libgles2-dev,
+ libglib2.0-dev,
+ libgraphene-1.0-dev (>= 1.9.3),
+ libgtk-3-dev,
+ libinput-dev,
+ libjson-glib-dev,
+ libmuffin0t64 (= ${binary:Version}),
+ libpango1.0-dev,
+ libudev-dev,
+ libwayland-dev,
+ libx11-dev,
+ libxcomposite-dev,
+ libxdamage-dev,
+ libxext-dev,
+ libxfixes-dev,
+ libxi-dev,
+ libxrandr-dev,
+ ${misc:Depends},
+Breaks: libmuffin0 (<< 5.4.1-1~)
+Replaces: libmuffin0 (<< 5.4.1-1~)
+Description: window and compositing manager (development files)
+ Muffin is a window manager performing compositing as well based on
+ GTK+ and Clutter and used in Cinnamon desktop environment.
+ .
+ This package contains the development files.
+
+Package: libmuffin0t64
+Provides: ${t64:Provides}
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ adwaita-icon-theme,
+ muffin-common (>= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Breaks: libmuffin0 (<< ${source:Version}), cinnamon (<< 6.0~), libmuffin-dev (<< 5.4.1-1~)
+Replaces: libmuffin0, libmuffin-dev (<< 5.4.1-1~)
+Description: window and compositing manager (shared library)
+ Muffin is a window manager performing compositing as well based on
+ GTK+ and Clutter and used in Cinnamon desktop environment.
+ .
+ This package contains the shared library.
+
+Package: muffin
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ adwaita-icon-theme,
+ muffin-common (>= ${source:Version}),
+ zenity,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Provides: x-window-manager
+Recommends: cinnamon-session (>= 6.0~) | x-session-manager
+Suggests: cinnamon-control-center (>= 6.0~), xdg-user-dirs
+Replaces: muffin-doc
+Description: window and compositing manager
+ Muffin is a window manager performing compositing as well based on
+ GTK+ and Clutter and used in Cinnamon desktop environment.
+ .
+ This package contains the core binaries.
+Breaks: cinnamon (<< 6.0~), cinnamon-core (<< 5.4~)
+
+Package: muffin-common
+Section: misc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: window and compositing manager (data files)
+ Muffin is a window manager performing compositing as well based on
+ GTK+ and Clutter and used in Cinnamon desktop environment.
+ .
+ This package contains the shared files.

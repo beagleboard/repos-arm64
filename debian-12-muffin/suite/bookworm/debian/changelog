@@ -1,0 +1,650 @@
+muffin (6.0.1-3bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild muffin_6.0.1-3 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 13:16:27 -0500
+
+muffin (6.0.1-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 31 Mar 2024 19:13:16 +0200
+
+muffin (6.0.1-2) experimental; urgency=medium
+
+  * d/control: add build-dep to dpkg-dev >= 1.22.5
+
+  [ Matthias Klose ]
+  * Fix library name in symbols file.
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 22 Mar 2024 19:20:33 +0100
+
+muffin (6.0.1-1) experimental; urgency=medium
+
+  * New upstream version 6.0.1
+  * d/control:
+    - bump deps and reverse deps breaks to 6.0
+    - add build-deps and deps for wayland support
+    - replace obsolete build-dep pkg-config with pkgconf
+  * d/rules: add wayland support to configure parameters
+  * Update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 11 Feb 2024 15:17:22 +0100
+
+muffin (5.8.1-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.  Closes: #1062963
+
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 28 Feb 2024 20:54:02 +0000
+
+muffin (5.8.1-2.1~exp1) experimental; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.
+
+ -- Graham Inggs <ginggs@debian.org>  Sun, 04 Feb 2024 07:58:23 +0000
+
+muffin (5.8.1-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 29 Sep 2023 13:36:34 +0200
+
+muffin (5.8.1-1) experimental; urgency=medium
+
+  * New upstream version 5.8.1
+  * Update symbols
+  * d/control:
+    - build-dep on libgl-dev instead of transitional libgl1-mesa-dev
+    - bump reverse deps breaks to 5.8
+    - bump c-s-d and cinnamon-desktop build-deps/deps to 5.8
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 14 Jul 2023 13:38:06 +0200
+
+muffin (5.6.4-1) unstable; urgency=medium
+
+  * New upstream bugfix version 5.6.4
+  * Replace libgdk-pixbuf2.0-dev build-dep. with libgdk-pixbuf-2.0-dev
+  * Update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 19 Mar 2023 22:33:27 +0100
+
+muffin (5.6.3-1) unstable; urgency=medium
+
+  * New upstream version 5.6.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 08 Jan 2023 20:59:44 +0100
+
+muffin (5.6.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 25 Dec 2022 19:12:41 +0100
+
+muffin (5.6.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.6.2
+  * Update symbols
+  * Bump needed deps and breaks of reverse-deps to 5.6
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on gnome-pkg-tools,
+      gobject-introspection, gtk-doc-tools, libcairo2-dev, libdrm-dev,
+      libegl1-mesa-dev, libfribidi-dev, libgirepository1.0-dev, libgl1-mesa-dev,
+      libgles2-mesa-dev, libgtk-3-dev, libgudev-1.0-dev, libinput-dev,
+      libjson-glib-dev, libpango1.0-dev, libstartup-notification0-dev,
+      libsystemd-dev, libwacom-dev, libxcomposite-dev, libxi-dev,
+      libxkbcommon-dev and pkg-config.
+    + libmuffin-dev: Drop versioned constraint on libgles2-mesa-dev and
+      libinput-dev in Depends.
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 20 Dec 2022 20:08:09 +0100
+
+muffin (5.4.7-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.4.7
+  * Update symbols
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 09 Sep 2022 11:07:33 +0200
+
+muffin (5.4.6-1) unstable; urgency=medium
+
+  * New upstream version 5.4.6
+  * d/copyright: avoid redundant globbing patterns
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 21 Aug 2022 21:11:51 +0200
+
+muffin (5.4.5-3) unstable; urgency=medium
+
+  * Fix library name for pkgconfig in autopkgtest
+  * d/rules: disable wacom in configure for not linux archs
+  * d/control: add missed libcinnamon-desktop-dev to libmuffin-dev deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 15 Aug 2022 14:20:48 +0200
+
+muffin (5.4.5-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 15:51:46 +0200
+
+muffin (5.4.5-1) experimental; urgency=medium
+
+  * New upstream version 5.4.5
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 01 Aug 2022 20:42:57 +0200
+
+muffin (5.4.4-1) experimental; urgency=medium
+
+  * New upstream version 5.4.4
+  * d/control: add libwacom-dev to build-deps
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Mon, 25 Jul 2022 22:11:20 +0200
+
+muffin (5.4.3-1) experimental; urgency=medium
+
+  * New upstream version 5.4.3
+  * Update symbols
+  * d/control: add missing breaks/replaces to libmuffin-dev and
+    libmuffin0 for moved files in 5.4
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Wed, 20 Jul 2022 23:00:17 +0200
+
+muffin (5.4.1-1) experimental; urgency=medium
+
+  * New upstream version 5.4.1
+    this is a big rebase after over 10 years based on
+    Mutter 3.36.9-0ubuntu0.20.04.1
+  * Simplify d/watch
+  * debian: big packaging changes mainly based on mutter packaging
+    and some changes done upstream
+  * add d/libmuffin0.bug-control: include GL drivers in bug reports
+  * dump deps and breaks of reverse-deps to 5.4
+  * change packages long description
+  * removed muffin-doc and add replaces in muffin
+  * remove d/patches: the patch is not needed anymore
+  * update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:55:06 +0200
+
+muffin (5.2.1-1) unstable; urgency=medium
+
+  * New upstream release 5.2.1.
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Sat, 12 Mar 2022 17:45:03 -0500
+
+muffin (5.2.0-2) unstable; urgency=medium
+
+  * add myself to uploaders
+  * prepare unstable release
+
+ -- Christoph Martin <martin@uni-mainz.de>  Tue, 25 Jan 2022 18:49:45 +0100
+
+muffin (5.2.0-1) experimental; urgency=medium
+
+  * New upstream version 5.2.0
+
+  * Add dh-sequence-gir as build dep
+  * Symbols: Add missing Build-Depends-Package fields
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Thu, 25 Nov 2021 12:33:07 -0500
+
+muffin (5.0.2-1) unstable; urgency=medium
+
+  * New upstream version 5.0.2
+
+  * Bump watch version (3 to 4)
+  * Drop --as-needed linker flags
+  * Bump Standards-Version to 4.6.0.1, add rules-requires-root field
+
+ -- Joshua Peisach <itzswirlz2020@outlook.com>  Sat, 16 Oct 2021 09:59:07 -0400
+
+muffin (5.0.1-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:20:04 +0900
+
+muffin (5.0.1-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.1
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:21:30 +0900
+
+muffin (4.8.1-1) unstable; urgency=medium
+
+  * New upstream version 4.8.1
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 16 Jan 2021 21:26:17 +0900
+
+muffin (4.8.0-3) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:59 +0900
+
+muffin (4.8.0-2) experimental; urgency=medium
+
+  * fix arch=indep builds due to missing entries in d/not-installed
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 03 Dec 2020 20:01:48 +0900
+
+muffin (4.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Bump debhelper compat level to 12.
+  * fix some things spotted by lintian
+  * fix build
+
+  [ Norbert Preining ]
+  * New upstream version 4.8.0
+  * Bump debhelper compat level to 13.
+  * Bump inter-cinnamon deps to 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 08:41:57 +0900
+
+muffin (4.6.3-1) unstable; urgency=medium
+
+  * New upstream version 4.6.3
+  * debhelper-compat instead of d/compat
+  * clean up patches
+  * bump standards version, no changes necessary
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 15 Aug 2020 01:53:51 +0900
+
+muffin (4.6.2-3) unstable; urgency=medium
+
+  * Fix regression wrt refresh rates from xrandr (Closes: #965382)
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 21 Jul 2020 09:22:31 +0900
+
+muffin (4.6.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 11:00:17 +0900
+
+muffin (4.6.2-1) experimental; urgency=medium
+
+  * New upstream version 4.6.2
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 11 Jun 2020 14:15:17 +0900
+
+muffin (4.4.3-1) unstable; urgency=medium
+
+  * New upstream version 4.4.3
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 31 Mar 2020 06:47:00 +0900
+
+muffin (4.4.2-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump deps and reverse-deps to avoid partial upgrade on testing migration
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 10 Feb 2020 22:47:38 +0900
+
+muffin (4.4.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:43:47 +0900
+
+muffin (4.4.2-1) experimental; urgency=medium
+
+  * New upstream version 4.4.2
+  * Drop gnome-doc-utils (Closes: #945523)
+  * Update symbols
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 10:00:03 +0900
+
+muffin (4.2.2-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * add patch to fix failed build with warning introduced by gnome 3.34
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Oct 2019 21:30:05 +0900
+
+muffin (4.2.2-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:28:27 +0900
+
+muffin (4.2.2-1) experimental; urgency=medium
+
+  * New upstream releases (4.0.4, 4.0.7, 4.2.2)
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:59:44 +0900
+
+muffin (4.0.7-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream releases (4.0.4, 4.0.7)
+
+  [ Maximiliano Curia ]
+  * Add a basic salsa-ci.yml config
+  * Bump Standards-version to 4.4.0
+  * Build with extra repository
+  * Fix ci invocation
+  * Use a simple salsa-ci.yml
+  * Add a basic gbp.conf
+  * Add a lintian override
+  * Update the not-installed file
+  * Release to unstable
+
+  [ Fabio Fantoni ]
+  * remove debian revision from symbols
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:51 -0300
+
+muffin (3.8.2-1) unstable; urgency=medium
+
+  * New upstream release (3.8.2).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:40 +0200
+
+muffin (3.8.1-1) experimental; urgency=medium
+
+  * New upstream release (3.8.1).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 20:11:20 +0200
+
+muffin (3.8.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.8.0).
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 4.1.4.
+  * Install the typelib file to the m-a girrepository
+  * Enable hardening bindnow
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:18 +0200
+
+muffin (3.6.0-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.6.0).
+  * Bump group breaks (3.6).
+  * Update symbols.
+  * Add missed libcinnamon-desktop-dev to libmuffin-dev deps.
+
+  [ Maximiliano Curia ]
+  * Set new ml as Maintainer
+  * Drop gconf build dep.
+    Thanks to Jeremy Bicha for the report (Closes: 891439)
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Mar 2018 15:07:04 +0200
+
+muffin (3.4.1-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release (3.4.1).
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 02 Sep 2017 07:35:29 +0200
+
+muffin (3.4.0-1) experimental; urgency=medium
+
+  * New upstream release (3.4.0).
+  * Update symbols files.
+  * Bump group breaks (3.4)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 06 Aug 2017 17:31:48 +0200
+
+muffin (3.2.1-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:19:25 -0300
+
+muffin (3.2.1-1) experimental; urgency=medium
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Drop upstream applied patches
+  * Update symbols files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 Dec 2016 23:09:51 +0100
+
+muffin (3.0.5-2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add new patches: Fixed-build.patch Make-AX_-macros-optional.patch
+  * Add autoconf-archive build dep
+  * Add automake as a build dep.
+    Thanks to biebl for reporting (Closes: 837856)
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 17 Oct 2016 21:32:15 +0200
+
+muffin (3.0.5-1) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Fix dbgsym-migration rules
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.0.5).
+  * Add new patch: Migrate-away-from-gnome-common-deprecated-vars-and-
+    macros.patch (Closes: 829819)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 22 Jul 2016 15:44:06 +0200
+
+muffin (3.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Remove meta_window_actor_get_description from symbols file.  It was an
+    internal function that was unused and got dropped.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 28 May 2016 15:46:26 +0200
+
+muffin (3.0.3-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * New upstream release (3.0.3).
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+  * Migrate dbg package to automatic dbgsym
+  * Drop unused patch
+  * Update symbols files, api change in an api unstable lib, only affects cinnamon
+  * Duplicated field
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 15 May 2016 10:11:42 +0200
+
+muffin (2.8.5-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * Update symbols files.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 13 Mar 2016 20:04:43 +0100
+
+muffin (2.8.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Remove patch: support-muffin-typelib
+  * Remove patch: revert.patch
+  * Update symbols files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:29 +0100
+
+muffin (2.6.1-3) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Added muffin-doc package.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 18 Jun 2015 12:46:52 +0200
+
+muffin (2.6.1-2) unstable; urgency=critical
+
+  [ Maximiliano Curia ]
+  * Add rm_conffile rule for /etc/sgml/muffin-common.cat. (Closes:
+    #787695)
+
+  [ Margarita Manterola ]
+  * Add Breaks for cinnamon, as this package is not backwards compatible.
+    (Closes: #788203)
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 09 Jun 2015 19:34:10 +0200
+
+muffin (2.6.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:20 +0200
+
+muffin (2.4.5-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 21 Apr 2015 23:18:15 +0200
+
+muffin (2.4.4-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release. (Closes: #762368)
+  * debian/patches: removed one patch applied upstream.
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update copyright information.
+  * Update symbols files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 02 Mar 2015 12:50:36 +0100
+
+muffin (2.2.6-4) unstable; urgency=medium
+
+  * New patch: upstream_add_GTK_STATE_FLAG_CHECKED_case (Closes: #763249)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 02 Oct 2014 19:08:53 +0200
+
+muffin (2.2.6-3) unstable; urgency=medium
+
+  * Remove doc symlinks, since this causes the package to be not binNMU safe.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 24 Aug 2014 20:15:38 -0700
+
+muffin (2.2.6-2) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Incorporate changes from Ubuntu to make muffin build on ppc64el.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 11:20:53 +0200
+
+muffin (2.2.6-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/control:
+    - removed libgnome2-common
+    - gsettings-desktop-schemas-dev -> libcinnamon-desktop-dev
+    - gnome-session -> cinnamon-session
+    - gnome-control-center -> cinnamon-control-center
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 12 Jul 2014 12:42:52 +0200
+
+muffin (2.2.5-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update symbol file.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 24 May 2014 19:28:35 +0200
+
+muffin (2.2.3-1) experimental; urgency=medium
+
+  * Update VCS fields.
+  * New upstream release.
+  * Remove patch: update-cogl-support adapted upstream.
+  * Remove patch: gtk-state-flags adapted upstream.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 19 May 2014 14:09:44 +0200
+
+muffin (2.2.1-1) experimental; urgency=low
+
+  [ Nicolas Bourdaud ]
+  * New upstream: muffin_1.8.2
+  * Bump policy version to 3.9.4 -- no changes
+
+  [ Maximiliano Curia ]
+  * New upstream release muffin_2.0.5
+  * New maintainers (Closes: #745908)
+  * Bump Standards-Version to 3.9.5.
+  * Add new build-dependencies.
+  * Refresh patch: support-muffin-typelib
+  * Update install files.
+  * Update symbols file.
+  * Add abi-compliance-checker info.
+
+  [ Margarita Manterola ]
+  * New upstream release muffin_2.2.1.
+  * Add patch: update-cogl-support to support libcogl-dev 1.18
+  * Add patch: gtk-state-flags to support new GTK_STATE_FLAG values.
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 28 Apr 2014 22:27:14 +0200
+
+muffin (1.7.3-1) unstable; urgency=low
+
+  * New upstream: muffin_1.7.3
+  * remove patch (applied uptream): fix-japanese-input-problem.patch
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Sun, 21 Apr 2013 13:02:08 +0200
+
+muffin (1.7.2-1) unstable; urgency=low
+
+  * New upstream: muffin_1.7.2
+  * Fix input problem
+    - new patch: fix-japanese-input-problem.patch
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Sat, 06 Apr 2013 13:58:00 +0200
+
+muffin (1.7.1-1) unstable; urgency=low
+
+  * New upstream: muffin_1.7.1
+  * Drop patch applied in upstream: hide-private-symbols.patch
+  * update libmuffin0 symbols
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Sun, 03 Mar 2013 11:10:48 +0100
+
+muffin (1.1.2-1) unstable; urgency=low
+
+  * New upstream: muffin_1.1.2
+  * Update debian/watch: stop using redirector (Thanks: Bart Martens)
+  * Move Debian package repository to Alioth
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Tue, 11 Dec 2012 18:36:16 +0100
+
+muffin (1.1.1-1) unstable; urgency=low
+
+  * Initial release. (Closes: #661270)
+
+ -- Nicolas Bourdaud <nicolas.bourdaud@gmail.com>  Fri, 28 Sep 2012 16:26:21 +0200
