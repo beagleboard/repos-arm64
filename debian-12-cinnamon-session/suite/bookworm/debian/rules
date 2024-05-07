@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -Dfrequent_warnings=true \
+	    -Dipv6=true \
+	    -Dxtrans=true \
+	    --libexecdir=/usr/lib/$(DEB_HOST_MULTIARCH)/cinnamon-session

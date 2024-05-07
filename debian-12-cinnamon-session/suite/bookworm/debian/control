@@ -1,0 +1,88 @@
+Source: cinnamon-session
+Section: x11
+Priority: optional
+Maintainer: Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+Uploaders:
+ Maximiliano Curia <maxy@debian.org>,
+ Margarita Manterola <marga@debian.org>,
+ Fabio Fantoni <fantonifabio@tiscali.it>,
+ Norbert Preining <norbert@preining.info>,
+ Joshua Peisach <itzswirlz2020@outlook.com>,
+ Christoph Martin <martin@uni-mainz.de>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-python3,
+ gnome-pkg-tools,
+ intltool,
+ libcanberra-dev,
+ libcinnamon-desktop-dev (>= 6.0),
+ libgl-dev,
+ libglib2.0-dev,
+ libgtk-3-dev,
+ libice-dev,
+ libjson-glib-dev,
+ libsm-dev,
+ libsystemd-dev [linux-any],
+ libupower-glib-dev,
+ libx11-dev,
+ libxapp-dev,
+ libxau-dev,
+ libxcomposite-dev,
+ libxext-dev,
+ libxrender-dev,
+ libxt-dev,
+ libxtst-dev,
+ meson,
+ xtrans-dev,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: http://cinnamon.linuxmint.com
+Vcs-Browser: https://salsa.debian.org/cinnamon-team/cinnamon-session
+Vcs-Git: https://salsa.debian.org/cinnamon-team/cinnamon-session.git
+
+Package: cinnamon-session
+Architecture: any
+Depends:
+ cinnamon-desktop-data (>= 6.0),
+ cinnamon-session-common (= ${source:Version}),
+ default-dbus-session-bus | dbus-session-bus,
+ gir1.2-gdk-3.0,
+ gir1.2-gio-2.0,
+ gir1.2-glib-2.0,
+ gir1.2-gtk-3.0,
+ gir1.2-xapp-1.0,
+ python3-gi,
+ python3-setproctitle,
+ upower,
+ ${gir:Depends},
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Recommends: cinnamon-l10n (>= 5.2)
+Breaks:
+ cinnamon (<< 6.0~),
+ cinnamon-core (<< 5.2~),
+Provides: x-session-manager
+Description: Cinnamon Session Manager - Minimal runtime
+ The Cinnamon Session Manager is in charge of starting the core components
+ of the Cinnamon desktop, and applications that should be launched at
+ login time. It also features a way to save and restore currently
+ running applications.
+ .
+ This package contains the binaries for the Cinnamon Session Manager, but
+ no startup scripts. It is meant for those willing to start
+ cinnamon-session by hand with the components of their choice, and for
+ applications such as MDM that use cinnamon-session internally.
+
+Package: cinnamon-session-common
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Cinnamon Session Manager - common files
+ The Cinnamon Session Manager is in charge of starting the core components
+ of the Cinnamon desktop, and applications that should be launched at
+ login time. It also features a way to save and restore currently
+ running applications.
+ .
+ This package contains the translations, data files and startup scripts
+ which are common to the Cinnamon and Cinnamon fallback sessions.
