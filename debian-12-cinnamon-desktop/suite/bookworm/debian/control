@@ -9,7 +9,7 @@ Uploaders:
  Norbert Preining <norbert@preining.info>,
  Joshua Peisach <itzswirlz2020@outlook.com>,
  Christoph Martin <martin@uni-mainz.de>,
-Build-Depends: dpkg-dev (>= 1.22.5),
+Build-Depends: dpkg-dev,
  debhelper-compat (= 13),
  dh-sequence-gir,
  gobject-introspection,
