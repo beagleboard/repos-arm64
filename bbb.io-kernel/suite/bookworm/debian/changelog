@@ -1,8 +1,7 @@
-bbb.io-kernel (1.20240430.1-0~bookworm+20240430) bookworm; urgency=low
+bbb.io-kernel (1.20240506.0-0~bookworm+20240506) bookworm; urgency=low
 
   * Kernel Updates
-  * linux-image-6.1.80-ti-arm64-r40
-  * linux-image-6.1.80-ti-rt-arm64-r40
+  * linux-image-6.1.80-ti-arm64-r41
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Apr 2024 23:48:59 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 06 May 2024 22:33:56 -0500
 
