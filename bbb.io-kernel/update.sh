@@ -245,6 +245,8 @@ do_bookworm () {
 	sgxmodule="sgx-23.1"
 
 	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
+
+	sgxmodule="sgx-23.3"
 	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
 	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
 
