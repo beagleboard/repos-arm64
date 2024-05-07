@@ -1,0 +1,51 @@
+#!/usr/bin/make -f
+
+built_binaries := $(shell dh_listpackages)
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs
+
+include /usr/share/dpkg/default.mk
+
+export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-Dauto_features=enabled \
+		-Dprofiler=disabled \
+		-Dinstalled_tests=true \
+		$(NULL)
+
+execute_after_dh_auto_install:
+	rm -f debian/tmp/usr/libexec/installed-tests/cjs/js/modules/*/.eslintrc.yml
+
+override_dh_girepository:
+	dh_girepository -l $(BUILDDIR) /usr/lib/$(DEB_HOST_MULTIARCH)/cjs/girepository-1.0
+
+# debhelper >= 13.4 makes all of /usr/libexec executable, which is not
+# quite right for installed-tests
+override_dh_fixperms:
+	dh_fixperms -Xusr/libexec/installed-tests
+ifneq ($(filter %-tests,$(built_binaries)),)
+	chmod --changes u=rw,og=r debian/*-tests/usr/libexec/installed-tests/cjs/*.so
+	chmod --recursive --changes a+rX,u+w,og-w debian/*-tests/usr/libexec/installed-tests
+endif
+
+override_dh_auto_test:
+	GI_TYPELIB_PATH=$(CURDIR)/obj-$(DEB_HOST_GNU_TYPE) \
+	obj-$(DEB_HOST_GNU_TYPE)/cjs-console -c 'print("Smoke-test OK")'
+	env \
+		TZ=UTC \
+	xvfb-run -a \
+	dh_auto_test -- -v -C $(CURDIR)/obj-$(DEB_HOST_GNU_TYPE) --timeout-multiplier 4
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xusr/lib/$(DEB_HOST_MULTIARCH)/cjs-1.0 -- -c4
+
+override_dh_gnome_clean:
+	dh_gnome_clean --no-control
+
+

@@ -1,0 +1,484 @@
+cjs (6.0.0-2bbbio0~bookworm+20240507) bookworm; urgency=low
+
+  * Rebuild cjs_6.0.0-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 12:59:49 -0500
+
+cjs (6.0.0-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * d/gbp.conf: change debian-branch and upstream-branch to follow DEP14
+
+  [ Simon McVittie ]
+  * d/control: libcjs0 Depends on gir1.2-girepository-2.0 and on typelibs
+    imported by built-in modules (Closes: #1059678)
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 05 Jan 2024 18:46:34 +0100
+
+cjs (6.0.0-1) unstable; urgency=medium
+
+  * New upstream version 6.0.0
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 19 Nov 2023 19:55:40 +0100
+
+cjs (5.8.0-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 17 Sep 2023 21:08:47 +0200
+
+cjs (5.8.0-2) experimental; urgency=medium
+
+  * Add cjs-tests package that contain installed tests
+  * Add significant autopkgtest using cjs-tests package
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Tue, 13 Jun 2023 21:23:28 +0200
+
+cjs (5.8.0-1) experimental; urgency=medium
+
+  * autopkgtest: marked as superficial (Closes: #1032900)
+  * New upstream version 5.8.0 (Closes: #1035931)
+  * Various packaging changes for upstream gjs 1.74.2 rebase
+  * Update symbols
+  * Update breaks to cinnamon 5.6.8
+  * Bump Standards-Version to 4.6.2, no changes required
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Fri, 09 Jun 2023 14:32:25 +0200
+
+cjs (5.6.0-1) unstable; urgency=medium
+
+  * New upstream version 5.6.0
+  * More strict deps with shlibs to avoid partial upgrades
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 19 Nov 2022 15:38:40 +0100
+
+cjs (5.4.1-1) unstable; urgency=medium
+
+  * New upstream version 5.4.1
+  * Improve d/gbp.conf
+  * Release to unstable
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 14 Aug 2022 11:07:03 +0200
+
+cjs (5.4.0-1) experimental; urgency=medium
+
+  * New upstream version 5.4.0
+  * Simplify d/watch
+  * Various packaging changes for upstream gjs 1.70.0-4 rebase
+  * Update symbols
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 10 Jul 2022 22:32:37 +0200
+
+cjs (5.2.0-2) unstable; urgency=medium
+
+  * Remove d/patch workaround for FTBFS with meson 0.60.2,
+    was meson regression solved in 0.60.3
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sat, 15 Jan 2022 10:57:35 +0100
+
+cjs (5.2.0-1) experimental; urgency=medium
+
+  [ Joshua Peisach ]
+  * New upstream version 5.2.0
+  * Add myself as Uploader
+  * Bump cinnamon conflict versions to 5.0
+  * Bump watch version to 4
+  * Remove as-needed linker flag
+  * Remove a patch applied upstream
+  * Bump Standards-Version to 4.6.0.1, no changes required
+  * Add missing copyright field
+
+  [ Fabio Fantoni ]
+  * removed pkg-kde-tools build-dep as not needed anymore
+  * Use dh-sequence-gir and dh-sequence-gnome
+  * d/patches: fix build with meson >=0.60.2 (Closes: #1002110)
+  * d/control: improve packages description
+
+ -- Fabio Fantoni <fantonifabio@tiscali.it>  Sun, 26 Dec 2021 13:46:09 +0100
+
+cjs (5.0.0-2) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * d/patches: object.cpp: Defer processing an object, rather than crash,
+    when a toggle unref is already queued
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 29 Sep 2021 20:20:22 +0900
+
+cjs (5.0.0-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream version 5.0.0
+  * Use debhelper-compat and dump to dh-compat 13
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 23 Aug 2021 13:20:56 +0900
+
+cjs (4.8.2-1) unstable; urgency=medium
+
+  * New upstream version 4.8.2
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 16 Jan 2021 20:23:59 +0900
+
+cjs (4.8.1-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 16 Dec 2020 12:37:59 +0900
+
+cjs (4.8.1-1) experimental; urgency=medium
+
+  * New upstream version 4.8.1
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 08 Dec 2020 19:45:16 +0900
+
+cjs (4.8.0-1) experimental; urgency=medium
+
+  * New upstream version 4.8.0 (Closes: #963833, #975849)
+  * remove mozjs patch, included upstream
+  * Use meson option instead of d/not-installed.
+  * Bump inter-cinnamon deps to 4.8
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 01 Dec 2020 10:32:16 +0900
+
+cjs (4.6.0-3) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Add missing libxml2-utils build-dep.
+
+  [ Norbert Preining ]
+  * Switch to libmozjs-78 (see https://github.com/linuxmint/cjs/pull/84)
+    (Closes: #908234)
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 29 Sep 2020 10:16:13 +0900
+
+cjs (4.6.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Jun 2020 10:59:21 +0900
+
+cjs (4.6.0-1) experimental; urgency=medium
+
+  * New upstream version 4.6.0
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 30 May 2020 23:23:49 +0900
+
+cjs (4.4.0-4) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * Bump reverse-deps to avoid partial upgrade on testing migration
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 10 Feb 2020 22:48:13 +0900
+
+cjs (4.4.0-3) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 04 Feb 2020 08:42:43 +0900
+
+cjs (4.4.0-2) experimental; urgency=medium
+
+  * Bump b-d on libgirepository1.0-dev and libff-dev (Closes: #950217)
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 30 Jan 2020 19:40:35 +0900
+
+cjs (4.4.0-1) experimental; urgency=medium
+
+  * New upstream version 4.4.0 (new functional change to cjs 4.2.0)
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 19 Jan 2020 09:59:04 +0900
+
+cjs (4.2.0-3) unstable; urgency=medium
+
+  * Upload to unstable
+  * Remove upstream included patches
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 30 Sep 2019 22:36:14 +0900
+
+cjs (4.2.0-2) experimental; urgency=medium
+
+  * Update symbols file for all architectures
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 07 Sep 2019 09:10:30 +0900
+
+cjs (4.2.0-1) experimental; urgency=medium
+
+  * New upstream release (4.2.0)
+  * Update symbols files.
+  * add myself to uploaders, release to experimental
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 01 Sep 2019 10:59:11 +0900
+
+cjs (4.0.0-2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New revision
+  * Add new upstream patch: Fix-new-autoconf-archive-compile-issue-73.patch
+  * Release to unstable
+
+  [ Norbert Preining ]
+  * update symbols files from all archs
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 04 Sep 2019 10:03:33 +0200
+
+cjs (4.0.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New revision
+  * Update symbols files.
+    Thanks to Santiago Vila for the report (Closes: 923903)
+  * Add a basic gbp.conf
+  * Add a debian/salsa-ci.yml file
+  * Update symbols file
+  * Release to unstable
+
+  [ Jeremy Bicha ]
+  * debian/libcjs0.symbols: Mark a symbol as optional that disappears on ppc64el with -O3
+
+  [ Norbert Preining ]
+  * New upstream release (4.0.0)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Aug 2019 12:04:49 -0300
+
+cjs (3.8.0-4) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New revision
+  * Update symbols files (Closes: 905249)
+    Thanks to Jeremy Bicha for the report
+  * Release to unstable
+
+  [ Jeremy Bicha ]
+  * Build-Depend on dbus. Drop unnecessary Build-Depends on automake
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Aug 2018 14:51:35 +0200
+
+cjs (3.8.0-3) experimental; urgency=medium
+
+  * New revision
+  * Use the symbolshelper from pkg-kde-tools
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 25 May 2018 16:15:18 +0200
+
+cjs (3.8.0-2) experimental; urgency=medium
+
+  * New revision
+  * Update symbols files from buildds logs (3.8.0-1).
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 May 2018 19:52:06 +0200
+
+cjs (3.8.0-1) experimental; urgency=medium
+
+  [ Jeremy Bicha ]
+  * Update symbols file
+  * Drop Using-dbus-daemon-directly-in-tests.patch, no longer needed.
+  * Have libcjs-dev depend on libcairo2-dev, libglib2.0-dev (>= 2.42.0),
+    and libgtk-3-dev to match its pkgconfig file
+
+  [ Maximiliano Curia ]
+  * New upstream release (3.8.0). (Closes: 879575)
+    Cjs 3.8 has been rebased on gjs 1.50.2.
+  * Drop obsolete patch
+  * Drop old changelog entry
+  * Use the salsa canonical urls
+  * Set new ml as Maintainer
+  * Bump Standards-Version to 4.1.3.
+  * Bump debhelper build-dep and compat to 11.
+  * Drop dh-autoreconf (no longer needed with dh >= 10)
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+  * Bump Standards-Version to 4.1.4.
+  * Bump mozjs dependency
+  * Drop no longer needed autotools-dev build dep
+  * Update symbols files, bump cinnamon breaks
+  * Use dh_missing instead of the deprecated dh_install --list-missing
+  * Drop dh_makeshlibs override, nothing is being installed
+    in /usr/lib/$(DEB_HOST_MULTIARCH)/cjs-1.0
+  * Update copyright information
+  * Drop auto test build deps
+  * Reenable acc test
+  * Bump group breaks (3.8)
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 14:30:16 +0200
+
+cjs (3.2.0-3) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 20 Dec 2016 20:04:49 -0300
+
+cjs (3.2.0-2) experimental; urgency=medium
+
+  * Explicitly depend on automake, as some buildds sometimes pull automaken
+    instead, causing build failures.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 17 Dec 2016 16:45:19 -0300
+
+cjs (3.2.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add new patch: Using-dbus-daemon-directly-in-tests.patch.
+    Thanks to Simon McVittie for the report (Closes: 835848)
+  * Add new patch: Make-AX_-macros-optional.patch
+  * Actually drop gnome-common build dependency
+  * Add new patch: Drop-glib-gettextize-gtkdocize-and-intltoolize.patch
+  * Update autopkgtests
+  * Drop upstream applied patch: migrate_from_gnome-common.patch
+  * Drop upstream applied pattch: Make-AX_-macros-optional.patch
+  * Drop upstream applied patch: Drop-glib-gettextize-gtkdocize-and-
+    intltoolize.patch
+
+  [ Margarita Manterola ]
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 Dec 2016 22:21:36 +0100
+
+cjs (3.0.1-3) unstable; urgency=medium
+
+  [ Margarita Manterola ]
+  * Fix dbgsym-migration rules
+
+  [ Maximiliano Curia ]
+  * Add new patch: migrate_from_gnome-common.patch (Closes: 829932)
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Jul 2016 13:29:38 +0200
+
+cjs (3.0.1-2) unstable; urgency=medium
+
+  * The new libcjs0 breaks old cinnamon's behavior.  Make this clear so that
+    users don't get the lib upgraded by mistake. (Closes: #824829)
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 28 May 2016 15:04:20 +0200
+
+cjs (3.0.1-1) unstable; urgency=medium
+
+  * New upstream release (3.0.0).
+  * New upstream release (3.0.1).
+  * Fix typo.
+    Thanks to Thomas Vincent for reporting (Closes: #819348)
+  * Remove obsolete testsuite field.
+  * Automatic update with ddeb_migration3.py
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 May 2016 13:04:22 +0200
+
+cjs (2.8.0-1) unstable; urgency=medium
+
+  * New upstream release (2.8.0).
+  * Update symbols files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Jan 2016 20:19:26 +0100
+
+cjs (2.6.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 07 Jul 2015 15:28:03 +0200
+
+cjs (2.6.1-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 18 Jun 2015 12:33:53 +0200
+
+cjs (2.6.0-2) unstable; urgency=critical
+
+  * Add Breaks in debian/control as this package is backwards incompatible.
+    (Closes: #788204)
+
+ -- Margarita Manterola <marga@debian.org>  Tue, 09 Jun 2015 19:29:57 +0200
+
+cjs (2.6.0-1) unstable; urgency=medium
+
+  * New upstream release (2.6.0).
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jun 2015 21:46:28 +0200
+
+cjs (2.4.2-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+
+  [ Maximiliano Curia ]
+  * Update symbols files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 21 Apr 2015 23:18:16 +0200
+
+cjs (2.4.1-1) experimental; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release. (Closes: #755177)
+  * Cjs 2.4 was rebased on gjs, big update of dependencies, symbols and
+    removed all debian/patches.
+
+  [ Maximiliano Curia ]
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 01 Mar 2015 13:17:50 +0100
+
+cjs (2.2.2-2) unstable; urgency=medium
+
+  * New patch: debian/patches/no_dbus_abstract_for_tests
+      Use unix:path instead of unix:abstract inside test/run-with-dbus
+      Closes: #759023
+  * New patch: debian/patches/use_assert_equals
+      Use assertEquals instead of assertTrue in an assert for equality.
+      This is one step towards building in sparc.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 30 Aug 2014 10:46:52 -0700
+
+cjs (2.2.2-1) unstable; urgency=medium
+
+  [ Fabio Fantoni ]
+  * New upstream release.
+  * debian/patches: removed one patch applied upstream.
+
+ -- Margarita Manterola <marga@debian.org>  Fri, 22 Aug 2014 16:52:07 -0700
+
+cjs (2.2.1-2) unstable; urgency=medium
+
+  * New patch: upstream_fix_upstream_bug_preventing_start-on-
+    demand_dbus.patch
+  * New patch: use_check_LTLIBRARIES
+  * New patch: missing_macros
+  * New patch: hacky_workaround_for_dbus_issue
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 21:14:40 +0200
+
+cjs (2.2.1-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Margarita Manterola <marga@debian.org>  Sat, 24 May 2014 19:28:44 +0200
+
+cjs (2.2.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Initial release (Closes: #745917).
+  * New patch: upstream_clean-a-leftover.diff
+  * New patch: upstream_enable-jit.diff
+  * New patch: flacky_test
+  * Migrate debian/copyright to 1.0.
+  * Add autopkgtests.
+  * Add abi-compliance-checker info.
+  * Add symbols file.
+  * Update VCS fields.
+  * Update dependencies of libcjs-dev.
+
+  [ Margarita Manterola ]
+  * New upstream release 2.2.0.
+  * Remove already applied patches.
+  * Add myself to uploaders.
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 19 May 2014 13:36:18 +0200
