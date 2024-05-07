@@ -1,6 +1,6 @@
-ti-sgx-23.1-firmware (23.1.6404501-git20230405.0-0~bookworm+20230407) bookworm; urgency=low
+ti-sgx-23.1-firmware (23.1.6404501-git20230405.1-0~bookworm+20240507) bookworm; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild ti-sgx-23.1-firmware_23.1.6404501-git20230405.1-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 07 Apr 2023 13:17:41 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 May 2024 09:23:39 -0500
 

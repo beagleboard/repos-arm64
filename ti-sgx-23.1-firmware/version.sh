@@ -4,7 +4,7 @@
 
 package_name="ti-sgx-23.1-firmware"
 debian_pkg_name="${package_name}"
-package_version="23.1.6404501-git20230405.0"
+package_version="23.1.6404501-git20230405.1"
 package_source=""
 src_dir=""
 
@@ -19,5 +19,5 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230407"
-bookworm_version="~bookworm+20230407"
+bullseye_version="~bullseye+20240507"
+bookworm_version="~bookworm+20240507"
