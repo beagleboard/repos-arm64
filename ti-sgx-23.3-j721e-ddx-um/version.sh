@@ -2,7 +2,7 @@
 
 #https://git.ti.com/gitweb?p=graphics/ti-img-rogue-umlibs.git;a=summary
 
-package_name="ti-sgx-23.1-j721e-ddx-um"
+package_name="ti-sgx-23.3-j721e-ddx-um"
 debian_pkg_name="${package_name}"
 package_version="23.3.6512818.0"
 package_source=""
