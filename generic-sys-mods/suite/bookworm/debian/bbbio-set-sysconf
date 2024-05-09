@@ -95,6 +95,9 @@ if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
 
 if (my $new_user_name = delete($conf->{user_name})) {
     logger('debug', "Changing $current_user to $new_user_name");
+    if ( -f "/etc/systemd/system/default.target.wants/code-server@$current_user.service") {
+        system("systemctl stop code-server@$current_user.service");
+    }
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
         system("systemctl stop bb-code-server.service");
     }
@@ -111,13 +114,18 @@ if (my $new_user_name = delete($conf->{user_name})) {
     if( -f "/etc/lightdm/lightdm.conf") {
         system("sed -i -e 's:autologin-user=$current_user:autologin-user=$new_user_name:g' /etc/lightdm/lightdm.conf");
     }
+    if( -f "/home/$new_user_name/.local/share/code-server/coder.json") {
+        system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /home/$new_user_name/.local/share/code-server/coder.json");
+    }
+    if ( -f "/etc/systemd/system/default.target.wants/code-server@$current_user.service") {
+        system("systemctl disable code-server@$current_user.service");
+        system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /var/www/html/VSCode.html");
+        system("systemctl enable code-server@$new_user_name.service");
+    }
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
         system("sed -i -e 's:User=$current_user:User=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
         system("sed -i -e 's:Group=$current_group:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
         system("sed -i -e 's:/home/$current_user/:/home/$new_user_name/:g' /usr/lib/systemd/system/bb-code-server.service");
-        if( -f "/home/$new_user_name/.local/share/code-server/coder.json") {
-            system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /home/$new_user_name/.local/share/code-server/coder.json");
-        }
     }
     $call_reboot = 1;
 }
