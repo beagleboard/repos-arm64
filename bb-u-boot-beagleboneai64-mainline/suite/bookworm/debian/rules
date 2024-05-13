@@ -43,7 +43,7 @@ OPTEE_PLATFORM=k3-j721e
 #U-Boot
 UBOOT_CFG_CORTEXR="j721e_beagleboneai64_r5_defconfig"
 UBOOT_CFG_CORTEXA="j721e_beagleboneai64_a72_defconfig"
-UB_TAG="v2024.07-rc1"
+UB_TAG="v2024.07-rc2"
 UB_REPO="https://github.com/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-j721e-gp-evm.bin
 UB_ITB=sysfw-j721e-gp-evm.itb
