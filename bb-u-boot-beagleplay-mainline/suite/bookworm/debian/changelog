@@ -1,9 +1,9 @@
-bb-u-boot-beagleplay-mainline (2024.07.20240422.0-0~bookworm+20240422) bookworm; urgency=low
+bb-u-boot-beagleplay-mainline (2024.07.20240506.0-0~bookworm+20240513) bookworm; urgency=low
 
-  * 20240422 - v2024.07-rc1 - https://github.com/u-boot/u-boot/releases/tag/v2024.07-rc1
+  * 20240506 - v2024.07-rc2 - https://github.com/u-boot/u-boot/releases/tag/v2024.07-rc2
   * 20240320 - 09.02.00.009 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.009
-  * 20240422 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/+/9196add7fd7b94cbdfc31bd612830840feb0538d
   * 20240412 - 4.2.0 - https://github.com/OP-TEE/optee_os/commits/4.2.0
+  * 20240510 - master - https://github.com/ARM-software/arm-trusted-firmware/commit/09a1cc2a0bd066702daa269bf35de9c5743ccc93
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly
@@ -11,5 +11,5 @@ bb-u-boot-beagleplay-mainline (2024.07.20240422.0-0~bookworm+20240422) bookworm;
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 22 Apr 2024 21:51:09 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 13 May 2024 13:50:21 -0500
 
