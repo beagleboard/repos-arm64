@@ -16,8 +16,8 @@ reprepro_dir="m/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
 debian_version="${package_version}-1"
-debian_untar=""
-debian_patch="${package_name}_${debian_version}.diff.xz"
+debian_untar="${package_name}_${debian_version}.debian.tar.xz"
+debian_patch=""
 local_patch="bbbio0"
 
 bookworm_version="~bookworm+20240513"
