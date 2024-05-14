@@ -1,4 +1,4 @@
-bb-code-server (4.89.0.0-0~noble+20240510) noble; urgency=low
+bb-code-server (4.89.0.1-0~noble+20240514) noble; urgency=low
 
   * Changed
   * --Updated to Code 1.89.0
@@ -7,5 +7,5 @@ bb-code-server (4.89.0.0-0~noble+20240510) noble; urgency=low
   * --trusted-origin flag for specifying origins that you trust but do not control (for example a reverse proxy).
   * --disable-proxy flag. This disables the domain and path proxies but it does not disable the ports panel in Code. That can be disabled by using remote.autoForwardPorts=false in your settings.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 10 May 2024 13:09:37 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 14 May 2024 09:22:11 -0500
 

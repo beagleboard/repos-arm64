@@ -7,7 +7,7 @@ ver="4.89.0"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
-package_version="${ver}.0"
+package_version="${ver}.1"
 package_source=""
 src_dir=""
 
@@ -24,8 +24,8 @@ debian_dl_1="https://github.com/coder/code-server/releases/download/v${ver}/code
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240510"
-bookworm_version="~bookworm+20240510"
-trixie_version="~trixie+20240510"
-jammy_version="~jammy+20240510"
-noble_version="~noble+20240510"
+bullseye_version="~bullseye+20240514"
+bookworm_version="~bookworm+20240514"
+trixie_version="~trixie+20240514"
+jammy_version="~jammy+20240514"
+noble_version="~noble+20240514"
