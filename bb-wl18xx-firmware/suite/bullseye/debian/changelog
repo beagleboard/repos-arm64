@@ -1,6 +1,6 @@
-bb-wl18xx-firmware (1.20240423.0-0~bullseye+20240423) bullseye; urgency=low
+bb-wl18xx-firmware (1.20240515.0-0~bullseye+20240515) bullseye; urgency=low
 
-  * Add cc33xx firmware from Version: 1.0.0.1 https://www.ti.com/tool/download/CC33XX-LINUX-AM335
+  * Add cc33xx firmware from Version: 1.0.0.3 https://www.ti.com/tool/download/CC33XX-LINUX-AM335
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 23 Apr 2024 12:43:20 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 15 May 2024 16:28:01 -0500
 
