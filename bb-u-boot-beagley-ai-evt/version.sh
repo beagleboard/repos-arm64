@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagley-ai-evt"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20240319.10-09.02.00.009"
+package_version="2023.04.20240319.11-09.02.00.009"
 package_source=""
 src_dir=""
 
