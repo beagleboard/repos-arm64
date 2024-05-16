@@ -252,6 +252,26 @@ format_single_root () {
 	flush_cache
 }
 
+copy_boot_extlinux () {
+	message="Updating extlinux.conf" ; broadcast
+	mkdir -p /tmp/boot/ || true
+
+	mount ${destination}p1 /tmp/boot/ -o sync
+
+	if [ -f ${extlinux} ] ; then
+		message="INFO: [/boot/extlinux/extlinux.conf]"                                             ; broadcast
+		mkdir -p /tmp/boot/extlinux/ || true
+		cp -v ${extlinux} /tmp/boot/extlinux/extlinux.conf
+		message="INFO: [cat /tmp/boot/extlinux/extlinux.conf]"                                     ; broadcast
+		message="`cat /tmp/boot/extlinux/extlinux.conf`"                                           ; broadcast
+		message="--------------------------------------------------------------------------------" ; broadcast
+	fi
+	flush_cache
+
+	umount /tmp/boot/ || umount -l /tmp/boot/ || write_failure
+	flush_cache
+}
+
 copy_rootfs () {
 	message="INFO: Copying: ${source}p${src_rfs_part} -> ${destination}p${dest_rfs_part}"       ; broadcast
 	mkdir -p /tmp/rootfs/ || true
@@ -423,15 +443,7 @@ partition_drive () {
 			dest_rfs_part="1"
 		fi
 		copy_rootfs
-		if [ "x${extlinux}" != "x" ] ; then
-			if [ -f ${extlinux} ] ; then
-				message="INFO: [/boot/firmware/extlinux/extlinux.conf]"                                             ; broadcast
-				cp -v ${extlinux} /boot/firmware/extlinux/extlinux.conf
-				message="INFO: [cat /boot/firmware/extlinux/extlinux.conf]"                                     ; broadcast
-				message="`cat /boot/firmware/extlinux/extlinux.conf`"                                           ; broadcast
-				message="--------------------------------------------------------------------------------" ; broadcast
-			fi
-		fi
+		copy_boot_extlinux
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
 		partition_one_start_mb=${rfs_boot_startmb:-"1"}
 		partition_one_size_mb=${rfs_boot_size_mb:-"128"}
