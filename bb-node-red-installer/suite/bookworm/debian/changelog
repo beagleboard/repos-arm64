@@ -1,8 +1,8 @@
-bb-node-red-installer (3.1.8.0-0~bookworm+20240329) bookworm; urgency=low
+bb-node-red-installer (3.1.9.0-0~bookworm+20240516) bookworm; urgency=low
 
-  * Node-RED - 3.1.8 - https://www.npmjs.com/package/node-red
+  * Node-RED - 3.1.9 - https://www.npmjs.com/package/node-red
   * node-red-dashboard - 3.6.5 - https://www.npmjs.com/package/node-red-dashboard
   * nodejs - 16.20.2 - https://nodejs.org/dist/latest-v16.x/
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Mar 2024 13:24:55 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 May 2024 15:42:40 -0500
 
