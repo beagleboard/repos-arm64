@@ -1,0 +1,34 @@
+Source: bbb.io-cinnamon-desktop
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+
+Package: bbb.io-cinnamon-desktop
+Architecture: all
+Depends:
+ cinnamon (>= 5.8),
+ cinnamon-control-center (>= 5.8),
+ cinnamon-screensaver (>= 5.8),
+ cinnamon-session (>= 5.8),
+ cinnamon-settings-daemon (>= 5.8),
+ desktop-base,
+ gnome-terminal | x-terminal-emulator,
+ lightdm | gdm3 | x-display-manager,
+ muffin (>= 5.8),
+ nemo (>= 5.8),
+ xserver-xorg,
+ ${misc:Depends},
+Recommends:
+ alsa-utils,
+ anacron,
+ cinnamon-l10n (>= 5.8),
+ gnome-themes-extra,
+ gstreamer1.0-plugins-good,
+ gvfs-fuse,
+ sudo,
+Suggests: cinnamon-desktop-environment
+Description: BeagleBoard.org cinnamon desktop
+ This package contains tasksel information for the BeagleBoard.org cinnamon desktop.
