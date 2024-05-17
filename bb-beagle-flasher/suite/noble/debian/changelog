@@ -1,4 +1,4 @@
-bb-beagle-flasher (1.20240516.2-0~noble+20240516) noble; urgency=low
+bb-beagle-flasher (1.20240516.3-0~noble+20240516) noble; urgency=low
 
   * SK-AM69, support microSD -> usb sata
   * BBIA64/BeaglePlay, use u-boot versions of script files
@@ -8,5 +8,5 @@ bb-beagle-flasher (1.20240516.2-0~noble+20240516) noble; urgency=low
   * Remove beagle-flasher-init-shutdown.service, single user will now shutdown
   * e2fsprogs (1.47.0) disable orphan_file, needs v5.15.x kernel
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 May 2024 13:23:40 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 May 2024 21:14:23 -0500
 

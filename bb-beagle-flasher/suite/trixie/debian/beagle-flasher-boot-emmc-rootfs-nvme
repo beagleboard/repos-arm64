@@ -372,7 +372,6 @@ partition_drive () {
 			src_rfs_part=${src_rfs_part:-"2"}
 			dest_rfs_part="1"
 		fi
-		copy_rootfs
 		if [ "x${extlinux}" != "x" ] ; then
 			if [ -f ${extlinux} ] ; then
 				message="INFO: [/boot/firmware/extlinux/extlinux.conf]"                                             ; broadcast
@@ -382,6 +381,7 @@ partition_drive () {
 				message="--------------------------------------------------------------------------------" ; broadcast
 			fi
 		fi
+		copy_rootfs
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
 		partition_one_start_mb=${rfs_boot_startmb:-"1"}
 		partition_one_size_mb=${rfs_boot_size_mb:-"128"}
