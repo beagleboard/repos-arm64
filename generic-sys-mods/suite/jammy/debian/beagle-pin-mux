@@ -1,0 +1,93 @@
+#!/bin/bash
+
+if ! id | grep -q root; then
+	echo "beagle-pin-mux must be run as root:"
+	echo "sudo beagle-pin-mux"
+	exit
+fi
+
+driver_override () {
+	if [ ! -f /sys/devices/platform/${PIN}-${MODE}/driver_override ] ; then
+		echo "Missing driver_override: ${PIN}-${MODE}"
+		exit 1
+	else
+		echo gpio-aggregator > /sys/devices/platform/${PIN}-${MODE}/driver_override
+	fi
+}
+
+bind_driver () {
+	if [ ! -f /sys/bus/platform/drivers/gpio-aggregator/bind ] ; then
+		echo "Missing gpio-aggregator: ${PIN}-${MODE}"
+		exit 1
+	else
+		echo ${PIN}-${MODE} > /sys/bus/platform/drivers/gpio-aggregator/bind
+	fi
+}
+
+checkpin () {
+	if [ ! -d /sys/devices/platform/${PIN}-gpio ] ; then
+		echo "Unknown pin name: ${PIN}"
+		exit 1
+	fi
+	pinloaded=$(ls /sys/bus/platform/drivers/gpio-aggregator/ | grep ${PIN})
+	if [ ! "x${pinloaded}" = "x" ] ; then
+		echo ${pinloaded} > /sys/bus/platform/drivers/gpio-aggregator/unbind 
+	fi
+}
+
+checkpinmode () {
+	if [ ! -d /sys/devices/platform/${PIN}-${MODE} ] ; then
+		MODES=$(ls /sys/devices/platform/ | grep ${PIN} | awk -F ${PIN}- '{print $2}' | tr '\n' ',')
+		echo "Unknown pin-mode combination: ${PIN}-${MODE}: Possible modes are: [$MODES]"
+		exit 1
+	fi
+}
+
+usage () {
+	echo "usage: sudo $(basename $0) --pin hat-08 --mode gpio"
+	#tabed to match 
+		cat <<-__EOF__
+			-----------------------------
+			Bugs email: "bugs at rcn-ee.com"
+
+			Required Options:
+			--pin <gpio>
+
+			--mode <mode>
+
+			Additional Options:
+			        -h --help
+
+			__EOF__
+	exit
+}
+
+checkparm () {
+	if [ "$(echo $1|grep ^'\-')" ] ; then
+		echo "E: Need an argument"
+		usage
+	fi
+}
+
+# parse commandline options
+while [ ! -z "$1" ] ; do
+	case $1 in
+	-h|--help)
+		usage
+		;;
+	--pin)
+		checkparm $2
+		PIN="$2"
+		checkpin
+		;;
+	--mode)
+		checkparm $2
+		MODE="$2"
+		checkpinmode
+		;;
+	esac
+	shift
+done
+
+driver_override
+bind_driver

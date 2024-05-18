@@ -68,3 +68,8 @@ wfile="src/bbbio-set-sysconf" ; copy_ubuntu
 wfile="src/sysconf.txt" ; copy_ubuntu
 wfile="src/ssid.psk" ; copy_ubuntu
 wfile="src/SoftAp0.conf" ; copy_ubuntu
+
+repo="beagle-pin-mux"
+dl_src
+
+wfile="beagle-pin-mux" ; copy_all
