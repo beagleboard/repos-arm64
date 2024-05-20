@@ -1,6 +1,6 @@
-bbb.io-cinnamon-desktop (1.20240516.0-0~bookworm+20240516) bookworm; urgency=low
+bbb.io-cinnamon-desktop (1.20240520.0-0~bookworm+20240520) bookworm; urgency=low
 
-  * Rebuild bbb.io-cinnamon-desktop_1.20240516.0-0 for repos.rcn-ee.com
+  * Rebuild bbb.io-cinnamon-desktop_1.20240520.0-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 May 2024 09:54:35 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 20 May 2024 09:37:44 -0500
 

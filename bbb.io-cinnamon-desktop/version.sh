@@ -2,7 +2,7 @@
 
 package_name="bbb.io-cinnamon-desktop"
 debian_pkg_name="${package_name}"
-package_version="1.20240516.0"
+package_version="1.20240520.0"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20240516"
+bookworm_version="~bookworm+20240520"
