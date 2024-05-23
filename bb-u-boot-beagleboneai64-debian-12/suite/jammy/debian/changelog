@@ -1,9 +1,9 @@
-bb-u-boot-beagleboneai64 (2024.04.20240402.0-0~jammy+20240406) jammy; urgency=low
+bb-u-boot-beagleboneai64 (2024.07.20240520.0-0~jammy+20240523) jammy; urgency=low
 
-  * 20240402 - v2024.04 - https://github.com/u-boot/u-boot/releases/tag/v2024.04
-  * 20240320 - 09.02.00.009 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.009
-  * 20240401 - master - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/+/753da8ce4500b1084be41a1d3bb034d47cdf2add
-  * 20240119 - 4.1.0 - https://github.com/OP-TEE/optee_os/commits/4.1.0
+  * 20240520 - v2024.07-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2024.07-rc3
+  * 20240513 - 09.02.00.010 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=shortlog;h=refs/tags/09.02.00.010
+  * 20240412 - 4.2.0 - https://github.com/OP-TEE/optee_os/commits/4.2.0
+  * 20240522 - master - https://github.com/ARM-software/arm-trusted-firmware/commit/6370f2cbbe963df6ee7b0c6056f630a34035f58c
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly
@@ -11,5 +11,5 @@ bb-u-boot-beagleboneai64 (2024.04.20240402.0-0~jammy+20240406) jammy; urgency=lo
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 06 Apr 2024 15:02:09 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 23 May 2024 16:06:01 -0500
 
