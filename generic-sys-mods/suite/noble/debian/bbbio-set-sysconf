@@ -15,7 +15,6 @@ my ($filename, $conf);
 
 $filename = '/boot/firmware/sysconf.txt';
 
-logger('info', "********************************************************");
 logger('info', "Reading the system configuration settings from $filename");
 $conf = read_conf($filename);
 
