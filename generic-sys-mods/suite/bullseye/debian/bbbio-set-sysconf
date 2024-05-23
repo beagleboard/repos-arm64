@@ -104,7 +104,6 @@ if (my $new_user_name = delete($conf->{user_name})) {
     if( -f "/usr/lib/systemd/system/bb-code-server.service") {
         system("systemctl stop bb-code-server.service");
     }
-    system("pgrep -u $current_user | xargs ps -f -p");
     system("pkill -u $current_user");
     system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
     system("groupmod --new-name $new_user_name $current_group");
