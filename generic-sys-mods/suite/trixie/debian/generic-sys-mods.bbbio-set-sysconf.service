@@ -6,6 +6,7 @@ After=boot-firmware.mount
 [Service]
 Type=oneshot
 ExecStart=/usr/sbin/bbbio-set-sysconf
+StandardOutput=journal+console
 
 [Install]
 RequiredBy=basic.target

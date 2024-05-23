@@ -15,12 +15,13 @@ my ($filename, $conf);
 
 $filename = '/boot/firmware/sysconf.txt';
 
+logger('info', "********************************************************");
 logger('info', "Reading the system configuration settings from $filename");
 $conf = read_conf($filename);
 
 if (my $pass = delete($conf->{root_password})) {
     my $pipe;
-    logger('debug', 'Resetting root password');
+    logger('info', 'Resetting root password');
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
 	my $err = $!;
 	logger('error', "Could not run chpasswd: $err");
@@ -33,7 +34,7 @@ if (my $pass = delete($conf->{root_password})) {
 
 if (my $user_pass = delete($conf->{user_password})) {
     my $pipe;
-    logger('debug', "Resetting $current_user password");
+    logger('info', "Resetting $current_user password");
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
         my $err = $!;
         logger('error', "Could not run chpasswd: $err");
@@ -53,7 +54,7 @@ if (my $user_pass = delete($conf->{user_password})) {
 
 if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
     my $fh;
-    logger('debug', "Adding key to root's authorized_keys");
+    logger('info', "Adding key to root's authorized_keys");
     if(! -d "/root/.ssh") {
         if(!mkdir("/root/.ssh", 0700)) {
             my $err = sprintf("Could not create /root/.ssh directory: %s", $!);
@@ -73,7 +74,7 @@ if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
 
 if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
     my $fh;
-    logger('debug', "Adding key to $current_user authorized_keys");
+    logger('info', "Adding key to $current_user authorized_keys");
     if(! -d "/home/$current_user/.ssh") {
         if(!mkdir("/home/$current_user/.ssh", 0700)) {
             my $err = sprintf("Could not create /home/$current_user/.ssh directory: %s", $!);
@@ -96,7 +97,7 @@ if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
 }
 
 if (my $new_user_name = delete($conf->{user_name})) {
-    logger('debug', "Changing $current_user to $new_user_name");
+    logger('info', "Changing $current_user to $new_user_name");
     if ( -f "/etc/systemd/system/default.target.wants/code-server\@$current_user.service") {
         system("systemctl stop code-server\@$current_user.service");
     }
@@ -138,7 +139,7 @@ if (my $new_user_name = delete($conf->{user_name})) {
 }
 
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
-    logger('debug', "Setting up iwd with '$iwd_psk_file'");
+    logger('info', "Setting up iwd with '$iwd_psk_file'");
     if( -f "/boot/firmware/services/$iwd_psk_file") {
         system("cp /boot/firmware/services/$iwd_psk_file /var/lib/iwd/");
         system("dos2unix -q /var/lib/iwd/$iwd_psk_file");
@@ -147,7 +148,7 @@ if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
 }
 
 if (my $hostapd_file = delete($conf->{hostapd_file})) {
-    logger('debug', "Setting up hostapd with '$hostapd_file'");
+    logger('info', "Setting up hostapd with '$hostapd_file'");
     if( -f "/boot/firmware/services/$hostapd_file") {
         system("cp /boot/firmware/services/$hostapd_file /etc/hostapd/SoftAp0.conf");
         system("dos2unix -q /etc/hostapd/SoftAp0.conf");
@@ -157,7 +158,7 @@ if (my $hostapd_file = delete($conf->{hostapd_file})) {
 
 if (my $name = delete($conf->{hostname})) {
     my $fh;
-    logger('debug', "Setting hostname to '$name'");
+    logger('info', "Setting hostname to '$name'");
     unless ($fh = IO::File->new('/etc/hostname', 'w')) {
 	my $err = $!;
 	logger('error', "Could not write hostname '$name': $err");
@@ -168,7 +169,7 @@ if (my $name = delete($conf->{hostname})) {
     system('hostname', '--file', '/etc/hostname');
 
     my $fha;
-    logger('debug', "Adding '$name' to /etc/hosts");
+    logger('info', "Adding '$name' to /etc/hosts");
     unless ($fha = IO::File->new('/etc/hosts', 'w')) {
 	my $err = $!;
 	logger('error', "Could not write to /etc/hosts '$name': $err");
@@ -186,17 +187,19 @@ if (my $name = delete($conf->{hostname})) {
 }
 
 if (my $new_keymap = delete($conf->{keymap})) {
+    logger('info', "Setting keymap to '$new_keymap'");
     system("/usr/lib/beagleboard-sys-mods/imager_custom set_keymap '$new_keymap'");
     $call_reboot = 1;
 }
 
 if (my $new_timezone = delete($conf->{timezone})) {
+    logger('info', "Setting timezone to '$new_timezone'");
     system("/usr/lib/beagleboard-sys-mods/imager_custom set_timezone '$new_timezone'");
     $call_reboot = 1;
 }
 
 if (my $legacy_rndis_support = delete($conf->{legacy_rndis_support})) {
-    logger('debug', "Enabling Legacy RNDIS support");
+    logger('info', "Enabling Legacy RNDIS support");
     if( -f "/etc/default/bb-boot") {
         system("sed -i -e 's:USB_RNDIS_DISABLED=yes:#USB_RNDIS_DISABLED=yes:g' /etc/default/bb-boot");
         $call_reboot = 1;
@@ -207,12 +210,16 @@ rewrite_conf_file($filename, $conf);
 
 if ($enable_lightdm) {
     if( -f "/usr/lib/systemd/system/lightdm.service") {
+        logger('info', "Enabling lightdm.service");
         system("systemctl enable lightdm.service");
     }
 }
 
 if ($call_reboot) {
-    system("systemctl reboot");
+    logger('info', "**********************************************");
+    logger('info', "Rebooting after setting up sysconf.txt options");
+    logger('info', "**********************************************");
+    system('systemctl', '--message="Rebooting after setting up sysconf.txt options"', 'reboot');
 }
 
 exit 0;
@@ -250,8 +257,8 @@ sub read_conf {
 
 sub logger {
     my ($prio, $msg) = @_;
-    system('logger', '-p', "daemon.$prio",
-	   '-t', 'bbbio-set-sysconf', $msg);
+    system('logger', '-p', "daemon.$prio", '-t', 'bbbio-set-sysconf', $msg);
+    system('echo', $msg);
 }
 
 sub rewrite_conf_file {

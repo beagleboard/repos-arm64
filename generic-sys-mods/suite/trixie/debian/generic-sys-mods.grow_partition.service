@@ -6,8 +6,8 @@ ConditionFileIsExecutable=/usr/bin/bb-growpart
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/bb-growpart
-ExecStartPost=/usr/bin/systemctl enable resize_filesystem
-ExecStartPost=/usr/bin/systemctl disable grow_partition
+ExecStartPost=systemctl enable resize_filesystem
+ExecStartPost=systemctl disable grow_partition
 
 [Install]
 WantedBy=multi-user.target
