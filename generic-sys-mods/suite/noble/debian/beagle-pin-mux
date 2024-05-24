@@ -6,11 +6,58 @@ if ! id | grep -q root; then
 	exit
 fi
 
+grab_helpers () {
+	unset PWM_BUS
+	if [ -f /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-bus ] ; then
+		PWM_BUS=$(cat /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-bus | tr -d '\000')
+	fi
+
+	unset PWM_ADDRESS
+	if [ -f /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-address ] ; then
+		PWM_ADDRESS=$(cat /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-address | tr -d '\000')
+	fi
+
+	unset PWM_EXPORT
+	if [ -f /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-export ] ; then
+		PWM_EXPORT=$(cat /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-export | tr -d '\000')
+	fi
+
+	unset GPIO_PI
+	if [ -f /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-gpio-pi ] ; then
+		GPIO_PI=$(cat /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-gpio-pi | tr -d '\000')
+	fi
+}
+
+export_helpers () {
+	if [ ! "x${PWM_BUS}" = "x" ] ; then
+		pwmchip=$(ls /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/)
+		if [ ! -d /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ ] ; then
+			echo ${PWM_EXPORT} > /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/export
+		fi
+
+		mkdir -p /dev/beagle/pwm/ || true
+		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/beagle/pwm/${PIN}-${MODE}
+		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/beagle/pwm/${GPIO_PI}
+	fi
+}
+
 driver_override () {
 	if [ ! -f /sys/devices/platform/${PIN}-${MODE}/driver_override ] ; then
 		echo "Missing driver_override: ${PIN}-${MODE}"
 		exit 1
 	else
+		grab_helpers
+		if [ -d /dev/beagle/pwm/${PIN}-pwm/ ] ; then
+			rm -f /dev/beagle/pwm/${PIN}-pwm
+		fi
+		if [ -d /dev/beagle/pwm/${PIN}-pwm-ecap/ ] ; then
+			rm -f /dev/beagle/pwm/${PIN}-pwm-ecap
+		fi
+		if [ ! "x${GPIO_PI}" = "x" ] ; then
+			if [ -d /dev/beagle/pwm/${GPIO_PI}/ ] ; then
+				rm -f /dev/beagle/pwm/${GPIO_PI}
+			fi
+		fi
 		echo gpio-aggregator > /sys/devices/platform/${PIN}-${MODE}/driver_override
 	fi
 }
@@ -21,10 +68,15 @@ bind_driver () {
 		exit 1
 	else
 		echo ${PIN}-${MODE} > /sys/bus/platform/drivers/gpio-aggregator/bind
+		export_helpers
 	fi
 }
 
 checkpin () {
+	if [ "x${PIN}" = "x" ] ; then
+		echo "Missing paramater --pin <gpio>"
+		exit 1
+	fi
 	if [ ! -d /sys/devices/platform/${PIN}-gpio ] ; then
 		echo "Unknown pin name: ${PIN}"
 		exit 1
@@ -36,6 +88,10 @@ checkpin () {
 }
 
 checkpinmode () {
+	if [ "x${MODE}" = "x" ] ; then
+		echo "Missing paramater: --mode <mode>"
+		exit 1
+	fi
 	if [ ! -d /sys/devices/platform/${PIN}-${MODE} ] ; then
 		MODES=$(ls /sys/devices/platform/ | grep ${PIN} | awk -F ${PIN}- '{print $2}' | tr '\n' ',')
 		echo "Unknown pin-mode combination: ${PIN}-${MODE}: Possible modes are: [$MODES]"
@@ -48,8 +104,6 @@ usage () {
 	#tabed to match 
 		cat <<-__EOF__
 			-----------------------------
-			Bugs email: "bugs at rcn-ee.com"
-
 			Required Options:
 			--pin <gpio>
 
