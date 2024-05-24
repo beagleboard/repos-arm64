@@ -73,3 +73,8 @@ repo="beagle-pin-mux"
 dl_src
 
 wfile="beagle-pin-mux" ; copy_all
+
+repo="beagle-camera-setup"
+dl_src
+
+wfile="beagle-camera-setup" ; copy_all
