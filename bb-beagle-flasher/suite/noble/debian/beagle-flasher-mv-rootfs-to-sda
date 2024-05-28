@@ -409,7 +409,7 @@ partition_drive () {
 
 		LC_ALL=C sfdisk ${sfdisk_options} "${destination}" <<-__EOF__
 			${partition_one_start_mb}M,${partition_one_size_mb}M,${partition_one_fstype},-
-			${partition_two_start_mb}M,${partition_two_size_mb}M,,,-
+			${partition_two_start_mb}M,,,-
 		__EOF__
 
 		flush_cache
