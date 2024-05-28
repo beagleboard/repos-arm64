@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20240419.0, merged usr cleanups..."
+version_message="1.20240528.0, BeagleY-AI nvme with swap..."
 
 #Debian 12, Ubuntu Lunar, Mantic, Noble
 #https://packages.debian.org/source/bookworm/e2fsprogs
@@ -263,15 +263,13 @@ copy_boot () {
 	rsync -aHAXx --human-readable --info=progress2 /boot/firmware/ /tmp/boot/ || write_failure
 	flush_cache
 
-	if [ "x${extlinux}" != "x" ] ; then
-		if [ -f ${extlinux} ] ; then
-			message="INFO: [/boot/extlinux/extlinux.conf]"                                             ; broadcast
-			mkdir -p /tmp/boot/extlinux/ || true
-			cp -v ${extlinux} /tmp/boot/extlinux/extlinux.conf
-			message="INFO: [cat /tmp/boot/extlinux/extlinux.conf]"                                     ; broadcast
-			message="`cat /tmp/boot/extlinux/extlinux.conf`"                                           ; broadcast
-			message="--------------------------------------------------------------------------------" ; broadcast
-		fi
+	if [ -f ${extlinux} ] ; then
+		message="INFO: [/boot/extlinux/extlinux.conf]"                                             ; broadcast
+		mkdir -p /tmp/boot/extlinux/ || true
+		cp -v ${extlinux} /tmp/boot/extlinux/extlinux.conf
+		message="INFO: [cat /tmp/boot/extlinux/extlinux.conf]"                                     ; broadcast
+		message="`cat /tmp/boot/extlinux/extlinux.conf`"                                           ; broadcast
+		message="--------------------------------------------------------------------------------" ; broadcast
 	fi
 	flush_cache
 
@@ -475,7 +473,7 @@ partition_drive () {
 		copy_rootfs
 	elif [ "x${rfs_partition}" = "xdual" ] ; then
 		partition_one_start_mb=${rfs_boot_startmb:-"1"}
-		partition_one_size_mb=${rfs_boot_size_mb:-"128"}
+		partition_one_size_mb=${rfs_boot_size_mb:-"256"}
 		partition_one_fstype=${rfs_sfdisk_fstype:-"0xc"}
 
 		partition_two_start_mb=$(($partition_one_start_mb + $partition_one_size_mb))
