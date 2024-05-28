@@ -1,7 +1,7 @@
 debug_over_display=tty0
 source=/dev/mmcblk1
 destination=/dev/nvme0n1
-rfs_partition=hybrid
+rfs_partition=hybrid_swap
 rfs_boot_permissions=user,uid=1000,gid=1000,defaults
 rfs_swap_size_mb=4096
 rfs_rootfs_startmb=1
