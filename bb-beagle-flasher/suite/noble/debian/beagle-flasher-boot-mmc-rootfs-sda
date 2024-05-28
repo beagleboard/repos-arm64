@@ -414,12 +414,6 @@ partition_drive () {
 
 		flush_cache
 
-		flush_cache
-		message="INFO: Formatting: ${destination}"                                                 ; broadcast
-		format_single_root
-		message="INFO: Formatting: ${destination} complete"                                        ; broadcast
-		message="--------------------------------------------------------------------------------" ; broadcast
-
 		src_rfs_part=${src_rfs_part:-"3"}
 		dest_rfs_part="2"
 

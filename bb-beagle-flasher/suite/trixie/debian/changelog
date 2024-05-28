@@ -1,4 +1,4 @@
-bb-beagle-flasher (1.20240528.1-0~trixie+20240528) trixie; urgency=low
+bb-beagle-flasher (1.20240528.2-0~trixie+20240528) trixie; urgency=low
 
   * SK-AM69, support microSD -> usb sata
   * BBIA64/BeaglePlay, use u-boot versions of script files
@@ -8,5 +8,5 @@ bb-beagle-flasher (1.20240528.1-0~trixie+20240528) trixie; urgency=low
   * Remove beagle-flasher-init-shutdown.service, single user will now shutdown
   * e2fsprogs (1.47.0) disable orphan_file, needs v5.15.x kernel
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 May 2024 12:18:47 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 May 2024 12:25:33 -0500
 
