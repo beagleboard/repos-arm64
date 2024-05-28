@@ -1,0 +1,8 @@
+debug_over_display=tty0
+source=/dev/mmcblk1
+destination=/dev/nvme0n1
+rfs_partition=hybrid
+rfs_boot_permissions=user,uid=1000,gid=1000,defaults
+rfs_rootfs_startmb=1
+extlinux=/opt/u-boot/bb-u-boot-beagley-ai/nvme-extlinux.conf
+
