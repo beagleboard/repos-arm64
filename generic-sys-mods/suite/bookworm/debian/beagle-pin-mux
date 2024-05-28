@@ -35,9 +35,9 @@ export_helpers () {
 			echo ${PWM_EXPORT} > /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/export
 		fi
 
-		mkdir -p /dev/beagle/pwm/ || true
-		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/beagle/pwm/${PIN}-${MODE}
-		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/beagle/pwm/${GPIO_PI}
+		mkdir -p /dev/hat/pwm/ || true
+		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/hat/pwm/${PIN}-${MODE}
+		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/hat/pwm/${GPIO_PI}
 	fi
 }
 
@@ -47,15 +47,15 @@ driver_override () {
 		exit 1
 	else
 		grab_helpers
-		if [ -d /dev/beagle/pwm/${PIN}-pwm/ ] ; then
-			rm -f /dev/beagle/pwm/${PIN}-pwm
+		if [ -d /dev/hat/pwm/${PIN}-pwm/ ] ; then
+			rm -f /dev/hat/pwm/${PIN}-pwm
 		fi
-		if [ -d /dev/beagle/pwm/${PIN}-pwm-ecap/ ] ; then
-			rm -f /dev/beagle/pwm/${PIN}-pwm-ecap
+		if [ -d /dev/hat/pwm/${PIN}-pwm-ecap/ ] ; then
+			rm -f /dev/hat/pwm/${PIN}-pwm-ecap
 		fi
 		if [ ! "x${GPIO_PI}" = "x" ] ; then
-			if [ -d /dev/beagle/pwm/${GPIO_PI}/ ] ; then
-				rm -f /dev/beagle/pwm/${GPIO_PI}
+			if [ -d /dev/hat/pwm/${GPIO_PI}/ ] ; then
+				rm -f /dev/hat/pwm/${GPIO_PI}
 			fi
 		fi
 		echo gpio-aggregator > /sys/devices/platform/${PIN}-${MODE}/driver_override
