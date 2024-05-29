@@ -5,6 +5,7 @@ Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
  , ca-certificates
+ , unzip
  , wget
 Standards-Version: 4.5.0
 
