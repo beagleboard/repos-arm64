@@ -20,4 +20,4 @@ override_dh_auto_configure:
 	mkdir -p ./tmp/src/ ; git -c http.sslVerify=false clone -b $(TAG) $(REPO) --depth=1 ./tmp/src/ ; git --git-dir ./tmp/src/.git log --pretty=oneline
 
 %:
-	dh $@
+	dh $@ --builddirectory=tmp/src/cc33conf_src/
