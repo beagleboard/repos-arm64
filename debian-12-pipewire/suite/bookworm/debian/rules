@@ -55,8 +55,6 @@ else
 export UDEVRULESDIR=/lib/udev/rules.d
 endif
 
-SNAP=disabled
-
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-Daudiotestsrc=enabled \
@@ -80,7 +78,6 @@ override_dh_auto_configure:
 		-Droc=disabled \
 		-Dsdl2=$(SDL2) \
 		-Dsession-managers= \
-		-Dsnap=$(SNAP) \
 		-Dtest=enabled \
 		-Dudevrulesdir=$(UDEVRULESDIR) \
 		-Dvideotestsrc=enabled \

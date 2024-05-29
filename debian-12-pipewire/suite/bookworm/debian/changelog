@@ -1,3 +1,9 @@
+pipewire (1.0.5-1~bpo12+1bbbio1~bookworm+20240529) bookworm; urgency=low
+
+  * Rebuild pipewire_1.0.5-1~bpo12+1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 May 2024 16:52:04 -0500
+
 pipewire (1.0.5-1~bpo12+1bbbio0~bookworm+20240529) bookworm; urgency=low
 
   * Rebuild pipewire_1.0.5-1~bpo12+1 for repos.rcn-ee.com
