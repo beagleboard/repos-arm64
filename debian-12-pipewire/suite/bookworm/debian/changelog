@@ -1,20 +1,129 @@
-pipewire (1.0.1-1~bpo12+1bbbio2~bookworm+20240124) bookworm; urgency=low
+pipewire (1.0.5-1~bpo12+1bbbio0~bookworm+20240529) bookworm; urgency=low
 
-  * Rebuild pipewire_1.0.1-1~bpo12+1 for repos.rcn-ee.com
+  * Rebuild pipewire_1.0.5-1~bpo12+1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 13:08:22 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 May 2024 16:48:24 -0500
 
-pipewire (1.0.1-1~bpo12+1bbbio1~bookworm+20240124) bookworm; urgency=low
+pipewire (1.0.5-1~bpo12+1) bookworm-backports; urgency=medium
 
-  * Rebuild pipewire_1.0.1-1~bpo12+1 for repos.rcn-ee.com
+  * Rebuild for bookworm-backports.
+  * Disable ROC, not available in Bookworm
+  * Install udev rules in /lib/udev/rules.d
+  * Add patches to keep compatibility with libcamera < 0.2.0
+  * Revert "Rename libraries for 64-bit time_t transition"
+  * Cherry-pick upstream patch:
+      - 29614a2c: doc: fix workaround for old doxygen versions
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 12:56:50 -0600
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 06 May 2024 12:09:32 +0200
 
-pipewire (1.0.1-1~bpo12+1bbbio0~bookworm+20240124) bookworm; urgency=low
+pipewire (1.0.5-1) unstable; urgency=medium
 
-  * Rebuild pipewire_1.0.1-1~bpo12+1 for repos.rcn-ee.com
+  [ Dylan Aïssi ]
+  * New upstream release (Closes: #1069033, LP: #2061381)
+  * Refresh patches
+  * Drop patch included in upstream release:
+      - 64-bit-time-t-compat.patch
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 12:50:00 -0600
+  [ Jeremy Bícha ]
+  * Revert "Temporarily disable Snap integration on 32-bit non-x86"
+  * Revert "Temporarily disable libffado integration on 32-bit non-x86"
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 15 Apr 2024 21:08:58 +0200
+
+pipewire (1.0.4-3) unstable; urgency=medium
+
+  * Team upload
+
+  [ Michael Hudson-Doyle ]
+  * s/libpipewire-0.3-0/libpipewire-0.3-0t64/ in the shlibs.local files
+
+  [ Simon McVittie ]
+  * Only build Snap integration on supported architectures.
+    According to Snap documentation, only these architectures are
+    supported, so enabling the others is unlikely to be particularly
+    useful. Reducing the architecture list reduces the impact of any
+    non-portability in snapd-glib.
+  * Temporarily disable Snap integration on 32-bit non-x86.
+    snapd-glib has not yet been rebuilt for the 64-bit time_t transition.
+    This change should be reverted after snapd-glib is rebuilt.
+  * Temporarily disable libffado integration on 32-bit non-x86.
+    Same reasoning as for snapd-glib, above.
+    (Closes: #1067558)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 24 Mar 2024 17:06:55 +0000
+
+pipewire (1.0.4-2) unstable; urgency=medium
+
+  [ Jeremy Bícha ]
+  * Use dh_installman to install manpages
+
+  [ Steve Langasek ]
+  * Add patch for 64-bit time_t compatibility (Closes: #1066839)
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 14 Mar 2024 10:12:07 +0100
+
+pipewire (1.0.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Improve description of pw's ALSA and JACK packages (Closes: #1062262)
+  * Install a README next to 9999-custom.conf explaining how to divert
+      it (Closes: #1063898)
+  * Cherry-pick more upstream patches improving snap support:
+      - fed14321: snap-policy: ensure audio works with .deb snapd
+      - 4d3658b2: snap-policy: fix memory leak
+  * Install new manpages in their respective packages
+  * Update symbols file
+  * Update metadata of snap support patches
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 13 Mar 2024 14:31:58 +0100
+
+pipewire (1.0.3-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename libraries for 64-bit time_t transition.  Closes: #1063184
+
+ -- Benjamin Drung <bdrung@debian.org>  Fri, 01 Mar 2024 12:42:26 +0000
+
+pipewire (1.0.3-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+  * Disable ROC, not available in Bookworm
+  * Install udev rules in /lib/udev/rules.d
+  * Add patches to keep compatibility with libcamera < 0.2.0
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 15 Feb 2024 11:51:26 +0100
+
+pipewire (1.0.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 02 Feb 2024 16:06:47 +0100
+
+pipewire (1.0.2-1) unstable; urgency=medium
+
+  [ Dylan Aïssi ]
+  * New upstream release
+  * Drop patches included in upstream release:
+      - libcamera0.2 compatibility
+
+  [ Jeremy Bícha ]
+  * Cherry-pick patches from Sergio Costas for snap permissions support.
+    CVE-2022-4964 (LP: #1995707)
+  * Add apparmor and snapd-glib to Build-Depends for snap feature
+  * Cherry-pick a patch to fix LP: #2051504
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 01 Feb 2024 13:01:35 +0100
+
+pipewire (1.0.1-2) unstable; urgency=medium
+
+  * Switch Build-Deps from systemd to systemd-dev (Closes: #1060598)
+  * Use pkgconf instead of the transitional pkg-config
+  * Bump minimum meson to 0.61.1
+  * Drop 'dh_missing --fail-missing', default since debhelper compat 13
+  * Bump minimum libcamera to 0.2.0
+  * Cherry-pick upstream patches for libcamera0.2 compatibility
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 22 Jan 2024 17:24:44 +0100
 
 pipewire (1.0.1-1~bpo12+1) bookworm-backports; urgency=medium
 

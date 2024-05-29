@@ -7,10 +7,11 @@ Uploaders: Jeremy Bicha <jbicha@debian.org>,
 Build-Depends: debhelper-compat (= 13),
                doxygen <!nodoc>,
                graphviz <!nodoc>,
+               libapparmor-dev [linux-any],
                libasound2-dev,
                libavahi-client-dev,
                libbluetooth-dev [linux-any],
-               libcamera-dev [!arm64 !m68k !hurd-any],
+               libcamera-dev [!m68k !hurd-any],
                libdbus-1-dev,
                libffado-dev,
                libfreeaptx-dev,
@@ -31,6 +32,7 @@ Build-Depends: debhelper-compat (= 13),
 #              libroc-dev (>= 0.3.0+dfsg-3),
                libsbc-dev,
                libsdl2-dev <!noinsttest>,
+               libsnapd-glib-dev [amd64 arm64 armhf i386 powerpc ppc64el riscv64 s390x],
                libsndfile1-dev,
                libssl-dev,
                libsystemd-dev [linux-any],
@@ -39,11 +41,11 @@ Build-Depends: debhelper-compat (= 13),
                libv4l-dev,
                libwebrtc-audio-processing-dev,
                libxfixes-dev (>= 1:6.0.0),
-               meson (>= 0.59.0),
+               meson (>= 0.61.1),
                modemmanager-dev,
-               pkg-config,
+               pkgconf,
                python3-docutils,
-               systemd [linux-any]
+               systemd-dev
 Build-Conflicts: libfdk-aac-dev
 Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/utopia-team/pipewire
@@ -277,7 +279,7 @@ Conflicts: pulseaudio
 Depends: pipewire (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: PipeWire ALSA plugin
+Description: PipeWire ALSA plugin, for ALSA applications to output via PipeWire
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:
  .
@@ -286,7 +288,7 @@ Description: PipeWire ALSA plugin
   - Accessing sources of audio and video for consumption.
   - Generating graphs for audio and video processing.
  .
- This package contains the ALSA plugin.
+ This package contains a plugin for ALSA applications to output via PipeWire.
 
 Package: pipewire-jack
 Section: sound
@@ -297,7 +299,7 @@ Breaks: pipewire-audio-client-libraries (<< 0.3.54-1~)
 Depends: pipewire (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: PipeWire JACK plugin
+Description: PipeWire JACK plugin, for JACK applications to output via PipeWire
  PipeWire is a server and user space API to deal with multimedia
  pipelines. This includes:
  .
@@ -306,7 +308,7 @@ Description: PipeWire JACK plugin
   - Accessing sources of audio and video for consumption.
   - Generating graphs for audio and video processing.
  .
- This package contains the JACK plugin.
+ This package contains a plugin for JACK applications to output via PipeWire.
 
 Package: pipewire-v4l2
 Section: video
@@ -400,7 +402,7 @@ Description: libraries for the PipeWire multimedia server - JACK client
 
 Package: libspa-0.2-libcamera
 Section: video
-Architecture: amd64 armel armhf i386 mips64el mipsel ppc64el s390x alpha hppa ia64 powerpc ppc64 riscv64 sh4 sparc64 x32
+Architecture: amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x alpha hppa ia64 powerpc ppc64 riscv64 sh4 sparc64 x32
 Multi-Arch: same
 Replaces: pipewire-libcamera (<< 0.3.72-1~)
 Breaks: pipewire-libcamera (<< 0.3.72-1~)

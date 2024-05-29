@@ -8,8 +8,10 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs
 
 ifneq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
 DOCS=disabled
+MAN=disabled
 else
 DOCS=enabled
+MAN=enabled
 endif
 
 built_binaries := $(shell dh_listpackages)
@@ -28,10 +30,10 @@ else
 BLUEZ5_CODEC_LDAC=enabled
 endif
 
-ifneq (,$(filter arm64 m68k hurd-amd64 hurd-i386,$(DEB_HOST_ARCH)))
+ifneq (,$(filter m68k hurd-amd64 hurd-i386,$(DEB_HOST_ARCH)))
 LIBCAMERA=disabled
 else
-LIBCAMERA=disabled
+LIBCAMERA=enabled
 endif
 
 # lilv and some of its dependencies are in universe
@@ -53,6 +55,8 @@ else
 export UDEVRULESDIR=/lib/udev/rules.d
 endif
 
+SNAP=disabled
+
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-Daudiotestsrc=enabled \
@@ -72,10 +76,11 @@ override_dh_auto_configure:
 		-Dffmpeg=disabled \
 		-Dinstalled_tests=$(INSTTEST) \
 		-Dlv2=$(LV2) \
-		-Dman=enabled \
+		-Dman=$(MAN) \
 		-Droc=disabled \
 		-Dsdl2=$(SDL2) \
 		-Dsession-managers= \
+		-Dsnap=$(SNAP) \
 		-Dtest=enabled \
 		-Dudevrulesdir=$(UDEVRULESDIR) \
 		-Dvideotestsrc=enabled \
@@ -99,9 +104,6 @@ override_dh_auto_test:
 		-- \
 		--timeout-multiplier $(test_timeout_multiplier) \
 		$(NULL)
-
-override_dh_missing:
-	dh_missing --fail-missing
 
 override_dh_makeshlibs:
 	dh_makeshlibs \

@@ -1,3 +1,5 @@
 Don-t-automatically-start-pipewire-for-root-logins.patch
 Fix_services.patch
-# Upstream patch for 0.3.8X
+
+# Fix compat with doxygen < 1.9.7
+29614a2c463a96d14e0f3fa8fcd931f6c9fd050a.patch

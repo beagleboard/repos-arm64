@@ -1,0 +1,42 @@
+From 29614a2c463a96d14e0f3fa8fcd931f6c9fd050a Mon Sep 17 00:00:00 2001
+From: Pauli Virtanen <pav@iki.fi>
+Date: Sun, 21 Apr 2024 11:04:24 +0300
+Subject: [PATCH] doc: fix workaround for old doxygen versions
+
+Fix workaround for old doxygen versions, and put a version requirement
+for Doxygen.
+---
+ doc/man-fixup.py | 3 +++
+ meson.build      | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/doc/man-fixup.py b/doc/man-fixup.py
+index 758aa855ec..829aec3f1b 100755
+--- a/doc/man-fixup.py
++++ b/doc/man-fixup.py
+@@ -28,6 +28,9 @@ def main():
+     if not fn.exists():
+         page2 = page.replace("page_man_", "md_doc_dox_programs_").replace("-", "_")
+         fn = mandir / f"{page2}.3"
++        if not fn.exists():
++            page2 = page.replace("page_man_", "md_doc_dox_config_").replace("-", "_")
++            fn = mandir / f"{page2}.3"
+     else:
+         page2 = None
+ 
+diff --git a/meson.build b/meson.build
+index b95eeb9e50..47bd338514 100644
+--- a/meson.build
++++ b/meson.build
+@@ -516,7 +516,7 @@ endif
+ 
+ generate_docs = get_option('man').enabled() or get_option('docs').enabled()
+ if get_option('man').allowed() or get_option('docs').allowed()
+-  doxygen = find_program('doxygen', required : generate_docs)
++  doxygen = find_program('doxygen', required : generate_docs, version : '>=1.9')
+   pymod = import('python')
+   python = pymod.find_installation('python3', required: generate_docs)
+   generate_docs = doxygen.found() and python.found()
+-- 
+GitLab
+
