@@ -1,1 +1,2 @@
 tmp/src/cc33conf_src/cc33xxconf usr/sbin/
+tmp/src/test_fw/cc33xx*.bin usr/lib/firmware/ti-connectivity/test_fw/
