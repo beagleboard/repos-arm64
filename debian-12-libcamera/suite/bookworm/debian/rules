@@ -6,6 +6,11 @@ export DEB_CXXFLAGS_MAINT_APPEND = -Wno-error
 
 include /usr/share/dpkg/architecture.mk
 
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+CONFFLAGS += \
+	-Dv4l2=true
+endif
+
 %:
 	dh $@
 
@@ -14,8 +19,8 @@ override_dh_auto_configure:
 		--libexecdir=lib/${DEB_HOST_MULTIARCH} \
 		-Dgstreamer=enabled \
 		-Dpycamera=enabled \
-		-Dv4l2=true \
 		-Dtest=true \
+		$(CONFFLAGS) \
 		$(empty)
 
 # Only make the tests fail for key architectures

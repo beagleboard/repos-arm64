@@ -1,10 +1,11 @@
 Source: libcamera
-Priority: optional
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Uploaders: Emmanuel Arias <emmanuelarias30@gmail.com>,
            IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
            Andrej Shadura <andrewsh@debian.org>,
            Dylan Aïssi <daissi@debian.org>
+Section: libs
+Priority: optional
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-python3,
                doxygen <!nodoc>,
@@ -21,7 +22,7 @@ Build-Depends: debhelper-compat (= 13),
                libjs-jquery <!nodoc>,
                libjs-sphinxdoc <!nodoc>,
                libjs-underscore <!nodoc>,
-               liblttng-ust-dev [linux-any],
+               liblttng-ust-dev [!hurd-any !i386],
                libpython3-dev <!pkg.libcamera.nopython>,
                libsdl2-dev <!pkg.libcamera.nosdl>,
                libtiff-dev,
@@ -29,27 +30,25 @@ Build-Depends: debhelper-compat (= 13),
                libyaml-dev,
                meson (>= 0.60),
                openssl,
-               pkgconf | pkg-config,
+               pkgconf,
                python3-jinja2,
                python3-ply,
                python3-pybind11 <!pkg.libcamera.nopython>,
                python3-sphinx <!nodoc>,
                python3-yaml,
                qtbase5-dev <!pkg.libcamera.noqt>
-Standards-Version: 4.6.2
-Rules-Requires-Root: no
-Section: libs
-Homepage: https://libcamera.org/
+Standards-Version: 4.7.0
 Vcs-Browser: https://salsa.debian.org/multimedia-team/libcamera
 Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
+Homepage: https://libcamera.org/
+Rules-Requires-Root: no
 
 Package: libcamera-dev
+Architecture: linux-any
 Section: libdevel
-Architecture: any
-Depends: libcamera0.2 (= ${binary:Version}),
+Depends: libcamera0.3 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Multi-Arch: same
 Description: complex camera support library (development files)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
@@ -58,44 +57,44 @@ Description: complex camera support library (development files)
  This package provides the necessary files needed for development
 
 Package: libcamera-doc
-Section: doc
 Architecture: all
-Build-Profiles: <!nodoc>
+Multi-Arch: foreign
+Section: doc
 Depends: libjs-jquery,
          libjs-sphinxdoc,
          libjs-underscore,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: libcamera-dev
-Multi-Arch: foreign
 Description: complex camera support library (documentation)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
  programming interface to the applications.
  .
  This package contains the documentation developing with libcamera.
+Build-Profiles: <!nodoc>
 
-Package: libcamera0.2
-Architecture: any
+Package: libcamera0.3
+Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends}
+Recommends: libcamera-ipa (= ${binary:Version})
 Pre-Depends: ${misc:Pre-Depends}
-Suggests: libcamera-ipa
 Breaks: libcamera0 (<< 0.0.3-1~)
 Replaces: libcamera0 (<< 0.0.3-1~)
-Multi-Arch: same
 Description: complex camera support library
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
  programming interface to the applications.
 
 Package: libcamera-ipa
-Architecture: any
+Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Breaks: libcamera0 (<< 0.0.3-1~)
 Replaces: libcamera0 (<< 0.0.3-1~)
-Multi-Arch: same
 Description: complex camera support library (IPA modules)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
@@ -104,12 +103,12 @@ Description: complex camera support library (IPA modules)
  This package contains the libcamera IPA (Image Processing Algorithms) modules.
 
 Package: libcamera-tools
+Architecture: linux-any
+Multi-Arch: foreign
 Section: video
-Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Multi-Arch: foreign
 Description: complex camera support library (tools)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
@@ -118,12 +117,12 @@ Description: complex camera support library (tools)
  This package provides cam and qcam, libcamera "Swiss army knife" tools.
 
 Package: libcamera-v4l2
-Architecture: any
+Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Breaks: libcamera0 (<< 0.0.3-1~)
 Replaces: libcamera0 (<< 0.0.3-1~)
-Multi-Arch: same
 Description: complex camera support library (V4L2 module)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
@@ -132,12 +131,12 @@ Description: complex camera support library (V4L2 module)
  This package contains the libcamera V4L2 module.
 
 Package: gstreamer1.0-libcamera
-Architecture: any
+Architecture: linux-any
+Multi-Arch: same
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Breaks: libcamera0 (<< 0.0.3-1~)
 Replaces: libcamera0 (<< 0.0.3-1~)
-Multi-Arch: same
 Description: complex camera support library (GStreamer plugin)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level
@@ -146,12 +145,12 @@ Description: complex camera support library (GStreamer plugin)
  This package contains the libcamera GStreamer plugin.
 
 Package: python3-libcamera
+Architecture: linux-any
+Multi-Arch: same
 Section: python
-Architecture: any
 Depends: ${misc:Depends},
          ${python3:Depends},
-         ${shlibs:Depends},
-Multi-Arch: same
+         ${shlibs:Depends}
 Description: complex camera support library (Python bindings)
  libcamera is a complex camera support library which handles low-level
  control of the camera devices, providing a unified higher-level

@@ -5,3 +5,7 @@ Restrictions: superficial, allow-stderr
 Tests: check-IPA-modules-signatures
 Depends: @
 Restrictions: superficial
+
+Test-Command: echo "ok"
+Depends: @builddeps@
+Restrictions: build-needed

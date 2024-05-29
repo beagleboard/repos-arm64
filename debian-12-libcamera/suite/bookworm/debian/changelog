@@ -1,8 +1,45 @@
-libcamera (0.2.0-2bbbio0~bookworm+20240124) bookworm; urgency=low
+libcamera (0.3.0-2bbbio0~bookworm+20240529) bookworm; urgency=low
 
-  * Rebuild libcamera_0.2.0-2 for repos.rcn-ee.com
+  * Rebuild libcamera_0.3.0-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 24 Jan 2024 11:22:56 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 May 2024 16:28:18 -0500
+
+libcamera (0.3.0-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 22 May 2024 10:11:30 +0200
+
+libcamera (0.3.0-1) experimental; urgency=medium
+
+  * New upstream version 0.3.0
+  * Bump SONAME to libcamera0.3
+  * Set architecture to linux-any
+  * Promote libcamera-ipa in Recommends of libcamera0.3 and ensure the
+      binary version matches
+  * Update debian/watch to use upstream recommended tarball
+  * Standards-Version: 4.7.0 (no changes needed)
+  * Drop obsolete pkg-config from Build-Deps
+  * Refresh patches
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 20 May 2024 10:53:34 +0200
+
+libcamera (0.2.0-3) unstable; urgency=medium
+
+  [ Jeremy Bícha ]
+  * Update debian/gbp.conf
+  * Don't use liblltng-ust-dev on i386
+  * Disable v4l2 on non-Linux
+  * autopkgtest: Run the upstream tests
+
+  [ Steve Langasek ]
+  * Add patch for 64-bit time_t compatibility (Closes: #1066836)
+
+  [ Dylan Aïssi ]
+  * Refresh patches
+  * Drop 'Multi-Arch: same' for libcamera-dev due to file conflict
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 14 Mar 2024 11:58:17 +0100
 
 libcamera (0.2.0-2) unstable; urgency=medium
 

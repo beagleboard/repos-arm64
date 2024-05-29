@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
-#https://packages.debian.org/source/stable/libcamera
+#https://packages.debian.org/source/trixie/libcamera
 
 mirror="http://http.debian.net/debian"
 
 package_name="libcamera"
 debian_pkg_name="${package_name}"
-package_version="0.2.0"
-package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
+package_version="0.3.0"
+package_source="${debian_pkg_name}_${package_version}.orig.tar.bz2"
 src_dir="${package_name}-${package_version}"
 
 git_repo=""
@@ -20,4 +20,4 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio0"
 
-bookworm_version="~bookworm+20240124"
+bookworm_version="~bookworm+20240529"

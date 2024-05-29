@@ -42,7 +42,7 @@ Forwarded: not-needed
  foreach test : process_tests
 --- a/test/meson.build
 +++ b/test/meson.build
-@@ -56,7 +56,7 @@
+@@ -57,7 +57,7 @@
      {'name': 'event', 'sources': ['event.cpp']},
      {'name': 'event-dispatcher', 'sources': ['event-dispatcher.cpp']},
      {'name': 'event-thread', 'sources': ['event-thread.cpp']},
@@ -51,7 +51,7 @@ Forwarded: not-needed
      {'name': 'flags', 'sources': ['flags.cpp']},
      {'name': 'hotplug-cameras', 'sources': ['hotplug-cameras.cpp']},
      {'name': 'message', 'sources': ['message.cpp']},
-@@ -64,12 +64,12 @@
+@@ -65,13 +65,13 @@
      {'name': 'object-delete', 'sources': ['object-delete.cpp']},
      {'name': 'object-invoke', 'sources': ['object-invoke.cpp']},
      {'name': 'pixel-format', 'sources': ['pixel-format.cpp']},
@@ -60,6 +60,7 @@ Forwarded: not-needed
      {'name': 'signal-threads', 'sources': ['signal-threads.cpp']},
      {'name': 'threads', 'sources': 'threads.cpp', 'dependencies': [libthreads]},
      {'name': 'timer', 'sources': ['timer.cpp']},
+     {'name': 'timer-fail', 'sources': ['timer-fail.cpp'], 'should_fail': true},
      {'name': 'timer-thread', 'sources': ['timer-thread.cpp']},
 -    {'name': 'unique-fd', 'sources': ['unique-fd.cpp']},
 +#    {'name': 'unique-fd', 'sources': ['unique-fd.cpp']},
