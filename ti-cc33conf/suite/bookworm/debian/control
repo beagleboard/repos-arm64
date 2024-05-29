@@ -1,0 +1,17 @@
+Source: ti-cc33conf
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , git
+Standards-Version: 4.5.0
+
+Package: ti-cc33conf
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Architecture: arm64
+Description: ti-cc33conf
+ ti-cc33conf
