@@ -3,7 +3,6 @@ debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagley-ai
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagley-ai
 debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagley-ai
 debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagley-ai
-debian/beagley-microsd-to-nvme /opt/u-boot/bb-u-boot-beagley-ai
 debian/nvme-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagley-ai
 debian/beagley-ai-microsd-to-nvme /opt/u-boot/bb-u-boot-beagley-ai
 debian/beagley-ai-microsd-to-nvme-w-swap /opt/u-boot/bb-u-boot-beagley-ai
