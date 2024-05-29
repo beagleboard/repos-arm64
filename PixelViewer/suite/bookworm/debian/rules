@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+VER="3.0.5.214"
+
+# Disable dh_strip
+override_dh_strip:
+
+# Disable dh_strip_nondeterminism
+override_dh_strip_nondeterminism:
+
+# Disable dh_shlibdeps
+override_dh_shlibdeps:
+
+override_dh_auto_configure:
+	mkdir -p ./tmp/
+	wget --directory-prefix=tmp https://github.com/carina-studio/PixelViewer/releases/download/$(VER)/PixelViewer-$(VER)-linux-arm64.zip
+	unzip ./tmp/PixelViewer-$(VER)-linux-arm64.zip -d ./pkg/
+
+%:
+	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

@@ -1,0 +1,17 @@
+Source: pixelviewer
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , wget
+Standards-Version: 4.5.0
+
+Package: pixelviewer
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Architecture: arm64
+Description: pixelviewer
+ pixelviewer
