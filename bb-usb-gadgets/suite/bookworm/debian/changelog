@@ -1,7 +1,7 @@
-bb-usb-gadgets (1.20240604.0-0~bookworm+20240604) bookworm; urgency=low
+bb-usb-gadgets (1.20240604.1-0~bookworm+20240604) bookworm; urgency=low
 
   * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0 which works in Windows 11
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Jun 2024 15:32:52 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Jun 2024 15:54:11 -0500
 
