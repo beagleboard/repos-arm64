@@ -17,9 +17,6 @@ version=$(whiptail --menu "Choose a Kernel" 25 78 16 \
 echo "Updating to $version"
 
 echo "Updating: Device Trees"
-#Legacy:
-cp /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
-#Actual:
 cp -v /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ti/ || true
 
 rm -f /boot/firmware/Image || true
