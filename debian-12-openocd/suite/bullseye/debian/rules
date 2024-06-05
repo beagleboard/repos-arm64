@@ -1,17 +1,9 @@
 #!/usr/bin/make -f
 
 DEB_MAKE_BUILD_TARGET := all
-# Also build PDF and HTML documentation if nodoc is not set
-ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
-	DEB_MAKE_BUILD_TARGET += pdf html
-	DEB_CONFIGURE_EXTRA_FLAGS := \
-		--enable-doxygen-pdf \
-		--enable-doxygen-html
-else
-	DEB_CONFIGURE_EXTRA_FLAGS := \
-		--disable-doxygen-pdf \
-		--disable-doxygen-html
-endif
+DEB_CONFIGURE_EXTRA_FLAGS := \
+	--disable-doxygen-pdf \
+	--disable-doxygen-html
 
 DEB_CONFIGURE_EXTRA_FLAGS += \
 	--disable-werror \
