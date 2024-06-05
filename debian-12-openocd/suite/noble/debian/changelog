@@ -1,3 +1,10 @@
+openocd (0.12.0-1bbbio5~noble+20240605) noble; urgency=low
+
+  * git build: https://repo.or.cz/openocd.git/commit/437dde701c13e707e5fd912ef6403e09052e4d9b
+  * --enable-dmem for TI
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jun 2024 15:10:48 -0500
+
 openocd (0.12.0-1bbbio4~noble+20240605) noble; urgency=low
 
   * git build: https://repo.or.cz/openocd.git/commit/437dde701c13e707e5fd912ef6403e09052e4d9b

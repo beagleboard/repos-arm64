@@ -5,7 +5,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="openocd"
 debian_pkg_name="${package_name}"
-package_version="0.12.0-1bbbio4"
+package_version="0.12.0-1bbbio5"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
