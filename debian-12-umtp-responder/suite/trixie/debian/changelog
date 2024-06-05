@@ -1,4 +1,4 @@
-umtp-responder (1.4.1-0bbbio1~bookworm+20240605) bookworm; urgency=low
+umtp-responder (1.4.1-0bbbio1~trixie+20240605) trixie; urgency=low
 
   * Rebuild umtp-responder_1.4.1-0bbbio1 for repos.rcn-ee.com
 
