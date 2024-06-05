@@ -6,9 +6,9 @@ incoming_mirror="http://incoming.debian.org/debian-buildd"
 
 if [ ! "x${git_repo}" = "x" ] ; then
 	if [ -f ./git/.git/config ] ; then
-		git clone --reference ./git/ ${git_repo} ignore
+		git clone --recursive --reference ./git/ ${git_repo} ignore
 	else
-		git clone ${git_repo} ignore
+		git clone --recursive ${git_repo} ignore
 	fi
 	if [ -f ./ignore/.git/config ] ; then
 		cd ./ignore/
