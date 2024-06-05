@@ -1,4 +1,3 @@
-0001-openocd-sync-up-to-437dde701c13e707e5fd912ef6403e090.patch
 #no-duplicate-udev.patch
 #remove-jimtcl-configure.patch
 0001-tcl-board-Add-am62p-am62a7-j722s-native-swd-configur.patch
