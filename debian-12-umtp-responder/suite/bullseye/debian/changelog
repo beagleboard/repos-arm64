@@ -1,10 +1,10 @@
-umtp-responder (1.5.1-0bbbio1~noble+20240605) noble; urgency=low
+umtp-responder (1.5.1-0bbbio1~bullseye+20240605) bullseye; urgency=low
 
   * Rebuild umtp-responder_1.5.1-0bbbio1 for repos.rcn-ee.com
 
  -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jun 2024 16:30:26 -0500
 
-umtp-responder (1.4.3-0bbbio1~noble+20240605) noble; urgency=low
+umtp-responder (1.4.3-0bbbio1~bookworm+20240605) bookworm; urgency=low
 
   * Rebuild umtp-responder_1.4.3-0bbbio1 for repos.rcn-ee.com
 

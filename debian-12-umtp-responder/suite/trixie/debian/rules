@@ -9,4 +9,3 @@ DEB_BUILD_OPTIONS=noautodbgsym
 
 override_dh_auto_install:
 	dh_auto_install
-	install -D -m 0755 conf/umtprd-ffs.sh $(CURDIR)/debian/umtp-responder/usr/sbin/umtprd-ffs

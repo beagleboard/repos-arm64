@@ -1,0 +1,2 @@
+umtprd usr/bin
+conf/umtprd.conf etc/umtprd
