@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+DEB_BUILD_OPTIONS=noautodbgsym
+
 DEB_MAKE_BUILD_TARGET := all
 DEB_CONFIGURE_EXTRA_FLAGS := \
 	--disable-doxygen-pdf \
