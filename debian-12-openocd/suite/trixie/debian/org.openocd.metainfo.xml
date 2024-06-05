@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<id>org.openocd.openocd</id>
+	<metadata_license>MIT</metadata_license>
+	<name>OpenOCD</name>
+	<summary>Open on-chip JTAG debug solution for ARM and MIPS systems</summary>
+	<description>
+		<p>OpenOCD is an on-chip debugging, in-system programming
+		and boundary-scan testing tool for ARM and MIPS systems.</p>
+		<p>The debugger uses an IEEE 1149-1 compliant JTAG TAP bus
+		master to access on-chip debug functionality available on ARM
+		based microcontrollers or system-on-chip solutions. For MIPS
+		systems the EJTAG interface is supported.</p>
+		<p>User interaction is realized through a telnet command line
+		interface, a gdb (the GNU debugger) remote protocol server, and
+		a simplified RPC connection that can be used to interface with
+		OpenOCD's Jim Tcl engine.</p>
+		<p>OpenOCD supports many different types of JTAG
+		interfaces/programmers.</p>
+	</description>
+	<provides>
+		<binary>openocd</binary>
+		<modalias>usb:v03EBp204Fd*</modalias>
+		<modalias>usb:v0403p6001d*</modalias>
+		<modalias>usb:v0403p6010d*</modalias>
+		<modalias>usb:v0403p6011d*</modalias>
+		<modalias>usb:v0403p6014d*</modalias>
+		<modalias>usb:v0403p8220d*</modalias>
+		<modalias>usb:v0403p8A98d*</modalias>
+		<modalias>usb:v0403p8A99d*</modalias>
+		<modalias>usb:v0403pA6D0d*</modalias>
+		<modalias>usb:v0403pBCA0d*</modalias>
+		<modalias>usb:v0403pBCA1d*</modalias>
+		<modalias>usb:v0403pBCD9d*</modalias>
+		<modalias>usb:v0403pBCDAd*</modalias>
+		<modalias>usb:v0403pBDC8d*</modalias>
+		<modalias>usb:v0403pC140d*</modalias>
+		<modalias>usb:v0403pC141d*</modalias>
+		<modalias>usb:v0403pCFF8d*</modalias>
+		<modalias>usb:v0451pC32Ad*</modalias>
+		<modalias>usb:v0483p3744d*</modalias>
+		<modalias>usb:v0483p3748d*</modalias>
+		<modalias>usb:v0483p374Bd*</modalias>
+		<modalias>usb:v0640p0028d*</modalias>
+		<modalias>usb:v0640p002Cd*</modalias>
+		<modalias>usb:v0640p002Dd*</modalias>
+		<modalias>usb:v09FBp6001d*</modalias>
+		<modalias>usb:v0FFBp1000d*</modalias>
+		<modalias>usb:v1366p0101d*</modalias>
+		<modalias>usb:v1366p0102d*</modalias>
+		<modalias>usb:v1366p0103d*</modalias>
+		<modalias>usb:v1366p0104d*</modalias>
+		<modalias>usb:v1366p0105d*</modalias>
+		<modalias>usb:v1366p0107d*</modalias>
+		<modalias>usb:v1366p0108d*</modalias>
+		<modalias>usb:v1366p1010d*</modalias>
+		<modalias>usb:v1366p1011d*</modalias>
+		<modalias>usb:v1366p1012d*</modalias>
+		<modalias>usb:v1366p1013d*</modalias>
+		<modalias>usb:v1366p1014d*</modalias>
+		<modalias>usb:v1366p1015d*</modalias>
+		<modalias>usb:v1366p1016d*</modalias>
+		<modalias>usb:v1366p1017d*</modalias>
+		<modalias>usb:v1366p1018d*</modalias>
+		<modalias>usb:v138Ep9000d*</modalias>
+		<modalias>usb:v1457p5118d*</modalias>
+		<modalias>usb:v15BAp0003d*</modalias>
+		<modalias>usb:v15BAp0004d*</modalias>
+		<modalias>usb:v15BAp001Ed*</modalias>
+		<modalias>usb:v15BAp002Ad*</modalias>
+		<modalias>usb:v15BAp002Bd*</modalias>
+		<modalias>usb:v1781p0C63d*</modalias>
+		<modalias>usb:v1CBEp00FDd*</modalias>
+		<modalias>usb:v9E88p9E8Fd*</modalias>
+		<modalias>usb:vC251p2710d*</modalias>
+	</provides>
+</component>

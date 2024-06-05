@@ -34,6 +34,7 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
 	--enable-ulink \
 	--enable-usbprog \
 	--enable-vsllink \
+	--enable-dmem \
 
 configure_flags_parport := \
 	--enable-parport \

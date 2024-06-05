@@ -1,0 +1,3 @@
+# openocd: statically-linked-binary usr/lib/openocd/ecos/at91eb40a.elf
+# openocd: binary-from-other-architecture usr/lib/openocd/ecos/at91eb40a.elf
+

@@ -1,0 +1,558 @@
+openocd (0.12.0-1bbbio2~noble+20240605) noble; urgency=low
+
+  * Rebuild openocd_0.12.0-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jun 2024 13:37:00 -0500
+
+openocd (0.12.0-1bbbio1~bookworm+20230809) bookworm; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 09 Aug 2023 12:13:09 -0500
+
+openocd (0.12.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop libusb-dev build-dep (thanks to Paul Fertser for pointing this
+    out)
+  * Update to debhelper-compat level 13
+  * Switch to plain globs for filenames in debian/copyright
+  * Bump Standards-Version to 4.6.2
+
+ -- Jonathan McDowell <noodles@earth.li>  Mon, 16 Jan 2023 18:22:41 +0000
+
+openocd (0.12.0~rc3-1) unstable; urgency=medium
+
+  * Upstream release candidate
+
+ -- Jonathan McDowell <noodles@earth.li>  Thu, 22 Dec 2022 14:19:29 +0000
+
+openocd (0.12.0~rc2-1) unstable; urgency=medium
+
+  * Upstream release candidate
+
+ -- Jonathan McDowell <noodles@earth.li>  Wed, 26 Oct 2022 21:06:51 +0100
+
+openocd (0.12.0~rc1-1) unstable; urgency=medium
+
+  * Upstream release candidate
+    * Update remove-jimtcl-configure.patch
+    * Remove libusb/jimtcl patches taken from upstream
+    * Update debian/copyright
+
+ -- Jonathan McDowell <noodles@earth.li>  Sat, 24 Sep 2022 10:38:23 +0100
+
+openocd (0.11.0-2) unstable; urgency=medium
+
+  * Enable rshim support (Closes: #1014922)
+  * Fix operation with libusb-1.0.25 onwards (Closes: #1008870)
+  * Fix Tcl scripts for operation with jimtcl 0.81+ (Closes: #1014849)
+  * Lintian cleanups:
+    * Add missing licence in debian/copyright for Synopsys files.
+
+ -- Jonathan McDowell <noodles@earth.li>  Wed, 20 Jul 2022 13:45:35 +0100
+
+openocd (0.11.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan McDowell <noodles@earth.li>  Thu, 26 Aug 2021 10:33:35 +0100
+
+openocd (0.11.0~rc2-1) unstable; urgency=medium
+
+  * Upstream release candidate
+    * Remove no-longer necessary patch for external libjaylink
+
+ -- Jonathan McDowell <noodles@earth.li>  Wed, 03 Feb 2021 12:42:03 +0000
+
+openocd (0.11.0~rc1-2) unstable; urgency=medium
+
+  * Add build-dep on libgpiod-dev
+  * Add build-dep on libcapstone-dev
+  * Lintian cleanups:
+    * Remove trailing whitespace in Debian files
+    * Use HTTPS in watch file
+    * Move to debhelper compat level 12
+    * Update Standards-Version to 4.5.1 (no further changes)
+    * Add upstream metadata information
+    * Minimise upstream signing key
+
+ -- Jonathan McDowell <noodles@earth.li>  Sun, 17 Jan 2021 14:34:03 +0000
+
+openocd (0.11.0~rc1-1) unstable; urgency=medium
+
+  * Upstream release candidate
+
+ -- Jonathan McDowell <noodles@earth.li>  Thu, 10 Dec 2020 10:49:42 +0000
+
+openocd (0.10.0+g20200819-1) unstable; urgency=medium
+
+  * Upstream git snapshot: d46f28c2
+  * Upload to unstable
+  * Fixes FTBFS with GCC 10 (Closes: #957643)
+
+ -- Jonathan McDowell <noodles@earth.li>  Wed, 19 Aug 2020 07:24:12 +0100
+
+openocd (0.10.0+g20200530-2~exp1) experimental; urgency=medium
+
+  * Team upload
+  * Enable jlink after newer version of libjaylink has been uploaded to
+    experimental.
+  * d/patches/0002-Remove-lines-causing-trouble-for-build-without-libja.patch:
+    - Had to hack some lines to make it build without libjaylink in the tree.
+
+ -- Ruben Undheim <ruben.undheim@gmail.com>  Sat, 06 Jun 2020 21:35:16 +0200
+
+openocd (0.10.0+g20200530-1) experimental; urgency=medium
+
+  * Upstream git snapshot: d8ac0086
+  * Remove no longer necessary patches:
+    + buspirate-swd.patch (applied upstream)
+    + fix-{sheeva,openrd}.patch (applied upstream)
+    + bind-localhost-only.patch (applied upstream)
+    + css-fix.patch (applied upstream)
+  * Disable jlink (needs libjaylink 0.2)
+
+ -- Jonathan McDowell <noodles@earth.li>  Sun, 31 May 2020 09:58:10 +0100
+
+openocd (0.10.0-6) unstable; urgency=medium
+
+  * Fix USB ID capitalisation in AppStream information
+  * Fix AppStream license in debian/copyright
+  * Standards-Version: 4.4.0
+    * Set Rules-Requires-Root: no
+
+ -- Jonathan McDowell <noodles@earth.li>  Fri, 26 Jul 2019 14:58:35 -0300
+
+openocd (0.10.0-5) unstable; urgency=medium
+
+  * Update VCS URLs to point to Salsa
+  * Add AppStream information
+
+ -- Jonathan McDowell <noodles@earth.li>  Fri, 08 Feb 2019 14:29:30 +0000
+
+openocd (0.10.0-4) unstable; urgency=high
+
+  * Bind to localhost by default
+  * Prevent some forms of Cross Protocol Scripting attacks (CVE-2018-5704)
+    (Closes: #887488)
+
+ -- Jonathan McDowell <noodles@earth.li>  Thu, 18 Jan 2018 19:19:47 +0000
+
+openocd (0.10.0-3) unstable; urgency=medium
+
+  * Fix udev rule installation (Closes: #880092)
+
+ -- Jonathan McDowell <noodles@earth.li>  Mon, 06 Nov 2017 21:03:53 +0000
+
+openocd (0.10.0-2) unstable; urgency=medium
+
+  * Re-enable jlink and add libjaylink-dev dependency.
+  * Drop use of CDBS
+    + Remove needless dep on autotools / dh-autoreconf.
+  * Fix SheevaPlug configuration (Closes: #837989)
+  * Fix OpenRD configuration (Closes: #793214)
+  * Add a basic README.source (Closes: #851534)
+
+ -- Jonathan McDowell <noodles@earth.li>  Sun, 22 Oct 2017 10:20:48 +0100
+
+openocd (0.10.0-1) unstable; urgency=medium
+
+  [ Jonathan McDowell ]
+  * New upstream release
+    * Includes jtagspi (Closes: #844748)
+    * Fixes Intel flash with MIPS target (Closes: #849825)
+    * Fixes flyswatter.cfg to use ftdi interface (Closes: #757748)
+    * Avoids build date in release builds (Closes: #834316)
+  * Disable jlink pending libjaylink package
+  * Enable sysfsgpio driver (Closes: #859246)
+  * Move to libftdi1-dev (Closes: #810387)
+  * Remove duplicated autotools-dev build-dep (Closes: #853010)
+  * Switch to libusb-1.0 on kFreeBSD (Closes: #820147)
+  * Move maintenance to Debian Electronics Packaging Team
+  * Add patch enabling SWD support for Bus Pirate (Closes: #795550)
+  * Add explicit build-dep on libusb-0.1, which is still required for 3
+    programmers supported by OpenOCD.
+  * Bump debhelper compat level to 10.
+  * Drop unused + deprecated DEB_STRIP_EXCLUDE / DEB_COMPRESS_EXCLUDE options.
+  * Standards-Version: 4.0.1
+    * Support nodoc in DEB_BUILD_OPTIONS
+    * Switch priority to optional instead of extra
+
+  [ Stefano Rivera ]
+  * Clean up copyright file and move to DEP-8
+
+ -- Jonathan McDowell <noodles@earth.li>  Fri, 18 Aug 2017 10:51:30 +0100
+
+openocd (0.9.0-1) unstable; urgency=medium
+
+  * new upstream stable release
+  * watch: check pgp signature on upstream tarballs
+  * control: bumped policy version
+
+ -- Luca Bruno <lucab@debian.org>  Tue, 19 May 2015 22:13:26 +0200
+
+openocd (0.9.0~rc1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Stop using embedded jimtcl, use packaged one instead
+  * Packaging imported to git
+    + Add gbp configuration for new repository
+    + Add related Vcs-* tags
+
+ -- Luca Bruno <lucab@debian.org>  Sat, 25 Apr 2015 22:55:38 +0200
+
+openocd (0.8.0-4) unstable; urgency=medium
+
+  * Enable usb_blaster_libftdi on linux
+  * Build-dep on libusb2-dev on kfreebsd
+    (Closes: #754678)
+
+ -- Luca Bruno <lucab@debian.org>  Mon, 20 Oct 2014 22:11:28 +0200
+
+openocd (0.8.0-3) unstable; urgency=high
+
+  * Require libusb-dev from freebsd-libs 10 snapshot
+    (Closes: #754678)
+
+ -- Luca Bruno <lucab@debian.org>  Sun, 19 Oct 2014 19:12:49 +0200
+
+openocd (0.8.0-2) unstable; urgency=medium
+
+  * tcl/board: fix all the remaining boards that were sourcing
+    ft2232 configs (Closes: #751372)
+
+ -- Luca Bruno <lucab@debian.org>  Sun, 17 Aug 2014 11:42:14 +0200
+
+openocd (0.8.0-1) unstable; urgency=medium
+
+  * New upstream stable release
+    + Adjust build-dep for kfreebsd and hurd
+    + Enable more GPIO-based adapters
+  * Bumped Standards-Version
+  * Updated watch file, thanks Bart Martens
+  * Cleaned several unused legacy rules
+  * Updated copyright entries
+
+ -- Luca Bruno <lucab@debian.org>  Sat, 10 May 2014 19:14:51 +0200
+
+openocd (0.8.0~rc1-1) unstable; urgency=medium
+
+  * New upstream rc release
+    + Added pkg-config build-dep
+    + Now using libusb-1.0-0
+
+ -- Luca Bruno <lucab@debian.org>  Sat, 05 Apr 2014 10:30:08 +0200
+
+openocd (0.7.0-2) unstable; urgency=low
+
+  * Only build on linux-any targets needing libusb-1.0-0
+
+ -- Luca Bruno <lucab@debian.org>  Sun, 04 Aug 2013 11:25:52 +0200
+
+openocd (0.7.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Luca Bruno <lucab@debian.org>  Wed, 15 May 2013 12:18:17 +0200
+
+openocd (0.6.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #644015).
+    - Use configure options: --enable-ftdi, --enable-stlink, --enable-osbdm,
+      --enable-opendous, --enable-remote-bitbang
+  * Standards-Version: 3.9.4 (no changes required).
+  * Use http://openocd.sourceforge.net/ as new upstream homepage.
+
+ -- Uwe Hermann <uwe@debian.org>  Tue, 04 Dec 2012 23:54:54 +0100
+
+openocd (0.5.0-1) unstable; urgency=low
+
+  * New upstream release.
+    + Drop all our patches, no need to touch autotools.
+    + Use upstream changelog now shipped within tarball.
+  * debian/watch: pointed to SF file depot.
+
+ -- Luca Bruno <lucab@debian.org>  Tue, 09 Aug 2011 09:33:35 +0200
+
+openocd (0.5.0~rc2-2) unstable; urgency=low
+
+  * Acknowledge NMU, thanks Hector.
+  * Fix FTBFS on non-linux ports (Closes: #633404).
+  * Don't list STM Primer2 as a supported device (Closes: #633532).
+  * Update ChangeLog for this RC release.
+
+ -- Luca Bruno <lucab@debian.org>  Thu, 21 Jul 2011 15:51:03 +0200
+
+openocd (0.5.0~rc2-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Replace linux architectures with linux-any (Closes: #617775)
+
+ -- Hector Oron <zumbi@debian.org>  Mon, 11 Jul 2011 14:00:12 +0100
+
+openocd (0.5.0~rc2-1) unstable; urgency=low
+
+  * New upstream release candidate.
+  * Acknowledge previous NMUs, thanks Luk.
+  * Added myself as uploader, with Uwe permission.
+
+ -- Luca Bruno <lucab@debian.org>  Thu, 07 Jul 2011 09:54:00 +0200
+
+openocd (0.4.0-1+nmu1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Update lintian overrides so it does not get rejected.
+
+ -- Luk Claes <luk@debian.org>  Thu, 30 Jun 2011 18:30:42 +0200
+
+openocd (0.4.0-1+nmu1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Don't ship .la files(Closes: #622431).
+
+ -- Luk Claes <luk@debian.org>  Sat, 25 Jun 2011 15:02:19 +0200
+
+openocd (0.4.0-1+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add patch to build ep93xx and at91rm9200 on armel (Closes: #597932).
+  * Disable parport, gw16012 and amtjtagaccel drivers on GNU/HURD,
+    rules snippet by Pino Toscano.
+
+ -- Luca Bruno <lucab@debian.org>  Sat, 25 Sep 2010 20:26:48 +0200
+
+openocd (0.4.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #564842).
+    + Fixes udev rules warnings (Closes: #560141).
+  * Rebuild to fix "segfault when interface not connected" (Closes: #568226).
+  * Standards-Version: 3.8.4 (no changes required).
+
+ -- Uwe Hermann <uwe@debian.org>  Thu, 04 Feb 2010 01:45:30 +0100
+
+openocd (0.3.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #554598, #537740).
+  * Add sh4 (instead of sh) to the list of architectures (Closes: #555553).
+  * Standards-Version: 3.8.3 (no changes required).
+  * debian/watch: Add file.
+  * debian/docs: Updates, some files were removed, some added.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 25 Nov 2009 12:20:04 +0100
+
+openocd (0.2.0+r2529-1) unstable; urgency=low
+
+  * New upstream release (this corresponds to upstream 0.2.0 roughly).
+    + The 'target library' is now in /usr/share/openocd/*.
+  * NEWS and README contain useful info now, so ship them in the package.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 15 Jul 2009 21:27:39 +0200
+
+openocd (0.0+r2403-1) unstable; urgency=low
+
+  * New upstream release.
+  * Standards-Version: 3.8.2 (no changes required).
+  * Add missing build-dependency 'texlive' (Closes: #533465).
+
+ -- Uwe Hermann <uwe@debian.org>  Thu, 25 Jun 2009 18:02:44 +0200
+
+openocd (0.0+r2172-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/20_fix_warnings.patch: Drop.
+  * Upgrade autoconf build-dependecy to >= 2.60 as per upstream.
+  * Add new upstream build-dependency on libtool.
+  * Various docs have been removed, moved, and added. See
+    /usr/share/doc/openocd for the current list of documentation
+    files (apart from manpage and info page).
+  * Add debian/openocd.doc-base and install docs in PDF and HTML format also.
+
+ -- Uwe Hermann <uwe@debian.org>  Tue, 09 Jun 2009 15:32:53 +0200
+
+openocd (0.0+r1606-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use --disable-werror for now until all warnings have been fixed
+    upstream (Closes: #526441, #527100).
+  * Build-depend on automake (>= 1.6) as per upstream.
+
+ -- Uwe Hermann <uwe@debian.org>  Tue, 05 May 2009 18:39:03 +0200
+
+openocd (0.0+r1583-1) unstable; urgency=low
+
+  * New upstream release.
+  * Standards-Version: 3.8.1 (no changes required).
+
+ -- Uwe Hermann <uwe@debian.org>  Thu, 30 Apr 2009 22:00:57 +0200
+
+openocd (0.0+r1409-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control: Update description, including newly supported dongles.
+  * debian/rules: Add --enable-arm-jtag-ew to support the Olimex
+    ARM-JTAG-EW JTAG programmer.
+  * debian/patches/10_fix_warnings.patch: Drop, merged upstream.
+  * debian/openocd.udev: Drop, merged upstream.
+  * Show openocd svn revision in --version output (Closes: #517296).
+  * Don't ship the 'ecosflash' and 'testing' dirs for now, not too useful.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 11 Mar 2009 19:29:27 +0100
+
+openocd (0.0+r1292-1) unstable; urgency=low
+
+  * New upstream release.
+    * debian/rules:
+      + Add --enable-jlink, --enable-vsllink, --enable-rlink.
+      + Use chrpath to strip newly introduced (upstream) RPATH.
+  * debian/openocd.udev: Add file. Adds udev rules to allow the 'plugdev' group
+    JTAG programmer access without having to become root (Closes: #508921).
+    Currently there are rules for the programmers 'Olimex ARM-USB-OCD' and
+    'USBprog with OpenOCD firmware' (untested, but should work).
+  * debian/patches/10_fix_ep93xx.patch: Drop, similar patch merged upstream.
+  * debian/patches/10_fix_warnings.patch: Add.
+  * debian/docs: Add NEWTAPS.
+  * debian/copyright: Add license of various new files.
+
+ -- Uwe Hermann <uwe@debian.org>  Sun, 28 Dec 2008 15:02:52 +0100
+
+openocd (0.0+r1147-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/10_fix_ep93xx.patch: Fix build on armel (Closes: #504740).
+
+ -- Uwe Hermann <uwe@debian.org>  Sun, 09 Nov 2008 02:32:52 +0100
+
+openocd (0.0+r1130-1) unstable; urgency=low
+
+  * Acknowledge NMU, thanks Riku Voipio <riku.voipio@iki.fi> (Closes: #489048).
+  * New upstream release.
+    + There were many changes upstream, be prepared to update your
+      configs/scripts. Consult the "Upgrading" info page chapter for details.
+    + Notable improvements of this upstream release include some support for
+      MIPS systems (EJTAG), support for the JLINK adapter, a Jim Tcl server,
+      various new flashes and targets, and lots of bug fixes.
+    + There are some cortex-m3 example configs upstream now (Closes: #489785).
+  * Standards-Version: 3.8.0 (no changes required).
+  * dh_strip/dh_compress -X doesn't expect a glob pattern (Closes: #487504).
+  * debian/docs, debian/rules:
+    + Drop README (obsoleted upstream in favor of the info page).
+    + Add PATCHES, src/tcl/README_ABOUT_TCL.txt, src/target/target/readme.txt,
+      src/scripting.txt, src/non-arm-targets.txt.
+    + Add 'svn log' output as upstream ChangeLog to the package.
+  * debian/openocd.lintian-overrides: More entries to silence bogus warnings.
+  * debian/patches/10_buildfix.patch: Drop, merged upstream.
+  * debian/README.Debian: Small updates.
+  * debian/watch: Add dummy file (we track svn revisions).
+  * debian/copyright: Major update, lots of new files upstream.
+
+ -- Uwe Hermann <uwe@debian.org>  Thu, 06 Nov 2008 12:11:05 +0100
+
+openocd (0.0+r655-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * disable ecosboard build, closes: #489048
+
+ -- Riku Voipio <riku.voipio@iki.fi>  Mon, 11 Aug 2008 21:09:24 +0300
+
+openocd (0.0+r655-1) unstable; urgency=low
+
+  * New upstream release.
+    + Fixes coredump on AMD64 (Closes: #480473).
+    + There were various syntax changes upstream, please check the info page.
+  * debian/examples:
+    + Add libdcc/ and testing/ subdirectories.
+    + Drop configs/ and scripts/ from examples/ (as dropped upstream).
+  * debian/docs: Add new BUGS file.
+  * debian/README.Debian: Various updates.
+  * debian/patches/10_presto_fix.patch: Drop, merged upstream.
+  * Add --enable-dummy and --enable-ecosboard to the ./configure call.
+  * Install a lintian override file.
+
+ -- Uwe Hermann <uwe@debian.org>  Sun, 11 May 2008 21:56:58 +0200
+
+openocd (0.0+r423-1) unstable; urgency=low
+
+  * New upstream release.
+    + There were various changes in the config file syntax, new commands
+      were added, obsolete ones removed etc. Some of these changes are
+      incompatible (!) so you might need to rewrite or fix some of your
+      config files or scripts. Please check the docs/wiki for details.
+    + OpenOCD now ships with an info page (type 'info openocd').
+  * debian/control:
+     + Add Homepage field.
+     + Standards-Version: 3.7.3 (no changes required).
+     + Versioned dependency on autoconf >= 2.59 as per upstream.
+     + Add build-dependency on texinfo as new openocd versions use it.
+  * debian/README.Debian: Update notes.
+  * debian/copyright:
+     + Update, add missing entries.
+     + Convert the file to the machine-readable format explained at
+       http://wiki.debian.org/Proposals/CopyrightFormat.
+  * debian/patches/20_fix_arm_build.patch: Drop, merged upstream.
+  * debian/patches/10_readme.patch: Drop, merged upstream.
+  * Add --enable-presto_libftdi (for the ASIX Presto programmer).
+
+ -- Uwe Hermann <uwe@debian.org>  Sat, 01 Mar 2008 21:08:22 +0100
+
+openocd (0.0+r211-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove --enable-oocd_trace (support for the OpenOCD+trace ETM capture
+    device) for now, as per upstream recommendation. This should also
+    fix the SPARC build.
+
+ -- Uwe Hermann <uwe@debian.org>  Sun, 18 Nov 2007 17:22:49 +0100
+
+openocd (0.0+r204-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove all Debian patches which are merged upstream now.
+  * Add --enable-oocd_trace to support the OpenOCD+trace ETM capture device.
+
+ -- Uwe Hermann <uwe@debian.org>  Fri, 07 Sep 2007 17:48:58 +0200
+
+openocd (0.0+r188-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add armel to the list of architectures (Closes: #434842).
+  * Fix the build on Debian GNU/kFreeBSD (Closes: #436527).
+  * Do not supply --enable-gw16012 and --enable-amtjtagaccel on
+    Debian GNU/kFreeBSD, as that code doesn't support kFreeBSD (yet).
+  * Remove unneeded '#include <sys/io.h>' lines, as sys/io.h is not
+    available on all architectures. Trying to include the file anyway
+    would result in a FTBFS on those architectures.
+    With this fix, at least powerpc and mips/mipsel should build fine now.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 08 Aug 2007 09:52:50 +0200
+
+openocd (0.0+r184-1) unstable; urgency=low
+
+  * New upstream release.
+     + Should build on most (if not all) architectures now.
+     + Drop patches/10_bootstrap.patch (merged upstream).
+  * Do not attempt to build openocd on S/390. Even if it would compile
+    successfully, there's really no point in having openocd on this
+    architecture as it lacks parallel ports and USB ports for use with one
+    of the openocd-supported JTAG programmers (Closes: #420470).
+
+ -- Uwe Hermann <uwe@debian.org>  Thu, 26 Jul 2007 20:06:47 +0200
+
+openocd (0.0+r180-1) unstable; urgency=low
+
+  * New upstream release.
+  * The manpage I wrote for openocd is now merged upstream.
+
+ -- Uwe Hermann <uwe@debian.org>  Wed, 25 Jul 2007 18:02:09 +0200
+
+openocd (0.0+r141-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Uwe Hermann <uwe@debian.org>  Mon, 23 Apr 2007 17:15:14 +0200
+
+openocd (0.0+r133-1) unstable; urgency=low
+
+  * Initial release (Closes: #415632).
+
+ -- Uwe Hermann <uwe@debian.org>  Tue, 27 Mar 2007 14:46:18 +0200

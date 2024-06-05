@@ -1,0 +1,4 @@
+version=3
+opts=uversionmangle=s/-(rc\d*)$/~$1/,pgpsigurlmangle=s/$/.sig/ \
+   https://qa.debian.org/watch/sf.php/openocd/ \
+   (?:|.*/)openocd(?:[_\-]v?|)(\d\S*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)
