@@ -1,0 +1,22 @@
+From 097d5cc223417846459c342e5ddf15de3447b031 Mon Sep 17 00:00:00 2001
+From: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Date: Thu, 12 Nov 2020 02:48:02 +0100
+Subject: [PATCH] umtprd-ffs.sh: fix incorrect shebang
+
+---
+ conf/umtprd-ffs.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/conf/umtprd-ffs.sh b/conf/umtprd-ffs.sh
+index a3cd5e2..14237de 100644
+--- a/conf/umtprd-ffs.sh
++++ b/conf/umtprd-ffs.sh
+@@ -1,4 +1,4 @@
+-#/bin/sh
++#!/bin/sh
+ 
+ # FunctionFS uMTPrd startup example/test script
+ # Must be launched from a writable/temporary folder.
+-- 
+2.28.0
+
