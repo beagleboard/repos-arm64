@@ -1,6 +1,6 @@
-umtp-responder (1.6.5-0bbbio0~bookworm+20240605) bookworm; urgency=low
+umtp-responder (1.6.6-0bbbio0~bookworm+20240605) bookworm; urgency=low
 
-  * Rebuild umtp-responder_1.6.5-0bbbio0 for repos.rcn-ee.com
+  * Rebuild umtp-responder_1.6.6-0bbbio0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jun 2024 16:42:39 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jun 2024 16:44:53 -0500
 
