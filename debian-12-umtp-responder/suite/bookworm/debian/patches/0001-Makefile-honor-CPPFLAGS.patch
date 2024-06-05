@@ -1,0 +1,29 @@
+From 321de7c0f89a008f84f6394cf74729394bb5395f Mon Sep 17 00:00:00 2001
+From: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Date: Thu, 12 Nov 2020 00:25:25 +0100
+Subject: [PATCH] Makefile: honor CPPFLAGS
+
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index d92a87b..7c98b63 100644
+--- a/Makefile
++++ b/Makefile
+@@ -13,10 +13,10 @@ umtprd: $(objects) $(ops_objects)
+ 	${CC} -o $@    $^ $(LDFLAGS) -lpthread
+ 
+ $(objects): obj/%.o: src/%.c
+-	${CC} -o $@ $^ -c $(CFLAGS)
++	${CC} -o $@ $^ -c $(CPPFLAGS) $(CFLAGS)
+ 
+ $(ops_objects): obj/%.o: src/mtp_operations/%.c
+-	${CC} -o $@ $^ -c $(CFLAGS)
++	${CC} -o $@ $^ -c $(CPPFLAGS) $(CFLAGS)
+ 
+ output_dir:
+ 	@mkdir -p obj
+-- 
+2.28.0
+
