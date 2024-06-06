@@ -1,4 +1,4 @@
-bb-u-boot-beagley-ai (2023.04.20240319.16-09.02.00.009-0~bullseye+20240606) bullseye; urgency=low
+bb-u-boot-beagley-ai (2023.04.20240319.16-09.02.00.009-0~noble+20240606) noble; urgency=low
 
   * 20240319 - 09.02.00.009 - https://openbeagle.org/beagleboard/u-boot/-/commits/v2023.04-ti-09.02.00.009-BeagleY-AI-Production
   * 20240320 - 09.02.00.009 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.009

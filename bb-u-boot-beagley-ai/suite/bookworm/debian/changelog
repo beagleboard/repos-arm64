@@ -1,9 +1,8 @@
-bb-u-boot-beagley-ai (2023.04.20240319.15-09.02.00.009-0~bookworm+20240529) bookworm; urgency=low
+bb-u-boot-beagley-ai (2023.04.20240319.16-09.02.00.009-0~bookworm+20240606) bookworm; urgency=low
 
   * 20240319 - 09.02.00.009 - https://openbeagle.org/beagleboard/u-boot/-/commits/v2023.04-ti-09.02.00.009-BeagleY-AI-Production
   * 20240320 - 09.02.00.009 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.009
   * 20240412 - 4.2.0 - https://github.com/OP-TEE/optee_os/commits/4.2.0
-  * 20240523 - master - https://github.com/ARM-software/arm-trusted-firmware/commit/f2735ebccf5173f74c0458736ec526276106097e
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 29 May 2024 10:10:49 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 14:37:03 -0500
 
