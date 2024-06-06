@@ -28,4 +28,4 @@ override_dh_installsystemd:
 	dh $@
 
 override_dh_builddeb:
-	dh_builddeb -- -Zzstd
+	dh_builddeb -- -Zxz

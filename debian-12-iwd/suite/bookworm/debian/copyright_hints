@@ -21,6 +21,7 @@ Copyright:
   2022, Intel Corporation.
   2023, Locus Robotics
   2023, Locus Robotics.
+  2024, Intel Corporation.
 License: LGPL-2.1+
  FIXME
 
@@ -348,6 +349,14 @@ Files:
 Copyright:
   2012, Intel Corporation
   2023, Cruise LLC
+License: LGPL-2.1
+ FIXME
+
+Files:
+ ell/notifylist.c
+ ell/notifylist.h
+Copyright:
+  2024, Cruise, LLC
 License: LGPL-2.1
  FIXME
 

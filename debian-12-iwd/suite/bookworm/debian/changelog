@@ -1,8 +1,21 @@
-iwd (2.17-1bbbio0~bookworm+20240402) bookworm; urgency=low
+iwd (2.18-1bbbio0~bookworm+20240606) bookworm; urgency=low
 
-  * Rebuild iwd_2.17-1 for repos.rcn-ee.com
+  * Rebuild iwd_2.18-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 02 Apr 2024 10:12:22 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 17:07:33 -0500
+
+iwd (2.18-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release;
+
+  [ Jonas Smedegaard ]
+  * update copyright info: update coverage
+  * declare compliance with Debian Policy 4.7.0
+  * tighten build-dependency on libell-dev
+  * unfuzz patch 1001
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 06 Jun 2024 16:28:02 +0200
 
 iwd (2.17-1) unstable; urgency=medium
 
