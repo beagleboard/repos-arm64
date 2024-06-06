@@ -1,0 +1,9 @@
+ti-zephyr-firmware (0.0.0-0.git20240606.0-0~trixie+20240606) trixie; urgency=low
+
+  * AM62 MCU-M4F OpenAMP firmwar
+  * AM64 MCU-M4F OpenAMP firmware
+  * J722s R5F OpenAMP firmware
+  * J722s R5F MicroPython firmware
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 10:45:26 -0500
+
