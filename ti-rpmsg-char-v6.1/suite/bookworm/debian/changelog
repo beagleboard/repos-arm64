@@ -1,0 +1,6 @@
+ti-rpmsg-char (0.6.6.20240226.0-0~bookworm+20240605) bookworm; urgency=low
+
+  * Rebuild ti-rpmsg-char_0.6.6.20240226.0-0 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Jun 2024 21:13:56 -0500
+
