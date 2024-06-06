@@ -54,7 +54,7 @@ License: GPL-2
 Files:
  debian/*
 Copyright:
-  2022-2023  Jonas Smedegaard <dr@jones.dk>
+  2022-2024  Jonas Smedegaard <dr@jones.dk>
   2016-2022  Nobuhiro Iwamatsu <iwamatsu@debian.org>
 License-Grant:
  This program is free software;

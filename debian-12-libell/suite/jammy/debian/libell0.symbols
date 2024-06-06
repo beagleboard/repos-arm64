@@ -19,6 +19,7 @@ libell.so.0 libell0 #MINVER#
  l_ascii_table@ELL_0.10 0.15
  l_base64_decode@ELL_0.10 0.15
  l_base64_encode@ELL_0.10 0.15
+ l_basename@ELL_0.10 0.66
  l_cert_free@ELL_0.10 0.16
  l_cert_get_der_data@ELL_0.10 0.16
  l_cert_get_dn@ELL_0.10 0.16
@@ -457,6 +458,12 @@ libell.so.0 libell0 #MINVER#
  l_netlink_send@ELL_0.10 0.15
  l_netlink_set_debug@ELL_0.10 0.15
  l_netlink_unregister@ELL_0.10 0.15
+ l_notifylist_add@ELL_0.10 0.66
+ l_notifylist_free@ELL_0.10 0.66
+ l_notifylist_new@ELL_0.10 0.66
+ l_notifylist_notify@ELL_0.10 0.66
+ l_notifylist_notify_matches@ELL_0.10 0.66
+ l_notifylist_remove@ELL_0.10 0.66
  l_parse_args@ELL_0.10 0.15
  l_path_find@ELL_0.10 0.22
  l_path_get_mtime@ELL_0.10 0.22
