@@ -1,6 +1,6 @@
-ti-psdk-firmware-09.02.00.05 (9.2.0.5-0bbbio2~bookworm+20240606) bookworm; urgency=low
+ti-psdk-firmware-09.02.00.05 (9.2.0.5-0bbbio3~bookworm+20240606) bookworm; urgency=low
 
   * Firmware for PSDK Linux 09.02.00.05 build -all
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 14:25:28 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 17:39:26 -0500
 
