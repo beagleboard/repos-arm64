@@ -1,9 +1,9 @@
-bb-customizations (1.20240307.2-0~jammy+20240307) jammy; urgency=low
+bb-customizations (1.20240606.0-0~jammy+20240606) jammy; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
   * dont load /dev/bone/pwm when BONE-FAN is loaded
   * disable automatic pwm export, need to find a new way
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Mar 2024 15:40:25 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 21:20:51 -0500
 
