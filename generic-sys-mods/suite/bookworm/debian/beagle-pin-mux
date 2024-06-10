@@ -6,6 +6,20 @@ if ! id | grep -q root; then
 	exit
 fi
 
+unset GOTPIN
+unset GOTMODE
+
+board=$(cat /proc/device-tree/model | awk '{print $2}'| tr -d '\000')
+
+case "${board}" in
+BeagleY-AI)
+	pin_prefix="hat-"
+	;;
+*)
+	pin_prefix=""
+	;;
+esac
+
 grab_helpers () {
 	unset PWM_BUS
 	if [ -f /sys/firmware/devicetree/base/${PIN}-${MODE}/beagle-pwm-bus ] ; then
@@ -74,29 +88,50 @@ bind_driver () {
 
 checkpin () {
 	if [ "x${PIN}" = "x" ] ; then
-		echo "Missing paramater --pin <gpio>"
+		echo "Missing options: --pin <gpio>"
+		PIN_OPTIONS=$(ls /sys/devices/platform/ | grep gpio-pu | grep ${pin_prefix} | awk -F '-gpio' '{print $1}')
+		echo "Possible Options:"
+		echo "---------------"
+		echo "${PIN_OPTIONS}"
+		echo "---------------"
 		exit 1
 	fi
 	if [ ! -d /sys/devices/platform/${PIN}-gpio ] ; then
-		echo "Unknown pin name: ${PIN}"
+		echo "Unknown pin name: [--pin ${PIN}]"
+		PIN_OPTIONS=$(ls /sys/devices/platform/ | grep gpio-pu | grep ${pin_prefix} | awk -F '-gpio' '{print $1}')
+		echo "Possible Options:"
+		echo "---------------"
+		echo "${PIN_OPTIONS}"
+		echo "---------------"
 		exit 1
 	fi
 	pinloaded=$(ls /sys/bus/platform/drivers/gpio-aggregator/ | grep ${PIN})
 	if [ ! "x${pinloaded}" = "x" ] ; then
-		echo ${pinloaded} > /sys/bus/platform/drivers/gpio-aggregator/unbind 
+		echo ${pinloaded} > /sys/bus/platform/drivers/gpio-aggregator/unbind
 	fi
+	GOTPIN=1
 }
 
 checkpinmode () {
 	if [ "x${MODE}" = "x" ] ; then
 		echo "Missing paramater: --mode <mode>"
+		MODES=$(ls /sys/devices/platform/ | grep ${PIN} | awk -F ${PIN}- '{print $2}')
+		echo "Possible Options:"
+		echo "---------------"
+		echo "${MODES}"
+		echo "---------------"
 		exit 1
 	fi
 	if [ ! -d /sys/devices/platform/${PIN}-${MODE} ] ; then
-		MODES=$(ls /sys/devices/platform/ | grep ${PIN} | awk -F ${PIN}- '{print $2}' | tr '\n' ',')
-		echo "Unknown pin-mode combination: ${PIN}-${MODE}: Possible modes are: [$MODES]"
+		echo "Unknown --pin/--mode combination: [--pin ${PIN} --mode ${MODE}]:"
+		MODES=$(ls /sys/devices/platform/ | grep ${PIN} | awk -F ${PIN}- '{print $2}')
+		echo "Possible Options:"
+		echo "---------------"
+		echo "${MODES}"
+		echo "---------------"
 		exit 1
 	fi
+	GOTMODE=1
 }
 
 usage () {
@@ -143,5 +178,9 @@ while [ ! -z "$1" ] ; do
 	shift
 done
 
-driver_override
-bind_driver
+if [ ${GOTPIN} ] && [ ${GOTMODE} ] ; then
+	driver_override
+	bind_driver
+else
+	usage
+fi
