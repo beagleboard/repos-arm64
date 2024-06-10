@@ -1,8 +1,24 @@
-mesa (24.1.0-1bbbio0~bookworm+20240523) bookworm; urgency=low
+mesa (24.1.1-1bbbio0~bookworm+20240610) bookworm; urgency=low
 
-  * Rebuild mesa_24.1.0-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.1.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 23 May 2024 15:03:34 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 10 Jun 2024 14:24:03 -0500
+
+mesa (24.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-depends on meson for rusticl.
+  * rules, control: Bump llvm to 18. (Closes: #1072901)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 10 Jun 2024 14:39:17 +0300
+
+mesa (24.1.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * control: Add python3-pycparser to build-depends for armhf, arm64.
+    (Closes: #1071222)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 31 May 2024 15:40:01 +0300
 
 mesa (24.1.0-1) experimental; urgency=medium
 
