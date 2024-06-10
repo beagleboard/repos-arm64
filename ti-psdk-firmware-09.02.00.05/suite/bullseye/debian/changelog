@@ -1,6 +1,6 @@
-ti-psdk-firmware-09.02.00.05 (9.2.0.5-0bbbio3~bullseye+20240606) bullseye; urgency=low
+ti-psdk-firmware-09.02.00.05 (9.2.0.5-0bbbio4~bullseye+20240610) bullseye; urgency=low
 
   * Firmware for PSDK Linux 09.02.00.05 build -all
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 17:39:26 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 10 Jun 2024 10:10:44 -0500
 
