@@ -52,6 +52,26 @@ if (my $user_pass = delete($conf->{user_password})) {
     $call_reboot = 1;
 }
 
+if (my $user_enc_pass = delete($conf->{user_encypted_password})) {
+    my $pipe;
+    logger('info', "Resetting $current_user password");
+    unless (open($pipe, '|-', '/usr/sbin/chpasswd', '-e')) {
+        my $err = $!;
+        logger('error', "Could not run chpasswd: $err");
+        die $err;
+    }
+    $pipe->print("$current_user:$user_enc_pass");
+    close($pipe);
+    if( -f "/etc/issue") {
+        system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
+    }
+    if( -f "/etc/issue.net") {
+        system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
+    }
+    $enable_lightdm = 1;
+    $call_reboot = 1;
+}
+
 if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
     my $fh;
     logger('info', "Adding key to root's authorized_keys");

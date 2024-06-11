@@ -51,10 +51,10 @@ dl_src
 wfile="LICENSE" ; copy_some
 wfile="raspi-config" ; copy_some
 
-repo="usr-customizations"
-dl_src
+#repo="usr-customizations"
+#dl_src
 
-wfile="arm64/usr/sbin/beagle-kversion" ; copy_all
+#wfile="arm64/usr/sbin/beagle-kversion" ; copy_all
 
 repo="bbbio-set-sysconf"
 dl_src
