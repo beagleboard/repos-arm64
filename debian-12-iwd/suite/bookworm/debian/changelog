@@ -1,3 +1,9 @@
+iwd (2.18-1bbbio1~bookworm+20240612) bookworm; urgency=low
+
+  * Rebuild iwd_2.18-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 12 Jun 2024 11:32:20 -0500
+
 iwd (2.18-1bbbio0~bookworm+20240606) bookworm; urgency=low
 
   * Rebuild iwd_2.18-1 for repos.rcn-ee.com
