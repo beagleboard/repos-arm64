@@ -157,12 +157,20 @@ if (my $new_user_name = delete($conf->{user_name})) {
     $call_reboot = 1;
 }
 
+if (my $wifi_regdom = delete($conf->{wifi_regdom})) {
+    logger('info', "Setting up iwd with Country code '$wifi_regdom'");
+    if( -f "/etc/iwd/main.conf") {
+        system("sed -i -e 's:#Country=US:Country=$wifi_regdom:g' /etc/iwd/main.conf");
+        $call_reboot = 1;
+    }
+}
+
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     logger('info', "Setting up iwd with '$iwd_psk_file'");
     if( -f "/boot/firmware/services/$iwd_psk_file") {
         system("cp /boot/firmware/services/$iwd_psk_file /var/lib/iwd/");
         system("dos2unix -q /var/lib/iwd/$iwd_psk_file");
-        system("systemctl restart iwd.service");
+        $call_reboot = 1;
     }
 }
 
@@ -171,7 +179,7 @@ if (my $hostapd_file = delete($conf->{hostapd_file})) {
     if( -f "/boot/firmware/services/$hostapd_file") {
         system("cp /boot/firmware/services/$hostapd_file /etc/hostapd/SoftAp0.conf");
         system("dos2unix -q /etc/hostapd/SoftAp0.conf");
-        system("systemctl restart hostapd\@SoftAp0.service");
+        $call_reboot = 1;
     }
 }
 

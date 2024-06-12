@@ -4,7 +4,7 @@ dl_rpi () {
 	if [ -d ./src/ ] ; then
 		rm -rf ./src/
 	fi
-
+	echo "https://github.com/RPi-Distro/raspberrypi-sys-mods.git"
 	git clone https://github.com/RPi-Distro/raspberrypi-sys-mods.git ./src/ --depth=1
 }
 
@@ -12,7 +12,7 @@ dl_src () {
 	if [ -d ./src/ ] ; then
 		rm -rf ./src/
 	fi
-
+	echo "https://openbeagle.org/beagleboard/${repo}.git"
 	git clone https://openbeagle.org/beagleboard/${repo}.git ./src/
 }
 
@@ -60,6 +60,7 @@ repo="bbbio-set-sysconf"
 dl_src
 
 wfile="src/bbbio-set-sysconf" ; copy_debian
+wfile="src/iwd_migration.py" ; copy_all
 wfile="src/sysconf.txt" ; copy_debian
 wfile="src/ssid.psk" ; copy_debian
 wfile="src/SoftAp0.conf" ; copy_debian
