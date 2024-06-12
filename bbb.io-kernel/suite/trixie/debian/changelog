@@ -1,9 +1,8 @@
-bbb.io-kernel (1.20240611.0-0~trixie+20240611) trixie; urgency=low
+bbb.io-kernel (1.20240611.1-0~trixie+20240611) trixie; urgency=low
 
   * Kernel Updates
-  * linux-image-6.10.0-rc3-arm64-r1
-  * linux-image-6.1.80-ti-arm64-r53
-  * linux-image-6.1.80-ti-rt-arm64-r53
+  * linux-image-6.1.80-ti-arm64-r54
+  * linux-image-6.1.80-ti-rt-arm64-r54
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 11 Jun 2024 10:31:08 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 11 Jun 2024 21:28:08 -0500
 
