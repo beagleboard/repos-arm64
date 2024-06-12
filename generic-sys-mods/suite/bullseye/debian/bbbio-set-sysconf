@@ -161,6 +161,10 @@ if (my $wifi_regdom = delete($conf->{wifi_regdom})) {
     logger('info', "Setting up iwd with Country code '$wifi_regdom'");
     if( -f "/etc/iwd/main.conf") {
         system("sed -i -e 's:#Country=US:Country=$wifi_regdom:g' /etc/iwd/main.conf");
+        if( -f "/boot/firmware/firstrun.sh") {
+            logger('info', "Configuring WiFi Credentials");
+            system("/usr/lib/beagleboard-sys-mods/iwd_migration.py");
+        }
         $call_reboot = 1;
     }
 }
@@ -391,6 +395,9 @@ q(# This file will be automatically evaluated and installed at next boot
 
 # iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
 #iwd_psk_file=
+
+# wifi_regdom - Country Code (ISO Alpha-2) Requests the country be set for the system.
+#wifi_regdom=US
 
 # hostapd_file - Set a configuration for hostapd https://wiki.gentoo.org/wiki/Hostapd
 #hostapd_file=SoftAp0.conf

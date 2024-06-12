@@ -19,19 +19,16 @@ def main() -> None:
             match = re.match("\s*ssid=\"(.+)\"", line)
             if match:
                 ssid = match.group(1)
-                print(f"{ssid}")
             match2 = re.match("\s*psk=(.+)", line)
             if match2:
                 psk = match2.group(1)
-                print(f"{psk}")
             if ssid and psk:
                 networks[ssid] = psk
-            else:
-                ssid = None
-                psk = None
+#            else:
+#                ssid = None
+#                psk = None
 
     for ssid, psk in networks.items():
-        print(f"{ssid} -> {psk}")
         if not re.match("^[0-9 \-_a-zA-z]+$", ssid):
             hexstr = binascii.hexlify(ssid.encode("utf-8")).decode("ascii")
             filename = f"={hexstr}.psk"
