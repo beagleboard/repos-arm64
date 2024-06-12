@@ -6,6 +6,7 @@ use IO::Pipe;
 use feature 'switch';
 
 my $wifi_not_configured = 1;
+my $got_iwd_psk_file = 0;
 my $enable_lightdm = 0;
 my $enable_ufw = 0;
 my $call_reboot = 0;
@@ -181,11 +182,12 @@ if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
             $call_reboot = 1;
         }
     }
+    $got_iwd_psk_file = 1
 }
 
 if (my $iwd_psk_file_contents = delete($conf->{iwd_psk_file_contents})) {
     if ($wifi_not_configured) {
-        if ($iwd_psk_file) {
+        if ($got_iwd_psk_file) {
             logger('info', "Setting up iwd with iwd_psk_file_contents");
             system("echo $iwd_psk_file_contents | base64 -d > /var/lib/iwd/$iwd_psk_file");
             $wifi_not_configured = 0;
