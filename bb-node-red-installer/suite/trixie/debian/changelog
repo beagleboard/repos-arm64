@@ -1,8 +1,8 @@
-bb-node-red-installer (3.1.9.0-0~trixie+20240516) trixie; urgency=low
+bb-node-red-installer (3.1.10.0-0~trixie+20240614) trixie; urgency=low
 
-  * Node-RED - 3.1.9 - https://www.npmjs.com/package/node-red
+  * Node-RED - 3.1.10 - https://www.npmjs.com/package/node-red
   * node-red-dashboard - 3.6.5 - https://www.npmjs.com/package/node-red-dashboard
   * nodejs - 16.20.2 - https://nodejs.org/dist/latest-v16.x/
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 May 2024 15:42:40 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Jun 2024 17:58:25 -0500
 
