@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleplay"
 debian_pkg_name="${package_name}"
-package_version="2024.04.20240402.0"
+package_version="2024.04.20240402.1"
 package_source=""
 src_dir=""
 
@@ -20,7 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20240406"
-trixie_version="~trixie+20240406"
-jammy_version="~jammy+20240406"
-noble_version="~noble+20240406"
+bookworm_version="~bookworm+20240614"
+trixie_version="~trixie+20240614"
+jammy_version="~jammy+20240614"
+noble_version="~noble+20240614"
