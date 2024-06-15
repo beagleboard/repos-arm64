@@ -1,4 +1,4 @@
-bb-beagle-version (1.20240615.0-0~bookworm+20240615) bookworm; urgency=low
+bb-beagle-version (1.20240615.0-0~noble+20240615) noble; urgency=low
 
   * Dump firmware version of ti-sci 44083000.dmsc
   * grab ti-sci and optee firmware builds from journalctl

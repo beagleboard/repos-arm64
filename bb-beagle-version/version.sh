@@ -4,7 +4,7 @@
 
 package_name="bb-beagle-version"
 debian_pkg_name="${package_name}"
-package_version="1.20230808.1"
+package_version="1.20240615.0"
 package_source=""
 src_dir=""
 
@@ -19,7 +19,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20230808"
-bookworm_version="~bookworm+20230808"
-trixie_version="~trixie+20230808"
-jammy_version="~jammy+20230808"
+bullseye_version="~bullseye+20240615"
+bookworm_version="~bookworm+20240615"
+trixie_version="~trixie+20240615"
+jammy_version="~jammy+20240615"
+noble_version="~noble+20240615"
