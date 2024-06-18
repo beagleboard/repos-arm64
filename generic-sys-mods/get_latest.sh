@@ -74,6 +74,7 @@ repo="beagle-pin-mux"
 dl_src
 
 wfile="beagle-pin-mux" ; copy_all
+wfile="beagle-pwm-export" ; copy_all
 
 repo="beagle-camera-setup"
 dl_src

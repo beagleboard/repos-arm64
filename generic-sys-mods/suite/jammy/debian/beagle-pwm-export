@@ -1,0 +1,141 @@
+#!/bin/bash
+
+if ! id | grep -q root; then
+	echo "beagle-pwm-export must be run as root:"
+	echo "sudo beagle-pwm-export"
+	exit
+fi
+
+unset GOTPIN
+
+board=$(cat /proc/device-tree/model | awk '{print $2}'| tr -d '\000')
+
+case "${board}" in
+BeagleY-AI)
+	pin_prefix="hat-"
+	;;
+*)
+	pin_prefix=""
+	;;
+esac
+
+grab_helpers () {
+	unset PWM_BUS
+	if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-bus ] ; then
+		PWM_BUS=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-bus | tr -d '\000')
+	fi
+
+	unset PWM_ADDRESS
+	if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-address ] ; then
+		PWM_ADDRESS=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-address | tr -d '\000')
+	fi
+
+	unset PWM_EXPORT
+	if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-export ] ; then
+		PWM_EXPORT=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-export | tr -d '\000')
+	fi
+
+	unset GPIO_PI
+	if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-gpio-pi ] ; then
+		GPIO_PI=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-gpio-pi | tr -d '\000')
+	fi
+
+	if [ -d /dev/hat/pwm/${PIN}/ ] ; then
+		rm -f /dev/hat/pwm/${PIN}
+	fi
+	if [ -d /dev/hat/pwm/${PIN}-pwm/ ] ; then
+		rm -f /dev/hat/pwm/${PIN}-pwm
+	fi
+	if [ -d /dev/hat/pwm/${PIN}-pwm-ecap/ ] ; then
+		rm -f /dev/hat/pwm/${PIN}-pwm-ecap
+	fi
+	if [ ! "x${GPIO_PI}" = "x" ] ; then
+		if [ -d /dev/hat/pwm/${GPIO_PI}/ ] ; then
+			rm -f /dev/hat/pwm/${GPIO_PI}
+		fi
+	fi
+}
+
+export_helpers () {
+	if [ ! "x${PWM_BUS}" = "x" ] ; then
+		pwmchip=$(ls /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/)
+		if [ ! -d /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ ] ; then
+			echo ${PWM_EXPORT} > /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/export
+		fi
+
+		mkdir -p /dev/hat/pwm/ || true
+		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/hat/pwm/${GPIO_PI}
+	fi
+}
+
+checkpin () {
+	if [ "x${PIN}" = "x" ] ; then
+		echo "Missing options: --pin <gpio>"
+		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")
+		echo "Possible Options:"
+		echo "---------------"
+		echo "${PIN_OPTIONS}"
+		echo "---------------"
+		exit 1
+	fi
+	if [ ! -f /proc/device-tree/chosen/overlays/${PIN}.pin ] ; then
+		echo "Unknown pin name: [--pin ${PIN}]"
+		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")
+		PIN_OVERLAYS=$(ls /boot/firmware/overlays/ | grep "k3-am67a-beagley-ai-pwm.*\.dtbo$")
+		echo "Possible PIN Options:"
+		echo "---------------"
+		echo "${PIN_OPTIONS}"
+		echo "---------------"
+		echo "Possible Overlay Options:"
+		echo "---------------"
+		echo "${PIN_OVERLAYS}"
+		echo "---------------"
+		exit 1
+	else
+		GOTPIN=1
+	fi
+}
+
+usage () {
+	echo "usage: sudo $(basename $0) --pin hat-08"
+	#tabed to match 
+		cat <<-__EOF__
+			-----------------------------
+			Required Options:
+			--pin <gpio>
+
+			Additional Options:
+			        -h --help
+
+			__EOF__
+	exit
+}
+
+checkparm () {
+	if [ "$(echo $1|grep ^'\-')" ] ; then
+		echo "E: Need an argument"
+		usage
+	fi
+}
+
+# parse commandline options
+while [ ! -z "$1" ] ; do
+	case $1 in
+	-h|--help)
+		usage
+		;;
+	--pin)
+		checkparm $2
+		PIN="$2"
+		checkpin
+		;;
+	esac
+	shift
+done
+
+if [ ${GOTPIN} ] ; then
+	grab_helpers
+	export_helpers
+else
+	usage
+fi
