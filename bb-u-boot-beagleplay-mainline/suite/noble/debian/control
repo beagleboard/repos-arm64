@@ -33,5 +33,5 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , mmc-utils
-Description: bb-u-boot-beagleplay-mainline
- bb-u-boot-beagleplay-mainline
+Description: beagleboard.org u-boot for beagleplay mainline
+ beagleboard.org u-boot for beagleplay mainline
