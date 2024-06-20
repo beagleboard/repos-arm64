@@ -13,6 +13,7 @@ board=$(cat /proc/device-tree/model | awk '{print $2}'| tr -d '\000')
 case "${board}" in
 BeagleY-AI)
 	pin_prefix="hat-"
+	PWM_BUS="bus@f0000"
 	;;
 *)
 	pin_prefix=""
@@ -20,11 +21,6 @@ BeagleY-AI)
 esac
 
 grab_helpers () {
-	unset PWM_BUS
-	if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-bus ] ; then
-		PWM_BUS=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-bus | tr -d '\000')
-	fi
-
 	unset PWM_ADDRESS
 	if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-address ] ; then
 		PWM_ADDRESS=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-address | tr -d '\000')
@@ -69,6 +65,11 @@ export_helpers () {
 }
 
 checkpin () {
+	if [ ! -d /proc/device-tree/chosen/overlays/ ] ; then
+		echo "PWM overlay is missing, did you add it to /boot/firmware/extlinux/extlinux.conf and reboot"
+		exit 1
+	fi
+
 	if [ "x${PIN}" = "x" ] ; then
 		echo "Missing options: --pin <gpio>"
 		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")
@@ -78,6 +79,7 @@ checkpin () {
 		echo "---------------"
 		exit 1
 	fi
+
 	if [ ! -f /proc/device-tree/chosen/overlays/${PIN}.pin ] ; then
 		echo "Unknown pin name: [--pin ${PIN}]"
 		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")

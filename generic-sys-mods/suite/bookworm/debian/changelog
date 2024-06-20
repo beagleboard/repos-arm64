@@ -1,9 +1,9 @@
-generic-sys-mods (1.20240618.0-0~bookworm+20240618) bookworm; urgency=low
+generic-sys-mods (1.20240620.0-0~bookworm+20240620) bookworm; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
   * add basic bbbio-set-sysconf.service
   * raspi-config 20240424
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 18 Jun 2024 16:32:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 20 Jun 2024 08:34:49 -0500
 
