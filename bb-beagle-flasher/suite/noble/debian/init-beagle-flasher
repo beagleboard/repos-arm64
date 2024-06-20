@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20240528.0, BeagleY-AI nvme with swap..."
+version_message="1.20240620.0, fix extlinux.conf location..."
 
 #Debian 12, Ubuntu Lunar, Mantic, Noble
 #https://packages.debian.org/source/bookworm/e2fsprogs
@@ -115,17 +115,6 @@ broadcast_over_display () {
 }
 
 example_failure () {
-	message="Example: /etc/default/beagle-flasher"                                             ; broadcast
-	message="--------------------------------------------------------------------------------" ; broadcast
-	message="source=/dev/mmcblk0"                                                              ; broadcast
-	message="destination=/dev/mmcblk1"                                                         ; broadcast
-	message="rfs_partition=dual"                                                               ; broadcast
-	message="rfs_boot_startmb=1"                                                               ; broadcast
-	message="rfs_boot_size_mb=256"                                                             ; broadcast
-	message="bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-emmc.sh"                  ; broadcast
-	message="flash_back=bbai64-emmc-to-microsd"                                                ; broadcast
-	message="extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/emmc-extlinux.conf"                 ; broadcast
-	message="--------------------------------------------------------------------------------" ; broadcast
 	exit 2
 }
 
