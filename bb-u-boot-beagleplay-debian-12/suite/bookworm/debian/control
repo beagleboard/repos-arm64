@@ -11,6 +11,7 @@ Build-Depends:
  , flex
  , gcc-arm-linux-gnueabihf
  , git
+ , libgnutls28-dev
  , libssl-dev
  , python3-cryptography
  , python3-dev
@@ -22,6 +23,7 @@ Build-Depends:
  , rsync
  , swig
  , u-boot-tools
+ , uuid-dev
  , yamllint
 Standards-Version: 4.5.1
 
@@ -31,5 +33,5 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , mmc-utils
-Description: bb-u-boot-beagleplay
- bb-u-boot-beagleplay
+Description: beagleboard.org u-boot for beagleplay
+ beagleboard.org u-boot for beagleplay
