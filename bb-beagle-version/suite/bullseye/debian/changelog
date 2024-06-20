@@ -1,8 +1,8 @@
-bb-beagle-version (1.20240615.0-0~bullseye+20240615) bullseye; urgency=low
+bb-beagle-version (1.20240620.0-0~bullseye+20240620) bullseye; urgency=low
 
   * Dump firmware version of ti-sci 44083000.dmsc
   * grab ti-sci and optee firmware builds from journalctl
   * Add BeagleY-AI eeprom and bootloader detection
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 15 Jun 2024 15:43:43 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 20 Jun 2024 08:48:49 -0500
 
