@@ -1,0 +1,82 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DEB_BUILD_OPTIONS=noautodbgsym
+
+project_dir=/opt/node-red
+tmp_dir=/tmp/lib/node_modules
+
+export NODE_PATH := $(project_dir)/lib/node_modules
+export PATH := $(project_dir)/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+node_bin=$(project_dir)/bin/node
+npm_bin=$(project_dir)/bin/npm
+
+nodejs_version=v16.20.2
+
+#https://www.npmjs.com/package/node-red
+node_red_version=3.1.10
+
+#https://www.npmjs.com/package/node-red-dashboard
+node_red_dashboard_version=3.6.5
+
+override_dh_auto_configure:
+	mkdir -p $(project_dir)/
+	tar xf ./debian/node-$(nodejs_version)-linux-arm64.tar.xz -C $(project_dir)/ --strip-components 1
+	echo "*************************************************************"
+	echo "cleanup..."
+	rm -rf $(project_dir)/include/node/openssl/archs/BSD-x86_64*/
+	rm -rf $(project_dir)/include/node/openssl/archs/VC-WIN*/
+	rm -rf $(project_dir)/include/node/openssl/archs/aix*/
+	rm -rf $(project_dir)/include/node/openssl/archs/darwin*/
+	rm -rf $(project_dir)/include/node/openssl/archs/linux-aarch64/
+	rm -rf $(project_dir)/include/node/openssl/archs/linux-elf/
+	rm -rf $(project_dir)/include/node/openssl/archs/linux-ppc*/
+	rm -rf $(project_dir)/include/node/openssl/archs/linux-x*/
+	rm -rf $(project_dir)/include/node/openssl/archs/linux*-s390x/
+	rm -rf $(project_dir)/include/node/openssl/archs/solaris*/
+	echo "*************************************************************"
+	$(node_bin) --version
+	echo "*************************************************************"
+	$(node_bin) $(npm_bin) --version
+	echo "*************************************************************"
+	/usr/bin/python3 --version
+	env | grep PATH
+	echo "*************************************************************"
+	echo "node-red"
+	echo "Fake Install: node-red@$(node_red_version)"
+	TERM=dumb $(node_bin) $(npm_bin) install -g --unsafe-perm=true --loglevel=error --prefix /tmp node-red@$(node_red_version)
+	cd $(tmp_dir)/node-red/ ; TERM=dumb $(node_bin) $(npm_bin) pack
+	echo "Real Install: node-red@$(node_red_version)"
+	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
+	rm -rf $(tmp_dir)/node-red/
+	echo "*************************************************************"
+	echo "node-red-dashboard"
+	echo "Fake Install: node-red-dashboard@$(node_red_dashboard_version)"
+	TERM=dumb $(node_bin) $(npm_bin) install -g --unsafe-perm=true --loglevel=error --prefix /tmp node-red-dashboard@$(node_red_dashboard_version)
+	cd $(tmp_dir)/node-red-dashboard/ ; TERM=dumb $(node_bin) $(npm_bin) pack
+	echo "Real Install: node-red-dashboard@$(node_red_dashboard_version)"
+	TERM=dumb $(node_bin) $(npm_bin) install -g $(tmp_dir)/node-red-dashboard/*.tgz --unsafe-perm=true --loglevel=error --prefix $(project_dir) --no-save
+	rm -rf $(tmp_dir)/node-red-dashboard/
+	echo "*************************************************************"
+	echo "move $(project_dir)/ to ./tmp$(project_dir)/"
+	mkdir -p ./tmp$(project_dir)/
+	mv $(project_dir)/* ./tmp$(project_dir)/
+
+%:
+	dh $@ --with systemd
+
+override_dh_installinit:
+	dh_installinit --name=nodered --no-stop-on-upgrade --no-start
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=nodered --no-enable
+
+override_dh_systemd_start:
+	dh_systemd_start --name=nodered --no-start
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
