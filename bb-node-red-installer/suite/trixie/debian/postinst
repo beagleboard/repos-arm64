@@ -4,7 +4,7 @@
 
 set -e
 
-package="bb-node-red-installer"
+package="bb-node-red-installer-next"
 
 pkg_user="node-red"
 pkg_data_dir="/var/lib/node-red"

@@ -15,10 +15,10 @@ export PATH := $(project_dir)/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/
 node_bin=$(project_dir)/bin/node
 npm_bin=$(project_dir)/bin/npm
 
-nodejs_version=v16.20.2
+nodejs_version=v18.20.3
 
 #https://www.npmjs.com/package/node-red
-node_red_version=3.1.10
+node_red_version=4.0.0
 
 #https://www.npmjs.com/package/node-red-dashboard
 node_red_dashboard_version=3.6.5
@@ -26,18 +26,6 @@ node_red_dashboard_version=3.6.5
 override_dh_auto_configure:
 	mkdir -p $(project_dir)/
 	tar xf ./debian/node-$(nodejs_version)-linux-arm64.tar.xz -C $(project_dir)/ --strip-components 1
-	echo "*************************************************************"
-	echo "cleanup..."
-	rm -rf $(project_dir)/include/node/openssl/archs/BSD-x86_64*/
-	rm -rf $(project_dir)/include/node/openssl/archs/VC-WIN*/
-	rm -rf $(project_dir)/include/node/openssl/archs/aix*/
-	rm -rf $(project_dir)/include/node/openssl/archs/darwin*/
-	rm -rf $(project_dir)/include/node/openssl/archs/linux-aarch64/
-	rm -rf $(project_dir)/include/node/openssl/archs/linux-elf/
-	rm -rf $(project_dir)/include/node/openssl/archs/linux-ppc*/
-	rm -rf $(project_dir)/include/node/openssl/archs/linux-x*/
-	rm -rf $(project_dir)/include/node/openssl/archs/linux*-s390x/
-	rm -rf $(project_dir)/include/node/openssl/archs/solaris*/
 	echo "*************************************************************"
 	$(node_bin) --version
 	echo "*************************************************************"
