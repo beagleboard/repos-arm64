@@ -4,7 +4,7 @@
 
 package_name="bb-node-red-installer-next"
 debian_pkg_name="${package_name}"
-package_version="3.1.10.1"
+package_version="4.0.0"
 package_source=""
 src_dir=""
 
@@ -13,7 +13,7 @@ git_sha=""
 reprepro_dir="b/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-0"
+debian_version="${package_version}-0bbbio0"
 debian_untar=""
 debian_patch=""
 
