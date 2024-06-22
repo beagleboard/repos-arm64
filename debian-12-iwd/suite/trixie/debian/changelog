@@ -1,3 +1,9 @@
+iwd (2.18-1bbbio4~trixie+20240622) trixie; urgency=low
+
+  * Rebuild iwd_2.18-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 14:10:56 -0500
+
 iwd (2.18-1bbbio3~trixie+20240622) trixie; urgency=low
 
   * Rebuild iwd_2.18-1 for repos.rcn-ee.com
