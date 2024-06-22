@@ -1,6 +1,16 @@
-bb-wl18xx-firmware (1.20240515.0-0~bookworm+20240515) bookworm; urgency=low
+bb-wl18xx-firmware (1.20240622.0-0~bookworm+20240622) bookworm; urgency=low
 
-  * Add cc33xx firmware from Version: 1.0.0.3 https://www.ti.com/tool/download/CC33XX-LINUX-AM335
+  * Add cc33xx firmware from Version: 1.0.0.4 (14 Jun 2024) https://www.ti.com/tool/CC33XX-SOFTWARE
+  * 1.0.0.4:
+  * OSPREY_LDB-1498 - “iw” Linux-shell tool reports incorrect TX rate
+  * BLE_OSPREY-178 - BLE: connection and pairing sometimes fails or takes very long with TI CC2652R1 peer
+  * OSPREY_LDB-1846 - BLE / WLAN provisioning demo fails on Processor SDK 9
+  * OSPREY_LDB-1828 - Calibrator: ANT_SEL resets on 5GHz calibration
+  * OSPREY_LDB-1733 - In some situations recovery fails
+  * OSPREY_LDB-1414 - Multirole AP/STA : Unable to start APUT in 11a high channels (above 100) when SUT is connected to 11a high channels
+  * OSPREY_LDB-1940 - BET (Beacon Early Termination) stopped to work, causing to sometimes miss multicast frames
+  * OSPREY_LDB-1918 - [CON DMA] DMA might not write a byte to UART FIFO
+  * OSPREY_LDB-1926 - [BLE][AUTONOMOUS_UART] Device might get stuck when running ADV start/stop
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 15 May 2024 16:28:01 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 13:10:08 -0500
 

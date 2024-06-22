@@ -1,3 +1,5 @@
+bb-wl18xx-firmware (1.20240622.0-0~trixie+20240622) trixie; urgency=low
+
   * Add cc33xx firmware from Version: 1.0.0.4 (14 Jun 2024) https://www.ti.com/tool/CC33XX-SOFTWARE
   * 1.0.0.4:
   * OSPREY_LDB-1498 - “iw” Linux-shell tool reports incorrect TX rate
@@ -9,3 +11,6 @@
   * OSPREY_LDB-1940 - BET (Beacon Early Termination) stopped to work, causing to sometimes miss multicast frames
   * OSPREY_LDB-1918 - [CON DMA] DMA might not write a byte to UART FIFO
   * OSPREY_LDB-1926 - [BLE][AUTONOMOUS_UART] Device might get stuck when running ADV start/stop
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 13:10:08 -0500
+

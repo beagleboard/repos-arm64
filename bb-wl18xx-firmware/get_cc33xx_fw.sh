@@ -5,16 +5,17 @@ dl_src () {
 		rm -rf ./src/
 	fi
 
-	git clone https://openbeagle.org/beagleboard/cc33xx.git ./src/
+	git clone https://openbeagle.org/beagley-ai/beagley-ai.git ./src/ --depth=1
 }
 
 copy () {
 	cp -v ./src/${wfile} ./suite/bullseye/debian/
 	cp -v ./src/${wfile} ./suite/bookworm/debian/
+	cp -v ./src/${wfile} ./suite/trixie/debian/
 }
 
 dl_src
 
-wfile="cc33xx_rootfs/lib/firmware/ti-connectivity/cc33xx-conf.bin"       ; copy
-wfile="cc33xx_rootfs/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin" ; copy
-wfile="cc33xx_rootfs/lib/firmware/ti-connectivity/cc33xx_fw.bin"         ; copy
+wfile="firmware/cc33xx/cc33xx-conf.bin"       ; copy
+wfile="firmware/cc33xx/cc33xx_2nd_loader.bin" ; copy
+wfile="firmware/cc33xx/cc33xx_fw.bin"         ; copy
