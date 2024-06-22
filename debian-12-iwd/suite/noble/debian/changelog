@@ -1,4 +1,4 @@
-iwd (2.18-1bbbio2~bookworm+20240622) bookworm; urgency=low
+iwd (2.18-1bbbio2~noble+20240622) noble; urgency=low
 
   * Rebuild iwd_2.18-1 for repos.rcn-ee.com
 
