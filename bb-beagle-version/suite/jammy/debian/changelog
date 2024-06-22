@@ -1,8 +1,9 @@
-bb-beagle-version (1.20240620.0-0~jammy+20240620) jammy; urgency=low
+bb-beagle-version (1.20240622.0-0~jammy+20240622) jammy; urgency=low
 
   * Dump firmware version of ti-sci 44083000.dmsc
   * grab ti-sci and optee firmware builds from journalctl
   * Add BeagleY-AI eeprom and bootloader detection
+  * Dump wlcore firmware version
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 20 Jun 2024 08:48:49 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 13:22:05 -0500
 
