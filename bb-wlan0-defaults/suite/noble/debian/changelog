@@ -1,4 +1,4 @@
-bb-wlan0-defaults (1.20240622.0-0~trixie+20240622) trixie; urgency=low
+bb-wlan0-defaults (1.20240622.0-0~noble+20240622) noble; urgency=low
 
   * udev call hostapd@SoftAp0.service directly
   * Add BeagleY-AI early cc33xx hostapd support

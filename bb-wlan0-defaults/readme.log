@@ -1,1 +1,2 @@
   * udev call hostapd@SoftAp0.service directly
+  * Add BeagleY-AI early cc33xx hostapd support

@@ -1,6 +1,7 @@
-bb-wlan0-defaults (1.20240212.0-0~bookworm+20240212) bookworm; urgency=low
+bb-wlan0-defaults (1.20240622.0-0~bookworm+20240622) bookworm; urgency=low
 
   * udev call hostapd@SoftAp0.service directly
+  * Add BeagleY-AI early cc33xx hostapd support
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 12 Feb 2024 09:59:07 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 15:13:24 -0500
 

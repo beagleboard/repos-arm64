@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ ! -f /etc/systemd/network/mlan0-DHCP.network ] ; then
+	cp -v /etc/bbb.io/templates/mlan0-DHCP.network /etc/systemd/network/mlan0.network
+fi
+
+if [ ! -f /etc/systemd/network/SoftAp0.network ] ; then
+	cp -v /etc/bbb.io/templates/SoftAp0-DHCPServer.network /etc/systemd/network/SoftAp0.network
+fi
+
+if [ ! -f /etc/systemd/network/wlan0.network ] ; then
+	cp -v /etc/bbb.io/templates/wlan0-DHCP.network /etc/systemd/network/wlan0.network
+fi
+
+if [ -d /etc/NetworkManager/conf.d/ ] ; then
+	cp -v /etc/bbb.io/templates/local-ignore-softap0.conf /etc/NetworkManager/conf.d/
+fi
+
+#DEBHELPER#
+
+exit 0
+
