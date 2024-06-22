@@ -2,7 +2,7 @@
 
 DEB_BUILD_OPTIONS=noautodbgsym
 
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all optimize=-lto
 
 # skip tests failing on official build daemons:
 #  * test-wsc: unit/test-wsc.c:435: wsc_test_uuid_from_addr: Assertion `wsc_uuid_from_addr(test->addr, uuid)' failed.
@@ -14,7 +14,7 @@ TESTS = $(basename $(wildcard unit/*.c))
 TESTS_FLAKY = unit/test-wsc unit/test-eap-sim unit/test-dpp
 
 override_dh_auto_configure:
-	dh_auto_configure -- --enable-external-ell
+	dh_auto_configure -- --enable-external-ell --enable-wired
 
 override_dh_auto_test:
 	make -j2 check VERBOSE=1 TESTS='$(filter-out $(TESTS_FLAKY),$(TESTS))'
