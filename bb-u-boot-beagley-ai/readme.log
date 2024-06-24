@@ -3,3 +3,4 @@
   * 20240412 - 4.2.0 - https://github.com/OP-TEE/optee_os/commits/4.2.0
   * 20240620 - master - https://github.com/ARM-software/arm-trusted-firmware/commit/0567eca0b940f0636ddd284a1a50f815ac6636d5
   * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
+  * initrd + overlays with this u-boot has some side affects
