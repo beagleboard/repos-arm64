@@ -5,6 +5,7 @@ rfs_partition=dual
 rfs_boot_startmb=1
 rfs_boot_size_mb=256
 rfs_boot_permissions=user,uid=1000,gid=1000,defaults
+rfs_swap_size_mb=4096
 bootloader=/opt/u-boot/bb-u-boot-beagleboneai64-mainline/install-emmc.sh
-flash_back=/opt/u-boot/bb-u-boot-beagleboneai64-mainline/bbai64-emmc-to-microsd
-extlinux=/opt/u-boot/bb-u-boot-beagleboneai64-mainline/emmc-extlinux.conf
+flash_back=/opt/u-boot/bb-u-boot-beagleboneai64-mainline/bbai64-emmc-to-microsd-w-swap
+extlinux=/opt/u-boot/bb-u-boot-beagleboneai64-mainline/emmc-extlinux-w-swap.conf

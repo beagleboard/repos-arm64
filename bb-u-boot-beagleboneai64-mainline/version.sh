@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleboneai64-mainline"
 debian_pkg_name="${package_name}"
-package_version="2024.07.20240624.1"
+package_version="2024.07.20240624.2"
 package_source=""
 src_dir=""
 
@@ -20,8 +20,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240624"
-bookworm_version="~bookworm+20240624"
-trixie_version="~trixie+20240624"
-jammy_version="~jammy+20240624"
-noble_version="~noble+20240624"
+bullseye_version="~bullseye+20240625"
+bookworm_version="~bookworm+20240625"
+trixie_version="~trixie+20240625"
+jammy_version="~jammy+20240625"
+noble_version="~noble+20240625"
