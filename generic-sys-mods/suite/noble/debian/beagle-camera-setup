@@ -336,9 +336,21 @@ setup_USB_camera(){
     fi
 }
 
-setup_USB_camera
-setup_imx219
-setup_ov5640
-setup_ov2312
-setup_imx390
-setup_routes
+soc_family=$(cat /sys/devices/soc0/family || true)
+
+case "${soc_family}" in
+AM62X)
+	echo "Setup ${soc_family}"
+	;;
+J721E)
+	echo "Setup ${soc_family}"
+	;;
+J722S)
+	setup_USB_camera
+	setup_imx219
+	setup_ov5640
+	setup_ov2312
+	setup_imx390
+	setup_routes
+	;;
+esac
