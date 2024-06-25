@@ -155,11 +155,11 @@ echo "groups:[${USER_GROUPS}]"
 echo "cmdline:[`cat /proc/cmdline`]"
 
 echo "ti-sci:"
-journalctl -b 0 -k -g ti-sci | grep ABI || true
+journalctl -b 0 -k -g ti-sci | grep ABI | awk -F"controller: " '{print $2}' || true
 echo "optee:"
-journalctl -b 0 -k -g optee | grep revision || true
+journalctl -b 0 -k -g optee | grep revision | awk -F"kernel: " '{print $2}' || true
 echo "wlcore:"
-journalctl -b 0 -k -g wlcore: | grep "firmware\|version" || true
+journalctl -b 0 -k -g wlcore: | grep "firmware\|version" | awk -F"kernel: " '{print $2}' || true
 echo "dmesg | grep remote"
 dmesg | grep remote || true
 echo "dmesg | grep pru"

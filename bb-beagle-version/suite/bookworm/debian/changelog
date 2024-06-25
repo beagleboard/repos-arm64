@@ -1,9 +1,9 @@
-bb-beagle-version (1.20240625.0-0~bookworm+20240625) bookworm; urgency=low
+bb-beagle-version (1.20240625.1-0~bookworm+20240625) bookworm; urgency=low
 
   * Dump firmware version of ti-sci 44083000.dmsc
   * grab ti-sci and optee firmware builds from journalctl
   * Add BeagleY-AI eeprom and bootloader detection
   * Dump wlcore firmware version
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jun 2024 12:32:31 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jun 2024 12:44:17 -0500
 
