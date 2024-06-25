@@ -1,7 +1,7 @@
-bb-wlan0-defaults (1.20240622.0-0~jammy+20240622) jammy; urgency=low
+bb-wlan0-defaults (1.20240625.0-0~jammy+20240625) jammy; urgency=low
 
   * udev call hostapd@SoftAp0.service directly
   * Add BeagleY-AI early cc33xx hostapd support
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 15:13:24 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jun 2024 12:16:33 -0500
 
