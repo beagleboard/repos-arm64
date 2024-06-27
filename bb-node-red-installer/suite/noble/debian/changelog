@@ -1,4 +1,4 @@
-bb-node-red-installer (4.0.1-0bbbio0~bookworm+20240626) bookworm; urgency=low
+bb-node-red-installer (4.0.1-0bbbio0~noble+20240626) noble; urgency=low
 
   * Node-RED - 4.0.1 - https://www.npmjs.com/package/node-red
   * node-red-dashboard - 3.6.5 - https://www.npmjs.com/package/node-red-dashboard
