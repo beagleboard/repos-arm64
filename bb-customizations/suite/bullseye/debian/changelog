@@ -1,9 +1,9 @@
-bb-customizations (1.20240625.0-0~bullseye+20240625) bullseye; urgency=low
+bb-customizations (1.20240627.0-0~bullseye+20240627) bullseye; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
   * dont load /dev/bone/pwm when BONE-FAN is loaded
   * disable automatic pwm export, need to find a new way
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Jun 2024 15:18:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 27 Jun 2024 17:29:55 -0500
 
