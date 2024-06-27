@@ -1,6 +1,6 @@
-bbb.io-xfce4-desktop (1.20240621.0-0~trixie+20240621) trixie; urgency=low
+bbb.io-xfce4-desktop (1.20240627.0-0~trixie+20240627) trixie; urgency=low
 
-  * Rebuild bbb.io-xfce4-desktop_1.20240621.0-0 for repos.rcn-ee.com
+  * Rebuild bbb.io-xfce4-desktop_1.20240627.0-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 21 Jun 2024 12:15:43 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 27 Jun 2024 13:47:51 -0500
 
