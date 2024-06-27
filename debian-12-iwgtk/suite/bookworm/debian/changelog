@@ -1,0 +1,18 @@
+iwgtk (0.9-1~bpo12+1bbbio0~bookworm+20240627) bookworm; urgency=low
+
+  * Rebuild iwgtk_0.9-1~bpo12+1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 27 Jun 2024 13:44:46 -0500
+
+iwgtk (0.9-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Mark Hindley <leepen@debian.org>  Fri, 03 May 2024 08:51:02 +0100
+
+iwgtk (0.9-1) unstable; urgency=medium
+
+  * Package for Debian (Closes: #1068245).
+
+ -- Mark Hindley <leepen@debian.org>  Tue, 02 Apr 2024 09:11:42 +0100
+

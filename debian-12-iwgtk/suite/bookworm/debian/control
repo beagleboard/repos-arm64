@@ -1,0 +1,29 @@
+Source: iwgtk
+Section: net
+Priority: optional
+Maintainer: Mark Hindley <leepen@debian.org>
+Build-Depends: debhelper-compat (= 13),
+ meson (>= 0.60.0),
+ libgtk-4-dev,
+ libqrencode-dev,
+ pkgconf,
+ scdoc,
+Standards-Version: 4.6.2
+Homepage: https://github.com/J-Lentz/iwgtk
+Vcs-Git: https://salsa.debian.org/leepen/iwgtk.git
+Vcs-Browser: https://salsa.debian.org/leepen/iwgtk
+Rules-Requires-Root: no
+
+Package: iwgtk
+Architecture: linux-any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ iwd (>= 1.29),
+ adwaita-icon-theme,
+Description: lightweight graphical frontend to iwd
+ providing similar functionality to that of iwctl.
+ .
+ Features include viewing and connecting to available networks, managing known
+ networks, provisioning new networks via WPS or Wi-Fi Easy Connect, and an
+ indicator (tray) icon displaying connection status and signal strength.
