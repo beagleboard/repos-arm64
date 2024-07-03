@@ -1,8 +1,3 @@
-debian/bbb-acm-mass_storage-ncm-rndis.scheme /etc/gt/templates/
-debian/bbb-acm-ncm-rndis.scheme /etc/gt/templates/
-debian/bbb-acm-rndis.scheme /etc/gt/templates/
-debian/bbb-acm.scheme /etc/gt/templates/
-debian/bbb-ncm-rndis.scheme /etc/gt/templates/
 debian/bb-start-usb-gadgets /usr/bin/
 debian/bb-start-acm-ncm-rndis-old-gadget /usr/bin/
 debian/eth0-DHCP.network /etc/bbb.io/templates/
