@@ -17,8 +17,10 @@ override_dh_auto_build-indep:
 
 	# Replace hardlinks by symlinks
 	grep '^L ' $(CURDIR)/tzdata.zi | while read L target name ; do \
-		ln -srf $(TZGEN)/$$target $(TZGEN)/$$name ; \
-		ln -srf $(TZGEN)/right/$$target $(TZGEN)/right/$$name ; \
+		absolute_name="$(TZGEN)/$$name"; \
+		relative_target=$$(realpath -m -s --relative-to="$${absolute_name%/*}" "$(TZGEN)/$$target"); \
+		ln -sf "$$relative_target" "$(TZGEN)/$$name" ; \
+		ln -sf "$$relative_target" "$(TZGEN)/right/$$name" ; \
 	done
 
 	# Generate a posixrules file

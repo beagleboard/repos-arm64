@@ -1,8 +1,15 @@
-tzdata (2024a-3bbbio0~bookworm+20240506) bookworm; urgency=low
+tzdata (2024a-4bbbio0~bookworm+20240707) bookworm; urgency=low
 
-  * Rebuild tzdata_2024a-3 for repos.rcn-ee.com
+  * Rebuild tzdata_2024a-4 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 06 May 2024 21:29:42 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 16:05:05 -0500
+
+tzdata (2024a-4) unstable; urgency=medium
+
+  * d/rules: Support creating symlinks pointing to symlinks
+  * Fixup for avoid timezones being symlinks to symlinks (LP: #2062522)
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 02 May 2024 17:51:44 +0200
 
 tzdata (2024a-3) unstable; urgency=medium
 
