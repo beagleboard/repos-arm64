@@ -1,8 +1,20 @@
-systemd (254.5-1~bpo12+3bbbio0~bookworm+20240506) bookworm; urgency=low
+systemd (254.14-1~bpo12+1bbbio0~bookworm+20240707) bookworm; urgency=low
 
-  * Rebuild systemd_254.5-1~bpo12+3 for repos.rcn-ee.com
+  * Rebuild systemd_254.14-1~bpo12+1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 06 May 2024 21:20:49 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 16:03:44 -0500
+
+systemd (254.14-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * d/watch: restrict to v254 series
+  * New upstream stable point release 254.14
+  * Drop patch merged upstream
+  * Update max version of tzdata
+  * Drop out-of-tree fsckd daemon patch
+  * Drop override for deprecated package-supports-alternative-init-but-no-init.d-script warning
+  * d/t/boot-and-services: drop tmp check
+
+ -- Luca Boccassi <bluca@debian.org>  Sat, 29 Jun 2024 13:46:26 +0100
 
 systemd (254.5-1~bpo12+3) bookworm-backports; urgency=medium
 
