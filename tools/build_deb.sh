@@ -43,7 +43,7 @@ cleanup_suite () {
 run () {
 	touch /tmp/sbuild-BUILDING.lock
 	out_dir="${localdir}/outgoing/${suite}/${deb_arch}/${debian_pkg_name}_${debian_version}/"
-	if [ -f /var/lib/sbuild/${suite}-${deb_arch}.tar.gz ] ; then
+	if [ -f /var/lib/sbuild/${suite}-${deb_arch}.tar.gz ] || [ -f /var/lib/sbuild/${suite}-${deb_arch}.tar ] ; then
 
 		if [ ! -f ./${suite}/PKG_BUILT ] ; then
 			cleanup_suite
