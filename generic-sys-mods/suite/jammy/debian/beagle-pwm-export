@@ -52,7 +52,17 @@ board_lookup () {
 			fi
 			;;
 		*)
-			echo "Unknown Pin: [${PIN}]"
+			echo "Unknown pin name: [--pin ${PIN}]"
+			PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
+			PIN_OVERLAYS=$(ls /boot/firmware/overlays/ | grep "k3-am67a-beagley-ai-pwm.*\.dtbo$")
+			echo "Possible PIN Options:"
+			echo "---------------"
+			echo "${PIN_OPTIONS}"
+			echo "---------------"
+			echo "Possible Overlay Options:"
+			echo "---------------"
+			echo "${PIN_OVERLAYS}"
+			echo "---------------"
 			exit 1
 			;;
 		esac
@@ -123,14 +133,10 @@ checkpin () {
 
 	if [ "x${PIN}" = "x" ] ; then
 		echo "Missing options: --pin <gpio>"
-		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$" || true)
-		PWM_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
-		if [ "x${PWM_OPTIONS}" = "x" ] ; then
-			PWM_OPTIONS = ${PIN_OPTIONS}
-		fi
+		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
 		echo "Possible Options:"
 		echo "---------------"
-		echo "${PWM_OPTIONS}"
+		echo "${PIN_OPTIONS}"
 		echo "---------------"
 		exit 1
 	fi
@@ -138,15 +144,11 @@ checkpin () {
 	board_lookup
 	if [ ! -f /proc/device-tree/chosen/overlays/${PIN}.${PWM_ADDRESS}.pwm ] ; then
 		echo "Unknown pin name: [--pin ${PIN}]"
-		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")
-		PWM_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
-		if [ "x${PWM_OPTIONS}" = "x" ] ; then
-			PWM_OPTIONS = ${PIN_OPTIONS}
-		fi
+		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
 		PIN_OVERLAYS=$(ls /boot/firmware/overlays/ | grep "k3-am67a-beagley-ai-pwm.*\.dtbo$")
 		echo "Possible PIN Options:"
 		echo "---------------"
-		echo "${PWM_OPTIONS}"
+		echo "${PIN_OPTIONS}"
 		echo "---------------"
 		echo "Possible Overlay Options:"
 		echo "---------------"
