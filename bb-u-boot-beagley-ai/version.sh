@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagley-ai"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20240319.20-09.02.00.009"
+package_version="2023.04.20240319.21-09.02.00.009"
 package_source=""
 src_dir=""
 
@@ -20,7 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240624"
-bookworm_version="~bookworm+20240624"
-trixie_version="~trixie+20240624"
-noble_version="~noble+20240624"
+bullseye_version="~bullseye+20240708"
+bookworm_version="~bookworm+20240708"
+trixie_version="~trixie+20240708"
+noble_version="~noble+20240708"

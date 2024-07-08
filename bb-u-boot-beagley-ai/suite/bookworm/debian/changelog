@@ -1,11 +1,11 @@
-bb-u-boot-beagley-ai (2023.04.20240319.20-09.02.00.009-0~bookworm+20240624) bookworm; urgency=low
+bb-u-boot-beagley-ai (2023.04.20240319.21-09.02.00.009-0~bookworm+20240708) bookworm; urgency=low
 
   * 20240319 - 09.02.00.009 - https://openbeagle.org/beagleboard/u-boot/-/commits/v2023.04-ti-09.02.00.009-BeagleY-AI-Production
-  * 20240320 - 09.02.00.009 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.009
-  * 20240412 - 4.2.0 - https://github.com/OP-TEE/optee_os/commits/4.2.0
-  * 20240620 - master - https://github.com/ARM-software/arm-trusted-firmware/commit/0567eca0b940f0636ddd284a1a50f815ac6636d5
+  * 20240516 - 09.02.00.010 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/09.02.00.010
+  * 20240705 - 4.3.0-rc1 - https://github.com/OP-TEE/optee_os/releases/tag/4.3.0-rc1
+  * 20240704 - master - https://github.com/ARM-software/arm-trusted-firmware/commit/4b9be5abfa8b1a7c7e00776da01768d3358e648a
   * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
   * initrd + overlays with this u-boot has some side affects
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 24 Jun 2024 18:01:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 08 Jul 2024 16:04:41 -0500
 
