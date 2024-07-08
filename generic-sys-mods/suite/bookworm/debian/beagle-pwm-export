@@ -25,26 +25,26 @@ board_lookup () {
 	case "${board}" in
 	BeagleY-AI)
 		case "${PIN}" in
-		gpio5|gpio14|gpio15)
+		gpio5|gpio14|gpio15|hat-08|hat-10|hat-29)
 			PWM_ADDRESS="23000000"
 			;;
-		gpio6|gpio13|gpio20)
+		gpio6|gpio13|gpio20|hat-31|hat-33|hat-38)
 			PWM_ADDRESS="23010000"
 			;;
-		gpio16)
+		gpio16|hat-36)
 			PWM_ADDRESS="23110000"
 			;;
-		gpio17|gpio18)
+		gpio17|gpio18|hat-11|hat-12)
 			PWM_ADDRESS="23120000"
 			;;
-		gpio12)
+		gpio12|hat-32)
 			if [ -f /proc/device-tree/chosen/overlays/${PIN}.23000000.pwm ] ; then
 				PWM_ADDRESS="23000000"
 			else
 				PWM_ADDRESS="23100000"
 			fi
 			;;
-		gpio21)
+		gpio21|hat-40)
 			if [ -f /proc/device-tree/chosen/overlays/${PIN}.23010000.pwm ] ; then
 				PWM_ADDRESS="23010000"
 			else
