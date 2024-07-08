@@ -51,10 +51,14 @@ board_lookup () {
 				PWM_ADDRESS="23110000"
 			fi
 			;;
+		*)
+			echo "Unknown Pin: [${PIN}]"
+			exit 1
+			;;
 		esac
 		;;
 	*)
-		echo "Unknown Board"
+		echo "Unknown Board: [${board}]"
 		exit 1
 		;;
 	esac
@@ -68,16 +72,25 @@ grab_helpers () {
 		unset PWM_ADDRESS
 		if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-address ] ; then
 			PWM_ADDRESS=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-address | tr -d '\000')
+		else
+			echo "Old Overlay, missing PWM_ADDRESS upgrade overlays"
+			exit 1
 		fi
 
 		unset PWM_EXPORT
 		if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-export ] ; then
 			PWM_EXPORT=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-pwm-export | tr -d '\000')
+		else
+			echo "Old Overlay, missing PWM_EXPORT upgrade overlays"
+			exit 1
 		fi
 
 		unset GPIO_PI
 		if [ -f /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-gpio-pi ] ; then
 			GPIO_PI=$(cat /proc/device-tree/chosen/overlays/${PIN}.pin.beagle-gpio-pi | tr -d '\000')
+		else
+			echo "Old Overlay, missing GPIO_PI upgrade overlays"
+			exit 1
 		fi
 	fi
 
@@ -122,30 +135,26 @@ checkpin () {
 		exit 1
 	fi
 
-	if [ ! -f /proc/device-tree/chosen/overlays/${PIN}.pin ] ; then
-		board_lookup
-		if [ ! -f /proc/device-tree/chosen/overlays/${PIN}.${PWM_ADDRESS}.pwm ] ; then
-			echo "Unknown pin name: [--pin ${PIN}]"
-			PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")
-			PWM_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
-			if [ "x${PWM_OPTIONS}" = "x" ] ; then
-				PWM_OPTIONS = ${PIN_OPTIONS}
-			fi
-			PIN_OVERLAYS=$(ls /boot/firmware/overlays/ | grep "k3-am67a-beagley-ai-pwm.*\.dtbo$")
-			echo "Possible PIN Options:"
-			echo "---------------"
-			echo "${PWM_OPTIONS}"
-			echo "---------------"
-			echo "Possible Overlay Options:"
-			echo "---------------"
-			echo "${PIN_OVERLAYS}"
-			echo "---------------"
-			exit 1
+	board_lookup
+	if [ ! -f /proc/device-tree/chosen/overlays/${PIN}.${PWM_ADDRESS}.pwm ] ; then
+		echo "Unknown pin name: [--pin ${PIN}]"
+		PIN_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pin$")
+		PWM_OPTIONS=$(ls /proc/device-tree/chosen/overlays/ | grep ".*\.pwm$" | awk -F"." '{print $1 "."$3}' | sed "s:pwm:pin:g" || true)
+		if [ "x${PWM_OPTIONS}" = "x" ] ; then
+			PWM_OPTIONS = ${PIN_OPTIONS}
 		fi
-		GOTPIN=1
-	else
-		GOTPIN=1
+		PIN_OVERLAYS=$(ls /boot/firmware/overlays/ | grep "k3-am67a-beagley-ai-pwm.*\.dtbo$")
+		echo "Possible PIN Options:"
+		echo "---------------"
+		echo "${PWM_OPTIONS}"
+		echo "---------------"
+		echo "Possible Overlay Options:"
+		echo "---------------"
+		echo "${PIN_OVERLAYS}"
+		echo "---------------"
+		exit 1
 	fi
+	GOTPIN=1
 }
 
 usage () {
