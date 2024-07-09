@@ -1,3 +1,7 @@
   * Kernel Updates
-  * linux-image-6.6.32-ti-arm64-r7
-  * linux-image-6.6.32-ti-rt-arm64-r7
+  * linux-image-6.10.0-rc7-arm64-k3-r4
+  * linux-image-6.10.0-rc7-arm64-r1
+  * linux-image-6.1.83-ti-arm64-r62
+  * linux-image-6.1.83-ti-rt-arm64-r62
+  * linux-image-6.6.32-ti-arm64-r8
+  * linux-image-6.6.32-ti-rt-arm64-r8
