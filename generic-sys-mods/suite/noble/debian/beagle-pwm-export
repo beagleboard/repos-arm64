@@ -74,6 +74,15 @@ board_lookup () {
 			;;
 		esac
 		;;
+	BeagleBone)
+		case "${PIN}" in
+		p8_13|p8_19)
+			PWM_ADDRESS="3000000"
+			;;
+		*)
+			;;
+		esac
+		;;
 	*)
 		echo "Unknown Board: [${board}]"
 		exit 1
