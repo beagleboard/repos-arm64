@@ -13,17 +13,21 @@ soc_family=$(cat /sys/devices/soc0/family | tr -d '\000' || true)
 case "${soc_family}" in
 AM62X)
 	pin_prefix=""
+	sysdir="play"
 	;;
 J721E)
 	pin_prefix=""
 	PWM_BUS="bus@100000"
+	sysdir="beagle"
 	;;
 J722S)
 	pin_prefix="hat-"
 	PWM_BUS="bus@f0000"
+	sysdir="hat"
 	;;
 *)
 	pin_prefix=""
+	sysdir="play"
 	;;
 esac
 
@@ -79,6 +83,9 @@ board_lookup () {
 		p8_13|p8_19)
 			PWM_ADDRESS="3000000"
 			;;
+		p9_14|p9_16)
+			PWM_ADDRESS="3020000"
+			;;
 		*)
 			;;
 		esac
@@ -121,8 +128,8 @@ grab_helpers () {
 	fi
 
 	if [ ! "x${GPIO_PI}" = "x" ] ; then
-		if [ -d /dev/hat/pwm/${GPIO_PI}/ ] ; then
-			rm -f /dev/hat/pwm/${GPIO_PI}
+		if [ -d /dev/${sysdir}/pwm/${GPIO_PI}/ ] ; then
+			rm -f /dev/${sysdir}/pwm/${GPIO_PI}
 		fi
 	fi
 }
@@ -134,8 +141,8 @@ export_helpers () {
 			echo ${PWM_EXPORT} > /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/export
 		fi
 
-		mkdir -p /dev/hat/pwm/ || true
-		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/hat/pwm/${GPIO_PI}
+		mkdir -p /dev/${sysdir}/pwm/ || true
+		ln -s /sys/devices/platform/${PWM_BUS}/${PWM_ADDRESS}.pwm/pwm/${pwmchip}/pwm${PWM_EXPORT}/ /dev/${sysdir}/pwm/${GPIO_PI}
 	fi
 }
 
