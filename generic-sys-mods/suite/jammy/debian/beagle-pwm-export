@@ -8,10 +8,17 @@ fi
 
 unset GOTPIN
 
-board=$(cat /proc/device-tree/model | awk '{print $2}'| tr -d '\000')
+soc_family=$(cat /sys/devices/soc0/family | tr -d '\000' || true)
 
-case "${board}" in
-BeagleY-AI)
+case "${soc_family}" in
+AM62X)
+	pin_prefix=""
+	;;
+J721E)
+	pin_prefix=""
+	PWM_BUS="bus@100000"
+	;;
+J722S)
 	pin_prefix="hat-"
 	PWM_BUS="bus@f0000"
 	;;
