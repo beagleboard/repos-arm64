@@ -57,8 +57,8 @@ usb_product="USB Device"
 
 usb_iserialnumber="1234BBBK5678"
 #usb_iserialnumber="$(cat /proc/device-tree/serial-number)"
-usb_imanufacturer="$(cat /proc/device-tree/model | awk '{print $1}')"
-usb_iproduct="$(cat /proc/device-tree/model | awk '{print $2}')"
+usb_imanufacturer="$(cat /proc/device-tree/model | awk '{print $1}' | tr -d '\000')"
+usb_iproduct="$(cat /proc/device-tree/model | awk '{print $2}' | tr -d '\000')"
 
 #usb0 mass_storage
 usb_ms_stall=0
