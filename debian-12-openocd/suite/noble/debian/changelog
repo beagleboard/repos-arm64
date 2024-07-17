@@ -1,3 +1,11 @@
+openocd (0.12.0-1bbbio8~noble+20240717) noble; urgency=low
+
+  * git build: https://repo.or.cz/openocd.git/commit/7f2d3e2925833c952ee73fb178c8fdee637c844e
+  * --enable-dmem for TI
+  * tcl/board: Add am62p/am62a7/j722s native swd configuration
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 17 Jul 2024 14:52:21 -0500
+
 openocd (0.12.0-1bbbio7~noble+20240717) noble; urgency=low
 
   * git build: https://repo.or.cz/openocd.git/commit/437dde701c13e707e5fd912ef6403e09052e4d9b
