@@ -115,6 +115,17 @@ broadcast_over_display () {
 }
 
 example_failure () {
+	message="Example: /etc/default/beagle-flasher"                                             ; broadcast
+	message="--------------------------------------------------------------------------------" ; broadcast
+	message="source=/dev/mmcblk0"                                                              ; broadcast
+	message="destination=/dev/mmcblk1"                                                         ; broadcast
+	message="rfs_partition=dual"                                                               ; broadcast
+	message="rfs_boot_startmb=1"                                                               ; broadcast
+	message="rfs_boot_size_mb=256"                                                             ; broadcast
+	message="bootloader=/opt/u-boot/bb-u-boot-beagleboneai64/install-emmc.sh"                  ; broadcast
+	message="flash_back=bbai64-emmc-to-microsd"                                                ; broadcast
+	message="extlinux=/opt/u-boot/bb-u-boot-beagleboneai64/emmc-extlinux.conf"                 ; broadcast
+	message="--------------------------------------------------------------------------------" ; broadcast
 	exit 2
 }
 
@@ -275,7 +286,12 @@ copy_rootfs () {
 	mount ${destination}p${dest_rfs_part} /tmp/rootfs/ -o async,noatime
 
 	message="INFO: rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
-	rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
+	rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
+	message="--------------------------------------------------------------------------------" ; broadcast
+	flush_cache
+
+	message="INFO: rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
+	rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 

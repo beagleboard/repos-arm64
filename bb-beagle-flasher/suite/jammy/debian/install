@@ -1,8 +1,11 @@
 debian/beagle-flasher /usr/sbin/
 debian/beagle-flasher-boot-emmc-rootfs-nvme /usr/sbin/
 debian/beagle-flasher-boot-mmc-rootfs-sda /usr/sbin/
+debian/beagle-flasher-mv-rootfs-to-nvme /usr/sbin/
+debian/beagle-flasher-mv-rootfs-to-sda /usr/sbin/
 debian/enable-beagle-flasher /usr/sbin/
 debian/init-beagle-flasher /usr/sbin/
+debian/init-beagle-flasher-mv-rootfs-to-nvme /usr/sbin/
 debian/am62-emmc-to-microsd /etc/beagle-flasher/
 debian/am62-microsd-to-emmc /etc/beagle-flasher/
 debian/bbai64-emmc-to-microsd /etc/beagle-flasher/
