@@ -53,7 +53,7 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; echo "ti-linux-firmware" > ./tmp/pkg/build.txt ; git --git-dir ./tmp/ti-linux-firmware/.git rev-parse HEAD >> ./tmp/pkg/build.txt ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
+	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; echo "ti-linux-firmware:" > ./tmp/pkg/build.txt ; git --git-dir ./tmp/ti-linux-firmware/.git rev-parse HEAD >> ./tmp/pkg/build.txt ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
 	mkdir -p ./tmp/trusted-firmware-a/ ; git -c http.sslVerify=false clone -b $(TFA_TAG) $(TFA_REPO) --depth=5 ./tmp/trusted-firmware-a/ ; echo "Trusted Firmware for A:" >> ./tmp/pkg/build.txt ; git --git-dir ./tmp/trusted-firmware-a/.git rev-parse HEAD >> ./tmp/pkg/build.txt
 	make -C ./tmp/trusted-firmware-a/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(TFA_BOARD) K3_PM_SYSTEM_SUSPEND=1 SPD=opteed all
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin ./tmp/pkg/
