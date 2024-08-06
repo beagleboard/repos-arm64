@@ -1,8 +1,42 @@
-mesa (24.1.3-2bbbio0~bookworm+20240707) bookworm; urgency=low
+mesa (24.1.5-3bbbio0~bookworm+20240806) bookworm; urgency=low
 
-  * Rebuild mesa_24.1.3-2 for repos.rcn-ee.com
+  * Rebuild mesa_24.1.5-3 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 15:55:34 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 Aug 2024 17:54:48 -0500
+
+mesa (24.1.5-3) unstable; urgency=medium
+
+  * control: Mark NVK build-deps accordingly.
+  * rules: Drop --wrap-mode=default, leftover from previous testing.
+    (Closes: #1077729)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 Aug 2024 17:45:45 +0300
+
+mesa (24.1.5-2) unstable; urgency=medium
+
+  [ Adrian Bunk ]
+  * control, rules: mips64el has latest LLVM already for some time
+
+  [ Timo Aaltonen ]
+  * rules: Fix FTBFS by only cleaning some nvk test binaries if they
+    actually get built.
+  * rules: Add a new NVK_ARCHS which is a subset of RUSTICL_ARCHS, strip
+    powerpc, ppc64el and s390x from it.
+  * control: Add lua5.4 to build-depends for arm* in order to work
+    around FTBFS caused by setting MESON_PACKAGE_CACHE_DIR for nvk.
+    (Closes: #1077729)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 Aug 2024 11:25:02 +0300
+
+mesa (24.1.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control, rules: Enable NVK, bump rustc build-dependency. (Closes:
+    #1075858)
+  * control: Add rustfmt to build-depends.
+  * rules: Update clean target.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 01 Aug 2024 10:16:13 +0300
 
 mesa (24.1.3-2) unstable; urgency=medium
 
