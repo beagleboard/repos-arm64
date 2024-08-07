@@ -1,8 +1,20 @@
-systemd (254.14-1~bpo12+1bbbio0~bookworm+20240707) bookworm; urgency=low
+systemd (254.16-1~bpo12+1bbbio0~bookworm+20240807) bookworm; urgency=low
 
-  * Rebuild systemd_254.14-1~bpo12+1 for repos.rcn-ee.com
+  * Rebuild systemd_254.16-1~bpo12+1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 16:03:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 07 Aug 2024 12:35:59 -0500
+
+systemd (254.16-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * New upstream stable version 254.16
+
+ -- Luca Boccassi <bluca@debian.org>  Wed, 31 Jul 2024 13:24:28 +0100
+
+systemd (254.15-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * New upstream stable version 254.15
+
+ -- Luca Boccassi <bluca@debian.org>  Mon, 08 Jul 2024 10:19:49 +0100
 
 systemd (254.14-1~bpo12+1) bookworm-backports; urgency=medium
 
