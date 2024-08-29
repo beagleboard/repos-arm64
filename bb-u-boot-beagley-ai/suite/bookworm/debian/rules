@@ -20,11 +20,10 @@ TILF_TAG=10.00.06
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
-#HEAD: https://github.com/ARM-software/arm-trusted-firmware
-#TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
-#TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
-TFA_TAG=master
-#TFA_TAG=lts-v2.10.2
+#HEAD: https://git.trustedfirmware.org/plugins/gitiles//TF-A/trusted-firmware-a.git
+#TAGS: https://git.trustedfirmware.org/plugins/gitiles/TF-A/trusted-firmware-a.git/+refs
+#TFA_TAG=master
+TFA_TAG=v2.11.0
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
