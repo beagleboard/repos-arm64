@@ -1,8 +1,97 @@
-mesa (24.1.6-1bbbio0~bookworm+20240819) bookworm; urgency=low
+mesa (24.2.2-1bbbio0~bookworm+20240906) bookworm; urgency=low
 
-  * Rebuild mesa_24.1.6-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.2.2-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 19 Aug 2024 10:58:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Sep 2024 15:14:43 -0500
+
+mesa (24.2.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: dril fixes dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 06 Sep 2024 07:13:53 +0300
+
+mesa (24.2.1-4) unstable; urgency=medium
+
+  * patches: Add patches to fix autopkgtest regressions in dril.
+  * rules: Enable softpipe everywhere again. (Closes: #1080475)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 05 Sep 2024 11:49:34 +0300
+
+mesa (24.2.1-3) unstable; urgency=medium
+
+  * rules: Set MESON_PACKAGE_CACHE_DIR only for archs where nvk is
+    built, fixes armel build.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 29 Aug 2024 10:54:30 +0300
+
+mesa (24.2.1-2) unstable; urgency=medium
+
+  [ WANG Xuerui ]
+  * rules: disable TLSDESC for loong64 for now
+
+  [ Fabio Pedretti ]
+  * removed unused lua5.4 dependency
+
+  [ Timo Aaltonen ]
+  * Add upstream metadata, drop old git url from d/watch.
+  * New upstream release.
+  * control: Bump librust-syn-dev build-dep.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 29 Aug 2024 09:42:42 +0300
+
+mesa (24.2.0-2) experimental; urgency=medium
+
+  * control, rules: Drop armel, mips64el, loong64 from NVK_ARCHS (FTBFS).
+  * rules: ORCJIT is enabled by default now, so don't force draw-use-
+    llvm=false on riscv64.
+  * rules: Fix m68k build, and rework setting buildflags. (Closes:
+    #1067207)
+  * rules: Really drop ppc64el from optimization workaround, drop sh3 as
+    it's an obsolete arch, and for sh4 limit it to just setting a single
+    flag.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 15 Aug 2024 09:14:51 +0300
+
+mesa (24.2.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * rules: Build llvmpipe only where llvm is enabled.
+  * rules: Build softpipe or llvmpipe depending on the arch, not both.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 14 Aug 2024 22:13:47 +0300
+
+mesa (24.2.0~rc4-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * control: Add python3-yaml to build-depends.
+  * control: Move libclc-NN dependency to LLVM_ARCHS.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 07 Aug 2024 16:34:17 +0300
+
+mesa (24.2.0~rc3-2) experimental; urgency=medium
+
+  * Add ldconfig trigger for mesa-drm-shim.
+  * control: Bump libdrm-dev build-dep.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 05 Aug 2024 09:38:13 +0300
+
+mesa (24.2.0~rc3-1) experimental; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release candidate.
+  * control: Migrate to pkgconf.
+  * Add some lintian-overrides.
+  * control: Fix drm-shim description.
+  * control, rules: Bump llvm to 18. (Closes: #1072901)
+
+  [ Simon McVittie ]
+  * d/rules: Replace deprecated swrast with softpipe and llvmpipe
+  * d/rules: Replace deprecated glvnd=true with glvnd=enabled
+  * libglx-mesa0.symbols: Update for new symbols
+  * Add a new private shared library package for libgallium.so
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 Aug 2024 11:53:58 +0300
 
 mesa (24.1.6-1) unstable; urgency=medium
 
