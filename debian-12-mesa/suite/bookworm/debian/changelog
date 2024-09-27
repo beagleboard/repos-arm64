@@ -1,8 +1,23 @@
-mesa (24.2.2-1bbbio0~bookworm+20240906) bookworm; urgency=low
+mesa (24.2.3-1bbbio0~bookworm+20240927) bookworm; urgency=low
 
-  * Rebuild mesa_24.2.2-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.2.3-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Sep 2024 15:14:43 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 27 Sep 2024 10:25:18 -0500
+
+mesa (24.2.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Fix build on armel/armhf with llvm-19.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 20 Sep 2024 21:57:00 +0300
+
+mesa (24.2.2-1+exp1) experimental; urgency=medium
+
+  * rules: Migrate to llvm-19.
+  * clc-find-opencl-headers.diff: Fix finding the opencl headers with
+    llvm-19.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 17 Sep 2024 14:43:27 +0300
 
 mesa (24.2.2-1) unstable; urgency=medium
 
