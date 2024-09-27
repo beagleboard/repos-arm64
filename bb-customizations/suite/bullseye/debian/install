@@ -22,5 +22,6 @@ debian/BeaglePlay-io.html /etc/bbb.io/templates/nginx/
 debian/VSCode.html /etc/bbb.io/templates/nginx/
 debian/xfce4-desktop.xml /etc/bbb.io/templates/xfce4/
 debian/xfce4-power-manager.xml /etc/bbb.io/templates/xfce4/
+debian/xfce4-screensaver.xml /etc/bbb.io/templates/xfce4/
 debian/ssh.service /etc/avahi/services/
 debian/mplayer  /etc/bbb.io/examples/

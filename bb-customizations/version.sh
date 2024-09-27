@@ -4,7 +4,7 @@
 
 package_name="bb-customizations"
 debian_pkg_name="${package_name}"
-package_version="1.20240627.0"
+package_version="1.20240927.0"
 package_source=""
 src_dir=""
 
@@ -19,8 +19,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240627"
-bookworm_version="~bookworm+20240627"
-trixie_version="~trixie+20240627"
-jammy_version="~jammy+20240627"
-noble_version="~noble+20240627"
+bullseye_version="~bullseye+20240927"
+bookworm_version="~bookworm+20240927"
+trixie_version="~trixie+20240927"
+jammy_version="~jammy+20240927"
+noble_version="~noble+20240927"
