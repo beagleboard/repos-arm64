@@ -1,8 +1,15 @@
-mesa (24.2.3-1bbbio0~bookworm+20240927) bookworm; urgency=low
+mesa (24.2.4-1bbbio0~bookworm+20241017) bookworm; urgency=low
 
-  * Rebuild mesa_24.2.3-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.2.4-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 27 Sep 2024 10:25:18 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Oct 2024 11:01:23 -0500
+
+mesa (24.2.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * clc-find-opencl-headers.diff: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 03 Oct 2024 22:18:55 +0300
 
 mesa (24.2.3-1) unstable; urgency=medium
 
