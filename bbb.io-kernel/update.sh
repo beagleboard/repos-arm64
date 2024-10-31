@@ -154,20 +154,21 @@ do_jammy () {
 	sgxj721e="enabled"
 	sgxmodule="sgx-23.1"
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
+	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
 
 	unset_all
 
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 
 	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
-	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
@@ -187,16 +188,17 @@ do_noble () {
 
 	unset_all
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
+	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 
 	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
-	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
@@ -218,20 +220,21 @@ do_bullseye () {
 	sgxj721e="enabled"
 	sgxmodule="sgx"
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
 
 	unset_all
 
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 
 	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
-	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
@@ -251,25 +254,27 @@ do_bookworm () {
 
 	unset_all
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
 	sgxj722s="enabled"
 	sgxmodule="sgx-23.3"
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-23.3"
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 	unset_all
+
+	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 
 	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
-	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
@@ -289,25 +294,27 @@ do_trixie () {
 
 	unset_all
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510"  ; current_kernel ; generate_kernel_ti
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
 	sgxj722s="enabled"
 	sgxmodule="sgx-23.3"
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
+	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-23.3"
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
+	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 	unset_all
+
+	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 
 	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
 	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66" ; current_kernel ; generate_kernel_k3
-	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66" ; current_kernel ; generate_kernel_k3
+	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
+	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
 	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
