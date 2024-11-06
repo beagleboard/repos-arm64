@@ -1,8 +1,8 @@
-bb-code-server (4.93.1-0bbbio0~noble+20240926) noble; urgency=low
+bb-code-server (4.95.1-0bbbio0~noble+20241106) noble; urgency=low
 
   * Changed
-  * Updated to Code 1.93.1.
-  * Updated Node to 20.11.1.
+  * Updated to Code 1.95.1.
+  * Updated Node to 20.18.0.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 26 Sep 2024 10:56:29 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 06 Nov 2024 17:04:23 -0600
 
