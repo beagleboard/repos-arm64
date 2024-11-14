@@ -20,3 +20,4 @@ tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleboneai64
 tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-beagleboneai64
+tmp/pkg/build.txt /opt/u-boot/bb-u-boot-beagleboneai64

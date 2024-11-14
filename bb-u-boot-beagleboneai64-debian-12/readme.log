@@ -1,7 +1,7 @@
-  * 20240701 - v2024.07 - https://github.com/u-boot/u-boot/releases/tag/v2024.07
-  * 20240628 - 10.00.04 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.00.04
-  * 20240712 - 4.3.0 - https://github.com/OP-TEE/optee_os/releases/tag/4.3.0
-  * 20240523 - v2.11.0 -https://git.trustedfirmware.org/plugins/gitiles/TF-A/trusted-firmware-a.git/+log/f2735ebccf5173f74c0458736ec526276106097e
+  * 20241007 - v2024.10 - https://github.com/u-boot/u-boot/releases/tag/v2024.10
+  * 20241114 - 10.01.07 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.01.07
+  * 20241018 - 4.4.0 - https://github.com/OP-TEE/optee_os/commits/4.4.0
+  * 20240523 - v2.11.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.11.0
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly
