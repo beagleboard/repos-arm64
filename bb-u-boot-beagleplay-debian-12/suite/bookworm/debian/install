@@ -17,3 +17,4 @@ tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagleplay
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagleplay
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagleplay
 tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-beagleplay
+tmp/pkg/build.txt /opt/u-boot/bb-u-boot-beagleplay
