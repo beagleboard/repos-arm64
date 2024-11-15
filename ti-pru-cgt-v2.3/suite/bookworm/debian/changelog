@@ -1,4 +1,4 @@
-ti-pru-cgt-v2.3 (2.3.3-0rcnee7~bullseye+20241115) bullseye; urgency=low
+ti-pru-cgt-v2.3 (2.3.3-0rcnee7~bookworm+20241115) bookworm; urgency=low
 
   * Rebuild ti-pru-cgt-v2.3_2.3.3-0rcnee7 for repos.rcn-ee.com
 
