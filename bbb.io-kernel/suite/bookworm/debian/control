@@ -251,7 +251,7 @@ Description: BeagleBoard.org 6.6-rt-ti
 Package: bbb.io-kernel-6.12-ti
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.12.0-ti-arm64-r3
+Pre-Depends: linux-image-6.12.0-ti-arm64-r4
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.12-ti
  This metapackage will install linux-image-6.12-ti in Debian.
