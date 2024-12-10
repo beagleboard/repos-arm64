@@ -23,12 +23,12 @@ SUBSYSTEM=="remoteproc", KERNELS=="b10a000.txpru",   ENV{REMOTEPROC_NAME}="j7-tx
 SUBSYSTEM=="remoteproc", KERNELS=="b10c000.txpru",   ENV{REMOTEPROC_NAME}="j7-txpru1_1"
 SUBSYSTEM=="remoteproc", KERNELS=="b134000.pru",     ENV{REMOTEPROC_NAME}="j7-pru1_0"
 SUBSYSTEM=="remoteproc", KERNELS=="b138000.pru",     ENV{REMOTEPROC_NAME}="j7-pru1_1"
-SUBSYSTEM=="remoteproc", KERNELS=="7e000000.dsp,     ENV{REMOTEPROC_NAME}="j7-c71_0"
-SUBSYSTEM=="remoteproc", KERNELS=="7e200000.dsp,     ENV{REMOTEPROC_NAME}="j7-c71_1"
-SUBSYSTEM=="remoteproc", KERNELS=="78000000.r5f,     ENV{REMOTEPROC_NAME}="j7-main-r5f0_0"
-SUBSYSTEM=="remoteproc", KERNELS=="78400000.r5f,     ENV{REMOTEPROC_NAME}="j7-main-r5f0_1"
-SUBSYSTEM=="remoteproc", KERNELS=="79000000.r5f,     ENV{REMOTEPROC_NAME}="j7-mcu-r5f0_0"
-SUBSYSTEM=="remoteproc", KERNELS=="79400000.r5f,     ENV{REMOTEPROC_NAME}="j7-mcu-r5f0_1"
+SUBSYSTEM=="remoteproc", KERNELS=="7e000000.dsp",    ENV{REMOTEPROC_NAME}="j7-c71_0"
+SUBSYSTEM=="remoteproc", KERNELS=="7e200000.dsp",    ENV{REMOTEPROC_NAME}="j7-c71_1"
+SUBSYSTEM=="remoteproc", KERNELS=="78000000.r5f",    ENV{REMOTEPROC_NAME}="j7-main-r5f0_0"
+SUBSYSTEM=="remoteproc", KERNELS=="78400000.r5f",    ENV{REMOTEPROC_NAME}="j7-main-r5f0_1"
+SUBSYSTEM=="remoteproc", KERNELS=="79000000.r5f",    ENV{REMOTEPROC_NAME}="j7-mcu-r5f0_0"
+SUBSYSTEM=="remoteproc", KERNELS=="79400000.r5f",    ENV{REMOTEPROC_NAME}="j7-mcu-r5f0_1"
 
 # set permissions and create symlinks
 SUBSYSTEM=="remoteproc", ENV{REMOTEPROC_NAME}!="", ACTION=="add", \
