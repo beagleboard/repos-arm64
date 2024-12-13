@@ -2,7 +2,7 @@
 
 package_name="bb-usb-gadgets"
 debian_pkg_name="${package_name}"
-package_version="1.20240717.0"
+package_version="1.20241213.0"
 package_source=""
 src_dir=""
 
@@ -17,8 +17,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240717"
-bookworm_version="~bookworm+20240717"
-trixie_version="~trixie+20240717"
-jammy_version="~jammy+20240717"
-noble_version="~noble+20240717"
+bullseye_version="~bullseye+20241213"
+bookworm_version="~bookworm+20241213"
+trixie_version="~trixie+20241213"
+jammy_version="~jammy+20241213"
+noble_version="~noble+20241213"
