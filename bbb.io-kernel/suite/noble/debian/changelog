@@ -1,7 +1,7 @@
-bbb.io-kernel (1.20241231.1-0~noble+20241231) noble; urgency=low
+bbb.io-kernel (1.20250107.0-0~noble+20250107) noble; urgency=low
 
   * Kernel Updates
-  * linux-image-6.12.0-ti-arm64-r9
+  * linux-image-6.13.0-rc6-arm64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 31 Dec 2024 15:25:19 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 Jan 2025 14:48:06 -0600
 
