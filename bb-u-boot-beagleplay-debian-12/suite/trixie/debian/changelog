@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2025.01.20250107.0-0~noble+20250114) noble; urgency=low
+bb-u-boot-beagleplay (2025.01.20250107.0-0~trixie+20250114) trixie; urgency=low
 
   * 20250107 - v2025.01 - https://github.com/u-boot/u-boot/releases/tag/v2025.01
   * 20241204 - 10.01.10 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.01.10
