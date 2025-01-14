@@ -4,8 +4,8 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-#https://manpages.ubuntu.com/manpages/jammy/en/man1/dpkg-buildflags.1.html
-export DEB_BUILD_MAINT_OPTIONS = hardening=-fortify
+#https://manpages.debian.org/unstable/dpkg-dev/dpkg-buildflags.1.en.html
+export DEB_BUILD_MAINT_OPTIONS = hardening=-branch,-fortify
 
 TARGETDIR=bb-u-boot-beagleboneai64
 #/opt/u-boot/$(TARGETDIR)/
@@ -24,10 +24,12 @@ TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
 #TFA_TAG=master
-TFA_TAG=v2.12.0
+#TFA_TAG=v2.12.0
+TFA_TAG=v2.12.0-bbbio
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
-TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
+#TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
+TFA_REPO="https://openbeagle.org/beagleboard/trusted-firmware-a.git"
 TFA_BOARD=generic
 
 #optee_os
