@@ -1,8 +1,8 @@
-bb-code-server (4.96.1-0bbbio0~jammy+20241219) jammy; urgency=low
+bb-code-server (4.96.4-0bbbio0~jammy+20250120) jammy; urgency=low
 
   * Changed
-  * Updated to Code 1.96.1.
+  * Updated to Code 1.96.4.
   * Updated Node to 20.18.1.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 19 Dec 2024 14:05:01 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 20 Jan 2025 14:26:31 -0600
 
