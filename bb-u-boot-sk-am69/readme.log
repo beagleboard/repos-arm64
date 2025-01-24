@@ -1,7 +1,5 @@
-  * 20240319 - 09.02.00.009 - https://openbeagle.org/beagleboard/u-boot/-/commits/v2023.04-ti-09.02.00.009-BeagleY-AI-Production
-  * 20240712 - 10.00.06 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.00.06
+  * 20250107 - v2025.01 - https://github.com/u-boot/u-boot/releases/tag/v2025.01
+  * 20241204 - 10.01.10 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.01.10
   * 20241018 - 4.4.0 - https://github.com/OP-TEE/optee_os/commits/4.4.0
   * 20241115 - v2.12.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.12.0
-  * SK-AM69, add extlinux.conf boot options over serial
-  * Bump FAT partition to 256MB for boot recovery images
-  * extlinux.conf: force fdt /k3-am69-sk.dtb
+  * add extlinux.conf boot menu options over serial
