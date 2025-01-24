@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-#https://git.beagleboard.org/beagleboard/u-boot/
-#https://git.ti.com/gitweb?p=ti-u-boot/ti-u-boot.git;a=shortlog;h=refs/heads/ti-u-boot-2023.04
+#https://openbeagle.org/beagleboard/u-boot/
+#https://github.com/u-boot/u-boot/commits/master
 
 package_name="bb-u-boot-sk-am69"
 debian_pkg_name="${package_name}"
-package_version="2023.04.20231206.4-09.01.00.008"
+package_version="2023.04.20240319.0-09.02.00.009"
 package_source=""
 src_dir=""
 
