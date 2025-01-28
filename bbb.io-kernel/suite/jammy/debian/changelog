@@ -1,12 +1,11 @@
-bbb.io-kernel (1.20250124.0-0~jammy+20250124) jammy; urgency=low
+bbb.io-kernel (1.20250128.0-0~jammy+20250128) jammy; urgency=low
 
   * Kernel Updates
-  * linux-image-5.10.168-ti-arm64-r116
-  * linux-image-6.12.0-ti-arm64-r11
-  * linux-image-6.1.83-ti-arm64-r65
-  * linux-image-6.1.83-ti-rt-arm64-r65
-  * linux-image-6.6.58-ti-arm64-r18
-  * linux-image-6.6.58-ti-rt-arm64-r18
+  * linux-image-5.10.168-ti-arm64-r117
+  * linux-image-6.1.83-ti-arm64-r66
+  * linux-image-6.1.83-ti-rt-arm64-r66
+  * linux-image-6.6.58-ti-arm64-r19
+  * linux-image-6.6.58-ti-rt-arm64-r19
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 24 Jan 2025 11:10:56 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Jan 2025 09:38:09 -0600
 
