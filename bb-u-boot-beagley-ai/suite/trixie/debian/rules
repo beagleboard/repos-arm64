@@ -46,6 +46,8 @@ OPTEE_PLATFORM=k3-am62x
 UB_TAG="v2023.04-ti-09.02.00.009-BeagleY-AI-Production"
 UB_REPO="https://github.com/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
+UB_TISPL=tispl.bin
+UB_IMG=u-boot.img
 
 override_dh_strip:
 	# Just disable for now...
@@ -70,8 +72,8 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- j722s_evm_a53_defconfig am67a_beagley_ai_a53.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
-	cp -v ./tmp/CORTEXA/tispl.bin ./tmp/pkg/tispl.bin
-	cp -v ./tmp/CORTEXA/u-boot.img ./tmp/pkg/u-boot.img
+	cp -v ./tmp/CORTEXA/$(UB_TISPL) ./tmp/pkg/tispl.bin
+	cp -v ./tmp/CORTEXA/$(UB_IMG) ./tmp/pkg/u-boot.img
 
 %:
 	dh $@

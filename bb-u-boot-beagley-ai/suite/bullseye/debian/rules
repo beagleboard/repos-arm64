@@ -17,10 +17,11 @@ TILF_TAG=10.00.06
 TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
-#HEAD: https://git.trustedfirmware.org/plugins/gitiles//TF-A/trusted-firmware-a.git
-#TAGS: https://git.trustedfirmware.org/plugins/gitiles/TF-A/trusted-firmware-a.git/+refs
+#HEAD: https://github.com/ARM-software/arm-trusted-firmware
+#TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
+#TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
 #TFA_TAG=master
-TFA_TAG=v2.11.0
+TFA_TAG=v2.12.0
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
@@ -30,7 +31,7 @@ TFA_BOARD=lite
 #HEAD: https://github.com/OP-TEE/optee_os
 #TAGS: https://github.com/OP-TEE/optee_os/tags
 #OPTEE_TAG=master
-OPTEE_TAG=4.3.0
+OPTEE_TAG=4.4.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
@@ -40,6 +41,8 @@ OPTEE_PLATFORM=k3-am62x
 UB_TAG="v2023.04-ti-09.02.00.009-BeagleY-AI-Production"
 UB_REPO="https://github.com/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
+UB_TISPL=tispl.bin
+UB_IMG=u-boot.img
 
 override_dh_strip:
 	# Just disable for now...
@@ -64,8 +67,8 @@ override_dh_auto_configure:
 	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- j722s_evm_a53_defconfig am67a_beagley_ai_a53.config
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
-	cp -v ./tmp/CORTEXA/tispl.bin ./tmp/pkg/tispl.bin
-	cp -v ./tmp/CORTEXA/u-boot.img ./tmp/pkg/u-boot.img
+	cp -v ./tmp/CORTEXA/$(UB_TISPL) ./tmp/pkg/tispl.bin
+	cp -v ./tmp/CORTEXA/$(UB_IMG) ./tmp/pkg/u-boot.img
 
 %:
 	dh $@
