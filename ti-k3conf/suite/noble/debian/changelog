@@ -1,4 +1,4 @@
-ti-k3conf (0.3.0-0.git20240725.0-0~jammy+20250203) jammy; urgency=low
+ti-k3conf (0.3.0-0.git20240725.0-0~noble+20250203) noble; urgency=low
 
   * k3conf 0.3.0
   * https://git.ti.com/cgit/k3conf/k3conf/

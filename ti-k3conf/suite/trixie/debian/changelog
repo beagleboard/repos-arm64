@@ -1,6 +1,8 @@
-ti-k3conf (0.3.0-0.git20240306.0-0~trixie+20240327) trixie; urgency=low
+ti-k3conf (0.3.0-0.git20240725.0-0~trixie+20250203) trixie; urgency=low
 
   * k3conf 0.3.0
+  * https://git.ti.com/cgit/k3conf/k3conf/
+  * soc: Add support for J742s2
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Mar 2024 16:29:14 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 03 Feb 2025 16:11:10 -0600
 
