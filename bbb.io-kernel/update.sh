@@ -10,7 +10,9 @@ current_kernel () {
 	wget --quiet --directory-prefix=/tmp/ https://rcn-ee.net/repos/latest/${dist}-${arch}/LATEST-${var} || true
 	if [ -f /tmp/LATEST-${var} ] ; then
 		latest_kernel=$(cat "/tmp/LATEST-${var}" | grep "ABI:1 ${ver}" | awk '{print $3}')
-		echo ${dist}-${arch}-${latest_kernel}
+		if [ ! "x${latest_kernel}" = "x" ] ; then
+			echo ${dist}-${arch}-${latest_kernel}
+		fi
 	fi
 }
 
@@ -142,6 +144,17 @@ unset_all () {
 	unset sgxmodule
 }
 
+do_some_k3 () {
+	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
+	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
+	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
+	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
+	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
+	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
+	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
+	msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
+}
+
 do_jammy () {
 	#22.04
 	arch="arm64"
@@ -169,13 +182,9 @@ do_jammy () {
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
-	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
-	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
-	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
+
+	do_some_k3
+
 	changelog
 }
 
@@ -210,13 +219,9 @@ do_noble () {
 	msg="6.5-k3"    ; var="k3-arm64"    ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
-	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
-	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
-	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
+
+	do_some_k3
+
 	changelog
 }
 
@@ -247,13 +252,9 @@ do_bullseye () {
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
-	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
-	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
-	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
+
+	do_some_k3
+
 	changelog
 }
 
@@ -289,13 +290,9 @@ do_bookworm () {
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
-	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
-	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
-	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
+
+	do_some_k3
+
 	changelog
 }
 
@@ -331,13 +328,9 @@ do_trixie () {
 	msg="6.5-rt-k3" ; var="k3-arm64-rt" ; ver="V65X"  ; current_kernel ; generate_kernel_k3
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-	msg="6.7-k3"    ; var="k3-arm64"    ; ver="V67X"  ; current_kernel ; generate_kernel_k3
-	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
-	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
-	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
+
+	do_some_k3
+
 	changelog
 }
 
