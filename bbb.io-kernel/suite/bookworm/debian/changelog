@@ -1,7 +1,11 @@
-bbb.io-kernel (1.20250205.0-0~bookworm+20250205) bookworm; urgency=low
+bbb.io-kernel (1.20250206.0-0~bookworm+20250206) bookworm; urgency=low
 
   * Kernel Updates
-  * linux-image-6.12.9-ti-arm64-r17
+  * linux-image-5.10.168-ti-arm64-r118
+  * linux-image-6.1.83-ti-arm64-r67
+  * linux-image-6.1.83-ti-rt-arm64-r67
+  * linux-image-6.6.58-ti-arm64-r20
+  * linux-image-6.6.58-ti-rt-arm64-r20
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 05 Feb 2025 09:05:12 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Feb 2025 08:30:10 -0600
 
