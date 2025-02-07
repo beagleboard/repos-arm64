@@ -1,11 +1,12 @@
-bbb.io-kernel (1.20250206.0-0~trixie+20250206) trixie; urgency=low
+bbb.io-kernel (1.20250207.0-0~trixie+20250207) trixie; urgency=low
 
   * Kernel Updates
-  * linux-image-5.10.168-ti-arm64-r118
-  * linux-image-6.1.83-ti-arm64-r67
-  * linux-image-6.1.83-ti-rt-arm64-r67
-  * linux-image-6.6.58-ti-arm64-r20
-  * linux-image-6.6.58-ti-rt-arm64-r20
+  * linux-image-6.12.12-arm64-k3-r13
+  * linux-image-6.12.9-ti-arm64-r19
+  * linux-image-6.13.1-arm64-k3-r8
+  * linux-image-6.14.0-rc1-arm64-k3-r2
+  * linux-image-6.6.74-arm64-k3-r33
+  * linux-image-6.6.74-rt-arm64-k3-r33
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Feb 2025 08:30:10 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 07 Feb 2025 09:51:26 -0600
 
