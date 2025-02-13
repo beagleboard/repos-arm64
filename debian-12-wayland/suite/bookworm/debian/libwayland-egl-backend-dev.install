@@ -1,0 +1,2 @@
+usr/include/wayland-egl-backend.h
+usr/lib/*/pkgconfig/wayland-egl-backend.pc
