@@ -12,7 +12,7 @@ Build-Depends:
  meson (>= 1.2.3),
  quilt (>= 0.63-8.2~),
  pkgconf,
- libdrm-dev (>= 2.4.119),
+ libdrm-dev (>= 2.4.121),
  libx11-dev,
  libxxf86vm-dev,
  libexpat1-dev,
