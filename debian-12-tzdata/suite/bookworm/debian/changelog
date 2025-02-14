@@ -1,8 +1,72 @@
-tzdata (2024a-4bbbio0~bookworm+20240707) bookworm; urgency=low
+tzdata (2024b-6bbbio0~bookworm+20250214) bookworm; urgency=low
 
-  * Rebuild tzdata_2024a-4 for repos.rcn-ee.com
+  * Rebuild tzdata_2024b-6 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 16:05:05 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Feb 2025 17:01:48 -0600
+
+tzdata (2024b-6) unstable; urgency=medium
+
+  * Update debconf autopkgtest following the /etc/timezone change
+  * Rework README.Debian. Explain how timezone are named, the split between
+    the tzdata and tzdata-legacy packages, the difference between the 'posix'
+    and 'right' version and the way to configure the timezone either
+    interactively and programmatically (with and without systemd).
+    (Closes: #498171, #602563, #848143)
+  * Add a note in NEWS about the /etc/timezone deprecation
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 13 Jan 2025 23:41:11 +0100
+
+tzdata (2024b-5) unstable; urgency=medium
+
+  * Validate timezone using the debconf database instead of the zones files
+  * Only mark debconf templates as unseen if the timezone can't be validated
+  * Only create /etc/timezone if it already exists
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed, 08 Jan 2025 21:09:56 +0100
+
+tzdata (2024b-4) unstable; urgency=medium
+
+  * Update Catalan debconf translation.
+    Thanks to Carles Pina i Estany <carles@pina.cat> (Closes: #1086485)
+
+ -- Benjamin Drung <bdrung@debian.org>  Tue, 03 Dec 2024 13:42:50 +0100
+
+tzdata (2024b-3) unstable; urgency=medium
+
+  [ Aurelien Jarno ]
+  * tzdata-legacy: bump Replaces: tzdata version to handle the
+    Asia/Choibalsan move
+
+  [ Benjamin Drung ]
+  * Update Indonesian debconf translation.
+    Thanks to Andika Triwidada <andika@gmail.com> (Closes: #1084493)
+  * Upstream obsoleted the System V names CET, CST6CDT, EET, EST*, HST, MET,
+    MST*, PST8PDT, and WET. They are symlinks now. Move those zones to
+    tzdata-legacy and update /etc/localtime on package update to the new names.
+    Please use Etc/GMT* in case you want to avoid DST changes.
+
+ -- Benjamin Drung <bdrung@debian.org>  Mon, 07 Oct 2024 17:07:13 +0200
+
+tzdata (2024b-2) unstable; urgency=medium
+
+  * Build timezones with zic -b 'fat' (Closes: #1084111)
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 05 Oct 2024 13:54:18 +0200
+
+tzdata (2024b-1) unstable; urgency=medium
+
+  * New upstream release (LP: #2079966):
+    - Improve historical data for Mexico, Mongolia, and Portugal.
+    - System V names are now obsolescent.
+    - The main data form now uses %z.
+    - Asia/Choibalsan is now an alias for Asia/Ulaanbaatar
+  * Add autopkgtest test case for 2024b release
+  * Update Asia/Choibalsan to Asia/Ulaanbaatar on upgrade and move
+    Asia/Choibalsan to tzdata-legacy
+  * Bump Standards-Version to 4.7.0
+  * generate_debconf_templates: Work around AttributeError on icu import
+
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 02 Oct 2024 18:42:23 +0200
 
 tzdata (2024a-4) unstable; urgency=medium
 

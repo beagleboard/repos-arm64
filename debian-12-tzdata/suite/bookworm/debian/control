@@ -13,7 +13,7 @@ Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
 Uploaders: Clint Adams <clint@debian.org>,
            Aurelien Jarno <aurel32@debian.org>,
            Benjamin Drung <bdrung@debian.org>
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Homepage: https://www.iana.org/time-zones
 Vcs-Git: https://salsa.debian.org/glibc-team/tzdata.git
 Vcs-Browser: https://salsa.debian.org/glibc-team/tzdata
@@ -37,9 +37,9 @@ Architecture: all
 Multi-Arch: foreign
 Priority: optional
 Depends: tzdata, ${misc:Depends}
-Breaks: tzdata (<< 2024a-2~)
+Breaks: tzdata (<< 2024b-3~)
 Conflicts: tzdata-bookworm, tzdata-bullseye
-Replaces: tzdata (<< 2024a-2~), tzdata-bookworm, tzdata-bullseye
+Replaces: tzdata (<< 2024b-3~), tzdata-bookworm, tzdata-bullseye
 Description: time zone data for TAI minus ten seconds
  This package contains data required for the implementation of
  standard local time for many representative locations around the
