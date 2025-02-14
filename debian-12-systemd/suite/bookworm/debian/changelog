@@ -1,8 +1,17 @@
-systemd (254.16-1~bpo12+1bbbio0~bookworm+20240807) bookworm; urgency=low
+systemd (254.22-1~bpo12+1bbbio0~bookworm+20250214) bookworm; urgency=low
 
-  * Rebuild systemd_254.16-1~bpo12+1 for repos.rcn-ee.com
+  * Rebuild systemd_254.22-1~bpo12+1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 07 Aug 2024 12:35:59 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Feb 2025 16:57:45 -0600
+
+systemd (254.22-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * New upstream version 254.22
+  * Refresh patches to remove fuzz
+  * Rename kernel-install initrd script (Closes: #1090716)
+  * Bump version in tzdata dependency due to p-u upload
+
+ -- Luca Boccassi <bluca@debian.org>  Sun, 22 Dec 2024 15:37:33 +0000
 
 systemd (254.16-1~bpo12+1) bookworm-backports; urgency=medium
 
