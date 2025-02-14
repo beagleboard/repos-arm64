@@ -1,8 +1,64 @@
-mesa (24.2.8-1bbbio0~bookworm+20250213) bookworm; urgency=low
+mesa (24.3.4-3bbbio0~bookworm+20250214) bookworm; urgency=low
 
-  * Rebuild mesa_24.2.8-1 for repos.rcn-ee.com
+  * Rebuild mesa_24.3.4-3 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 13 Feb 2025 09:03:04 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Feb 2025 17:08:55 -0600
+
+mesa (24.3.4-3) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Revert "Build with gcc-12 and -O1 on ppc64el".
+  * Add a patch to disable ppc64el assembly code. (Closes: #1092890)
+
+  [ Emilio Pozuelo Monfort ]
+  * Release to sid.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 03 Feb 2025 08:40:16 +0100
+
+mesa (24.3.4-2) unstable; urgency=medium
+
+  * Build with gcc-12 and -O1 on ppc64el to workaround segfaults
+    on driswSwapBuffers. Thanks Dmitry Shachnev for debugging and
+    finding a working compiler and optimization level.
+    Closes: #1092890.
+  * Drop quilt usage, not needed with source format 3.0.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 26 Jan 2025 11:39:48 +0100
+
+mesa (24.3.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Make libgl1-mesa-dri depend on the same version of libgbm1.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 23 Jan 2025 19:48:02 +0200
+
+mesa (24.3.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 08 Jan 2025 13:11:38 +0200
+
+mesa (24.3.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 22 Nov 2024 13:43:07 +0200
+
+mesa (24.3.0~rc2-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 14 Nov 2024 17:09:15 +0200
+
+mesa (24.3.0~rc1-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * patches: Refreshed.
+  * rules: Drop obsoleted config options.
+  * libglx-mesa0.symbols: Updated.
+  * libgbm1: Add dri_gbm.so.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 12 Nov 2024 15:17:38 +0200
 
 mesa (24.2.8-1) unstable; urgency=medium
 
@@ -18,8 +74,12 @@ mesa (24.2.7-1) unstable; urgency=medium
 
 mesa (24.2.6-1) unstable; urgency=medium
 
+  [ Timo Aaltonen ]
   * New upstream release.
   * fix-armhf-build.diff: Dropped, upstream.
+
+  [ Fabio Pedretti ]
+  * control: lower librust-syn-dev dependency version
 
  -- Timo Aaltonen <tjaalton@debian.org>  Tue, 05 Nov 2024 09:59:12 +0200
 
