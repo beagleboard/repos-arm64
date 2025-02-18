@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay-mainline (2025.04.20250210.0-0~bullseye+20250214) bullseye; urgency=low
+bb-u-boot-beagleplay-mainline (2025.04.20250210.1-0~bullseye+20250218) bullseye; urgency=low
 
   * 20250210 - v2025.04-rc2 - https://github.com/u-boot/u-boot/releases/tag/v2025.04-rc2
   * 20250214 - 11.00.03 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.03
@@ -11,5 +11,5 @@ bb-u-boot-beagleplay-mainline (2025.04.20250210.0-0~bullseye+20250214) bullseye;
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Feb 2025 11:49:34 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 18 Feb 2025 13:41:23 -0600
 
