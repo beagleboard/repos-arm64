@@ -10,4 +10,4 @@
 USB_UMTPRD_CONFIG="/etc/bbb.io/templates/bbb-umtprd.conf"
 
 # Mainline Linux is removing RNDIS Support, NCM works in Windows 11...
-##USB_RNDIS_DISABLED=yes
+USB_RNDIS_DISABLED=yes
