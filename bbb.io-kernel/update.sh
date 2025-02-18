@@ -61,7 +61,7 @@ generate_kernel_ti () {
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 		echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bb-u-boot-beagleplay" >> ./suite/${dist}/debian/${wfile}
-		echo " , bb-u-boot-beagleplay-mainline" >> ./suite/${dist}/debian/${wfile}
+		echo " , bb-u-boot-pocketbeagle2" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${sgxam62}" = "xenabled" ] ; then
 			echo " , ti-${sgxmodule}-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
@@ -77,7 +77,6 @@ generate_kernel_ti () {
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 		echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bb-u-boot-beagleboneai64" >> ./suite/${dist}/debian/${wfile}
-		echo " , bb-u-boot-beagleboneai64-mainline" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${sgxj721e}" = "xenabled" ] ; then
 			echo " , ti-${sgxmodule}-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
@@ -93,7 +92,6 @@ generate_kernel_ti () {
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
 		echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bb-u-boot-beagley-ai" >> ./suite/${dist}/debian/${wfile}
-#		echo " , bb-u-boot-beagley-ai-mainline" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${sgxj722s}" = "xenabled" ] ; then
 			echo " , ti-${sgxmodule}-j722s-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
