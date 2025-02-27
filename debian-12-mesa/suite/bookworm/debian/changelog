@@ -1,8 +1,42 @@
-mesa (24.3.4-3bbbio0~bookworm+20250214) bookworm; urgency=low
+mesa (25.0.0-1bbbio0~bookworm+20250227) bookworm; urgency=low
 
-  * Rebuild mesa_24.3.4-3 for repos.rcn-ee.com
+  * Rebuild mesa_25.0.0-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Feb 2025 17:08:55 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 27 Feb 2025 15:21:54 -0600
+
+mesa (25.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Make mesa-va-drivers depend on the same version of mesa-
+    libgallium. (Closes: #1094190)
+  * rules: Enable panvk, it's production quality now. (Closes: #1095969)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 23 Feb 2025 11:22:33 +0200
+
+mesa (25.0.0~rc3-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 13 Feb 2025 13:06:35 +0200
+
+mesa (25.0.0~rc2-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 07 Feb 2025 19:30:14 +0200
+
+mesa (25.0.0~rc1-2) experimental; urgency=medium
+
+  * Merge from unstable.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 03 Feb 2025 12:41:43 +0200
+
+mesa (25.0.0~rc1-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * control: Remove libglapi-mesa, provided by mesa-libgallium now.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 31 Jan 2025 09:54:17 +0200
 
 mesa (24.3.4-3) unstable; urgency=medium
 
