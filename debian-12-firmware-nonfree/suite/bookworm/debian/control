@@ -1,0 +1,345 @@
+Source: firmware-nonfree
+Section: non-free-firmware/kernel
+Priority: optional
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Uploaders: Bastian Blank <waldi@debian.org>, Steve Langasek <vorlon@debian.org>, maximilian attems <maks@debian.org>, Ben Hutchings <benh@debian.org>, Salvatore Bonaccorso <carnil@debian.org>
+Standards-Version: 4.3.0
+Build-Depends: debhelper-compat (= 13), rdfind
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/kernel-team/firmware-nonfree
+Vcs-Git: https://salsa.debian.org/kernel-team/firmware-nonfree.git
+XS-Autobuild: yes
+
+Package: firmware-amd-graphics
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for AMD/ATI graphics chips
+ This package contains the binary firmware for AMD/ATI graphics chips
+ supported by the radeon, amdgpu and r128 drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-atheros
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Qualcomm Atheros wireless cards
+ This package contains the binary firmware for USB wireless network and
+ Bluetooth cards supported by the ar5523, ath3k, ath6kl_sdio, ath6kl_usb,
+ ath10k, ath11k, or wilc6210 drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-bnx2
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Broadcom NetXtremeII
+ This package contains the binary firmware for Broadcom NetXtremeII network
+ adapters supported by the bnx2 driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-bnx2x
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Broadcom NetXtreme II 10Gb
+ This package contains the binary firmware for Broadcom NetXtreme II 10Gb
+ network adapters supported by the bnx2x driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-brcm80211
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Broadcom/Cypress 802.11 wireless cards
+ This package contains the binary firmware for wireless network cards
+ supported by the brcmsmac or brcmfmac driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-cavium
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Cavium Ethernet adapters
+ This package contains the binary firmware for Cavium crypto and Ethernet
+ adapters supported by the nitrox and liquidio drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-cirrus
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Cirrus Logic audio chips
+ This package contains the binary firmware for Cirrus Logic audio chips
+ like smart amplifiers, converters and DSPs.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-intel-graphics
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Conflicts: firmware-misc-nonfree (<< 20230625-3~)
+Multi-Arch: foreign
+Description: Binary firmware for Intel iGPUs and IPUs
+ This package contains the binary firmware for Intel integrated GPUs and
+ IPUs supported by the i915, intel-ipu6-isys, ipu3-imgu, mei-vsc-hw, and xe
+ drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-intel-misc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Conflicts: firmware-misc-nonfree (<< 20230625-3~)
+Multi-Arch: foreign
+Description: Binary firmware for miscellaneous Intel devices and chips
+ This package contains the binary firmware for miscellaneous Intel devices
+ and chips, which do not belong in the iwlwifi, ipw2x00, intel-graphics or
+ intel-sound packages.  This includes for example Omni-Path,
+ Ethernet/Network chips/devices, and QuickAssist Technology crypto
+ accelerators.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-intel-sound
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Intel sound DSPs
+ This package contains the binary firmware for Intel SST sound DSPs
+ supported by the snd-soc-sst-acpi or snd-intel-sst-acpi driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-ipw2x00
+Architecture: all
+Pre-Depends: debconf | debconf-2.0
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Intel Pro Wireless 2100, 2200 and 2915
+ This package contains the binary firmware for Intel Pro Wireless 2100,
+ 2200 and 2915 cards supported by the ipw2100 and ipw2200 drivers.
+ .
+ This firmware is covered by the Intel Pro Wireless 2100 and 2200/2915
+ License.  You must agree to the terms of this license before it is
+ installed.
+Homepage: http://ipw2100.sourceforge.net/firmware.php, http://ipw2200.sourceforge.net/firmware.php
+
+Package: firmware-ivtv
+Architecture: all
+Pre-Depends: debconf | debconf-2.0
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for iTVC15-family MPEG codecs (ivtv and pvrusb2 drivers)
+ This package contains the binary firmware for TV cards with Conexant
+ iTVC15-family MPEG codecs, supported by the ivtv and pvrusb2 drivers.
+ .
+ This firmware is covered by the Hauppauge End-User Firmware License
+ Agreement.  You must agree to the terms of this license before it is
+ installed.
+Homepage: https://web.archive.org/web/20150508162618/http://dl.ivtvdriver.org:80/ivtv/firmware/
+
+Package: firmware-iwlwifi
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Intel Wireless cards
+ This package contains the binary firmware for Intel Wireless cards
+ supported by the iwl3945, iwl4965, and iwlwifi drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-libertas
+Architecture: all
+Provides: libertas-firmware
+Depends: ${misc:Depends}
+Recommends: firmware-marvell-prestera
+Suggests: initramfs-tools
+Replaces: libertas-firmware
+Multi-Arch: foreign
+Description: Binary firmware for Marvell wireless cards
+ This package contains the binary firmware for wireless network cards with
+ Marvell and NXP 88W8xxx chips supported by the libertas_cs, libertas_sdio,
+ libertas_spi, libertas_tf_usb, mwifiex_pcie, mwifiex_sdio, mwifiex_usb,
+ mwl8k and usb8xxx drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-linux
+Architecture: all
+Section: non-free-firmware/metapackages
+Depends: firmware-linux-free, firmware-linux-nonfree (= ${binary:Version}), ${misc:Depends}
+Recommends: intel-microcode, amd64-microcode
+Description: Binary firmware for various drivers in the Linux kernel (metapackage)
+ This package depends on both free and non-free firmware which may be used
+ with drivers in the Linux kernel.
+
+Package: firmware-linux-nonfree
+Architecture: all
+Section: non-free-firmware/metapackages
+Depends: firmware-misc-nonfree (= ${binary:Version}), firmware-amd-graphics (= ${binary:Version}), ${misc:Depends}
+Recommends: intel-microcode, amd64-microcode
+Description: Binary firmware for various drivers in the Linux kernel (metapackage)
+ This package depends on non-free firmware which may be used with drivers
+ in the Linux kernel.
+
+Package: firmware-marvell-prestera
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Conflicts: firmware-libertas (<< 20230625-3~)
+Multi-Arch: foreign
+Description: Binary firmware for Marvell Prestera ASIC devices
+ This package contains the binary firmware for Marvell Switchdev solution
+ Prestera Ethernet switches.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-mediatek
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Conflicts: firmware-misc-nonfree (<< 20230625-3~)
+Multi-Arch: foreign
+Description: Binary firmware for MediaTek and Ralink chips for networking, SoCs and media
+ This package contains the binary firmware for MediaTek devices such as
+ ethernet/Wi-Fi/Bluetooth chips, SoCs and other chips and devices made by
+ MediaTek and Ralink.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-misc-nonfree
+Architecture: all
+Provides: firmware-adi, firmware-ralink
+Depends: ${misc:Depends}
+Recommends: firmware-nvidia-graphics, firmware-intel-graphics, firmware-intel-misc, firmware-mediatek
+Suggests: initramfs-tools
+Conflicts: firmware-ti-connectivity (<< 20230625-3~)
+Multi-Arch: foreign
+Description: Binary firmware for various drivers in the Linux kernel
+ This package contains the binary firmware for various drivers in the Linux
+ kernel.  This is a collection of firmware blobs which are not individually
+ large enough to warrant a standalone package.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-myricom
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Myri-10G Ethernet adapters
+ This package contains the binary firmware for Myricom Myri-10G Ethernet
+ adapters supported by the myri10ge driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-netronome
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Netronome network adapters
+ This package contains the binary firmware for Netronome network adapters
+ supported by the nfp driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-netxen
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for QLogic Intelligent Ethernet (3000 and 3100 Series)
+ This package contains the binary firmware for QLogic (formerly NetXen)
+ Intelligent network adapters supported by the netxen_nic and qlcnic
+ drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-nvidia-graphics
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Breaks: initramfs-tools (<< 0.142+deb12u1)
+Conflicts: firmware-misc-nonfree (<< 20230625-3~)
+Multi-Arch: foreign
+Description: Binary firmware for Nvidia GPU chips
+ This package contains the binary firmware for Nvidia graphics chips using
+ the nouveau driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-qcom-media
+Architecture: all
+Section: non-free-firmware/oldlibs
+Depends: firmware-qcom-soc, ${misc:Depends}
+Multi-Arch: foreign
+Description: Binary firmware for Qualcomm graphics/video (dummy package)
+ This is a dummy transitional package.  It can be safely removed.
+
+Package: firmware-qcom-soc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: firmware-atheros
+Suggests: initramfs-tools
+Replaces: firmware-qcom-media (<< 20200421-1~)
+Breaks: firmware-qcom-media (<< 20200421-1~)
+Multi-Arch: foreign
+Description: Binary firmware for Qualcomm SoCs
+ This package contains the binary firmware for Qualcomm Snapdragon SoCs.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-qlogic
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for QLogic HBAs
+ This package contains the binary firmware for QLogic Infiniband, SCSI,
+ Fibre Channel/FCoE adapters and Converged Network Adapters supported by
+ the bfa, bna, ip_iband, qed, qla1280 and qla2xxx drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-realtek
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Realtek wired/Wi-Fi/BT adapters
+ This package contains the binary firmware for Realtek Ethernet, Wi-Fi and
+ Bluetooth adapters supported by various drivers.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-samsung
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Samsung MFC video codecs
+ This package contains the binary firmware for Samsung MFC video codecs
+ used in Exynos SoCs and supported by the s5p-mfc driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-siano
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for Siano MDTV receivers
+ This package contains the binary firmware for Siano Mobile Digital TV
+ receivers supported by the smsmdtv driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+Package: firmware-ti-connectivity
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: initramfs-tools
+Multi-Arch: foreign
+Description: Binary firmware for TI Connectivity Wi-Fi and BT/FM/GPS adapters
+ This package contains the binary firmware for Texas Instruments WL1251,
+ WL127x, WL128x and WL18xx wireless network chips supported by the wl1251,
+ wl12xx and wl18xx drivers and BT/FM/GPS chips supported by the st_drv
+ driver.
+Homepage: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
