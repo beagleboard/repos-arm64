@@ -7,4 +7,3 @@ tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-sk-am69
 tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-sk-am69
-tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-sk-am69
