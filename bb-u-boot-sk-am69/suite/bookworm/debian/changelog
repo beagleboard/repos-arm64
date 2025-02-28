@@ -1,4 +1,4 @@
-bb-u-boot-sk-am69 (2025.04.20250224.0-0~bookworm+20250228) bookworm; urgency=low
+bb-u-boot-sk-am69 (2025.04.20250224.1-0~bookworm+20250228) bookworm; urgency=low
 
   * 20250224 - v2025.04-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2025.04-rc3
   * 20250225 - 11.00.05 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.05
@@ -6,5 +6,5 @@ bb-u-boot-sk-am69 (2025.04.20250224.0-0~bookworm+20250228) bookworm; urgency=low
   * 20241115 - v2.12.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.12.0
   * add extlinux.conf boot menu options over serial
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Feb 2025 11:57:08 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Feb 2025 12:06:26 -0600
 
