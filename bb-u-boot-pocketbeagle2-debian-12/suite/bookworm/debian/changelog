@@ -1,4 +1,4 @@
-bb-u-boot-pocketbeagle2 (2025.04.20250224.1-0~bookworm+20250228) bookworm; urgency=low
+bb-u-boot-pocketbeagle2 (2025.04.20250224.2-0~bookworm+20250303) bookworm; urgency=low
 
   * 20250224 - v2025.04-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2025.04-rc3
   * 20250225 - 11.00.05 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.05
@@ -7,5 +7,5 @@ bb-u-boot-pocketbeagle2 (2025.04.20250224.1-0~bookworm+20250228) bookworm; urgen
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 28 Feb 2025 09:17:36 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 03 Mar 2025 12:42:52 -0600
 
