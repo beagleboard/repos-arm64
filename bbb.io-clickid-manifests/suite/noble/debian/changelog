@@ -1,4 +1,4 @@
-bbb.io-clickid-manifests (1.20230713.1-0~jammy+20250304) jammy; urgency=low
+bbb.io-clickid-manifests (1.20230713.1-0~noble+20250304) noble; urgency=low
 
   * Add MikroE UV Click
 
