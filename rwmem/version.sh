@@ -4,12 +4,12 @@
 
 package_name="rwmem"
 debian_pkg_name="${package_name}"
-package_version="2.0-git20210806.4"
+package_version="2.0-git20230127.0"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
 git_repo="https://github.com/tomba/rwmem"
-git_sha="c8291705c82bb0686be9adf6a427a2b72114719a"
+git_sha="8f34a649f9af8a05a5f4dbdbd00800e10353a031"
 reprepro_dir="r/${package_name}"
 dl_path=""
 
