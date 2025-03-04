@@ -1,4 +1,4 @@
-ti-devmem2 (0.0.0-git20210904.4-0~bullseye+20250304) bullseye; urgency=low
+ti-devmem2 (0.0.0-git20210904.4-0~noble+20250304) noble; urgency=low
 
   * Rebuild ti-devmem2_0.0.0-git20210904.4-0 for repos.rcn-ee.com
 
