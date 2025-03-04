@@ -1,4 +1,4 @@
-bb-u-boot-beagley-ai (2023.04.20240319.27-09.02.00.009-0~noble+20250130) noble; urgency=low
+bb-u-boot-beagley-ai (2023.04.20240319.28-09.02.00.009-0~noble+20250304) noble; urgency=low
 
   * 20240319 - 09.02.00.009 - https://openbeagle.org/beagleboard/u-boot/-/commits/v2023.04-ti-09.02.00.009-BeagleY-AI-Production
   * 20240712 - 10.00.06 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.00.06
@@ -7,5 +7,5 @@ bb-u-boot-beagley-ai (2023.04.20240319.27-09.02.00.009-0~noble+20250130) noble; 
   * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
   * initrd + overlays with this u-boot has some side affects
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 30 Jan 2025 17:14:34 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Mar 2025 16:51:48 -0600
 
