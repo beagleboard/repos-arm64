@@ -1,4 +1,4 @@
-rwmem (2.0-git20210806.4-0~bullseye+20250304) bullseye; urgency=low
+rwmem (2.0-git20210806.4-0~trixie+20250304) trixie; urgency=low
 
   * Rebuild rwmem_2.0-git20210806.4-0 for repos.rcn-ee.com
 
