@@ -1,4 +1,4 @@
-bb-u-boot-beagleplay (2025.04.20250224.0-0~bookworm+20250227) bookworm; urgency=low
+bb-u-boot-beagleplay (2025.04.20250224.1-0~bookworm+20250304) bookworm; urgency=low
 
   * 20250224 - v2025.04-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2025.04-rc3
   * 20250225 - 11.00.05 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.05
@@ -11,5 +11,5 @@ bb-u-boot-beagleplay (2025.04.20250224.0-0~bookworm+20250227) bookworm; urgency=
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 27 Feb 2025 15:46:47 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Mar 2025 16:40:53 -0600
 
