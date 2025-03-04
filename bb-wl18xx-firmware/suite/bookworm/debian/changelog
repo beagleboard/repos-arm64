@@ -1,4 +1,4 @@
-bb-wl18xx-firmware (1.20240622.0-0~bookworm+20240622) bookworm; urgency=low
+bb-wl18xx-firmware (1.20240622.1-0~bookworm+20250304) bookworm; urgency=low
 
   * Add cc33xx firmware from Version: 1.0.0.4 (14 Jun 2024) https://www.ti.com/tool/CC33XX-SOFTWARE
   * 1.0.0.4:
@@ -12,5 +12,5 @@ bb-wl18xx-firmware (1.20240622.0-0~bookworm+20240622) bookworm; urgency=low
   * OSPREY_LDB-1918 - [CON DMA] DMA might not write a byte to UART FIFO
   * OSPREY_LDB-1926 - [BLE][AUTONOMOUS_UART] Device might get stuck when running ADV start/stop
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 22 Jun 2024 13:10:08 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Mar 2025 09:20:13 -0600
 

@@ -1,4 +1,4 @@
-bb-wl18xx-firmware (1.20240622.1-0~trixie+20250304) trixie; urgency=low
+bb-wl18xx-firmware (1.20240622.1-0~noble+20250304) noble; urgency=low
 
   * Add cc33xx firmware from Version: 1.0.0.4 (14 Jun 2024) https://www.ti.com/tool/CC33XX-SOFTWARE
   * 1.0.0.4:
