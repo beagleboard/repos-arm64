@@ -86,7 +86,11 @@ board_lookup () {
 		p9_14|p9_16)
 			PWM_ADDRESS="3020000"
 			;;
+		p9_25)
+			PWM_ADDRESS="3040000"
+			;;
 		*)
+			echo "Board: fill in PWM_ADDRESS"
 			;;
 		esac
 		;;

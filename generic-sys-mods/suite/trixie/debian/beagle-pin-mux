@@ -3,7 +3,7 @@
 if ! id | grep -q root; then
 	echo "beagle-pin-mux must be run as root:"
 	echo "sudo beagle-pin-mux"
-	exit
+	exit 1
 fi
 
 unset GOTPIN
