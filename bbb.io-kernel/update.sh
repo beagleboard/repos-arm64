@@ -47,7 +47,7 @@ generate_kernel_ti () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
-		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org TI ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
 
 		echo "" >> ./suite/${dist}/debian/${wfile}
@@ -61,7 +61,7 @@ generate_kernel_ti () {
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
-		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org TI sgx modules for ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-am62 in Debian." >> ./suite/${dist}/debian/${wfile}
 
 		echo "" >> ./suite/${dist}/debian/${wfile}
@@ -75,7 +75,7 @@ generate_kernel_ti () {
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
-		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org TI sgx modules for ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-j721e in Debian." >> ./suite/${dist}/debian/${wfile}
 
 		echo "" >> ./suite/${dist}/debian/${wfile}
@@ -89,7 +89,7 @@ generate_kernel_ti () {
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-j722s-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
-		echo "Description: BeagleBoard.org ${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org TI sgx modules for ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-j722s in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
@@ -102,7 +102,7 @@ generate_mainline_kernel () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
-		echo "Description: BeagleBoard.org Mainline" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org Mainline Kernel.org" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install Mainline in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
@@ -115,7 +115,7 @@ generate_kernel_k3 () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
-		echo "Description: BeagleBoard.org ${msg}-arm64 for k3-arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org ${msg} Kernel.org Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg}-arm64 for in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
