@@ -11,5 +11,5 @@ bb-u-boot-beagleplay (2025.04.20250224.2-0~bookworm+20250318) bookworm; urgency=
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 18 Mar 2025 13:54:18 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 18 Mar 2025 13:57:15 -0500
 
