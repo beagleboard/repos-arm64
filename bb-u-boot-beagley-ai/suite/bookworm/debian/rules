@@ -24,7 +24,7 @@ TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
 #TFA_TAG=master
-TFA_TAG=v2.12.0
+TFA_TAG=lts-v2.12.1
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
@@ -34,7 +34,7 @@ TFA_BOARD=lite
 #HEAD: https://github.com/OP-TEE/optee_os
 #TAGS: https://github.com/OP-TEE/optee_os/tags
 #OPTEE_TAG=master
-OPTEE_TAG=4.4.0
+OPTEE_TAG=4.5.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
