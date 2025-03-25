@@ -137,7 +137,6 @@ unset_all () {
 }
 
 do_some_k3 () {
-	msg="6.8-k3"    ; var="k3-arm64"    ; ver="V68X"  ; current_kernel ; generate_kernel_k3
 	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
 	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
 	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
