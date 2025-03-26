@@ -1,4 +1,4 @@
-generic-sys-mods (1.20250326.0-0~trixie+20250326) trixie; urgency=low
+generic-sys-mods (1.20250326.1-0~trixie+20250326) trixie; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
@@ -6,5 +6,5 @@ generic-sys-mods (1.20250326.0-0~trixie+20250326) trixie; urgency=low
   * raspi-config 20240424
   * we can support compressed /boot/firmare/Image.gz now thru u-boot
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 26 Mar 2025 13:45:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 26 Mar 2025 13:54:38 -0500
 

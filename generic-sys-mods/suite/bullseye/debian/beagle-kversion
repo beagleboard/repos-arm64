@@ -22,9 +22,11 @@ cp /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ || true
 #Actual:
 cp -v /usr/lib/linux-image-${version}/ti/k3-*.dtb /boot/firmware/ti/ || true
 
-rm -f /boot/firmware/Image || true
-echo "Updating: /boot/firmware/Image"
-cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
+if [ -f /boot/firmware/Image ] ; then
+	rm -f /boot/firmware/Image || true
+	echo "Updating: /boot/firmware/Image"
+	cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
+fi
 
 rm -f /boot/firmware/Image.gz || true
 echo "Updating: /boot/firmware/Image.gz"
