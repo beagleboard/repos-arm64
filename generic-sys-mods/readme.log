@@ -2,3 +2,4 @@
   * Call bb-setup-mac-address directly in the usb scripts
   * add basic bbbio-set-sysconf.service
   * raspi-config 20240424
+  * we can support compressed /boot/firmare/Image.gz now thru u-boot

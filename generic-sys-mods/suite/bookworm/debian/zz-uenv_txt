@@ -8,16 +8,6 @@ if [ -z "${version}" ] ; then
 	exit 2
 fi
 
-if [ -f /boot/firmware/uEnv.txt ] ; then
-	if [ -f /boot/Image ] ; then
-		rm -f /boot/Image || true
-		cp -v /boot/Image-${version} /boot/Image
-		rm -rf /boot/*.dtb || true
-		cp -v /boot/dtbs/${version}/ti/k3-j721e-*.dtb /boot/
-		echo "zz-uenv_txt: Updated uEnv.txt /boot/ for: [${version}]"
-	fi
-fi
-
 if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 	if [ -f /boot/vmlinuz-${version} ] ; then
 		if [ ! -d /boot/firmware/ti/ ] ; then
@@ -35,6 +25,10 @@ if [ -f /boot/firmware/extlinux/extlinux.conf ] ; then
 		rm -f /boot/firmware/Image || true
 		echo "Updating: /boot/firmware/Image"
 		cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
+
+		rm -f /boot/firmware/Image.gz || true
+		echo "Updating: /boot/firmware/Image.gz"
+		cp -v /boot/vmlinuz-${version} /boot/firmware/Image.gz
 
 		rm -f /boot/firmware/initrd.img || true
 		echo "Updating: /boot/firmware/initrd.img"

@@ -26,6 +26,10 @@ rm -f /boot/firmware/Image || true
 echo "Updating: /boot/firmware/Image"
 cat /boot/vmlinuz-${version} | gunzip -d > /boot/firmware/Image
 
+rm -f /boot/firmware/Image.gz || true
+echo "Updating: /boot/firmware/Image.gz"
+cp -v /boot/vmlinuz-${version} /boot/firmware/Image.gz
+
 rm -f /boot/firmware/initrd.img || true
 echo "Updating: /boot/firmware/initrd.img"
 cp -v /boot/initrd.img-${version} /boot/firmware/initrd.img || true
