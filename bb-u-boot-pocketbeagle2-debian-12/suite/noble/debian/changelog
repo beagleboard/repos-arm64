@@ -1,4 +1,4 @@
-bb-u-boot-pocketbeagle2 (2025.04.20250324.0-0~noble+20250325) noble; urgency=low
+bb-u-boot-pocketbeagle2 (2025.04.20250324.1-0~noble+20250326) noble; urgency=low
 
   * 20250324 - v2025.04-rc5 - https://github.com/u-boot/u-boot/releases/tag/v2025.04-rc5
   * 20250321 - 11.00.08 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.08
@@ -7,5 +7,5 @@ bb-u-boot-pocketbeagle2 (2025.04.20250324.0-0~noble+20250325) noble; urgency=low
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Mar 2025 09:45:13 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 26 Mar 2025 12:52:53 -0500
 
