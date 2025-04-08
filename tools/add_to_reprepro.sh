@@ -30,7 +30,6 @@ start_run () {
 	suite="bullseye" ; runner
 	suite="bookworm" ; runner
 	suite="trixie" ; runner
-	suite="jammy" ; runner
 	suite="noble" ; runner
 }
 
