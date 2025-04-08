@@ -261,7 +261,7 @@ Description: BeagleBoard.org TI sgx modules for 6.12-ti Branch
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.14.0-arm64-r1
+Pre-Depends: linux-image-6.15.0-rc1-arm64-r1
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org Mainline Kernel.org
  This metapackage will install Mainline in Debian.
@@ -281,14 +281,6 @@ Pre-Depends: linux-image-6.6.77-rt-arm64-k3-r35
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org 6.6-rt-k3 Kernel.org Branch
  This metapackage will install linux-image-6.6-rt-k3-arm64 for in Debian.
-
-Package: bbb.io-kernel-6.8-k3
-Section: metapackages
-Architecture: arm64
-Pre-Depends: linux-image-6.8.12-arm64-k3-r17
-Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
-Description: BeagleBoard.org 6.8-k3 Kernel.org Branch
- This metapackage will install linux-image-6.8-k3-arm64 for in Debian.
 
 Package: bbb.io-kernel-6.9-k3
 Section: metapackages
