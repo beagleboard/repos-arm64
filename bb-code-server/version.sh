@@ -3,7 +3,7 @@
 #https://github.com/coder/code-server/releases
 
 arch="arm64"
-ver="4.99.0"
+ver="4.99.1"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
@@ -16,7 +16,7 @@ git_sha=""
 reprepro_dir="b/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-0bbbio0"
+debian_version="${package_version}-0bbbio1"
 debian_untar=""
 debian_patch=""
 
