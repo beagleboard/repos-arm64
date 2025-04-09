@@ -46,7 +46,7 @@ generate_kernel_ti () {
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		echo "Description: BeagleBoard.org TI ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
 
@@ -56,7 +56,7 @@ generate_kernel_ti () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${sgxam62}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
@@ -70,7 +70,7 @@ generate_kernel_ti () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${sgxj721e}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
@@ -84,7 +84,7 @@ generate_kernel_ti () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${sgxj722s}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-j722s-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
@@ -101,7 +101,7 @@ generate_mainline_kernel () {
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		echo "Description: BeagleBoard.org Mainline Kernel.org" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install Mainline in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
@@ -114,7 +114,7 @@ generate_kernel_k3 () {
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		echo "Description: BeagleBoard.org ${msg} Kernel.org Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg}-arm64 for in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
