@@ -1,6 +1,0 @@
-bb-u-boot-beagleboneai64-staging (2021.10.20230213.1-0~bullseye+20230516) bullseye; urgency=low
-
-  * Rebuild for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 16 May 2023 16:46:49 -0500
-
