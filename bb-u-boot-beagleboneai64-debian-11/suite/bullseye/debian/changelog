@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64 (2021.10.20230216.16-0~bullseye+20240308) bullseye; urgency=low
+bb-u-boot-beagleboneai64 (2021.10.20230216.17-0~bullseye+20250415) bullseye; urgency=low
 
   * 20230222 - 08.06.00.007 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2944354aca1f95525c30d625cb17672930e72572
   * 20230522 - v2.9.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.9.0
@@ -10,5 +10,5 @@ bb-u-boot-beagleboneai64 (2021.10.20230216.16-0~bullseye+20240308) bullseye; urg
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 08 Mar 2024 11:50:50 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 15 Apr 2025 15:04:22 -0500
 

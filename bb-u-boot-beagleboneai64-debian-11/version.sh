@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleboneai64"
 debian_pkg_name="${package_name}"
-package_version="2021.10.20230216.16"
+package_version="2021.10.20230216.17"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20240308"
+bullseye_version="~bullseye+20250415"
