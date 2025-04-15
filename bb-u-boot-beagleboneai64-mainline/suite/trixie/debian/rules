@@ -17,7 +17,7 @@ TARGETDIR=bb-u-boot-beagleboneai64-mainline
 TILF_TAG=11.00.08
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
-TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
+TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmware.git"
 
 #trusted-firmware-a
 #HEAD: https://github.com/ARM-software/arm-trusted-firmware
@@ -27,7 +27,7 @@ TILF_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-linux-firmware.git"
 TFA_TAG=lts-v2.12.1
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
-TFA_REPO="https://git.gfnd.rcn-ee.org/mirror/trusted-firmware-a.git"
+TFA_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/trusted-firmware-a.git"
 TFA_BOARD=generic
 
 #optee_os
@@ -37,7 +37,7 @@ TFA_BOARD=generic
 OPTEE_TAG=4.5.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
-OPTEE_REPO="https://git.gfnd.rcn-ee.org/mirror/optee_os.git"
+OPTEE_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-j721e
 
 #U-Boot
@@ -56,16 +56,16 @@ override_dh_strip:
 override_dh_auto_configure:
 	mkdir -p ./tmp/pkg/
 	mkdir -p /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
-	mkdir -p ./tmp/ti-linux-firmware/ ; git -c http.sslVerify=false clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
-	mkdir -p ./tmp/trusted-firmware-a/ ; git -c http.sslVerify=false clone -b $(TFA_TAG) $(TFA_REPO) --depth=5 ./tmp/trusted-firmware-a/
+	mkdir -p ./tmp/ti-linux-firmware/ ; git clone -b $(TILF_TAG) $(TILF_REPO) --depth=5 ./tmp/ti-linux-firmware/ ; rsync -a ./tmp/ti-linux-firmware/* /opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ --delete
+	mkdir -p ./tmp/trusted-firmware-a/ ; git clone -b $(TFA_TAG) $(TFA_REPO) --depth=5 ./tmp/trusted-firmware-a/
 	make -C ./tmp/trusted-firmware-a/ -j8 CROSS_COMPILE=aarch64-linux-gnu- CFLAGS= LDFLAGS= ARCH=aarch64 PLAT=k3 TARGET_BOARD=$(TFA_BOARD) SPD=opteed all
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin ./tmp/pkg/
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/optee_os/ ; git -c http.sslVerify=false clone -b $(OPTEE_TAG) $(OPTEE_REPO) --depth=5 ./tmp/optee_os/
+	mkdir -p ./tmp/optee_os/ ; git clone -b $(OPTEE_TAG) $(OPTEE_REPO) --depth=5 ./tmp/optee_os/
 	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(OPTEE_PLATFORM) CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
-	mkdir -p ./tmp/u-boot/ ; git -c http.sslVerify=false clone -b $(UB_TAG) $(UB_REPO) --depth=5 ./tmp/u-boot/
+	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_TAG) $(UB_REPO) --depth=5 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UBOOT_CFG_CORTEXR)
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/

@@ -1,4 +1,4 @@
-bb-u-boot-beagleboneai64-mainline (2025.04.20250324.0-0~noble+20250325) noble; urgency=low
+bb-u-boot-beagleboneai64-mainline (2025.04.20250324.1-0~noble+20250415) noble; urgency=low
 
   * 20250324 - v2025.04-rc5 - https://github.com/u-boot/u-boot/releases/tag/v2025.04-rc5
   * 20250321 - 11.00.08 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.08
@@ -11,5 +11,5 @@ bb-u-boot-beagleboneai64-mainline (2025.04.20250324.0-0~noble+20250325) noble; u
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Mar 2025 16:35:51 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 15 Apr 2025 12:41:32 -0500
 
