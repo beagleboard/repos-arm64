@@ -3,11 +3,12 @@
 #https://packages.debian.org/source/trixie/meson
 
 #mirror="https://deb.debian.org/debian"
-mirror="https://snapshot.debian.org/archive/debian/20240214T085951Z"
+#mirror="https://snapshot.debian.org/archive/debian/20240214T085951Z"
+mirror="https://snapshot.debian.org/archive/debian/20240530T203940Z"
 
 package_name="meson"
 debian_pkg_name="${package_name}"
-package_version="1.3.2"
+package_version="1.4.1"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="${package_name}-${package_version}"
 
@@ -21,4 +22,4 @@ debian_untar=""
 debian_patch="${package_name}_${debian_version}.debian.tar.xz"
 local_patch="bbbio0"
 
-bookworm_version="~bookworm+20240330"
+bookworm_version="~bookworm+20250416"
