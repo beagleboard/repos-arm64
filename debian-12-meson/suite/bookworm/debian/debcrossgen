@@ -149,7 +149,7 @@ def external_impl():
         sys.exit(str(e))
 
 if __name__ == '__main__':
-    revert_to_internal = True
+    revert_to_internal = 'MESON_USE_NEW_CROSSGEN' not in os.environ
     if revert_to_internal:
         internal_impl()
     else:
