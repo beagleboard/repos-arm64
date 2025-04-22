@@ -1,13 +1,11 @@
-bbb.io-kernel (1.20250414.0-0~noble+20250414) noble; urgency=low
+bbb.io-kernel (1.20250421.0-0~noble+20250421) noble; urgency=low
 
   * Kernel Updates
-  * linux-image-6.12.17-ti-arm64-r33
-  * linux-image-6.15.0-rc2-arm64-k3-r3
-  * linux-image-6.15.0-rc2-arm64-r1
-  * linux-image-6.1.83-ti-arm64-r69
-  * linux-image-6.1.83-ti-rt-arm64-r69
-  * linux-image-6.6.58-ti-arm64-r25
-  * linux-image-6.6.58-ti-rt-arm64-r25
+  * linux-image-6.12.24-arm64-k3-r21
+  * linux-image-6.13.12-arm64-k3-r18
+  * linux-image-6.14.3-arm64-k3-r13
+  * linux-image-6.15.0-rc3-arm64-k3-r4
+  * linux-image-6.15.0-rc3-arm64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 14 Apr 2025 20:17:38 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 21 Apr 2025 19:29:36 -0500
 
