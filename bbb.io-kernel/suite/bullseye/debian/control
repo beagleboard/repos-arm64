@@ -307,7 +307,7 @@ Description: BeagleBoard.org 6.14-k3 Kernel.org Branch
 Package: bbb.io-kernel-6.15-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.15.0-rc3-arm64-k3-r4
+Pre-Depends: linux-image-6.15.0-rc3-arm64-k3-r5
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Description: BeagleBoard.org 6.15-k3 Kernel.org Branch
  This metapackage will install linux-image-6.15-k3-arm64 for in Debian.
