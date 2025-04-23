@@ -1,8 +1,15 @@
-mesa (25.0.3-1bbbio0~bookworm+20250416) bookworm; urgency=low
+mesa (25.0.4-1bbbio0~bookworm+20250423) bookworm; urgency=low
 
-  * Rebuild mesa_25.0.3-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.0.4-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 16 Apr 2025 16:24:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 23 Apr 2025 12:12:23 -0500
+
+mesa (25.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Drop upstreamed gfxstream patches.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 22 Apr 2025 13:10:18 +0300
 
 mesa (25.0.3-1) unstable; urgency=medium
 

@@ -140,6 +140,11 @@ else
 	ifneq (,$(filter $(DEB_HOST_ARCH), $(WINE_ARCHS)))
 		confflags_GALLIUM += -Dgallium-nine=true
 	endif
+
+	# gfxstream only builds on 64bit
+	ifeq ($(DEB_HOST_ARCH_BITS),64)
+		VULKAN_DRIVERS += gfxstream
+	endif
   else
 	confflags_GALLIUM += -Dllvm=disabled
   endif
