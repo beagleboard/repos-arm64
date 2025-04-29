@@ -1,0 +1,11 @@
+bb-u-boot-beagley-ai-mainline (2025.07.20250428.0-0~trixie+20250429) trixie; urgency=low
+
+  * 20250428 - v2025.07-rc1 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc1
+  * 20250424 - 11.00.11 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.10
+  * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
+  * 20250425 - v2.12.2 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.2
+  * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
+  * initrd + overlays with this u-boot has some side affects
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 29 Apr 2025 18:40:01 -0500
+

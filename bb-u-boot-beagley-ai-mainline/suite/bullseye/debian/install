@@ -1,0 +1,13 @@
+debian/install.sh /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/nvme-extlinux.conf /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/nvme-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/beagley-ai-microsd-to-nvme /opt/u-boot/bb-u-boot-beagley-ai-mainline
+debian/beagley-ai-microsd-to-nvme-w-swap /opt/u-boot/bb-u-boot-beagley-ai-mainline
+tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-beagley-ai-mainline
+tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-beagley-ai-mainline
+tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-beagley-ai-mainline
+tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-beagley-ai-mainline
+tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-beagley-ai-mainline
