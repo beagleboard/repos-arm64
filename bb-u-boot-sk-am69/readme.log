@@ -1,5 +1,5 @@
-  * 20250407 - v2025.04 - https://github.com/u-boot/u-boot/releases/tag/v2025.04
-  * 20250410 - 11.00.10 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.10
-  * 20250410 - 4.6.0-rc1 - https://github.com/OP-TEE/optee_os/commits/4.6.0-rc1
-  * 20250228 - v2.12.1 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.1
+  * 20250428 - v2025.07-rc1 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc1
+  * 20250424 - 11.00.11 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.10
+  * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
+  * 20250425 - v2.12.2 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.2
   * add extlinux.conf boot menu options over serial
