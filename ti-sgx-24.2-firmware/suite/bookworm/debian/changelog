@@ -1,6 +1,6 @@
-ti-sgx-24.2-firmware (24.2.6643903.0-0bbbio0~bookworm+20250506) bookworm; urgency=low
+ti-sgx-24.2-firmware (24.2.6643903.0-0bbbio1~bookworm+20250506) bookworm; urgency=low
 
   * Rebuild ti-sgx-24.2-firmware_24.2.6643903.0-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 May 2025 15:13:04 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 May 2025 15:25:09 -0500
 

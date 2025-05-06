@@ -16,6 +16,7 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , kbd
+Conflicts: ti-sgx-23.3-firmware
 Architecture: arm64
 Description: Userspace firmware for SGX 24.2
  Userspace firmware for SGX 24.2
