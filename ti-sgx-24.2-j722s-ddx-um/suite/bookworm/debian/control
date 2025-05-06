@@ -17,6 +17,7 @@ Depends:
  , ${misc:Depends}
  , kbd
  , ti-sgx-24.2-firmware
+Conflicts: ti-sgx-23.3-j722s-ddx-um
 Architecture: arm64
 Description: Userspace libraries for SGX 24.2
  Userspace libraries for SGX 24.2
