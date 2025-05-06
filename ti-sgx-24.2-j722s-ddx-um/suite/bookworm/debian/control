@@ -11,7 +11,7 @@ Build-Depends:
 Standards-Version: 4.5.0
 Homepage: https://git.ti.com/gitweb?p=graphics/ti-img-rogue-umlibs.git;a=summary
 
-Package: ti-sgx-23.3-j722s-ddx-um
+Package: ti-sgx-24.2-j722s-ddx-um
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
