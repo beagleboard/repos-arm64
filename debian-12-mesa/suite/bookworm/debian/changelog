@@ -1,8 +1,19 @@
-mesa (25.0.4-1bbbio0~bookworm+20250423) bookworm; urgency=low
+mesa (25.0.5-1bbbio0~bookworm+20250507) bookworm; urgency=low
 
-  * Rebuild mesa_25.0.4-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.0.5-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 23 Apr 2025 12:12:23 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 07 May 2025 11:02:39 -0500
+
+mesa (25.0.5-1) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * Share a single JSON manifest per Vulkan driver between all architectures
+    (Closes: #980148)
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 May 2025 08:32:56 +0300
 
 mesa (25.0.4-1) unstable; urgency=medium
 
