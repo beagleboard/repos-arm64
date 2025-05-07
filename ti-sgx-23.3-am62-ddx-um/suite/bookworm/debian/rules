@@ -5,7 +5,7 @@
 export DH_VERBOSE=1
 
 SGX_TAG="linuxws/kirkstone/k6.1/23.3.6512818"
-SGX_REPO="https://git.gfnd.rcn-ee.org/TexasInstruments/ti-img-rogue-umlibs.git"
+SGX_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-img-rogue-umlibs.git"
 
 # Disable dh_strip
 override_dh_strip:
@@ -17,7 +17,10 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/sgx/ ; git -c http.sslVerify=false clone -b $(SGX_TAG) $(SGX_REPO) --depth=5 ./tmp/sgx/ ; git --git-dir ./tmp/sgx/.git log --pretty=oneline
+	mkdir -p ./tmp/sgx/ ; git clone -b $(SGX_TAG) $(SGX_REPO) --depth=5 ./tmp/sgx/ ; git --git-dir ./tmp/sgx/.git log --pretty=oneline
 
 %:
 	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
