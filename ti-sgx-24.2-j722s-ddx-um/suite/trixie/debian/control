@@ -1,0 +1,23 @@
+Source: ti-sgx-24.2-j722s-ddx-um
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 9)
+ , ca-certificates
+ , git
+ , libdrm-dev
+ , libwayland-dev
+Standards-Version: 4.5.0
+Homepage: https://git.ti.com/gitweb?p=graphics/ti-img-rogue-umlibs.git;a=summary
+
+Package: ti-sgx-24.2-j722s-ddx-um
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+ , kbd
+ , ti-sgx-24.2-firmware
+Conflicts: ti-sgx-23.3-j722s-ddx-um
+Architecture: arm64
+Description: Userspace libraries for SGX 24.2
+ Userspace libraries for SGX 24.2

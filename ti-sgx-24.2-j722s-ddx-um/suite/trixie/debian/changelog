@@ -1,4 +1,4 @@
-ti-sgx-24.2-j722s-ddx-um (24.2.6643903.0-0bbbio3~bookworm+20250507) bookworm; urgency=low
+ti-sgx-24.2-j722s-ddx-um (24.2.6643903.0-0bbbio3~trixie+20250507) trixie; urgency=low
 
   * Rebuild ti-sgx-24.2-j722s-ddx-um_24.2.6643903.0-0 for repos.rcn-ee.com
 
