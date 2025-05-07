@@ -1,0 +1,2 @@
+tmp/sgx/targetfs/j721e_linux/lws-generic/release/etc/* etc
+tmp/sgx/targetfs/j721e_linux/lws-generic/release/usr/* usr
