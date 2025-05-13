@@ -1,2 +1,2 @@
-deb [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-archive-keyring.gpg] http://repos.rcn-ee.com/debian-arm64/ trixie main
-deb-src [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-archive-keyring.gpg] http://repos.rcn-ee.com/debian-arm64/ trixie main
+deb [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-trixie-archive-keyring.pgp] http://repos.rcn-ee.com/debian-arm64/ trixie main
+deb-src [arch=arm64 signed-by=/usr/share/keyrings/rcn-ee-trixie-archive-keyring.pgp] http://repos.rcn-ee.com/debian-arm64/ trixie main
