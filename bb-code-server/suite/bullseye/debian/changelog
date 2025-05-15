@@ -1,8 +1,8 @@
-bb-code-server (4.100.0-0bbbio0~bullseye+20250513) bullseye; urgency=low
+bb-code-server (4.100.1-0bbbio0~bullseye+20250515) bullseye; urgency=low
 
   * Changed
-  * Updated to Code 1.100.0.
-  * Updated Node to 20.18.3.
+  * Updated to Code 1.100.1.
+  * Updated Node to 20.19.0.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 13 May 2025 08:05:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 15 May 2025 11:47:39 -0500
 
