@@ -154,6 +154,9 @@ if (my $new_user_name = delete($conf->{user_name})) {
         system("sed -i -e 's:Group=$current_group:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
         system("sed -i -e 's:/home/$current_user/:/home/$new_user_name/:g' /usr/lib/systemd/system/bb-code-server.service");
     }
+    if( -d "/opt/vsx-examples/") {
+        system("chown -R $new_user_name:$current_group /opt/vsx-examples/");
+    }
     $enable_lightdm = 1;
     $call_reboot = 1;
 }
