@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=exec
-ExecStart=/opt/bb-code-server/app/bin/code-server --cert --disable-telemetry --disable-update-check --bind-addr 0.0.0.0:3000
+ExecStart=/opt/bb-code-server/app/bin/code-server --cert --disable-telemetry --disable-update-check --extensions-dir /opt/bb-code-server/extensions/ --bind-addr 0.0.0.0:3000
 Restart=always
 
 [Install]

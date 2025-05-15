@@ -9,22 +9,20 @@ package="bb-code-server"
 systemctl daemon-reload | true
 
 main_install () {
-	mkdir -p /opt/${package}/config/
 	mkdir -p /opt/${package}/extensions/
 
 	echo "${package}: --list-extensions"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --config /opt/${package}/config/config.yaml --extensions-dir /opt/${package}/extensions/ --list-extensions
+	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
 	echo "${package}: *****************"
 
 	echo "${package}: Installing: ms-python.python"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --config /opt/${package}/config/config.yaml --extensions-dir /opt/${package}/extensions/ --install-extension ms-python.python --force
+	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --install-extension ms-python.python --force
 	echo "${package}: *****************"
 
 	echo "${package}: --list-extensions"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --config /opt/${package}/config/config.yaml --extensions-dir /opt/${package}/extensions/ --list-extensions
+	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
 	echo "${package}: *****************"
 
-	chown -R 1000:1000 /opt/${package}/config/ || true
 	chown -R 1000:1000 /opt/${package}/extensions/ || true
 
 	echo "${package}:Installed"
