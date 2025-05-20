@@ -1,4 +1,4 @@
-ti-sgx-24.2-am62-ddx-um (24.2.6643903.0-0bbbio1~trixie+20250520) trixie; urgency=low
+ti-sgx-24.2-am62-ddx-um (24.2.6643903.0-0bbbio1~bookworm+20250520) bookworm; urgency=low
 
   * 2025-05-12 - https://git.ti.com/cgit/graphics/ti-img-rogue-umlibs/log/?h=linuxws/scarthgap/k6.12/24.2.6643903
 
