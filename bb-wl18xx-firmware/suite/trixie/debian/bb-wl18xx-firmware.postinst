@@ -19,6 +19,12 @@ fi
 
 cp -v /usr/lib/firmware/ti-connectivity/git/${WLFW} /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin
 
+if [ -f /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin ] ; then
+	rm /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin
+fi
+
+cp -v /usr/lib/firmware/ti-connectivity/git/cc33xx-conf.bin /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin
+
 case "$1" in
 	configure)
 		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then

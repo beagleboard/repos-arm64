@@ -10,9 +10,9 @@ debian/wl18xx-fw-4-8.9.0.0.88.bin /usr/lib/firmware/ti-connectivity/git/
 debian/wl18xx-fw-4-8.9.0.0.89.bin /usr/lib/firmware/ti-connectivity/git/
 debian/wl18xx-fw-4-8.9.0.0.90.bin /usr/lib/firmware/ti-connectivity/git/
 debian/wl18xx-fw-4-8.9.1.0.0.bin /usr/lib/firmware/ti-connectivity/git/
-debian/cc33xx-conf.bin /usr/lib/firmware/ti-connectivity/
-debian/cc33xx_2nd_loader.bin /usr/lib/firmware/ti-connectivity/
-debian/cc33xx_fw.bin /usr/lib/firmware/ti-connectivity/
+debian/cc33xx-conf.bin /usr/lib/firmware/ti-connectivity/git/
+debian/cc33xx_2nd_loader.bin /usr/lib/firmware/ti-connectivity/git/
+debian/cc33xx_fw.bin /usr/lib/firmware/ti-connectivity/git/
 debian/wl18xx.conf /etc/modprobe.d/
 debian/bb-wl18xx-select-fw /usr/sbin/
 debian/cc33xx_enable_ble /usr/sbin/
