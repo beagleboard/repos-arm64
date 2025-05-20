@@ -16,9 +16,9 @@ dl_path=""
 debian_version="${package_version}-0"
 debian_patch=""
 debian_diff=""
-local_patch="bbbio3"
+local_patch="bbbio4"
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20250507"
-trixie_version="~trixie+20250507"
+bookworm_version="~bookworm+20250520"
+trixie_version="~trixie+20250520"
