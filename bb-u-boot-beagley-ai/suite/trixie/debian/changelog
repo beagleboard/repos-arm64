@@ -1,11 +1,11 @@
-bb-u-boot-beagley-ai (2023.04.20240319.30-09.02.00.009-0~trixie+20250415) trixie; urgency=low
+bb-u-boot-beagley-ai (2023.04.20240319.31-09.02.00.009-0~trixie+20250520) trixie; urgency=low
 
   * 20240319 - 09.02.00.009 - https://openbeagle.org/beagleboard/u-boot/-/commits/v2023.04-ti-09.02.00.009-BeagleY-AI-Production
   * 20240712 - 10.00.06 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/10.00.06
-  * 20250410 - 4.6.0-rc1 - https://github.com/OP-TEE/optee_os/commits/4.6.0-rc1
-  * 20250228 - v2.12.1 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.1
+  * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
+  * 20250425 - v2.12.2 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.2
   * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
   * initrd + overlays with this u-boot has some side affects
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 15 Apr 2025 14:58:07 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 May 2025 13:12:55 -0500
 
