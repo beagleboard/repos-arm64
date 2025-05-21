@@ -1,6 +1,6 @@
-tmp/sgx/targetfs/am62_linux/lws-generic/release/lib/firmware/* usr/lib/firmware
-tmp/sgx/targetfs/am62p_linux/lws-generic/release/lib/firmware/* usr/lib/firmware
-tmp/sgx/targetfs/j721e_linux/lws-generic/release/lib/firmware/* usr/lib/firmware
-tmp/sgx/targetfs/j721s2_linux/lws-generic/release/lib/firmware/* usr/lib/firmware
-tmp/sgx/targetfs/j722s_linux/lws-generic/release/lib/firmware/* usr/lib/firmware
-tmp/sgx/targetfs/j784s4_linux/lws-generic/release/lib/firmware/* usr/lib/firmware
+tmp/sgx/targetfs/am62_linux/lws-generic/release/lib/firmware/* usr/lib/firmware/powervr
+tmp/sgx/targetfs/am62p_linux/lws-generic/release/lib/firmware/* usr/lib/firmware/powervr
+tmp/sgx/targetfs/j721e_linux/lws-generic/release/lib/firmware/* usr/lib/firmware/powervr
+tmp/sgx/targetfs/j721s2_linux/lws-generic/release/lib/firmware/* usr/lib/firmware/powervr
+tmp/sgx/targetfs/j722s_linux/lws-generic/release/lib/firmware/* usr/lib/firmware/powervr
+tmp/sgx/targetfs/j784s4_linux/lws-generic/release/lib/firmware/* usr/lib/firmware/powervr
