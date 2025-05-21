@@ -2,7 +2,7 @@
 
 package_name="bbb.io-kernel"
 debian_pkg_name="${package_name}"
-package_version="1.20250520.0"
+package_version="1.20250520.1"
 package_source=""
 src_dir=""
 

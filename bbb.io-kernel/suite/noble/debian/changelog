@@ -1,8 +1,7 @@
-bbb.io-kernel (1.20250520.0-0~noble+20250520) noble; urgency=low
+bbb.io-kernel (1.20250520.1-0~noble+20250520) noble; urgency=low
 
   * Kernel Updates
-  * linux-image-6.15.0-rc7-arm64-k3-r9
-  * linux-image-6.15.0-rc7-arm64-r1
+  * linux-image-6.12.23-ti-arm64-r37
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 May 2025 10:44:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 May 2025 22:21:55 -0500
 
