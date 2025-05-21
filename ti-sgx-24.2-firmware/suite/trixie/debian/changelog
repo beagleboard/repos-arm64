@@ -1,6 +1,6 @@
-ti-sgx-24.2-firmware (24.2.6643903.0-0bbbio3~trixie+20250521) trixie; urgency=low
+ti-sgx-24.2-firmware (24.2.6643903.0-0bbbio4~trixie+20250521) trixie; urgency=low
 
   * Rebuild ti-sgx-24.2-firmware_24.2.6643903.0-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 21 May 2025 10:12:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 21 May 2025 11:11:43 -0500
 

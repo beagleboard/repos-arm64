@@ -17,7 +17,8 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/sgx/ ; git clone -b $(SGX_TAG) $(SGX_REPO) --depth=5 ./tmp/sgx/ ; git --git-dir ./tmp/sgx/.git log --pretty=oneline
+	mkdir -p ./tmp/sgx/ ; git clone -b $(SGX_TAG) $(SGX_REPO) --depth=5 ./tmp/sgx/
+	mkdir -p ./tmp/src/ ; git clone http://forgejo.gfnd.rcn-ee.org:3000/kernel.org/linux-firmware.git --depth=5 ./tmp/src/
 
 %:
 	dh $@
