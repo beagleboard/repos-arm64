@@ -101,6 +101,11 @@ run_libcomposite () {
 		mkdir -p configs/c.1/strings/0x409
 		echo "BeagleBone Composite" > configs/c.1/strings/0x409/configuration
 
+		#enable use of os_desc's (important for RNDIS & NCM enablement on Windows):
+		echo 1 > os_desc/use
+		echo 0xbc > os_desc/b_vendor_code || true
+		echo MSFT100 > os_desc/qw_sign
+
 		echo 500 > configs/c.1/MaxPower
 
 		if [ ! "x${USB_RNDIS_DISABLED}" = "xyes" ]; then
@@ -122,9 +127,7 @@ run_libcomposite () {
 			# Add OS Descriptors for the latest Windows 10 rndiscmp.inf
 			# https://answers.microsoft.com/en-us/windows/forum/windows_10-networking-winpc/windows-10-vs-remote-ndis-ethernet-usbgadget-not/cb30520a-753c-4219-b908-ad3d45590447
 			# https://www.spinics.net/lists/linux-usb/msg107185.html
-			echo 1 > os_desc/use
 			echo 0xCD > os_desc/b_vendor_code || true
-			echo MSFT100 > os_desc/qw_sign
 			echo "RNDIS" > functions/rndis.usb0/os_desc/interface.rndis/compatible_id
 			echo "5162001" > functions/rndis.usb0/os_desc/interface.rndis/sub_compatible_id
 
@@ -143,6 +146,12 @@ run_libcomposite () {
 				echo ${USB1_HOST_ADDR} > functions/ncm.usb0/host_addr
 				echo ${USB1_DEV_ADDR} > functions/ncm.usb0/dev_addr
 			fi
+
+			#Set compatible id so that Windows 10 can match this function to
+			#NCM driver more easily.
+			mkdir -p functions/ncm.usb0/os_desc/interface.ncm
+			echo WINNCM > functions/ncm.usb0/os_desc/interface.ncm/compatible_id
+
 			ln -s functions/ncm.usb0 configs/c.1/
 		else
 			mkdir -p functions/ncm.usb0
@@ -150,6 +159,12 @@ run_libcomposite () {
 				echo ${USB0_HOST_ADDR} > functions/ncm.usb0/host_addr
 				echo ${USB0_DEV_ADDR} > functions/ncm.usb0/dev_addr
 			fi
+
+			#Set compatible id so that Windows 10 can match this function to
+			#NCM driver more easily.
+			mkdir -p functions/ncm.usb0/os_desc/interface.ncm
+			echo WINNCM > functions/ncm.usb0/os_desc/interface.ncm/compatible_id
+
 			ln -s functions/ncm.usb0 configs/c.1/
 		fi
 

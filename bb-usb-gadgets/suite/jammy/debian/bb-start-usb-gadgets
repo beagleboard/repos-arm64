@@ -1,7 +1,0 @@
-#!/bin/bash
-
-log="bb-usb-gadgets"
-
-#TODO: generate unique mac address...
-echo "${log}: bb-start-acm-ncm-rndis-old-gadget"
-/usr/bin/bb-start-acm-ncm-rndis-old-gadget
