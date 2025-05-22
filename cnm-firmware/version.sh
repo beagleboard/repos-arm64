@@ -4,7 +4,7 @@
 
 package_name="cnm-firmware"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-git20230515.1"
+package_version="0.0.0-git20250515.0"
 package_source=""
 src_dir=""
 
@@ -19,4 +19,5 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20240131"
+bookworm_version="~bookworm+20250522"
+trixie_version="~trixie+20250522"

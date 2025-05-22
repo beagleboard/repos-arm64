@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+set -e
+
+if [ -f /usr/lib/firmware/cnm/wave521c_k3_codec_fw.bin ] ; then
+	rm -f /usr/lib/firmware/cnm/wave521c_k3_codec_fw.bin || true
+fi
+cp -v /usr/lib/firmware/cnm/git/*.bin /usr/lib/firmware/cnm/
+
+if [ -f /usr/lib/firmware/cnm/wave521c_codec_fw.bin ] ; then
+	rm -f /usr/lib/firmware/cnm/wave521c_codec_fw.bin || true
+fi
+cp /usr/lib/firmware/cnm/wave521c_k3_codec_fw.bin /usr/lib/firmware/cnm/wave521c_codec_fw.bin
+
+case "$1" in
+	configure)
+		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then
+			update-initramfs -u
+		fi
+	;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0
+

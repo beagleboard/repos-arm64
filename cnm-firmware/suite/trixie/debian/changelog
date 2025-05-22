@@ -1,4 +1,4 @@
-cnm-firmware (0.0.0-git20250515.0-0~bookworm+20250522) bookworm; urgency=low
+cnm-firmware (0.0.0-git20250515.0-0~trixie+20250522) trixie; urgency=low
 
   * cnm: FW version : 1.0.8 (https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/)
 
