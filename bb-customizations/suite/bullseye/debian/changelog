@@ -1,4 +1,4 @@
-bb-customizations (1.20250515.0-0~bullseye+20250515) bullseye; urgency=low
+bb-customizations (1.20250522.0-0~bullseye+20250522) bullseye; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
@@ -6,5 +6,5 @@ bb-customizations (1.20250515.0-0~bullseye+20250515) bullseye; urgency=low
   * disable automatic pwm export, need to find a new way
   * add xfce slideshow example from NM
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 15 May 2025 12:43:18 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 May 2025 16:52:22 -0500
 
