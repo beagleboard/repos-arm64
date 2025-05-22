@@ -91,6 +91,13 @@ run_libcomposite () {
 		echo ${usb_idProduct} > idProduct # Multifunction Composite Gadget
 		echo ${usb_bcdDevice} > bcdDevice
 
+		# Windows extension to use IAD (Interface Association Descriptor)
+		# https://learn.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-interface-association-descriptor
+		echo "0xEF" > bDeviceClass
+		echo "0x02" > bDeviceSubClass
+		echo "0x01" > bDeviceProtocol
+		echo "0x0100" > bcdDevice
+
 		#0x409 = english strings...
 		mkdir -p strings/0x409
 
@@ -101,12 +108,14 @@ run_libcomposite () {
 		mkdir -p configs/c.1/strings/0x409
 		echo "BeagleBone Composite" > configs/c.1/strings/0x409/configuration
 
-		#enable use of os_desc's (important for RNDIS & NCM enablement on Windows):
-		echo 1 > os_desc/use
-		echo 0xbc > os_desc/b_vendor_code || true
-		echo MSFT100 > os_desc/qw_sign
-
 		echo 500 > configs/c.1/MaxPower
+
+		# Enable use of OS descriptor (for windows to bind drivers like NCM, RNDIS...
+		# without additional .inf file)
+		mkdir -p os_desc
+		echo "1" > os_desc/use
+		echo "0xbc" > os_desc/b_vendor_code
+		echo "MSFT100" > os_desc/qw_sign
 
 		if [ ! "x${USB_RNDIS_DISABLED}" = "xyes" ]; then
 			mkdir -p functions/rndis.usb0
@@ -142,6 +151,12 @@ run_libcomposite () {
 			ln -s functions/rndis.usb0 configs/c.1/
 
 			mkdir -p functions/ncm.usb0
+
+			#Set compatible id so that Windows 10 can match this function to
+			#NCM driver more easily.
+			mkdir -p functions/ncm.usb0/os_desc/interface.ncm
+			echo WINNCM > functions/ncm.usb0/os_desc/interface.ncm/compatible_id
+
 			if [ ! "x${USB1_HOST_ADDR}" = "x" ] ; then
 				echo ${USB1_HOST_ADDR} > functions/ncm.usb0/host_addr
 				echo ${USB1_DEV_ADDR} > functions/ncm.usb0/dev_addr
@@ -155,15 +170,16 @@ run_libcomposite () {
 			ln -s functions/ncm.usb0 configs/c.1/
 		else
 			mkdir -p functions/ncm.usb0
-			if [ ! "x${USB0_HOST_ADDR}" = "x" ] ; then
-				echo ${USB0_HOST_ADDR} > functions/ncm.usb0/host_addr
-				echo ${USB0_DEV_ADDR} > functions/ncm.usb0/dev_addr
-			fi
 
 			#Set compatible id so that Windows 10 can match this function to
 			#NCM driver more easily.
 			mkdir -p functions/ncm.usb0/os_desc/interface.ncm
 			echo WINNCM > functions/ncm.usb0/os_desc/interface.ncm/compatible_id
+
+			if [ ! "x${USB0_HOST_ADDR}" = "x" ] ; then
+				echo ${USB0_HOST_ADDR} > functions/ncm.usb0/host_addr
+				echo ${USB0_DEV_ADDR} > functions/ncm.usb0/dev_addr
+			fi
 
 			ln -s functions/ncm.usb0 configs/c.1/
 		fi
