@@ -14,7 +14,7 @@ TARGETDIR=bb-u-boot-beagleplay
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=11.00.13
+TILF_TAG=11.00.14
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmware.git"
@@ -24,7 +24,7 @@ TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmwar
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
 #TFA_TAG=master
-TFA_TAG=lts-v2.12.2
+TFA_TAG=lts-v2.12.3
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/trusted-firmware-a.git"
@@ -43,7 +43,7 @@ OPTEE_PLATFORM=k3-am62x
 #U-Boot
 UBOOT_CFG_CORTEXR="am62x_beagleplay_r5_defconfig"
 UBOOT_CFG_CORTEXA="am62x_beagleplay_a53_defconfig"
-UB_TAG="v2025.04-Beagle"
+UB_TAG="v2025.07-rc2-Beagle"
 UB_REPO="https://github.com/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-am62x-gp-evm.bin
 UB_TISPL=tispl.bin_unsigned

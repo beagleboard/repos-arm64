@@ -1,9 +1,9 @@
-bb-u-boot-beagleplay (2025.04.20250407.1-0~trixie+20250520) trixie; urgency=low
+bb-u-boot-beagleplay (2025.07.20250512.0-0~trixie+20250523) trixie; urgency=low
 
-  * 20250407 - v2025.04 - https://github.com/u-boot/u-boot/releases/tag/v2025.04
-  * 20250508 - 11.00.13 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.13
+  * 20250512 - v2025.07-rc2 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc2
+  * 20250522 - 11.00.14 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.14
   * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
-  * 20250425 - v2.12.2 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.2
+  * 20250523 - v2.12.3 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.3
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly
@@ -11,5 +11,5 @@ bb-u-boot-beagleplay (2025.04.20250407.1-0~trixie+20250520) trixie; urgency=low
   * Flasher scripts, echo Serial over HDMI
   * extlinux.conf, unify labels to make flasher change more generic
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 May 2025 12:38:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 May 2025 16:03:00 -0500
 
