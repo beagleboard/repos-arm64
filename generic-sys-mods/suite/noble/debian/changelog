@@ -1,4 +1,4 @@
-generic-sys-mods (1.20250515.1-0~noble+20250515) noble; urgency=low
+generic-sys-mods (1.20250523.0-0~noble+20250523) noble; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
@@ -6,5 +6,5 @@ generic-sys-mods (1.20250515.1-0~noble+20250515) noble; urgency=low
   * raspi-config 20240424
   * we can support compressed /boot/firmare/Image.gz now thru u-boot
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 15 May 2025 12:28:56 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 May 2025 09:16:01 -0500
 

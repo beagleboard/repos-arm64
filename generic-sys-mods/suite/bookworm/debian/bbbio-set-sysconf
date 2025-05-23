@@ -154,9 +154,6 @@ if (my $new_user_name = delete($conf->{user_name})) {
         system("sed -i -e 's:Group=$current_group:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
         system("sed -i -e 's:/home/$current_user/:/home/$new_user_name/:g' /usr/lib/systemd/system/bb-code-server.service");
     }
-    if( -d "/opt/vsx-examples/") {
-        system("chown -R $new_user_name:$current_group /opt/vsx-examples/");
-    }
     $enable_lightdm = 1;
     $call_reboot = 1;
 }
@@ -246,6 +243,16 @@ if (my $legacy_rndis_support = delete($conf->{legacy_rndis_support})) {
         logger('info', "Enabling Legacy RNDIS support");
         system("sed -i -e 's:USB_RNDIS_DISABLED=yes:#USB_RNDIS_DISABLED=yes:g' /etc/default/bb-boot");
         $call_reboot = 1;
+    }
+}
+
+if (my $new_usb_enable_dhcp = delete($conf->{usb_enable_dhcp})) {
+    if( -f "/etc/bbb.io/templates/usb0-DHCP.network") {
+        if( -d "/etc/systemd/network/") {
+            logger('info', "USB: Enable DHCP for USB");
+            system("cp /etc/bbb.io/templates/usb0-DHCP.network /etc/systemd/network/usb0.network");
+            $call_reboot = 1;
+        }
     }
 }
 
@@ -422,6 +429,9 @@ q(# This file will be automatically evaluated and installed at next boot
 
 # timezone - Set the system timezone.
 #timezone=America/Chicago
+
+# usb_enable_dhcp - enable usb gadget to startup in dhcp mode, useful for Win/Mac with ICS enabled
+#usb_enable_dhcp=yes
 
 # enable_ufw - enable ufw firewall (https://en.wikipedia.org/wiki/Uncomplicated_Firewall)
 #enable_ufw=yes

@@ -53,6 +53,9 @@
 # timezone - Set the system timezone.
 #timezone=America/Chicago
 
+# usb_enable_dhcp - enable usb gadget to startup in dhcp mode, useful for Win/Mac with ICS enabled
+#usb_enable_dhcp=yes
+
 # enable_ufw - enable ufw firewall (https://en.wikipedia.org/wiki/Uncomplicated_Firewall)
 #enable_ufw=yes
 
