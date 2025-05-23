@@ -1,6 +1,7 @@
-  * 20230222 - 08.06.00.007 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=commit;h=2944354aca1f95525c30d625cb17672930e72572
-  * 20230522 - v2.9.0 - https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/log/?h=v2.9.0
-  * 20230707 - 3.22.0 - https://github.com/OP-TEE/optee_os/commits/3.22.0
+  * 20250407 - v2025.04 - https://github.com/u-boot/u-boot/releases/tag/v2025.04
+  * 20250508 - 11.00.13 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.13
+  * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
+  * 20250425 - v2.12.2 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.2
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly

@@ -11,7 +11,7 @@ TARGETDIR=bb-u-boot-beagleboneai64
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=08.06.00.007
+TILF_TAG=11.00.13
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmware.git"
@@ -21,7 +21,7 @@ TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmwar
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
 #TFA_TAG=master
-TFA_TAG=v2.9.0
+TFA_TAG=lts-v2.12.2
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/trusted-firmware-a.git"
@@ -31,19 +31,21 @@ TFA_BOARD=generic
 #HEAD: https://github.com/OP-TEE/optee_os
 #TAGS: https://github.com/OP-TEE/optee_os/tags
 #OPTEE_TAG=master
-OPTEE_TAG=3.22.0
+OPTEE_TAG=4.6.0
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-j721e
 
 #U-Boot
-UBOOT_CFG_CORTEXR="j721e_evm_r5_defconfig"
-UBOOT_CFG_CORTEXA="j721e_evm_a72_defconfig"
-UB_TAG="v2021.01-ti-08.05.00.001"
-UB_REPO="https://openbeagle.org/beagleboard/u-boot.git"
-UB_TIBOOT=tiboot3.bin
-UB_DM=ipc_echo_testb_mcu1_0_release_strip.xer5f
+UBOOT_CFG_CORTEXR="j721e_beagleboneai64_r5_defconfig"
+UBOOT_CFG_CORTEXA="j721e_beagleboneai64_a72_defconfig"
+UB_TAG="v2025.04-Beagle"
+UB_REPO="https://github.com/beagleboard/u-boot.git"
+UB_TIBOOT=tiboot3-j721e-gp-evm.bin
+UB_ITB=sysfw-j721e-gp-evm.itb
+UB_TISPL=tispl.bin_unsigned
+UB_IMG=u-boot.img_unsigned
 
 override_dh_strip:
 	# Just disable for now...
@@ -62,14 +64,15 @@ override_dh_auto_configure:
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_TAG) $(UB_REPO) --depth=5 ./tmp/u-boot/
 	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UBOOT_CFG_CORTEXR)
-	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf-
+	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
 	cp -v ./tmp/CORTEXR/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
+	cp -v ./tmp/CORTEXR/$(UB_ITB) ./tmp/pkg/sysfw.itb
 	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UBOOT_CFG_CORTEXA)
-	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- ATF=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin DM=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/ti-dm/j721e/$(UB_DM)
+	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
-	cp -v ./tmp/CORTEXA/tispl.bin ./tmp/pkg/tispl.bin
-	cp -v ./tmp/CORTEXA/u-boot.img ./tmp/pkg/u-boot.img
+	cp -v ./tmp/CORTEXA/$(UB_TISPL) ./tmp/pkg/tispl.bin
+	cp -v ./tmp/CORTEXA/$(UB_IMG) ./tmp/pkg/u-boot.img
 
 %:
 	dh $@

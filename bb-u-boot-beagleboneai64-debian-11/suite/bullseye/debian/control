@@ -4,7 +4,6 @@ Priority: extra
 Maintainer: Robert Nelson <robertcnelson@gmail.com>
 Build-Depends:
  debhelper (>= 9)
- , bb-k3-image-gen-j721e-evm
  , bc
  , bison
  , ca-certificates
@@ -23,7 +22,6 @@ Build-Depends:
  , python3-yaml
  , rsync
  , swig
- , wget
  , u-boot-tools
  , uuid-dev
  , yamllint
@@ -31,11 +29,9 @@ Standards-Version: 4.5.1
 
 Package: bb-u-boot-beagleboneai64
 Architecture: arm64
-Pre-Depends:
- bb-k3-image-gen-j721e-evm
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , mmc-utils
-Description: bb-u-boot-beagleboneai64
- bb-u-boot-beagleboneai64
+Description: beagleboard.org u-boot for beagleboneai64
+ beagleboard.org u-boot for beagleboneai64
