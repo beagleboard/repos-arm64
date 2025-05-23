@@ -25,6 +25,12 @@ fi
 
 cp -v /usr/lib/firmware/ti-connectivity/git/cc33xx-conf.bin /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin
 
+if [ -f /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin ] ; then
+	rm /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin
+fi
+
+cp -v /usr/lib/firmware/ti-connectivity/git/cc33xx_2nd_loader.bin /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin
+
 case "$1" in
 	configure)
 		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then
