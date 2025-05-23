@@ -11,7 +11,7 @@ TARGETDIR=bb-u-boot-beagley-ai
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG=10.00.06
+TILF_TAG=11.00.14
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmware.git"
@@ -21,7 +21,7 @@ TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmwar
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/tags
 #TAGS: https://github.com/ARM-software/arm-trusted-firmware/commits/master/
 #TFA_TAG=master
-TFA_TAG=lts-v2.12.2
+TFA_TAG=lts-v2.12.3
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/trusted-firmware-a.git"
@@ -38,7 +38,9 @@ OPTEE_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/optee_os.git"
 OPTEE_PLATFORM=k3-am62x
 
 #U-Boot
-UB_TAG="v2023.04-ti-09.02.00.009-BeagleY-AI-Production"
+UBOOT_CFG_CORTEXR="am67a_beagley_ai_r5_defconfig"
+UBOOT_CFG_CORTEXA="am67a_beagley_ai_a53_defconfig"
+UB_TAG="v2025.07-rc2-Beagle"
 UB_REPO="https://github.com/beagleboard/u-boot.git"
 UB_TIBOOT=tiboot3-j722s-hs-fs-evm.bin
 UB_TISPL=tispl.bin
@@ -56,15 +58,15 @@ override_dh_auto_configure:
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin ./tmp/pkg/
 	cp -v ./tmp/trusted-firmware-a/build/k3/$(TFA_BOARD)/release/bl31.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/optee_os/ ; git clone -b $(OPTEE_TAG) $(OPTEE_REPO) --depth=5 ./tmp/optee_os/
-	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(OPTEE_PLATFORM) CFG_WITH_SOFTWARE_PRNG=y CFG_ARM64_core=y all
+	make -C ./tmp/optee_os/ -j8 O=../optee CROSS_COMPILE=arm-linux-gnueabihf- CROSS_COMPILE64=aarch64-linux-gnu- CFLAGS= LDFLAGS= PLATFORM=$(OPTEE_PLATFORM) CFG_ARM64_core=y all
 	cp -v ./tmp/optee/core/tee-pager_v2.bin ./tmp/pkg/
 	cp -v ./tmp/optee/core/tee-pager_v2.bin /opt/u-boot/$(TARGETDIR)/
 	mkdir -p ./tmp/u-boot/ ; git clone -b $(UB_TAG) $(UB_REPO) --depth=5 ./tmp/u-boot/
-	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- j722s_evm_r5_defconfig am67a_beagley_ai_r5.config
+	make -C ./tmp/u-boot -j1 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- $(UBOOT_CFG_CORTEXR)
 	make -C ./tmp/u-boot -j8 O=../CORTEXR CROSS_COMPILE=arm-linux-gnueabihf- BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXR/
 	cp -v ./tmp/CORTEXR/$(UB_TIBOOT) ./tmp/pkg/tiboot3.bin
-	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- j722s_evm_a53_defconfig am67a_beagley_ai_a53.config
+	make -C ./tmp/u-boot -j1 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- $(UBOOT_CFG_CORTEXA)
 	make -C ./tmp/u-boot -j8 O=../CORTEXA CROSS_COMPILE=aarch64-linux-gnu- BL31=/opt/u-boot/$(TARGETDIR)/bl31.bin TEE=/opt/u-boot/$(TARGETDIR)/tee-pager_v2.bin BINMAN_INDIRS=/opt/u-boot/$(TARGETDIR)/ti-linux-firmware/
 	ls -lha ./tmp/CORTEXA/
 	cp -v ./tmp/CORTEXA/$(UB_TISPL) ./tmp/pkg/tispl.bin
