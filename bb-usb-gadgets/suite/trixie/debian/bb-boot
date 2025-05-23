@@ -8,6 +8,3 @@
 # USB_UMTPRD_DISABLED=yes #disable the loading of the MTP client.
 ##USB_UMTPRD_DISABLED=yes
 USB_UMTPRD_CONFIG="/etc/bbb.io/templates/bbb-umtprd.conf"
-
-# Mainline Linux is removing RNDIS Support, NCM works in Windows 11...
-USB_RNDIS_DISABLED=yes

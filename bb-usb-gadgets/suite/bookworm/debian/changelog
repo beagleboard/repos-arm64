@@ -1,8 +1,9 @@
-bb-usb-gadgets (1.20250522.1-0~bookworm+20250522) bookworm; urgency=low
+bb-usb-gadgets (1.20250523.0-0~bookworm+20250523) bookworm; urgency=low
 
   * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
   * Update NCM for Window 10 - https://forum.beagleboard.org/t/pocketbeagle-2-usb-network-access-from-windows-usb-ncm-driver/42001
+  * trixie - drop usb1 (rndis)
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 May 2025 17:57:20 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 May 2025 08:59:56 -0500
 

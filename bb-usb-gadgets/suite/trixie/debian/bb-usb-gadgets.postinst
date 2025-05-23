@@ -10,10 +10,6 @@ if [ ! -f /etc/systemd/network/usb0.network ] ; then
 	cp -v /etc/bbb.io/templates/usb0-DHCPServer.network /etc/systemd/network/usb0.network
 fi
 
-if [ ! -f /etc/systemd/network/usb1.network ] ; then
-	cp -v /etc/bbb.io/templates/usb1-DHCPServer.network /etc/systemd/network/usb1.network
-fi
-
 if [ ! -d /etc/systemd/system/systemd-networkd-wait-online.service.d/ ] ; then
 	mkdir -p /etc/systemd/system/systemd-networkd-wait-online.service.d/ || true
 fi
