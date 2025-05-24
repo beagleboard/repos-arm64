@@ -146,37 +146,6 @@ do_some_k3 () {
 	msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
 }
 
-do_jammy () {
-	#22.04
-	arch="arm64"
-	dist="jammy"
-	debhelper="13"
-	wfile="control"
-	generate_header
-
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxmodule="sgx-23.1"
-
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
-
-	unset_all
-
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
-	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
-
-	msg="mainline"  ; var="arm64"     ; ver="STABLE"  ; current_kernel ; generate_mainline_kernel
-	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
-
-	do_some_k3
-
-	changelog
-}
-
 do_noble () {
 	#24.04
 	arch="arm64"

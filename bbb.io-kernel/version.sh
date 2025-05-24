@@ -2,7 +2,7 @@
 
 package_name="bbb.io-kernel"
 debian_pkg_name="${package_name}"
-package_version="1.20250523.0"
+package_version="1.20250524.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20250523"
-bookworm_version="~bookworm+20250523"
-trixie_version="~trixie+20250523"
-noble_version="~noble+20250523"
+bullseye_version="~bullseye+20250524"
+bookworm_version="~bookworm+20250524"
+trixie_version="~trixie+20250524"
+noble_version="~noble+20250524"
