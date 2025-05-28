@@ -26,7 +26,6 @@ Depends:
  , lua5.1
  , psmisc
  , iw
- , unattended-upgrades
  , ufw
 Description: System tweaks for the Generic Systems
  Various modifications to improve the performance or user experience.
