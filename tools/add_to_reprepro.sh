@@ -17,7 +17,7 @@ run () {
 }
 
 runner () {
-	repo="${base}${dist}-arm64/"
+	repo="${base}${dist}/"
 	if [ -d ./suite/${suite}/ ] ; then
 		echo ${suite}
 		run
@@ -25,12 +25,15 @@ runner () {
 }
 
 start_run () {
-	dist="debian"
+	dist="debian-arm64"
 	deb_arch="arm64"
 	suite="bullseye" ; runner
 	suite="bookworm" ; runner
-	suite="trixie" ; runner
 	suite="noble" ; runner
+	suite="trixie" ; runner
+
+	dist="debian-trixie-arm64"
+	suite="trixie" ; runner
 }
 
 if [ ! -f /tmp/cron.lock ] ; then
