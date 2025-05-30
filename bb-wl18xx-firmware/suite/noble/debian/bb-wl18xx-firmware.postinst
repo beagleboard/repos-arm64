@@ -20,16 +20,23 @@ fi
 cp -v /usr/lib/firmware/ti-connectivity/git/${WLFW} /usr/lib/firmware/ti-connectivity/wl18xx-fw-4.bin
 
 if [ -f /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin ] ; then
-	rm /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin
+	rm /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin || true
 fi
 
 cp -v /usr/lib/firmware/ti-connectivity/git/cc33xx-conf.bin /usr/lib/firmware/ti-connectivity/cc33xx-conf.bin
 
 if [ -f /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin ] ; then
-	rm /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin
+	rm /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin || true
 fi
 
 cp -v /usr/lib/firmware/ti-connectivity/git/cc33xx_2nd_loader.bin /usr/lib/firmware/ti-connectivity/cc33xx_2nd_loader.bin
+
+
+if [ -f /usr/lib/firmware/ti-connectivity/cc33xx_fw.bin ] ; then
+	rm /usr/lib/firmware/ti-connectivity/cc33xx_fw.bin || true
+fi
+
+cp -v /usr/lib/firmware/ti-connectivity/git/cc33xx_fw.bin /usr/lib/firmware/ti-connectivity/cc33xx_fw.bin
 
 case "$1" in
 	configure)
