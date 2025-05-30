@@ -1,0 +1,9 @@
+debian/install.sh /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+debian/install-microsd.sh /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+tmp/pkg/tispl.bin /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
+tmp/pkg/u-boot.img /opt/u-boot/bb-u-boot-pocketbeagle2-mainline
