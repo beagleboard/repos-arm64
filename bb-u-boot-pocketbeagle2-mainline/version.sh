@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-pocketbeagle2-mainline"
 debian_pkg_name="${package_name}"
-package_version="2025.07.20250526.1"
+package_version="2025.07.20250526.2"
 package_source=""
 src_dir=""
 
