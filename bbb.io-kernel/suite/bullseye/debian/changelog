@@ -1,15 +1,7 @@
-bbb.io-kernel (1.20250603.0-0~bullseye+20250603) bullseye; urgency=low
+bbb.io-kernel (1.20250603.1-0~bullseye+20250603) bullseye; urgency=low
 
   * Kernel Updates
-  * linux-image-6.12.24-ti-arm64-r40
-  * linux-image-6.12.31-arm64-k3-r24
-  * linux-image-6.13.12-arm64-k3-r21
-  * linux-image-6.14.9-arm64-k3-r17
-  * linux-image-6.15.0-arm64-k3-r12
-  * linux-image-6.6.58-ti-arm64-r28
-  * linux-image-6.6.58-ti-rt-arm64-r28
-  * linux-image-6.6.87-arm64-k3-r39
-  * linux-image-6.6.87-rt-arm64-k3-r39
+  * linux-image-6.12.24-ti-arm64-r41
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 03 Jun 2025 09:13:03 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 03 Jun 2025 11:48:03 -0500
 
