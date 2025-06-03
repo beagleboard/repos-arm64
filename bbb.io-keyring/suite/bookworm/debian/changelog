@@ -1,6 +1,6 @@
-bbb.io-keyring (1.20250520.0-0~bookworm+20250520) bookworm; urgency=low
+bbb.io-keyring (1.20250602.0-0~bookworm+20250603) bookworm; urgency=low
 
-  * Rebuild bbb.io-keyring_1.20250520.0-0 for repos.rcn-ee.com
+  * Rebuild bbb.io-keyring_1.20250602.0-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 May 2025 12:25:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 03 Jun 2025 09:11:41 -0500
 

@@ -1,4 +1,6 @@
 debian/rcn-ee-archive-keyring.gpg /usr/share/keyrings/
-debian/rcn-ee-trixie-archive-keyring.pgp /usr/share/keyrings/
+debian/rcn-ee-2025-archive-keyring.gpg /usr/share/keyrings/
 debian/beagle.list /etc/bbb.io/templates/apt/
+debian/beagle.sources /etc/bbb.io/templates/apt/
 debian/sbuild.list /etc/bbb.io/templates/apt/
+debian/sbuild.sources /etc/bbb.io/templates/apt/
