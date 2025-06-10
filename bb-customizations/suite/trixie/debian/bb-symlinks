@@ -53,3 +53,25 @@ do
 
 	i=$(($i+1))
 done
+
+if [ -d /sys/devices/platform/seven-segments-left/ ] ; then
+	chgrp gpio /sys/devices/platform/seven-segments-left/linedisp.*/map_seg7
+	chmod g=u /sys/devices/platform/seven-segments-left/linedisp.*/map_seg7
+
+	chgrp gpio /sys/devices/platform/seven-segments-left/linedisp.*/message
+	chmod g=u /sys/devices/platform/seven-segments-left/linedisp.*/message
+
+	chgrp gpio /sys/devices/platform/seven-segments-left/linedisp.*/scroll_step_ms
+	chmod g=u /sys/devices/platform/seven-segments-left/linedisp.*/scroll_step_ms
+fi
+
+if [ -d /sys/devices/platform/seven-segments-right/ ] ; then
+	chgrp gpio /sys/devices/platform/seven-segments-right/linedisp.*/map_seg7
+	chmod g=u /sys/devices/platform/seven-segments-right/linedisp.*/map_seg7
+
+	chgrp gpio /sys/devices/platform/seven-segments-right/linedisp.*/message
+	chmod g=u /sys/devices/platform/seven-segments-right/linedisp.*/message
+
+	chgrp gpio /sys/devices/platform/seven-segments-right/linedisp.*/scroll_step_ms
+	chmod g=u /sys/devices/platform/seven-segments-right/linedisp.*/scroll_step_ms
+fi

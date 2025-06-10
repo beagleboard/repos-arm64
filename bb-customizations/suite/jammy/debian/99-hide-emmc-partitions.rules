@@ -1,3 +1,0 @@
-#FROM: https://github.com/devuan/arm-sdk/blob/master/extra/chromeacer/etc/udev/rules.d/99-hide-emmc-partitions.rules
-KERNEL=="mmcblk0*", ENV{UDISKS_IGNORE}="1"
-KERNEL=="mmcblk1*", ENV{UDISKS_IGNORE}="1"
