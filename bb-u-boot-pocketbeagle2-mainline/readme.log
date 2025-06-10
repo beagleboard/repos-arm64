@@ -4,3 +4,4 @@
   * 20250522 - v2.13.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.13.0
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
+  * compressed /Image.gz by default

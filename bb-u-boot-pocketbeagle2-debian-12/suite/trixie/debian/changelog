@@ -1,11 +1,12 @@
-bb-u-boot-pocketbeagle2 (2025.07.20250526.0-0~trixie+20250606) trixie; urgency=low
+bb-u-boot-pocketbeagle2 (2025.07.20250609.0-0~trixie+20250610) trixie; urgency=low
 
-  * 20250526 - v2025.07-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc3
-  * 20250530 - 11.00.15 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.15
+  * 20250609 - v2025.07-rc4 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc4
+  * 20250606 - 11.01.01 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.01
   * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
   * 20250522 - v2.13.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.13.0
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
+  * compressed /Image.gz by default
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Jun 2025 13:05:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 10 Jun 2025 17:05:12 -0500
 
