@@ -1,4 +1,4 @@
-bb-customizations (1.20250610.0-0~noble+20250610) noble; urgency=low
+bb-customizations (1.20250610.1-0~noble+20250610) noble; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules
@@ -6,5 +6,5 @@ bb-customizations (1.20250610.0-0~noble+20250610) noble; urgency=low
   * disable automatic pwm export, need to find a new way
   * add xfce slideshow example from NM
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 10 Jun 2025 15:26:52 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 10 Jun 2025 15:55:38 -0500
 

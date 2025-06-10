@@ -1,6 +1,6 @@
 [Unit]
 Description=BeagleBoard Generate Symlinks
-Before=ssh.service
+After=systemd-modules-load.service local-fs.target
 
 [Service]
 Type=oneshot
