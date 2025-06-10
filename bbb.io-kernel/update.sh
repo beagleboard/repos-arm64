@@ -137,13 +137,14 @@ unset_all () {
 }
 
 do_some_k3 () {
-	msg="6.9-k3"    ; var="k3-arm64"    ; ver="V69X"  ; current_kernel ; generate_kernel_k3
 	msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
 	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
+#LTS 6.12.x
 	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
 	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
 	msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
 	msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
+	msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
 }
 
 do_noble () {
