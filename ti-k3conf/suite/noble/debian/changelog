@@ -1,8 +1,8 @@
-ti-k3conf (0.3.0-0.git20250522.0-0~noble+20250605) noble; urgency=low
+ti-k3conf (0.3.0-0.git20250522.1-0~noble+20250612) noble; urgency=low
 
   * k3conf 0.3.0
   * https://git.ti.com/cgit/k3conf/k3conf/
   * K3CONF currently supports AM654, J721E, J7200, AM64x, AM62x, J721S2, J784S4, J722S, AM62Ax and AM62Px devices
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Jun 2025 19:20:11 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 12 Jun 2025 09:57:27 -0500
 
