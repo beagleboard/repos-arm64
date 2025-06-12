@@ -6,9 +6,6 @@ DEB_BUILD_OPTIONS=noautodbgsym
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-configure:
-	dh_auto_configure -- -Dstatic_exe=ON
-
 %:
 	dh $@
 
