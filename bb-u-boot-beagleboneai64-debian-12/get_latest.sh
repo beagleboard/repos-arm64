@@ -10,7 +10,7 @@ dl_src () {
 
 
 copy_all () {
-#	cp -v ./src/${wfile} ./suite/bullseye/debian/
+	cp -v ./src/${wfile} ./suite/bullseye/debian/
 	cp -v ./src/${wfile} ./suite/bookworm/debian/
 	cp -v ./src/${wfile} ./suite/trixie/debian/
 	cp -v ./src/${wfile} ./suite/jammy/debian/
