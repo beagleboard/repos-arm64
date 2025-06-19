@@ -20,6 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
+bullseye_version="~bullseye+20250619"
 bookworm_version="~bookworm+20250612"
 trixie_version="~trixie+20250612"
 noble_version="~noble+20250612"
