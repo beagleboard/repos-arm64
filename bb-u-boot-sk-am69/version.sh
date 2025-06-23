@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-sk-am69"
 debian_pkg_name="${package_name}"
-package_version="2025.07.20250428.0"
+package_version="2025.07.20250609.0"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20250429"
+bookworm_version="~bookworm+20250623"
+trixie_version="~trixie+20250623"
