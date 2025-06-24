@@ -1,6 +1,6 @@
-  * 20250526 - v2025.07-rc3 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc3
-  * 20250522 - 11.00.14 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.00.14
+  * 20250623 - v2025.07-rc5 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc5
+  * 20250619 - 11.01.03 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.03
   * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
-  * 20250523 - v2.12.3 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.3
+  * 20250620 - v2.12.4 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.4
   * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
   * initrd + overlays with this u-boot has some side affects
