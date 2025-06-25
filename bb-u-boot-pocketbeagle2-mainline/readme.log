@@ -1,7 +1,7 @@
-  * 20250609 - v2025.07-rc4 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc4
-  * 20250606 - 11.01.01 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.01
+  * 20250623 - v2025.07-rc5 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc5
+  * 20250619 - 11.01.03 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.03
   * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
-  * 20250522 - v2.13.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.13.0
+  * 20250620 - v2.12.4 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.4
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
   * compressed /Image.gz by default
