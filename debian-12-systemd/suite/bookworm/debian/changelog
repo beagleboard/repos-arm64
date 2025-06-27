@@ -1,8 +1,16 @@
-systemd (254.22-1~bpo12+1bbbio0~bookworm+20250214) bookworm; urgency=low
+systemd (254.26-1~bpo12+1bbbio0~bookworm+20250627) bookworm; urgency=low
 
-  * Rebuild systemd_254.22-1~bpo12+1 for repos.rcn-ee.com
+  * Rebuild systemd_254.26-1~bpo12+1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 14 Feb 2025 16:57:45 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 27 Jun 2025 16:43:26 -0500
+
+systemd (254.26-1~bpo12+1) bookworm-backports; urgency=medium
+
+  * New upstream version 254.26 (fixes CVE-2025-4598)
+  * Refresh patch to remove fuzz from 252.37
+  * Fix tzdata test dependencies
+
+ -- Luca Boccassi <bluca@debian.org>  Fri, 30 May 2025 15:35:30 +0100
 
 systemd (254.22-1~bpo12+1) bookworm-backports; urgency=medium
 

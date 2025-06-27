@@ -6,7 +6,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="systemd"
 debian_pkg_name="${package_name}"
-package_version="254.22"
+package_version="254.26"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="${package_name}-stable-${package_version}"
 
@@ -20,4 +20,4 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio0"
 
-bookworm_version="~bookworm+20250214"
+bookworm_version="~bookworm+20250627"
