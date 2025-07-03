@@ -1,6 +1,6 @@
-bbb.io-keyring (1.20250602.0-0~bullseye+20250603) bullseye; urgency=low
+bbb.io-keyring (1.20250701.1-0~bullseye+20250703) bullseye; urgency=low
 
-  * Rebuild bbb.io-keyring_1.20250602.0-0 for repos.rcn-ee.com
+  * Rebuild bbb.io-keyring_1.20250701.1-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 03 Jun 2025 09:11:41 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 03 Jul 2025 12:55:17 -0500
 
