@@ -1,8 +1,8 @@
-bb-u-boot-beagleboneai64-mainline (2025.07.20250623.0-0~noble+20250625) noble; urgency=low
+bb-u-boot-beagleboneai64-mainline (2025.07.20250707.0-0~noble+20250708) noble; urgency=low
 
-  * 20250623 - v2025.07-rc5 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc5
-  * 20250619 - 11.01.03 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.03
-  * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
+  * 20250707 - v2025.07 - https://github.com/u-boot/u-boot/releases/tag/v2025.07
+  * 20250702 - 11.01.05 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.05
+  * 20250627 - 4.7.0-rc1 - https://github.com/OP-TEE/optee_os/commits/4.7.0-rc1
   * 20250620 - v2.12.4 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.4
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -12,5 +12,5 @@ bb-u-boot-beagleboneai64-mainline (2025.07.20250623.0-0~noble+20250625) noble; u
   * extlinux.conf, unify labels to make flasher change more generic
   * compressed /Image.gz by default
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 Jun 2025 10:30:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Jul 2025 17:53:22 -0500
 
