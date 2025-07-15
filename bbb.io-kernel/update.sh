@@ -60,6 +60,14 @@ generate_kernel_ti () {
 		if [ "x${sgxam62}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-am62-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
+		else
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+				echo " rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
 		fi
 		echo "Description: BeagleBoard.org TI sgx modules for ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-am62 in Debian." >> ./suite/${dist}/debian/${wfile}
@@ -74,6 +82,14 @@ generate_kernel_ti () {
 		if [ "x${sgxj721e}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-j721e-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
+		else
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+				echo " rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
 		fi
 		echo "Description: BeagleBoard.org TI sgx modules for ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-j721e in Debian." >> ./suite/${dist}/debian/${wfile}
@@ -88,6 +104,14 @@ generate_kernel_ti () {
 		if [ "x${sgxj722s}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
 			echo " ti-${sgxmodule}-j722s-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
+		else
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+				echo " rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
 		fi
 		echo "Description: BeagleBoard.org TI sgx modules for ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} for k3-j722s in Debian." >> ./suite/${dist}/debian/${wfile}
@@ -102,6 +126,10 @@ generate_mainline_kernel () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
+		if [ "x${rtw88}" = "xenabled" ] ; then
+			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+			echo " rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		fi
 		echo "Description: BeagleBoard.org Mainline Kernel.org" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install Mainline in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
@@ -115,6 +143,10 @@ generate_kernel_k3 () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
+		if [ "x${rtw88}" = "xenabled" ] ; then
+			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+			echo " rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		fi
 		echo "Description: BeagleBoard.org ${msg} Kernel.org Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg}-arm64 for in Debian." >> ./suite/${dist}/debian/${wfile}
 	fi
@@ -134,6 +166,7 @@ unset_all () {
 	unset sgxj721e
 	unset sgxj722s
 	unset sgxmodule
+	unset rtw88
 }
 
 do_some_k3 () {
@@ -171,6 +204,7 @@ do_noble () {
 	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-24.2"
+	rtw88="enabled"
 	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 	unset_all
 
@@ -238,6 +272,7 @@ do_bookworm () {
 	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-24.2"
+	rtw88="enabled"
 	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 	unset_all
 
@@ -274,6 +309,7 @@ do_trixie () {
 	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-24.2"
+	rtw88="enabled"
 	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
 	unset_all
 
