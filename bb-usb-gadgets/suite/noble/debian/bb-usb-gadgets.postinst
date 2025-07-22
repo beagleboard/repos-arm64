@@ -26,14 +26,4 @@ if [ ! -f /etc/default/bb-boot ] ; then
 	cp -v /etc/bbb.io/templates/bb-boot /etc/default/bb-boot
 fi
 
-if [ ! -f /etc/systemd/resolved.conf.d/dns_servers.conf ] ; then
-	mkdir -p /etc/systemd/resolved.conf.d/
-	cp -v /etc/bbb.io/templates/dns_servers.conf /etc/systemd/resolved.conf.d/
-fi
-
-if [ ! -f /etc/systemd/resolved.conf.d/fallback_dns.conf ] ; then
-	mkdir -p /etc/systemd/resolved.conf.d/
-	cp -v /etc/bbb.io/templates/fallback_dns.conf /etc/systemd/resolved.conf.d/
-fi
-
 #DEBHELPER#
