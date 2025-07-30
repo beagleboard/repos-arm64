@@ -174,9 +174,9 @@ do_some_k3 () {
 	msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
 #LTS 6.12.x
 	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
 
 	rtw88="enabled"
+	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
 	msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
 	msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
 	unset rtw88
