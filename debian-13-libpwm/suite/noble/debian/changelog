@@ -1,0 +1,19 @@
+libpwm (1.0~rc2-1bbbio0~noble+20250731) noble; urgency=low
+
+  * Rebuild libpwm_1.0~rc2-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 31 Jul 2025 12:09:11 -0500
+
+libpwm (1.0~rc2-1) unstable; urgency=medium
+
+  * New upstream release
+    This brings several fixes and and a copy of the pwm uapi header to support
+    compiling the character device support with older linux headers.
+
+ -- Uwe Kleine-König <ukleinek@debian.org>  Mon, 21 Jul 2025 14:15:51 +0200
+
+libpwm (1.0~rc1-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1103353)
+
+ -- Uwe Kleine-König <ukleinek@debian.org>  Wed, 16 Apr 2025 18:16:07 +0200

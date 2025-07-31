@@ -1,0 +1,50 @@
+Source: libpwm
+Section: libs
+Priority: optional
+Maintainer: Uwe Kleine-König <ukleinek@debian.org>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.7.2
+Vcs-Git: https://git.kernel.org/pub/scm/linux/kernel/git/ukleinek/libpwm.git -b debian/latest
+
+Package: libpwm-dev
+Section: libdevel
+Architecture: linux-any
+Multi-Arch: same
+Depends:
+ libpwm0 (= ${binary:Version}),
+ ${misc:Depends},
+Description: C library for interacting with Linux PWM devices - development files
+ This library allows one to drive Linux PWM devices from userspace.
+ Traditionally this is done using files in `/sys/class/pwm`. This lib also
+ supports an character device interface. Both ABIs are supported transparently.
+ .
+ This package contains the static variant of that library and the development
+ headers.
+
+Package: libpwm0
+Architecture: linux-any
+Multi-Arch: same
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Pre-Depends:
+ ${misc:Pre-Depends}
+Description: C library for interacting with Linux PWM devices - shared library
+ This library allows one to drive Linux PWM devices from userspace.
+ Traditionally this is done using files in `/sys/class/pwm`. This lib also
+ supports an character device interface. Both ABIs are supported transparently.
+ .
+ This package contains the runtime library.
+
+Package: libpwm-tools
+Architecture: linux-any
+Multi-Arch: no
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: Simple tools manipulating Linux PWM devices
+ The tools included here (pwmset, pwmround, pwmtestperf) are test tools mainly
+ used during development and testing of Linux PWM drivers. But if you just want
+ to make an LED blink, these are useful, too.
