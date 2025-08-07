@@ -323,8 +323,12 @@ if ($call_reboot) {
     logger('info', "**********************************************");
     logger('info', "Rebooting after setting up sysconf.txt options");
     logger('info', "**********************************************");
+    system('sync');
     sleep 2;
-    system('systemctl', '--message="Rebooting after setting up sysconf.txt options"', 'reboot');
+    system('systemctl', '--message="Rebooting after setting up sysconf.txt options"', 'reboot', '--force');
+    logger('info', "**********************************************");
+    logger('info', "Reboot called...");
+    logger('info', "**********************************************");
 }
 
 exit 0;
