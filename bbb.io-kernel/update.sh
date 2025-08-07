@@ -172,6 +172,12 @@ unset_all () {
 do_some_ti_trixie () {
 	rtw88="enabled"
 
+	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
+
+	sgxam62="enabled"
+	sgxj721e="enabled"
+	sgxj722s="enabled"
+
 	sgxmodule="sgx-23.3"
 	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
 	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
@@ -216,12 +222,6 @@ do_noble () {
 	generate_header
 
 	unset_all
-
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
-
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxj722s="enabled"
 
 	do_some_ti_trixie
 	do_some_k3_trixie
@@ -268,12 +268,6 @@ do_bookworm () {
 
 	unset_all
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
-
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxj722s="enabled"
-
 	do_some_ti_trixie
 	do_some_k3_trixie
 	do_mainline
@@ -290,12 +284,6 @@ do_trixie () {
 	generate_header
 
 	unset_all
-
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
-
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxj722s="enabled"
 
 	do_some_ti_trixie
 	do_some_k3_trixie
