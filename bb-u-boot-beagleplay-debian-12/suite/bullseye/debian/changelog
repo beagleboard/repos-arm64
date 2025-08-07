@@ -1,9 +1,9 @@
-bb-u-boot-beagleplay (2025.07.20250707.0-0~bullseye+20250708) bullseye; urgency=low
+bb-u-boot-beagleplay (2025.07.20250707.1-0~bullseye+20250807) bullseye; urgency=low
 
   * 20250707 - v2025.07 - https://github.com/u-boot/u-boot/releases/tag/v2025.07
-  * 20250702 - 11.01.05 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.05
-  * 20250627 - 4.7.0-rc1 - https://github.com/OP-TEE/optee_os/commits/4.7.0-rc1
-  * 20250620 - v2.12.4 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.4
+  * 20250732 - 11.01.08 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.08
+  * 20250711 - 4.7.0 - https://github.com/OP-TEE/optee_os/commits/4.7.0
+  * 20250725 - v2.12.5 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.5
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly
@@ -12,5 +12,5 @@ bb-u-boot-beagleplay (2025.07.20250707.0-0~bullseye+20250708) bullseye; urgency=
   * extlinux.conf, unify labels to make flasher change more generic
   * compressed /Image.gz by default
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 08 Jul 2025 18:54:46 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Aug 2025 14:03:48 -0500
 
