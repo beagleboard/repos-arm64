@@ -169,21 +169,19 @@ unset_all () {
 	unset rtw88
 }
 
-do_some_ti_bookworm () {
+do_some_ti_trixie () {
+	rtw88="enabled"
+
 	sgxmodule="sgx-23.3"
 	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
 	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
-}
 
-do_some_ti_trixie () {
-	rtw88="enabled"
 	sgxmodule="sgx-24.2"
 	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-24.2"
 	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
-
 	unset_all
 }
 
@@ -225,7 +223,6 @@ do_noble () {
 	sgxj721e="enabled"
 	sgxj722s="enabled"
 
-	do_some_ti_bookworm
 	do_some_ti_trixie
 	do_some_k3_trixie
 	do_mainline
@@ -277,7 +274,6 @@ do_bookworm () {
 	sgxj721e="enabled"
 	sgxj722s="enabled"
 
-	do_some_ti_bookworm
 	do_some_ti_trixie
 	do_some_k3_trixie
 	do_mainline
@@ -301,7 +297,6 @@ do_trixie () {
 	sgxj721e="enabled"
 	sgxj722s="enabled"
 
-	do_some_ti_bookworm
 	do_some_ti_trixie
 	do_some_k3_trixie
 	do_mainline
