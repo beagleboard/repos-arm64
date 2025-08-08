@@ -326,9 +326,11 @@ if ($call_reboot) {
     system('sync');
     sleep 2;
     system('systemctl', '--message="Rebooting after setting up sysconf.txt options"', 'reboot', '--force');
-    logger('info', "**********************************************");
-    logger('info', "Reboot called...");
-    logger('info', "**********************************************");
+    logger('info', "Reboot called... and ignored...");
+    logger('info', "echo s > /proc/sysrq-trigger");
+    system("echo s > /proc/sysrq-trigger");
+    logger('info', "echo b > /proc/sysrq-trigger");
+    system("echo b > /proc/sysrq-trigger");
 }
 
 exit 0;
