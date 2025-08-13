@@ -152,6 +152,14 @@ generate_kernel_k3 () {
 	fi
 }
 
+unset_all () {
+	unset sgxam62
+	unset sgxj721e
+	unset sgxj722s
+	unset sgxmodule
+	unset rtw88
+}
+
 changelog () {
 	git diff ./suite/${dist}/debian/control > /tmp/changelog-readme.diff
 	cat /tmp/changelog-readme.diff | grep +Pre-Depends: | awk '{print $2}' | awk -F ',' '{print $1}' > /tmp/changelog-readme.cat
@@ -159,14 +167,6 @@ changelog () {
 	echo "  * Kernel Updates" > suite/${dist}/readme.log
 	ts "  *" /tmp/changelog-readme.sort >> suite/${dist}/readme.log
 	cat suite/${dist}/readme.log
-}
-
-unset_all () {
-	unset sgxam62
-	unset sgxj721e
-	unset sgxj722s
-	unset sgxmodule
-	unset rtw88
 }
 
 do_some_ti_trixie () {
@@ -207,6 +207,7 @@ do_some_k3_trixie () {
 	unset rtw88
 
 	msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
+	msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 }
 
 do_mainline () {
@@ -292,8 +293,26 @@ do_trixie () {
 	changelog
 }
 
+do_forky () {
+	#14.x
+	arch="arm64"
+	dist="forky"
+	debhelper="13"
+	wfile="control"
+	generate_header
+
+	unset_all
+
+	do_some_ti_trixie
+	do_some_k3_trixie
+	do_mainline
+
+	changelog
+}
+
 do_noble
-do_bullseye
+#do_bullseye
 do_bookworm
 do_trixie
+do_forky
 
