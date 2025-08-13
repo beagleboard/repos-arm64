@@ -1,0 +1,5 @@
+Types: deb
+URIs: https://rcn-ee.com/repos/debian-forky-arm64/
+Suites: forky
+Components: main 
+Signed-By: /usr/share/keyrings/rcn-ee-2025-archive-keyring.gpg

@@ -2,7 +2,7 @@
 
 package_name="bbb.io-keyring"
 debian_pkg_name="${package_name}"
-package_version="1.20250701.1"
+package_version="1.20250813.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20250703"
-bookworm_version="~bookworm+20250703"
-trixie_version="~trixie+20250703"
-noble_version="~noble+20250703"
+bookworm_version="~bookworm+20250813"
+trixie_version="~trixie+20250813"
+forky_version="~forky+20250813"
+noble_version="~noble+20250813"
