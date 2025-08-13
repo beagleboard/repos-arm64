@@ -27,13 +27,15 @@ runner () {
 start_run () {
 	dist="debian-arm64"
 	deb_arch="arm64"
-	suite="bullseye" ; runner
 	suite="bookworm" ; runner
 	suite="noble" ; runner
 	suite="trixie" ; runner
 
 	dist="debian-trixie-arm64"
 	suite="trixie" ; runner
+
+	dist="debian-forky-arm64"
+	suite="forky" ; runner
 }
 
 if [ ! -f /tmp/cron.lock ] ; then

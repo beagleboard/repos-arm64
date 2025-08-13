@@ -77,16 +77,16 @@ runner () {
 
 start_run () {
 	deb_arch="arm64"
-	suite="bullseye" ; runner
 	suite="bookworm" ; runner
 	suite="trixie" ; runner
+	suite="forky" ; runner
 	suite="noble" ; runner
 }
 
 cleanup () {
-	suite="bullseye" ; cleanup_suite
 	suite="bookworm" ; cleanup_suite
 	suite="trixie" ; cleanup_suite
+	suite="forky" ; cleanup_suite
 	suite="noble" ; cleanup_suite
 }
 
