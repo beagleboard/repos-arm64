@@ -22,7 +22,7 @@ apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
 
-#debian trixie:
+#debian forky:
 sudo sbuild-shell source:forky-arm64-sbuild
 
 echo "deb http://192.168.1.10/debian forky main" > /etc/apt/sources.list ; \
