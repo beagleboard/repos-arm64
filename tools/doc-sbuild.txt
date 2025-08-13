@@ -1,16 +1,5 @@
 # These assume the keyring package was built prior to setting up the etc/apt/sources.list
 
-#debian bullseye:
-sudo sbuild-shell source:bullseye-arm64-sbuild
-
-echo "deb http://192.168.1.10/debian bullseye main" > /etc/apt/sources.list ; \
-echo "deb-src http://192.168.1.10/debian bullseye main" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-arm64 bullseye main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-arm64 bullseye main" >> /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
-cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
-
 #debian bookworm:
 sudo sbuild-shell source:bookworm-arm64-sbuild
 
@@ -29,17 +18,6 @@ echo "deb http://192.168.1.10/debian trixie main" > /etc/apt/sources.list ; \
 echo "deb-src http://192.168.1.10/debian trixie main" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-arm64 trixie main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-arm64 trixie main" >> /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
-cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
-
-#ubuntu 22.04 jammy:
-sudo sbuild-shell source:jammy-arm64-sbuild
-
-echo "deb http://192.168.1.10:3142/ports.ubuntu.com jammy main universe" > /etc/apt/sources.list ; \
-echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com jammy main universe" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-arm64 jammy main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-arm64 jammy main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
