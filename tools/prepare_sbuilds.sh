@@ -46,10 +46,10 @@ echo "\$distribution = 'bookworm';" >> ~/.sbuildrc
 mirror="http://${proxy}${debian_server}"
 #deboot="sid"
 
-dist="bullseye"
-arch="arm64"
-options="--include=ca-certificates --exclude=debfoster"
-setup_update_sbuild
+#dist="bullseye"
+#arch="arm64"
+#options="--include=ca-certificates --exclude=debfoster"
+#setup_update_sbuild
 
 dist="bookworm"
 arch="arm64"
@@ -57,6 +57,11 @@ options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
 dist="trixie"
+arch="arm64"
+options="--include=ca-certificates --exclude=debfoster"
+setup_update_sbuild
+
+dist="forky"
 arch="arm64"
 options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
