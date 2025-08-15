@@ -1,4 +1,4 @@
-bb-u-boot-pocketbeagle2 (2025.07.20250707.2-0~trixie+20250815) trixie; urgency=low
+bb-u-boot-pocketbeagle2 (2025.07.20250707.2-0~forky+20250815) forky; urgency=low
 
   * 20250707 - v2025.07 - https://github.com/u-boot/u-boot/releases/tag/v2025.07
   * 20250732 - 11.01.08 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.08
