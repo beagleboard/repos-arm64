@@ -26,8 +26,8 @@ Depends:
  , xfconf
  , xfdesktop4
  , xfwm4
- , adwaita-qt
- , qt5ct
+ , adwaita-qt6
+ , qt6ct
  , wireless-regdb
  , bbb.io-keyring
  , gnome-desktop3-data
