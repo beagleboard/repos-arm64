@@ -62,6 +62,36 @@ Recommends:
 Description: BeagleBoard.org TI sgx modules for 6.12-ti Branch
  This metapackage will install linux-image-6.12-ti for k3-j722s in Debian.
 
+Package: bbb.io-kernel-6.12-k3
+Section: metapackages
+Architecture: arm64
+Pre-Depends: linux-image-6.12.42-arm64-k3-r28
+Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Recommends:
+ rtw88-modules-6.12.42-arm64-k3-r28
+Description: BeagleBoard.org 6.12-k3 Kernel.org Branch
+ This metapackage will install linux-image-6.12-k3-arm64 for in Debian.
+
+Package: bbb.io-kernel-6.15-k3
+Section: metapackages
+Architecture: arm64
+Pre-Depends: linux-image-6.15.10-arm64-k3-r22
+Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Recommends:
+ rtw88-modules-6.15.10-arm64-k3-r22
+Description: BeagleBoard.org 6.15-k3 Kernel.org Branch
+ This metapackage will install linux-image-6.15-k3-arm64 for in Debian.
+
+Package: bbb.io-kernel-6.16-k3
+Section: metapackages
+Architecture: arm64
+Pre-Depends: linux-image-6.16.1-arm64-k3-r11
+Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Recommends:
+ rtw88-modules-6.16.1-arm64-k3-r11
+Description: BeagleBoard.org 6.16-k3 Kernel.org Branch
+ This metapackage will install linux-image-6.16-k3-arm64 for in Debian.
+
 Package: bbb.io-kernel-6.17-k3
 Section: metapackages
 Architecture: arm64

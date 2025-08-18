@@ -1,8 +1,9 @@
-bbb.io-kernel (1.20250807.1-0~trixie+20250807) trixie; urgency=low
+bbb.io-kernel (1.20250818.0-0~forky+20250818) forky; urgency=low
 
   * Kernel Updates
-  * linux-image-5.10.168-ti-arm64-r119
-  * linux-image-6.12.35-ti-arm64-r49
+  * linux-image-6.12.42-arm64-k3-r28
+  * linux-image-6.15.10-arm64-k3-r22
+  * linux-image-6.16.1-arm64-k3-r11
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 07 Aug 2025 16:53:26 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 18 Aug 2025 09:19:36 -0500
 
