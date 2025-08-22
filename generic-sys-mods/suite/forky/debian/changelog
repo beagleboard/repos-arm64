@@ -1,4 +1,4 @@
-generic-sys-mods (1.20250822.0-0~bookworm+20250822) bookworm; urgency=low
+generic-sys-mods (1.20250822.0-0~forky+20250822) forky; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
