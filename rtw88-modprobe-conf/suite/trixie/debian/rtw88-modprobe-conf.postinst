@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+if [ ! -f /etc/modprobe.d/rtw88.conf ] ; then
+	cp -v /etc/bbb.io/modules/rtw88.conf /etc/modprobe.d/rtw88.conf
+fi
+
+#DEBHELPER#

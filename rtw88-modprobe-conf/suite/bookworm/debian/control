@@ -1,0 +1,14 @@
+Source: rtw88-modprobe-conf
+Section: misc
+Priority: optional
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Homepage: https://github.com/lwfinger/rtw88
+
+Package: rtw88-modprobe-conf
+Architecture: arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: rtw88 rtw88.conf
+ rtw88 modprobe rtw88.conf

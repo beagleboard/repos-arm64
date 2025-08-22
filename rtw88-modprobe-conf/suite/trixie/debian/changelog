@@ -1,0 +1,6 @@
+rtw88-modprobe-conf (1.20250822.0-0~trixie+20250822) trixie; urgency=low
+
+  * Rebuild rtw88-modprobe-conf_1.20250822.0-0 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Aug 2025 14:16:42 -0500
+
