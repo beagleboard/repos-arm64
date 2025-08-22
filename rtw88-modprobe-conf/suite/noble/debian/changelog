@@ -1,4 +1,4 @@
-rtw88-modprobe-conf (1.20250822.1-0~forky+20250822) forky; urgency=low
+rtw88-modprobe-conf (1.20250822.1-0~noble+20250822) noble; urgency=low
 
   * Rebuild rtw88-modprobe-conf_1.20250822.1-0 for repos.rcn-ee.com
 

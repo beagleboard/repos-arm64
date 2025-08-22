@@ -2,7 +2,7 @@
 
 package_name="rtw88-modprobe-conf"
 debian_pkg_name="${package_name}"
-package_version="1.20250822.0"
+package_version="1.20250822.1"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bullseye_version="~bullseye+20250618"
 bookworm_version="~bookworm+20250822"
 trixie_version="~trixie+20250822"
 forky_version="~forky+20250822"
