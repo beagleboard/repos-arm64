@@ -33,7 +33,8 @@ Pre-Depends:
  bbb.io-kernel-5.10-ti
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-5.10.168-ti-arm64-r119
+ rtw88-modprobe-conf
+ , rtw88-modules-5.10.168-ti-arm64-r119
 Description: BeagleBoard.org TI sgx modules for 5.10-ti Branch
  This metapackage will install linux-image-5.10-ti for k3-am62 in Debian.
 
@@ -44,7 +45,8 @@ Pre-Depends:
  bbb.io-kernel-5.10-ti
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-5.10.168-ti-arm64-r119
+ rtw88-modprobe-conf
+ , rtw88-modules-5.10.168-ti-arm64-r119
 Description: BeagleBoard.org TI sgx modules for 5.10-ti Branch
  This metapackage will install linux-image-5.10-ti for k3-j721e in Debian.
 
@@ -55,7 +57,8 @@ Pre-Depends:
  bbb.io-kernel-5.10-ti
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-5.10.168-ti-arm64-r119
+ rtw88-modprobe-conf
+ , rtw88-modules-5.10.168-ti-arm64-r119
 Description: BeagleBoard.org TI sgx modules for 5.10-ti Branch
  This metapackage will install linux-image-5.10-ti for k3-j722s in Debian.
 
@@ -75,6 +78,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-am62-modules-6.1.83-ti-arm64-r72
+ , rtw88-modprobe-conf
  , rtw88-modules-6.1.83-ti-arm64-r72
 Description: BeagleBoard.org TI sgx modules for 6.1-ti Branch
  This metapackage will install linux-image-6.1-ti for k3-am62 in Debian.
@@ -87,6 +91,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j721e-modules-6.1.83-ti-arm64-r72
+ , rtw88-modprobe-conf
  , rtw88-modules-6.1.83-ti-arm64-r72
 Description: BeagleBoard.org TI sgx modules for 6.1-ti Branch
  This metapackage will install linux-image-6.1-ti for k3-j721e in Debian.
@@ -99,6 +104,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j722s-modules-6.1.83-ti-arm64-r72
+ , rtw88-modprobe-conf
  , rtw88-modules-6.1.83-ti-arm64-r72
 Description: BeagleBoard.org TI sgx modules for 6.1-ti Branch
  This metapackage will install linux-image-6.1-ti for k3-j722s in Debian.
@@ -119,6 +125,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-am62-modules-6.1.83-ti-rt-arm64-r72
+ , rtw88-modprobe-conf
  , rtw88-modules-6.1.83-ti-rt-arm64-r72
 Description: BeagleBoard.org TI sgx modules for 6.1-rt-ti Branch
  This metapackage will install linux-image-6.1-rt-ti for k3-am62 in Debian.
@@ -131,6 +138,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j721e-modules-6.1.83-ti-rt-arm64-r72
+ , rtw88-modprobe-conf
  , rtw88-modules-6.1.83-ti-rt-arm64-r72
 Description: BeagleBoard.org TI sgx modules for 6.1-rt-ti Branch
  This metapackage will install linux-image-6.1-rt-ti for k3-j721e in Debian.
@@ -143,6 +151,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j722s-modules-6.1.83-ti-rt-arm64-r72
+ , rtw88-modprobe-conf
  , rtw88-modules-6.1.83-ti-rt-arm64-r72
 Description: BeagleBoard.org TI sgx modules for 6.1-rt-ti Branch
  This metapackage will install linux-image-6.1-rt-ti for k3-j722s in Debian.
@@ -163,6 +172,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-am62-modules-6.6.58-ti-arm64-r30
+ , rtw88-modprobe-conf
  , rtw88-modules-6.6.58-ti-arm64-r30
 Description: BeagleBoard.org TI sgx modules for 6.6-ti Branch
  This metapackage will install linux-image-6.6-ti for k3-am62 in Debian.
@@ -175,6 +185,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j721e-modules-6.6.58-ti-arm64-r30
+ , rtw88-modprobe-conf
  , rtw88-modules-6.6.58-ti-arm64-r30
 Description: BeagleBoard.org TI sgx modules for 6.6-ti Branch
  This metapackage will install linux-image-6.6-ti for k3-j721e in Debian.
@@ -187,6 +198,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j722s-modules-6.6.58-ti-arm64-r30
+ , rtw88-modprobe-conf
  , rtw88-modules-6.6.58-ti-arm64-r30
 Description: BeagleBoard.org TI sgx modules for 6.6-ti Branch
  This metapackage will install linux-image-6.6-ti for k3-j722s in Debian.
@@ -207,6 +219,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-am62-modules-6.6.58-ti-rt-arm64-r30
+ , rtw88-modprobe-conf
  , rtw88-modules-6.6.58-ti-rt-arm64-r30
 Description: BeagleBoard.org TI sgx modules for 6.6-rt-ti Branch
  This metapackage will install linux-image-6.6-rt-ti for k3-am62 in Debian.
@@ -219,6 +232,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j721e-modules-6.6.58-ti-rt-arm64-r30
+ , rtw88-modprobe-conf
  , rtw88-modules-6.6.58-ti-rt-arm64-r30
 Description: BeagleBoard.org TI sgx modules for 6.6-rt-ti Branch
  This metapackage will install linux-image-6.6-rt-ti for k3-j721e in Debian.
@@ -231,6 +245,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j722s-modules-6.6.58-ti-rt-arm64-r30
+ , rtw88-modprobe-conf
  , rtw88-modules-6.6.58-ti-rt-arm64-r30
 Description: BeagleBoard.org TI sgx modules for 6.6-rt-ti Branch
  This metapackage will install linux-image-6.6-rt-ti for k3-j722s in Debian.
@@ -251,6 +266,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-am62-modules-6.12.35-ti-arm64-r50
+ , rtw88-modprobe-conf
  , rtw88-modules-6.12.35-ti-arm64-r50
 Description: BeagleBoard.org TI sgx modules for 6.12-ti Branch
  This metapackage will install linux-image-6.12-ti for k3-am62 in Debian.
@@ -263,6 +279,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j721e-modules-6.12.35-ti-arm64-r50
+ , rtw88-modprobe-conf
  , rtw88-modules-6.12.35-ti-arm64-r50
 Description: BeagleBoard.org TI sgx modules for 6.12-ti Branch
  This metapackage will install linux-image-6.12-ti for k3-j721e in Debian.
@@ -275,6 +292,7 @@ Pre-Depends:
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j722s-modules-6.12.35-ti-arm64-r50
+ , rtw88-modprobe-conf
  , rtw88-modules-6.12.35-ti-arm64-r50
 Description: BeagleBoard.org TI sgx modules for 6.12-ti Branch
  This metapackage will install linux-image-6.12-ti for k3-j722s in Debian.
@@ -285,7 +303,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.6.99-arm64-k3-r40
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.6.99-arm64-k3-r40
+ rtw88-modprobe-conf
+ , rtw88-modules-6.6.99-arm64-k3-r40
 Description: BeagleBoard.org 6.6-k3 Kernel.org Branch
  This metapackage will install linux-image-6.6-k3-arm64 for in Debian.
 
@@ -295,7 +314,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.6.99-rt-arm64-k3-r40
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.6.99-rt-arm64-k3-r40
+ rtw88-modprobe-conf
+ , rtw88-modules-6.6.99-rt-arm64-k3-r40
 Description: BeagleBoard.org 6.6-rt-k3 Kernel.org Branch
  This metapackage will install linux-image-6.6-rt-k3-arm64 for in Debian.
 
@@ -305,7 +325,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.12.42-arm64-k3-r28
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.12.42-arm64-k3-r28
+ rtw88-modprobe-conf
+ , rtw88-modules-6.12.42-arm64-k3-r28
 Description: BeagleBoard.org 6.12-k3 Kernel.org Branch
  This metapackage will install linux-image-6.12-k3-arm64 for in Debian.
 
@@ -315,7 +336,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.13.12-arm64-k3-r22
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.13.12-arm64-k3-r22
+ rtw88-modprobe-conf
+ , rtw88-modules-6.13.12-arm64-k3-r22
 Description: BeagleBoard.org 6.13-k3 Kernel.org Branch
  This metapackage will install linux-image-6.13-k3-arm64 for in Debian.
 
@@ -325,7 +347,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.14.10-arm64-k3-r19
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.14.10-arm64-k3-r19
+ rtw88-modprobe-conf
+ , rtw88-modules-6.14.10-arm64-k3-r19
 Description: BeagleBoard.org 6.14-k3 Kernel.org Branch
  This metapackage will install linux-image-6.14-k3-arm64 for in Debian.
 
@@ -335,7 +358,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.15.10-arm64-k3-r22
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.15.10-arm64-k3-r22
+ rtw88-modprobe-conf
+ , rtw88-modules-6.15.10-arm64-k3-r22
 Description: BeagleBoard.org 6.15-k3 Kernel.org Branch
  This metapackage will install linux-image-6.15-k3-arm64 for in Debian.
 
@@ -345,7 +369,8 @@ Architecture: arm64
 Pre-Depends: linux-image-6.16.1-arm64-k3-r11
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
- rtw88-modules-6.16.1-arm64-k3-r11
+ rtw88-modprobe-conf
+ , rtw88-modules-6.16.1-arm64-k3-r11
 Description: BeagleBoard.org 6.16-k3 Kernel.org Branch
  This metapackage will install linux-image-6.16-k3-arm64 for in Debian.
 
