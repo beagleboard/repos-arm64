@@ -1,26 +1,20 @@
-mesa (25.2.0-1bbbio3~trixie+20250814) trixie; urgency=low
+mesa (25.2.1-1bbbio0~trixie+20250822) trixie; urgency=low
 
-  * Rebuild mesa_25.2.0-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.2.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Aug 2025 14:35:57 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Aug 2025 19:58:11 -0500
 
-mesa (25.2.0-1bbbio2~trixie+20250814) trixie; urgency=low
+mesa (25.2.1-1) unstable; urgency=medium
 
-  * Rebuild mesa_25.2.0-1 for repos.rcn-ee.com
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * rules: Don't clean up .pc dir. (Closes: #1111295)
+  * control, rules: Drop quilt again, unnecessary now.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Aug 2025 14:34:38 -0500
+  [ Fabio Pedretti ]
+  * rules: Disable sse2 disabling on i386.
 
-mesa (25.2.0-1bbbio1~trixie+20250814) trixie; urgency=low
-
-  * Rebuild mesa_25.2.0-1 for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Aug 2025 14:32:44 -0500
-
-mesa (25.2.0-1bbbio0~trixie+20250814) trixie; urgency=low
-
-  * Rebuild mesa_25.2.0-1 for repos.rcn-ee.com
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Aug 2025 14:29:39 -0500
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 22 Aug 2025 14:01:57 +0300
 
 mesa (25.2.0-1) experimental; urgency=medium
 
