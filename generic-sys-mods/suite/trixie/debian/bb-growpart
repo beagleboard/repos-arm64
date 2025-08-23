@@ -6,7 +6,13 @@ fi
 
 if [ ! "x${ROOT_DRIVE}" = "x" ] ; then
 	if [ ! "x${ROOT_PARTITION}" = "x" ] ; then
-		echo "growpart ${ROOT_DRIVE} ${ROOT_PARTITION}"
-		growpart ${ROOT_DRIVE} ${ROOT_PARTITION} || true
+		echo "growpart -v ${ROOT_DRIVE} ${ROOT_PARTITION}"
+		growpart -v ${ROOT_DRIVE} ${ROOT_PARTITION} || true
+		if [ -f /etc/bbb.io/growpart ] ; then
+			rm -rf /etc/bbb.io/growpart || true
+			sync
+		fi
+		touch /etc/bbb.io/growpart_done || true
+		sync
 	fi
 fi

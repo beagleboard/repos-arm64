@@ -10,11 +10,19 @@ is_btrfs=$(cat /proc/cmdline | grep btrfs || true)
 if [ "x${is_btrfs}" = "x" ] ; then
 	if [ ! "x${ROOT_DRIVE}" = "x" ] ; then
 		if [ ! "x${ROOT_PARTITION}" = "x" ] ; then
-			echo "resize2fs ${ROOT_DRIVE}p${ROOT_PARTITION}"
-			resize2fs ${ROOT_DRIVE}p${ROOT_PARTITION}
+			echo "resize2fs -p ${ROOT_DRIVE}p${ROOT_PARTITION}"
+			resize2fs -p ${ROOT_DRIVE}p${ROOT_PARTITION}
+			if [ -f /etc/bbb.io/growpart_done ] ; then
+				rm -rf /etc/bbb.io/growpart_done || true
+				sync
+			fi
 		fi
 	fi
 else
 	echo "btrfs filesystem resize max /"
 	btrfs filesystem resize max /
+	if [ -f /etc/bbb.io/growpart_done ] ; then
+		rm -rf /etc/bbb.io/growpart_done || true
+		sync
+	fi
 fi

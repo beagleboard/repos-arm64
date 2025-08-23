@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -f /etc/bbb.io/ssh_regenerate ] ; then
+	rm -f -v /etc/ssh/ssh_host_*_key || true
+	rm -f -v /etc/ssh/ssh_host_*_key.pub || true
+	sync
+	ssh-keygen -A -v || true
+	sync
+	rm -rf /etc/bbb.io/ssh_regenerate || true
+	sync
+fi
