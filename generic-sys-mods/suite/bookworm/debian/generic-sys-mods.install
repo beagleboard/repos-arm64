@@ -1,5 +1,6 @@
 debian/bb-growpart /usr/bin
 debian/bb-resizefs /usr/bin
+debian/bb-regenerate-ssh-host-keys /usr/bin
 debian/bb-setup-mac-address /usr/bin
 debian/beagle-camera-setup /usr/sbin
 debian/beagle-kversion /usr/sbin
