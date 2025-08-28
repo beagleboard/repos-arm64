@@ -15,17 +15,17 @@ main_install () {
 	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
 	echo "${package}: *****************"
 
-	echo "${package}: Installing: ms-python.python"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --install-extension ms-python.python --force || true
-	echo "${package}: *****************"
+#	echo "${package}: Installing: ms-python.python"
+#	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --install-extension ms-python.python --force || true
+#	echo "${package}: *****************"
 
-	echo "${package}: Installing: rust-lang.rust-analyzer"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --install-extension rust-lang.rust-analyzer --force || true
-	echo "${package}: *****************"
+#	echo "${package}: Installing: rust-lang.rust-analyzer"
+#	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --install-extension rust-lang.rust-analyzer --force || true
+#	echo "${package}: *****************"
 
-	echo "${package}: --list-extensions"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
-	echo "${package}: *****************"
+#	echo "${package}: --list-extensions"
+#	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
+#	echo "${package}: *****************"
 
 	chown -R 1000:1000 /opt/${package}/extensions/ || true
 

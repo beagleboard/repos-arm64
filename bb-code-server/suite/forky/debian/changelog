@@ -1,4 +1,4 @@
-bb-code-server (4.103.2-0bbbio0~bookworm+20250828) bookworm; urgency=low
+bb-code-server (4.103.2-0bbbio0~forky+20250828) forky; urgency=low
 
   * Changed
   * Updated to Code 1.103.2.
