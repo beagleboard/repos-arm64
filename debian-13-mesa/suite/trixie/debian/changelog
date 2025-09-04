@@ -1,8 +1,27 @@
-mesa (25.2.1-1bbbio0~trixie+20250822) trixie; urgency=low
+mesa (25.2.2-1bbbio0~trixie+20250904) trixie; urgency=low
 
-  * Rebuild mesa_25.2.1-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.2.2-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Aug 2025 19:58:11 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Sep 2025 11:03:42 -0500
+
+mesa (25.2.2-1) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * d/merge-vulkan-driver-manifests.sh: Remove library_arch from JSON manifests
+    (Closes: #1110523) (LP: #2121980)
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * patches: Fix FTBFS with glibc 2.42.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Sep 2025 08:44:46 +0300
+
+mesa (25.2.1-2) unstable; urgency=medium
+
+  * control, rules: Revert back to llvm-19 as -20 is not in unstable
+    yet.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 28 Aug 2025 17:34:14 +0300
 
 mesa (25.2.1-1) unstable; urgency=medium
 
