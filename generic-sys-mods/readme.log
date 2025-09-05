@@ -3,3 +3,4 @@
   * add basic bbbio-set-sysconf.service
   * raspi-config 20240424
   * we can support compressed /boot/firmare/Image.gz now thru u-boot
+  * PB2 just grab mac address from memory: Sergi_D1 : https://forum.beagleboard.org/t/inconsistent-mac-address-on-pb2/42330

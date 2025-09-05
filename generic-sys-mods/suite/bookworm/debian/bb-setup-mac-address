@@ -26,24 +26,49 @@ is_mac_valid () {
 	fi
 }
 
+get_am62_mac_address () {
+	#Thanks to Sergi_D1: https://forum.beagleboard.org/t/inconsistent-mac-address-on-pb2/42330
+	#PocketBeagle2
+	#Read values from memory addresses
+	mac1=$(k3conf read 0x43000200 32 | grep 'Value at addr ' | awk '{print $NF}')
+	mac2=$(k3conf read 0x43000204 32 | grep 'Value at addr ' | awk '{print $NF}')
+
+	#Format the last two bytes from mac2 and the first four bytes from mac1
+	last_two=$(printf "%04X" $mac2 | sed 's/../&:/g; s/:$//')
+	first_four=$(printf "%08X" $mac1 | sed 's/../&:/g; s/:$//')
+
+	mac_addr0="$last_two:$first_four"
+	echo "${log} ethernet@8000000: ${mac_addr0}"
+	is_mac_valid
+}
+
 get_mac_addr () {
 	unset mac_addr0
 	unset is_valid
 
-	mac_address="/proc/device-tree/bus@100000/bus@28380000/ethernet@46000000/ethernet-ports/port@1/local-mac-address"
-	if [ -f ${mac_address} ] ; then
-		mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
-		echo "${log} ethernet@46000000: ${mac_addr0}"
-		is_mac_valid
-	fi
+	board=$(cat /proc/device-tree/model | awk '{print $2}'| tr -d '\000')
 
-	#BeaglePlay
-	mac_address="/proc/device-tree/bus@f0000/ethernet@8000000/ethernet-ports/port@1/local-mac-address"
-	if [ -f ${mac_address} ] ; then
-		mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
-		echo "${log} ethernet@8000000: ${mac_addr0}"
-		is_mac_valid
-	fi
+	case "${board}" in
+	PocketBeagle2)
+		get_am62_mac_address
+		;;
+	*)
+		mac_address="/proc/device-tree/bus@100000/bus@28380000/ethernet@46000000/ethernet-ports/port@1/local-mac-address"
+		if [ -f ${mac_address} ] ; then
+			mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
+			echo "${log} ethernet@46000000: ${mac_addr0}"
+			is_mac_valid
+		fi
+
+		#BeaglePlay
+		mac_address="/proc/device-tree/bus@f0000/ethernet@8000000/ethernet-ports/port@1/local-mac-address"
+		if [ -f ${mac_address} ] ; then
+			mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
+			echo "${log} ethernet@8000000: ${mac_addr0}"
+			is_mac_valid
+		fi
+		;;
+	esac
 
 	#Some devices are showing a blank mac_addr0 [00:00:00:00:00:00], let's fix that up...
 	if [ "x${is_valid}" = "x" ] ; then

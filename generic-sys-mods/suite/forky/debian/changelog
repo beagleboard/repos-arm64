@@ -1,10 +1,11 @@
-generic-sys-mods (1.20250828.0-0~forky+20250828) forky; urgency=low
+generic-sys-mods (1.20250905.0-0~forky+20250905) forky; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
   * add basic bbbio-set-sysconf.service
   * raspi-config 20240424
   * we can support compressed /boot/firmare/Image.gz now thru u-boot
+  * PB2 just grab mac address from memory: Sergi_D1 : https://forum.beagleboard.org/t/inconsistent-mac-address-on-pb2/42330
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Aug 2025 09:48:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Sep 2025 11:59:41 -0500
 
