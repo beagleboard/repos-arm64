@@ -34,8 +34,8 @@ start_run () {
 	dist="debian-trixie-arm64"
 	suite="trixie" ; runner
 
-	dist="debian-forky-arm64"
-	suite="forky" ; runner
+#	dist="debian-forky-arm64"
+#	suite="forky" ; runner
 }
 
 if [ ! -f /tmp/cron.lock ] ; then
