@@ -189,7 +189,7 @@ start_run () {
 	deb_arch="arm64"
 	suite="bookworm" ; runner
 	suite="trixie" ; runner
-#	suite="forky" ; runner
+	suite="forky" ; runner
 	suite="noble" ; runner
 }
 
