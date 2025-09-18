@@ -29,7 +29,6 @@ start_run () {
 	deb_arch="arm64"
 	suite="bookworm" ; runner
 	suite="noble" ; runner
-	suite="trixie" ; runner
 
 	dist="debian-trixie-arm64"
 	suite="trixie" ; runner
