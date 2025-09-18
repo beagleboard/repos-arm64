@@ -1,8 +1,15 @@
-mesa (25.2.2-1bbbio0~trixie+20250904) trixie; urgency=low
+mesa (25.2.3-1bbbio0~trixie+20250918) trixie; urgency=low
 
-  * Rebuild mesa_25.2.2-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.2.3-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 04 Sep 2025 11:03:42 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 18 Sep 2025 15:05:24 -0500
+
+mesa (25.2.3-1) unstable; urgency=medium
+
+  * New upstream release. (LP: #2122654)
+  * patches: Fix crash on intel xe with 16kB page size. (Closes: #1115467)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 18 Sep 2025 11:08:11 +0300
 
 mesa (25.2.2-1) unstable; urgency=medium
 
