@@ -1,0 +1,75 @@
+zram-tools (0.3.7-1bbbio0~trixie+20250923) trixie; urgency=low
+
+  * Rebuild zram-tools_0.3.7-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 23 Sep 2025 09:58:32 -0500
+
+zram-tools (0.3.7-1) unstable; urgency=medium
+
+  * New upstream release
+    - Relax errors when some settings can't be applied (Closes: #988104)
+    - Remove mentions of lzo, no longer included in kernel (Closes: #1089511)
+    - Fix link in config file (Closes: #1092098)
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 07 Jan 2025 16:32:31 +0200
+
+zram-tools (0.3.5-1~exp1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Jonathan Carter ]
+  * New upstream release (Closes: #1068854, #983000)
+  * Fix package description (Closes: #1021808)
+  * Update standards version to 4.7.0
+  * Update copyright years
+  * Update watch file for new GitLab
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 19 Jun 2024 11:50:01 +0200
+
+zram-tools (0.3.3.1-2) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * Let dh_installsystemd choose the location of the unit
+    (Closes: #1054090)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Thu, 30 May 2024 16:20:52 +0200
+
+zram-tools (0.3.3.1-1) unstable; urgency=medium
+
+  * New upstream release
+    (Closes: #917643, #928439, #928443)
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 02 Nov 2020 16:36:59 +0200
+
+zram-tools (0.3.2.1-1) unstable; urgency=medium
+
+  * New upstream release
+    (Closes: #911748, #911746, #911747)
+  * Fix package description
+    (Closes: #913611)
+  * Upgrade to debhelper-compat (= 12)
+  * Update standards version to 4.3.0
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 28 Feb 2019 07:15:58 +0000
+
+zram-tools (0.3.2-1) unstable; urgency=medium
+
+  * New upstream release
+    (Closes: #910644, #910647, #910645)
+  * debian/copyright: Fix trailing whitespace
+  * debian/control:
+    - Fix trailing whitespace
+    - Fix Vcs-Git field
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 11 Oct 2018 11:51:26 +0200
+
+zram-tools (0.3.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #847833)
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 12 Sep 2018 11:23:50 +0200

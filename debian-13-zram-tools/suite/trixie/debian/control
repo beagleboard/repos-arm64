@@ -1,0 +1,25 @@
+Source: zram-tools
+Section: utils
+Priority: optional
+Maintainer: Jonathan Carter <jcc@debian.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.1
+Homepage: https://github.com/highvoltage/zram-tools
+Vcs-Browser: https://salsa.debian.org/debian/zram-tools
+Vcs-Git: https://salsa.debian.org/debian/zram-tools.git
+
+Package: zram-tools
+Architecture: all
+Depends: ${misc:Depends}, bc
+Description: utilities for working with zram
+ zram is a Linux kernel module that allows you to set up compressed
+ filesystems in RAM.
+ .
+ zram-tools uses this module to set up compressed swap space.
+ This is useful on systems with low memory or servers
+ running a large amount of services with data that's easily swappable
+ but that you may wish to swap back fast without sacrificing disk
+ bandwidth.
+ .
+ By default it allocates a maximum of 50% of memory, although it only
+ uses what it needs. You can configure this in /etc/default/zramswap.

@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_installsystemd:
+	dh_installsystemd --name=zramswap
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
