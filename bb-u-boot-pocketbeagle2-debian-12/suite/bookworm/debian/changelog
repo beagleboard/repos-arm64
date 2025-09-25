@@ -1,6 +1,6 @@
-bb-u-boot-pocketbeagle2 (2025.07.20250707.3-0~bookworm+20250923) bookworm; urgency=low
+bb-u-boot-pocketbeagle2 (2025.10.20250923.0-0~bookworm+20250925) bookworm; urgency=low
 
-  * 20250707 - v2025.07 - https://github.com/u-boot/u-boot/releases/tag/v2025.07
+  * 20250923 - v2025.10-rc5 - https://github.com/u-boot/u-boot/releases/tag/v2025.10-rc5
   * 20250911 - 11.01.14 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.14
   * 20250711 - 4.7.0 - https://github.com/OP-TEE/optee_os/commits/4.7.0
   * 20250829 - v2.12.6 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.6
@@ -8,5 +8,5 @@ bb-u-boot-pocketbeagle2 (2025.07.20250707.3-0~bookworm+20250923) bookworm; urgen
   * add techlab boot menu option
   * compressed /Image.gz by default
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 23 Sep 2025 08:32:33 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 25 Sep 2025 18:56:44 -0500
 
