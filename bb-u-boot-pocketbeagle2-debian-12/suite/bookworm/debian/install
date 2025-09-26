@@ -1,5 +1,7 @@
 debian/install.sh /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/install-microsd.sh /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/install-emmc.sh /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/erase-emmc.sh /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-pocketbeagle2
