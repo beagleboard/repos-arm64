@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-am625-osd625-brk"
 debian_pkg_name="${package_name}"
-package_version="2024.04.20241129.0"
+package_version="2024.04.20241129.1"
 package_source=""
 src_dir=""
 
@@ -20,4 +20,4 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20251008"
+bookworm_version="~bookworm+20251009"
