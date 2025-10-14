@@ -5,3 +5,4 @@
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
   * compressed /Image.gz by default
+  * Enable a extlinux.conf option to flash other media directly (PB2 eMMC)

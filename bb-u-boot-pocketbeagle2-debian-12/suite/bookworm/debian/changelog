@@ -1,4 +1,4 @@
-bb-u-boot-pocketbeagle2 (2025.10.20251006.0-0~bookworm+20251007) bookworm; urgency=low
+bb-u-boot-pocketbeagle2 (2025.10.20251006.1-0~bookworm+20251014) bookworm; urgency=low
 
   * 20251006 - v2025.10 - https://github.com/u-boot/u-boot/releases/tag/v2025.10
   * 20251003 - 11.01.17 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.17
@@ -7,6 +7,7 @@ bb-u-boot-pocketbeagle2 (2025.10.20251006.0-0~bookworm+20251007) bookworm; urgen
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
   * compressed /Image.gz by default
+  * Enable a extlinux.conf option to flash other media directly (PB2 eMMC)
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 07 Oct 2025 13:26:12 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 14 Oct 2025 09:38:30 -0500
 

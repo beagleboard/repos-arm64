@@ -4,6 +4,8 @@ debian/install-emmc.sh /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/erase-emmc.sh /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/emmc-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-pocketbeagle2
