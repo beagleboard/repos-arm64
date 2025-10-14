@@ -6,6 +6,10 @@ debian/microsd-extlinux.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/microsd-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/emmc-extlinux.conf /opt/u-boot/bb-u-boot-pocketbeagle2
 debian/emmc-extlinux-w-swap.conf /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/pb2-emmc-to-microsd /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/pb2-microsd-to-emmc /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/pb2-emmc-to-microsd-w-swap /opt/u-boot/bb-u-boot-pocketbeagle2
+debian/pb2-microsd-to-emmc-w-swap /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/bl31.bin /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/tee-pager_v2.bin /opt/u-boot/bb-u-boot-pocketbeagle2
 tmp/pkg/tiboot3.bin /opt/u-boot/bb-u-boot-pocketbeagle2
