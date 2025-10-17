@@ -1,0 +1,6 @@
+version: 5
+# check: uscan --report
+# update: gbp import-orig --upstream-vcs-tag=vX.Y.Z --uscan
+
+Source: https://www.kernel.org/pub/linux/libs/ell/
+Matching-Pattern: ell-@ANY_VERSION@\.tar\.xz
