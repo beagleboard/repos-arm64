@@ -1,8 +1,21 @@
-iwd (3.9-2bbbio1~trixie+20250814) trixie; urgency=low
+iwd (3.10-1bbbio0~trixie+20251017) trixie; urgency=low
 
-  * Rebuild iwd_3.9-2 for repos.rcn-ee.com
+  * Rebuild iwd_3.10-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 Aug 2025 14:20:51 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 17 Oct 2025 12:23:11 -0500
+
+iwd (3.10-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * update watch file:
+    + use file format version 5
+    + add usage comment
+  * unfuzz patch
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 25 Sep 2025 21:05:14 +0200
 
 iwd (3.9-2) unstable; urgency=medium
 
