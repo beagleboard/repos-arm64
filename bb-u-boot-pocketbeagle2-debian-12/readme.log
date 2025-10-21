@@ -6,3 +6,4 @@
   * add techlab boot menu option
   * compressed /Image.gz by default
   * Enable a extlinux.conf option to flash other media directly (PB2 eMMC)
+  * R5 routed to uart6 for U-Boot SPL
