@@ -1,0 +1,101 @@
+directx-headers (1.618.2-1bbbio0~trixie+20251025) trixie; urgency=low
+
+  * Rebuild directx-headers_1.618.2-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 25 Oct 2025 10:10:27 -0500
+
+directx-headers (1.618.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 21 Oct 2025 12:15:26 +0300
+
+directx-headers (1.618.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 01 Oct 2025 14:47:58 +0300
+
+directx-headers (1.614.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 10 Sep 2024 22:41:57 +0300
+
+directx-headers (1.613.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 18 Mar 2024 15:20:40 +0200
+
+directx-headers (1.611.0-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository, Security-Contact.
+  * Update standards version to 4.6.2, no changes needed.
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 06 Dec 2023 14:55:24 +0200
+
+directx-headers (1.610.2-2) unstable; urgency=medium
+
+  * Upload to sid.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 19 Jun 2023 15:01:35 +0300
+
+directx-headers (1.610.2-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Timo Aaltonen ]
+  * New upstream version.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 06 May 2023 11:45:21 +0300
+
+directx-headers (1.606.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 01 Sep 2022 08:39:09 +0300
+
+directx-headers (1.606.3+r1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * watch: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 29 Jul 2022 12:16:24 +0300
+
+directx-headers (1.602.0+r1-1) unstable; urgency=medium
+
+  * New upstream release. (LP: #1975624)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 01 Jun 2022 00:16:39 +0300
+
+directx-headers (1.600.10-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 02 Feb 2022 15:59:21 +0200
+
+directx-headers (1.4.9-1) unstable; urgency=medium
+
+  * New upstream release.
+  * copyright: The license is essentially Expat, make it so.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 24 May 2021 16:07:01 +0300
+
+directx-headers (1.0.2-1) unstable; urgency=medium
+
+  * control: Add an uploader, bump policy to 4.5.1.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 27 Feb 2021 21:58:53 +0200
+
+directx-headers (1.0.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #980789)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 22 Jan 2021 10:15:40 +0200
