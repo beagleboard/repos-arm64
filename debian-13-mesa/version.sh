@@ -4,9 +4,10 @@ mirror="http://http.debian.net/debian"
 
 package_name="mesa"
 debian_pkg_name="${package_name}"
-package_version="25.2.5"
+package_version="25.3.0~rc2"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
-src_dir="${package_name}-${package_version}"
+#src_dir="${package_name}-${package_version}"
+src_dir="${package_name}-25.3.0-rc2"
 
 git_repo=""
 git_sha=""
@@ -18,4 +19,4 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio0"
 
-trixie_version="~trixie+20251016"
+trixie_version="~trixie+20251025"

@@ -68,12 +68,11 @@ else
   confflags_DIRECT_RENDERING = -Dglx-direct=true
   confflags_GBM = -Dgbm=enabled
   confflags_GALLIUM += -Dgallium-extra-hud=true
-  confflags_GALLIUM += -Dgallium-vdpau=enabled
   confflags_GALLIUM += -Dlmsensors=enabled
 
   # Freedreno requires arm in addition
   ifneq (,$(filter arm arm64,$(DEB_HOST_ARCH_CPU)))
-	GALLIUM_DRIVERS += freedreno
+	GALLIUM_DRIVERS += freedreno rocket
   endif
 
   # etnaviv, tegra, vc4 and v3d kernel support are only available on armhf and arm64
@@ -95,6 +94,15 @@ else
   ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 i386 loong64 x32 ppc64el riscv64))
 	GALLIUM_DRIVERS += iris
 	VULKAN_DRIVERS += intel
+  endif
+
+  # Build imagination with tools
+  ifneq (,$(filter $(DEB_HOST_ARCH), arm64 riscv64))
+	VULKAN_DRIVERS += imagination
+	confflags_IMAGINATION = -Dimagination-srv=true
+	confflags_TOOLS = -Dtools=drm-shim,imagination
+  else
+	confflags_TOOLS = -Dtools=drm-shim
   endif
 
   ifneq (,$(filter $(DEB_HOST_ARCH), $(VALGRIND_ARCHS)))
@@ -179,23 +187,18 @@ confflags += \
 	-Dglvnd=enabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
-	-Dtools=drm-shim \
+	$(confflags_TOOLS) \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_GBM) \
 	$(confflags_GALLIUM) \
 	$(confflags_GLES) \
 	$(confflags_VALGRIND) \
-	$(confflags_TEFLON)
+	$(confflags_TEFLON) \
+	$(confflags_IMAGINATION)
 
 
 rewrite_wrap_files:
-	cp -r subprojects subprojects-save
-	for crate in paste proc-macro2 quote rustc-hash syn unicode-ident; \
-	do \
-		export crate_namever=`basename $$MESON_PACKAGE_CACHE_DIR/$$crate-*`; \
-		sed -e"/source.*/d" -e"s,$${crate}-.*,$${crate_namever}," -i subprojects/$${crate}.wrap; \
-	done
-	touch subprojects/rewrite
+	debian/get-wraps-from-cargo-registry.py --cargo-registry /usr/share/cargo/registry
 
 override_dh_clean: regen_control
 	dpkg-parsechangelog | awk '/^Version:/ {print $$2}' | sed 's/-.*//;s/~/-/' > VERSION
@@ -256,11 +259,6 @@ override_dh_install:
 	   debian/libgl1-mesa-dri/usr/lib/${DEB_HOST_MULTIARCH}/dri/
 
   ifneq ($(DEB_HOST_ARCH_OS), hurd)
-	# Copy the hardlinked vdpau drivers correctly.
-	install -m755 -d debian/mesa-vdpau-drivers/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/
-	mv debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/libvdpau*.so* \
-	   debian/mesa-vdpau-drivers/usr/lib/${DEB_HOST_MULTIARCH}/vdpau/
-
     ifeq (,$(filter pkg.mesa.nolibva,$(DEB_BUILD_PROFILES)))
 	# Copy the hardlinked va drivers correctly.
 	install -m755 -d debian/mesa-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
