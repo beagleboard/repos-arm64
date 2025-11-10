@@ -1,8 +1,20 @@
-mesa (25.3.0~rc2-1bbbio0~trixie+20251025) trixie; urgency=low
+mesa (25.3.0~rc4-1bbbio0~trixie+20251108) trixie; urgency=low
 
-  * Rebuild mesa_25.3.0~rc2-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.3.0~rc4-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 25 Oct 2025 10:18:47 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 08 Nov 2025 09:52:54 -0600
+
+mesa (25.3.0~rc4-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+  * rules: Enable anti-lag and screenshot vulkan layers.
+  * control: Limit rocket to arm64.
+  * Wrap-and-sort.
+  * control: Add libpng-dev build-dep for screenshot vulkan layer.
+  * mesa-vulkan-drivers: Add mesa-screenshot-control.py.
+  * mesa-vulkan-drivers.lintian-overrides: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 07 Nov 2025 12:54:12 +0200
 
 mesa (25.3.0~rc2-1) experimental; urgency=medium
 
