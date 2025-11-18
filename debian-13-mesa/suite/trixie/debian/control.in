@@ -62,7 +62,7 @@ Build-Depends:
  rustfmt [@RUSTICL_ARCHS@],
  spirv-tools (>= 2024.4~rc1) [@LLVM_ARCHS@],
  valgrind [@VALGRIND_ARCHS@],
- wayland-protocols (>= 1.38),
+ wayland-protocols (>= 1.41),
  x11proto-dev,
  zlib1g-dev
 Rules-Requires-Root: no

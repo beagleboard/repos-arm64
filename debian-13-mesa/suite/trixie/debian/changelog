@@ -1,8 +1,16 @@
-mesa (25.3.0~rc4-1bbbio0~trixie+20251108) trixie; urgency=low
+mesa (25.3.0-1bbbio0~trixie+20251117) trixie; urgency=low
 
-  * Rebuild mesa_25.3.0~rc4-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.3.0-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 08 Nov 2025 09:52:54 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 17 Nov 2025 20:00:07 -0600
+
+mesa (25.3.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * control: Bump wayland-protocols build-dep.
+  * watch: Fixed.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 17 Nov 2025 17:12:32 +0200
 
 mesa (25.3.0~rc4-1) experimental; urgency=medium
 
@@ -34,6 +42,21 @@ mesa (25.3.0~rc1-1) experimental; urgency=medium
   * control, rules: Drop mesa-vdpau-drivers, VDPAU got removed upstream.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Tue, 21 Oct 2025 18:22:18 +0300
+
+mesa (25.2.7-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Build-depend on spirv-tools-dev.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 14 Nov 2025 15:48:09 +0200
+
+mesa (25.2.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Drop renaming of rsqrtf, upstreamed.
+  * patches: Disable CCS for Intel Xe2. (LP: #2127717)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 30 Oct 2025 11:38:42 +0200
 
 mesa (25.2.5-1) unstable; urgency=medium
 
