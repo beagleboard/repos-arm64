@@ -2,7 +2,7 @@
 
 package_name="bbb.io-xfce4-desktop"
 debian_pkg_name="${package_name}"
-package_version="1.20250814.1"
+package_version="1.20251121.0"
 package_source=""
 src_dir=""
 
@@ -17,5 +17,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20250814"
-trixie_version="~trixie+20250814"
+bookworm_version="~bookworm+20251121"
+trixie_version="~trixie+20251121"
+forky_version="~forky+20251121"
