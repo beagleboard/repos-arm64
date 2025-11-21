@@ -18,8 +18,7 @@ run () {
 
 if [ ! "x${dist}" = "x" ] ; then
 	if [ ! "x${suite}" = "x" ] ; then
-		repo="${base}${dist}-arm64/"
-		deb_arch=arm64
+		repo="${base}${dist}/"
 		run
 	else
 		echo "no suite"
