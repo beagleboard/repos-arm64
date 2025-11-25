@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-beagleboneai64"
 debian_pkg_name="${package_name}"
-package_version="2025.10.20251006.2"
+package_version="2025.10.20251006.3"
 package_source=""
 src_dir=""
 
@@ -20,7 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20251121"
-trixie_version="~trixie+20251121"
-forky_version="~forky+20251121"
-noble_version="~noble+20251121"
+bookworm_version="~bookworm+20251125"
+trixie_version="~trixie+20251125"
+forky_version="~forky+20251125"
+noble_version="~noble+20251125"

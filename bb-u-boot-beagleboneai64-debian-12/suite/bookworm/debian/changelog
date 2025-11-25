@@ -1,7 +1,7 @@
-bb-u-boot-beagleboneai64 (2025.10.20251006.2-0~bookworm+20251121) bookworm; urgency=low
+bb-u-boot-beagleboneai64 (2025.10.20251006.3-0~bookworm+20251125) bookworm; urgency=low
 
   * 20251006 - v2025.10 - https://github.com/u-boot/u-boot/releases/tag/v2025.10
-  * 20251106 - 11.02.04 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.02.04
+  * 20251120 - 11.02.06 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.02.06
   * 20251024 - 4.8.0 - https://github.com/OP-TEE/optee_os/commits/4.8.0
   * 20251031 - v2.12.8 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/lts-v2.12.8
   * add extlinux.conf boot menu options over serial
@@ -12,5 +12,5 @@ bb-u-boot-beagleboneai64 (2025.10.20251006.2-0~bookworm+20251121) bookworm; urge
   * extlinux.conf, unify labels to make flasher change more generic
   * compressed /Image.gz by default
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 21 Nov 2025 16:45:09 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 25 Nov 2025 10:36:40 -0600
 
