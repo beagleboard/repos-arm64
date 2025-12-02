@@ -1,0 +1,75 @@
+#!/usr/bin/make -f
+
+# export DH_VERBOSE = 1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_CXXFLAGS_MAINT_APPEND = -Wno-error
+
+include /usr/share/dpkg/architecture.mk
+
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+CONFFLAGS += \
+	-Dv4l2=true
+endif
+
+ifneq (,$(filter i386,$(DEB_HOST_ARCH)))
+QCAM=disabled
+# See https://bugs.debian.org/1076986
+else
+QCAM=enabled
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+               --libexecdir=libexec/${DEB_HOST_MULTIARCH} \
+		-Dgstreamer=enabled \
+		-Dlibunwind=disabled \
+		-Dpycamera=enabled \
+		-Dqcam=$(QCAM) \
+		-Dtest=true \
+		$(CONFFLAGS) \
+		$(empty)
+
+# Only make the tests fail for key architectures
+override_dh_auto_test:
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armhf))
+	dh_auto_test
+else
+	-dh_auto_test
+endif
+
+override_dh_install-indep:
+ifeq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+	mv debian/tmp/usr/share/doc/libcamera-0.* debian/tmp/usr/share/doc/libcamera-doc
+endif
+	dh_install -X/.doctrees/
+
+execute_before_dh_install-arch:
+	cp ./obj-${DEB_HOST_GNU_TYPE}/src/apps/ipa-verify/ipa_verify \
+	   debian/tmp/usr/bin/
+
+override_dh_strip:
+	dh_strip -a
+	MESON_INSTALL_DESTDIR_PREFIX=. ./src/ipa/ipa-sign-install.sh \
+		./obj-${DEB_HOST_GNU_TYPE}/src/ipa-priv-key.pem \
+		debian/libcamera-ipa/usr/lib/${DEB_HOST_MULTIARCH}/libcamera/ipa_*.so
+	for IPA_MOD in debian/libcamera-ipa/usr/lib/*/libcamera/ipa_*.so; \
+	do \
+	  echo "Verifying signature of $${IPA_MOD}"; \
+	  ./obj-${DEB_HOST_GNU_TYPE}/src/apps/ipa-verify/ipa_verify $${IPA_MOD}; \
+	done
+
+execute_after_dh_fixperms:
+	find debian/ -name 'v4l2-compat.so' -exec chmod -x '{}' \;
+
+.PHONY: licensecheck
+licensecheck:
+	licensecheck --deb-machine -r * \
+		> debian/copyright_newhints
+	cmp debian/copyright_hints debian/copyright_newhints \
+		&& rm debian/copyright_newhints
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
