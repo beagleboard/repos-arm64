@@ -17,6 +17,7 @@ Build-Depends: debhelper-compat (= 13),
                libgtest-dev <!nocheck>,
                libjpeg-dev <!pkg.libcamera.nosdl>,
                liblttng-ust-dev [!hurd-any !i386],
+               libpisp-dev [arm64 armel armhf],
                libpython3-dev <!pkg.libcamera.nopython>,
                libsdl2-dev <!pkg.libcamera.nosdl>,
                libtiff-dev,
@@ -26,10 +27,10 @@ Build-Depends: debhelper-compat (= 13),
                meson (>= 0.63),
                openssl,
                pkgconf,
-               python3-jinja2,
+               python3-jinja2:native,
                python3-ply,
                python3-pybind11 <!pkg.libcamera.nopython>,
-               python3-yaml,
+               python3-yaml:native,
                qt6-base-dev [!i386] <!pkg.libcamera.noqt>
 Build-Depends-Indep: doxygen <!nodoc>,
                      doxygen-latex <!nodoc>,
@@ -37,7 +38,8 @@ Build-Depends-Indep: doxygen <!nodoc>,
                      libjs-jquery <!nodoc>,
                      libjs-sphinxdoc <!nodoc>,
                      libjs-underscore <!nodoc>,
-                     python3-sphinx <!nodoc>,
+                     python3-sphinx:native <!nodoc>,
+                     python3-sphinxcontrib.doxylink:native <!nodoc>
 Standards-Version: 4.7.2
 Vcs-Browser: https://salsa.debian.org/multimedia-team/libcamera
 Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
@@ -47,7 +49,7 @@ Rules-Requires-Root: no
 Package: libcamera-dev
 Architecture: linux-any
 Section: libdevel
-Depends: libcamera0.4 (= ${binary:Version}),
+Depends: libcamera0.5 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Description: complex camera support library (development files)
@@ -75,7 +77,7 @@ Description: complex camera support library (documentation)
  This package contains the documentation developing with libcamera.
 Build-Profiles: <!nodoc>
 
-Package: libcamera0.4
+Package: libcamera0.5
 Architecture: linux-any
 Multi-Arch: same
 Depends: ${misc:Depends},
