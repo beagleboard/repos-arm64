@@ -244,9 +244,10 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends}
 Enhances: libva2
-Provides: va-driver
+Provides: va-driver, mesa-vdpau-drivers
 Breaks: vdpau-va-driver (<< 0.7.4-5)
-Replaces: vdpau-va-driver (<< 0.7.4-5)
+Replaces: vdpau-va-driver (<< 0.7.4-5), mesa-vdpau-drivers
+Conflicts: mesa-vdpau-drivers
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Description: Mesa VA-API video acceleration drivers

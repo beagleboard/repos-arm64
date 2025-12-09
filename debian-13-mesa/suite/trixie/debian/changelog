@@ -1,8 +1,18 @@
-mesa (25.3.0-1bbbio0~trixie+20251117) trixie; urgency=low
+mesa (25.3.1-1bbbio0~trixie+20251209) trixie; urgency=low
 
-  * Rebuild mesa_25.3.0-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.3.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 17 Nov 2025 20:00:07 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 09 Dec 2025 08:59:37 -0600
+
+mesa (25.3.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * control, rules: Migrate to llvm 21.
+  * control: Make mesa-va-drivers replace mesa-vdpau-drivers, as it's
+    functionally more or less the same.
+  * signing-key.asc: Updated to silence uscan.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 08 Dec 2025 18:54:43 +0200
 
 mesa (25.3.0-1) experimental; urgency=medium
 
