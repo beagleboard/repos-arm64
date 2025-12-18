@@ -1,8 +1,20 @@
-libcamera (0.5.2-3bbbio0~trixie+20251202) trixie; urgency=low
+libcamera (0.6.0-1bbbio0~trixie+20251218) trixie; urgency=low
 
-  * Rebuild libcamera_0.5.2-3 for repos.rcn-ee.com
+  * Rebuild libcamera_0.6.0-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 02 Dec 2025 08:57:46 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 18 Dec 2025 17:09:06 -0600
+
+libcamera (0.6.0-1) experimental; urgency=medium
+
+  * New upstream version 0.6.0
+  * Bump SONAME to libcamera0.6
+  * Remove Disable_libunwind_integration.patch, merged upstream.
+  * Add python3-sphinx-book-theme in Build-Depends-Indep.
+  * Adjust python module install path.
+  * salsa-ci: disable debrebuild and reprotest jobs.
+  * Convert watch to version 5 and use Gitlab template.
+
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 29 Nov 2025 15:06:30 +0100
 
 libcamera (0.5.2-3) unstable; urgency=medium
 
@@ -11,13 +23,6 @@ libcamera (0.5.2-3) unstable; urgency=medium
   * Disable signatures verification if cross-building
 
  -- Dylan Aïssi <daissi@debian.org>  Thu, 18 Sep 2025 14:39:55 +0200
-
-libcamera (0.5.2-2~bpo13+1) trixie-backports; urgency=medium
-
-  * Rebuild for trixie-backports.
-  * Target Trixie in gbp.conf and salsa-ci.yml
-
- -- Dylan Aïssi <daissi@debian.org>  Fri, 05 Sep 2025 12:04:17 +0200
 
 libcamera (0.5.2-2) unstable; urgency=medium
 
