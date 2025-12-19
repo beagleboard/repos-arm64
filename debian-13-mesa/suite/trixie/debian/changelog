@@ -1,8 +1,27 @@
-mesa (25.3.1-1bbbio0~trixie+20251209) trixie; urgency=low
+mesa (25.3.2-2bbbio0~trixie+20251219) trixie; urgency=low
 
-  * Rebuild mesa_25.3.1-1 for repos.rcn-ee.com
+  * Rebuild mesa_25.3.2-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 09 Dec 2025 08:59:37 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 19 Dec 2025 14:51:55 -0600
+
+mesa (25.3.2-2) unstable; urgency=medium
+
+  [ Mario Limonciello (AMD) ]
+  * Add missing comma for provides (Closes: #1123627)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 19 Dec 2025 07:54:35 +0200
+
+mesa (25.3.2-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * control: Specify versioned build-depends for cbindgen and libx11.
+
+  [ Mario Limonciello (AMD) ]
+  * Merge mesa-va-drivers and mesa-vdpau-drivers into mesa-libgallium (LP: #2135270)
+  * Drop conflicts on mesa-va-drivers and mesa-vdpau-drivers
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 18 Dec 2025 19:03:53 +0200
 
 mesa (25.3.1-1) experimental; urgency=medium
 
@@ -52,6 +71,18 @@ mesa (25.3.0~rc1-1) experimental; urgency=medium
   * control, rules: Drop mesa-vdpau-drivers, VDPAU got removed upstream.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Tue, 21 Oct 2025 18:22:18 +0300
+
+mesa (25.2.8-2) unstable; urgency=medium
+
+  * disable-ccs-for-intel-xe2.diff: Dropped, fixed upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Dec 2025 15:45:54 +0200
+
+mesa (25.2.8-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 04 Dec 2025 15:39:40 +0200
 
 mesa (25.2.7-1) unstable; urgency=medium
 

@@ -69,6 +69,9 @@ else
   confflags_GBM = -Dgbm=enabled
   confflags_GALLIUM += -Dgallium-extra-hud=true
   confflags_GALLIUM += -Dlmsensors=enabled
+  confflags_GALLIUM += -Dgallium-va=enabled
+  confflags_GALLIUM += -Dvideo-codecs="all"
+
 
   # Freedreno requires arm in addition
   ifneq (,$(filter arm arm64,$(DEB_HOST_ARCH_CPU)))
@@ -100,15 +103,6 @@ else
   ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 i386 loong64 x32 ppc64el riscv64))
 	GALLIUM_DRIVERS += iris
 	VULKAN_DRIVERS += intel
-  endif
-
-  # Build imagination with tools
-  ifneq (,$(filter $(DEB_HOST_ARCH), arm64 riscv64))
-	VULKAN_DRIVERS += imagination
-	confflags_IMAGINATION = -Dimagination-srv=true
-	confflags_TOOLS = -Dtools=drm-shim,imagination
-  else
-	confflags_TOOLS = -Dtools=drm-shim
   endif
 
   ifneq (,$(filter $(DEB_HOST_ARCH), $(VALGRIND_ARCHS)))
@@ -158,11 +152,6 @@ else
   else
 	confflags_GALLIUM += -Dllvm=disabled
   endif
-
-  ifeq (,$(filter pkg.mesa.nolibva,$(DEB_BUILD_PROFILES)))
-	confflags_GALLIUM += -Dgallium-va=enabled
-	confflags_GALLIUM += -Dvideo-codecs="all"
-  endif
 endif
 
 empty:=
@@ -188,14 +177,13 @@ confflags += \
 	-Dglvnd=enabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
-	$(confflags_TOOLS) \
+	-Dtools=drm-shim \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_GBM) \
 	$(confflags_GALLIUM) \
 	$(confflags_GLES) \
 	$(confflags_VALGRIND) \
-	$(confflags_TEFLON) \
-	$(confflags_IMAGINATION)
+	$(confflags_TEFLON)
 
 
 rewrite_wrap_files:
@@ -260,12 +248,10 @@ override_dh_install:
 	   debian/libgl1-mesa-dri/usr/lib/${DEB_HOST_MULTIARCH}/dri/
 
   ifneq ($(DEB_HOST_ARCH_OS), hurd)
-    ifeq (,$(filter pkg.mesa.nolibva,$(DEB_BUILD_PROFILES)))
 	# Copy the hardlinked va drivers correctly.
-	install -m755 -d debian/mesa-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
+	install -m755 -d debian/mesa-libgallium/usr/lib/${DEB_HOST_MULTIARCH}/dri/
 	mv debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/dri/*_drv_video.so \
-	   debian/mesa-va-drivers/usr/lib/${DEB_HOST_MULTIARCH}/dri/
-    endif
+	   debian/mesa-libgallium/usr/lib/${DEB_HOST_MULTIARCH}/dri/
   endif
 
 	dh_install -a
