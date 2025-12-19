@@ -1,3 +1,9 @@
+mesa (25.3.2-2bbbio1~trixie+20251219) trixie; urgency=low
+
+  * Rebuild mesa_25.3.2-2 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 19 Dec 2025 15:31:01 -0600
+
 mesa (25.3.2-2bbbio0~trixie+20251219) trixie; urgency=low
 
   * Rebuild mesa_25.3.2-2 for repos.rcn-ee.com

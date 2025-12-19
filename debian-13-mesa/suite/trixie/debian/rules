@@ -105,6 +105,15 @@ else
 	VULKAN_DRIVERS += intel
   endif
 
+  # Build imagination with tools
+  ifneq (,$(filter $(DEB_HOST_ARCH), arm64 riscv64))
+	VULKAN_DRIVERS += imagination
+	confflags_IMAGINATION = -Dimagination-srv=true
+	confflags_TOOLS = -Dtools=drm-shim,imagination
+  else
+	confflags_TOOLS = -Dtools=drm-shim
+  endif
+
   ifneq (,$(filter $(DEB_HOST_ARCH), $(VALGRIND_ARCHS)))
 	confflags_VALGRIND += -Dvalgrind=enabled
   endif
@@ -177,13 +186,14 @@ confflags += \
 	-Dglvnd=enabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
-	-Dtools=drm-shim \
+	$(confflags_TOOLS) \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_GBM) \
 	$(confflags_GALLIUM) \
 	$(confflags_GLES) \
 	$(confflags_VALGRIND) \
-	$(confflags_TEFLON)
+	$(confflags_TEFLON) \
+	$(confflags_IMAGINATION)
 
 
 rewrite_wrap_files:
