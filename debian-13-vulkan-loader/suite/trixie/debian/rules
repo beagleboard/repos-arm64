@@ -1,0 +1,70 @@
+#!/usr/bin/make -f
+
+# see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+include /usr/share/dpkg/pkg-info.mk
+
+ifneq (linux,$(DEB_HOST_ARCH_OS))
+EXTRA_CMAKE_ARGS += -DBUILD_WSI_WAYLAND_SUPPORT=OFF
+endif
+
+%:
+	dh $@ --builddirectory=build/
+
+override_dh_clean:
+	dh_clean
+	rm -rf __pycache__ \
+		include \
+		scripts/__pycache__ \
+		vulkan-headers/registry/__pycache__
+	rm -f external
+	rm -rf debian/tmp-vulkan-headers
+	rm -rf build-vulkan-headers
+	rm -rf loader/generated
+
+override_dh_auto_configure:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	ln -s /usr/src/googletest external
+endif
+
+	dh_auto_configure --sourcedirectory=vulkan-headers --builddirectory=build-vulkan-headers/ -- -DVULKAN_HEADERS_ENABLE_MODULE=OFF
+	dh_auto_build --sourcedirectory=vulkan-headers --builddirectory=build-vulkan-headers/
+	dh_auto_install --sourcedirectory=vulkan-headers --builddirectory=build-vulkan-headers/ --destdir=debian/tmp-vulkan-headers
+
+	dh_auto_configure -- \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_INSTALL_LIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH) \
+	-DBUILD_WSI_MIR_SUPPORT=OFF \
+	-DLOADER_CODEGEN=ON \
+	-DVULKAN_HEADERS_INSTALL_DIR=$(CURDIR)/debian/tmp-vulkan-headers/usr \
+	$(EXTRA_CMAKE_ARGS)
+
+override_dh_auto_build:
+	mkdir -p loader/generated
+	dh_auto_build -- loader_codegen
+	dh_auto_build
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	(cd build; tests/run_all_tests.sh || \
+		echo "NOTE: 23 tests expected to fail without a vulkan driver")
+endif
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+	cp -rp debian/tmp-vulkan-headers/usr debian/tmp/
+	rm -rf debian/tmp/usr/share/vulkan/registry/__pycache__
+	rm -rf debian/tmp/usr/share/vulkan/registry/spec_tools/__pycache__
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+gentarball:
+	tar --transform 's,^,$(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)/,' \
+		--exclude 'debian' --exclude-vcs \
+		-cJf ../$(DEB_SOURCE)_$(DEB_VERSION_UPSTREAM).orig.tar.xz .
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

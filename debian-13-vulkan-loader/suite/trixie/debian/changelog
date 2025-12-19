@@ -1,0 +1,577 @@
+vulkan-loader (1.4.335.0-1bbbio0~trixie+20251218) trixie; urgency=low
+
+  * Rebuild vulkan-loader_1.4.335.0-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 18 Dec 2025 16:13:36 -0600
+
+vulkan-loader (1.4.335.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 18 Dec 2025 12:06:33 +0200
+
+vulkan-loader (1.4.328.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update README.source.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 28 Oct 2025 13:55:20 +0200
+
+vulkan-loader (1.4.321.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 07 Aug 2025 16:41:44 +0300
+
+vulkan-loader (1.4.309.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 18 Mar 2025 14:58:54 +0200
+
+vulkan-loader (1.4.304.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 16 Jan 2025 16:38:20 +0200
+
+vulkan-loader (1.3.296.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Oct 2024 13:19:03 +0300
+
+vulkan-loader (1.3.290.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Disable module support in vulkan-headers (FTBFS).
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 29 Aug 2024 10:37:49 +0300
+
+vulkan-loader (1.3.283.0-1) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Enable the build on all the architectures, as this source is generally
+    portable, and upstream accepts ports: (Closes: #907152)
+    - switch the architecture of the binaries from linux-any to any
+    - Wayland is still Linux-specific, so:
+      - limit the libwayland-dev build dependency as linux-any
+      - pass -DBUILD_WSI_WAYLAND_SUPPORT=OFF to cmake on non-Linux
+        architectures to explicitly disable the Wayland integration
+      - mark two Wayland-related symbols as linux-any
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * control: Bump policy to 4.7.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 30 May 2024 11:08:51 +0300
+
+vulkan-loader (1.3.280.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Migrate to pkgconf.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 15 Apr 2024 20:30:37 +0300
+
+vulkan-loader (1.3.275.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1061768)
+  * rules: Create loader/generated if it doesn't exist.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 30 Jan 2024 13:29:31 +0200
+
+vulkan-loader (1.3.268.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * fix-headers-install.diff: Dropped, as cmake is fixed now.
+  * sync_headers.sh, watch: Updated to use the new tag naming.
+  * rules: Fix building generated source files.
+  * libvulkan-dev.install: Add arch specific cmake files.
+  * rules: Update clean target. (Closes: #1048652, #1049657)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 03 Nov 2023 10:44:10 +0200
+
+vulkan-loader (1.3.250.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Refreshed.
+  * README.source: Updated to match reality.
+  * sync-headers: Support non-sdk tags.
+  * rules: Prepare for next upstream version, enable LOADER_CODEGEN.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 12 Jun 2023 11:39:49 +0300
+
+vulkan-loader (1.3.239.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1026768)
+  * fix-headers-install.diff: Refreshed.
+  * symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 06 Feb 2023 10:41:08 +0200
+
+vulkan-loader (1.3.236.0-2) unstable; urgency=medium
+
+  * Make -dev multiarch-friendly again by installing cmake files to
+   libdir. (Closes: #1029194)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 21 Jan 2023 18:39:02 +0200
+
+vulkan-loader (1.3.236.0-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * Refresh vulkan-headers to 1.3.236.0
+
+  [ Dylan Aïssi ]
+  * Fix use of vulkan-headers in debian/rules
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 17 Jan 2023 19:58:36 +0200
+
+vulkan-loader (1.3.231.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 08 Nov 2022 10:20:32 +0200
+
+vulkan-loader (1.3.224.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 25 Aug 2022 18:28:28 +0300
+
+vulkan-loader (1.3.216.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 22 Jun 2022 12:39:19 +0300
+
+vulkan-loader (1.3.211.0-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * sync_headers.sh: Fix checking the version.
+  * patches: Dropped, upstream.
+
+  [ Simon McVittie ]
+  * tests: Exclude precompiled binary objects from .orig tarball
+  * d/copyright: Update
+  * Regenerate loader/generated/ during build.
+    Thanks to Helmut Grohne (Closes: #981362)
+  * d/rules: Delete another __pycache__ directory
+  * d/libvulkan1.symbols: Expect i386 to be treated as an x86 architecture
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 25 May 2022 11:34:17 +0300
+
+vulkan-loader (1.3.204.1-2) unstable; urgency=medium
+
+  * symbols: Fix arch specific symbols.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 15 Mar 2022 16:27:24 +0200
+
+vulkan-loader (1.3.204.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * symbols: Fixed.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 15 Mar 2022 11:50:36 +0200
+
+vulkan-loader (1.3.204.0-1) unstable; urgency=medium
+
+  * control: Drop python3-minimal dependency from libvulkan-dev.
+  * New upstream release.
+  * symbols: Updated.
+  * symbols: Go back to a single symbols file, but skip some symbols on
+    i386.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 15 Feb 2022 21:35:10 +0200
+
+vulkan-loader (1.2.198.1-2) unstable; urgency=medium
+
+  * patches: Add patches to fix symbols for i386. (Closes: #1003219)
+  * symbols: Add a symlink .aarch64 -> .amd64.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 07 Jan 2022 10:46:21 +0200
+
+vulkan-loader (1.2.198.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * sync_headers.sh: Updated to take sdk version as an argument, and use
+    git checkout instead of force reset.
+  * fix-ftbfs.diff: Dropped, upstream.
+  * Drop prebuilt libdummy binaries from the source.
+  * control: Add python dep to libvulkan-dev.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 05 Jan 2022 11:00:05 +0200
+
+vulkan-loader (1.2.189.0-2) unstable; urgency=medium
+
+  * fix-ftbfs.diff: Fix a typo in a test.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 07 Sep 2021 15:32:49 +0300
+
+vulkan-loader (1.2.189.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 07 Sep 2021 13:40:34 +0300
+
+vulkan-loader (1.2.182.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 01 Sep 2021 15:12:01 +0300
+
+vulkan-loader (1.2.182.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 13 Aug 2021 08:58:06 +0300
+
+vulkan-loader (1.2.162.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * fix-pkgconfig.diff: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 07 Jan 2021 09:34:46 +0200
+
+vulkan-loader (1.2.154.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 09 Oct 2020 09:58:07 +0300
+
+vulkan-loader (1.2.148.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 07 Sep 2020 14:57:51 +0300
+
+vulkan-loader (1.2.141.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 12 Jun 2020 07:20:34 +0300
+
+vulkan-loader (1.2.135.0-3) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * Add missing autopkgtests dependencies (Closes: #958836)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 04 May 2020 13:33:06 +0300
+
+vulkan-loader (1.2.135.0-2) unstable; urgency=medium
+
+  * symbols: Add a separate symbols file for x86, strip missing symbols
+    from the rest.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Apr 2020 19:13:42 +0300
+
+vulkan-loader (1.2.135.0-1) unstable; urgency=medium
+
+  * New upstream release. (LP: #1871754)
+  * control: Bump policy to 4.5.0.
+  * symbols: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Apr 2020 07:39:59 +0300
+
+vulkan-loader (1.2.131.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump debhelper to 12, use -compat.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 10 Feb 2020 17:17:52 +0200
+
+vulkan-loader (1.1.126.0-2) unstable; urgency=medium
+
+  * install-generated-headers.diff: Dropped, they're actually shipped by
+    validationlayers now.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Nov 2019 20:28:51 +0200
+
+vulkan-loader (1.1.126.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * install-extra-headers.diff: Install vk_layer_dispatch_table.h
+    again, and add other pre-generated headers. (LP: #1849260)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Nov 2019 15:17:20 +0200
+
+vulkan-loader (1.1.121.0-2) unstable; urgency=medium
+
+  * control: Make mesa-vulkan-drivers the preferred driver package to
+    install via Recommends. (Closes: #940560)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 17 Sep 2019 15:18:53 +0300
+
+vulkan-loader (1.1.121.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Add vulkan-icd to libvulkan1 Recommends. (Closes: #935871)
+
+  [ Helmut Grohne ]
+  * Support DEB_BUILD_OPTIONS=nocheck to drop googletest. (Closes:
+    #928696)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 17 Sep 2019 10:35:32 +0300
+
+vulkan-loader (1.1.114.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 01 Aug 2019 15:55:16 +0300
+
+vulkan-loader (1.1.106.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 24 Apr 2019 11:37:42 +0300
+
+vulkan-loader (1.1.101.0-2) unstable; urgency=medium
+
+  * rules: Enable tests, but expect most of them to fail since there's
+    no software driver yet.
+  * control, rules: Drop quilt from build-depends/dh since this is a
+    format 3.0 pkg.
+  * rules: Update the clean target.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 12 Mar 2019 18:38:57 +0200
+
+vulkan-loader (1.1.101.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * sync_headers.sh, watch: Revert back to using tags which upstream has
+    validated as release tags.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 07 Mar 2019 15:43:23 +0200
+
+vulkan-loader (1.1.97-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 23 Jan 2019 14:22:30 +0200
+
+vulkan-loader (1.1.97-1) experimental; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+
+  [ Jens Reyer ]
+  * sync_headers.sh, watch: Modified for upstream tag format change.
+  * README.source: Fixes to the workflow.
+  * rules: Use dpkg library instead of dpkg-parsechangelog.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 13 Jan 2019 16:50:01 +0200
+
+vulkan-loader (1.1.82.0-1) experimental; urgency=medium
+
+  * New upstream release from the vulkan-loader repo.
+  * Remove embedded glslang.
+  * copyright: Drop Files-Excluded, the repo doesn't have them anymore.
+  * control, copyright, watch: Fix upstream repo name.
+  * Drop vulkan-utils.
+  * Purge patches that were for demos, layers or external repos.
+  * Remove d/get-external.sh, which is obsolete.
+  * Drop layer & build cruft.
+  * control: Drop python3-lxml, -distutils from build-depends.
+  * d/s/include-binaries: Removed, obsolete.
+  * dirs: Add /etc/vulkan/icd.d.
+  * Use compat level 11.
+  * rules: Use dh_missing.
+  * Import vulkan-headers and ship the files in libvulkan-dev.
+  * control: Bump policy to 4.2.0, no changes.
+  * README.source: Updated for vulkan-loader.
+  * control: Fix VCS urls.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 11 Sep 2018 17:18:05 +0300
+
+vulkan (1.1.73+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Move layers from libvulkan-dev to libvulkan1. (Closes: #891582)
+  * control: Add python3-distutils to build-depends. (Closes: #896796)
+  * Refresh patches.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 04 May 2018 13:18:00 +0300
+
+vulkan (1.1.70+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * fix-pkgconfig.diff: Fix wrong libdir in vulkan.pc. (LP: #1754288)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 12 Mar 2018 15:39:40 +0200
+
+vulkan (1.0.68+dfsg1-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * copyright: Updated. (Closes: #881014)
+  * patches: Refreshed.
+  * get-external.sh: Use upstream script to update glslang and spirv-
+    tools/headers.
+  * get-external.sh, use-known-sha.diff: Don't require git, grep the
+    spirv sha from known-good.json and use that.
+  * rules: Update glslang build.
+  * rules: Tell cmake where glslangValidator is.
+  * rules: Update clean target.
+  * control: Update VCS urls.
+  * control: Bump policy to 4.1.3, no changes.
+
+  [ Andreas Boll ]
+  * debian/get-external.sh: Append external Git revision of glslang to
+    the commit message.
+  * Add man pages for vulkaninfo and vulkan-smoketest.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 08 Mar 2018 08:55:08 +0200
+
+vulkan (1.0.65.2+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #886796)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 10 Jan 2018 16:18:30 +0200
+
+vulkan (1.0.61.1+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Dropped install-vk-layer-dispatch-table-h.diff which is
+    upstream, refresh use-mxgot-for-mips64.patch.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 21 Sep 2017 15:28:57 +0300
+
+vulkan (1.0.54.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 24 Jul 2017 12:38:14 +0300
+
+vulkan (1.0.51.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - smoke-check-for-installed-so.diff: Dropped, upstream.
+  * install-vk-layer-dispatch-table-h.diff: Put
+    vk_layer_dispatch_table.h in include/vulkan. (LP: #1692244)
+  * Rename vulkan-smoke to vulkan-smoketest.
+  * rules: Fix glslang build.
+  * copyright: Local copy of spirv.hpp got dropped, so drop it from
+    copyright too.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 03 Jul 2017 12:26:58 +0300
+
+vulkan (1.0.46.0+dfsg3-1) experimental; urgency=medium
+
+  * rules: Fix glslang/spir-v build to always run make.
+  * get-external.sh, rules: Fix the order of spirv-tools/-headers, and
+    rebuild the tarball. Thanks, Philipp Zabel!
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 20 May 2017 00:11:43 +0300
+
+vulkan (1.0.46.0+dfsg2-1) experimental; urgency=medium
+
+  * Build libVkLayer.
+    - debian/SPIRV/spirv.hpp: Dropped
+    - debian/get-external.sh: Add a script to update glslang and SPIR-V
+    - rules: Modify gentarball target
+    - rules: Modify to build glslang & spirv first
+    - libvulkan-dev.install, dirs, rules: Install json files, provide
+      empty systemwide dirs
+  * Install smoke demo.
+    - demos-dont-build-tri-or-cube-or-smoke.diff ->
+      demos-dont-build-cube.diff: Renamed and updated
+    - smoke-check-for-installed-so.diff: Check for libvulkan.so.1 instead
+      of .so
+  * rules: Support parallel builds.
+  * Add README.source and a reminder to get-external.sh to run git add.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 12 May 2017 18:57:44 +0300
+
+vulkan (1.0.46.0+dfsg1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * trim-build.diff, disable-mir.diff, rules: Use clang build options
+    instead of patching CMakeFile.txt.
+  * rules: Set build type to 'Release'.
+  * patches: Refreshed.
+  * dev.install: Add pkgconfig file.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 09 May 2017 14:21:14 +0300
+
+vulkan (1.0.42.0+dfsg1-1) experimental; urgency=medium
+
+  * New upstream release. (Closes: #857185)
+  * Refresh patches.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Mar 2017 10:38:21 +0200
+
+vulkan (1.0.39.0+dfsg1-1) unstable; urgency=medium
+
+  [ Andreas Boll ]
+  * New upstream release.
+  * Refresh patches.
+  * control: Add libxrandr-dev to build-depends.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 26 Jan 2017 17:43:33 +0200
+
+vulkan (1.0.37.0+dfsg1-1) unstable; urgency=medium
+
+  [ Andreas Boll ]
+  * Ship vulkan_intel.h via libvulkan-dev (Imported from Mesa source
+    package).
+
+  [ Timo Aaltonen ]
+  * New upstream release.
+  * Refresh patches.
+  * demos-add-install-rule.diff, layers-install-to-cmake-install-libdir.diff,
+    loader-add-install-rule.diff: Dropped, upstream.
+  * control: Add libwayland-dev to build-depends.
+  * disable-mir.diff: Don't try to build with Mir support, which Debian
+    doesn't have.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 23 Dec 2016 08:39:12 +0200
+
+vulkan (1.0.26.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Refreshed.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 20 Sep 2016 08:30:52 +0300
+
+vulkan (1.0.21.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * copyright: Update excludes.
+  * patches: Refreshed.
+  * control: Build only on linux, others are not supported.
+  * Don't build layers, which now depend on SPIR-V tools. (Closes: #822284)
+  * control: Add multiarch support. (Closes: #834200)
+  * control: Fix libvulkan1 description. (Closes: #822283)
+  * control: Add Breaks/Replaces against upstream packages. (Closes: #823554)
+    (LP: #1572114)
+  * Drop libvulkan1 postinst/postrm. (Closes: #822286)
+  * control: Bump policy to 3.9.8, no changes.
+  * use-mxgot-for-mips64.patch: While we don't build layers anymore, add
+    a patch to fix the build on mips64 in case the build is revived
+    later. (Closes: #827651)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 19 Aug 2016 00:29:31 +0300
+
+vulkan (1.0.8.0+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Refreshed.
+  * Don't build smoke demo, needs glslang like tri/cube.
+  * control: Add libx11-dev and python3-lxml to build-depends.
+  * Drop layers-use-local-spirv-hpp.diff, use a config option to find
+    debian/SPIRV/spirv.hpp
+  * copyright: Fix Files-Excluded.
+  * watch: Match more tags.
+  * copyright: Add buildAndroid to Files-Excluded.
+  * control: Bump policy to 3.9.7, no changes.
+  * control: Use https for Vcs-Git.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 14 Apr 2016 13:57:37 +0300
+
+vulkan (1.0.3.1+dfsg1-1) unstable; urgency=low
+
+  * Initial release (Closes: #814922)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 10 Mar 2016 14:08:35 +0200

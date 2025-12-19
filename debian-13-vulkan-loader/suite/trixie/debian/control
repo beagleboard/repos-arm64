@@ -1,0 +1,53 @@
+Source: vulkan-loader
+Priority: optional
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Uploaders: Timo Aaltonen <tjaalton@debian.org>
+Build-Depends: debhelper-compat (= 12),
+ cmake,
+ googletest <!nocheck>,
+ libwayland-dev [linux-any],
+ libx11-dev,
+ libxcb1-dev,
+ libxrandr-dev,
+ pkgconf,
+ python3,
+Standards-Version: 4.7.0
+Section: libs
+Homepage: https://github.com/KhronosGroup/Vulkan-Loader
+Vcs-Git: https://salsa.debian.org/xorg-team/vulkan/vulkan-loader.git
+Vcs-Browser: https://salsa.debian.org/xorg-team/vulkan/vulkan-loader
+
+Package: libvulkan1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Breaks: vulkan-loader,
+ libvulkan-dev (<< 1.1.70+dfsg1-2),
+Replaces: vulkan-loader,
+ libvulkan-dev (<< 1.1.70+dfsg1-2),
+Recommends: mesa-vulkan-drivers | vulkan-icd
+Multi-Arch: same
+Description: Vulkan loader library
+ The Loader implements the main VK library. It handles layer management and
+ driver management. The loader fully supports multi-gpu operation. As part of
+ this, it dispatches API calls to the correct driver, and to the correct
+ layers, based on the GPU object selected by the application.
+ .
+ This package includes the loader library.
+
+Package: libvulkan-dev
+Section: libdevel
+Architecture: any
+Depends:
+ libvulkan1 (= ${binary:Version}),
+ python3:any,
+ ${misc:Depends},
+Breaks: vulkan-sdk-headers, vulkan-headers
+Replaces: vulkan-sdk-headers, vulkan-headers
+Multi-Arch: same
+Description: Vulkan loader library -- development files
+ The Loader implements the main VK library. It handles layer management and
+ driver management. The loader fully supports multi-gpu operation. As part of
+ this, it dispatches API calls to the correct driver, and to the correct
+ layers, based on the GPU object selected by the application.
+ .
+ This package includes files needed for development.
