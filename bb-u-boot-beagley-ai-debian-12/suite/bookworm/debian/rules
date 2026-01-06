@@ -6,6 +6,7 @@ export DH_VERBOSE=1
 
 #https://manpages.debian.org/bookworm/dpkg-dev/dpkg-buildflags.1.en.html
 export DEB_BUILD_MAINT_OPTIONS = hardening=-fortify
+export DEB_BUILD_MAINT_OPTIONS += reproducible=-timeless
 
 TARGETDIR=bb-u-boot-beagley-ai
 #/opt/u-boot/$(TARGETDIR)/

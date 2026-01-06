@@ -1,4 +1,4 @@
-bb-u-boot-beagley-ai (2026.01.20260105.0-0~noble+20260106) noble; urgency=low
+bb-u-boot-beagley-ai (2026.01.20260105.1-0~noble+20260106) noble; urgency=low
 
   * 20260105 - v2026.01 - https://github.com/u-boot/u-boot/releases/tag/v2026.01
   * 20251224 - 11.02.11 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.11
@@ -7,5 +7,5 @@ bb-u-boot-beagley-ai (2026.01.20260105.0-0~noble+20260106) noble; urgency=low
   * nvme rootfs + overlays are locking up initrd, disable usage of initrd.img with nvme
   * initrd + overlays with this u-boot has some side affects
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 Jan 2026 11:41:49 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 06 Jan 2026 12:03:46 -0600
 

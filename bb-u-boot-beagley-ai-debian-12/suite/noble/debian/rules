@@ -6,6 +6,7 @@ export DH_VERBOSE=1
 
 #https://manpages.ubuntu.com/manpages/noble/en/man1/dpkg-buildflags.1.html
 export DEB_BUILD_MAINT_OPTIONS = hardening=-branch,-fortify qa=-framepointer
+export DEB_BUILD_MAINT_OPTIONS += reproducible=-timeless
 
 TARGETDIR=bb-u-boot-beagley-ai
 #/opt/u-boot/$(TARGETDIR)/
