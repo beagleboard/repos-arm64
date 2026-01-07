@@ -1,14 +1,18 @@
-mesa (25.3.2-2bbbio1~trixie+20251219) trixie; urgency=low
+mesa (25.3.3-1bbbio0~trixie+20260107) trixie; urgency=low
 
-  * Rebuild mesa_25.3.2-2 for repos.rcn-ee.com
+  * Rebuild mesa_25.3.3-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 19 Dec 2025 15:31:01 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 07 Jan 2026 13:43:19 -0600
 
-mesa (25.3.2-2bbbio0~trixie+20251219) trixie; urgency=low
+mesa (25.3.3-1) unstable; urgency=medium
 
-  * Rebuild mesa_25.3.2-2 for repos.rcn-ee.com
+  [ Timo Aaltonen ]
+  * New upstream release.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 19 Dec 2025 14:51:55 -0600
+  [ Simon McVittie ]
+  * Use the upstream solution for #980148
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 07 Jan 2026 14:26:39 +0200
 
 mesa (25.3.2-2) unstable; urgency=medium
 
