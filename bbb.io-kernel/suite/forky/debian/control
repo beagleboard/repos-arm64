@@ -115,33 +115,33 @@ Description: BeagleBoard.org TI sgx modules for 6.12-ti Branch
 Package: bbb.io-kernel-6.6-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.6.114-arm64-k3-r46
+Pre-Depends: linux-image-6.6.119-arm64-k3-r47
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.6.114-arm64-k3-r46
+ , rtw88-modules-6.6.119-arm64-k3-r47
 Description: BeagleBoard.org 6.6-k3 Kernel.org Branch
  This metapackage will install linux-image-6.6-k3-arm64 for in Debian.
 
 Package: bbb.io-kernel-6.6-rt-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.6.114-rt-arm64-k3-r46
+Pre-Depends: linux-image-6.6.119-rt-arm64-k3-r47
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.6.114-rt-arm64-k3-r46
+ , rtw88-modules-6.6.119-rt-arm64-k3-r47
 Description: BeagleBoard.org 6.6-rt-k3 Kernel.org Branch
  This metapackage will install linux-image-6.6-rt-k3-arm64 for in Debian.
 
 Package: bbb.io-kernel-6.12-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.12.57-arm64-k3-r35
+Pre-Depends: linux-image-6.12.64-arm64-k3-r36
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.12.57-arm64-k3-r35
+ , rtw88-modules-6.12.64-arm64-k3-r36
 Description: BeagleBoard.org 6.12-k3 Kernel.org Branch
  This metapackage will install linux-image-6.12-k3-arm64 for in Debian.
 
@@ -170,22 +170,22 @@ Description: BeagleBoard.org 6.16-k3 Kernel.org Branch
 Package: bbb.io-kernel-6.17-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.17.13-arm64-k3-r17
+Pre-Depends: linux-image-6.17.13-arm64-k3-r18
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.17.13-arm64-k3-r17
+ , rtw88-modules-6.17.13-arm64-k3-r18
 Description: BeagleBoard.org 6.17-k3 Kernel.org Branch
  This metapackage will install linux-image-6.17-k3-arm64 for in Debian.
 
 Package: bbb.io-kernel-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.18.3-arm64-k3-r11
+Pre-Depends: linux-image-6.18.4-arm64-k3-r12
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.18.3-arm64-k3-r11
+ , rtw88-modules-6.18.4-arm64-k3-r12
 Description: BeagleBoard.org 6.18-k3 Kernel.org Branch
  This metapackage will install linux-image-6.18-k3-arm64 for in Debian.
 
