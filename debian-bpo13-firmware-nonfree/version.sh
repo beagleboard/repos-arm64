@@ -4,7 +4,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="firmware-nonfree"
 debian_pkg_name="${package_name}"
-package_version="20250808"
+package_version="20251021"
 
 git_repo=""
 git_sha=""
