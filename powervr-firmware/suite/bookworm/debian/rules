@@ -14,7 +14,7 @@ override_dh_strip_nondeterminism:
 override_dh_shlibdeps:
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone https://git.gfnd.rcn-ee.org/kernel.org/linux-firmware.git ./tmp/firmware --depth=1
+	mkdir -p ./tmp/ ; git clone http://forgejo.gfnd.rcn-ee.org:3000/kernel.org/linux-firmware.git ./tmp/firmware --depth=1
 
 %:
 	dh $@

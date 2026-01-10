@@ -1,4 +1,4 @@
-powervr-firmware (0.0.0-git20250922.0-0~trixie+20260110) trixie; urgency=low
+powervr-firmware (0.0.0-git20250922.0-0~forky+20260110) forky; urgency=low
 
   * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (TI AM625)
   * powervr: add firmware for Imagination Technologies BXS-4-64 GPU (TI AM68)

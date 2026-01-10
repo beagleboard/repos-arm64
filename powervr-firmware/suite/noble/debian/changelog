@@ -1,6 +1,7 @@
-powervr-firmware (0.0.0-git20231123.3-0~noble+20231222) noble; urgency=low
+powervr-firmware (0.0.0-git20250922.0-0~noble+20260110) noble; urgency=low
 
-  * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/)
+  * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (TI AM625)
+  * powervr: add firmware for Imagination Technologies BXS-4-64 GPU (TI AM68)
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Dec 2023 15:36:22 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 10 Jan 2026 00:10:39 -0600
 

@@ -1,1 +1,2 @@
-  * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/)
+  * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (TI AM625)
+  * powervr: add firmware for Imagination Technologies BXS-4-64 GPU (TI AM68)
