@@ -3,7 +3,7 @@
 #https://github.com/coder/code-server/releases
 
 arch="arm64"
-ver="4.106.3"
+ver="4.107.1"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
