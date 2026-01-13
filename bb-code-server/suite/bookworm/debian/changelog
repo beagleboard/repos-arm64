@@ -1,8 +1,8 @@
-bb-code-server (4.105.1-0bbbio0~bookworm+20260113) bookworm; urgency=low
+bb-code-server (4.106.3-0bbbio0~bookworm+20260113) bookworm; urgency=low
 
   * Changed
-  * Updated to Code 1.105.1.
+  * Updated to Code 1.106.3.
   * Updated Node to 22.21.1.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 13 Jan 2026 08:56:41 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 13 Jan 2026 09:11:00 -0600
 
