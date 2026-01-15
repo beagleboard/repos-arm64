@@ -6,6 +6,7 @@ export DH_VERBOSE=1
 
 #https://manpages.debian.org/bookworm/dpkg-dev/dpkg-buildflags.1.en.html
 export DEB_BUILD_MAINT_OPTIONS = hardening=-fortify
+export DEB_BUILD_MAINT_OPTIONS += reproducible=-timeless
 
 TARGETDIR=bb-u-boot-pocketbeagle2
 #/opt/u-boot/$(TARGETDIR)/
@@ -14,7 +15,7 @@ TARGETDIR=bb-u-boot-pocketbeagle2
 #HEAD: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=summary
 #TAGS: https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tags
 #Mirror: https://github.com/beagleboard/ti-linux-firmware
-TILF_TAG="11.02.04"
+TILF_TAG="11.02.11"
 #TILF_REPO="https://github.com/beagleboard/ti-linux-firmware.git"
 #Local Mirror
 TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmware.git"
@@ -23,7 +24,7 @@ TILF_REPO="http://forgejo.gfnd.rcn-ee.org:3000/TexasInstruments/ti-linux-firmwar
 #HEAD: https://github.com/TrustedFirmware-A/trusted-firmware-a/
 #TAGS: https://github.com/TrustedFirmware-A/trusted-firmware-a/tags
 #TFA_TAG=master
-TFA_TAG="lts-v2.12.8"
+TFA_TAG="v2.14.0"
 #TFA_REPO="https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git"
 #Local Mirror
 TFA_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/trusted-firmware-a.git"
@@ -33,7 +34,7 @@ TFA_BOARD=lite
 #HEAD: https://github.com/OP-TEE/optee_os
 #TAGS: https://github.com/OP-TEE/optee_os/tags
 #OPTEE_TAG=master
-OPTEE_TAG="4.8.0"
+OPTEE_TAG="4.9.0-rc1"
 #OPTEE_REPO="https://github.com/OP-TEE/optee_os"
 #Local Mirror
 OPTEE_REPO="http://forgejo.gfnd.rcn-ee.org:3000/mirror/optee_os.git"
