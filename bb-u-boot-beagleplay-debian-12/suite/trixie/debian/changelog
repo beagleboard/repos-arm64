@@ -1,8 +1,8 @@
-bb-u-boot-beagleplay (2026.01.20260105.0-0~trixie+20260109) trixie; urgency=low
+bb-u-boot-beagleplay (2026.01.20260105.1-0~trixie+20260120) trixie; urgency=low
 
   * 20260105 - v2026.01 - https://github.com/u-boot/u-boot/releases/tag/v2026.01
   * 20251224 - 11.02.11 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.11
-  * 20251219 - 4.9.0-rc1 - https://github.com/OP-TEE/optee_os/commits/4.9.0-rc1
+  * 20260116 - 4.9.0 - https://github.com/OP-TEE/optee_os/commits/4.9.0-rc1
   * 20251124 - v2.14.0 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/v2.14.0
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
@@ -12,5 +12,5 @@ bb-u-boot-beagleplay (2026.01.20260105.0-0~trixie+20260109) trixie; urgency=low
   * extlinux.conf, unify labels to make flasher change more generic
   * compressed /Image.gz by default
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 09 Jan 2026 14:00:55 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 Jan 2026 11:38:41 -0600
 
