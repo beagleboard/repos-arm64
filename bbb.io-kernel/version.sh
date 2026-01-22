@@ -2,7 +2,7 @@
 
 package_name="bbb.io-kernel"
 debian_pkg_name="${package_name}"
-package_version="1.20260120.0"
+package_version="1.20260122.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20260120"
-trixie_version="~trixie+20260120"
-forky_version="~forky+20260120"
-noble_version="~noble+20260120"
+bookworm_version="~bookworm+20260122"
+trixie_version="~trixie+20260122"
+forky_version="~forky+20260122"
+noble_version="~noble+20260122"
