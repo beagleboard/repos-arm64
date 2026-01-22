@@ -1,10 +1,10 @@
-bb-u-boot-sk-am69 (2025.07.20250609.0-0~bookworm+20250623) bookworm; urgency=low
+bb-u-boot-sk-am69 (2025.07.20250609.1-0~bookworm+20260122) bookworm; urgency=low
 
   * 20250609 - v2025.07-rc4 - https://github.com/u-boot/u-boot/releases/tag/v2025.07-rc4
-  * 20250606 - 11.01.01 - https://git.ti.com/gitweb?p=processor-firmware/ti-linux-firmware.git;a=tag;h=refs/tags/11.01.01
-  * 20250425 - 4.6.0 - https://github.com/OP-TEE/optee_os/commits/4.6.0
-  * 20250522 - v2.13.0 - https://github.com/ARM-software/arm-trusted-firmware/releases/tag/v2.13.0
+  * 20251224 - 11.02.11 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.11
+  * 20260116 - 4.9.0 - https://github.com/OP-TEE/optee_os/commits/4.9.0-rc1
+  * 20251124 - v2.14.0 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/v2.14.0
   * add extlinux.conf boot menu options over serial
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 23 Jun 2025 11:22:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 Jan 2026 10:34:01 -0600
 
