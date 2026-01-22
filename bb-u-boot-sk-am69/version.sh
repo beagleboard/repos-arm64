@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-sk-am69"
 debian_pkg_name="${package_name}"
-package_version="2025.10.20251006.0"
+package_version="2026.01.20260105.0"
 package_source=""
 src_dir=""
 
