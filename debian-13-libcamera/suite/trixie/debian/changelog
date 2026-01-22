@@ -1,8 +1,14 @@
-libcamera (0.6.0-1bbbio0~trixie+20251218) trixie; urgency=low
+libcamera (0.6.0-2bbbio0~trixie+20260122) trixie; urgency=low
 
-  * Rebuild libcamera_0.6.0-1 for repos.rcn-ee.com
+  * Rebuild libcamera_0.6.0-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 18 Dec 2025 17:09:06 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 Jan 2026 14:17:40 -0600
+
+libcamera (0.6.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 23 Dec 2025 11:28:25 +0100
 
 libcamera (0.6.0-1) experimental; urgency=medium
 
