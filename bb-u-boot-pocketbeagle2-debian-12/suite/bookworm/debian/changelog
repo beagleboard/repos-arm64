@@ -1,14 +1,15 @@
-bb-u-boot-pocketbeagle2 (2025.10.20251006.9-0~bookworm+20260120) bookworm; urgency=low
+bb-u-boot-pocketbeagle2 (2025.10.20251006.10-0~bookworm+20260128) bookworm; urgency=low
 
   * 20251006 - v2025.10 - https://github.com/u-boot/u-boot/releases/tag/v2025.10
   * 20251224 - 11.02.11 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.11
-  * 20260116 - 4.9.0 - https://github.com/OP-TEE/optee_os/commits/4.9.0-rc1
+  * 20260116 - 4.9.0 - https://github.com/OP-TEE/optee_os/commits/4.9.0
   * 20251124 - v2.14.0 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/v2.14.0
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
   * compressed /Image.gz by default
   * Enable a extlinux.conf option to flash other media directly (PB2 eMMC)
   * R5 routed to uart6 for U-Boot SPL
+  * EEPROM read in SPL for future 1GB models...
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 20 Jan 2026 11:45:08 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 28 Jan 2026 19:27:28 -0600
 
