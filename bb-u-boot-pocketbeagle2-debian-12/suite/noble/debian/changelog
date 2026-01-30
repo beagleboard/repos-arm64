@@ -1,6 +1,6 @@
-bb-u-boot-pocketbeagle2 (2025.10.20251006.10-0~noble+20260128) noble; urgency=low
+bb-u-boot-pocketbeagle2 (2026.01.20260105.0-0~noble+20260130) noble; urgency=low
 
-  * 20251006 - v2025.10 - https://github.com/u-boot/u-boot/releases/tag/v2025.10
+  * 20260105 - v2026.01 - https://github.com/u-boot/u-boot/releases/tag/v2026.01
   * 20251224 - 11.02.11 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.11
   * 20260116 - 4.9.0 - https://github.com/OP-TEE/optee_os/commits/4.9.0
   * 20251124 - v2.14.0 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/v2.14.0
@@ -11,5 +11,5 @@ bb-u-boot-pocketbeagle2 (2025.10.20251006.10-0~noble+20260128) noble; urgency=lo
   * R5 routed to uart6 for U-Boot SPL
   * EEPROM read in SPL for future 1GB models...
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 28 Jan 2026 19:27:28 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 30 Jan 2026 14:13:08 -0600
 
