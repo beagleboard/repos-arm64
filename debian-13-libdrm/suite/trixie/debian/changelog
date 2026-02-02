@@ -1,8 +1,15 @@
-libdrm (2.4.129-1bbbio0~trixie+20251205) trixie; urgency=low
+libdrm (2.4.131-1bbbio0~trixie+20260202) trixie; urgency=low
 
-  * Rebuild libdrm_2.4.129-1 for repos.rcn-ee.com
+  * Rebuild libdrm_2.4.131-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Dec 2025 11:04:51 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 02 Feb 2026 10:56:50 -0600
+
+libdrm (2.4.131-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Drop upstreamed patch.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 02 Feb 2026 08:26:35 +0200
 
 libdrm (2.4.129-1) unstable; urgency=medium
 
