@@ -7,7 +7,7 @@ mirror="http://http.debian.net/debian"
 package_name="libcamera"
 debian_pkg_name="${package_name}"
 package_version="0.7.0"
-package_source="${debian_pkg_name}_${package_version}.orig.tar.bz2"
+package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="${package_name}-v${package_version}"
 
 git_repo=""
