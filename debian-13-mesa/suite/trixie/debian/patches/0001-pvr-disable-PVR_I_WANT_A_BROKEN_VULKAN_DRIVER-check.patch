@@ -1,22 +1,22 @@
-From 978473cdd4d6c26c9d4b5d629b2955fc66acdab0 Mon Sep 17 00:00:00 2001
+From 86583be89908202b137ec35350245b5f263a00c4 Mon Sep 17 00:00:00 2001
 From: Robert Nelson <robertcnelson@gmail.com>
-Date: Fri, 9 Jan 2026 17:50:50 -0600
+Date: Fri, 9 Jan 2026 18:02:48 -0600
 Subject: [PATCH] pvr: disable PVR_I_WANT_A_BROKEN_VULKAN_DRIVER check
 
 Signed-off-by: Robert Nelson <robertcnelson@gmail.com>
 ---
- src/imagination/vulkan/pvr_device.c | 11 -----------
+ src/imagination/vulkan/pvr_physical_device.c | 11 -----------
  1 file changed, 11 deletions(-)
 
-diff --git a/src/imagination/vulkan/pvr_device.c b/src/imagination/vulkan/pvr_device.c
-index f7f84c6..3ecc2f6 100644
---- a/src/imagination/vulkan/pvr_device.c
-+++ b/src/imagination/vulkan/pvr_device.c
-@@ -1146,17 +1146,6 @@ static VkResult pvr_physical_device_init(struct pvr_physical_device *pdevice,
+diff --git a/src/imagination/vulkan/pvr_physical_device.c b/src/imagination/vulkan/pvr_physical_device.c
+index 46eb4e4..a2af8a7 100644
+--- a/src/imagination/vulkan/pvr_physical_device.c
++++ b/src/imagination/vulkan/pvr_physical_device.c
+@@ -1036,17 +1036,6 @@ VkResult pvr_physical_device_init(struct pvr_physical_device *pdevice,
        goto err_pvr_winsys_destroy;
  
     if (!pvr_device_is_conformant(&pdevice->dev_info)) {
--      if (!getenv("PVR_I_WANT_A_BROKEN_VULKAN_DRIVER")) {
+-      if (!os_get_option("PVR_I_WANT_A_BROKEN_VULKAN_DRIVER")) {
 -         result = vk_errorf(instance,
 -                            VK_ERROR_INCOMPATIBLE_DRIVER,
 -                            "WARNING: powervr is not a conformant Vulkan "
