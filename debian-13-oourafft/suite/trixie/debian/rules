@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+PATH_PKG=debian/libfft2d-dev
+PATH_HEADERS=${PATH_PKG}/usr/include/fft2d/
+PATH_CMAKE=${PATH_PKG}/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/fft2d/
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	cp debian/CMakeLists.txt .
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+		-DFFT2D_SOURCE_DIR=${CURDIR}
+
+execute_after_dh_auto_build:
+	sed "s|@ARCH_TRIPLET@|$(DEB_HOST_MULTIARCH)|g" debian/fft2d-config.cmake.in | tee debian/fft2d-config.cmake
+
+execute_after_dh_install:
+	install -d ${PATH_HEADERS}
+	cp -v *.h ${PATH_HEADERS}
+	install -d ${PATH_CMAKE}
+	cp -v debian/fft2d-config.cmake ${PATH_CMAKE}
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

@@ -1,0 +1,26 @@
+oourafft (1.0-3bbbio0~trixie+20260207) trixie; urgency=low
+
+  * Rebuild oourafft_1.0-3 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 07 Feb 2026 17:10:33 -0600
+
+oourafft (1.0-3) unstable; urgency=medium
+
+  * Set cmake_minimum_required to 3.25 (Closes: #1113347)
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 25 Sep 2025 23:10:51 +0200
+
+oourafft (1.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 29 Aug 2025 07:29:45 +0200
+
+oourafft (1.0-1) experimental; urgency=medium
+
+  * Initial packaging.
+  * fft2d is a build dependency of TensorFlow Lite (TFLite).
+  * Clarification of the license with its original author:
+      Takuya OOURA <ooura@kurims.kyoto-u.ac.jp>
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 14 May 2025 23:51:21 +0200
