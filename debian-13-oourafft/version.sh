@@ -6,7 +6,7 @@ package_name="oourafft"
 debian_pkg_name="${package_name}"
 package_version="1.0"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
-src_dir="${package_name}-${package_version}"
+src_dir="OouraFFT-${package_version}"
 
 git_repo=""
 git_sha=""
