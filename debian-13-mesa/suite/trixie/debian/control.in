@@ -17,6 +17,7 @@ Build-Depends:
  libclang-cpp@LLVM_VERSION@-dev [@LLVM_ARCHS@],
  libclc-@LLVM_VERSION@ [@LLVM_ARCHS@],
  libclc-@LLVM_VERSION@-dev [@LLVM_ARCHS@],
+ libdisplay-info-dev [@LLVM_ARCHS@],
  libdrm-dev (>= 2.4.125-1),
  libelf-dev [@LLVM_ARCHS@],
  libexpat1-dev,
