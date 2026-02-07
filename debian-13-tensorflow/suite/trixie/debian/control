@@ -1,0 +1,63 @@
+Source: tensorflow
+Section: science
+Priority: optional
+Maintainer: Debian Deep Learning Team <debian-ai@lists.debian.org>
+Uploaders: Dylan Aïssi <daissi@debian.org>,
+           Bardia Moshiri <bardia@furilabs.com>
+Build-Depends: cmake,
+               debhelper-compat (= 13),
+               libabsl-dev,
+               libcpuinfo-dev (>= 0.0~git20220617.082deff-2),
+               libegl-dev,
+               libeigen3-dev,
+               libfarmhash-dev,
+               libfft2d-dev,
+               libflatbuffers-dev (>= 23.5.26+dfsg-3),
+               libfp16-dev,
+               libgemmlowp-dev,
+               libgles-dev,
+               libneon-2-sse-dev,
+               libpthreadpool-dev,
+               libruy-dev (>= 0.0.0~git20230215.21a85fe-2),
+               libvulkan-dev,
+#              ml-dtypes-dev,
+               opencl-c-headers,
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/deeplearning-team/tensorflow
+Vcs-Git: https://salsa.debian.org/deeplearning-team/tensorflow.git
+Homepage: https://tensorflow.org/
+
+Package: libtensorflow-lite2.14.1
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Computation using data flow graphs for scalable machine learning (shared lib)
+ TensorFlow is an open source software library for numerical computation
+ using data flow graphs. The graph nodes represent mathematical operations,
+ while the graph edges represent the multidimensional data arrays (tensors)
+ that flow between them. This flexible architecture enables you to deploy
+ computation to one or more CPUs or GPUs in a desktop, server, or mobile
+ device without rewriting code.
+ .
+ This package provides the tensorflow-lite shared library.
+
+Package: libtensorflow-lite-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libtensorflow-lite2.14.1 (= ${binary:Version}),
+         libflatbuffers-dev,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Computation using data flow graphs for scalable machine learning (dev files)
+ TensorFlow is an open source software library for numerical computation
+ using data flow graphs. The graph nodes represent mathematical operations,
+ while the graph edges represent the multidimensional data arrays (tensors)
+ that flow between them. This flexible architecture enables you to deploy
+ computation to one or more CPUs or GPUs in a desktop, server, or mobile
+ device without rewriting code.
+ .
+ This package ships C and C++ headers files for tensorflow lite.

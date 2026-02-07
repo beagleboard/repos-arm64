@@ -1,0 +1,52 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+PATH_DEV_PKG=debian/libtensorflow-lite-dev
+PATH_DEV_HEADERS=${PATH_DEV_PKG}/usr/include/tensorflow
+
+%:
+	dh $@ --sourcedirectory=tensorflow/lite
+
+# See upstream instructions:
+# https://ai.google.dev/edge/litert/build/cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-Wno-dev \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DBUILD_SHARED_LIBS=ON \
+		-DTFLITE_ENABLE_INSTALL=ON \
+		-DTFLITE_ENABLE_GPU=OFF \
+		-DTFLITE_ENABLE_NNAPI=OFF \
+		-DTFLITE_ENABLE_RESOURCE=ON \
+		-DTFLITE_ENABLE_RUY=ON \
+		-DTFLITE_ENABLE_XNNPACK=OFF \
+		-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON \
+		-DSYSTEM_FARMHASH=ON \
+		-DSYSTEM_PTHREADPOOL=ON \
+		-Dabsl_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/absl/ \
+		-Dcpuinfo_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/cpuinfo/ \
+		-DEigen3_DIR=/usr/share/eigen3/cmake/ \
+		-Dfft2d_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/fft2d/ \
+		-DFlatBuffers_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/flatbuffers/ \
+		-DGEMMLOWP_SOURCE_DIR=/usr/include/gemmlowp \
+		-DML_DTYPES_SOURCE_DIR=/usr/include/ml_dtypes \
+		-DNEON_2_SSE_DIR=/usr/lib/cmake/NEON_2_SSE/ \
+		$(NULL)
+
+execute_after_dh_install:
+	install -d ${PATH_DEV_HEADERS}/lite/core/async/interop/c
+	install -d ${PATH_DEV_HEADERS}/lite/profiling/telemetry/c/
+	cp -v tensorflow/lite/core/async/interop/*.h ${PATH_DEV_HEADERS}/lite/core/async/interop/
+	cp -v tensorflow/lite/core/async/interop/c/*.h ${PATH_DEV_HEADERS}/lite/core/async/interop/c/
+	cp -v tensorflow/lite/profiling/*.h ${PATH_DEV_HEADERS}/lite/profiling/
+	cp -v tensorflow/lite/profiling/telemetry/*.h ${PATH_DEV_HEADERS}/lite/profiling/telemetry/
+	cp -v tensorflow/lite/profiling/telemetry/c/*.h ${PATH_DEV_HEADERS}/lite/profiling/telemetry/c/
+
+override_dh_makeshlibs:
+	# Don't make disappearing symbols fatal, for now.
+	dh_makeshlibs -- -c0
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

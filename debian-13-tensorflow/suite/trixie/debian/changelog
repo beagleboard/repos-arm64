@@ -1,0 +1,105 @@
+tensorflow (2.14.1+dfsg-3bbbio0~trixie+20260207) trixie; urgency=low
+
+  * Rebuild tensorflow_2.14.1+dfsg-3 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 07 Feb 2026 17:00:12 -0600
+
+tensorflow (2.14.1+dfsg-3) unstable; urgency=medium
+
+  * Add autopkgtest building a simple application using TensorFlow Lite
+    and then executing it on a mobilenet model.
+
+ -- Dylan Aïssi <daissi@debian.org>  Sun, 07 Sep 2025 20:52:13 +0200
+
+tensorflow (2.14.1+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 01 Sep 2025 21:38:37 +0200
+
+tensorflow (2.14.1+dfsg-1) experimental; urgency=medium
+
+  * New upstream version 2.14.1
+      (Closes: #1084624)
+  * Drop all packaging parts requiring bazel since this work is stuck for now.
+    With the approval of Mo Zhou and Andreas Tille!
+      (Closes: #1005713)
+  * Build tensorflow-lite which doesn't require bazel but can be built with
+    cmake.
+  * Update debian/copyright.
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 01 Sep 2025 11:10:22 +0200
+
+tensorflow (2.3.1-1) experimental; urgency=medium
+
+  [ Wookey ]
+  * Complete initial packaging (Closes: #959765)
+    (build with bazel3, install files, symlinks, verbose builds)
+  * Remove unused embedded tarballs
+  * Remove rpaths
+  * Add pkgconfig files
+  * Force clean builds
+  * Update Copyright to 2.3.1
+  * Enable debug builds/packages
+  * Use system libpng, highwayhash, jsoncpp, protoc
+  * Update symbols
+
+  [ Michael R. Crusoe ]
+  * Restart packaging using bazel-bootstrap
+
+  [ Andreas Tille ]
+  * New upstream version 2.3.1
+  * Move package to Debian Deep Learning Team
+  * Uncomment python3-tensorflow
+  * New upstream version
+  * Standards-Version: 4.5.0 (routine-update)
+  * debhelper-compat 13 (routine-update)
+  * cme fix dpkg-control
+
+ -- Wookey <wookey@debian.org>  Thu, 10 Jun 2021 09:33:55 +0000
+
+tensorflow (2.0.0-1) experimental; urgency=medium
+
+  * New upstream version 2.0.0 (Oct 2019).
+  * Rewrite the buildsystem, which reconstructs the dependency graph
+    by parsing the Bazel buildlog, and subsequently generates a Ninja
+    build to approximate the original build sequence.
+    + Bazel2Json.py: reads build command sequence from raw buildlog
+      of bazel, and stores result into a json file.
+    + Json2Ninja.py: read build sequence from json file, understand
+      each command line and rebuild the dependency graph. It also
+      scans the C++ header includes to avoid surprising FTBFS.
+  * Build the following 3 shared objects (standard tensorflow v2):
+    + libtensorflow_framework.so.2  (foundamental lib)
+    + libtensorflow.so.2            (C interface)
+    + libtensorflow_cc.so.2         (C++ interface)
+
+ -- Mo Zhou <cdluminate@gmail.com>  Sat, 26 Oct 2019 11:10:28 +0800
+
+tensorflow (1.10.1+dfsg-A2) experimental; urgency=medium
+
+  * Require B-D highwayhash-dev on all architectures. (Closes: #914985)
+  * Add Yunqiang Su (syq) to Uploaders.
+
+  [ BuildSystem ]
+  * Significantly simplified code of shogun.py .
+  * Add -DNDEBUG and -pipe to default CXXFLAGS.
+  * Work-In-Progress support for the python interface. (Disabled by default)
+  * Create version_info.cc by ninja target instead of patch.
+  * Fix installation path for the embedded Eigen3 library.
+  + See git history for detailed changes.
+  + The build system is feature-frozen. It will be replaced by a new one
+    for the upcoming TensorFlow 2.X series.
+
+ -- Mo Zhou <cdluminate@gmail.com>  Thu, 06 Dec 2018 05:31:39 +0000
+
+tensorflow (1.10.1+dfsg-A1) experimental; urgency=medium
+
+  * Initial release [1.10.1+dfsg]. (Closes: #804612)
+  * Stage A (with Debian revision "A*") indicates that the source
+    package only produces C and C++ library and development files.
+  * Many thanks to Aron Xu <aron@debian.org> for his sponsorship
+    of the access to his build machine which helped a lot.
+  * Many thanks to Boyuan Yang <byang@debian.org> for FTBFS report.
+
+ -- Mo Zhou <cdluminate@gmail.com>  Sat, 08 Sep 2018 08:36:02 +0000
