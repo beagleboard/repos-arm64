@@ -1,5 +1,3 @@
 path_max.diff
 src_glx_dri_common.h.diff
-vulkan-Don-t-emit-library_arch-if-the-library_path-is-jus.patch
-vulkan-Optionally-share-one-JSON-manifest-per-driver-betw.patch
 0001-pvr-disable-PVR_I_WANT_A_BROKEN_VULKAN_DRIVER-check.patch
