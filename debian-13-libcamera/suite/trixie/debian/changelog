@@ -1,8 +1,28 @@
-libcamera (0.6.0-2bbbio0~trixie+20260122) trixie; urgency=low
+libcamera (0.7.0-1bbbio0~trixie+20260207) trixie; urgency=low
 
-  * Rebuild libcamera_0.6.0-2 for repos.rcn-ee.com
+  * Rebuild libcamera_0.7.0-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 Jan 2026 14:17:40 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 07 Feb 2026 16:54:15 -0600
+
+libcamera (0.7.0-1) experimental; urgency=medium
+
+  [ Dylan Aïssi ]
+  * New upstream version 0.7.0
+  * Bump SONAME to libcamera0.7
+  * Add libtensorflow-lite-dev in Build-Depends for arm64 armhf,
+    this is required to enable the Raspberry Pi Neural Network AWB algorithm.
+  * Add patch fixing detection of system tensorflow-lite.
+  * Remove ppc64el-fix-ftbfs-gcc.patch, no longer required.
+    The build was successful on ppc64el via debusine without this patch.
+  * Remove redundant:
+      - Rules-Requires-Root: no
+      - Priority: optional
+  * Bump Standards-Version to 4.7.3
+
+  [ David Heidelberg ]
+  * salsa-ci: fix ARM64 builds
+
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 31 Jan 2026 09:56:44 +0100
 
 libcamera (0.6.0-2) unstable; urgency=medium
 

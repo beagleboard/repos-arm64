@@ -5,7 +5,6 @@ Uploaders: Emmanuel Arias <emmanuelarias30@gmail.com>,
            Andrej Shadura <andrewsh@debian.org>,
            Dylan Aïssi <daissi@debian.org>
 Section: libs
-Priority: optional
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-python3,
                libdrm-dev <!pkg.libcamera.nosdl>,
@@ -20,6 +19,7 @@ Build-Depends: debhelper-compat (= 13),
                libpisp-dev [arm64 armel armhf],
                libpython3-dev <!pkg.libcamera.nopython>,
                libsdl2-dev <!pkg.libcamera.nosdl>,
+               libtensorflow-lite-dev [arm64 armhf],
                libtiff-dev,
                libudev-dev [linux-any],
                libyaml-dev,
@@ -41,16 +41,15 @@ Build-Depends-Indep: doxygen <!nodoc>,
                      python3-sphinx:native <!nodoc>,
                      python3-sphinx-book-theme:native <!nodoc>,
                      python3-sphinxcontrib.doxylink:native <!nodoc>
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Vcs-Browser: https://salsa.debian.org/multimedia-team/libcamera
 Vcs-Git: https://salsa.debian.org/multimedia-team/libcamera.git
 Homepage: https://libcamera.org/
-Rules-Requires-Root: no
 
 Package: libcamera-dev
 Architecture: linux-any
 Section: libdevel
-Depends: libcamera0.6 (= ${binary:Version}),
+Depends: libcamera0.7 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
 Description: complex camera support library (development files)
@@ -78,7 +77,7 @@ Description: complex camera support library (documentation)
  This package contains the documentation developing with libcamera.
 Build-Profiles: <!nodoc>
 
-Package: libcamera0.6
+Package: libcamera0.7
 Architecture: linux-any
 Multi-Arch: same
 Depends: ${misc:Depends},
