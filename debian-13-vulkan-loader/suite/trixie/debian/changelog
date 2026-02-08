@@ -1,8 +1,14 @@
-vulkan-loader (1.4.335.0-1bbbio0~trixie+20251218) trixie; urgency=low
+vulkan-loader (1.4.341.0-1bbbio0~trixie+20260208) trixie; urgency=low
 
-  * Rebuild vulkan-loader_1.4.335.0-1 for repos.rcn-ee.com
+  * Rebuild vulkan-loader_1.4.341.0-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 18 Dec 2025 16:13:36 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 08 Feb 2026 11:06:44 -0600
+
+vulkan-loader (1.4.341.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 06 Feb 2026 11:06:08 +0200
 
 vulkan-loader (1.4.335.0-1) unstable; urgency=medium
 
