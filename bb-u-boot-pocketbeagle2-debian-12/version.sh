@@ -5,7 +5,7 @@
 
 package_name="bb-u-boot-pocketbeagle2"
 debian_pkg_name="${package_name}"
-package_version="2026.01.20260105.0"
+package_version="2026.01.20260105.1"
 package_source=""
 src_dir=""
 
@@ -20,7 +20,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20260130"
-trixie_version="~trixie+20260130"
-forky_version="~forky+20260130"
-noble_version="~noble+20260130"
+bookworm_version="~bookworm+20260210"
+trixie_version="~trixie+20260210"
+forky_version="~forky+20260210"
+noble_version="~noble+20260210"
