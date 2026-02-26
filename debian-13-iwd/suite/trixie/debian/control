@@ -1,6 +1,5 @@
 Source: iwd
 Section: net
-Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
 Homepage: https://iwd.wiki.kernel.org/
 Build-Depends:
@@ -11,10 +10,9 @@ Build-Depends:
  openssl <!nocheck>,
  python3-docutils <!nodoc>,
  systemd-dev,
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Vcs-Git: https://salsa.debian.org/debian/iwd.git
 Vcs-Browser: https://salsa.debian.org/debian/iwd
-Rules-Requires-Root: no
 
 Package: iwd
 Architecture: linux-any

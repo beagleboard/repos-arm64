@@ -1,8 +1,28 @@
-iwd (3.10-1bbbio0~trixie+20251017) trixie; urgency=low
+iwd (3.11-1bbbio0~trixie+20260226) trixie; urgency=low
 
-  * Rebuild iwd_3.10-1 for repos.rcn-ee.com
+  * Rebuild iwd_3.11-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 17 Oct 2025 12:23:11 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 26 Feb 2026 08:48:28 -0600
+
+iwd (3.11-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * update copyright info:
+    + avoid any .git* files when repackaging upstream source
+    + license patches same as main upstream license
+    + update coverage
+  * update git-buildpackage config:
+    + stop superfluously filter out .git* files
+  * update watch file:
+    + mangle upstream and Debian versions
+    + use repack suffix +ds
+  * stop superfluously set fields Rules-Requires-Root Priority
+  * declare compliance with Debian Policy 4.7.3
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 09 Feb 2026 14:35:24 +0100
 
 iwd (3.10-1) unstable; urgency=medium
 
