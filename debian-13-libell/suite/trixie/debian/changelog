@@ -1,8 +1,15 @@
-ell (0.81-1bbbio0~trixie+20251211) trixie; urgency=low
+ell (0.82-1bbbio0~trixie+20260225) trixie; urgency=low
 
-  * Rebuild ell_0.81-1 for repos.rcn-ee.com
+  * Rebuild ell_0.82-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 11 Dec 2025 12:31:05 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 25 Feb 2026 20:33:17 -0600
+
+ell (0.82-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 22 Feb 2026 17:49:01 +0100
 
 ell (0.81-1) unstable; urgency=medium
 
