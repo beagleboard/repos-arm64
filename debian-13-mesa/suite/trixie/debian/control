@@ -224,6 +224,7 @@ Enhances:
 Provides:
  libglapi-mesa,
  mesa-va-drivers,
+ mesa-vdpau-drivers,
  va-driver,
 Breaks: mesa-va-drivers (<< 25.2.8-3), mesa-vdpau-drivers (<< 25.2.8-3)
 Replaces: mesa-va-drivers (<< 25.2.8-3), mesa-vdpau-drivers (<< 25.2.8-3)
@@ -273,7 +274,7 @@ Description: free implementation of the OpenCL API -- ICD runtime
 
 Package: mesa-drm-shim
 Section: libs
-Architecture: amd64 arm64 armel armhf i386 mips64el powerpc ppc64 ppc64el s390x sparc64
+Architecture: amd64 arm64 armel armhf i386 mips64el powerpc ppc64 ppc64el riscv64 s390x sparc64
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Multi-Arch: same

@@ -52,7 +52,7 @@ confflags_TEFLON = -Dteflon=false
 LLVM_ARCHS     = amd64 arm64 armel armhf i386 loong64 mips64el powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
 RUSTICL_ARCHS  = amd64 arm64 armel armhf i386 loong64 mips64el powerpc ppc64 ppc64el riscv64 s390x x32
 NVK_ARCHS      = amd64 arm64 armhf i386 ppc64 riscv64 x32
-VALGRIND_ARCHS = amd64 arm64 armhf i386 mips64el powerpc ppc64 ppc64el s390x
+VALGRIND_ARCHS = amd64 arm64 armhf i386 mips64el powerpc ppc64 ppc64el riscv64 s390x
 
 # hurd doesn't do direct rendering
 ifeq ($(DEB_HOST_ARCH_OS), hurd)
@@ -94,6 +94,14 @@ else
 	GALLIUM_DRIVERS += lima
   endif
 
+  ifneq (,$(filter $(DEB_HOST_ARCH), armhf arm64 riscv64))
+	VULKAN_DRIVERS += imagination
+	confflags_IMAGINATION = -Dimagination-srv=true
+	confflags_TOOLS = -Dtools=drm-shim,imagination
+  else
+	confflags_TOOLS = -Dtools=drm-shim
+  endif
+
   # Build intel drivers on archs where libdrm-intel is installed
   ifneq (,$(filter $(DEB_HOST_ARCH), amd64 i386 x32))
 	GALLIUM_DRIVERS += crocus i915 svga
@@ -103,15 +111,6 @@ else
   ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 i386 loong64 x32 ppc64el riscv64))
 	GALLIUM_DRIVERS += iris
 	VULKAN_DRIVERS += intel
-  endif
-
-  # Build imagination with tools
-  ifneq (,$(filter $(DEB_HOST_ARCH), arm64 riscv64))
-	VULKAN_DRIVERS += imagination
-	confflags_IMAGINATION = -Dimagination-srv=true
-	confflags_TOOLS = -Dtools=drm-shim,imagination
-  else
-	confflags_TOOLS = -Dtools=drm-shim
   endif
 
   ifneq (,$(filter $(DEB_HOST_ARCH), $(VALGRIND_ARCHS)))

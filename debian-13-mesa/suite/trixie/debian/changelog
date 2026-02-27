@@ -1,8 +1,20 @@
-mesa (26.0.0-1bbbio0~trixie+20260213) trixie; urgency=low
+mesa (26.0.1-1bbbio0~trixie+20260227) trixie; urgency=low
 
-  * Rebuild mesa_26.0.0-1 for repos.rcn-ee.com
+  * Rebuild mesa_26.0.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 13 Feb 2026 16:32:52 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 27 Feb 2026 10:50:14 -0600
+
+mesa (26.0.1-1) unstable; urgency=medium
+
+  * rules: Enable imagination vulkan driver on arm/riscv. (LP: #2141905)
+  * control, rules: Drop armel and mips64el.
+  * rules: Add riscv64 to VALGRIND_ARCHS.
+  * control: Add riscv64 to mesa-drm-shim archs.
+  * control: Drop versions from mesa-va/vdpau-drivers Breaks/Replaces.
+  * New upstream release. (Closes: #1129015)
+  * control: Add mesa-vdpau-drivers to mesa-libgallium Provides.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 27 Feb 2026 13:48:06 +0200
 
 mesa (26.0.0-1) unstable; urgency=medium
 
