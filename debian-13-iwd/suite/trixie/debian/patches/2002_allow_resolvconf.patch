@@ -1,0 +1,23 @@
+Description: permit updating /etc/resolv.conf
+ When iwd is configured to use openresolv
+ (NameResolvingService=resolvconf in /etc/iwd/main.conf),
+ resolvconf fails to update /etc/resolv.conf
+ due to the iwd systemd unit setting ProtectSystem=strict.
+ .
+ This patch exceptionally permits writing to /etc/resolv.conf.
+Author: Ryan Walklin <ryan@testtoast.com>
+Reviewed-By: Jonas Smedegaard <dr@jones.dk>
+Bug-Debian: https://bugs.debian.org/1129196
+Last-Update: 2026-02-27
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/iwd.service.in
++++ b/src/iwd.service.in
+@@ -24,6 +24,7 @@
+ ConfigurationDirectory=iwd
+ StateDirectory=iwd
+ StateDirectoryMode=0700
++ReadWritePaths=/etc/resolv.conf
+ 
+ [Install]
+ WantedBy=multi-user.target

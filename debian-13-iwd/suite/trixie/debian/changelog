@@ -1,8 +1,16 @@
-iwd (3.11-1bbbio0~trixie+20260226) trixie; urgency=low
+iwd (3.11-2bbbio0~trixie+20260228) trixie; urgency=low
 
-  * Rebuild iwd_3.11-1 for repos.rcn-ee.com
+  * Rebuild iwd_3.11-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 26 Feb 2026 08:48:28 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 28 Feb 2026 12:25:23 -0600
+
+iwd (3.11-2) unstable; urgency=medium
+
+  * add patch 2002 to permit updating /etc/resolv.conf;
+    closes bug#1129196, thanks to Ryan Walklin
+  * update copyright info: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 27 Feb 2026 13:13:03 +0100
 
 iwd (3.11-1) unstable; urgency=medium
 
