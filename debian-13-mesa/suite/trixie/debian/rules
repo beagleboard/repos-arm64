@@ -49,10 +49,10 @@ VULKAN_LAYERS =
 
 confflags_TEFLON = -Dteflon=false
 
-LLVM_ARCHS     = amd64 arm64 armel armhf i386 loong64 mips64el powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
-RUSTICL_ARCHS  = amd64 arm64 armel armhf i386 loong64 mips64el powerpc ppc64 ppc64el riscv64 s390x x32
+LLVM_ARCHS     = amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+RUSTICL_ARCHS  = amd64 arm64 armel armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32
 NVK_ARCHS      = amd64 arm64 armhf i386 ppc64 riscv64 x32
-VALGRIND_ARCHS = amd64 arm64 armhf i386 mips64el powerpc ppc64 ppc64el riscv64 s390x
+VALGRIND_ARCHS = amd64 arm64 armhf i386 powerpc ppc64 ppc64el riscv64 s390x
 
 # hurd doesn't do direct rendering
 ifeq ($(DEB_HOST_ARCH_OS), hurd)

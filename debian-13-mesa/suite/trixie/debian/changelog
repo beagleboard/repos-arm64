@@ -1,8 +1,19 @@
-mesa (26.0.1-1bbbio0~trixie+20260227) trixie; urgency=low
+mesa (26.0.1-2bbbio0~trixie+20260228) trixie; urgency=low
 
-  * Rebuild mesa_26.0.1-1 for repos.rcn-ee.com
+  * Rebuild mesa_26.0.1-2 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 27 Feb 2026 10:50:14 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 28 Feb 2026 11:26:14 -0600
+
+mesa (26.0.1-2) unstable; urgency=medium
+
+  [ Christopher Obbard ]
+  * Add Lintian override for Teflon delegate plugin location
+
+  [ Simon McVittie ]
+  * Revert "control: Drop versions from mesa-va/vdpau-drivers Breaks/Replaces."
+    (Closes: #1129207, #1129226)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 28 Feb 2026 10:32:30 +0200
 
 mesa (26.0.1-1) unstable; urgency=medium
 
