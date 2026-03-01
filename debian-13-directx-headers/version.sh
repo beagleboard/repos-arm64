@@ -4,7 +4,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="directx-headers"
 debian_pkg_name="${package_name}"
-package_version="1.618.2"
+package_version="1.619.0"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
 src_dir="DirectX-Headers-${package_version}"
 
@@ -18,4 +18,4 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio0"
 
-trixie_version="~trixie+20251025"
+trixie_version="~trixie+20260228"

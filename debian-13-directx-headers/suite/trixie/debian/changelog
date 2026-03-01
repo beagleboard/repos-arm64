@@ -1,8 +1,14 @@
-directx-headers (1.618.2-1bbbio0~trixie+20251025) trixie; urgency=low
+directx-headers (1.619.0-1bbbio0~trixie+20260228) trixie; urgency=low
 
-  * Rebuild directx-headers_1.618.2-1 for repos.rcn-ee.com
+  * Rebuild directx-headers_1.619.0-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 25 Oct 2025 10:10:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 28 Feb 2026 23:37:23 -0600
+
+directx-headers (1.619.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 27 Feb 2026 12:57:28 +0200
 
 directx-headers (1.618.2-1) unstable; urgency=medium
 
