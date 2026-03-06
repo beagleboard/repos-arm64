@@ -2,7 +2,7 @@
 
 package_name="bb-beagle-flasher"
 debian_pkg_name="${package_name}"
-package_version="1.20240718.1"
+package_version="1.20260306.0"
 package_source=""
 src_dir=""
 
@@ -18,6 +18,7 @@ debian_patch=""
 clear_changelog="enable"
 
 bullseye_version="~bullseye+20250529"
-bookworm_version="~bookworm+20250529"
-trixie_version="~trixie+20250529"
-noble_version="~noble+20250529"
+bookworm_version="~bookworm+20260306"
+trixie_version="~trixie+20260306"
+forky_version="~forky+20260306"
+noble_version="~noble+20260306"

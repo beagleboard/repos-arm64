@@ -11,6 +11,7 @@ dl_src () {
 copy_some () {
 	cp -v ./src/${wfile} ./suite/bookworm/debian/
 	cp -v ./src/${wfile} ./suite/trixie/debian/
+	cp -v ./src/${wfile} ./suite/forky/debian/
 	cp -v ./src/${wfile} ./suite/noble/debian/
 }
 
@@ -18,7 +19,6 @@ copy_all () {
 	cp -v ./src/${wfile} ./suite/bullseye/debian/
 	cp -v ./src/${wfile} ./suite/bookworm/debian/
 	cp -v ./src/${wfile} ./suite/trixie/debian/
-	cp -v ./src/${wfile} ./suite/jammy/debian/
 	cp -v ./src/${wfile} ./suite/noble/debian/
 }
 

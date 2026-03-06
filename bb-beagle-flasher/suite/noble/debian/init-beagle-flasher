@@ -5,7 +5,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20240620.0, fix extlinux.conf location..."
+version_message="1.20260306.0, Just use cp -rv on boot/firmware..."
 
 #Debian 12, Ubuntu Lunar, Mantic, Noble
 #https://packages.debian.org/source/bookworm/e2fsprogs
@@ -259,8 +259,8 @@ copy_boot () {
 
 	mount ${destination}p1 /tmp/boot/ -o sync
 
-	message="rsync: (-aHAXx) /boot/firmware/ -> /tmp/boot/" ; broadcast
-	rsync -aHAXx --human-readable --info=progress2 /boot/firmware/ /tmp/boot/ || write_failure
+	message="cp -rv: /boot/firmware/ -> /tmp/boot/" ; broadcast
+	cp -rv /boot/firmware/* /tmp/boot/ || write_failure
 	flush_cache
 
 	if [ -f ${extlinux} ] ; then
