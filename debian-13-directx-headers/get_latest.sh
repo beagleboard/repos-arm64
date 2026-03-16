@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/d/directx-headers/directx-headers_1.619.0-1"
+version="main/d/directx-headers/directx-headers_1.619.1-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true
