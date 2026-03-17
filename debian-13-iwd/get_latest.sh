@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/i/iwd/iwd_3.11-2"
+version="main/i/iwd/iwd_3.12-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true

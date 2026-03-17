@@ -1,8 +1,15 @@
-iwd (3.11-2bbbio0~trixie+20260228) trixie; urgency=low
+iwd (3.12-1bbbio0~trixie+20260317) trixie; urgency=low
 
-  * Rebuild iwd_3.11-2 for repos.rcn-ee.com
+  * Rebuild iwd_3.12-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 28 Feb 2026 12:25:23 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Mar 2026 11:54:54 -0500
+
+iwd (3.12-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 13 Mar 2026 18:50:49 +0100
 
 iwd (3.11-2) unstable; urgency=medium
 
