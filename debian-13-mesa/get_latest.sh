@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/m/mesa/mesa_26.0.2-1"
+version="main/m/mesa/mesa_26.0.3-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true
