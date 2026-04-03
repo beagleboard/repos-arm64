@@ -1,0 +1,23 @@
+Source: spirv-headers
+Section: libdevel
+Priority: optional
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Build-Depends: debhelper-compat (=13),
+ cmake,
+Standards-Version: 4.6.0
+Homepage: https://github.com/KhronosGroup/SPIRV-Headers
+Vcs-Git: https://salsa.debian.org/xorg-team/vulkan/spirv-headers.git
+Vcs-Browser: https://salsa.debian.org/xorg-team/vulkan/spirv-headers
+
+Package: spirv-headers
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Machine-readable files for the SPIR-V Registry
+ This package includes:
+  - Header files for various languages
+  - JSON files describing the grammar for the SPIR-V core instruction
+    set and the extended instruction sets.
+  - The XML registry file.
+ .
+ For more info, see https://github.com/KhronosGroup/SPIRV-Headers

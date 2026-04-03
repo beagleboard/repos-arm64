@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+# see /usr/share/dpkg/*
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+gentarball:
+	git archive --format=tar upstream-unstable --prefix=$(DEB_SOURCE)-$(DEB_VERSION_UPSTREAM)/ | \
+		gzip -9 > \
+		../$(DEB_SOURCE)_$(DEB_VERSION_UPSTREAM).orig.tar.gz
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

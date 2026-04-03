@@ -1,0 +1,296 @@
+spirv-headers (1.6.1+1.4.341.0-1bbbio0~trixie+20260403) trixie; urgency=low
+
+  * Rebuild spirv-headers_1.6.1+1.4.341.0-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 03 Apr 2026 08:29:46 -0500
+
+spirv-headers (1.6.1+1.4.341.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 06 Feb 2026 10:55:40 +0200
+
+spirv-headers (1.6.1+1.4.335.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 18 Dec 2025 11:30:00 +0200
+
+spirv-headers (1.6.1+1.4.328.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 28 Oct 2025 12:35:55 +0200
+
+spirv-headers (1.6.1+1.4.321.0-2) unstable; urgency=medium
+
+  * patches: Added a patch for spirv-llvm-translator. (Closes: #1111123)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 22 Aug 2025 11:51:52 +0300
+
+spirv-headers (1.6.1+1.4.321.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 11 Aug 2025 06:41:27 +0300
+
+spirv-headers (1.6.1+1.4.309.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1100751)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 18 Mar 2025 14:31:30 +0200
+
+spirv-headers (1.6.1+1.4.304.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 16 Jan 2025 15:20:47 +0200
+
+spirv-headers (1.6.1+1.3.296.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Oct 2024 13:21:51 +0300
+
+spirv-headers (1.6.1+1.3.290.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 29 Aug 2024 11:16:56 +0300
+
+spirv-headers (1.6.1+1.3.283.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 30 May 2024 10:09:52 +0300
+
+spirv-headers (1.6.1+1.3.280.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 17 Apr 2024 18:41:09 +0300
+
+spirv-headers (1.6.1+1.3.275.0+git20240228-1) unstable; urgency=medium
+
+  * New upstream snapshot. (Closes: #1065551)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 12 Mar 2024 18:08:31 +0200
+
+spirv-headers (1.6.1+1.3.275.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 18 Jan 2024 19:23:01 +0200
+
+spirv-headers (1.6.1+1.3.268.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 03 Nov 2023 11:22:54 +0200
+
+spirv-headers (1.6.1+1.3.261.1-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1053796)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 11 Oct 2023 18:41:33 +0300
+
+spirv-headers (1.6.1+1.3.250.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 12 Jun 2023 17:13:56 +0300
+
+spirv-headers (1.6.1+1.3.239.0+git20230321-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 21 Mar 2023 17:33:10 +0200
+
+spirv-headers (1.6.1+1.3.239.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 06 Feb 2023 10:49:17 +0200
+
+spirv-headers (1.6.1+1.3.236.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 17 Jan 2023 20:02:23 +0200
+
+spirv-headers (1.6.1+1.3.231.1-1) unstable; urgency=medium
+
+  * New upstream snapshot from sdk-1.3.231.1.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 08 Nov 2022 10:29:36 +0200
+
+spirv-headers (1.6.1+1.3.216.0-1) unstable; urgency=medium
+
+  * New upstream snapshot from sdk-1.3.216.0.
+  * use-arch-independent.diff: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 22 Jun 2022 12:58:09 +0300
+
+spirv-headers (1.6.1+1.3.204.0-4) unstable; urgency=medium
+
+  * use-arch-independent.diff: Create arch-independent cmake files.
+    Thanks, Andrea Pappacoda!
+  * Install cmake files again.
+  * source: Bump format to 3.0 (quilt).
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 07 Apr 2022 22:01:04 +0300
+
+spirv-headers (1.6.1+1.3.204.0-3) unstable; urgency=medium
+
+  * Drop cmake files, they are not arch-independent, and apparently
+    break vulkan-validationlayers build on 32bit archs.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 06 Apr 2022 16:13:59 +0300
+
+spirv-headers (1.6.1+1.3.204.0-2) unstable; urgency=medium
+
+  * control, rules: Build with cmake.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 18 Feb 2022 07:19:22 +0200
+
+spirv-headers (1.6.1+1.3.204.0-1) unstable; urgency=medium
+
+  * New upstream snapshot from sdk-1.3.204.0 tag.
+  * control: Migrate to debhelper-compat, bump to 13.
+  * control: Bump policy to 4.6.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Feb 2022 11:54:11 +0200
+
+spirv-headers (1.5.5+1.2.198.0-1) unstable; urgency=medium
+
+  * New upstream snapshot from sdk-1.2.198.0 tag.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 07 Jan 2022 11:16:56 +0200
+
+spirv-headers (1.5.4+rt3-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * revert-to-07f259e68af3a54.diff: Dropped.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 18 Aug 2021 16:21:40 +0300
+
+spirv-headers (1.5.4+rt2-2) experimental; urgency=medium
+
+  * revert-to-07f259e68af3a54.diff: Newer headers break spirv-tools
+    build, so revert to the known-good commit.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 13 Aug 2021 09:26:07 +0300
+
+spirv-headers (1.5.4+rt2-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 21 Jul 2021 10:32:33 +0300
+
+spirv-headers (1.5.4+rt-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+    - support for raytracing
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 08 Dec 2020 23:18:31 +0200
+
+spirv-headers (1.5.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 05 Nov 2020 10:37:29 +0200
+
+spirv-headers (1.5.3+1-1) unstable; urgency=medium
+
+  * New upstream snapshot from 1.5.3.reservations1 tag.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 15 Sep 2020 18:36:16 +0300
+
+spirv-headers (1.5.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * reserve-opcode-block.diff: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 01 Jun 2020 10:23:04 +0300
+
+spirv-headers (1.5.1+git20200409-1) unstable; urgency=medium
+
+  * New upstream snapshot for SPV_KHR_ray_tracing. (LP: #1871754)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Apr 2020 14:12:57 +0300
+
+spirv-headers (1.5.1-4) unstable; urgency=medium
+
+  * Mark spirv-headers Multi-Arch: foreign. (Closes: #941943)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 22 Jan 2020 14:05:54 +0200
+
+spirv-headers (1.5.1-3) unstable; urgency=medium
+
+  * reserve-opcode-block.diff: Add a commit for glslang.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 22 Jan 2020 14:01:40 +0200
+
+spirv-headers (1.5.1-2) unstable; urgency=medium
+
+  * Sync with 1.5.1.corrected tag.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 19 Nov 2019 23:35:01 +0200
+
+spirv-headers (1.5.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 03 Oct 2019 12:31:25 +0300
+
+spirv-headers (1.4.1+git20190816-1) unstable; urgency=medium
+
+  * New upstream snapshot, drop the patch.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 16 Aug 2019 13:22:49 +0300
+
+spirv-headers (1.4.1-2) unstable; urgency=medium
+
+  * Add-support-for-SPV_NV_sm_shader_builtins.patch: Needed for spirv-
+    tools 2019.4.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 16 Aug 2019 12:35:09 +0300
+
+spirv-headers (1.4.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * watch: Updated.
+  * Bump debhelper to 12.
+  * control: Bump policy to 4.4.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 01 Aug 2019 15:38:41 +0300
+
+spirv-headers (1.3+git20190113-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 13 Jan 2019 18:41:18 +0200
+
+spirv-headers (1.3+git20181003-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * links: Add SPIRV symlink. (Closes: #904610)
+  * control: Fix vcs urls.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 03 Oct 2018 11:53:29 +0300
+
+spirv-headers (1.3-1) unstable; urgency=medium
+
+  * New upstream version.
+    - although upstream hasn't tagged it as such, use the spec version
+  * control: Update the description.
+  * copyright: Updated. (Closes: #899971)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 24 May 2018 14:17:46 +0300
+
+spirv-headers (0+git20180201.ce3092-1) unstable; urgency=medium
+
+  * Initial release (Closes: #891052)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 02 Mar 2018 14:29:41 +0200
