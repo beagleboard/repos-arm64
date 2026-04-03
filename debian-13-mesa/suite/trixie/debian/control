@@ -61,7 +61,7 @@ Build-Depends:
  quilt,
  rustc (>= 1.78) [amd64 arm64 armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
  rustfmt [amd64 arm64 armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x x32],
- spirv-tools (>= 2024.4~rc1) [amd64 arm64 armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
+ spirv-tools-dev (>= 2025.1~rc1) [amd64 arm64 armhf i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32],
  valgrind [amd64 arm64 armhf i386 powerpc ppc64 ppc64el riscv64 s390x],
  wayland-protocols (>= 1.41),
  x11proto-dev,

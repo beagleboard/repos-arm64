@@ -61,7 +61,7 @@ Build-Depends:
  quilt,
  rustc (>= 1.78) [@RUSTICL_ARCHS@],
  rustfmt [@RUSTICL_ARCHS@],
- spirv-tools (>= 2024.4~rc1) [@LLVM_ARCHS@],
+ spirv-tools-dev (>= 2025.1~rc1) [@LLVM_ARCHS@],
  valgrind [@VALGRIND_ARCHS@],
  wayland-protocols (>= 1.41),
  x11proto-dev,
