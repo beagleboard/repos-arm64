@@ -21,11 +21,12 @@ override_dh_install:
 
 override_dh_installdocs:
 	dh_installdocs
-	cd debian/ccache/usr/share/doc/ccache && mv NEWS.html changelog.html
 	cd debian/ccache/usr/share/doc/ccache && mv MANUAL.html manual.html
+	cd debian/ccache/usr/share/doc/ccache && mv MANUAL.md manual.md
+	cd debian/ccache/usr/share/doc/ccache && mv NEWS.html changelog.html
 
 override_dh_installchangelogs:
-	dh_installchangelogs doc/NEWS.adoc
+	dh_installchangelogs debian/ccache/usr/share/doc/ccache/NEWS.md
 
 override_dh_installdeb:
 	sed s/%DEB_HOST_MULTIARCH%/$(DEB_HOST_MULTIARCH)/ debian/ccache.triggers.in >debian/ccache.triggers

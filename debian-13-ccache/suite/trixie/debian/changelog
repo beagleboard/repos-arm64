@@ -1,8 +1,20 @@
-ccache (4.12.3-1bbbio0~trixie+20260208) trixie; urgency=low
+ccache (4.13.2-1bbbio0~trixie+20260403) trixie; urgency=low
 
-  * Rebuild ccache_4.12.3-1 for repos.rcn-ee.com
+  * Rebuild ccache_4.13.2-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 08 Feb 2026 20:57:29 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 03 Apr 2026 10:06:34 -0500
+
+ccache (4.13.2-1) unstable; urgency=medium
+
+  * New upstream release 4.13.2
+  * Remove nonstd-span from debian/copyright
+  * Update copyright years
+  * Update doc patch
+  * Include Markdown docs
+  * Update to watch file format 5
+  * Update Standards-Version to 4.7.3, removing Priority field
+
+ -- Joel Rosdahl <joel@debian.org>  Sun, 22 Mar 2026 18:29:39 +0100
 
 ccache (4.12.3-1) unstable; urgency=medium
 
