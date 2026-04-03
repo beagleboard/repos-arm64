@@ -1,0 +1,308 @@
+spirv-tools (2026.1-1bbbio0~trixie+20260403) trixie; urgency=low
+
+  * Rebuild spirv-tools_2026.1-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 03 Apr 2026 08:34:36 -0500
+
+spirv-tools (2026.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 06 Feb 2026 11:16:33 +0200
+
+spirv-tools (2025.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+  * control: Fix Breaks/Replaces for the packaging split to allow
+    backports.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 18 Dec 2025 11:43:29 +0200
+
+spirv-tools (2025.4-1) unstable; urgency=medium
+
+  [ Timo Aaltonen ]
+  * New upstream release. (Closes: #1114395)
+  * control: Bump build-dep on spirv-headers.
+
+  [ Dylan Aïssi ]
+  * Make spirv-tools multi-arch compatible (Closes: #1023780)
+    Move some files from spirv-tools to spirv-tools-dev and spirv-tools-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 28 Oct 2025 13:35:38 +0200
+
+spirv-tools (2025.3~rc1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+  * patches: Refreshed.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 11 Aug 2025 06:58:28 +0300
+
+spirv-tools (2025.1~rc1-1) unstable; urgency=medium
+
+  * New upstream release (vulkan-sdk-1.4.309.0).
+  * watch: Updated.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 18 Mar 2025 16:15:19 +0200
+
+spirv-tools (2024.4~rc2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 16 Jan 2025 15:46:53 +0200
+
+spirv-tools (2024.4~rc1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Oct 2024 13:25:55 +0300
+
+spirv-tools (2024.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 29 Aug 2024 11:18:47 +0300
+
+spirv-tools (2024.2~rc1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Refreshed.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 30 May 2024 11:01:53 +0300
+
+spirv-tools (2024.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 17 Apr 2024 18:46:52 +0300
+
+spirv-tools (2023.6~rc1-2) unstable; urgency=medium
+
+  * rules: Disable lto, since it breaks at least spirv-val.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 07 Feb 2024 19:19:14 +0200
+
+spirv-tools (2023.6~rc1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 25 Jan 2024 16:39:09 +0200
+
+spirv-tools (2023.3+1.3.268.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 03 Nov 2023 11:38:41 +0200
+
+spirv-tools (2023.3+1.3.261.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 11 Oct 2023 18:50:56 +0300
+
+spirv-tools (2023.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * patches: Drop an upstreamed patch.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 12 Jun 2023 17:41:36 +0300
+
+spirv-tools (2023.1-2) unstable; urgency=medium
+
+  * patches: Add a patch that fixes the ABI again. (Closes: #1031230)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 15 Feb 2023 16:03:51 +0200
+
+spirv-tools (2023.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 06 Feb 2023 14:15:12 +0200
+
+spirv-tools (2022.4+1.3.236.0-1) unstable; urgency=medium
+
+  * New upstream snapshot from sdk-1.3.236.0 tag.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 18 Jan 2023 12:13:00 +0200
+
+spirv-tools (2022.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 08 Nov 2022 11:15:14 +0200
+
+spirv-tools (2022.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 25 Aug 2022 18:21:49 +0300
+
+spirv-tools (2022.2+1.3.216.0-1) unstable; urgency=medium
+
+  * New upstream snapshot based on sdk-1.3.216.0 tag.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 30 Jun 2022 12:15:43 +0300
+
+spirv-tools (2022.1+1.3.204.0-2) unstable; urgency=medium
+
+  * disable-shared-harder.diff: Modify the build to actually disable
+    building a shared library and what it brings.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Feb 2022 18:37:15 +0200
+
+spirv-tools (2022.1+1.3.204.0-1) unstable; urgency=medium
+
+  * New upstream snapshot based on sdk-1.3.204.0 tag.
+  * control: Bump spirv-headers build-dependency.
+  * contro: Bump debhelper-compat to 13, policy to 4.6.0.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Feb 2022 14:55:24 +0200
+
+spirv-tools (2021.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump spirv-headers build-dep.
+  * control: Build-depend on python3:native instead of python3-dev.
+    (Closes: #979078)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 07 Jan 2022 11:46:18 +0200
+
+spirv-tools (2021.2+git20210818-1) unstable; urgency=medium
+
+  [ Hill Ma ]
+  * control: Fix Vcs-Git and Vcs-Browser.
+
+  [ Timo Aaltonen ]
+  * New upstream snapshot.
+  * control: Bump spirv-headers dependency.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 18 Aug 2021 16:30:03 +0300
+
+spirv-tools (2020.6-2) unstable; urgency=medium
+
+  * rules: Really build for the static library, and make sure shared one
+    is removed since it's still created despite the config options.
+    (Closes: #980370)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 21 Jul 2021 10:15:48 +0300
+
+spirv-tools (2020.6-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #975164)
+  * control: Bump spirv-headers build-dep.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 09 Dec 2020 00:07:00 +0200
+
+spirv-tools (2020.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 09 Oct 2020 09:08:47 +0300
+
+spirv-tools (2020.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump spirv-headers build-dep.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 16 Sep 2020 09:02:42 +0300
+
+spirv-tools (2020.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * rules: Disable shared libs. (Closes: #956510)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 01 Jun 2020 11:45:39 +0300
+
+spirv-tools (2020.2-1) unstable; urgency=medium
+
+  * New upstream release. (LP: #1871754)
+  * control: Bump spirv-headers build-dependency.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 09 Apr 2020 14:24:11 +0300
+
+spirv-tools (2020.1-2) unstable; urgency=medium
+
+  * control: Build on all archs again, the dependency chain goes too
+    deep to care if SPIRV is somewhat broken on big-endian.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 23 Mar 2020 10:58:00 +0200
+
+spirv-tools (2020.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Use debhelper-compat, bump to 12.
+  * control: Don't build on big-endian, before upstream bug 149 is fixed.
+  * control: Bump policy to 4.5, no changes.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 12 Feb 2020 00:06:05 +0200
+
+spirv-tools (2019.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * fix-cmake-install.patch: Dropped, upstream.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 22 Jan 2020 14:18:12 +0200
+
+spirv-tools (2019.4+git20191022-2) unstable; urgency=medium
+
+  * fix-cmake-install.patch: Install cmake files in the correct path.
+  * rules: Build shared libs.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 20 Nov 2019 13:28:31 +0200
+
+spirv-tools (2019.4+git20191022-1) unstable; urgency=medium
+
+  * Sync with upstream/stable 02910ffdffaa.
+  * control: Bump spirv-headers build dependency.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 19 Nov 2019 23:58:49 +0200
+
+spirv-tools (2019.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 16 Aug 2019 13:44:21 +0300
+
+spirv-tools (2019.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 12 Mar 2019 00:01:29 +0200
+
+spirv-tools (2019.1-2) unstable; urgency=medium
+
+  * copyright: Updated. (Closes: #919687)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 23 Jan 2019 14:20:46 +0200
+
+spirv-tools (2019.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * watch: Updated.
+  * fix_pkconfig_pc_file.patch: Dropped, upstream.
+  * source: Switch to format 3.0 (quilt).
+  * control: Bump build-dep on spirv-headers.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 13 Jan 2019 18:46:22 +0200
+
+spirv-tools (2018.2-1) unstable; urgency=medium
+
+  * Initial release (Closes: #890553)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sun, 10 Jun 2018 10:46:15 +0300

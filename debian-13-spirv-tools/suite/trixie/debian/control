@@ -1,0 +1,62 @@
+Source: spirv-tools
+Section: libdevel
+Priority: optional
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ python3:native,
+ spirv-headers (>= 1.6.1+1.4.341.0),
+Standards-Version: 4.6.0
+Homepage: https://github.com/KhronosGroup/SPIRV-Tools
+Vcs-Git: https://salsa.debian.org/xorg-team/vulkan/spirv-tools.git
+Vcs-Browser: https://salsa.debian.org/xorg-team/vulkan/spirv-tools
+
+Package: spirv-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: API and commands for processing SPIR-V modules (tools)
+ The project includes an assembler, binary module parser, disassembler,
+ validator, and optimizer for SPIR-V. Except for the optimizer, all are
+ based on a common static library. The library contains all of the
+ implementation details, and is used in the standalone tools whilst
+ also enabling integration into other code bases directly. The
+ optimizer implementation resides in its own library, which depends on
+ the core library.
+ .
+ This package provides tools.
+
+Package: spirv-tools-dev
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         spirv-tools-headers(= ${source:Version})
+Breaks: spirv-tools (<<2025.4-1~)
+Replaces: spirv-tools (<<2025.4-1~)
+Description: API and commands for processing SPIR-V modules (dev)
+ The project includes an assembler, binary module parser, disassembler,
+ validator, and optimizer for SPIR-V. Except for the optimizer, all are
+ based on a common static library. The library contains all of the
+ implementation details, and is used in the standalone tools whilst
+ also enabling integration into other code bases directly. The
+ optimizer implementation resides in its own library, which depends on
+ the core library.
+ .
+ This package provides development files.
+
+Package: spirv-tools-headers
+Architecture: all
+Multi-Arch: foreign
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: spirv-tools-dev
+Breaks: spirv-tools (<<2025.4-1~)
+Replaces: spirv-tools (<<2025.4-1~)
+Description: API and commands for processing SPIR-V modules (headers)
+ The project includes an assembler, binary module parser, disassembler,
+ validator, and optimizer for SPIR-V. Except for the optimizer, all are
+ based on a common static library. The library contains all of the
+ implementation details, and is used in the standalone tools whilst
+ also enabling integration into other code bases directly. The
+ optimizer implementation resides in its own library, which depends on
+ the core library.
+ .
+ This package provides headers.
