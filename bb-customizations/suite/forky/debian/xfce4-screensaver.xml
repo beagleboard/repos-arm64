@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-screensaver" version="1.0">
+  <property name="saver" type="empty">
+    <property name="mode" type="int" value="2"/>
+    <property name="themes" type="empty">
+      <property name="list" type="array">
+        <value type="string" value="screensavers-xfce-personal-slideshow"/>
+      </property>
+    </property>
+  </property>
+  <property name="screensavers" type="empty">
+    <property name="xfce-personal-slideshow" type="empty">
+      <property name="location" type="string" value="/usr/local/share/beagle-images"/>
+      <property name="arguments" type="string" value="--location=/usr/local/share/beagle-images"/>
+    </property>
+  </property>
+</channel>

@@ -1,0 +1,11 @@
+[Unit]
+Description=BeagleBoard Generate Symlinks
+Requires=systemd-modules-load.service local-fs.target multi-user.target
+After=systemd-modules-load.service local-fs.target multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/bb-symlinks
+
+[Install]
+WantedBy=multi-user.target

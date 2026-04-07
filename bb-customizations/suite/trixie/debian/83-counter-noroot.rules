@@ -6,10 +6,14 @@ SUBSYSTEM=="counter", ACTION=="add|change", \
         RUN+="/bin/chgrp -R gpio '/sys%p'", \
         RUN+="/bin/chmod -R g=u '/sys%p'"
 
-# identify counter peripherals on am335x
-SUBSYSTEM=="counter", KERNELS=="48300180.*",  ENV{CHIP_NAME}="counter0"
-SUBSYSTEM=="counter", KERNELS=="48302180.*",  ENV{CHIP_NAME}="counter1"
-SUBSYSTEM=="counter", KERNELS=="48304180.*",  ENV{CHIP_NAME}="counter2"
+# identify ECAP (capture) peripherals on BBAI-64 (J721E)
+SUBSYSTEM=="counter", KERNELS=="3100000.*",  ENV{CHIP_NAME}="ecap0"
+SUBSYSTEM=="counter", KERNELS=="3110000.*",  ENV{CHIP_NAME}="ecap1"
+SUBSYSTEM=="counter", KERNELS=="3120000.*",  ENV{CHIP_NAME}="ecap2"
+
+# identify EQEP (quadrature encoder) peripherals on BBAI-64 (J721E)
+SUBSYSTEM=="counter", KERNELS=="3200000.*",  ENV{CHIP_NAME}="eqep0"
+SUBSYSTEM=="counter", KERNELS=="3210000.*",  ENV{CHIP_NAME}="eqep1"
 
 # create symlinks in /dev/bone/counter
 SUBSYSTEM=="counter", ENV{DEVTYPE}=="counter_device", ACTION=="add", ENV{CHIP_NAME}!="", \

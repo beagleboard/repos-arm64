@@ -1,4 +1,4 @@
-bb-customizations (1.20260407.0-0~bookworm+20260407) bookworm; urgency=low
+bb-customizations (1.20260407.0-0~forky+20260407) forky; urgency=low
 
   * Added /etc/bbb.io/examples/mplayer example for BPLAY-CSI-ov5640.dtbo
   * Add udev rule for mikrobus 80-mikrobus-noroot.rules

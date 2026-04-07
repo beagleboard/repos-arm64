@@ -3,3 +3,4 @@
   * dont load /dev/bone/pwm when BONE-FAN is loaded
   * disable automatic pwm export, need to find a new way
   * add xfce slideshow example from NM
+  * add BBAI-64 counter symlinks
