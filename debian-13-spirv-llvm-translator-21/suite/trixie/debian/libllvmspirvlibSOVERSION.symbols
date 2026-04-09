@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 21.1.0-2~gcc15~ amd64 arm64 i386 ppc64el
+# SymbolsHelper-Confirmed: 21.1.0-2~gcc15~ amd64 arm64 armel armhf i386 loong64 ppc64el riscv64 s390x
 libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
 * Build-Depends-Package: libllvmspirvlib-21-dev
  _ZGVZNKSt8__detail11_AnyMatcherINSt7__cxx1112regex_traitsIcEELb0ELb0ELb0EEclEcE5__nul@Base 0
@@ -216,8 +216,8 @@ libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
  (optional=templinst)_ZNSt8__detail8_ScannerIcE18_M_eat_escape_ecmaEv@Base 0
  (optional=templinst)_ZNSt8__detail8_ScannerIcE18_M_scan_in_bracketEv@Base 0
  (optional=templinst)_ZNSt8__detail8_ScannerIcE19_M_eat_escape_posixEv@Base 0
- (optional=templinst|arch=!ppc64 !s390x)_ZNSt8__detail8_ScannerIcEC1EPKcS3_NSt15regex_constants18syntax_option_typeESt6locale@Base 0
- (optional=templinst|arch=!ppc64 !s390x)_ZNSt8__detail8_ScannerIcEC2EPKcS3_NSt15regex_constants18syntax_option_typeESt6locale@Base 0
+ (optional=templinst)_ZNSt8__detail8_ScannerIcEC1EPKcS3_NSt15regex_constants18syntax_option_typeESt6locale@Base 0
+ (optional=templinst)_ZNSt8__detail8_ScannerIcEC2EPKcS3_NSt15regex_constants18syntax_option_typeESt6locale@Base 0
  (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEE11_M_try_charEv@Base 0
  (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEE12_M_assertionEv@Base 0
  (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEE13_M_quantifierEv@Base 0
@@ -238,8 +238,8 @@ libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
  (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEE33_M_insert_character_class_matcherILb1ELb0EEEvv@Base 0
  (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEE33_M_insert_character_class_matcherILb1ELb1EEEvv@Base 0
  (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEE7_M_atomEv@Base 0
- (optional=templinst|arch=!ppc64 !s390x)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEEC1EPKcS6_RKSt6localeNSt15regex_constants18syntax_option_typeE@Base 0
- (optional=templinst|arch=!ppc64 !s390x)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEEC2EPKcS6_RKSt6localeNSt15regex_constants18syntax_option_typeE@Base 0
+ (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEEC1EPKcS6_RKSt6localeNSt15regex_constants18syntax_option_typeE@Base 0
+ (optional=templinst)_ZNSt8__detail9_CompilerINSt7__cxx1112regex_traitsIcEEEC2EPKcS6_RKSt6localeNSt15regex_constants18syntax_option_typeE@Base 0
  (optional=templinst)_ZNSt8__detail9_ExecutorIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaINS5_9sub_matchISB_EEENS5_12regex_traitsIcEELb0EE12_M_lookaheadEl@Base 18.1.13
  (optional=templinst)_ZNSt8__detail9_ExecutorIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaINS5_9sub_matchISB_EEENS5_12regex_traitsIcEELb0EE16_M_rep_once_moreENSH_11_Match_modeEl@Base 18.1.13
  (optional=templinst)_ZNSt8__detail9_ExecutorIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaINS5_9sub_matchISB_EEENS5_12regex_traitsIcEELb0EE17_M_handle_backrefENSH_11_Match_modeEl@Base 18.1.13
@@ -316,7 +316,7 @@ libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
  (arch=!armel !riscv64)_ZTSSt23_Sp_counted_ptr_inplaceINSt8__detail4_NFAINSt7__cxx1112regex_traitsIcEEEESaIvELN9__gnu_cxx12_Lock_policyE2EE@Base 13
 #MISSING: 19# (optional=lto)_ZTVN4llvm3Any11StorageBaseE@Base 17
 #MISSING: 19# (optional=lto)_ZTVN4llvm3Any11StorageImplIPKNS_6ModuleEEE@Base 16
- (optional=lto|arch=armel riscv64)_ZTVSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Base 17
+#MISSING: 21# (optional=lto|arch=armel riscv64)_ZTVSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Base 17
 #MISSING: 21# (optional=lto|arch=!armel !riscv64)_ZTVSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 17
  (optional=lto|arch=armel riscv64)_ZTVSt23_Sp_counted_ptr_inplaceINSt8__detail4_NFAINSt7__cxx1112regex_traitsIcEEEESaIvELN9__gnu_cxx12_Lock_policyE1EE@Base 0
  (optional=lto|arch=!armel !riscv64)_ZTVSt23_Sp_counted_ptr_inplaceINSt8__detail4_NFAINSt7__cxx1112regex_traitsIcEEEESaIvELN9__gnu_cxx12_Lock_policyE2EE@Base 0

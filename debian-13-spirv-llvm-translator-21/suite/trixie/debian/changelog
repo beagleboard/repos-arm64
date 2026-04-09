@@ -1,14 +1,16 @@
-spirv-llvm-translator-21 (21.1.0-3bbbio1~trixie+20260406) trixie; urgency=low
+spirv-llvm-translator-21 (21.1.1-1bbbio0~trixie+20260409) trixie; urgency=low
 
-  * Rebuild spirv-llvm-translator-21_21.1.0-3 for repos.rcn-ee.com
+  * Rebuild spirv-llvm-translator-21_21.1.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 06 Apr 2026 19:20:58 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 09 Apr 2026 17:44:36 -0500
 
-spirv-llvm-translator-21 (21.1.0-3bbbio0~trixie+20260406) trixie; urgency=low
+spirv-llvm-translator-21 (21.1.1-1) unstable; urgency=medium
 
-  * Rebuild spirv-llvm-translator-21_21.1.0-3 for repos.rcn-ee.com
+  * New upstream release.
+  * Update .symbols control file.
+  * Merge changes from spirv-llvm-translator-20 20.1.7-1.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 06 Apr 2026 19:07:37 -0500
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 13 Oct 2025 00:32:03 +0200
 
 spirv-llvm-translator-21 (21.1.0-3) unstable; urgency=medium
 
@@ -36,6 +38,13 @@ spirv-llvm-translator-21 (21.1.0-1) experimental; urgency=medium
   * Upload to experimental.
 
  -- Andreas Beckmann <anbe@debian.org>  Wed, 27 Aug 2025 09:39:59 +0200
+
+spirv-llvm-translator-20 (20.1.7-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Merge changes from spirv-llvm-translator-19 19.1.12-1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sun, 12 Oct 2025 15:19:10 +0200
 
 spirv-llvm-translator-20 (20.1.6-1) experimental; urgency=medium
 
@@ -74,6 +83,13 @@ spirv-llvm-translator-20 (20.1.0-1) experimental; urgency=medium
   * Upload to experimental.
 
  -- Andreas Beckmann <anbe@debian.org>  Mon, 24 Mar 2025 19:27:29 +0100
+
+spirv-llvm-translator-19 (19.1.12-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Merge changes from spirv-llvm-translator-18 18.1.17-1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Sat, 11 Oct 2025 14:15:03 +0200
 
 spirv-llvm-translator-19 (19.1.11-1) unstable; urgency=medium
 
@@ -173,6 +189,13 @@ spirv-llvm-translator-19 (19.~~+git20240826-1) unstable; urgency=medium
 
  -- Timo Aaltonen <tjaalton@debian.org>  Thu, 05 Sep 2024 16:53:12 +0300
 
+spirv-llvm-translator-18 (18.1.17-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Merge changes from spirv-llvm-translator-17 17.0.17-1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Fri, 10 Oct 2025 20:20:13 +0200
+
 spirv-llvm-translator-18 (18.1.16-1) unstable; urgency=medium
 
   * New upstream release.
@@ -262,6 +285,13 @@ spirv-llvm-translator-18 (18.~~+git20240215-1) experimental; urgency=medium
   * Upload to experimental.
 
  -- Andreas Beckmann <anbe@debian.org>  Thu, 22 Feb 2024 01:16:58 +0100
+
+spirv-llvm-translator-17 (17.0.17-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Merge changes from spirv-llvm-translator-16 16.0.17-1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 09 Oct 2025 22:49:07 +0200
 
 spirv-llvm-translator-17 (17.0.16-1) unstable; urgency=medium
 
@@ -374,6 +404,13 @@ spirv-llvm-translator-17 (17.0.0-1) experimental; urgency=medium
   * Upload to experimental.
 
  -- Andreas Beckmann <anbe@debian.org>  Thu, 12 Oct 2023 16:29:16 +0200
+
+spirv-llvm-translator-16 (16.0.17-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * Merge changes from spirv-llvm-translator-15 15.0.17-1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 09 Oct 2025 20:17:57 +0200
 
 spirv-llvm-translator-16 (16.0.16-1) UNRELEASED; urgency=medium
 
@@ -505,6 +542,13 @@ spirv-llvm-translator-16 (16.0.0-1) experimental; urgency=medium
   * Upload to experimental.
 
  -- Andreas Beckmann <anbe@debian.org>  Thu, 20 Apr 2023 18:57:02 +0200
+
+spirv-llvm-translator-15 (15.0.17-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * Merge changes from spirv-llvm-translator-14 14.0.16-1.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 09 Oct 2025 20:04:01 +0200
 
 spirv-llvm-translator-15 (15.0.16-1) UNRELEASED; urgency=medium
 
@@ -644,6 +688,13 @@ spirv-llvm-translator-15 (15.0.0-1) unstable; urgency=medium
   * Build with llvm 15.
 
  -- Andreas Beckmann <anbe@debian.org>  Mon, 03 Oct 2022 02:09:37 +0200
+
+spirv-llvm-translator-14 (14.0.16-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop redundant Rules-Requires-Root: no.
+
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 08 Oct 2025 21:43:03 +0200
 
 spirv-llvm-translator-14 (14.0.15-2) unstable; urgency=medium
 
