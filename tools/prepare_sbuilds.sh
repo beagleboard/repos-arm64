@@ -41,7 +41,8 @@ setup_update_sbuild () {
 
 echo "\$build_arch_all = 1;" > ~/.sbuildrc
 echo "\$build_source = 1;" >> ~/.sbuildrc
-echo "\$distribution = 'bookworm';" >> ~/.sbuildrc
+echo "\$distribution = 'trixie';" >> ~/.sbuildrc
+echo "\$chroot_mode = 'schroot';" >> ~/.sbuildrc
 
 mirror="http://${proxy}${debian_server}"
 #deboot="sid"
