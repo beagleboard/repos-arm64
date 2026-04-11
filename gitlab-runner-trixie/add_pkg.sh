@@ -6,10 +6,14 @@ base="/var/www/html/repos/"
 outgoing="/var/www/html/farm/outgoing"
 
 run () {
-	apt-get download gitlab-runner=${build} || true
+	apt-get download gitlab-runner:arm64=${build} || true
 	apt-get download gitlab-runner-helper-images=${build} || true
-	ls
-	#reprepro -b ${repo} -C main includedeb ${suite} ./gitlab*.deb
+	if [ -f ./gitlab-runner_${build}_amd64.deb ] ; then
+		if [ -f ./gitlab-runner-helper-images_${build}_all.deb ] ; then
+			reprepro -b ${repo} -C main includedeb ${suite} ./gitlab-runner_${build}_amd64.deb
+			reprepro -b ${repo} -C main includedeb ${suite} ./gitlab-runner-helper-images_${build}_all.deb
+		fi
+	fi
 }
 
 runner () {
