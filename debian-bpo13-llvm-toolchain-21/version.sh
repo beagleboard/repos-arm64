@@ -11,10 +11,12 @@
 #https://snapshot.debian.org/archive/debian/20251013T025134Z/pool/main/l/llvm-toolchain-21/llvm-toolchain-21_21.1.3-1.dsc
 #20260409
 #https://snapshot.debian.org/archive/debian/20251021T143127Z/pool/main/l/llvm-toolchain-21/llvm-toolchain-21_21.1.4-1.dsc
+#20260410
+#https://snapshot.debian.org/archive/debian/20251023T024602Z/pool/main/l/llvm-toolchain-21/llvm-toolchain-21_21.1.4-2.dsc
 #https://packages.debian.org/source/forky/llvm-toolchain-21
 
 #mirror="https://deb.debian.org/debian"
-mirror="https://snapshot.debian.org/archive/debian/20251021T143127Z"
+mirror="https://snapshot.debian.org/archive/debian/20251023T024602Z"
 
 package_name="llvm-toolchain-21"
 debian_pkg_name="${package_name}"
@@ -25,7 +27,7 @@ git_sha=""
 reprepro_dir="l/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-1"
+debian_version="${package_version}-2"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 
