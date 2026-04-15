@@ -1,0 +1,35 @@
+From e551aca8a0c66a9382064926a8efc4ad3681d23f Mon Sep 17 00:00:00 2001
+From: Ben Ashbaugh <ben.ashbaugh@intel.com>
+Date: Fri, 6 Feb 2026 11:01:00 -0800
+Subject: [PATCH] fix a spir-val error in the cooperative_matrix_constant_null
+ test
+
+error: line 13: OpTypeCooperativeMatrixKHR Scope is limited to Workgroup and Subgroup
+  %8 = OpTypeCooperativeMatrixKHR %uint %3 %uint_12 %uint_12 %3
+---
+ .../cooperative_matrix_constant_null.spvasm                 | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/extensions/KHR/SPV_KHR_cooperative_matrix/cooperative_matrix_constant_null.spvasm b/test/extensions/KHR/SPV_KHR_cooperative_matrix/cooperative_matrix_constant_null.spvasm
+index cf94332c2f..cf9769bea5 100644
+--- a/test/extensions/KHR/SPV_KHR_cooperative_matrix/cooperative_matrix_constant_null.spvasm
++++ b/test/extensions/KHR/SPV_KHR_cooperative_matrix/cooperative_matrix_constant_null.spvasm
+@@ -11,15 +11,15 @@ OpMemoryModel Physical64 OpenCL
+ OpEntryPoint Kernel %1 "test"
+ %uint = OpTypeInt 32 0
+ %uint_0 = OpConstantNull %uint
++%scope_sg = OpConstant %uint 3
+ %uint_12 = OpConstant %uint 12
+-%uint_2 = OpConstant %uint 2
+ %void = OpTypeVoid
+ %fnTy = OpTypeFunction %void
+-%matTy = OpTypeCooperativeMatrixKHR %uint %uint_0 %uint_12 %uint_12 %uint_0
++%matTy = OpTypeCooperativeMatrixKHR %uint %scope_sg %uint_12 %uint_12 %uint_0
+ %1 = OpFunction %void None %fnTy
+ %2 = OpLabel
+ %3 = OpCompositeConstruct %matTy %uint_0
+ OpReturn
+ OpFunctionEnd
+ 
+-; CHECK: call spir_func target("spirv.CooperativeMatrixKHR", i32, 0, 12, 12, 0) @_Z26__spirv_CompositeConstructi(i32 0)
++; CHECK: call spir_func target("spirv.CooperativeMatrixKHR", i32, 3, 12, 12, 0) @_Z26__spirv_CompositeConstructi(i32 0)
