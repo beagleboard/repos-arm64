@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 21.1.0-2~gcc15~ amd64 arm64 armel armhf i386 loong64 ppc64el riscv64 s390x
+# SymbolsHelper-Confirmed: 21.1.1 amd64 arm64 armhf hurd-i386 i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
 libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
 * Build-Depends-Package: libllvmspirvlib-21-dev
  _ZGVZNKSt8__detail11_AnyMatcherINSt7__cxx1112regex_traitsIcEELb0ELb0ELb0EEclEcE5__nul@Base 0
@@ -332,4 +332,4 @@ libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
  (optional=templinst)_ZZNKSt8__detail9_ExecutorIPKcSaINSt7__cxx119sub_matchIS2_EEENS3_12regex_traitsIcEELb1EE10_M_is_wordEcE3__s@Base 0
  _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 0
 #MISSING: 21# (optional=templinst|arch=!powerpc !ppc64)_ZZNSt9once_flag18_Prepare_executionC4IZSt9call_onceIRFPvRN4llvm12PassRegistryEEJSt17reference_wrapperIS5_EEEvRS_OT_DpOT0_EUlvE_EERSC_ENUlvE_4_FUNEv@Base 0
- (optional=templinst)_ZZNSt9once_flag18_Prepare_executionC4IZSt9call_onceIRFvRN4llvm12PassRegistryEEJSt17reference_wrapperIS4_EEEvRS_OT_DpOT0_EUlvE_EERSB_ENUlvE_4_FUNEv@Base 21
+ (optional=templinst|arch=!powerpc !ppc64)_ZZNSt9once_flag18_Prepare_executionC4IZSt9call_onceIRFvRN4llvm12PassRegistryEEJSt17reference_wrapperIS4_EEEvRS_OT_DpOT0_EUlvE_EERSB_ENUlvE_4_FUNEv@Base 21
