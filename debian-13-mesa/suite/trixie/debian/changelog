@@ -1,8 +1,14 @@
-mesa (26.0.4-1bbbio0~trixie+20260403) trixie; urgency=low
+mesa (26.0.5-1bbbio0~trixie+20260416) trixie; urgency=low
 
-  * Rebuild mesa_26.0.4-1 for repos.rcn-ee.com
+  * Rebuild mesa_26.0.5-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 03 Apr 2026 08:57:34 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 16 Apr 2026 11:48:03 -0500
+
+mesa (26.0.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 16 Apr 2026 09:54:33 +0300
 
 mesa (26.0.4-1) unstable; urgency=medium
 
