@@ -44,6 +44,7 @@ override_dh_gencontrol:
 
 execute_after_dh_clean:
 	$(RM) $(AUTOGEN)
+	$(RM) -r spirv-llvm-translator-??_*_logs
 
 update-symbols: debian/libllvmspirvlib$(LLVM_SOVERSION).symbols
 	pkgkde-getbuildlogs

@@ -16,16 +16,16 @@ Forwarded: https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/1963
  if(LLVM_SPIRV_INCLUDE_TESTS)
 --- a/include/LLVMSPIRVLib.h
 +++ b/include/LLVMSPIRVLib.h
-@@ -46,6 +46,8 @@
- #include <iostream>
+@@ -49,6 +49,8 @@
  #include <string>
+ #include <vector>
  
 +#pragma GCC visibility push(default)
 +
  namespace llvm {
  // Pass initialization functions need to be declared before inclusion of
  // PassSupport.h.
-@@ -68,8 +70,12 @@ class ModulePass;
+@@ -71,8 +73,12 @@ class ModulePass;
  class FunctionPass;
  } // namespace llvm
  
@@ -38,7 +38,7 @@ Forwarded: https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/1963
  namespace SPIRV {
  
  class SPIRVModule;
-@@ -261,4 +267,6 @@ FunctionPass *createSPIRVLowerBitCastToN
+@@ -264,4 +270,6 @@ FunctionPass *createSPIRVLowerBitCastToN
  
  } // namespace llvm
  
@@ -47,16 +47,16 @@ Forwarded: https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/1963
  #endif // SPIRV_H
 --- a/include/LLVMSPIRVOpts.h
 +++ b/include/LLVMSPIRVOpts.h
-@@ -48,6 +48,8 @@
- #include <optional>
+@@ -49,6 +49,8 @@
  #include <unordered_map>
+ #include <vector>
  
 +#pragma GCC visibility push(default)
 +
  namespace llvm {
  class IntrinsicInst;
  } // namespace llvm
-@@ -362,4 +364,6 @@ private:
+@@ -363,4 +365,6 @@ private:
  
  } // namespace SPIRV
  
@@ -75,7 +75,7 @@ Forwarded: https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/1963
  
 --- a/lib/SPIRV/libSPIRV/SPIRVModule.cpp
 +++ b/lib/SPIRV/libSPIRV/SPIRVModule.cpp
-@@ -2737,6 +2737,7 @@ bool isSpirvBinary(const std::string &Im
+@@ -2749,6 +2749,7 @@ bool isSpirvBinary(const std::string &Im
  
  #ifdef _SPIRV_SUPPORT_TEXT_FMT
  
@@ -83,7 +83,7 @@ Forwarded: https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/1963
  bool convertSpirv(std::istream &IS, std::ostream &OS, std::string &ErrMsg,
                    bool FromText, bool ToText) {
    auto SaveOpt = SPIRVUseTextFormat;
-@@ -2773,6 +2774,7 @@ bool isSpirvText(const std::string &Img)
+@@ -2785,6 +2786,7 @@ bool isSpirvText(const std::string &Img)
    return Magic == MagicNumber;
  }
  
