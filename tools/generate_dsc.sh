@@ -172,7 +172,7 @@ run () {
 	fi
 
 	#debuild -us -uc -S -d
-	debuild --no-lintian -i -us -uc -S -d
+	debuild --no-lintian --no-tgz-check -i -us -uc -S -d
 
 	cd ${DIR}/
 }
