@@ -7,6 +7,8 @@ include /usr/share/dpkg/pkg-info.mk
 LLVM_VERSION	 = $(shell sed -n -r '/^Build/,/^$$/s/.*llvm-([0-9]+)-dev.*/\1/p' debian/control)
 LLVM_SOVERSION	 = $(LLVM_VERSION).1
 
+LIT		 = $(or $(wildcard /usr/lib/llvm-$(LLVM_VERSION)/bin/lit), /usr/lib/llvm-$(LLVM_VERSION)/build/utils/lit/lit.py)
+
 AUTOGEN		 = debian/libllvmspirvlib$(LLVM_SOVERSION).install
 AUTOGEN		+= debian/libllvmspirvlib$(LLVM_SOVERSION).symbols
 
@@ -24,7 +26,7 @@ override_dh_auto_configure: autogen
 		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include \
 		-DBUILD_SHARED_LIBS=ON \
 		-DLLVM_SPIRV_INCLUDE_TESTS=ON \
-		-DLLVM_EXTERNAL_LIT=/usr/lib/llvm-$(LLVM_VERSION)/build/utils/lit/lit.py \
+		-DLLVM_EXTERNAL_LIT=$(LIT) \
 		-Wno-dev
 
 execute_after_dh_auto_install:

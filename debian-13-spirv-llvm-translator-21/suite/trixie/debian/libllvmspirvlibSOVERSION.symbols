@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 21.1.1 amd64 arm64 armhf hurd-i386 i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
+# SymbolsHelper-Confirmed: 21.1.1 amd64 arm64 armhf hurd-amd64 hurd-i386 i386 loong64 powerpc ppc64 ppc64el riscv64 s390x sparc64 x32
 libLLVMSPIRVLib.so.21.1 #PACKAGE# #MINVER#
 * Build-Depends-Package: libllvmspirvlib-21-dev
  _ZGVZNKSt8__detail11_AnyMatcherINSt7__cxx1112regex_traitsIcEELb0ELb0ELb0EEclEcE5__nul@Base 0
