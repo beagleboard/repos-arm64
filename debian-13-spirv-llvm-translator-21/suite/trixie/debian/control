@@ -1,6 +1,5 @@
 Source: spirv-llvm-translator-21
 Section: libdevel
-Priority: optional
 Maintainer: Debian OpenCL team <pkg-opencl-devel@lists.alioth.debian.org>
 Uploaders:
  Timo Aaltonen <tjaalton@debian.org>,
@@ -10,14 +9,14 @@ Build-Depends: debhelper-compat (= 13),
  cmake,
  gcc (>= 4:14),
  pkgconf,
- spirv-headers (>= 1.6.1+1.4.328.0),
+ spirv-headers (>= 1.6.1+1.4.335.0),
  spirv-tools <!nocheck>,
  spirv-tools-dev,
 # keep the clang/llvm version in sync, don't forget debian/tests/control
  libclang-21-dev,
  llvm-21-dev,
  clang-21 <!nocheck>,
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Homepage: https://github.com/KhronosGroup/SPIRV-LLVM-Translator
 Vcs-Browser: https://salsa.debian.org/opencl-team/spirv-llvm-translator
 Vcs-Git: https://salsa.debian.org/opencl-team/spirv-llvm-translator.git -b llvm21/main
