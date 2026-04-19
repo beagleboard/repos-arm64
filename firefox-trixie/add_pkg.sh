@@ -6,7 +6,7 @@ outgoing="/var/www/html/farm/outgoing"
 run () {
 	latest=$(apt-cache madison firefox | grep packages.mozilla.org | awk '{print $3}' | sort -V | tail -1)
 	echo "latest: ${latest}"
-	apt-get download firefox=${latest}
+	apt-get download firefox:${deb_arch}=${latest}
 	sync
 	if [ -f ./firefox_${latest}_${deb_arch}.deb ] ; then
 		reprepro -b ${repo} -C main includedeb ${suite} ./firefox_${latest}_${deb_arch}.deb
