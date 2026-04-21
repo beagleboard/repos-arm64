@@ -29,22 +29,8 @@ log="usb_gadget:"
 
 CONFIGFS="/sys/kernel/config/usb_gadget"
 
-#  idVendor           0x1d6b Linux Foundation
-#  idProduct          0x0104 Multifunction Composite Gadget
-#  bcdDevice            4.04
-#  bcdUSB               2.00
-
-usb_idVendor="0x1d6b"
-usb_idProduct="0x0104"
-usb_bcdDevice="0x0404"
-usb_bcdUSB="0x0200"
 usb_serialnr="000000"
 usb_product="USB Device"
-
-usb_iserialnumber="1234BBBK5678"
-#usb_iserialnumber="$(cat /proc/device-tree/serial-number)"
-usb_imanufacturer="$(cat /proc/device-tree/model | awk '{print $1}' | tr -d '\000')"
-usb_iproduct="$(cat /proc/device-tree/model | awk '{print $2}' | tr -d '\000')"
 
 #usb0 mass_storage
 usb_ms_stall=0
@@ -62,21 +48,50 @@ usb_ms_imagefile=/etc/bbb.io/templates/beagle-getting-started.img
 #cpsw_4_mac = usb1 (BeagleBone Side)
 #cpsw_5_mac = usb1 (USB host, pc side)
 
+deviceinfo_usb_imanufacturer="BeagleBoard.org"
+deviceinfo_usb_iproduct="$(cat /proc/device-tree/model | sed "s/ /_/g" | tr -d '\000')"
+
 if [ -f /etc/default/usb-oem ] ; then
 	. /etc/default/usb-oem
 fi
 
+#  idVendor           0x1d6b Linux Foundation
+#  idProduct          0x0104 Multifunction Composite Gadget
+#  bcdDevice            4.04
+#  bcdUSB               2.00
+
+# Default values for USB-related deviceinfo variables
+usb_idVendor="${deviceinfo_usb_idVendor:-0x1D6B}"   # Linux Foundation
+usb_idProduct="${deviceinfo_usb_idProduct:-0x0104}" # Multifunction Composite Gadget
+usb_bcdDevice="${deviceinfo_usb_bcdDevice:-0x0404}"
+usb_bcdUSB="${deviceinfo_usb_bcdUSB:-0x0200}"
+
+#usb_imanufacturer="$(cat /proc/device-tree/model | awk '{print $1}' | tr -d '\000')"
+usb_imanufacturer="${deviceinfo_usb_imanufacturer:-BeagleBoard.org}"
+usb_serialnumber="${deviceinfo_usb_serialnumber:-1234BBBK5678}"
+#usb_iproduct="$(cat /proc/device-tree/model | awk '{print $2}' | tr -d '\000')"
+usb_iproduct="${deviceinfo_usb_iproduct:-BeagleBone}"
+
+
 run_libcomposite () {
 	if [ ! -d ${CONFIGFS}/g_multi/ ] ; then
-		echo "${log} Creating g_multi"
-		mkdir -p ${CONFIGFS}/g_multi || true
+		echo "${log} Setting up g_multit through configfs"
+		# Create an usb gadet configuration
+		mkdir -p ${CONFIGFS}/g_multi || echo "${log} Couldn't create $CONFIGFS/g_multi"
+
+		echo "$usb_idVendor" > "$CONFIGFS/g_multi/idVendor"
+		echo "$usb_idProduct" > "$CONFIGFS/g_multi/idProduct"
+		echo "$usb_bcdDevice" > "$CONFIGFS/g_multi/bcdDevice"
+		echo "$usb_bcdUSB" > "$CONFIGFS/g_multi/bcdUSB"
+
+		# Create english (0x409) strings
+		mkdir $CONFIGFS/g_multi/strings/0x409 || echo "${log} Couldn't create $CONFIGFS/g_multi/strings/0x409"
+
+		echo "$usb_imanufacturer" > "$CONFIGFS/g_multi/strings/0x409/manufacturer"
+		echo "$usb_iserialnumber" > "$CONFIGFS/g_multi/strings/0x409/serialnumber"
+		echo "$usb_iproduct" > "$CONFIGFS/g_multi/strings/0x409/product"
+
 		cd ${CONFIGFS}/g_multi
-
-		echo ${usb_bcdUSB} > bcdUSB
-		echo ${usb_idVendor} > idVendor # Linux Foundation
-		echo ${usb_idProduct} > idProduct # Multifunction Composite Gadget
-		echo ${usb_bcdDevice} > bcdDevice
-
 		# Windows extension to use IAD (Interface Association Descriptor)
 		# https://learn.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-interface-association-descriptor
 		echo "0xEF" > bDeviceClass
@@ -84,12 +99,6 @@ run_libcomposite () {
 		echo "0x01" > bDeviceProtocol
 		echo "0x0100" > bcdDevice
 
-		#0x409 = english strings...
-		mkdir -p strings/0x409
-
-		echo ${usb_iserialnumber} > strings/0x409/serialnumber
-		echo ${usb_imanufacturer} > strings/0x409/manufacturer
-		echo ${usb_iproduct} > strings/0x409/product
 
 		mkdir -p configs/c.1/strings/0x409
 		echo "BeagleBone Composite" > configs/c.1/strings/0x409/configuration
@@ -123,20 +132,24 @@ run_libcomposite () {
 		if [ ! "x${USB_IMAGE_FILE_DISABLED}" = "xyes" ]; then
 			if [ -f ${usb_ms_imagefile} ] ; then
 				echo "${log} enable USB mass_storage img file"
-				mkdir -p functions/mass_storage.usb0
-				echo ${usb_ms_stall} > functions/mass_storage.usb0/stall
-				echo ${usb_ms_cdrom} > functions/mass_storage.usb0/lun.0/cdrom
-				echo ${usb_ms_nofua} > functions/mass_storage.usb0/lun.0/nofua
-				echo ${usb_ms_removable} > functions/mass_storage.usb0/lun.0/removable
-				echo ${usb_ms_ro} > functions/mass_storage.usb0/lun.0/ro
-				echo ${usb_ms_imagefile} > functions/mass_storage.usb0/lun.0/file
 
-				ln -s functions/mass_storage.usb0 configs/c.1/
+				# Create mass_storage function.
+				mkdir $CONFIGFS/g_multi/functions/mass_storage.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/mass_storage.usb0"
+
+				echo ${usb_ms_stall} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/stall"
+				echo ${usb_ms_cdrom} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/lun.0/cdrom"
+				echo ${usb_ms_nofua} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/lun.0/nofua"
+				echo ${usb_ms_removable} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/lun.0/removable"
+				echo ${usb_ms_ro} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/lun.0/ro"
+				echo ${usb_ms_imagefile} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/lun.0/file"
+
+				# Link the mass_storage instance to the configuration
+				ln -s $CONFIGFS/g_multi/functions/mass_storage.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink mass_storage.usb0"
 			fi
 		fi
 
 		###FIXME:
-		sleep 5
+		sleep 3
 
 		# Check if there's an USB Device Controller
 		if [ -z "$(ls /sys/class/udc)" ]; then
