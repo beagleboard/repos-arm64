@@ -14,5 +14,6 @@ Depends:
  , bc
  , systemd-dev
  , generic-sys-mods
+ , umtp-responder
 Description: usb gadget customizations
  usb gadget customizations
