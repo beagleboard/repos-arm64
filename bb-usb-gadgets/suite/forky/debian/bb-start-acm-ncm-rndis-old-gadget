@@ -100,30 +100,38 @@ run_libcomposite () {
 		echo "BeagleBone Composite" > "$CONFIGFS/g_multi/configs/c.1/strings/0x409/configuration"
 		echo "500" > "$CONFIGFS/g_multi/configs/c.1/MaxPower"
 
-		cd ${CONFIGFS}/g_multi
 		# Enable use of OS descriptor (for windows to bind drivers like NCM, RNDIS...
 		# without additional .inf file)
-		mkdir -p os_desc
-		echo "1" > os_desc/use
-		echo "0xbc" > os_desc/b_vendor_code
-		echo "MSFT100" > os_desc/qw_sign
+		if [ ! -d $CONFIGFS/g_multi/os_desc ] ; then
+			mkdir $CONFIGFS/g_multi/os_desc || echo "${log} Couldn't create $CONFIGFS/g_multi/os_desc"
+		fi
+		echo "1" > "$CONFIGFS/g_multi/os_desc/use"
+		echo "0xbc" > "$CONFIGFS/g_multi/os_desc/b_vendor_code"
+		echo "MSFT100" > "$CONFIGFS/g_multi/os_desc/qw_sign"
 
 		mkdir -p functions/ncm.usb0
 
+		# Create network function.
+		mkdir $CONFIGFS/g_multi/functions/ncm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/ncm.usb0"
+
 		#Set compatible id so that Windows 10 can match this function to
 		#NCM driver more easily.
-		mkdir -p functions/ncm.usb0/os_desc/interface.ncm
-		echo WINNCM > functions/ncm.usb0/os_desc/interface.ncm/compatible_id
+		mkdir -p $CONFIGFS/g_multi/functions/ncm.usb0/os_desc/interface.ncm || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/ncm.usb0/os_desc/interface.ncm"
+		echo "WINNCM" > "$CONFIGFS/g_multi/functions/ncm.usb0/os_desc/interface.ncm/compatible_id"
 
 		if [ ! "x${USB0_HOST_ADDR}" = "x" ] ; then
-			echo ${USB0_HOST_ADDR} > functions/ncm.usb0/host_addr
-			echo ${USB0_DEV_ADDR} > functions/ncm.usb0/dev_addr
+			echo "$USB0_HOST_ADDR" > "$CONFIGFS/g_multi/functions/ncm.usb0/host_addr"
+			echo "$USB0_DEV_ADDR" > "$CONFIGFS/g_multi/functions/ncm.usb0/dev_addr"
 		fi
 
-		ln -s functions/ncm.usb0 configs/c.1/
+		# Link the network instance to the configuration
+		ln -s $CONFIGFS/g_multi/functions/ncm.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink ncm.usb0"
 
-		mkdir -p functions/acm.usb0
-		ln -s functions/acm.usb0 configs/c.1/
+		# Create Serial function.
+		mkdir $CONFIGFS/g_multi/functions/acm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/acm.usb0"
+
+		# Link the Serial instance to the configuration
+		ln -s $CONFIGFS/g_multi/functions/acm.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink acm.usb0"
 
 		if [ ! "x${USB_IMAGE_FILE_DISABLED}" = "xyes" ]; then
 			if [ -f ${usb_ms_imagefile} ] ; then
@@ -145,7 +153,7 @@ run_libcomposite () {
 		fi
 
 		###FIXME:
-		sleep 2
+		sleep 1
 
 		# Check if there's an USB Device Controller
 		if [ -z "$(ls /sys/class/udc)" ]; then
