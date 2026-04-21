@@ -12,7 +12,7 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , bc
- , systemd
+ , systemd-dev
  , generic-sys-mods
 Description: usb gadget customizations
  usb gadget customizations
