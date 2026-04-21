@@ -27,7 +27,7 @@ fi
 
 log="usb_gadget:"
 
-usb_gadget="/sys/kernel/config/usb_gadget"
+CONFIGFS="/sys/kernel/config/usb_gadget"
 
 #  idVendor           0x1d6b Linux Foundation
 #  idProduct          0x0104 Multifunction Composite Gadget
@@ -67,10 +67,10 @@ if [ -f /etc/default/usb-oem ] ; then
 fi
 
 run_libcomposite () {
-	if [ ! -d /sys/kernel/config/usb_gadget/g_multi/ ] ; then
+	if [ ! -d ${CONFIGFS}/g_multi/ ] ; then
 		echo "${log} Creating g_multi"
-		mkdir -p /sys/kernel/config/usb_gadget/g_multi || true
-		cd /sys/kernel/config/usb_gadget/g_multi
+		mkdir -p ${CONFIGFS}/g_multi || true
+		cd ${CONFIGFS}/g_multi
 
 		echo ${usb_bcdUSB} > bcdUSB
 		echo ${usb_idVendor} > idVendor # Linux Foundation
@@ -135,39 +135,25 @@ run_libcomposite () {
 			fi
 		fi
 
-		#mkdir -p functions/mass_storage.usb0
-		#echo 0 > functions/mass_storage.usb0/stall
-		#echo /dev/nbd0 > functions/mass_storage.usb0/lun.0/file
-		#ln -s functions/mass_storage.usb0 configs/c.1/
+		###FIXME:
+		sleep 5
 
-		if [ ! "x${USB_UMTPRD_DISABLED}" = "xyes" ]; then
-			if [ -f ${USB_UMTPRD_CONFIG} ]; then
-				if [ -f /usr/bin/umtprd ] ; then
-					mkdir -p functions/ffs.mtp
-					ln -s functions/ffs.mtp configs/c.1
-
-					mkdir /dev/ffs-mtp
-					mount -t functionfs mtp /dev/ffs-mtp
-					/usr/bin/umtprd -conf ${USB_UMTPRD_CONFIG} &
-					sleep 1
-				fi
-			fi
+		# Check if there's an USB Device Controller
+		if [ -z "$(ls /sys/class/udc)" ]; then
+			echo "${log} No USB Device Controller available"
+			return
 		fi
+
+		echo "$(ls /sys/class/udc)" > $CONFIGFS/g_multi/UDC || echo "${log} Couldn't write UDC"
+
+		echo "${log} start serial-getty@ttyGS0.service"
+		systemctl start serial-getty@ttyGS0.service || true
 	fi
-
-	###FIXME:
-	sleep 5
-
-	cd /sys/kernel/config/usb_gadget/g_multi
-
-	ls /sys/class/udc/ > UDC
-
-	echo "${log} g_multi Created"
 }
 
 use_libcomposite () {
 	echo "${log} Looking for libcomposite"
-	if [ -d /sys/kernel/config/usb_gadget/ ] ; then
+	if [ -d ${CONFIGFS}/ ] ; then
 		run_libcomposite
 	fi
 }
