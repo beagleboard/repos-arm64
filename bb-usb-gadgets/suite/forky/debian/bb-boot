@@ -6,5 +6,5 @@
 ##USB_IMAGE_FILE_DISABLED=yes
 
 # USB_UMTPRD_DISABLED=yes #disable the loading of the MTP client.
-##USB_UMTPRD_DISABLED=yes
-USB_UMTPRD_CONFIG="/etc/bbb.io/templates/bbb-umtprd.conf"
+USB_UMTPRD_DISABLED=yes
+##USB_UMTPRD_CONFIG="/etc/bbb.io/templates/bbb-umtprd.conf"
