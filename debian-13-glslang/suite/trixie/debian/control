@@ -1,0 +1,41 @@
+Source: glslang
+Section: libdevel
+Priority: optional
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Uploaders: Timo Aaltonen <tjaalton@debian.org>
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ pkgconf,
+ python3:native,
+ spirv-headers,
+ spirv-tools-dev (>= 2026.1),
+Standards-Version: 4.7.0
+Homepage: https://github.com/KhronosGroup/glslang
+Vcs-Git: https://salsa.debian.org/xorg-team/vulkan/glslang.git
+Vcs-Browser: https://salsa.debian.org/xorg-team/vulkan/glslang
+
+Package: glslang-tools
+Architecture: any
+Multi-Arch: foreign
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ spirv-tools (>= 2026.1),
+Description: OpenGL and OpenGL ES shader front end and validator -- tools
+ glslang is the official reference compiler front end for the OpenGL ES
+ and OpenGL shading languages. It implements a strict
+ interpretation of the specifications for these languages.
+ .
+ This package includes the validator tools.
+
+Package: glslang-dev
+Architecture: any
+Depends: ${misc:Depends},
+ spirv-tools-dev (>= 2026.1),
+Suggests: glslang-tools
+Multi-Arch: same
+Description: OpenGL and OpenGL ES shader front end and validator -- development files
+ glslang is the official reference compiler front end for the OpenGL ES
+ and OpenGL shading languages. It implements a strict
+ interpretation of the specifications for these languages.
+ .
+ This package includes files for development.

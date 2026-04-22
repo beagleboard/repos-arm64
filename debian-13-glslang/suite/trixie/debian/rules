@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@ --builddirectory=build/
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DBUILD_SHARED_LIBS=OFF \
+		-DALLOW_EXTERNAL_SPIRV_TOOLS=ON \
+		-DCMAKE_BUILD_TYPE=Release
+
+ifneq (,$(filter $(DEB_HOST_ARCH), armhf hppa powerpc ppc64 s390x sparc64))
+override_dh_auto_test:
+endif
+
+gentarball: SOURCE=glslang
+gentarball: UV=$(shell echo ${DEB_VERSION}|sed 's/-.*$$//')
+gentarball:
+	git archive --format=tar upstream-unstable --prefix=$(SOURCE)-$(UV)/ | gzip -9 > \
+		../$(SOURCE)_$(UV).orig.tar.gz
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
