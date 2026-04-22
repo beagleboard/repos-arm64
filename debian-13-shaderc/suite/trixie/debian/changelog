@@ -1,0 +1,125 @@
+shaderc (2026.1-1bbbio0~trixie+20260421) trixie; urgency=low
+
+  * Rebuild shaderc_2026.1-1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 21 Apr 2026 19:27:38 -0500
+
+shaderc (2026.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.7.3:
+    + Remove `Priority: optional` in d/control, now by default
+  * Update year in d/copyright
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Wed, 28 Jan 2026 22:13:07 +0100
+
+shaderc (2025.5-1) unstable; urgency=medium
+
+  * New upstream release
+  * Build-depends on spirv-tools-dev
+    - Static libs have been moved there from spirv-tools
+    - Closes: #1121711
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Mon, 01 Dec 2025 21:54:41 +0100
+
+shaderc (2025.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * d/watch: convert to format version 5
+  * d/control: remove now spurious Rules-Requires-root: no
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Mon, 13 Oct 2025 21:12:08 +0200
+
+shaderc (2025.3-1) unstable; urgency=medium
+
+  * New upstream release
+    - Refresh patches
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sun, 31 Aug 2025 23:18:56 +0200
+
+shaderc (2025.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * d/copyright: update copyright year
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Tue, 29 Apr 2025 22:55:06 +0200
+
+shaderc (2025.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Improve d/tests/lib. Thanks to Simon McVittie! Closes: #1095954
+  * Bump Standards-Version to 4.7.2: no change needed
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sat, 15 Mar 2025 21:40:53 +0100
+
+shaderc (2024.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sat, 18 Jan 2025 23:33:18 +0100
+
+shaderc (2024.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * Fix (again) lintian-override rule
+    - On my system, it says "can't break", on udd.d.org, it says "cannot break"
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sat, 28 Sep 2024 20:06:18 +0200
+
+shaderc (2024.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Fix lintian-override rule
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Wed, 18 Sep 2024 21:40:33 +0200
+
+shaderc (2024.1-1) unstable; urgency=medium
+
+  * New upstream release
+    - Refresh patch use-system-thirdparties.patch and drop patches applied
+      upstream
+  * Add "Forwarded: not-needed" to d/patches/rename-libshaderc.patch
+  * Bump Standards-Version to 4.7.0: no change needed
+  * Refresh d/copyright
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Tue, 28 May 2024 18:53:56 +0200
+
+shaderc (2023.8-1) unstable; urgency=medium
+
+  * New upstream release
+    - Refresh patches
+    - Add patch to fix name of Python interpreter
+    - Fix FTBFS (Closes: #1058397)
+    - Refresh d/glslc.lintian-overrides
+  * Fix linking of libshaderc.so, add autopkgtest (Closes: #1029939)
+  * Add obj-x86_64-linux-gnu to d/clean
+  * Use printf instead of echo to generate build-version.inc. Thanks to
+    Vagrant Cascadian! (Closes: #1035324)
+  * Build-Depends on pkgconf instead of pkg-config
+  * d/copyright: update copyright year
+  * Add Built-Using since we are linking against static libraries
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sat, 09 Mar 2024 22:52:47 +0100
+
+shaderc (2023.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Refresh patches (probably required by the raise of cmake required version)
+  * Bump Standards-Version to 4.6.2: no change needed
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sun, 22 Jan 2023 13:21:24 +0100
+
+shaderc (2022.4-1) unstable; urgency=medium
+
+  * New upstream release
+    - Closes: #1027045
+    - Refresh debian/patches/rename-libshaderc.patch
+    - Fix test glslc to ignore version-specific content
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Mon, 26 Dec 2022 23:02:13 +0100
+
+shaderc (2022.2-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #890472)
+
+ -- Philippe SWARTVAGHER <phil.swart@gmx.fr>  Sun, 04 Sep 2022 22:19:40 +0200

@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+BUILT_USING := $(shell dpkg-query -f '$${source:Package} (= $${source:Version}), ' -W spirv-tools-dev glslang-dev)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	# CMAKE_BUILD_RPATH_USE_ORIGIN=ON is for reproducibility:
+	dh_auto_configure -- \
+		-Dglslang_SOURCE_DIR=/usr/include/glslang/ \
+		-DSHADERC_SKIP_TESTS=ON \
+		-DSHADERC_SKIP_EXAMPLES=ON \
+		-DCMAKE_BUILD_RPATH_USE_ORIGIN=ON
+
+override_dh_auto_build:
+	# Use printf instead of echo to make it work regardless the shell (see #1058397)
+	printf "\"shaderc $(DEB_VERSION)\\\n\"" > obj-${DEB_HOST_GNU_TYPE}/build-version.inc
+	dpkg-query -f '"spirv-tools $${Version}\\n"\n' -W spirv-tools >> obj-${DEB_HOST_GNU_TYPE}/build-version.inc
+	dpkg-query -f '"glslang $${Version}\\n"' -W glslang-dev >> obj-${DEB_HOST_GNU_TYPE}/build-version.inc
+	dh_auto_build
+
+override_dh_installman:
+ifneq (, $(shell command -v asciidoctor 2> /dev/null))
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/man/man1/
+	asciidoctor -b manpage glslc/README.asciidoc -o $(CURDIR)/debian/tmp/usr/share/man/man1/glslc.1
+	dh_installman
+endif
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf glslc/test/__pycache__
+
+override_dh_gencontrol:
+	dh_gencontrol -- -V"built-using=$(BUILT_USING)"
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

@@ -1,0 +1,76 @@
+Source: shaderc
+Section: libs
+Maintainer: Philippe SWARTVAGHER <phil.swart@gmx.fr>
+Build-Depends:
+ debhelper-compat (= 13),
+ spirv-headers,
+ spirv-tools-dev,
+ pkgconf,
+ cmake,
+ asciidoctor <!cross>,
+ glslang-dev,
+ ruby-pygments.rb <!cross>,
+ python3:any,
+Standards-Version: 4.7.3
+Homepage: https://github.com/google/shaderc/
+Vcs-Browser: https://salsa.debian.org/debian/shaderc
+Vcs-Git: https://salsa.debian.org/debian/shaderc.git
+
+Package: glslc
+Section: libdevel
+Architecture: any
+Multi-Arch: foreign
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Built-Using: ${built-using}
+Description: Command line compiler for GLSL/HLSL to SPIR-V
+ glslc wraps around core functionality in glslang and SPIRV-Tools. glslc and
+ its library aims to provide:
+    - a command line compiler with GCC- and Clang-like usage, for better
+    integration with build systems;
+    - an API where functionality can be added without breaking existing clients;
+    - an API supporting standard concurrency patterns across multiple operating
+    systems;
+    - increased functionality such as file #include support.
+ .
+ This package contains the glslc binary.
+
+Package: libshaderc-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libshaderc1 (= ${binary:Version}),
+ ${misc:Depends},
+ glslang-dev,
+ spirv-headers,
+Built-Using: ${built-using}
+Description: Library API for accessing glslc functionality - static libraries and headers
+ glslc wraps around core functionality in glslang and SPIRV-Tools. glslc and
+ its library aims to provide:
+    - a command line compiler with GCC- and Clang-like usage, for better
+    integration with build systems;
+    - an API where functionality can be added without breaking existing clients;
+    - an API supporting standard concurrency patterns across multiple operating
+    systems;
+    - increased functionality such as file #include support.
+ .
+ This package contains static libraries and development headers.
+
+Package: libshaderc1
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Built-Using: ${built-using}
+Description: Library API for accessing glslc functionality - shared libraries
+ glslc wraps around core functionality in glslang and SPIRV-Tools. glslc and
+ its library aims to provide:
+    - a command line compiler with GCC- and Clang-like usage, for better
+    integration with build systems;
+    - an API where functionality can be added without breaking existing clients;
+    - an API supporting standard concurrency patterns across multiple operating
+    systems;
+    - increased functionality such as file #include support.
+ .
+ This package contains shared libraries.
