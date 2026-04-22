@@ -1,0 +1,54 @@
+#!/bin/bash -e
+
+BBORG_DTBS="https://github.com/beagleboard/BeagleBoard-DeviceTrees.git"
+
+git_clone () {
+	if [ ! -d /opt/source/${git_target}/ ] ; then
+		git clone ${git_repo} /opt/source/${git_target} --depth 1
+		sync
+		chown -R 1000:1000 /opt/source/${git_target}
+		echo "${git_target} : ${git_repo}" >> /opt/source/list.txt
+	else
+		echo "beagle-dtb-source: ${git_target} repo already exists"
+	fi
+}
+
+git_clone_branch () {
+	if [ ! -d /opt/source/${git_target}/ ] ; then
+		git clone -b ${git_branch} ${git_repo} /opt/source/${git_target} --depth 1
+		sync
+		chown -R 1000:1000 /opt/source/${git_target}
+		echo "${git_target} : ${git_repo}" >> /opt/source/list.txt
+	else
+		echo "beagle-dtb-source: ${git_target} repo already exists"
+	fi
+}
+
+git_repo="https://github.com/beagleboard/spidev-test"
+git_target="spidev-test"
+git_clone
+
+git_repo="https://github.com/TexasInstruments/open-pru.git"
+git_target="open-pru"
+git_clone
+
+git_repo="$BBORG_DTBS"
+
+#TI:
+git_target="dtb-5.10-ti" ; git_branch="v5.10.x-ti-unified" ; git_clone_branch
+git_target="dtb-6.1-Beagle"  ; git_branch="v6.1.x-Beagle"  ; git_clone_branch
+git_target="dtb-6.6-Beagle"  ; git_branch="v6.6.x-Beagle"  ; git_clone_branch
+git_target="dtb-6.12-Beagle" ; git_branch="v6.12.x-Beagle" ; git_clone_branch
+
+#LTS
+git_target="dtb-6.1.x"  ; git_branch="v6.1.x"  ; git_clone_branch
+git_target="dtb-6.6.x"  ; git_branch="v6.6.x"  ; git_clone_branch
+git_target="dtb-6.12.x" ; git_branch="v6.12.x" ; git_clone_branch
+git_target="dtb-6.18.x" ; git_branch="v6.18.x" ; git_clone_branch
+
+#Stable
+git_target="dtb-6.16.x" ; git_branch="v6.16.x" ; git_clone_branch
+git_target="dtb-6.17.x" ; git_branch="v6.17.x" ; git_clone_branch
+git_target="dtb-6.19.x" ; git_branch="v6.19.x" ; git_clone_branch
+git_target="dtb-7.0.x"  ; git_branch="v7.0.x"  ; git_clone_branch
+#

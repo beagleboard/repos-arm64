@@ -27,6 +27,7 @@ Depends:
  , psmisc
  , iw
  , ufw
+ , git
  , ti-k3conf
 Description: System tweaks for the Generic Systems
  Various modifications to improve the performance or user experience.

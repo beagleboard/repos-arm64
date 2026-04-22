@@ -7,6 +7,7 @@ debian/beagle-kversion /usr/sbin
 debian/beagle-pin-mux /usr/sbin
 debian/beagle-pwm-export /usr/sbin
 debian/bbbio-set-sysconf /usr/sbin
+debian/beagle-dtb-source /usr/bin
 debian/raspi-config /usr/sbin
 debian/profile /etc/bbb.io/templates/
 debian/sysconf.txt /etc/bbb.io/templates/
