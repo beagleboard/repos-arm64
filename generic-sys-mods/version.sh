@@ -2,7 +2,7 @@
 
 package_name="generic-sys-mods"
 debian_pkg_name="${package_name}"
-package_version="1.20260422.0"
+package_version="1.20260423.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20260422"
-trixie_version="~trixie+20260422"
-forky_version="~forky+20260422"
-noble_version="~noble+20260422"
+bookworm_version="~bookworm+20260423"
+trixie_version="~trixie+20260423"
+forky_version="~forky+20260423"
+noble_version="~noble+20260423"

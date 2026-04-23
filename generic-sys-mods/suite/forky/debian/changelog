@@ -1,4 +1,4 @@
-generic-sys-mods (1.20260422.0-0~forky+20260422) forky; urgency=low
+generic-sys-mods (1.20260423.0-0~forky+20260423) forky; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
@@ -9,5 +9,5 @@ generic-sys-mods (1.20260422.0-0~forky+20260422) forky; urgency=low
   * add beagle-dtb-source script to sync /opt/source/
   * add pkg git for beagle-dtb-source
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 22 Apr 2026 13:16:36 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 23 Apr 2026 12:02:54 -0500
 
