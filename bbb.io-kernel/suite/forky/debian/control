@@ -181,29 +181,29 @@ Description: BeagleBoard.org 6.17-k3 Kernel.org Branch
 Package: bbb.io-kernel-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.18.23-arm64-k3-r31
+Pre-Depends: linux-image-6.18.24-arm64-k3-r32
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.18.23-arm64-k3-r31
+ , rtw88-modules-6.18.24-arm64-k3-r32
 Description: BeagleBoard.org 6.18-k3 Kernel.org Branch
  This metapackage will install linux-image-6.18-k3-arm64 for in Debian.
 
 Package: bbb.io-kernel-6.19-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.19.13-arm64-k3-r18
+Pre-Depends: linux-image-6.19.14-arm64-k3-r19
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.19.13-arm64-k3-r18
+ , rtw88-modules-6.19.14-arm64-k3-r19
 Description: BeagleBoard.org 6.19-k3 Kernel.org Branch
  This metapackage will install linux-image-6.19-k3-arm64 for in Debian.
 
 Package: bbb.io-kernel-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.0.0-arm64-k3-r9
+Pre-Depends: linux-image-7.0.1-arm64-k3-r10
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Description: BeagleBoard.org 7.0-k3 Kernel.org Branch
  This metapackage will install linux-image-7.0-k3-arm64 for in Debian.
