@@ -155,8 +155,19 @@ generate_kernel_k3 () {
 			echo " rtw88-modprobe-conf" >> ./suite/${dist}/debian/${wfile}
 			echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		fi
-		echo "Description: BeagleBoard.org ${msg} Kernel.org Branch" >> ./suite/${dist}/debian/${wfile}
-		echo " This metapackage will install linux-image-${msg}-arm64 for in Debian." >> ./suite/${dist}/debian/${wfile}
+		echo "Description: Linux ${msg} for 64-bit ARMv8 machines (meta-package)" >> ./suite/${dist}/debian/${wfile}
+		echo " This package depends on the latest Linux ${msg} kernel and modules" >> ./suite/${dist}/debian/${wfile}
+		echo " for use on 64-bit ARMv8 machines." >> ./suite/${dist}/debian/${wfile}
+
+		echo "" >> ./suite/${dist}/debian/${wfile}
+		echo "Package: bbb.io-headers-${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Pre-Depends: linux-headers-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: Header files for Linux ${msg} arm64 configuration (meta-package)" >> ./suite/${dist}/debian/${wfile}
+		echo " This package depends on the architecture-specific header files for the" >> ./suite/${dist}/debian/${wfile}
+		echo " latest Linux ${msg} kernel arm64 configuration." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
 
