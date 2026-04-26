@@ -150,10 +150,19 @@ generate_kernel_k3 () {
 		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
-		if [ "x${rtw88}" = "xenabled" ] ; then
+		if [ "x${cc33xx}" = "xenabled" ] ; then
 			echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
-			echo " rtw88-modprobe-conf" >> ./suite/${dist}/debian/${wfile}
-			echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			echo " bbb.io-cc33xx-1.0.2.10-firmware" >> ./suite/${dist}/debian/${wfile}
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo " , rtw88-modprobe-conf" >> ./suite/${dist}/debian/${wfile}
+				echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
+		else
+			if [ "x${rtw88}" = "xenabled" ] ; then
+				echo "Recommends:" >> ./suite/${dist}/debian/${wfile}
+				echo " rtw88-modprobe-conf" >> ./suite/${dist}/debian/${wfile}
+				echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+			fi
 		fi
 		echo "Description: Linux ${msg} for 64-bit ARMv8 machines (meta-package)" >> ./suite/${dist}/debian/${wfile}
 		echo " This package depends on the latest Linux ${msg} kernel and modules" >> ./suite/${dist}/debian/${wfile}
@@ -214,6 +223,7 @@ do_some_k3_trixie () {
 	#Phase Out...
 	#msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
 	#msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
+	#msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
 
 	rtw88="enabled"
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
@@ -221,7 +231,6 @@ do_some_k3_trixie () {
 
 	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
 
-	msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
 	msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
 	msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
 	msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
@@ -230,8 +239,13 @@ do_some_k3_trixie () {
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
-	unset rtw88
+
+	cc33xx="enabled"
 	msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
+	unset rtw88
+
+	msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
+	unset cc33xx
 }
 
 do_some_k3_forky () {
@@ -252,8 +266,13 @@ do_some_k3_forky () {
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
-	unset rtw88
+
+	cc33xx="enabled"
 	msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
+	unset rtw88
+
+	msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
+	unset cc33xx
 }
 
 do_mainline () {

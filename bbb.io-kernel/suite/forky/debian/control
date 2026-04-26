@@ -285,6 +285,10 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-7.0.1-arm64-k3-r10
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Recommends:
+ bbb.io-cc33xx-1.0.2.10-firmware
+ , rtw88-modprobe-conf
+ , rtw88-modules-7.0.1-arm64-k3-r10
 Description: Linux 7.0-k3 for 64-bit ARMv8 machines (meta-package)
  This package depends on the latest Linux 7.0-k3 kernel and modules
  for use on 64-bit ARMv8 machines.

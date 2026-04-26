@@ -1,17 +1,6 @@
-bbb.io-kernel (1.20260425.0-0~bookworm+20260425) bookworm; urgency=low
+bbb.io-kernel (1.20260426.0-0~bookworm+20260426) bookworm; urgency=low
 
   * Kernel Updates
-  * linux-headers-6.12.79-arm64-k3-r48
-  * linux-headers-6.13.12-arm64-k3-r24
-  * linux-headers-6.14.10-arm64-k3-r21
-  * linux-headers-6.15.11-arm64-k3-r25
-  * linux-headers-6.16.12-arm64-k3-r20
-  * linux-headers-6.17.13-arm64-k3-r19
-  * linux-headers-6.18.24-arm64-k3-r32
-  * linux-headers-6.19.14-arm64-k3-r19
-  * linux-headers-6.6.133-arm64-k3-r52
-  * linux-headers-6.6.133-rt-arm64-k3-r52
-  * linux-headers-7.0.1-arm64-k3-r10
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 25 Apr 2026 10:23:12 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 26 Apr 2026 14:52:08 -0500
 
