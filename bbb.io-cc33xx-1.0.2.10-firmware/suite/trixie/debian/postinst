@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# see: dh_installdeb(1)
+
+cc33xx_version="1.0.2.10"
+target_dir="/usr/lib/firmware/ti-connectivity"
+
+set -e
+
+if [ -f ${target_dir}/cc33xx-conf.bin ] ; then
+	rm ${target_dir}/cc33xx-conf.bin || true
+fi
+
+cp -v ${target_dir}/${cc33xx_version}/cc33xx-conf.bin ${target_dir}/cc33xx-conf.bin
+
+if [ -f ${target_dir}/cc33xx_2nd_loader.bin ] ; then
+	rm ${target_dir}/cc33xx_2nd_loader.bin || true
+fi
+
+cp -v ${target_dir}/${cc33xx_version}/cc33xx_2nd_loader.bin ${target_dir}/cc33xx_2nd_loader.bin
+
+
+if [ -f ${target_dir}/cc33xx_fw.bin ] ; then
+	rm ${target_dir}/cc33xx_fw.bin || true
+fi
+
+cp -v ${target_dir}/${cc33xx_version}/cc33xx_fw.bin ${target_dir}/cc33xx_fw.bin
+
+case "$1" in
+	configure)
+		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then
+			update-initramfs -u
+		fi
+	;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
