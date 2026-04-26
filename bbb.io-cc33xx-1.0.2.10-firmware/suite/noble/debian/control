@@ -1,0 +1,15 @@
+Source: bbb.io-cc33xx-1.0.2.10-firmware
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.5.1
+
+Package: bbb.io-cc33xx-1.0.2.10-firmware
+Architecture: all
+Depends: ${shlibs:Depends}
+ , ${misc:Depends}
+ , firmware-ti-connectivity
+Description: beagleboard.org cc33xx 1.0.2.10 firmware
+ cc33xx bluetooth firmware
+

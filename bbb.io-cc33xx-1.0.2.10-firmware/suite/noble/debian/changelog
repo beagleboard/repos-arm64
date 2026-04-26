@@ -1,4 +1,4 @@
-bbb.io-cc33xx-1.0.2.10-firmware (1.20260425.1-0~trixie+20260426) trixie; urgency=low
+bbb.io-cc33xx-1.0.2.10-firmware (1.20260425.1-0~noble+20260426) noble; urgency=low
 
   * Add cc33xx firmware from Version: 1.0.2.10 (Aug 5, 2025) https://www.ti.com/tool/CC33XX-SOFTWARE
 

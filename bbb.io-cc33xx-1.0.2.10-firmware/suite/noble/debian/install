@@ -1,0 +1,3 @@
+debian/cc33xx-conf.bin /usr/lib/firmware/ti-connectivity/1.0.2.10/
+debian/cc33xx_2nd_loader.bin /usr/lib/firmware/ti-connectivity/1.0.2.10/
+debian/cc33xx_fw.bin /usr/lib/firmware/ti-connectivity/1.0.2.10/
