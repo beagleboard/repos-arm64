@@ -127,11 +127,13 @@ run_libcomposite () {
 		# Link the network instance to the configuration
 		ln -s $CONFIGFS/g_multi/functions/ncm.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink ncm.usb0"
 
-		# Create Serial function.
-		mkdir $CONFIGFS/g_multi/functions/acm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/acm.usb0"
+		if [ ! "x${USB_SERIAL_GADGET_DISABLED}" = "xyes" ] ; then
+			# Create Serial function.
+			mkdir $CONFIGFS/g_multi/functions/acm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/acm.usb0"
 
-		# Link the Serial instance to the configuration
-		ln -s $CONFIGFS/g_multi/functions/acm.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink acm.usb0"
+			# Link the Serial instance to the configuration
+			ln -s $CONFIGFS/g_multi/functions/acm.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink acm.usb0"
+		fi
 
 		if [ ! "x${USB_IMAGE_FILE_DISABLED}" = "xyes" ]; then
 			if [ -f ${usb_ms_imagefile} ] ; then
@@ -163,8 +165,10 @@ run_libcomposite () {
 
 		echo "$(ls /sys/class/udc)" > $CONFIGFS/g_multi/UDC || echo "${log} Couldn't write UDC"
 
-		echo "${log} start serial-getty@ttyGS0.service"
-		systemctl start serial-getty@ttyGS0.service || true
+		if [ ! "x${USB_SERIAL_GADGET_DISABLED}" = "xyes" ] ; then
+			echo "${log} start serial-getty@ttyGS0.service"
+			systemctl start serial-getty@ttyGS0.service || true
+		fi
 	fi
 }
 

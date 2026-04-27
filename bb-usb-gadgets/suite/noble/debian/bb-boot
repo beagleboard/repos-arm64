@@ -8,3 +8,8 @@
 # USB_UMTPRD_DISABLED=yes #disable the loading of the MTP client.
 USB_UMTPRD_DISABLED=yes
 ##USB_UMTPRD_CONFIG="/etc/bbb.io/templates/bbb-umtprd.conf"
+
+# USB_SERIAL_GADGET_DISABLED=yes #disable the loading of the USB serial ttyGS0.
+# when UNSET the default enabled will be used. other values take no effect,
+# and are ignored. The only expected value is "yes"
+##USB_SERIAL_GADGET_DISABLED=yes

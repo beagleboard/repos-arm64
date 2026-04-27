@@ -3,8 +3,7 @@
 set -e
 
 if [ -f /etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service ] ; then
-	systemctl disable serial-getty@ttyGS0.service
-	systemctl start serial-getty@ttyGS0.service
+	systemctl disable serial-getty@ttyGS0.service || true
 fi
 
 if [ ! -f /etc/systemd/network/usb0.network ] ; then
