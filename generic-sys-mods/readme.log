@@ -6,3 +6,4 @@
   * PB2 just grab mac address from memory: Sergi_D1 : https://forum.beagleboard.org/t/inconsistent-mac-address-on-pb2/42330
   * add beagle-dtb-source script to sync /opt/source/
   * add pkg git for beagle-dtb-source
+  * beagle-dtb-source: v7.1.x branch

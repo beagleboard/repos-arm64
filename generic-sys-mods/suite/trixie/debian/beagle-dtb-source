@@ -75,4 +75,5 @@ git_target="dtb-6.16.x" ; git_branch="v6.16.x" ; git_clone_branch_reference
 git_target="dtb-6.17.x" ; git_branch="v6.17.x" ; git_clone_branch_reference
 git_target="dtb-6.19.x" ; git_branch="v6.19.x" ; git_clone_branch_reference
 git_target="dtb-7.0.x"  ; git_branch="v7.0.x"  ; git_clone_branch_reference
+git_target="dtb-7.1.x"  ; git_branch="v7.1.x"  ; git_clone_branch_reference
 #
