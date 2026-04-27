@@ -2,16 +2,18 @@
 
 . version.sh
 
+deb_arch="arm64"
+
 current_kernel () {
 	if [ -f /tmp/LATEST-${var} ] ; then
 		rm -rf /tmp/LATEST-${var} | true
 	fi
 	unset latest_kernel
-	wget --quiet --directory-prefix=/tmp/ https://rcn-ee.net/repos/latest/${dist}-${arch}/LATEST-${var} || true
+	wget --quiet --directory-prefix=/tmp/ https://rcn-ee.net/repos/latest/${dist}-${deb_arch}/LATEST-${var} || true
 	if [ -f /tmp/LATEST-${var} ] ; then
 		latest_kernel=$(cat "/tmp/LATEST-${var}" | grep "ABI:1 ${ver}" | awk '{print $3}')
 		if [ ! "x${latest_kernel}" = "x" ] ; then
-			echo ${dist}-${arch}-${latest_kernel}
+			echo ${dist}-${deb_arch}-${latest_kernel}
 		fi
 	fi
 }
@@ -28,7 +30,7 @@ generate_header () {
 	echo "Rules-Requires-Root: no" >> ./suite/${dist}/debian/${wfile}
 	echo "" >> ./suite/${dist}/debian/${wfile}
 	echo "Package: bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
-	echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+	echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
 #	echo " , ti-linux-firmware-sysfw" >> ./suite/${dist}/debian/${wfile}
@@ -44,16 +46,18 @@ generate_kernel_ti () {
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
-		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends:" >> ./suite/${dist}/debian/${wfile}
+		echo " \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
+		echo " , bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		echo "Description: BeagleBoard.org TI ${msg} Branch" >> ./suite/${dist}/debian/${wfile}
 		echo " This metapackage will install linux-image-${msg} in Debian." >> ./suite/${dist}/debian/${wfile}
 
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}-k3-am62" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
@@ -77,7 +81,7 @@ generate_kernel_ti () {
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}-k3-j721e" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
@@ -101,7 +105,7 @@ generate_kernel_ti () {
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}-k3-j722s" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 		echo " bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
@@ -129,7 +133,7 @@ generate_mainline_kernel () {
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${rtw88}" = "xenabled" ] ; then
@@ -147,7 +151,7 @@ generate_kernel_k3 () {
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
 		if [ "x${cc33xx}" = "xenabled" ] ; then
@@ -171,12 +175,12 @@ generate_kernel_k3 () {
 		echo "" >> ./suite/${dist}/debian/${wfile}
 		echo "Package: bbb.io-headers-${msg}" >> ./suite/${dist}/debian/${wfile}
 		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
-		echo "Architecture: arm64" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-headers-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
-		echo "Description: Header files for Linux ${msg} arm64 configuration (meta-package)" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: Header files for Linux ${msg} ${deb_arch} configuration (meta-package)" >> ./suite/${dist}/debian/${wfile}
 		echo " This package depends on the architecture-specific header files for the" >> ./suite/${dist}/debian/${wfile}
-		echo " latest Linux ${msg} kernel arm64 configuration." >> ./suite/${dist}/debian/${wfile}
+		echo " latest Linux ${msg} kernel ${deb_arch} configuration." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
 
@@ -190,7 +194,7 @@ unset_all () {
 
 changelog () {
 	git diff ./suite/${dist}/debian/control > /tmp/changelog-readme.diff
-	cat /tmp/changelog-readme.diff | grep +Pre-Depends: | awk '{print $2}' | awk -F ',' '{print $1}' > /tmp/changelog-readme.cat
+	cat /tmp/changelog-readme.diff | grep +Pre-Depends: | grep linux-image | awk '{print $2}' | awk -F ',' '{print $1}' > /tmp/changelog-readme.cat
 	sort -u /tmp/changelog-readme.cat > /tmp/changelog-readme.sort
 	echo "  * Kernel Updates" > suite/${dist}/readme.log
 	ts "  *" /tmp/changelog-readme.sort >> suite/${dist}/readme.log
@@ -281,7 +285,6 @@ do_mainline () {
 
 do_noble () {
 	#24.04
-	arch="arm64"
 	dist="noble"
 	debhelper="13"
 	wfile="control"
@@ -298,7 +301,6 @@ do_noble () {
 
 do_bullseye () {
 	#11.x
-	arch="arm64"
 	dist="bullseye"
 	debhelper="13"
 	wfile="control"
@@ -326,7 +328,6 @@ do_bullseye () {
 
 do_bookworm () {
 	#12.x
-	arch="arm64"
 	dist="bookworm"
 	debhelper="13"
 	wfile="control"
@@ -343,7 +344,6 @@ do_bookworm () {
 
 do_trixie () {
 	#13.x
-	arch="arm64"
 	dist="trixie"
 	debhelper="13"
 	wfile="control"
@@ -360,7 +360,6 @@ do_trixie () {
 
 do_forky () {
 	#14.x
-	arch="arm64"
 	dist="forky"
 	debhelper="13"
 	wfile="control"
