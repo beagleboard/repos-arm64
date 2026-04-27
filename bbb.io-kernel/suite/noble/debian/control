@@ -489,12 +489,12 @@ Description: Header files for Linux 6.19-k3 arm64 configuration (meta-package)
 Package: bbb.io-kernel-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.0.1-arm64-k3-r10
+Pre-Depends: linux-image-7.0.1-arm64-k3-r11
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-7.0.1-arm64-k3-r10
+ , rtw88-modules-7.0.1-arm64-k3-r11
 Description: Linux 7.0-k3 for 64-bit ARMv8 machines (meta-package)
  This package depends on the latest Linux 7.0-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -502,7 +502,7 @@ Description: Linux 7.0-k3 for 64-bit ARMv8 machines (meta-package)
 Package: bbb.io-headers-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.0.1-arm64-k3-r10
+Pre-Depends: linux-headers-7.0.1-arm64-k3-r11
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Description: Header files for Linux 7.0-k3 arm64 configuration (meta-package)
  This package depends on the architecture-specific header files for the

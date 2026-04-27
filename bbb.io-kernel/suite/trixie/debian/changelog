@@ -1,6 +1,11 @@
-bbb.io-kernel (1.20260426.0-0~trixie+20260426) trixie; urgency=low
+bbb.io-kernel (1.20260427.0-0~trixie+20260427) trixie; urgency=low
 
   * Kernel Updates
+  * linux-headers-7.0.1-arm64-k3-r11
+  * linux-headers-7.1.0-rc1-arm64-k3-r1
+  * linux-image-7.0.1-arm64-k3-r11
+  * linux-image-7.1.0-rc1-arm64-k3-r1
+  * linux-image-7.1.0-rc1-arm64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 26 Apr 2026 14:52:08 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 27 Apr 2026 08:56:49 -0500
 
