@@ -1,2 +1,3 @@
-  * powervr: add firmware for Imagination Technologies AXE-1-16M GPU (TI AM625)
-  * powervr: add firmware for Imagination Technologies BXS-4-64 GPU (TI AM68)
+  * powervr: firmware for Imagination Technologies AXE-1-16M GPU (TI AM625)
+  * powervr: firmware for Imagination Technologies BXS-4-64 GPU (TI AM68)
+  * powervr: Update to version 1.1.OS@6976702.

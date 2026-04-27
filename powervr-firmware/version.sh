@@ -4,7 +4,7 @@
 
 package_name="powervr-firmware"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-git20250922.0"
+package_version="0.0.0-git20260402.0"
 package_source=""
 src_dir=""
 
@@ -19,7 +19,7 @@ debian_diff=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20260110"
-trixie_version="~trixie+20260110"
-forky_version="~forky+20260110"
-noble_version="~noble+20260110"
+bookworm_version="~bookworm+20260427"
+trixie_version="~trixie+20260427"
+forky_version="~forky+20260427"
+noble_version="~noble+20260427"
