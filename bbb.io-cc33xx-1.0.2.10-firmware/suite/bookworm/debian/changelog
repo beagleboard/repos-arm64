@@ -1,6 +1,6 @@
-bbb.io-cc33xx-1.0.2.10-firmware (1.20260425.1-0~bookworm+20260426) bookworm; urgency=low
+bbb.io-cc33xx-1.0.2.10-firmware (1.20260428.0-0~bookworm+20260428) bookworm; urgency=low
 
   * Add cc33xx firmware from Version: 1.0.2.10 (Aug 5, 2025) https://www.ti.com/tool/CC33XX-SOFTWARE
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 26 Apr 2026 14:37:22 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Apr 2026 10:42:31 -0500
 

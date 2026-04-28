@@ -7,9 +7,11 @@ Standards-Version: 4.5.1
 
 Package: bbb.io-cc33xx-1.0.2.10-firmware
 Architecture: all
+Pre-Depends:
+ firmware-ti-connectivity
+ , bb-wl18xx-firmware
 Depends: ${shlibs:Depends}
  , ${misc:Depends}
- , firmware-ti-connectivity
-Description: beagleboard.org cc33xx 1.0.2.10 firmware
- cc33xx bluetooth firmware
+Description: BeagleBoard.org cc33xx 1.0.2.10 firmware
+ BeagleBoard.org cc33xx WiFi/Bluetooth firmware
 

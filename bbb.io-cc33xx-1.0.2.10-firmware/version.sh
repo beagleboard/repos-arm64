@@ -2,7 +2,7 @@
 
 package_name="bbb.io-cc33xx-1.0.2.10-firmware"
 debian_pkg_name="${package_name}"
-package_version="1.20260425.1"
+package_version="1.20260428.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20260426"
-trixie_version="~trixie+20260426"
-forky_version="~forky+20260426"
-noble_version="~noble+20260426"
+bookworm_version="~bookworm+20260428"
+trixie_version="~trixie+20260428"
+forky_version="~forky+20260428"
+noble_version="~noble+20260428"
