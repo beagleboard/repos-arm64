@@ -168,8 +168,8 @@ generate_kernel_k3 () {
 				echo " , rtw88-modules-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 			fi
 		fi
-		echo "Description: Linux ${msg} for 64-bit ARMv8 machines (meta-package)" >> ./suite/${dist}/debian/${wfile}
-		echo " This package depends on the latest Linux ${msg} kernel and modules" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org ${msg} for ARMv8 (meta-package)" >> ./suite/${dist}/debian/${wfile}
+		echo " This package depends on the latest ${msg} kernel and modules" >> ./suite/${dist}/debian/${wfile}
 		echo " for use on 64-bit ARMv8 machines." >> ./suite/${dist}/debian/${wfile}
 
 		echo "" >> ./suite/${dist}/debian/${wfile}
@@ -178,9 +178,9 @@ generate_kernel_k3 () {
 		echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 		echo "Pre-Depends: linux-headers-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
 		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks" >> ./suite/${dist}/debian/${wfile}
-		echo "Description: Header files for Linux ${msg} ${deb_arch} configuration (meta-package)" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: Header files for BeagleBoard.org ${msg} ARMv8 (meta-package)" >> ./suite/${dist}/debian/${wfile}
 		echo " This package depends on the architecture-specific header files for the" >> ./suite/${dist}/debian/${wfile}
-		echo " latest Linux ${msg} kernel ${deb_arch} configuration." >> ./suite/${dist}/debian/${wfile}
+		echo " latest Linux ${msg} kernel ARMv8." >> ./suite/${dist}/debian/${wfile}
 	fi
 }
 
@@ -240,11 +240,10 @@ do_some_k3_trixie () {
 	msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
 	msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 
+	cc33xx="enabled"
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
-
-	cc33xx="enabled"
 	msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
 	unset rtw88
 
@@ -267,11 +266,10 @@ do_some_k3_forky () {
 	msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
 	msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 
+	cc33xx="enabled"
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
-
-	cc33xx="enabled"
 	msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
 	unset rtw88
 
