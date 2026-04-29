@@ -403,7 +403,8 @@ Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
 Recommends:
- rtw88-modprobe-conf
+ bbb.io-cc33xx-1.0.2.10-firmware
+ , rtw88-modprobe-conf
  , rtw88-modules-6.12.79-arm64-k3-r49
 Description: BeagleBoard.org 6.12-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.12-k3 kernel and modules
