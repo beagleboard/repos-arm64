@@ -33,7 +33,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-5.10-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-5.10.168-ti-arm64-r119
@@ -45,7 +47,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-5.10-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-5.10.168-ti-arm64-r119
@@ -57,7 +61,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-5.10-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-5.10.168-ti-arm64-r119
@@ -79,7 +85,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.1-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-am62-modules-6.1.83-ti-arm64-r72
  , rtw88-modprobe-conf
@@ -92,7 +100,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.1-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j721e-modules-6.1.83-ti-arm64-r72
  , rtw88-modprobe-conf
@@ -105,7 +115,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.1-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j722s-modules-6.1.83-ti-arm64-r72
  , rtw88-modprobe-conf
@@ -128,7 +140,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.1-rt-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-am62-modules-6.1.83-ti-rt-arm64-r72
  , rtw88-modprobe-conf
@@ -141,7 +155,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.1-rt-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j721e-modules-6.1.83-ti-rt-arm64-r72
  , rtw88-modprobe-conf
@@ -154,7 +170,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.1-rt-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-23.3-j722s-modules-6.1.83-ti-rt-arm64-r72
  , rtw88-modprobe-conf
@@ -177,7 +195,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.6-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-am62-modules-6.6.58-ti-arm64-r32
  , rtw88-modprobe-conf
@@ -190,7 +210,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.6-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j721e-modules-6.6.58-ti-arm64-r32
  , rtw88-modprobe-conf
@@ -203,7 +225,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.6-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j722s-modules-6.6.58-ti-arm64-r32
  , rtw88-modprobe-conf
@@ -226,7 +250,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.6-rt-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-am62-modules-6.6.58-ti-rt-arm64-r30
  , rtw88-modprobe-conf
@@ -239,7 +265,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.6-rt-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j721e-modules-6.6.58-ti-rt-arm64-r30
  , rtw88-modprobe-conf
@@ -252,7 +280,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.6-rt-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j722s-modules-6.6.58-ti-rt-arm64-r30
  , rtw88-modprobe-conf
@@ -275,7 +305,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.12-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-am62-modules-6.12.57-ti-arm64-r59
  , rtw88-modprobe-conf
@@ -288,7 +320,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.12-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j721e-modules-6.12.57-ti-arm64-r59
  , rtw88-modprobe-conf
@@ -301,7 +335,9 @@ Section: metapackages
 Architecture: arm64
 Pre-Depends:
  bbb.io-kernel-6.12-ti
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  ti-sgx-24.2-j722s-modules-6.12.57-ti-arm64-r59
  , rtw88-modprobe-conf
@@ -313,7 +349,9 @@ Package: bbb.io-kernel-6.6-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.6.133-arm64-k3-r52
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-6.6.133-arm64-k3-r52
@@ -325,7 +363,9 @@ Package: bbb.io-headers-6.6-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-headers-6.6.133-arm64-k3-r52
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.6-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.6-k3 kernel ARMv8.
@@ -334,7 +374,9 @@ Package: bbb.io-kernel-6.6-rt-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.6.133-rt-arm64-k3-r52
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-6.6.133-rt-arm64-k3-r52
@@ -346,7 +388,9 @@ Package: bbb.io-headers-6.6-rt-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-headers-6.6.133-rt-arm64-k3-r52
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.6-rt-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.6-rt-k3 kernel ARMv8.
@@ -354,11 +398,13 @@ Description: Header files for BeagleBoard.org 6.6-rt-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-6.12-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.12.79-arm64-k3-r48
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-image-6.12.79-arm64-k3-r49
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
- , rtw88-modules-6.12.79-arm64-k3-r48
+ , rtw88-modules-6.12.79-arm64-k3-r49
 Description: BeagleBoard.org 6.12-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.12-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -366,8 +412,10 @@ Description: BeagleBoard.org 6.12-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-6.12-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-6.12.79-arm64-k3-r48
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-headers-6.12.79-arm64-k3-r49
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.12-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.12-k3 kernel ARMv8.
@@ -376,7 +424,9 @@ Package: bbb.io-kernel-6.14-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.14.10-arm64-k3-r21
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-6.14.10-arm64-k3-r21
@@ -388,7 +438,9 @@ Package: bbb.io-headers-6.14-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-headers-6.14.10-arm64-k3-r21
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.14-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.14-k3 kernel ARMv8.
@@ -397,7 +449,9 @@ Package: bbb.io-kernel-6.15-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.15.11-arm64-k3-r25
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-6.15.11-arm64-k3-r25
@@ -409,7 +463,9 @@ Package: bbb.io-headers-6.15-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-headers-6.15.11-arm64-k3-r25
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.15-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.15-k3 kernel ARMv8.
@@ -418,7 +474,9 @@ Package: bbb.io-kernel-6.16-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.16.12-arm64-k3-r20
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-6.16.12-arm64-k3-r20
@@ -430,7 +488,9 @@ Package: bbb.io-headers-6.16-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-headers-6.16.12-arm64-k3-r20
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.16-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.16-k3 kernel ARMv8.
@@ -439,7 +499,9 @@ Package: bbb.io-kernel-6.17-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-image-6.17.13-arm64-k3-r19
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  rtw88-modprobe-conf
  , rtw88-modules-6.17.13-arm64-k3-r19
@@ -451,7 +513,9 @@ Package: bbb.io-headers-6.17-k3
 Section: metapackages
 Architecture: arm64
 Pre-Depends: linux-headers-6.17.13-arm64-k3-r19
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.17-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.17-k3 kernel ARMv8.
@@ -459,12 +523,14 @@ Description: Header files for BeagleBoard.org 6.17-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.18.25-arm64-k3-r33
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-image-6.18.25-arm64-k3-r34
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-6.18.25-arm64-k3-r33
+ , rtw88-modules-6.18.25-arm64-k3-r34
 Description: BeagleBoard.org 6.18-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.18-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -472,8 +538,10 @@ Description: BeagleBoard.org 6.18-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-6.18.25-arm64-k3-r33
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-headers-6.18.25-arm64-k3-r34
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.18-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.18-k3 kernel ARMv8.
@@ -481,12 +549,14 @@ Description: Header files for BeagleBoard.org 6.18-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-6.19-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.19.14-arm64-k3-r20
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-image-6.19.14-arm64-k3-r21
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-6.19.14-arm64-k3-r20
+ , rtw88-modules-6.19.14-arm64-k3-r21
 Description: BeagleBoard.org 6.19-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.19-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -494,8 +564,10 @@ Description: BeagleBoard.org 6.19-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-6.19-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-6.19.14-arm64-k3-r20
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-headers-6.19.14-arm64-k3-r21
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 6.19-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 6.19-k3 kernel ARMv8.
@@ -503,12 +575,14 @@ Description: Header files for BeagleBoard.org 6.19-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.0.2-arm64-k3-r12
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-image-7.0.2-arm64-k3-r13
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-7.0.2-arm64-k3-r12
+ , rtw88-modules-7.0.2-arm64-k3-r13
 Description: BeagleBoard.org 7.0-k3 for ARMv8 (meta-package)
  This package depends on the latest 7.0-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -516,8 +590,10 @@ Description: BeagleBoard.org 7.0-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.0.2-arm64-k3-r12
-Depends: ${misc:Depends}, bbb.io-kernel-tasks
+Pre-Depends: linux-headers-7.0.2-arm64-k3-r13
+Depends:
+ ${misc:Depends}
+ , bbb.io-kernel-tasks
 Description: Header files for BeagleBoard.org 7.0-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 7.0-k3 kernel ARMv8.
