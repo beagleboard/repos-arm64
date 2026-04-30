@@ -1,6 +1,6 @@
-bbb.io-cc33xx-1.0.2.10-firmware (1.20260428.0-0~forky+20260428) forky; urgency=low
+bbb.io-cc33xx-1.0.2.10-firmware (1.20260430.0-0~forky+20260430) forky; urgency=low
 
   * Add cc33xx firmware from Version: 1.0.2.10 (Aug 5, 2025) https://www.ti.com/tool/CC33XX-SOFTWARE
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Apr 2026 10:42:31 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 30 Apr 2026 14:45:11 -0500
 
