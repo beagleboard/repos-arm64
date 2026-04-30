@@ -1,8 +1,17 @@
-libcamera (0.7.0-2bbbio0~trixie+20260228) trixie; urgency=low
+libcamera (0.7.1-1bbbio0~trixie+20260430) trixie; urgency=low
 
-  * Rebuild libcamera_0.7.0-2 for repos.rcn-ee.com
+  * Rebuild libcamera_0.7.1-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 28 Feb 2026 12:37:20 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 30 Apr 2026 09:07:04 -0500
+
+libcamera (0.7.1-1) unstable; urgency=medium
+
+  * New upstream version 0.7.1
+  * Update debian/copyright
+  * salsa-ci: enable licenserecon, drop reprotest and disable build_arm64
+  * Bump Standards-Version to 4.7.4
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 29 Apr 2026 17:26:08 +0200
 
 libcamera (0.7.0-2) unstable; urgency=medium
 

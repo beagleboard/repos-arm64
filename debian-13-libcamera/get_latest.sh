@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/libc/libcamera/libcamera_0.7.0-2"
+version="main/libc/libcamera/libcamera_0.7.1-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true
