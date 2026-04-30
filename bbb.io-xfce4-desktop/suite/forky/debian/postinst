@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+if [ ! -f /etc/X11/xorg.conf.d/10-xorg.conf ] ; then
+	cp -v /etc/bbb.io/templates/modesetting.xorg.conf /etc/X11/xorg.conf.d/10-xorg.conf
+fi
+
+#DEBHELPER#
