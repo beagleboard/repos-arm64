@@ -11,6 +11,6 @@ dl_path="pool/main/${reprepro_dir}/"
 
 debian_version="${package_version}-1"
 
-dist="debian-trixie-amd64"
+dist="debian-trixie-arm64"
 suite="trixie"
-deb_arch="amd64"
+deb_arch="arm64"
