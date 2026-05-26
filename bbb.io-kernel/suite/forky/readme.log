@@ -1,8 +1,6 @@
   * Kernel Updates
-  * linux-image-6.12.90-arm64-k3-r54
-  * linux-image-6.18.32-arm64-k3-r39
-  * linux-image-6.6.140-arm64-k3-r56
-  * linux-image-6.6.140-rt-arm64-k3-r56
-  * linux-image-7.0.9-arm64-k3-r18
-  * linux-image-7.1.0-rc4-arm64-k3-r5
-  * linux-image-7.1.0-rc4-arm64-r1
+  * linux-image-6.12.91-arm64-k3-r55
+  * linux-image-6.18.33-arm64-k3-r40
+  * linux-image-7.0.10-arm64-k3-r19
+  * linux-image-7.1.0-rc5-arm64-k3-r6
+  * linux-image-7.1.0-rc5-arm64-r1
