@@ -1,8 +1,14 @@
-xorg-server (2:21.1.22-1bbbio0~trixie+20260417) trixie; urgency=low
+xorg-server (2:21.1.23-1bbbio1~trixie+20260603) trixie; urgency=low
 
-  * Rebuild xorg-server_21.1.22-1 for repos.rcn-ee.com
+  * trixie only has libselinux1-dev
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 17 Apr 2026 11:14:18 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Jun 2026 09:06:35 -0500
+
+xorg-server (2:21.1.23-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #1138680)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 02 Jun 2026 12:15:12 +0300
 
 xorg-server (2:21.1.22-1) unstable; urgency=medium
 

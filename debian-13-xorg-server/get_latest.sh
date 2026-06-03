@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/x/xorg-server/xorg-server_21.1.22-1"
+version="main/x/xorg-server/xorg-server_21.1.23-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true
