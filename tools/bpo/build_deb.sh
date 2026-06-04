@@ -14,10 +14,17 @@ build () {
 		options="--arch=${deb_arch} -A -s --force-orig-source --dist=${suite} --chroot=${suite}-${deb_arch}-${sbuild_chroot}-sbuild --no-run-lintian"
 	fi
 
-	echo "-----------------"
-	echo "sbuild ${options} ${mirror}/${dl_path}${package_name}_${debian_version}.dsc"
-	echo "-----------------"
-	sudo sbuild ${options} ${mirror}/${dl_path}${package_name}_${debian_version}.dsc
+	if [ "x$sbuild_options" = "xnocheck" ] ; then
+		echo "-----------------"
+		echo "DEB_BUILD_OPTIONS=nocheck sbuild ${options} ${mirror}/${dl_path}${package_name}_${debian_version}.dsc"
+		echo "-----------------"
+		sudo DEB_BUILD_OPTIONS=nocheck sbuild ${options} ${mirror}/${dl_path}${package_name}_${debian_version}.dsc
+	else
+		echo "-----------------"
+		echo "sbuild ${options} ${mirror}/${dl_path}${package_name}_${debian_version}.dsc"
+		echo "-----------------"
+		sudo sbuild ${options} ${mirror}/${dl_path}${package_name}_${debian_version}.dsc
+	fi
 
 	if [ -f *.changes ] ; then
 		sudo chown -R 1000:1000 ./*

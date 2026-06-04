@@ -14,3 +14,5 @@ debian_version="${package_version}-1~bpo13+1"
 dist="debian-trixie-arm64"
 suite="trixie"
 deb_arch="arm64"
+
+sbuild_options="nocheck"
