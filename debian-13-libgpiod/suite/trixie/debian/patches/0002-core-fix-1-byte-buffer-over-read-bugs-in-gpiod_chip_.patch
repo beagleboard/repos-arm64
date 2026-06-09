@@ -1,0 +1,50 @@
+From 938ed1a4801b3fb86d8f26690baf23b924ca4180 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Tue, 7 Apr 2026 14:49:54 +0200
+Subject: [PATCH 02/22] core: fix 1-byte buffer over-read bugs in
+ gpiod_chip_info_from_uapi()
+
+The copy in gpiod_chip_info_from_uapi() uses sizeof(info->name) = 33 as
+the strncpy length while it should read at most GPIO_MAX_NAME_SIZE = 32.
+Same for info->label. 33 is the size of the target buffer where we
+allocate an additional byte for the NULL-terminator. Limit the number of
+read bytes to the correct value.
+
+Fixes: b7ba732e6a93 ("treewide: libgpiod v2 implementation")
+Reported-by: 4fqr <4fqr@proton.me>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260407-treewide-fixes-v1-3-66c9744a56a3@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ lib/chip-info.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/lib/chip-info.c b/lib/chip-info.c
+index 2d9f44d..6b55197 100644
+--- a/lib/chip-info.c
++++ b/lib/chip-info.c
+@@ -57,7 +57,7 @@ gpiod_chip_info_from_uapi(struct gpiochip_info *uapi_info)
+ 	 * GPIO device must have a name - don't bother checking this field. In
+ 	 * the worst case (would have to be a weird kernel bug) it'll be empty.
+ 	 */
+-	strncpy(info->name, uapi_info->name, sizeof(info->name));
++	strncpy(info->name, uapi_info->name, GPIO_MAX_NAME_SIZE);
+ 
+ 	/*
+ 	 * The kernel sets the label of a GPIO device to "unknown" if it
+@@ -65,9 +65,9 @@ gpiod_chip_info_from_uapi(struct gpiochip_info *uapi_info)
+ 	 * we got an empty string, do the same.
+ 	 */
+ 	if (uapi_info->label[0] == '\0')
+-		strncpy(info->label, "unknown", sizeof(info->label));
++		strncpy(info->label, "unknown", GPIO_MAX_NAME_SIZE);
+ 	else
+-		strncpy(info->label, uapi_info->label, sizeof(info->label));
++		strncpy(info->label, uapi_info->label, GPIO_MAX_NAME_SIZE);
+ 
+ 	return info;
+ }
+-- 
+2.53.0
+

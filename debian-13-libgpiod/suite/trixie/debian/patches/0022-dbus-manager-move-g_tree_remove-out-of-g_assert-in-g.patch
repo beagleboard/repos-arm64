@@ -1,0 +1,40 @@
+From 10d34cb4c97ec36315dfa1488a018c8cb30df44e Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Thu, 4 Jun 2026 09:47:58 +0200
+Subject: [PATCH 22/22] dbus: manager: move g_tree_remove() out of g_assert()
+ in gpiodbus_id_free()
+
+g_assert() is compiled out when G_DISABLE_ASSERT is defined, which would
+cause the g_tree_remove() call to disappear entirely, leading to ID leaks
+and eventual resource exhaustion. Move the side-effecting call outside
+the assertion, consistent with the pattern used elsewhere in the daemon.
+
+Fixes: a5ab76da1e0a ("dbus: add the D-Bus daemon, command-line client and tests")
+Assisted-by: Claude Opus 4.6
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260604-pre-2-3-fixes-v2-15-781bcaf47475@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ dbus/manager/helpers.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/dbus/manager/helpers.c b/dbus/manager/helpers.c
+index 6e90460..ad1a084 100644
+--- a/dbus/manager/helpers.c
++++ b/dbus/manager/helpers.c
+@@ -43,7 +43,10 @@ gint gpiodbus_id_alloc(GTree *id_root)
+ 
+ void gpiodbus_id_free(GTree *id_root, gint id)
+ {
+-	g_assert(g_tree_remove(id_root, &id));
++	gboolean removed;
++
++	removed = g_tree_remove(id_root, &id);
++	g_assert(removed);
+ }
+ 
+ gboolean
+-- 
+2.53.0
+

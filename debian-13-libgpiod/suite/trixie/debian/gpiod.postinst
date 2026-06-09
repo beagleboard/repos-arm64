@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        getent group gpio >/dev/null || groupadd --system gpio
+        getent passwd gpio-monitor >/dev/null || useradd -r -s /usr/sbin/nologin -M -g gpio gpio-manager
+        ;;
+    *)
+        ;;
+esac
+
+#DEBHELPER#
+

@@ -1,0 +1,32 @@
+From e402b19bc14b7c51bd0da07a8b74f2bec68acb44 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Tue, 7 Apr 2026 14:50:02 +0200
+Subject: [PATCH 10/22] tools: gpionotify: free pollfds on exit()
+
+This is not strictly necessary but it's sticking out in valgrind report
+so add the missing kfree(pollfds) at the end of main().
+
+Fixes: 5f194b001ae6 ("tools: add gpionotify")
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260407-treewide-fixes-v1-11-66c9744a56a3@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ tools/gpionotify.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/tools/gpionotify.c b/tools/gpionotify.c
+index c8c835d..a6f82fb 100644
+--- a/tools/gpionotify.c
++++ b/tools/gpionotify.c
+@@ -467,6 +467,7 @@ done:
+ 	for (i = 0; i < resolver->num_chips; i++)
+ 		gpiod_chip_close(chips[i]);
+ 
++	free(pollfds);
+ 	free(chips);
+ 	free_line_resolver(resolver);
+ 
+-- 
+2.53.0
+

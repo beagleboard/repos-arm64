@@ -1,0 +1,52 @@
+From d5d249e50b7b27aa68442e31a9a8fb879ea85c0e Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Tue, 7 Apr 2026 14:49:55 +0200
+Subject: [PATCH 03/22] core: fix parameter type in gpiod_line_mask_test_bit()
+
+Unlike other bit helpers, gpiod_line_mask_test_bit() takes a signed
+integer as argument defining the bit to test. Shifting a value by a count
+that is negative or >= the width of the promoted type is undefined
+behavior. Make the type consistent with other helpers even though all
+current callers are safe as they use variables of size_t as argument to
+this function.
+
+Fixes: b7ba732e6a93 ("treewide: libgpiod v2 implementation")
+Reported-by: 4fqr <4fqr@proton.me>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260407-treewide-fixes-v1-4-66c9744a56a3@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ lib/internal.c | 2 +-
+ lib/internal.h | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/internal.c b/lib/internal.c
+index 56cb8b9..50d3df9 100644
+--- a/lib/internal.c
++++ b/lib/internal.c
+@@ -139,7 +139,7 @@ void gpiod_line_mask_zero(uint64_t *mask)
+ 	*mask = 0ULL;
+ }
+ 
+-bool gpiod_line_mask_test_bit(const uint64_t *mask, int nr)
++bool gpiod_line_mask_test_bit(const uint64_t *mask, unsigned int nr)
+ {
+ 	return *mask & (1ULL << nr);
+ }
+diff --git a/lib/internal.h b/lib/internal.h
+index 420fbdd..12899bb 100644
+--- a/lib/internal.h
++++ b/lib/internal.h
+@@ -41,7 +41,7 @@ int gpiod_set_output_value(enum gpiod_line_value in,
+ int gpiod_ioctl(int fd, unsigned long request, void *arg);
+ 
+ void gpiod_line_mask_zero(uint64_t *mask);
+-bool gpiod_line_mask_test_bit(const uint64_t *mask, int nr);
++bool gpiod_line_mask_test_bit(const uint64_t *mask, unsigned int nr);
+ void gpiod_line_mask_set_bit(uint64_t *mask, unsigned int nr);
+ void gpiod_line_mask_assign_bit(uint64_t *mask, unsigned int nr, bool value);
+ 
+-- 
+2.53.0
+

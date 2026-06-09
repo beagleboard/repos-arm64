@@ -1,0 +1,12 @@
+etc/dbus-1/system.d/io.gpiod1.conf
+usr/bin/gpioinfo
+usr/bin/gpiodetect
+usr/bin/gpionotify
+usr/bin/gpioset
+usr/bin/gpioget
+usr/bin/gpiomon
+usr/bin/gpiocli
+usr/bin/gpio-manager
+usr/lib/*/udev/rules.d/90-gpio.rules
+usr/lib/systemd/system/gpio-manager.service
+usr/share/dbus-1/interfaces/io.gpiod1.xml

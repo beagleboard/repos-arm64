@@ -1,0 +1,42 @@
+From 55e08bd225a5f35a44c0d6cae906c6e7060df1c3 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Tue, 7 Apr 2026 14:50:00 +0200
+Subject: [PATCH 08/22] tools: gpionotify: fix memory leak on every event read
+
+Event objects created by gpiod_info_event_get_event_type() are never
+freed making gpionotify's memory usage balloon indefinitely. Add missing
+calls to gpiod_info_event_free().
+
+Fixes: 5f194b001ae6 ("tools: add gpionotify")
+Reported-by: 4fqr <4fqr@proton.me>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260407-treewide-fixes-v1-9-66c9744a56a3@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ tools/gpionotify.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/tools/gpionotify.c b/tools/gpionotify.c
+index e74ca96..b875957 100644
+--- a/tools/gpionotify.c
++++ b/tools/gpionotify.c
+@@ -447,11 +447,14 @@ int main(int argc, char **argv)
+ 
+ 			if (cfg.event_type) {
+ 				evtype = gpiod_info_event_get_event_type(event);
+-				if (evtype != cfg.event_type)
++				if (evtype != cfg.event_type) {
++					gpiod_info_event_free(event);
+ 					continue;
++				}
+ 			}
+ 
+ 			event_print(event, resolver, i, &cfg);
++			gpiod_info_event_free(event);
+ 
+ 			events_done++;
+ 
+-- 
+2.53.0
+

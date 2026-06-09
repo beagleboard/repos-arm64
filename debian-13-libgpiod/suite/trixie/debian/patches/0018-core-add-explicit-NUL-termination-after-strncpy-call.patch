@@ -1,0 +1,68 @@
+From 6e0f5f4f2ec6dfccf60c6df2e041a64296bbe522 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Thu, 4 Jun 2026 09:47:46 +0200
+Subject: [PATCH 18/22] core: add explicit NUL-termination after strncpy()
+ calls
+
+Both gpiod_chip_info_from_uapi() and gpiod_line_info_from_uapi() copy
+kernel UAPI name strings with strncpy() into buffers that are one byte
+larger than GPIO_MAX_NAME_SIZE. If the source string is exactly
+GPIO_MAX_NAME_SIZE bytes long strncpy() will not append a NUL, so the
+strings are only guaranteed to be terminated because the structs are
+zeroed with memset() beforehand.
+
+Make the termination unconditional and independent of the zeroing by
+writing the NUL byte explicitly after each strncpy() call.
+
+Fixes: c040d4e15e5d ("core: fix 1-byte buffer over-read bugs in gpiod_chip_info_from_uapi()")
+Fixes: 5533f277aa28 ("core: fix line-info strings termination")
+Assisted-by: Claude Sonnet 4.6
+Acked-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260604-pre-2-3-fixes-v2-3-781bcaf47475@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ lib/chip-info.c | 2 ++
+ lib/line-info.c | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/lib/chip-info.c b/lib/chip-info.c
+index 6b55197..972b2a8 100644
+--- a/lib/chip-info.c
++++ b/lib/chip-info.c
+@@ -58,6 +58,7 @@ gpiod_chip_info_from_uapi(struct gpiochip_info *uapi_info)
+ 	 * the worst case (would have to be a weird kernel bug) it'll be empty.
+ 	 */
+ 	strncpy(info->name, uapi_info->name, GPIO_MAX_NAME_SIZE);
++	info->name[GPIO_MAX_NAME_SIZE] = '\0';
+ 
+ 	/*
+ 	 * The kernel sets the label of a GPIO device to "unknown" if it
+@@ -68,6 +69,7 @@ gpiod_chip_info_from_uapi(struct gpiochip_info *uapi_info)
+ 		strncpy(info->label, "unknown", GPIO_MAX_NAME_SIZE);
+ 	else
+ 		strncpy(info->label, uapi_info->label, GPIO_MAX_NAME_SIZE);
++	info->label[GPIO_MAX_NAME_SIZE] = '\0';
+ 
+ 	return info;
+ }
+diff --git a/lib/line-info.c b/lib/line-info.c
+index c61b789..1613c92 100644
+--- a/lib/line-info.c
++++ b/lib/line-info.c
+@@ -149,9 +149,11 @@ gpiod_line_info_from_uapi(struct gpio_v2_line_info *uapi_info)
+ 
+ 	info->offset = uapi_info->offset;
+ 	strncpy(info->name, uapi_info->name, GPIO_MAX_NAME_SIZE);
++	info->name[GPIO_MAX_NAME_SIZE] = '\0';
+ 
+ 	info->used = !!(uapi_info->flags & GPIO_V2_LINE_FLAG_USED);
+ 	strncpy(info->consumer, uapi_info->consumer, GPIO_MAX_NAME_SIZE);
++	info->consumer[GPIO_MAX_NAME_SIZE] = '\0';
+ 
+ 	if (uapi_info->flags & GPIO_V2_LINE_FLAG_OUTPUT)
+ 		info->direction = GPIOD_LINE_DIRECTION_OUTPUT;
+-- 
+2.53.0
+

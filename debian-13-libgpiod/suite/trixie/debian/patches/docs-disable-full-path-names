@@ -1,0 +1,17 @@
+Description: Fix Lintian info file-references-package-build-path in Doxygen docs
+ This patch updates docs/Doxyfile to set FULL_PATH_NAMES to NO. By doing so, it
+ prevents absolute build paths from being embedded in the generated document.
+ This patch fixes the following Lintian info message:
+ I: libgpiod-doc: file-references-package-build-path
+Author: Gavin Lai (賴建宇) <gavin09@gmail.com>
+Forwarded: not-needed
+Last-Update: 2025-02-22
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/docs/Doxyfile
++++ b/docs/Doxyfile
+@@ -10,3 +10,4 @@
+ WARN_IF_UNDOCUMENTED	= YES
+ QUIET			= YES
+ EXTRACT_ALL		= YES
++FULL_PATH_NAMES         = NO

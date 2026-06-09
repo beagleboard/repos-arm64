@@ -1,0 +1,41 @@
+From 8cba34fc606bf9f24f9a4ed87f5e178c3b921140 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Thu, 4 Jun 2026 09:47:44 +0200
+Subject: [PATCH 17/22] core: fix signed/unsigned type mismatch in
+ gpiod_line_request_get_value()
+
+The local variable used to store the return value of
+gpiod_line_request_get_values_subset() was declared as unsigned int
+while the function returns int (-1 on error). The check for the error
+condition worked by accident because assigning -1 to an unsigned type
+produces UINT_MAX, which is non-zero, but using the wrong type is
+misleading and technically invoking implementation-defined behaviour.
+Use int throughout.
+
+Fixes: b7ba732e6a93 ("treewide: libgpiod v2 implementation")
+Assisted-by: Claude Sonnet 4.6
+Acked-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260604-pre-2-3-fixes-v2-1-781bcaf47475@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ lib/line-request.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/line-request.c b/lib/line-request.c
+index 2d41d96..32ab9ae 100644
+--- a/lib/line-request.c
++++ b/lib/line-request.c
+@@ -99,7 +99,7 @@ gpiod_line_request_get_value(struct gpiod_line_request *request,
+ 			     unsigned int offset)
+ {
+ 	enum gpiod_line_value val;
+-	unsigned int ret;
++	int ret;
+ 
+ 	assert(request);
+ 
+-- 
+2.53.0
+

@@ -1,0 +1,38 @@
+From 7aa6cee753e0b2d47e0595ba228457bd4c47f1f1 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Thu, 4 Jun 2026 09:47:50 +0200
+Subject: [PATCH 20/22] bindings: cxx: drop redundant class qualifier in
+ line_request::set_value
+
+The definition of set_value() carried a duplicate class name prefix
+(line_request::line_request::set_value) which compiles correctly but
+is misleading and inconsistent with every other method definition in
+the same file.
+
+Fixes: b7ba732e6a93 ("treewide: libgpiod v2 implementation")
+Assisted-by: Claude Sonnet 4.6
+Acked-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260604-pre-2-3-fixes-v2-7-781bcaf47475@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ bindings/cxx/line-request.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bindings/cxx/line-request.cpp b/bindings/cxx/line-request.cpp
+index f6b0a66..ee8f687 100644
+--- a/bindings/cxx/line-request.cpp
++++ b/bindings/cxx/line-request.cpp
+@@ -136,7 +136,7 @@ GPIOD_CXX_API void line_request::get_values(line::values& values)
+ }
+ 
+ GPIOD_CXX_API line_request&
+-line_request::line_request::set_value(line::offset offset, line::value value)
++line_request::set_value(line::offset offset, line::value value)
+ {
+ 	return this->set_values({ offset }, { value });
+ }
+-- 
+2.53.0
+

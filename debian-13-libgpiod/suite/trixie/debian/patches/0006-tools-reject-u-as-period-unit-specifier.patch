@@ -1,0 +1,58 @@
+From 173597489d65e18d9b3d101c963ba2d5c020940e Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Tue, 7 Apr 2026 14:49:58 +0200
+Subject: [PATCH 06/22] tools: reject "u" as period unit specifier
+
+The input "10u" (bare 'u' without trailing 's') is silently parsed as
+10 minutes instead of being rejected as an invalid unit. Add stricter
+validation and a test-case.
+
+Fixes: 8ffb6489286f ("tools: line name focussed rework")
+Reported-by: 4fqr <4fqr@proton.me>
+Tested-by: Vincent Fazio <vfazio@xes-inc.com>
+Reviewed-by: Vincent Fazio <vfazio@xes-inc.com>
+Link: https://patch.msgid.link/20260407-treewide-fixes-v1-7-66c9744a56a3@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ tools/gpio-tools-test.bash | 11 +++++++++++
+ tools/tools-common.c       |  2 ++
+ 2 files changed, 13 insertions(+)
+
+diff --git a/tools/gpio-tools-test.bash b/tools/gpio-tools-test.bash
+index 948ac0b..0888a08 100755
+--- a/tools/gpio-tools-test.bash
++++ b/tools/gpio-tools-test.bash
+@@ -1133,6 +1133,17 @@ test_gpioset_with_hold_period() {
+ 	status_is 0
+ }
+ 
++test_gpioset_reject_invalid_period() {
++	gpiosim_chip sim0 num_lines=8
++
++	local sim0=${GPIOSIM_CHIP_NAME[sim0]}
++
++	run_prog gpioset --hold-period=1000u --chip "$sim0" 0=1
++
++	status_is 1
++	output_regex_match "invalid period"
++}
++
+ test_gpioset_interactive_exit() {
+ 	gpiosim_chip sim0 num_lines=8
+ 
+diff --git a/tools/tools-common.c b/tools/tools-common.c
+index a684fcb..4e6bb3d 100644
+--- a/tools/tools-common.c
++++ b/tools/tools-common.c
+@@ -121,6 +121,8 @@ long long parse_period(const char *option)
+ 
+ 	switch (*end) {
+ 	case 'u':
++		if (*(end + 1) != 's')
++			return -1;
+ 		m = 1;
+ 		end++;
+ 		break;
+-- 
+2.53.0
+
