@@ -473,14 +473,14 @@ Description: Header files for BeagleBoard.org 6.6-rt-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-6.12-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.12.92-arm64-k3-r56
+Pre-Depends: linux-image-6.12.93-arm64-k3-r57
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-6.12.92-arm64-k3-r56
+ , rtw88-modules-6.12.93-arm64-k3-r57
 Description: BeagleBoard.org 6.12-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.12-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -488,7 +488,7 @@ Description: BeagleBoard.org 6.12-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-6.12-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-6.12.92-arm64-k3-r56
+Pre-Depends: linux-headers-6.12.93-arm64-k3-r57
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -629,14 +629,14 @@ Description: Header files for BeagleBoard.org 6.17-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.18.34-arm64-k3-r41
+Pre-Depends: linux-image-6.18.35-arm64-k3-r42
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-6.18.34-arm64-k3-r41
+ , rtw88-modules-6.18.35-arm64-k3-r42
 Description: BeagleBoard.org 6.18-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.18-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -644,7 +644,7 @@ Description: BeagleBoard.org 6.18-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-6.18.34-arm64-k3-r41
+Pre-Depends: linux-headers-6.18.35-arm64-k3-r42
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -681,14 +681,14 @@ Description: Header files for BeagleBoard.org 6.19-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.0.11-arm64-k3-r20
+Pre-Depends: linux-image-7.0.12-arm64-k3-r21
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-7.0.11-arm64-k3-r20
+ , rtw88-modules-7.0.12-arm64-k3-r21
 Description: BeagleBoard.org 7.0-k3 for ARMv8 (meta-package)
  This package depends on the latest 7.0-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -696,7 +696,7 @@ Description: BeagleBoard.org 7.0-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-7.0-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.0.11-arm64-k3-r20
+Pre-Depends: linux-headers-7.0.12-arm64-k3-r21
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
