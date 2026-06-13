@@ -4,7 +4,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="firmware-nonfree"
 debian_pkg_name="${package_name}"
-package_version="20260410"
+package_version="20260519"
 
 reprepro_dir="f/${package_name}"
 dl_path="pool/non-free-firmware/${reprepro_dir}/"
