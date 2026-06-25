@@ -1,7 +1,7 @@
 From 938ed1a4801b3fb86d8f26690baf23b924ca4180 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:49:54 +0200
-Subject: [PATCH 02/22] core: fix 1-byte buffer over-read bugs in
+Subject: [PATCH 02/29] core: fix 1-byte buffer over-read bugs in
  gpiod_chip_info_from_uapi()
 
 The copy in gpiod_chip_info_from_uapi() uses sizeof(info->name) = 33 as

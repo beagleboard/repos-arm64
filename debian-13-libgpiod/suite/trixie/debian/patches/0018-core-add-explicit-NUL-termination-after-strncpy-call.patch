@@ -1,7 +1,7 @@
 From 6e0f5f4f2ec6dfccf60c6df2e041a64296bbe522 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Thu, 4 Jun 2026 09:47:46 +0200
-Subject: [PATCH 18/22] core: add explicit NUL-termination after strncpy()
+Subject: [PATCH 18/29] core: add explicit NUL-termination after strncpy()
  calls
 
 Both gpiod_chip_info_from_uapi() and gpiod_line_info_from_uapi() copy

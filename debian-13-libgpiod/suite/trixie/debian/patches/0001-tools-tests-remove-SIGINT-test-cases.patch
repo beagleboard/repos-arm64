@@ -1,7 +1,7 @@
 From b1c29f501c28a7f96c5bb50d1674afca4e739e87 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Wed, 18 Mar 2026 14:14:13 +0100
-Subject: [PATCH 01/22] tools: tests: remove SIGINT test cases
+Subject: [PATCH 01/29] tools: tests: remove SIGINT test cases
 
 In coreutils v9.10 (specifically with commit 8c2461933411 ("timeout:
 honor ignored signal dispositions")) the behavior of timeout changed and

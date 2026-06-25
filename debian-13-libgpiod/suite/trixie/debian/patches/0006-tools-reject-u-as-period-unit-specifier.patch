@@ -1,7 +1,7 @@
 From 173597489d65e18d9b3d101c963ba2d5c020940e Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:49:58 +0200
-Subject: [PATCH 06/22] tools: reject "u" as period unit specifier
+Subject: [PATCH 06/29] tools: reject "u" as period unit specifier
 
 The input "10u" (bare 'u' without trailing 's') is silently parsed as
 10 minutes instead of being rejected as an invalid unit. Add stricter

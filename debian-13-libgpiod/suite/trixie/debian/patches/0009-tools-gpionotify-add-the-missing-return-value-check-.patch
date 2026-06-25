@@ -1,7 +1,7 @@
 From e8909e284ac49d739ceef9dd091d3fbcc460aa33 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:50:01 +0200
-Subject: [PATCH 09/22] tools: gpionotify: add the missing return value check
+Subject: [PATCH 09/29] tools: gpionotify: add the missing return value check
  for calloc()
 
 We're checking the return value of calloc() for pollfds but not for

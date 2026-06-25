@@ -1,35 +1,38 @@
-From 328d48b8cc90159825fa902c9d29bd6c554b10fe Mon Sep 17 00:00:00 2001
+From 131be172f6c979cf4e435414b4580f3b79bb952f Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-Date: Thu, 9 Apr 2026 10:28:56 +0200
-Subject: [PATCH 15/29] libgpiod v2.2.4
+Date: Mon, 15 Jun 2026 14:21:14 +0200
+Subject: [PATCH 29/29] libgpiod v2.2.5
 
 Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 ---
- configure.ac | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ configure.ac | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index 6b2aa9e..3ebf198 100644
+index 3ebf198..c5abe5f 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -3,7 +3,7 @@
  
  AC_PREREQ([2.71])
  
--AC_INIT([libgpiod], [2.2.3], [], [],
-+AC_INIT([libgpiod], [2.2.4], [], [],
+-AC_INIT([libgpiod], [2.2.4], [], [],
++AC_INIT([libgpiod], [2.2.5], [], [],
  AC_SUBST(EXTRA_VERSION, [])
  	[https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/])
  
-@@ -26,7 +26,7 @@ AC_SUBST(VERSION_STR, [$PACKAGE_VERSION$EXTRA_VERSION])
+@@ -26,9 +26,9 @@ AC_SUBST(VERSION_STR, [$PACKAGE_VERSION$EXTRA_VERSION])
  #
  # Define the libtool version as (C.R.A):
  # NOTE: this version only applies to the core C library.
--AC_SUBST(ABI_VERSION, [4.2.1])
-+AC_SUBST(ABI_VERSION, [4.3.1])
+-AC_SUBST(ABI_VERSION, [4.3.1])
++AC_SUBST(ABI_VERSION, [4.4.1])
  # Have a separate ABI version for C++ bindings:
- AC_SUBST(ABI_CXX_VERSION, [3.0.1])
+-AC_SUBST(ABI_CXX_VERSION, [3.0.1])
++AC_SUBST(ABI_CXX_VERSION, [3.1.1])
  # ABI version for libgpiosim (we need this since it can be installed if we
+ # enable tests).
+ AC_SUBST(ABI_GPIOSIM_VERSION, [1.3.0])
 -- 
 2.53.0
 

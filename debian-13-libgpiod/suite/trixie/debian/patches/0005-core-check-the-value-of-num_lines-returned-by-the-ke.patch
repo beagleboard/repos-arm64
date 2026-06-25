@@ -1,7 +1,7 @@
 From 46767044fb43571af1a55f8a8f7ff8fd027033eb Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:49:57 +0200
-Subject: [PATCH 05/22] core: check the value of num_lines returned by the
+Subject: [PATCH 05/29] core: check the value of num_lines returned by the
  kernel
 
 gpiod_line_request_from_uapi() initializes a line request from the kernel

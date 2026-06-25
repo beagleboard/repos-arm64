@@ -1,7 +1,7 @@
 From d5d249e50b7b27aa68442e31a9a8fb879ea85c0e Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:49:55 +0200
-Subject: [PATCH 03/22] core: fix parameter type in gpiod_line_mask_test_bit()
+Subject: [PATCH 03/29] core: fix parameter type in gpiod_line_mask_test_bit()
 
 Unlike other bit helpers, gpiod_line_mask_test_bit() takes a signed
 integer as argument defining the bit to test. Shifting a value by a count

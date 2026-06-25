@@ -20,5 +20,12 @@
 0020-bindings-cxx-drop-redundant-class-qualifier-in-line_.patch
 0021-bindings-cxx-use-get_mapped_value-for-all-enum-mappi.patch
 0022-dbus-manager-move-g_tree_remove-out-of-g_assert-in-g.patch
+0023-core-line-config-use-gpiod_line_settings_free-to-rel.patch
+0024-core-edge-event-return-0-when-zero-events-are-reques.patch
+0025-tools-gpionotify-don-t-watch-lines-on-the-wrong-chip.patch
+0026-tools-reject-trailing-garbage-in-parse_period.patch
+0027-tools-gpioset-store-interactive-sleep-period-in-a-lo.patch
+0028-NEWS-updates-for-v2.2.5.patch
+0029-libgpiod-v2.2.5.patch
 docs-disable-full-path-names
 0001-gpio-manager-wait-for-multi-user.target.patch

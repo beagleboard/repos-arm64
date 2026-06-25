@@ -1,7 +1,7 @@
 From 08dda33acce9c1358b0cfb57e36bd621a5445fee Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Thu, 9 Apr 2026 10:27:13 +0200
-Subject: [PATCH 14/22] NEWS: updates for v2.2.4
+Subject: [PATCH 14/29] NEWS: updates for v2.2.4
 
 Add release notes for libgpiod v2.2.4.
 

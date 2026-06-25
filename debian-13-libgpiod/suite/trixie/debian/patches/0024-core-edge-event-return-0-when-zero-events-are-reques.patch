@@ -1,0 +1,93 @@
+From 92f7ecc1d1423808596439e97928f06bacac8544 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Mon, 8 Jun 2026 16:47:50 +0200
+Subject: [PATCH 24/29] core: edge-event: return 0 when zero events are
+ requested
+
+gpiod_edge_event_buffer_read_fd() is documented to read at most
+max_events events and to return the number of events read. When called
+with max_events == 0 it nonetheless issued a read() for 0 bytes, which
+returns 0, and the subsequent short-read check
+((unsigned int)rd < sizeof(*event_data)) then treated this as an I/O
+error, setting errno to EIO and returning -1.
+
+Requesting zero events is not an error - it is a no-op that reads
+nothing. Handle it explicitly by clearing num_events and returning 0
+before attempting the read.
+
+Add a test case verifying the behavior.
+
+Fixes: b7ba732e6a93 ("treewide: libgpiod v2 implementation")
+Assisted-by: Claude Opus 4.8
+Link: https://patch.msgid.link/20260608-more-pre-2-3-fixes-v1-2-577a5ba426a5@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ lib/edge-event.c         |  5 +++++
+ tests/tests-edge-event.c | 35 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 40 insertions(+)
+
+diff --git a/lib/edge-event.c b/lib/edge-event.c
+index 8ec355f..be46dce 100644
+--- a/lib/edge-event.c
++++ b/lib/edge-event.c
+@@ -184,6 +184,11 @@ int gpiod_edge_event_buffer_read_fd(int fd,
+ 	if (max_events > buffer->capacity)
+ 		max_events = buffer->capacity;
+ 
++	if (max_events == 0) {
++		buffer->num_events = 0;
++		return 0;
++	}
++
+ 	rd = read(fd, buffer->event_data,
+ 		  max_events * sizeof(*buffer->event_data));
+ 	if (rd < 0) {
+diff --git a/tests/tests-edge-event.c b/tests/tests-edge-event.c
+index 6389455..6c7ce20 100644
+--- a/tests/tests-edge-event.c
++++ b/tests/tests-edge-event.c
+@@ -613,6 +613,41 @@ GPIOD_TEST_CASE(reading_more_events_than_the_queue_contains_doesnt_block)
+ 	gpiod_test_return_if_failed();
+ }
+ 
++GPIOD_TEST_CASE(reading_zero_events_is_a_noop)
++{
++	static const guint offset = 2;
++
++	g_autoptr(GPIOSimChip) sim = g_gpiosim_chip_new("num-lines", 8, NULL);
++	g_autoptr(struct_gpiod_chip) chip = NULL;
++	g_autoptr(struct_gpiod_line_settings) settings = NULL;
++	g_autoptr(struct_gpiod_line_config) line_cfg = NULL;
++	g_autoptr(struct_gpiod_line_request) request = NULL;
++	g_autoptr(struct_gpiod_edge_event_buffer) buffer = NULL;
++	gint ret;
++
++	chip = gpiod_test_open_chip_or_fail(g_gpiosim_chip_get_dev_path(sim));
++	settings = gpiod_test_create_line_settings_or_fail();
++	line_cfg = gpiod_test_create_line_config_or_fail();
++	buffer = gpiod_test_create_edge_event_buffer_or_fail(64);
++
++	gpiod_line_settings_set_direction(settings, GPIOD_LINE_DIRECTION_INPUT);
++	gpiod_line_settings_set_edge_detection(settings, GPIOD_LINE_EDGE_BOTH);
++
++	gpiod_test_line_config_add_line_settings_or_fail(line_cfg, &offset, 1,
++							 settings);
++
++	request = gpiod_test_chip_request_lines_or_fail(chip, NULL, line_cfg);
++
++	g_gpiosim_chip_set_pull(sim, 2, G_GPIOSIM_PULL_UP);
++	g_usleep(500);
++
++	ret = gpiod_line_request_read_edge_events(request, buffer, 0);
++	g_assert_cmpint(ret, ==, 0);
++	gpiod_test_return_if_failed();
++
++	g_assert_cmpuint(gpiod_edge_event_buffer_get_num_events(buffer), ==, 0);
++}
++
+ GPIOD_TEST_CASE(null_buffer)
+ {
+ 	static const guint offset = 2;
+-- 
+2.53.0
+

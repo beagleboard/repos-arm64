@@ -1,7 +1,7 @@
 From 10d34cb4c97ec36315dfa1488a018c8cb30df44e Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Thu, 4 Jun 2026 09:47:58 +0200
-Subject: [PATCH 22/22] dbus: manager: move g_tree_remove() out of g_assert()
+Subject: [PATCH 22/29] dbus: manager: move g_tree_remove() out of g_assert()
  in gpiodbus_id_free()
 
 g_assert() is compiled out when G_DISABLE_ASSERT is defined, which would

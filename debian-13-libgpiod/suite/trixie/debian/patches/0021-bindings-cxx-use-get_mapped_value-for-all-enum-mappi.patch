@@ -1,7 +1,7 @@
 From 68cf24fb08b4f7413c5fece634ff15f24b0d056a Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Thu, 4 Jun 2026 09:47:51 +0200
-Subject: [PATCH 21/22] bindings: cxx: use get_mapped_value() for all enum
+Subject: [PATCH 21/29] bindings: cxx: use get_mapped_value() for all enum
  mappings in line_info
 
 The direction() method correctly uses get_mapped_value() which converts

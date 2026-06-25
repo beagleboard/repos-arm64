@@ -1,0 +1,43 @@
+From a537af72f31e3ee6308605599396fea62a86db23 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Mon, 15 Jun 2026 14:15:40 +0200
+Subject: [PATCH 28/29] NEWS: updates for v2.2.5
+
+Add release notes for libgpiod v2.2.5.
+
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ NEWS | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/NEWS b/NEWS
+index f6b486b..9298103 100644
+--- a/NEWS
++++ b/NEWS
+@@ -2,6 +2,23 @@
+ # SPDX-FileCopyrightText: 2017-2021 Bartosz Golaszewski <bartekgola@gmail.com>
+ # SPDX-FileCopyrightText: 2023 Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+ 
++libgpiod v2.2.5
++===============
++
++Bug fixes:
++- allow modifying settings for existing offsets in a full line-config
++- fix signed/unsigned type mismatch in gpiod_line_request_get_value()
++- add explicit NUL-termination after strncpy() calls in core library
++- fix consumer string in line_info stream operator in C++ bindings
++- use get_mapped_value() for all enum mappings in line_info in C++ bindings
++- move g_tree_remove() out of g_assert() in gpiodbus_id_free() to avoid
++  resource exhaustion when assertions are disabled
++- return 0 when zero events are requested in edge-event API
++- fix gpionotify watching lines on the wrong chip
++- reject trailing garbage in parse_period() in gpio-tools
++- store interactive sleep period in a long long in gpioset to avoid overflow
++- use gpiod_line_settings_free() to release settings in line-config
++
+ libgpiod v2.2.4
+ ===============
+ 
+-- 
+2.53.0
+

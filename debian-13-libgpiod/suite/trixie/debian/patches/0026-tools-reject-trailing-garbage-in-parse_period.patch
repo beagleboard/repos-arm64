@@ -1,0 +1,66 @@
+From db8d34767f66fdea426391a820bcbe5a674b24ef Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Mon, 8 Jun 2026 16:47:52 +0200
+Subject: [PATCH 26/29] tools: reject trailing garbage in parse_period()
+
+parse_period() consumed an optional unit suffix ('us', 'ms', 's', 'm')
+but never verified that the suffix was the end of the string. As a
+result inputs with trailing garbage such as "100msx", "100usx" or
+"100sx" were silently accepted and parsed as if the garbage were not
+there, while inconsistently "100mx" was already rejected.
+
+Require that the whole string be consumed by checking *end == '\0'
+after the unit suffix has been processed, mirroring what parse_uint()
+already does. All valid forms still leave end pointing at the
+terminating NUL at that point, so only malformed input is rejected.
+
+Add a test that passes an invalid suffix and verifies it's rejected.
+
+Fixes: 6702eed1a5f2 ("tools: fix an integer overflow bug in parse_period()")
+Assisted-by: Claude Opus 4.8
+Link: https://patch.msgid.link/20260608-more-pre-2-3-fixes-v1-4-577a5ba426a5@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ tools/gpio-tools-test.bash | 11 +++++++++++
+ tools/tools-common.c       |  3 +++
+ 2 files changed, 14 insertions(+)
+
+diff --git a/tools/gpio-tools-test.bash b/tools/gpio-tools-test.bash
+index 6491405..63342a7 100755
+--- a/tools/gpio-tools-test.bash
++++ b/tools/gpio-tools-test.bash
+@@ -864,6 +864,17 @@ test_gpioget_with_invalid_hold_period() {
+ 	status_is 1
+ }
+ 
++test_gpioget_with_trailing_garbage_in_period() {
++	gpiosim_chip sim0 num_lines=8
++
++	# A period with trailing garbage after the unit suffix must be
++	# rejected. "100msx" must not be silently parsed as "100ms".
++	run_prog gpioget --hold-period=100msx --chip "${GPIOSIM_CHIP_NAME[sim0]}" 0
++
++	output_regex_match ".*invalid period.*"
++	status_is 1
++}
++
+ #
+ # gpioset test cases
+ #
+diff --git a/tools/tools-common.c b/tools/tools-common.c
+index 82f7b88..8c79184 100644
+--- a/tools/tools-common.c
++++ b/tools/tools-common.c
+@@ -150,6 +150,9 @@ long long parse_period(const char *option)
+ 		m = 1000;
+ 	}
+ 
++	if (*end != '\0')
++		return -1;
++
+ 	if (m != 0 && p > ULLONG_MAX / m)
+ 		return -1;
+ 	p *= m;
+-- 
+2.53.0
+

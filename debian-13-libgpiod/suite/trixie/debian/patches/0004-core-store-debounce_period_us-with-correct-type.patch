@@ -1,7 +1,7 @@
 From 58a0ee87b9b873159d1dffba080f59154c2ee472 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:49:56 +0200
-Subject: [PATCH 04/22] core: store debounce_period_us with correct type
+Subject: [PATCH 04/29] core: store debounce_period_us with correct type
 
 The gpiod_line_settings struct stores the debounce period as a signed
 long but the setter and getter take/return unsigned long. Use unsigned

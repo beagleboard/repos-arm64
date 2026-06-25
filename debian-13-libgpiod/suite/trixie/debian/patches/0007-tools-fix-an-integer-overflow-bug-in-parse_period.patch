@@ -1,7 +1,7 @@
 From d97037907297614a7e5e117dcc7c41ed11df6db7 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:49:59 +0200
-Subject: [PATCH 07/22] tools: fix an integer overflow bug in parse_period()
+Subject: [PATCH 07/29] tools: fix an integer overflow bug in parse_period()
 
 If p * m exceeds ULLONG_MAX, the result wraps modulo 2^64. The wrapped
 value may be less than LLONG_MAX, passing the guard and returning

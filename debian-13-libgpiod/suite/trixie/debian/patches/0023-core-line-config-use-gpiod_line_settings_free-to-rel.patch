@@ -1,0 +1,40 @@
+From 2cecadd5a83de1ef4cb095eda5359ec179f97593 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Mon, 8 Jun 2026 16:47:49 +0200
+Subject: [PATCH 23/29] core: line-config: use gpiod_line_settings_free() to
+ release settings
+
+When releasing a no-longer-referenced settings node in
+gpiod_line_config_add_line_settings(), the embedded settings object was
+freed with a raw free() instead of gpiod_line_settings_free(), unlike
+every other release site (e.g. free_refs()).
+
+This is currently harmless because gpiod_line_settings_free() is just a
+free(), but bypassing the type's destructor is a latent leak should the
+struct ever gain heap-allocated members. Use the proper destructor for
+consistency.
+
+Fixes: 2560a857ce43 ("core: keep memory usage of struct line_config in check")
+Assisted-by: Claude Opus 4.8
+Link: https://patch.msgid.link/20260608-more-pre-2-3-fixes-v1-1-577a5ba426a5@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ lib/line-config.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/line-config.c b/lib/line-config.c
+index c9e5cb0..f00892e 100644
+--- a/lib/line-config.c
++++ b/lib/line-config.c
+@@ -182,7 +182,7 @@ GPIOD_API int gpiod_line_config_add_line_settings(
+ 				old->prev->next = old->next;
+ 			if (old->next)
+ 				old->next->prev = old->prev;
+-			free(old->settings);
++			gpiod_line_settings_free(old->settings);
+ 			free(old);
+ 		}
+ 	}
+-- 
+2.53.0
+

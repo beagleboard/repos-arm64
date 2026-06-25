@@ -1,7 +1,7 @@
 From 93e1f599b50ea7079a691519a81e45062e64fc40 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:50:04 +0200
-Subject: [PATCH 12/22] tools: gpioinfo: use correct function to free the
+Subject: [PATCH 12/29] tools: gpioinfo: use correct function to free the
  resolver
 
 struct line_resolver should be freed with free_line_resolver() while

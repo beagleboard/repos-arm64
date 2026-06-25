@@ -1,7 +1,7 @@
 From 55e08bd225a5f35a44c0d6cae906c6e7060df1c3 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:50:00 +0200
-Subject: [PATCH 08/22] tools: gpionotify: fix memory leak on every event read
+Subject: [PATCH 08/29] tools: gpionotify: fix memory leak on every event read
 
 Event objects created by gpiod_info_event_get_event_type() are never
 freed making gpionotify's memory usage balloon indefinitely. Add missing

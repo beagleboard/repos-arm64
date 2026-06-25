@@ -1,7 +1,7 @@
 From 8cba34fc606bf9f24f9a4ed87f5e178c3b921140 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Thu, 4 Jun 2026 09:47:44 +0200
-Subject: [PATCH 17/22] core: fix signed/unsigned type mismatch in
+Subject: [PATCH 17/29] core: fix signed/unsigned type mismatch in
  gpiod_line_request_get_value()
 
 The local variable used to store the return value of

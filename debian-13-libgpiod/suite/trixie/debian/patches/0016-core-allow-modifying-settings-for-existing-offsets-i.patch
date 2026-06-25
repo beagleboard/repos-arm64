@@ -1,7 +1,7 @@
 From 2247e299a14689d0e1d0ae2bc02f8908cadfc3b2 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Fri, 22 May 2026 12:01:28 +0200
-Subject: [PATCH 16/22] core: allow modifying settings for existing offsets in
+Subject: [PATCH 16/29] core: allow modifying settings for existing offsets in
  a full line-config
 
 gpiod_line_config_add_line_settings() checks the remaining capacity

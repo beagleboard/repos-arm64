@@ -1,7 +1,7 @@
 From 50edc4358e85165216158a98a610e5e316f77be5 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Thu, 4 Jun 2026 09:47:49 +0200
-Subject: [PATCH 19/22] bindings: cxx: fix consumer string in line_info stream
+Subject: [PATCH 19/29] bindings: cxx: fix consumer string in line_info stream
  operator
 
 The consumer field in operator<< for line_info was using info.name()

@@ -1,7 +1,7 @@
 From 1a7b8d5af8a4be609b0d573c0abc53ef43512703 Mon Sep 17 00:00:00 2001
 From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 Date: Tue, 7 Apr 2026 14:50:03 +0200
-Subject: [PATCH 11/22] tools: gpionotify: don't leak info returned by
+Subject: [PATCH 11/29] tools: gpionotify: don't leak info returned by
  gpiod_chip_watch_line_info()
 
 gpiod_chip_watch_line_info() returns a gpiod_line_info object that must

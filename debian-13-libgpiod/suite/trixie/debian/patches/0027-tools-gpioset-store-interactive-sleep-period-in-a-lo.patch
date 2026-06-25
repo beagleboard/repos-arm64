@@ -1,0 +1,81 @@
+From 30fe97e43365301dc293814a77236fe3dc3e4901 Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Mon, 8 Jun 2026 16:47:53 +0200
+Subject: [PATCH 27/29] tools: gpioset: store interactive sleep period in a
+ long long
+
+The interactive 'sleep' command stored the result of parse_period() in
+an int. parse_period() returns a long long number of microseconds, so a
+period above INT_MAX microseconds (~36 minutes, e.g. "sleep 40m")
+overflowed: it could wrap to a negative value and be wrongly rejected as
+an invalid period, or to an incorrect positive value producing the wrong
+sleep duration.
+
+Declare period_us as long long to match parse_period()'s return type.
+The error check (period_us < 0) and the sleep_us() call, which takes an
+unsigned long long, both remain correct. The non-interactive hold and
+toggle period paths already use unsigned long long and were unaffected.
+
+Add a test that issues "sleep 40m" at the interactive prompt and verifies
+the tool starts sleeping rather than emitting an "invalid period" error
+
+Fixes: c34a572c5350 ("tools: add minutes as a new supported time unit")
+Assisted-by: Claude Opus 4.8
+Link: https://patch.msgid.link/20260608-more-pre-2-3-fixes-v1-5-577a5ba426a5@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ tools/gpio-tools-test.bash | 21 +++++++++++++++++++++
+ tools/gpioset.c            |  3 ++-
+ 2 files changed, 23 insertions(+), 1 deletion(-)
+
+diff --git a/tools/gpio-tools-test.bash b/tools/gpio-tools-test.bash
+index 63342a7..e7d5f6c 100755
+--- a/tools/gpio-tools-test.bash
++++ b/tools/gpio-tools-test.bash
+@@ -1305,6 +1305,27 @@ test_gpioset_interactive_sleep() {
+ 	dut_readable
+ }
+ 
++test_gpioset_interactive_sleep_with_long_period() {
++	gpiosim_chip sim0 num_lines=8 line_name=1:foo
++
++	dut_run gpioset --interactive foo=1
++
++	# clear the initial prompt
++	dut_flush
++
++	# A period longer than INT_MAX microseconds (~36 minutes) must be
++	# accepted, not overflow into a negative value and get rejected as an
++	# invalid period.
++	dut_write "sleep 40m"
++
++	# give the tool a moment to either start sleeping (correct) or print an
++	# error and re-prompt (the bug)
++	sleep 1
++
++	# nothing must be readable: the tool is sleeping, not reporting an error
++	assert_fail dut_readable
++}
++
+ test_gpioset_toggle_continuous() {
+ 	gpiosim_chip sim0 num_lines=8 line_name=1:foo line_name=4:bar \
+ 				      line_name=7:baz
+diff --git a/tools/gpioset.c b/tools/gpioset.c
+index 46dde07..005f693 100644
+--- a/tools/gpioset.c
++++ b/tools/gpioset.c
+@@ -739,9 +739,10 @@ static void interact(struct gpiod_line_request **requests,
+ 		     unsigned int *offsets, enum gpiod_line_value *values,
+ 		     bool unquoted)
+ {
+-	int num_words, num_lines, max_words, period_us, i;
++	int num_words, num_lines, max_words, i;
+ 	char *line, **words, *line_buf;
+ 	bool done, stdout_is_tty;
++	long long period_us;
+ 
+ 	stifle_history(20);
+ 	rl_attempted_completion_function = tab_completion;
+-- 
+2.53.0
+

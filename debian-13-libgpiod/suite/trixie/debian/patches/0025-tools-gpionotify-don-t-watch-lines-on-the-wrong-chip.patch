@@ -1,0 +1,97 @@
+From c53667d4cfc3bf2a15af83d271089736f81be27c Mon Sep 17 00:00:00 2001
+From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+Date: Mon, 8 Jun 2026 16:47:51 +0200
+Subject: [PATCH 25/29] tools: gpionotify: don't watch lines on the wrong chip
+
+Commit 0de77e2abf12 ("tools: gpionotify: don't leak info returned by
+gpiod_chip_watch_line_info()") moved the call to
+gpiod_chip_watch_line_info() out of the condition that guarded it. The
+original code relied on the short-circuit evaluation of the logical AND
+to only request a watch when the line actually belonged to the chip
+currently being processed:
+
+	if ((resolver->lines[j].chip_num == i) &&
+	    !gpiod_chip_watch_line_info(chip, resolver->lines[j].offset))
+		die_perror(...);
+
+After the refactor the watch is requested unconditionally for every
+resolved line on every chip, using the line's offset as-is. When lines
+are spread across multiple chips this installs watches at foreign
+offsets on the wrong chip. Such a watch typically succeeds (the offset
+usually exists on the other chip too), persists - freeing the returned
+gpiod_line_info does not remove it - and makes gpionotify report
+spurious info events for lines the user never asked to watch.
+
+Restore the guard so that each line is only ever watched on the chip it
+belongs to, while keeping the gpiod_line_info_free() leak fix. As a side
+effect a watch failure on the correct chip is now always treated as
+fatal instead of only when it coincided with a matching chip_num.
+
+Add a test-case that requests two lines with distinct offsets on two
+different chips and then toggles one line's offset on the other chip. No
+event must be reported for that, as the offset is not watched there.
+
+Fixes: 0de77e2abf12 ("tools: gpionotify: don't leak info returned by gpiod_chip_watch_line_info()")
+Assisted-by: Claude Opus 4.8
+Link: https://patch.msgid.link/20260608-more-pre-2-3-fixes-v1-3-577a5ba426a5@oss.qualcomm.com
+Signed-off-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+---
+ tools/gpio-tools-test.bash | 23 +++++++++++++++++++++++
+ tools/gpionotify.c         |  5 ++++-
+ 2 files changed, 27 insertions(+), 1 deletion(-)
+
+diff --git a/tools/gpio-tools-test.bash b/tools/gpio-tools-test.bash
+index 0888a08..6491405 100755
+--- a/tools/gpio-tools-test.bash
++++ b/tools/gpio-tools-test.bash
+@@ -2454,6 +2454,29 @@ test_gpionotify_multiple_lines_across_multiple_chips() {
+ 	assert_fail dut_readable
+ }
+ 
++test_gpionotify_do_not_watch_lines_on_wrong_chip() {
++	gpiosim_chip sim0 num_lines=4 line_name=2:foo
++	gpiosim_chip sim1 num_lines=8 line_name=4:bar
++
++	local sim0=${GPIOSIM_CHIP_NAME[sim0]}
++	local sim1=${GPIOSIM_CHIP_NAME[sim1]}
++
++	dut_run gpionotify --banner foo bar
++	dut_regex_match "Watching lines .*"
++
++	# Toggle sim1 offset 2 - this is foo's offset but on the wrong chip, so
++	# it must not be watched and must not produce any event. Doing it before
++	# the legitimate bar event guarantees that a spurious event, if emitted,
++	# would be read first from sim1's event buffer.
++	request_release_line "$sim1" 2
++
++	request_release_line "$sim1" 4
++	dut_regex_match "[0-9]+\.[0-9]+\\s+requested\\s+\"bar\""
++	dut_regex_match "[0-9]+\.[0-9]+\\s+released\\s+\"bar\""
++
++	assert_fail dut_readable
++}
++
+ test_gpionotify_exit_after_SIGTERM() {
+ 	gpiosim_chip sim0 num_lines=8
+ 
+diff --git a/tools/gpionotify.c b/tools/gpionotify.c
+index cb3a3de..a450900 100644
+--- a/tools/gpionotify.c
++++ b/tools/gpionotify.c
+@@ -407,9 +407,12 @@ int main(int argc, char **argv)
+ 				   resolver->chips[i].path);
+ 
+ 		for (j = 0; j < resolver->num_lines; j++) {
++			if (resolver->lines[j].chip_num != i)
++				continue;
++
+ 			info = gpiod_chip_watch_line_info(chip,
+ 						resolver->lines[j].offset);
+-			if ((resolver->lines[j].chip_num == i) && !info)
++			if (!info)
+ 				die_perror("unable to watch line on chip '%s'",
+ 					   resolver->chips[i].path);
+ 
+-- 
+2.53.0
+
