@@ -1,4 +1,4 @@
-generic-sys-mods (1.20260630.0-0~noble+20260630) noble; urgency=low
+generic-sys-mods (1.20260630.1-0~noble+20260630) noble; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
@@ -10,5 +10,5 @@ generic-sys-mods (1.20260630.0-0~noble+20260630) noble; urgency=low
   * add pkg git for beagle-dtb-source
   * beagle-dtb-source: v7.1.x/v7.2.x branch
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Jun 2026 11:47:15 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Jun 2026 12:06:57 -0500
 

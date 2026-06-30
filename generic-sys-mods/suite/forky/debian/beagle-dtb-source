@@ -3,7 +3,7 @@
 BBORG_DTBS="https://github.com/beagleboard/BeagleBoard-DeviceTrees.git"
 
 git_clone_force () {
-	if [ ! -d /opt/source/${git_target}/ ] ; then
+	if [ -d /opt/source/${git_target}/ ] ; then
 		rm -rf /opt/source/${git_target}/ || true
 	fi
 	echo "git clone ${git_repo} /opt/source/${git_target}"
