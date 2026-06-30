@@ -2,8 +2,8 @@
 
 BBORG_DTBS="https://github.com/beagleboard/BeagleBoard-DeviceTrees.git"
 
-git_clone () {
-	if [ -d /opt/source/${git_target}/ ] ; then
+git_clone_force () {
+	if [ ! -d /opt/source/${git_target}/ ] ; then
 		rm -rf /opt/source/${git_target}/ || true
 	fi
 	echo "git clone ${git_repo} /opt/source/${git_target}"
@@ -13,6 +13,20 @@ git_clone () {
 	echo "${git_target} : ${git_repo}" >> /opt/source/list.txt
 	sync
 	sleep 1
+}
+
+git_clone () {
+	if [ ! -d /opt/source/${git_target}/ ] ; then
+		echo "git clone ${git_repo} /opt/source/${git_target}"
+		git clone ${git_repo} /opt/source/${git_target}
+		sync
+		chown -R 1000:1000 /opt/source/${git_target}
+		echo "${git_target} : ${git_repo}" >> /opt/source/list.txt
+		sync
+		sleep 1
+	else
+		echo "beagle-dtb-source: ${git_target} repo already exists"
+	fi
 }
 
 git_clone_branch () {
@@ -54,7 +68,7 @@ git_clone
 git_repo="$BBORG_DTBS"
 
 git_target="BeagleBoard-DeviceTrees"
-git_clone
+git_clone_force
 
 git_reference="BeagleBoard-DeviceTrees"
 
@@ -76,4 +90,5 @@ git_target="dtb-6.17.x" ; git_branch="v6.17.x" ; git_clone_branch_reference
 git_target="dtb-6.19.x" ; git_branch="v6.19.x" ; git_clone_branch_reference
 git_target="dtb-7.0.x"  ; git_branch="v7.0.x"  ; git_clone_branch_reference
 git_target="dtb-7.1.x"  ; git_branch="v7.1.x"  ; git_clone_branch_reference
+git_target="dtb-7.2.x"  ; git_branch="v7.2.x"  ; git_clone_branch_reference
 #
