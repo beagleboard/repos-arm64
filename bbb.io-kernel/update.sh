@@ -308,6 +308,8 @@ do_some_k3_forky () {
 	msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
 	msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
 	unset rtw88
+
+	msg="7.2-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
 	unset cc33xx
 }
 
