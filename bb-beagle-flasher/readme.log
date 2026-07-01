@@ -6,3 +6,4 @@
   * Remove beagle-flasher-init-shutdown.service, single user will now shutdown
   * e2fsprogs (1.47.0) disable orphan_file, needs v5.15.x kernel
   * PB2I (fat) just use cp-v vs rsync
+  * flasher add: generate_machine_id=enable and generate_ssh_keys=enable options

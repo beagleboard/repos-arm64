@@ -6,7 +6,7 @@ if ! id | grep -q root; then
 	exit
 fi
 
-version_message="1.20240620.0, fix extlinux.conf location..."
+version_message="1.20260701.0, Allow user to reset etc/machine-id and ssh keys..."
 
 #Debian 12, Ubuntu Lunar, Mantic, Noble
 #https://packages.debian.org/source/bookworm/e2fsprogs
@@ -277,20 +277,20 @@ copy_rootfs () {
 	message="INFO: [mount ${destination}${dest_rfs_part} /tmp/rootfs/ -o async,noatime]"       ; broadcast
 	mount ${destination}${dest_rfs_part} /tmp/rootfs/ -o async,noatime
 
-	message="INFO: rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
-	rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
+	message="INFO: rsync: (-aAXHx) [/ -> /tmp/rootfs/]"                                ; broadcast
+	rsync -aAXHx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
-	message="INFO: rsync: (-aHAXx) [/ -> /tmp/rootfs/]"                                ; broadcast
-	rsync -aHAXx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
+	message="INFO: rsync: (-aAXHx) [/ -> /tmp/rootfs/]"                                ; broadcast
+	rsync -aAXHx --human-readable --info=progress2 /* /tmp/rootfs/ --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/media/*,/lost+found,/lib/modules/*,/boot/firmware/*} || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
 	message="INFO: Copying: Kernel modules"                                                    ; broadcast
 	mkdir -p /tmp/rootfs/lib/modules/$(uname -r)/ || true
-	message="INFO: rsync: (-aHAXx) /lib/modules/$(uname -r)/ -> /tmp/rootfs/lib/modules/$(uname -r)/" ; broadcast
-	rsync -aHAXx --human-readable --info=progress2 /lib/modules/$(uname -r)/* /tmp/rootfs/lib/modules/$(uname -r)/ || write_failure
+	message="INFO: rsync: (-aAXHx) /lib/modules/$(uname -r)/ -> /tmp/rootfs/lib/modules/$(uname -r)/" ; broadcast
+	rsync -aAXHx --human-readable --info=progress2 /lib/modules/$(uname -r)/* /tmp/rootfs/lib/modules/$(uname -r)/ || write_failure
 	message="--------------------------------------------------------------------------------" ; broadcast
 	flush_cache
 
@@ -312,6 +312,16 @@ copy_rootfs () {
 		rm -rf /tmp/rootfs/etc/systemd/system/multi-user.target.wants/grow_partition.service || true
 	fi
 	flush_cache
+
+	if [ "x${generate_machine_id}" = "xenable" ] ; then
+		echo "truncate -s 0 /etc/machine-id"
+		truncate -s 0 /tmp/rootfs/etc/machine-id || true
+	fi
+
+	if [ "x${generate_ssh_keys}" = "xenable" ] ; then
+		echo "touch /etc/bbb.io/ssh_regenerate"
+		touch /tmp/rootfs/etc/bbb.io/ssh_regenerate || true
+	fi
 
 	message="Copying: ${source}p${src_rfs_part} -> ${destination}${dest_rfs_part} complete"    ; broadcast
 	message="--------------------------------------------------------------------------------" ; broadcast
