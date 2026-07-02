@@ -9,7 +9,7 @@ package_version="2.4.134"
 reprepro_dir="libd/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-1"
+debian_version="${package_version}-3"
 
 dist="debian-trixie-arm64"
 suite="trixie"
