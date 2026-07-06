@@ -4,7 +4,10 @@ Name=usb0
 [Network]
 Address=192.168.7.2/30
 DHCP=no
-RequiredForOnline=no
+RequiredForOnline=yes
+
+[Route]
+Gateway=192.168.7.1
 
 [DHCPServer]
 PoolSize=1
