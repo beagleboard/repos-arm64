@@ -1,7 +1,6 @@
-bbb.io-kernel (1.20260706.0-0~noble+20260706) noble; urgency=low
+bbb.io-kernel (1.20260713.0-0~noble+20260713) noble; urgency=low
 
   * Kernel Updates
-  * linux-image-6.18.38-arm64-k3-r45
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 06 Jul 2026 19:53:43 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 13 Jul 2026 16:01:25 -0500
 
