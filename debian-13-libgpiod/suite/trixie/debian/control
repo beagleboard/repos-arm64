@@ -20,7 +20,7 @@ Build-Depends: debhelper-compat (= 13),
                linux-libc-dev (>= 4.8),
                libgudev-1.0-dev,
                systemd-dev
-Standards-Version: 4.7.3
+Standards-Version: 4.7.4
 Build-Depends-Indep: doxygen
 Homepage: https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
 Vcs-Git: https://salsa.debian.org/debian/libgpiod.git

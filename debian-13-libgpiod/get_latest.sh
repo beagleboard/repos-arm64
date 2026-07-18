@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/libg/libgpiod/libgpiod_2.2.3-1"
+version="main/libg/libgpiod/libgpiod_2.2.4-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true

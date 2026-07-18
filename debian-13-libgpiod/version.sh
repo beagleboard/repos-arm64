@@ -4,7 +4,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="libgpiod"
 debian_pkg_name="${package_name}"
-package_version="2.2.3"
+package_version="2.2.4"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
@@ -16,6 +16,6 @@ dl_path="pool/main/${reprepro_dir}/"
 debian_version="${package_version}-1"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
-local_patch="bbbio10"
+local_patch="bbbio1"
 
-trixie_version="~trixie+20260628"
+trixie_version="~trixie+20260718"
