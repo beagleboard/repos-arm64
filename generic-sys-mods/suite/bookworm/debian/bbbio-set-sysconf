@@ -192,12 +192,17 @@ if (my $wifi_regdom = delete($conf->{wifi_regdom})) {
 
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     if ($wifi_not_configured) {
-        if( -f "/boot/firmware/services/$iwd_psk_file") {
+        my $src = "/boot/firmware/services/$iwd_psk_file";
+        my $dst = "/var/lib/iwd/$iwd_psk_file";
+        if ( -f $src ) {
             logger('info', "Setting up iwd with '$iwd_psk_file'");
-            system("cp /boot/firmware/services/$iwd_psk_file /var/lib/iwd/");
-            system("dos2unix -q /var/lib/iwd/$iwd_psk_file");
-            $wifi_not_configured = 0;
-            $call_reboot = 1;
+            if (system('cp', $src, $dst) == 0
+                && system('dos2unix', '-q', $dst) == 0) {
+                $wifi_not_configured = 0;
+                $call_reboot = 1;
+            } else {
+                logger('err', "Failed to install iwd profile '$iwd_psk_file'");
+            }
         }
     }
 }

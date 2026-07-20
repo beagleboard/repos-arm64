@@ -1,4 +1,4 @@
-generic-sys-mods (1.20260630.1-0~trixie+20260630) trixie; urgency=low
+generic-sys-mods (1.20260720.0-0~trixie+20260720) trixie; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
@@ -9,6 +9,7 @@ generic-sys-mods (1.20260630.1-0~trixie+20260630) trixie; urgency=low
   * add beagle-dtb-source script to sync /opt/source/
   * add pkg git for beagle-dtb-source
   * beagle-dtb-source: v7.1.x/v7.2.x branch
+  * bbbio-set-sysconf: fix SSID with spaces: https://github.com/beagleboard/bbbio-set-sysconf/issues/2
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 30 Jun 2026 12:06:57 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 20 Jul 2026 15:14:02 -0500
 

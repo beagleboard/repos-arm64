@@ -7,3 +7,4 @@
   * add beagle-dtb-source script to sync /opt/source/
   * add pkg git for beagle-dtb-source
   * beagle-dtb-source: v7.1.x/v7.2.x branch
+  * bbbio-set-sysconf: fix SSID with spaces: https://github.com/beagleboard/bbbio-set-sysconf/issues/2
