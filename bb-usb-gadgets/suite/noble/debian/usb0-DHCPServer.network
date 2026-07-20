@@ -7,6 +7,7 @@ DHCP=no
 RequiredForOnline=no
 
 [DHCPServer]
+PersistLeases=runtime
 PoolSize=1
 MaxLeaseTimeSec=20min
 EmitDNS=no
