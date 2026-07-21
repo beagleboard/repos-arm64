@@ -629,14 +629,14 @@ Description: Header files for BeagleBoard.org 6.17-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-6.18.38-arm64-k3-r45
+Pre-Depends: linux-image-6.18.39-arm64-k3-r47
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
  , rtw88-modprobe-conf
- , rtw88-modules-6.18.38-arm64-k3-r45
+ , rtw88-modules-6.18.39-arm64-k3-r47
 Description: BeagleBoard.org 6.18-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.18-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -644,7 +644,7 @@ Description: BeagleBoard.org 6.18-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-6.18-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-6.18.38-arm64-k3-r45
+Pre-Depends: linux-headers-6.18.39-arm64-k3-r47
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -661,8 +661,6 @@ Depends:
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
- , rtw88-modprobe-conf
- , rtw88-modules-6.19.14-arm64-k3-r22
 Description: BeagleBoard.org 6.19-k3 for ARMv8 (meta-package)
  This package depends on the latest 6.19-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -687,8 +685,6 @@ Depends:
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
- , rtw88-modprobe-conf
- , rtw88-modules-7.0.14-arm64-k3-r23
 Description: BeagleBoard.org 7.0-k3 for ARMv8 (meta-package)
  This package depends on the latest 7.0-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -707,14 +703,12 @@ Description: Header files for BeagleBoard.org 7.0-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-7.1-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.1.3-arm64-k3-r12
+Pre-Depends: linux-image-7.1.4-arm64-k3-r14
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
 Recommends:
  bbb.io-cc33xx-1.0.2.10-firmware
- , rtw88-modprobe-conf
- , rtw88-modules-7.1.3-arm64-k3-r12
 Description: BeagleBoard.org 7.1-k3 for ARMv8 (meta-package)
  This package depends on the latest 7.1-k3 kernel and modules
  for use on 64-bit ARMv8 machines.
@@ -722,7 +716,7 @@ Description: BeagleBoard.org 7.1-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-7.1-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.1.3-arm64-k3-r12
+Pre-Depends: linux-headers-7.1.4-arm64-k3-r14
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -733,7 +727,7 @@ Description: Header files for BeagleBoard.org 7.1-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-7.2-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.2.0-rc3-arm64-k3-r5
+Pre-Depends: linux-image-7.2.0-rc4-arm64-k3-r7
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -746,7 +740,7 @@ Description: BeagleBoard.org 7.2-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-7.2-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.2.0-rc3-arm64-k3-r5
+Pre-Depends: linux-headers-7.2.0-rc4-arm64-k3-r7
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -757,7 +751,7 @@ Description: Header files for BeagleBoard.org 7.2-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.2.0-rc3-arm64-r1
+Pre-Depends: linux-image-7.2.0-rc4-arm64-r1
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Description: BeagleBoard.org Mainline Kernel.org
  This metapackage will install Mainline in Debian.
