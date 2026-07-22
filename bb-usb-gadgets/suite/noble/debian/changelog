@@ -1,4 +1,4 @@
-bb-usb-gadgets (1.20260720.0-0~noble+20260720) noble; urgency=low
+bb-usb-gadgets (1.20260722.0-0~noble+20260722) noble; urgency=low
 
   * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
@@ -6,6 +6,7 @@ bb-usb-gadgets (1.20260720.0-0~noble+20260720) noble; urgency=low
   * trixie - drop usb1 (rndis)
   * Cleanup usb0-DHCPServer.network and add usb0 (PocketBeagle) only usb0-only-DHCPServer.network
   * systemd.network 256 needs PersistLeases=runtime https://forum.beagleboard.org/t/pocketbeagle-2-not-reachable-using-local-network-via-usb-tethering-on-macos-26-5/44010/23
+  * fix usb network again
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 20 Jul 2026 15:48:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 22 Jul 2026 09:38:00 -0500
 

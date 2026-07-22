@@ -1,15 +1,18 @@
 [Match]
 Name=usb0
 
+[Link]
+RequiredForOnline=no
+
 [Network]
 Address=192.168.7.2/30
 DHCP=no
-RequiredForOnline=no
+DHCPServer=true
 
 [DHCPServer]
-PersistLeases=runtime
 PoolSize=1
 MaxLeaseTimeSec=20min
 EmitDNS=no
 EmitRouter=yes
 EmitTimezone=no
+PersistLeases=runtime
