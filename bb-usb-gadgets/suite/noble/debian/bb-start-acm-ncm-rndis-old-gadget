@@ -108,6 +108,7 @@ run_libcomposite () {
 		echo "1" > "$CONFIGFS/g_multi/os_desc/use"
 		echo "0xbc" > "$CONFIGFS/g_multi/os_desc/b_vendor_code"
 		echo "MSFT100" > "$CONFIGFS/g_multi/os_desc/qw_sign"
+		ln -s "$CONFIGFS/g_multi/configs/c.1" "$CONFIGFS/g_multi/os_desc/c.1" || echo "${log} Couldn't symlink os_desc/c.1"
 
 		mkdir -p functions/ncm.usb0
 

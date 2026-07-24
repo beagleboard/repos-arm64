@@ -5,3 +5,4 @@
   * Cleanup usb0-DHCPServer.network and add usb0 (PocketBeagle) only usb0-only-DHCPServer.network
   * systemd.network 256 needs PersistLeases=runtime https://forum.beagleboard.org/t/pocketbeagle-2-not-reachable-using-local-network-via-usb-tethering-on-macos-26-5/44010/23
   * fix usb network again
+  * fix Windows NCM: https://github.com/beagleboard/repos-arm64/pull/4
