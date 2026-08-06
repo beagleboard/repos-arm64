@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/g/glslang/glslang_16.2.0-2"
+version="main/g/glslang/glslang_16.4.0-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true

@@ -1,21 +1,16 @@
 #!/bin/bash -e
 
-mirror="http://http.debian.net/debian"
+mirror="https://deb.debian.org/debian"
 
 package_name="glslang"
 debian_pkg_name="${package_name}"
-package_version="16.2.0"
-package_source="${debian_pkg_name}_${package_version}.orig.tar.gz"
-src_dir="${package_name}-${package_version}"
+package_version="16.4.0"
 
-git_repo=""
-git_sha=""
 reprepro_dir="g/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-2"
-debian_untar="${package_name}_${debian_version}.debian.tar.xz"
-debian_patch=""
-local_patch="bbbio0"
+debian_version="${package_version}-1"
 
-trixie_version="~trixie+20260421"
+dist="debian-trixie-arm64"
+suite="trixie"
+deb_arch="arm64"
