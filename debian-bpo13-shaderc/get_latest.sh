@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/s/shaderc/shaderc_2026.1-1"
+version="main/s/shaderc/shaderc_2026.3-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true
