@@ -1,8 +1,18 @@
-xorg-server (2:21.1.23-1bbbio1~trixie+20260603) trixie; urgency=low
+xorg-server (2:21.1.24-1bbbio1~trixie+20260806) trixie; urgency=low
 
   * trixie only has libselinux1-dev
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Jun 2026 09:06:35 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Aug 2026 09:21:02 -0500
+
+xorg-server (2:21.1.24-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+    -  CVE-2026-55999: glamor Font Atlas Heap Buffer Overflow
+    -  CVE-2026-56000: GLX contextTags Use-After-Free in CommonMakeCurrent()
+    Closes: #1141703.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 05 Aug 2026 12:04:38 +0200
 
 xorg-server (2:21.1.23-1) unstable; urgency=medium
 
