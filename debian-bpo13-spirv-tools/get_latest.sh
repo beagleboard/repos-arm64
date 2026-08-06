@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="main/s/spirv-tools/spirv-tools_2026.1-1"
+version="main/s/spirv-tools/spirv-tools_2026.3~rc1-1"
 
 if [ -d ./dl/ ] ; then
 	rm -rf ./dl/ || true
