@@ -1,8 +1,11 @@
-bbb.io-kernel (1.20260806.0-0~forky+20260806) forky; urgency=low
+bbb.io-kernel (1.20260812.0-0~forky+20260812) forky; urgency=low
 
   * Kernel Updates
-  * linux-image-6.6.147-arm64-k3-r61
-  * linux-image-6.6.147-rt-arm64-k3-r61
+  * linux-image-6.12.100-arm64-k3-r63
+  * linux-image-6.18.44-arm64-k3-r50
+  * linux-image-7.1.8-arm64-k3-r17
+  * linux-image-7.2.0-rc7-arm64-k3-r10
+  * linux-image-7.2.0-rc7-arm64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Aug 2026 15:10:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 12 Aug 2026 08:39:49 -0500
 
