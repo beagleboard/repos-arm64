@@ -1,8 +1,14 @@
-libgpiod (2.2.4-1bbbio1~trixie+20260718) trixie; urgency=low
+libgpiod (2.2.5-1bbbio1~trixie+20260817) trixie; urgency=low
 
-  * Rebuild libgpiod_2.2.4-1 for repos.rcn-ee.com
+  * Rebuild libgpiod_2.2.5-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 18 Jul 2026 13:20:01 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 17 Aug 2026 11:54:51 -0500
+
+libgpiod (2.2.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Gavin Lai (賴建宇) <gavin09@gmail.com>  Sun, 26 Jul 2026 08:17:56 +0800
 
 libgpiod (2.2.4-1) unstable; urgency=medium
 
