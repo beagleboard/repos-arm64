@@ -727,7 +727,7 @@ Description: Header files for BeagleBoard.org 7.1-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-7.2-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.2.0-rc7-arm64-k3-r10
+Pre-Depends: linux-image-7.2.0-arm64-k3-r11
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -740,7 +740,7 @@ Description: BeagleBoard.org 7.2-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-7.2-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.2.0-rc7-arm64-k3-r10
+Pre-Depends: linux-headers-7.2.0-arm64-k3-r11
 Depends:
  ${misc:Depends}
  , bbb.io-kernel-tasks
@@ -751,7 +751,7 @@ Description: Header files for BeagleBoard.org 7.2-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.2.0-rc7-arm64-r1
+Pre-Depends: linux-image-7.2.0-arm64-r1
 Depends: ${misc:Depends}, bbb.io-kernel-tasks
 Description: BeagleBoard.org Mainline Kernel.org
  This metapackage will install Mainline in Debian.
