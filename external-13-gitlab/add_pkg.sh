@@ -1,13 +1,26 @@
 #!/bin/bash
 
+TARGET_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+DAYS=14
+
 base="/var/www/html/repos/"
 outgoing="/var/www/html/farm/outgoing"
+
+cleanup () {
+	find "$TARGET_DIR" -name "*.deb" -type f -mtime +"$DAYS" -delete
+}
 
 run () {
 	latest=$(apt-cache madison gitlab-runner | grep packages.gitlab.com | awk '{print $3}' | sort -V | tail -1)
 	echo "latest: ${latest}"
-	apt-get download gitlab-runner:${deb_arch}=${latest} || true
-	apt-get download gitlab-runner-helper-images=${latest} || true
+	if [ ! -f ./gitlab-runner_${latest}_${deb_arch}.deb ] ; then
+		apt-get download gitlab-runner:${deb_arch}=${latest} || true
+	fi
+
+	if [ ! -f ./gitlab-runner-helper-images_${latest}_all.deb ] ; then
+		apt-get download gitlab-runner-helper-images=${latest} || true
+	fi
 	sync
 	if [ -f ./gitlab-runner_${latest}_${deb_arch}.deb ] ; then
 		if [ -f ./gitlab-runner-helper-images_${latest}_all.deb ] ; then
@@ -20,6 +33,7 @@ run () {
 runner () {
 	repo="${base}${dist}/"
 	echo ${suite}
+	cleanup
 	run
 }
 
