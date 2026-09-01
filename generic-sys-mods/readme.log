@@ -5,6 +5,5 @@
   * we can support compressed /boot/firmare/Image.gz now thru u-boot
   * PB2 just grab mac address from memory: Sergi_D1 : https://forum.beagleboard.org/t/inconsistent-mac-address-on-pb2/42330
   * add beagle-dtb-source script to sync /opt/source/
-  * add pkg git for beagle-dtb-source
-  * beagle-dtb-source: v7.1.x/v7.2.x branch
   * bbbio-set-sysconf: fix SSID with spaces: https://github.com/beagleboard/bbbio-set-sysconf/issues/2
+  * beagle-dtb-source: v7.3.x branch

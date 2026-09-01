@@ -84,11 +84,10 @@ git_target="dtb-6.6.x"  ; git_branch="v6.6.x"  ; git_clone_branch_reference
 git_target="dtb-6.12.x" ; git_branch="v6.12.x" ; git_clone_branch_reference
 git_target="dtb-6.18.x" ; git_branch="v6.18.x" ; git_clone_branch_reference
 
-#Stable
-git_target="dtb-6.16.x" ; git_branch="v6.16.x" ; git_clone_branch_reference
-git_target="dtb-6.17.x" ; git_branch="v6.17.x" ; git_clone_branch_reference
+#Stable (only after last lts)
 git_target="dtb-6.19.x" ; git_branch="v6.19.x" ; git_clone_branch_reference
 git_target="dtb-7.0.x"  ; git_branch="v7.0.x"  ; git_clone_branch_reference
 git_target="dtb-7.1.x"  ; git_branch="v7.1.x"  ; git_clone_branch_reference
 git_target="dtb-7.2.x"  ; git_branch="v7.2.x"  ; git_clone_branch_reference
+git_target="dtb-7.3.x"  ; git_branch="v7.3.x"  ; git_clone_branch_reference
 #
