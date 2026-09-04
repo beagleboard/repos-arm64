@@ -4,7 +4,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="cockpit"
 debian_pkg_name="${package_name}"
-package_version="366"
+package_version="367"
 
 reprepro_dir="c/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
