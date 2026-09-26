@@ -1,8 +1,8 @@
-bb-code-server (4.138.0-0bbbio0~trixie+20260922) trixie; urgency=low
+bb-code-server (4.139.1-0bbbio0~trixie+20260926) trixie; urgency=low
 
   * Changed
-  * Updated to Code 1.138.0
-  * Updated Node to v24.18.1
+  * Updated to Code 1.139.1
+  * Updated Node to v24.20.0
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 22 Sep 2026 09:56:17 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sat, 26 Sep 2026 16:18:13 -0500
 
