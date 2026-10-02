@@ -4,7 +4,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="spirv-tools"
 debian_pkg_name="${package_name}"
-package_version="2026.3~rc1"
+package_version="2026.4~rc2"
 
 reprepro_dir="s/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
