@@ -4,7 +4,7 @@ mirror="https://deb.debian.org/debian"
 
 package_name="glslang"
 debian_pkg_name="${package_name}"
-package_version="16.4.0"
+package_version="16.6.0"
 
 reprepro_dir="g/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
