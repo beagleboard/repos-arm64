@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+P := debian/ti-mesa-pvr
+O := /opt/ti-mesa-25.2.8
+
+%:
+	dh $@ --buildsystem=meson
+
+override_dh_auto_configure:
+	dh_auto_configure -- --prefix=$(O) --libdir=lib --sysconfdir=$(O)/etc --localstatedir=/var -Db_ndebug=true \
+	  -Dgallium-drivers=pvr,softpipe -Dvulkan-drivers=pvr -Dimagination-srv=true -Dgallium-pvr-alias=tidss \
+	  -Dplatforms=x11,wayland -Dglvnd=enabled -Degl=enabled -Dgbm=enabled -Dgles1=enabled -Dgles2=enabled \
+	  -Dopengl=true -Dglx=dri -Dllvm=disabled -Dgallium-rusticl=false -Dvideo-codecs= -Dxmlconfig=enabled \
+	  -Dvalgrind=disabled -Dlibunwind=disabled -Dlmsensors=disabled -Dbuild-tests=false -Dtools=
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -rf $(P)$(O)/include $(P)$(O)/lib/pkgconfig
+	install -D -m 755 debian/ti-mesa-run $(P)/usr/bin/ti-mesa-run
+
+override_dh_makeshlibs:
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l$(CURDIR)/$(P)$(O)/lib -- --ignore-missing-info
+
+override_dh_strip:
+	dh_strip --no-automatic-dbgsym
+	rm -rf $(P)/usr/lib/debug
+
+override_dh_dwz:

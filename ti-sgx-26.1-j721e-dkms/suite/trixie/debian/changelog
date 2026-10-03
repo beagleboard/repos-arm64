@@ -1,0 +1,8 @@
+ti-img-rogue-driver (26.1.6967606-1) trixie; urgency=medium
+
+  * Initial DKMS packaging of TI ti-img-rogue-driver branch
+    linuxws/wrynose/k6.18/26.1.6967606 (commit 50e14e4) for J721E.
+  * Verified on BeagleBone AI-64, kernel 6.18.52-arm64-k3-r56:
+    rgx_compute_test 76/76 OK, glmark2-es2-drm score 385.
+
+ -- bslette <bslettela@gmail.com>  Thu, 01 Oct 2026 08:00:00 +0000
