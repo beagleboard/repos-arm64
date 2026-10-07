@@ -1,7 +1,7 @@
-  * 20260706 - v2026.07 - https://github.com/u-boot/u-boot/releases/tag/v2026.07
-  * 20260831 - 12.01.00.06 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/12.01.00.06
+  * 20261005 - v2026.10 - https://github.com/u-boot/u-boot/releases/tag/v2026.10
+  * 20260918 - 12.02.00.01 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/12.02.00.01
   * 20260417 - 4.10.0 - https://github.com/OP-TEE/optee_os/commits/4.10.0
-  * 20260731 - lts-v2.14.6 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/lts-v2.14.6
+  * 20261002 - lts-v2.14.10 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/lts-v2.14.10
   * add extlinux.conf boot menu options over serial
   * Bump FAT partition to 256MB for boot recovery images
   * Enable a extlinux.conf option to flash other media directly
