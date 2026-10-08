@@ -1,8 +1,29 @@
-xorg-server (2:21.1.24-1bbbio1~trixie+20260806) trixie; urgency=low
+xorg-server (2:21.1.25-1bbbio1~trixie+20261008) trixie; urgency=low
 
   * trixie only has libselinux1-dev
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Aug 2026 09:21:02 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 08 Oct 2026 10:03:35 -0500
+
+xorg-server (2:21.1.25-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+    - CVE-2026-88812: XKB SetGeometry TextDoodad Double Free
+    - CVE-2026-93515: Present Extension Cross-Window Notify Use-After-Free
+    - CVE-2026-93516: XInput Passive Grab modifierDevice Use-After-Free
+    - CVE-2026-93517: GLX RenderLarge Heap Buffer Overflow
+    - CVE-2026-93518: XKB ResizeKeyType Numeric Truncation
+    - CVE-2026-93519: XFixes Pointer Barrier Event List Buffer Overflow
+    - CVE-2026-93520: XKB ChangeKeycodeRange Heap Out-of-Bounds Write
+    - CVE-2026-93521: RandR ChangeProviderProperty Heap Buffer Overflow
+    - CVE-2026-93522: Glamor CopyArea CPU-FBO Heap Buffer Overflow
+    - CVE-2026-93523: XInput2 PassiveUngrabDevice Modifier Out-of-Bounds Write
+    - CVE-2026-93524: XKB SetMap Key Width/Action Count Desync Out-Of-Bounds Read
+    - CVE-2026-93536: GestureBuildSprite Use-After-Free
+  * control, rules: Clean up remnants of kfreebsd.
+  * control, rules: Clean up remnants of powerpcspe.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 07 Oct 2026 12:37:53 +0300
 
 xorg-server (2:21.1.24-1) unstable; urgency=medium
 
