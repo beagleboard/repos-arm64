@@ -1,7 +1,7 @@
   * 20260105 - v2026.01 - https://github.com/u-boot/u-boot/releases/tag/v2026.01
-  * 20260819 - 11.02.18 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.18
+  * 20261002 - 11.02.20 - https://github.com/TexasInstruments/ti-linux-firmware/releases/tag/11.02.20
   * 20260417 - 4.10.0 - https://github.com/OP-TEE/optee_os/commits/4.10.0
-  * 20260731 - lts-v2.14.6 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/lts-v2.14.6
+  * 20261002 - lts-v2.14.10 - https://github.com/TrustedFirmware-A/trusted-firmware-a/releases/tag/lts-v2.14.10
   * add extlinux.conf boot menu options over serial
   * add techlab boot menu option
   * compressed /Image.gz by default
