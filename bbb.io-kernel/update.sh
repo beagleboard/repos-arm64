@@ -259,7 +259,7 @@ do_some_k3_trixie () {
 	#msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
 	#msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
 	#msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
-	msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
+	#msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 
 	unset cc33xx
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
@@ -291,7 +291,7 @@ do_some_k3_forky () {
 	#msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
 	#msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
 	#msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
-	msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
+	#msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 
 	unset cc33xx
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
@@ -322,35 +322,6 @@ do_noble () {
 	unset_all
 
 	do_some_ti_trixie
-	do_some_k3_trixie
-	do_mainline
-
-	changelog
-}
-
-do_bullseye () {
-	#11.x
-	dist="bullseye"
-	debhelper="13"
-	wfile="control"
-	generate_header
-
-	sgxam62="enabled"
-	sgxj721e="enabled"
-	sgxmodule="sgx"
-
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
-
-	unset_all
-
-	msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
-	msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
-	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
-	cc33xx="enabled"
-	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
-	unset cc33xx
-
 	do_some_k3_trixie
 	do_mainline
 
@@ -406,7 +377,6 @@ do_forky () {
 }
 
 do_noble
-#do_bullseye
 do_bookworm
 do_trixie
 do_forky
