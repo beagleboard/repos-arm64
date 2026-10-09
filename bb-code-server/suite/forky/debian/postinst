@@ -11,9 +11,9 @@ systemctl daemon-reload | true
 main_install () {
 	mkdir -p /opt/${package}/extensions/
 
-	echo "${package}: --list-extensions"
-	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
-	echo "${package}: *****************"
+#	echo "${package}: --list-extensions"
+#	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --list-extensions
+#	echo "${package}: *****************"
 
 #	echo "${package}: Installing: ms-python.python"
 #	/opt/${package}/app/bin/code-server --auth none --disable-telemetry --disable-update-check --extensions-dir /opt/${package}/extensions/ --install-extension ms-python.python --force || true
