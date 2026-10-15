@@ -1,8 +1,14 @@
-xorg-server (2:21.1.25-1bbbio1~trixie+20261008) trixie; urgency=low
+xorg-server (2:21.1.25-2bbbio1~trixie+20261015) trixie; urgency=low
 
   * trixie only has libselinux1-dev
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 08 Oct 2026 10:03:35 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 15 Oct 2026 09:17:45 -0500
+
+xorg-server (2:21.1.25-2) unstable; urgency=medium
+
+  * patches: Revert a commit which broke driver abi. (Closes: #1150321)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 14 Oct 2026 17:37:18 +0300
 
 xorg-server (2:21.1.25-1) unstable; urgency=medium
 
