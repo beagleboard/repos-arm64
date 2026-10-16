@@ -1,0 +1,9 @@
+#!/bin/sh
+# Run a program against TI's Mesa 25.2.8 (PowerVR) in /opt instead of Debian's Mesa.
+M=/opt/ti-mesa-25.2.8
+export LD_LIBRARY_PATH="$M/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export LIBGL_DRIVERS_PATH="$M/lib/dri"
+export GBM_BACKENDS_PATH="$M/lib/gbm"
+export __EGL_VENDOR_LIBRARY_FILENAMES="$M/share/glvnd/egl_vendor.d/50_mesa.json"
+export __GLX_VENDOR_LIBRARY_NAME=mesa
+exec "$@"

@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: ti-img-rogue-driver
+Source: https://git.ti.com/cgit/graphics/ti-img-rogue-driver/
+
+Files: *
+Copyright: Imagination Technologies Ltd, Texas Instruments Incorporated
+License: GPL-2.0 or MIT
+ Dual licensed; see GPL-COPYING and MIT-COPYING in the source tree.
+ On Debian systems the GPL-2 is in /usr/share/common-licenses/GPL-2.
