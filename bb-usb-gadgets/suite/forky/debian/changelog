@@ -1,4 +1,4 @@
-bb-usb-gadgets (1.20261022.0-0~forky+20261022) forky; urgency=low
+bb-usb-gadgets (1.20261022.1-0~forky+20261022) forky; urgency=low
 
   * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
@@ -10,5 +10,5 @@ bb-usb-gadgets (1.20261022.0-0~forky+20261022) forky; urgency=low
   * fix Windows NCM: https://github.com/beagleboard/repos-arm64/pull/4
   * Rework NCM using gemma-4 26B-A4B and windows 11 vm for testing
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 Oct 2026 17:22:28 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 22 Oct 2026 17:40:14 -0500
 

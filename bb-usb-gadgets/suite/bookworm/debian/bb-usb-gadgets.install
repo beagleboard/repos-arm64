@@ -1,4 +1,5 @@
 debian/bb-start-usb-gadgets /usr/bin/
+debian/bb-usb-gadgets-stop /usr/bin/
 debian/bb-start-acm-ncm-rndis-old-gadget /usr/bin/
 debian/eth0-DHCP.network /etc/bbb.io/templates/
 debian/usb0-DHCP.network /etc/bbb.io/templates/
