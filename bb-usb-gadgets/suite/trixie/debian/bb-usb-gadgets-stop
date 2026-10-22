@@ -1,0 +1,47 @@
+#!/bin/bash
+
+log="usb_gadget_stop:"
+CONFIGFS="/sys/kernel/config/usb_gadget/g_multi"
+
+if [ ! -d "$CONFIGFS" ]; then
+	echo "${log} Gadget directory $CONFIGFS not found. Nothing to do."
+	exit 0
+fi
+
+echo "${log} Starting teardown of USB gadget..."
+
+# 1. Unbind the UDC (Critical: You cannot remove anything while UDC is assigned)
+if [ -e "$CONFIGFS/UDC" ] ; then
+	echo "" > "$CONFIGFS/UDC" || echo "${log} Failed to unbind UDC"
+fi
+
+# 2. Remove symlinks in the configuration directory
+# We look in the specific configuration directory (c.1)
+CONF_DIR="$CONFIGFS/configs/c.1"
+if [ -d "$CONF_DIR" ]; then
+    # Remove links to functions (ncm, acm, mass_storage)
+    find "$CONF_DIR" -type l -delete
+    
+    # Remove the strings directory inside the config
+    rmdir "$CONF_DIR/strings/0x409" 2>/dev/null
+    
+    # Remove the configuration directory itself
+    rmdir "$CONF_DIR" 2>/dev/null
+fi
+
+# 3. Remove the functions
+rmdir "$CONFIGFS/functions/ncm.usb0" 2>/dev/null
+rmdir "$CONFIGFS/functions/acm.usb0" 2>/dev/null
+rmdir "$CONFIGFS/functions/mass_storage.usb0" 2>/dev/null
+
+# 4. Remove OS Descriptors
+rmdir "$CONFIGFS/os_desc/c.1" 2>/dev/null
+rmdir "$CONFIGFS/os_desc" 2>/dev/null
+
+# 5. Remove Strings
+rmdir "$CONFIGFS/strings/0x409" 2>/dev/null
+
+# 6. Finally, remove the gadget root
+rmdir "$CONFIGFS" 2>/dev/null
+
+echo "${log} Teardown complete."
