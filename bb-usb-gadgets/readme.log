@@ -6,3 +6,4 @@
   * systemd.network 256 needs PersistLeases=runtime https://forum.beagleboard.org/t/pocketbeagle-2-not-reachable-using-local-network-via-usb-tethering-on-macos-26-5/44010/23
   * fix usb network again
   * fix Windows NCM: https://github.com/beagleboard/repos-arm64/pull/4
+  * Rework NCM using gemma-4 26B-A4B and windows 11 vm for testing

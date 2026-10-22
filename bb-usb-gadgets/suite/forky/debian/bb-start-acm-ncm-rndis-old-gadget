@@ -83,25 +83,23 @@ run_libcomposite () {
 		echo "$usb_bcdUSB" > "$CONFIGFS/g_multi/bcdUSB"
 
 		# Create english (0x409) strings
-		mkdir $CONFIGFS/g_multi/strings/0x409 || echo "${log} Couldn't create $CONFIGFS/g_multi/strings/0x409"
+		mkdir -p $CONFIGFS/g_multi/strings/0x409 || echo "${log} Couldn't create $CONFIGFS/g_multi/strings/0x409"
 
 		echo "$usb_imanufacturer" > "$CONFIGFS/g_multi/strings/0x409/manufacturer"
-		echo "$usb_iserialnumber" > "$CONFIGFS/g_multi/strings/0x409/serialnumber"
+		echo "$usb_serialnumber" > "$CONFIGFS/g_multi/strings/0x409/serialnumber"
 		echo "$usb_iproduct" > "$CONFIGFS/g_multi/strings/0x409/product"
 
 		# Windows extension to use IAD (Interface Association Descriptor)
-		# https://learn.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-interface-association-descriptor
+		# This is critical for NCM to be recognized as a composite device
 		echo "0xEF" > "$CONFIGFS/g_multi/bDeviceClass"
 		echo "0x02" > "$CONFIGFS/g_multi/bDeviceSubClass"
 		echo "0x01" > "$CONFIGFS/g_multi/bDeviceProtocol"
-		echo "0x0100" > "$CONFIGFS/g_multi/bcdDevice"
 
 		mkdir -p $CONFIGFS/g_multi/configs/c.1/strings/0x409 || echo "${log} Couldn't create $CONFIGFS/g_multi/configs/c.1/strings/0x409"
 		echo "BeagleBone Composite" > "$CONFIGFS/g_multi/configs/c.1/strings/0x409/configuration"
 		echo "500" > "$CONFIGFS/g_multi/configs/c.1/MaxPower"
 
-		# Enable use of OS descriptor (for windows to bind drivers like NCM, RNDIS...
-		# without additional .inf file)
+		# Enable use of OS descriptor
 		if [ ! -d $CONFIGFS/g_multi/os_desc ] ; then
 			mkdir $CONFIGFS/g_multi/os_desc || echo "${log} Couldn't create $CONFIGFS/g_multi/os_desc"
 		fi
@@ -110,15 +108,12 @@ run_libcomposite () {
 		echo "MSFT100" > "$CONFIGFS/g_multi/os_desc/qw_sign"
 		ln -s "$CONFIGFS/g_multi/configs/c.1" "$CONFIGFS/g_multi/os_desc/c.1" || echo "${log} Couldn't symlink os_desc/c.1"
 
-		mkdir -p functions/ncm.usb0
+		# Create network function (NCM)
+		mkdir -p $CONFIGFS/g_multi/functions/ncm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/ncm.usb0"
 
-		# Create network function.
-		mkdir $CONFIGFS/g_multi/functions/ncm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/ncm.usb0"
-
-		#Set compatible id so that Windows 10 can match this function to
-		#NCM driver more easily.
-		mkdir -p $CONFIGFS/g_multi/functions/ncm.usb0/os_desc/interface.ncm || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/ncm.usb0/os_desc/interface.ncm"
-		echo "WINNCM" > "$CONFIGFS/g_multi/functions/ncm.usb0/os_desc/interface.ncm/compatible_id"
+		# NOTE: Removed the WINNCM compatible_id block. 
+		# Standard NCM relies on the IAD (0xEF/0x02/0x01) for Windows/macOS discovery.
+		# Providing an unknown string like "WINNCM" causes Windows to fail enumeration.
 
 		if [ ! "x${USB0_HOST_ADDR}" = "x" ] ; then
 			echo "$USB0_HOST_ADDR" > "$CONFIGFS/g_multi/functions/ncm.usb0/host_addr"
@@ -130,7 +125,7 @@ run_libcomposite () {
 
 		if [ ! "x${USB_SERIAL_GADGET_DISABLED}" = "xyes" ] ; then
 			# Create Serial function.
-			mkdir $CONFIGFS/g_multi/functions/acm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/acm.usb0"
+			mkdir -p $CONFIGFS/g_multi/functions/acm.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/acm.usb0"
 
 			# Link the Serial instance to the configuration
 			ln -s $CONFIGFS/g_multi/functions/acm.usb0 $CONFIGFS/g_multi/configs/c.1 || echo "${log} Couldn't symlink acm.usb0"
@@ -141,7 +136,7 @@ run_libcomposite () {
 				echo "${log} enable USB mass_storage img file"
 
 				# Create mass_storage function.
-				mkdir $CONFIGFS/g_multi/functions/mass_storage.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/mass_storage.usb0"
+				mkdir -p $CONFIGFS/g_multi/functions/mass_storage.usb0 || echo "${log} Couldn't create $CONFIGFS/g_multi/functions/mass_storage.usb0"
 
 				echo ${usb_ms_stall} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/stall"
 				echo ${usb_ms_cdrom} > "$CONFIGFS/g_multi/functions/mass_storage.usb0/lun.0/cdrom"

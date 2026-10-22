@@ -4,7 +4,8 @@ After=usb-gadget.target
 ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
 
 [Service]
-Type=forking
+Type=oneshot
+RemainAfterExit=yes
 ExecStartPre=/sbin/modprobe libcomposite
 ExecStart=/usr/bin/bb-start-usb-gadgets
 
