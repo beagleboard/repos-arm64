@@ -3,7 +3,7 @@
 #https://github.com/coder/code-server/releases
 
 arch="arm64"
-ver="4.141.0"
+ver="4.141.1"
 
 package_name="bb-code-server"
 debian_pkg_name="${package_name}"
@@ -16,7 +16,7 @@ git_sha=""
 reprepro_dir="b/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-0bbbio1"
+debian_version="${package_version}-0bbbio0"
 debian_untar=""
 debian_patch=""
 
@@ -24,7 +24,7 @@ debian_dl_1="https://github.com/coder/code-server/releases/download/v${ver}/code
 
 clear_changelog="enable"
 
-bookworm_version="~bookworm+20261009"
-trixie_version="~trixie+20261009"
-forky_version="~forky+20261009"
-noble_version="~noble+20261009"
+bookworm_version="~bookworm+20261023"
+trixie_version="~trixie+20261023"
+forky_version="~forky+20261023"
+noble_version="~noble+20261023"
