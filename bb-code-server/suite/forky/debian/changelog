@@ -1,8 +1,8 @@
-bb-code-server (4.141.1-0bbbio0~forky+20261023) forky; urgency=low
+bb-code-server (4.143.1-0bbbio0~forky+20261023) forky; urgency=low
 
   * Changed
-  * Updated to Code 1.141.1
+  * Updated to Code 1.143.1
   * Updated Node to v24.22.1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Oct 2026 15:14:01 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Oct 2026 18:26:40 -0500
 
