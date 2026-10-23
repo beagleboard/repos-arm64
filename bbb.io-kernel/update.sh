@@ -265,15 +265,15 @@ do_some_k3_trixie () {
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 	unset rtw88
 
-	cc33xx="enabled"
+	#cc33xx="enabled"
 	#msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
 	#msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
 	#msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
 
-	unset cc33xx
+	#unset cc33xx
 	msg="7.2-k3"    ; var="k3-arm64"    ; ver="V72X"  ; current_kernel ; generate_kernel_k3
-
 	msg="7.3-k3"    ; var="k3-arm64"    ; ver="V73X"  ; current_kernel ; generate_kernel_k3
+	msg="7.4-k3"    ; var="k3-arm64"    ; ver="V74X"  ; current_kernel ; generate_kernel_k3
 }
 
 do_some_k3_forky () {
@@ -297,15 +297,15 @@ do_some_k3_forky () {
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 	unset rtw88
 
-	cc33xx="enabled"
+	#cc33xx="enabled"
 	#msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
 	#msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
 	#msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
 
-	unset cc33xx
+	#unset cc33xx
 	msg="7.2-k3"    ; var="k3-arm64"    ; ver="V72X"  ; current_kernel ; generate_kernel_k3
-
 	msg="7.3-k3"    ; var="k3-arm64"    ; ver="V73X"  ; current_kernel ; generate_kernel_k3
+	msg="7.4-k3"    ; var="k3-arm64"    ; ver="V74X"  ; current_kernel ; generate_kernel_k3
 }
 
 do_mainline () {
