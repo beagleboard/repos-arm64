@@ -17,8 +17,6 @@ debian/uio.rules /etc/udev/rules.d/
 debian/beaglebg.jpg /usr/share/backgrounds/bbb.io/
 debian/beagleboard-logo.svg /usr/share/backgrounds/bbb.io/
 debian/nginx-autoindex /etc/bbb.io/templates/nginx/
-debian/Node-RED-ui.html /etc/bbb.io/templates/nginx/
-debian/Node-RED.html /etc/bbb.io/templates/nginx/
 debian/BeaglePlay-io.html /etc/bbb.io/templates/nginx/
 debian/VSCode.html /etc/bbb.io/templates/nginx/
 debian/VSCode-examples.html /etc/bbb.io/templates/nginx/
