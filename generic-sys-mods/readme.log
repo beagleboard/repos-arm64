@@ -6,4 +6,4 @@
   * PB2 just grab mac address from memory: Sergi_D1 : https://forum.beagleboard.org/t/inconsistent-mac-address-on-pb2/42330
   * add beagle-dtb-source script to sync /opt/source/
   * bbbio-set-sysconf: fix SSID with spaces: https://github.com/beagleboard/bbbio-set-sysconf/issues/2
-  * beagle-dtb-source: v7.3.x branch
+  * beagle-dtb-source: v7.3.x/v7.4.x branch

@@ -90,4 +90,5 @@ git_target="dtb-7.0.x"  ; git_branch="v7.0.x"  ; git_clone_branch_reference
 git_target="dtb-7.1.x"  ; git_branch="v7.1.x"  ; git_clone_branch_reference
 git_target="dtb-7.2.x"  ; git_branch="v7.2.x"  ; git_clone_branch_reference
 git_target="dtb-7.3.x"  ; git_branch="v7.3.x"  ; git_clone_branch_reference
+git_target="dtb-7.4.x"  ; git_branch="v7.4.x"  ; git_clone_branch_reference
 #
