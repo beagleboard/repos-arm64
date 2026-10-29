@@ -222,7 +222,7 @@ changelog () {
 do_some_ti_trixie () {
 	rtw88="enabled"
 
-	msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
+	#msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
 
 	sgxam62="enabled"
 	sgxj721e="enabled"
@@ -237,9 +237,9 @@ do_some_ti_trixie () {
 	msg="6.6-rt-ti" ; var="ti-rt-arm64" ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-24.2"
-	cc33xx="enabled"
+	#cc33xx="enabled"
 	msg="6.12-ti"   ; var="ti-arm64"    ; ver="LTS612X"  ; current_kernel ; generate_kernel_ti
-	unset cc33xx
+	#unset cc33xx
 	unset_all
 }
 
