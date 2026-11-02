@@ -276,7 +276,7 @@ Description: Header files for BeagleBoard.org 6.18-k3 ARMv8 (meta-package)
 Package: bbb.io-kernel-7.2-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.2.14-arm64-k3-r25
+Pre-Depends: linux-image-7.2.15-arm64-k3-r26
 Depends: ${misc:Depends}
 Description: BeagleBoard.org 7.2-k3 for ARMv8 (meta-package)
  This package depends on the latest 7.2-k3 kernel and modules
@@ -285,7 +285,7 @@ Description: BeagleBoard.org 7.2-k3 for ARMv8 (meta-package)
 Package: bbb.io-headers-7.2-k3
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-headers-7.2.14-arm64-k3-r25
+Pre-Depends: linux-headers-7.2.15-arm64-k3-r26
 Depends: ${misc:Depends}
 Description: Header files for BeagleBoard.org 7.2-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
@@ -309,10 +309,28 @@ Description: Header files for BeagleBoard.org 7.3-k3 ARMv8 (meta-package)
  This package depends on the architecture-specific header files for the
  latest Linux 7.3-k3 kernel ARMv8.
 
+Package: bbb.io-kernel-7.4-k3
+Section: metapackages
+Architecture: arm64
+Pre-Depends: linux-image-7.4.0-rc1-arm64-k3-r1
+Depends: ${misc:Depends}
+Description: BeagleBoard.org 7.4-k3 for ARMv8 (meta-package)
+ This package depends on the latest 7.4-k3 kernel and modules
+ for use on 64-bit ARMv8 machines.
+
+Package: bbb.io-headers-7.4-k3
+Section: metapackages
+Architecture: arm64
+Pre-Depends: linux-headers-7.4.0-rc1-arm64-k3-r1
+Depends: ${misc:Depends}
+Description: Header files for BeagleBoard.org 7.4-k3 ARMv8 (meta-package)
+ This package depends on the architecture-specific header files for the
+ latest Linux 7.4-k3 kernel ARMv8.
+
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: arm64
-Pre-Depends: linux-image-7.3.0-arm64-r1
+Pre-Depends: linux-image-7.4.0-rc1-arm64-r1
 Depends: ${misc:Depends}
 Description: BeagleBoard.org Mainline Kernel.org
  This metapackage will install Mainline in Debian.
