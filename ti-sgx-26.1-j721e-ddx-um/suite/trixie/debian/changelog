@@ -1,0 +1,5 @@
+ti-sgx-26.1-j721e-ddx-um (26.1.6967606.0-0bbbio0~trixie+20261001) trixie; urgency=low
+
+  * TI DDK 26.1.6967606 (ti-img-rogue-umlibs linuxws/wrynose/k6.18/26.1.6967606) for kernel 6.18
+
+ -- bslette <bslettela@gmail.com>  Thu, 01 Oct 2026 08:00:00 +0000

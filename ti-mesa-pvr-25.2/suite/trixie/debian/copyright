@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mesa (TI fork)
+Source: https://github.com/TexasInstruments/mesa
+
+Files: *
+Copyright: Mesa contributors, Texas Instruments Incorporated, Imagination Technologies Ltd
+License: MIT
+ See docs/license.rst in the source; individual files may carry other
+ permissive licenses as listed there.

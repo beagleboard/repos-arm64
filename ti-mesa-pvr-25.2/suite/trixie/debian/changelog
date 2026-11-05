@@ -1,0 +1,17 @@
+ti-mesa-pvr (25.2.8-2) trixie; urgency=medium
+
+  * Recommend ti-sgx-26.1-j721e-dkms: BeagleBoard 6.18-k3 kernels ship no
+    ti-sgx-26.1 module, so without it apt left the GPU without a driver.
+
+ -- bslette <bslettela@gmail.com>  Thu, 01 Oct 2026 09:00:00 +0000
+
+ti-mesa-pvr (25.2.8-1) trixie; urgency=medium
+
+  * Initial packaging of TexasInstruments/mesa powervr/25.2.8 (commit 7b6e8de),
+    the Mesa TI pairs with DDK 26.x on kernel 6.18.
+  * Built with -Dgallium-pvr-alias=tidss so display (tidss) rendering is
+    routed to the GPU.
+  * Verified on BeagleBone AI-64: eglinfo GBM renderer PowerVR Rogue GE8430,
+    OpenGL ES 3.2 build 26.1@6967606; glmark2-es2-drm score 385 (llvmpipe 23).
+
+ -- bslette <bslettela@gmail.com>  Thu, 01 Oct 2026 08:00:00 +0000

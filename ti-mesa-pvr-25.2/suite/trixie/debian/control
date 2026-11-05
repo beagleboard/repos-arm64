@@ -1,0 +1,28 @@
+Source: ti-mesa-pvr
+Section: libs
+Priority: optional
+Maintainer: bslette <bslettela@gmail.com>
+Build-Depends: debhelper-compat (= 13), meson (>= 1.4), ninja-build, pkgconf, python3:native, python3-mako:native,
+ python3-yaml:native, python3-packaging:native, bison, flex, glslang-tools, wayland-protocols, libwayland-bin,
+ libdrm-dev, libexpat1-dev, zlib1g-dev, libzstd-dev, libwayland-dev, libwayland-egl-backend-dev,
+ libx11-dev, libxext-dev, libxfixes-dev, libxcb-glx0-dev, libxcb-shm0-dev, libxcb-dri2-0-dev, libxcb-dri3-dev,
+ libxcb-present-dev, libxcb-sync-dev, libxcb-randr0-dev, libxcb-xfixes0-dev, libx11-xcb-dev, libxshmfence-dev,
+ libxxf86vm-dev, libxrandr-dev, libglvnd-dev, libvulkan-dev, libudev-dev
+Standards-Version: 4.7.0
+Homepage: https://github.com/TexasInstruments/mesa
+Rules-Requires-Root: no
+
+Package: ti-mesa-pvr
+Architecture: arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}, libglvnd0, libegl1, libgles2, ti-sgx-26.1-j721e-ddx-um
+Recommends: ti-sgx-26.1-j721e-dkms
+Description: Mesa 25.2.8 with TI PowerVR (pvr) driver, installed in /opt
+ TI's Mesa fork (powervr/25.2.8, commit 7b6e8de) built with the gallium
+ "pvr" driver, the PowerVR Vulkan WSI helper and GBM, providing hardware
+ OpenGL ES 3.2 on TI PowerVR Rogue GPUs (e.g. GE8430 on the BeagleBone
+ AI-64) through the TI DDK user-space libraries.
+ .
+ Built with gallium-pvr-alias=tidss so EGL/GBM on the tidss display device
+ renders on the GPU. Installed under /opt/ti-mesa-25.2.8 so it does not
+ replace Debian's Mesa; run programs on it with "ti-mesa-run <program>".
+ Desktop OpenGL is not provided by the DDK (falls back to softpipe).

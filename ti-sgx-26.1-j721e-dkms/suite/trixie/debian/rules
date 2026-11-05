@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+VERSION := $(shell dpkg-parsechangelog -SVersion | sed 's/-[^-]*$$//')
+SRCDIR := debian/ti-sgx-26.1-j721e-dkms/usr/src/ti-img-rogue-$(VERSION)
+
+%:
+	dh $@ --with dkms
+
+# The driver is built on the target by DKMS, never here.
+override_dh_auto_configure override_dh_auto_build override_dh_auto_test override_dh_auto_clean:
+
+override_dh_auto_install:
+	mkdir -p $(SRCDIR)
+	tar -c --exclude=./debian --exclude=./.pc --exclude=.gitignore . | tar -x -C $(SRCDIR)
+
+override_dh_dkms:
+	dh_dkms -V $(VERSION)

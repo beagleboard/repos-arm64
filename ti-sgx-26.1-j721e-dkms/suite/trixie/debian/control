@@ -1,0 +1,21 @@
+Source: ti-img-rogue-driver
+Section: kernel
+Priority: optional
+Maintainer: bslette <bslettela@gmail.com>
+Build-Depends: debhelper-compat (= 13), dh-dkms
+Standards-Version: 4.7.0
+Homepage: https://git.ti.com/cgit/graphics/ti-img-rogue-driver/
+Rules-Requires-Root: no
+
+Package: ti-sgx-26.1-j721e-dkms
+Architecture: all
+Depends: ${misc:Depends}, dkms
+Recommends: ti-sgx-26.1-j721e-ddx-um
+Description: TI/Imagination PowerVR Rogue GPU kernel driver (DKMS) for J721E
+ DKMS source for the TI PowerVR Rogue kernel module (pvrsrvkm), DDK
+ 26.1.6967606, configured for the J721E SoC GPU (GE8430, BVNC
+ 22.104.208.318) as found on the BeagleBone AI-64.
+ .
+ The module is built against the running kernel's headers at install time
+ and rebuilt automatically by DKMS on kernel upgrades. It binds to the
+ "ti,j721e-pvr" device-tree node, which the upstream powervr driver does not.
