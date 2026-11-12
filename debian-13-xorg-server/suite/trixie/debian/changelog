@@ -1,8 +1,24 @@
-xorg-server (2:21.1.25-2bbbio1~trixie+20261015) trixie; urgency=low
+xorg-server (2:21.1.26-1bbbio1~trixie+20261112) trixie; urgency=low
 
   * trixie only has libselinux1-dev
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 15 Oct 2026 09:17:45 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 12 Nov 2026 11:03:46 -0600
+
+xorg-server (2:21.1.26-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release. (Closes: #1153675)
+    - CVE-2026-109091: X.Org Server EDID DS_RANGES Out-Of-Bounds Write
+    - CVE-2026-109092: X.Org Server XvShmPutImage Shared-Memory Bounds Overflow
+    - CVE-2026-109093: X.Org Server XTestFakeInput Valuator Stack Out-Of-Bounds Write
+    - CVE-2026-109904: X.Org Server XRes QueryClientIds Request Size Overflow
+    - CVE-2026-109094: X.Org Server XRes QueryResourceBytes Swap Path Size Overflow
+    - CVE-2026-109095: X.Org Server glamor Xv Image Size Integer Overflow
+    - CVE-2026-109096: X.Org Server XvPutImage Negative Image Size Length Bypass
+    - CVE-2026-109903: X.Org Server XvQueryImageAttributes Negative Size Reply
+  * patches: Drop upstreamed patch.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 11 Nov 2026 05:09:36 +0200
 
 xorg-server (2:21.1.25-2) unstable; urgency=medium
 
