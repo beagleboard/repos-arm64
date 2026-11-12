@@ -1,2 +1,5 @@
   * Kernel Updates
-  * linux-image-7.2.15-arm64-k3-r26
+  * linux-image-6.12.116-arm64-k3-r68
+  * linux-image-6.18.63-arm64-k3-r66
+  * linux-image-6.6.161-arm64-k3-r66
+  * linux-image-6.6.161-rt-arm64-k3-r66

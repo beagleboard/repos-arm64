@@ -1,9 +1,13 @@
-bbb.io-kernel (1.20261102.0-0~trixie+20261102) trixie; urgency=low
+bbb.io-kernel (1.20261112.0-0~trixie+20261112) trixie; urgency=low
 
   * Kernel Updates
-  * linux-image-7.2.15-arm64-k3-r26
-  * linux-image-7.4.0-rc1-arm64-k3-r1
-  * linux-image-7.4.0-rc1-arm64-r1
+  * linux-image-6.12.116-arm64-k3-r68
+  * linux-image-6.18.63-arm64-k3-r66
+  * linux-image-6.6.161-arm64-k3-r66
+  * linux-image-6.6.161-rt-arm64-k3-r66
+  * linux-image-7.3.4-arm64-k3-r12
+  * linux-image-7.4.0-rc2-arm64-k3-r2
+  * linux-image-7.4.0-rc2-arm64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 02 Nov 2026 07:32:51 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 12 Nov 2026 10:38:59 -0600
 
