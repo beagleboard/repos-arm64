@@ -33,7 +33,6 @@ generate_header () {
 	echo "Architecture: ${deb_arch}" >> ./suite/${dist}/debian/${wfile}
 	echo "Pre-Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " generic-sys-mods" >> ./suite/${dist}/debian/${wfile}
-#	echo " , ti-linux-firmware-sysfw" >> ./suite/${dist}/debian/${wfile}
 	echo "Depends:" >> ./suite/${dist}/debian/${wfile}
 	echo " tasksel" >> ./suite/${dist}/debian/${wfile}
 	echo " , \${misc:Depends}" >> ./suite/${dist}/debian/${wfile}
@@ -204,15 +203,9 @@ changelog () {
 do_some_ti_trixie () {
 	rtw88="enabled"
 
-	#msg="5.10-ti"   ; var="ti-arm64" ; ver="LTS510X"  ; current_kernel ; generate_kernel_ti
-
 	sgxam62="enabled"
 	sgxj721e="enabled"
 	sgxj722s="enabled"
-
-	sgxmodule="sgx-23.3"
-	#msg="6.1-ti"    ; var="ti-arm64"    ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
-	#msg="6.1-rt-ti" ; var="ti-rt-arm64" ; ver="LTS61X"   ; current_kernel ; generate_kernel_ti
 
 	sgxmodule="sgx-24.2"
 	msg="6.6-ti"    ; var="ti-arm64"    ; ver="LTS66X"   ; current_kernel ; generate_kernel_ti
@@ -224,57 +217,28 @@ do_some_ti_trixie () {
 }
 
 do_some_k3_trixie () {
-	#Phase Out...
-	#msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	#msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-	#msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
-
 	rtw88="enabled"
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	#msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
-	#msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
-	#msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
-	#msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
-	#msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 	unset rtw88
-
-	#msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
-	#msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
-	#msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
-	#msg="7.2-k3"    ; var="k3-arm64"    ; ver="V72X"  ; current_kernel ; generate_kernel_k3
 
 	msg="7.3-k3"    ; var="k3-arm64"    ; ver="V73X"  ; current_kernel ; generate_kernel_k3
 	msg="7.4-k3"    ; var="k3-arm64"    ; ver="V74X"  ; current_kernel ; generate_kernel_k3
 }
 
 do_some_k3_forky () {
-	#Phase Out...
-	#msg="6.10-k3"   ; var="k3-arm64"    ; ver="V610X" ; current_kernel ; generate_kernel_k3
-	#msg="6.11-k3"   ; var="k3-arm64"    ; ver="V611X" ; current_kernel ; generate_kernel_k3
-
 	rtw88="enabled"
 	msg="6.6-k3"    ; var="k3-arm64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 	msg="6.6-rt-k3" ; var="k3-arm64-rt" ; ver="LTS66X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.12-k3"   ; var="k3-arm64"    ; ver="V612X" ; current_kernel ; generate_kernel_k3
-	#msg="6.13-k3"   ; var="k3-arm64"    ; ver="V613X" ; current_kernel ; generate_kernel_k3
-	#msg="6.14-k3"   ; var="k3-arm64"    ; ver="V614X" ; current_kernel ; generate_kernel_k3
-	#msg="6.15-k3"   ; var="k3-arm64"    ; ver="V615X" ; current_kernel ; generate_kernel_k3
-	#msg="6.16-k3"   ; var="k3-arm64"    ; ver="V616X" ; current_kernel ; generate_kernel_k3
-	#msg="6.17-k3"   ; var="k3-arm64"    ; ver="V617X" ; current_kernel ; generate_kernel_k3
 
 	msg="6.18-k3"   ; var="k3-arm64"    ; ver="V618X" ; current_kernel ; generate_kernel_k3
 	unset rtw88
-
-	#msg="6.19-k3"   ; var="k3-arm64"    ; ver="V619X" ; current_kernel ; generate_kernel_k3
-	#msg="7.0-k3"    ; var="k3-arm64"    ; ver="V70X"  ; current_kernel ; generate_kernel_k3
-	#msg="7.1-k3"    ; var="k3-arm64"    ; ver="V71X"  ; current_kernel ; generate_kernel_k3
-	#msg="7.2-k3"    ; var="k3-arm64"    ; ver="V72X"  ; current_kernel ; generate_kernel_k3
 
 	msg="7.3-k3"    ; var="k3-arm64"    ; ver="V73X"  ; current_kernel ; generate_kernel_k3
 	msg="7.4-k3"    ; var="k3-arm64"    ; ver="V74X"  ; current_kernel ; generate_kernel_k3
