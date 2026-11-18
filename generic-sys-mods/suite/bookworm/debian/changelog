@@ -1,4 +1,4 @@
-generic-sys-mods (1.20261023.0-0~bookworm+20261023) bookworm; urgency=low
+generic-sys-mods (1.20261117.0-0~bookworm+20261117) bookworm; urgency=low
 
   * Mainline u-boot, wants to see device trees under /ti/*.dtb now
   * Call bb-setup-mac-address directly in the usb scripts
@@ -9,6 +9,7 @@ generic-sys-mods (1.20261023.0-0~bookworm+20261023) bookworm; urgency=low
   * add beagle-dtb-source script to sync /opt/source/
   * bbbio-set-sysconf: fix SSID with spaces: https://github.com/beagleboard/bbbio-set-sysconf/issues/2
   * beagle-dtb-source: v7.3.x/v7.4.x branch
+  * beagle-dtb-source: add: https://github.com/TexasInstruments/pru-simulator
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 23 Oct 2026 10:13:01 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Nov 2026 20:02:24 -0600
 

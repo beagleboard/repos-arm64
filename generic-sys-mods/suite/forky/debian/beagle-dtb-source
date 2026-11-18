@@ -65,6 +65,10 @@ git_repo="https://github.com/TexasInstruments/open-pru.git"
 git_target="open-pru"
 git_clone
 
+git_repo="https://github.com/TexasInstruments/pru-simulator"
+git_target="pru-simulator"
+git_clone
+
 git_repo="$BBORG_DTBS"
 
 git_target="BeagleBoard-DeviceTrees"
