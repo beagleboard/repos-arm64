@@ -1,0 +1,6 @@
+source=/dev/mmcblk1
+destination=/dev/nvme0n1
+#destination=/dev/sda
+rfs_partition=hybrid
+rfs_rootfs_startmb=1
+extlinux=/opt/u-boot/bb-u-boot-sk-am69/nvme-extlinux.conf
