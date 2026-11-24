@@ -7,3 +7,4 @@
   * fix usb network again
   * fix Windows NCM: https://github.com/beagleboard/repos-arm64/pull/4
   * Rework NCM using gemma-4 26B-A4B and windows 11 vm for testing
+  * Debian 13 (systemd is locking on serial-getty@ttyGS0)

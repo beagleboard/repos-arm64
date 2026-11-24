@@ -9,3 +9,4 @@ debian/beaglebg.jpg /etc/bbb.io/templates/
 debian/beagleboard-logo.svg /etc/bbb.io/templates/
 debian/systemd-networkd-wait-online.override.conf /etc/bbb.io/templates/
 debian/bb-boot /etc/bbb.io/templates/
+debian/no-reset.conf /etc/systemd/system/serial-getty@ttyGS0.service.d/
